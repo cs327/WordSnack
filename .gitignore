@@ -11,3 +11,8 @@
 /*.userprefs
 /*.pidb
 /*.booproj
+
+# OS X specific files that we don't want either
+.DS_Store
+*.swp
+*.Trashes
