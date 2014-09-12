@@ -1,0 +1,22 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/PlayerScripts/CharacterTimers.cs">
+    <Files>
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="32" Column="6" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="19" Column="31" />
+      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="24" Column="13" />
+      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="10" Column="22" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUI/GUI Scripts/StartScreenGUI.cs">
+    <Files>
+      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="47" Column="3" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="47" Column="3" />
+>>>>>>> FETCH_HEAD
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
