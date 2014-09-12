@@ -19,6 +19,7 @@ Global
 	EndGlobalSection
 <<<<<<< HEAD
 							GlobalSection(MonoDevelopProperties) = preSolution
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 						GlobalSection(MonoDevelopProperties) = preSolution
@@ -29,6 +30,11 @@ Global
 =======
 <<<<<<< HEAD
 							GlobalSection(MonoDevelopProperties) = preSolution
+=======
+									GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Ning_StartScreen
+>>>>>>> FETCH_HEAD
+=======
 =======
 									GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Ning_StartScreen
