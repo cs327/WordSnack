@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//written by ISAIAH MANN
 public class WordSelectScript : MonoBehaviour {
 	bool selected = false;
 

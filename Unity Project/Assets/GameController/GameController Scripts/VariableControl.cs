@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//written by ISAIAH MANN
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
 

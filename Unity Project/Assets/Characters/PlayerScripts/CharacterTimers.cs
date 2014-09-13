@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//written by ISAIAH MANN
 public class CharacterTimers : MonoBehaviour {
 	//variables to control the character's current state
 	public bool something = true;

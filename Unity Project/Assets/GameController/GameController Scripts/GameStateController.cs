@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+//written by ISAIAH MANN
 public class GameStateController : MonoBehaviour {
 	//reference to the main controller script 
 	VariableControl variables;
