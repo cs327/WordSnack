@@ -8,8 +8,11 @@ public class VariableControl : MonoBehaviour {
 	public int characterSelectNum = 3;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;
+	public int minWaitingTime = 10;
 	public int maxHungerTime = 15;
+	public int minHungerTime = 5;
 	public int maxEatingTime = 12;
+	public int minEatingTime = 2;
 	public int maxMultiplier = 5;
 
 	//character variables 
@@ -19,11 +22,13 @@ public class VariableControl : MonoBehaviour {
 	public int currentCharacterSelectNum = 0;
 
 	//gamesate variables
-	public int score;
+	public float score;
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
 
+	//word variables 
+	public bool wordSelected = false;
 	// Use this for initialization
 	void Awake() {
 		//preserves object between loads 
@@ -62,6 +67,20 @@ public class VariableControl : MonoBehaviour {
 			currentCharacterSelectNum = 1;
 		} else if (characterSelected[2] == false) {
 			currentCharacterSelectNum = 2;
+		}
+	}
+
+	//function to set the score of a character
+	public float setScoreMultiplier (int wordsEaten, float multiplier) {
+		if (wordsEaten < 9) {
+			print ("inc 1");
+			return (float) (((float)wordsEaten)/4 + 1);
+		} else if (wordsEaten == 9) {
+			return 4.0F;
+		} else if (wordsEaten == maxFed) {
+			return (float) maxMultiplier;
+		} else {
+			return 1;
 		}
 	}
 }
