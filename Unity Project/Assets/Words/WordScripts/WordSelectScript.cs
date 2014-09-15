@@ -3,7 +3,6 @@ using System.Collections;
 //written by ISAIAH MANN
 public class WordSelectScript : MonoBehaviour {
 	bool selected = false;
-
 	//script reference
 	VariableControl variables;
 	// Use this for initialization

@@ -23,6 +23,8 @@ public class VariableControl : MonoBehaviour {
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
+	public bool wordSelected;
+
     //Mike - vector to store the words fed to the characters throughout the game.
     public string[] fedWords;
 
