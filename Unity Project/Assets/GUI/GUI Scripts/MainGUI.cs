@@ -23,7 +23,7 @@ public class MainGUI : MonoBehaviour {
 
 	void OnGUI () {
 		//during the main gameplay phase, displays a timer to indicate how long the game has been going on for
-		if (Application.loadedLevelName == "Phase2") {
+		if (Application.loadedLevelName == "WordMaking") {
 			GUI.Box (new Rect (100, 100, 100, 30), "Timer: " + Mathf.RoundToInt(variables.gameTimer));
 		//displays the player's score during the scorescreen
 		} else if (Application.loadedLevelName == "ScoreScreen") {
