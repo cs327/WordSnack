@@ -9,6 +9,7 @@ public class randomLetters : MonoBehaviour {
 	public bool initialize = true;
 	public GameObject [] lettersOnBoard;
 	public float timer = 0f;
+	public int boardSize = 7;
 
 	void Awake(){
 		print ("im awake");
@@ -17,8 +18,8 @@ public class randomLetters : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print ("beginning of start function");
-		//initialize the lettersOnBoard array as 10 gameobjects
-		lettersOnBoard = new GameObject[10];
+		//initialize the lettersOnBoard array as the size of the board, as gameobjects
+		lettersOnBoard = new GameObject[boardSize];
 ;
 	}
 	
@@ -35,7 +36,7 @@ public class randomLetters : MonoBehaviour {
 			//run Tuning list, which establishes letter frequency
 			TuningList();
 			//create a String of 10 random letters generated using returnLetters, then print them
-			string myLetters = returnLetters(10);
+			string myLetters = returnLetters(boardSize);
 			print (myLetters + initialize.ToString());
 			//run CreateLetters to turn the random string (myLetters) into GameObjects on screen.
 			CreateLetters(myLetters);
