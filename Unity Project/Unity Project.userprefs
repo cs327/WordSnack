@@ -1,26 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/VariableControl.cs">
     <Files>
       <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="5" Column="24" />
-      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="71" Column="2" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="54" Column="94" />
       <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="65" Column="41" />
-      <File FileName="Assets/scoreScreenScript.cs" Line="31" Column="12" />
-      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/GameStateController.cs">
-    <Files>
-      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="55" Column="54" />
-      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="42" Column="50" />
       <File FileName="Assets/scoreScreenScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
       <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="1" Column="1" />
->>>>>>> master
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
