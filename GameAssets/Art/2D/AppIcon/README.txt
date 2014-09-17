@@ -1,0 +1,1 @@
+The App Icon is for launching the app.
