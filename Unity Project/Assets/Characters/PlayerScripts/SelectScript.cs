@@ -30,7 +30,7 @@ public class SelectScript : MonoBehaviour {
 		}
 
 		//deselects character when "Phase2" is loaded 
-		if (Application.loadedLevelName == "Phase2" && selected) {
+		if (Application.loadedLevelName == "WordMaking" && selected) {
 			selected = false;
 			gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
 		}
@@ -38,7 +38,7 @@ public class SelectScript : MonoBehaviour {
 	
 	void OnMouseDown () {
 		//only active during the selection phase
-		if (Application.loadedLevelName == "Phase1") {
+		if (Application.loadedLevelName == "CharacterSelect") {
 			//changes the selected state
 			toggleSelect();
 			//adds the character to the selected array and parents it to the main gameController

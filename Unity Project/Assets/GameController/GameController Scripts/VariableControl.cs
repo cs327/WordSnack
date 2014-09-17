@@ -5,7 +5,7 @@ public class VariableControl : MonoBehaviour {
 	//main game variables: 
 
 	//tweakable variables: 
-	public int characterSelectNum = 3;
+	public int characterSelectNum = 2;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;
 	public int maxHungerTime = 15;
@@ -42,8 +42,7 @@ public class VariableControl : MonoBehaviour {
 
 		//establishes the character position for phase 2
 		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
-		phase2CharacterPositions[1] = new Vector3(0, -2.5F, 0);
-		phase2CharacterPositions[2] = new Vector3(5, 0, 0);
+		phase2CharacterPositions[1] = new Vector3(5, 0, 0);
 	}
 	
 	// Update is called once per frame
@@ -52,7 +51,7 @@ public class VariableControl : MonoBehaviour {
 		setSelectNum();
 
 		//checks if all three characters are selected 
-		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1] && characterSelected[2]) {
+		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1]) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
 		}
@@ -64,8 +63,6 @@ public class VariableControl : MonoBehaviour {
 			currentCharacterSelectNum = 0;
 		} else if (characterSelected[1] == false) {
 			currentCharacterSelectNum = 1;
-		} else if (characterSelected[2] == false) {
-			currentCharacterSelectNum = 2;
 		}
 	}
 }

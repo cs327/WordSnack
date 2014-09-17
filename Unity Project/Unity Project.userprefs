@@ -5,7 +5,11 @@
       <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="5" Column="24" />
       <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="55" Column="72" />
       <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="65" Column="29" />
+<<<<<<< HEAD
       <File FileName="Assets/scoreScreenScript.cs" Line="31" Column="12" />
+=======
+      <File FileName="Assets/scoreScreenScript.cs" Line="1" Column="1" />
+>>>>>>> isaiahWork
       <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
       <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
     </Files>
