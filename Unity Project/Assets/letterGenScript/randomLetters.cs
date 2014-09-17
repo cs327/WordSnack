@@ -17,25 +17,27 @@ public class randomLetters : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		print ("beginning of start function");
+		//initialize the lettersOnBoard array as 10 gameobjects
 		lettersOnBoard = new GameObject[10];
 ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//keep time
 		timer += Time.deltaTime;
 		print (timer.ToString());
-
+		//after one second, if the game has not initialized, initialize the first board
+		//THIS SHOULD PROBABLY BE TURNED INTO ITS OWN FUNCTION called InitializeBoard();
 		if(initialize && timer > 1){
-			print ("into the if");
+		//flip initialize off, because after this it will have been done and no longer needed
 			initialize = false;
-			print ("intitialize turned to false");
+			//run Tuning list, which establishes letter frequency
 			TuningList();
-			print ("called and completed tuning list");
+			//create a String of 10 random letters generated using returnLetters, then print them
 			string myLetters = returnLetters(10);
-			print ("assigned myLetters by running returnletters(10)");
 			print (myLetters + initialize.ToString());
-			
+			//run CreateLetters to turn the random string (myLetters) into GameObjects on screen.
 			CreateLetters(myLetters);
 			print ("created letters, should be done NOW");
 		}
@@ -44,7 +46,7 @@ public class randomLetters : MonoBehaviour {
 	string returnLetters(int n)
 	{
 		//Random r = new Random();
-		//int r = Mathf.RoundToInt(Random.Range(0,totalVowels));
+		//for the number of letters asked for, return a string with that many random letters in it
 		string letters = randomLetter().ToString();
 		for(int i = 1; i < n; i++)
 		{
@@ -198,7 +200,9 @@ public class randomLetters : MonoBehaviour {
 	}
 
 	void CreateLetters(string l){
+		//take the string of letters to turn into on screen objects, and chop it into an array of its characters
 		char [] letterArray = l.ToCharArray();
+		//run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
 		for (int i = 0; i< l.Length; i++){
 			print(letterArray[i]);
 			switch(letterArray[i]){
@@ -333,6 +337,9 @@ public class randomLetters : MonoBehaviour {
 				//Instantiate(letterObjs[25], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
 				break;
 			}
+			//Add the letter into the array Letters on Board, and create the object
+			// at the place it is in the returned string from RandomLetters
+			//This puts the letters on screen 
 			lettersOnBoard[i] = Instantiate(spawnMe, new Vector3(i*1.5f-7,0,0),new Quaternion(0,0,0,0)) as GameObject;
 		}
 
