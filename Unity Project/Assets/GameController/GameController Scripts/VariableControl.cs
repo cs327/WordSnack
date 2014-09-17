@@ -51,7 +51,7 @@ public class VariableControl : MonoBehaviour {
 		setSelectNum();
 
 		//checks if all three characters are selected 
-		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1] && characterSelected[2]) {
+		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1]) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
 		}
