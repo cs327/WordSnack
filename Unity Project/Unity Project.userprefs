@@ -1,31 +1,15 @@
 ﻿<Properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
-=======
-<<<<<<< HEAD
-=======
->>>>>>> FETCH_HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/VariableControl.cs">
     <Files>
-      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="60" Column="1" />
-      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="64" Column="68" />
-      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="28" Column="55" />
-      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="34" Column="50" />
-      <File FileName="Assets/Characters/PlayerScripts/SelectScript.cs" Line="51" Column="98" />
-      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="57" Column="83" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUI/GUI Scripts/StartScreenGUI.cs">
-    <Files>
-      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="47" Column="3" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="47" Column="3" />
->>>>>>> FETCH_HEAD
+      <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="5" Column="24" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="71" Column="2" />
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="65" Column="41" />
+      <File FileName="Assets/scoreScreenScript.cs" Line="31" Column="12" />
+      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
->>>>>>> FETCH_HEAD
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
