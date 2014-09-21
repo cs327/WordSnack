@@ -10,7 +10,7 @@ public class SelectScript : MonoBehaviour {
 	public GameObject characterParent;
 
 	//click control variables 
-	bool selected = false;
+	public bool selected = false;
 	int selectNum = -1;
 
 	// Use this for initialization
@@ -38,7 +38,7 @@ public class SelectScript : MonoBehaviour {
 	
 	void OnMouseDown () {
 		//only active during the selection phase
-		if (Application.loadedLevelName == "CharacterSelect") {
+		if (Application.loadedLevelName == "CharacterSelect" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
 			//changes the selected state
 			toggleSelect();
 			//adds the character to the selected array and parents it to the main gameController
@@ -47,7 +47,7 @@ public class SelectScript : MonoBehaviour {
 				variables.characterSelected[variables.currentCharacterSelectNum] = true;
 				variables.selectedCharacters[variables.currentCharacterSelectNum++] = gameObject;
 				gameObject.transform.parent = gameController.transform;
-			} else {
+			} else if (selected == false) {
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
 				gameObject.transform.parent = characterParent.transform;
 				variables.characterSelected[selectNum] = false;
