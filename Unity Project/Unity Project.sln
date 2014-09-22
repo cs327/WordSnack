@@ -17,6 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																	GlobalSection(MonoDevelopProperties) = preSolution
 =======
 <<<<<<< HEAD
@@ -32,12 +33,18 @@ Global
 <<<<<<< HEAD
 																				GlobalSection(MonoDevelopProperties) = preSolution
 =======
+																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> isaiahWork
+=======
 <<<<<<< HEAD
 																			GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																		GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
 >>>>>>> master
+<<<<<<< HEAD
+>>>>>>> isaiahWork
+=======
 >>>>>>> isaiahWork
 =======
 																								GlobalSection(MonoDevelopProperties) = preSolution

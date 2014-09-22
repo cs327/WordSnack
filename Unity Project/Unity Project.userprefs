@@ -2,7 +2,11 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/GameStateController.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="21" Column="3" />
+=======
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="19" Column="44" />
+>>>>>>> isaiahWork
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

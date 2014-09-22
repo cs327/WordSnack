@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 76cde24a24532bc47bae087d3df82492
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameController: {fileID: 100000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
