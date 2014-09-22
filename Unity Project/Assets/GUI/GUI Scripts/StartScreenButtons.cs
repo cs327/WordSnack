@@ -16,12 +16,15 @@ public class StartScreenButtons : UIButton{
 	}
 
 	protected override void OnPress (bool isPressed) {
-		if(ButtonName == "play"){
+		if(ButtonName == "play" || ButtonName == "replay"){
 			Application.LoadLevel("CharacterSelect");
 		}else if(ButtonName == "instructions"){
 			Debug.Log ("clicked instructions");
 		}else if (ButtonName == "About"){
 			Debug.Log ("clicked about");
+		}
+		else if (ButtonName == "main menu"){
+			Application.LoadLevel("StartScreen");
 		}
 	}
 }
