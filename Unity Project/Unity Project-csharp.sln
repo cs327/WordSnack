@@ -23,7 +23,18 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																				GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
+																											GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																												GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> a7e680946e063afb17c521ee1c8e2d7fea76969d
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
 =======
 																		GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
@@ -31,12 +42,24 @@ Global
 <<<<<<< HEAD
 																				GlobalSection(MonoDevelopProperties) = preSolution
 =======
+																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> isaiahWork
+=======
+																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> isaiahWork
+=======
 <<<<<<< HEAD
 																			GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																		GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
 >>>>>>> master
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> isaiahWork
+=======
+>>>>>>> isaiahWork
+=======
 >>>>>>> isaiahWork
 =======
 																								GlobalSection(MonoDevelopProperties) = preSolution

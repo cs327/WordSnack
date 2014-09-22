@@ -15,6 +15,10 @@ public class GameStateController : MonoBehaviour {
 	void Start () {
 		//establishes script reference
 		variables = gameObject.GetComponent<VariableControl>();
+
+		//automatically sets the iPhone rotation 
+		Screen.autorotateToLandscapeLeft = true;
+		Screen.orientation = ScreenOrientation.AutoRotation;
 	}	
 	
 	// Update is called once per frame
