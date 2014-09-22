@@ -49,12 +49,11 @@
      <Compile Include="Assets\Characters\PlayerScripts\CharacterTimers.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\SelectScript.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\MainGUI.cs" />
+     <Compile Include="Assets\GUI\GUI Scripts\StartScreenButtons.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\StartScreenGUI.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\scoreScreenScript.cs" />
      <Compile Include="Assets\GameController\GameController Scripts\GameStateController.cs" />
      <Compile Include="Assets\GameController\GameController Scripts\VariableControl.cs" />
-<<<<<<< HEAD
-     <Compile Include="Assets\GameController\GameController Scripts\scoreScreenScript.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -169,8 +168,6 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-=======
->>>>>>> FETCH_HEAD
      <Compile Include="Assets\Words\WordScripts\WordSelectScript.cs" />
      <Compile Include="Assets\letterGenScript\debugLetters.cs" />
      <Compile Include="Assets\letterGenScript\randomLetters.cs" />
