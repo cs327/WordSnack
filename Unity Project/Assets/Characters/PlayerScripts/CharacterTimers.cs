@@ -15,6 +15,7 @@ public class CharacterTimers : MonoBehaviour {
 	public int maxStates = 4;
 	public string [] states;
 	public Material inactive;
+	public int testNum = 0;
 
 	//script reference to the main controller script
 	public GameObject gameController;
@@ -67,5 +68,9 @@ public class CharacterTimers : MonoBehaviour {
 		state = states[stateNum];
 		gameObject.transform.tag = state;
 
+	}
+
+	void OnMouseDown () {
+		testNum++;
 	}
 }
