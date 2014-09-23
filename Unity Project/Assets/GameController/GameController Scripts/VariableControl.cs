@@ -48,10 +48,12 @@ public class VariableControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//sets the selectNum back to lowest unclaimed position in the array
-		setSelectNum();
-
+		currentCharacterSelectNum = gameObject.transform.childCount;
+		if (gameObject.transform.childCount < 2) {
+			print ("Can Select Another Object");
+		}
 		//checks if all three characters are selected 
-		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1]) {
+		if (Application.loadedLevelName == "CharacterSelect" && currentCharacterSelectNum == 2) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
 		} else {
@@ -60,15 +62,6 @@ public class VariableControl : MonoBehaviour {
 
 		if (currentCharacterSelectNum < characterSelectNum) {
 			print (true);
-		}
-	}
-
-	//sets the selectNum (current target in the arrays) to the lowest unclaimed value
-	void setSelectNum () { 
-		if (characterSelected[0] == false) {
-			currentCharacterSelectNum = 0;
-		} else if (characterSelected[1] == false) {
-			currentCharacterSelectNum = 1;
 		}
 	}
 }

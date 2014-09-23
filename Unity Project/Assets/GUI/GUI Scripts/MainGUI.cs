@@ -38,6 +38,8 @@ public class MainGUI : MonoBehaviour {
 				if (GUI.Button(new Rect (100, 100, 100, 30), "GO")) {
 					gameState.loadMainGame();
 				}
+			} else {
+				GUI.Box (new Rect (100, 100, 200, 30), "Click Characters to Select Them");
 			}
 		}
 	}

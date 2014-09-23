@@ -42,7 +42,7 @@ public class SelectScript : MonoBehaviour {
 			//changes the selected state
 			toggleSelect();
 			//adds the character to the selected array and parents it to the main gameController
-			if (selected) {
+			if (selected && gameController.transform.childCount < 2) {
 				selectNum = variables.currentCharacterSelectNum;
 				variables.characterSelected[variables.currentCharacterSelectNum] = true;
 				variables.selectedCharacters[variables.currentCharacterSelectNum++] = gameObject;
