@@ -23,16 +23,6 @@ public class GameStateController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//changes to "Phase2 when all the characters are selected
-		if (variables.timeToChangeGameState) {
-			Application.LoadLevel("WordMaking");
-			//moves the characters into their appropriate positions 
-			for (int i = 0; i < variables.characterSelectNum; i++) {
-				variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
-			}
-			variables.timeToChangeGameState = false;
-		}
-
 		//counts up the game timer which displays onscreen 
 		if (stopTiming == false && Application.loadedLevelName == "WordMaking") {
 			variables.gameTimer += Time.deltaTime;
@@ -72,5 +62,14 @@ public class GameStateController : MonoBehaviour {
 		} else {
 			return false;
 		}
+	}
+
+	public void loadMainGame () {
+		Application.LoadLevel("WordMaking");
+		//moves the characters into their appropriate positions 
+		for (int i = 0; i < variables.characterSelectNum; i++) {
+			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
+		}
+		variables.timeToChangeGameState = false;
 	}
 }

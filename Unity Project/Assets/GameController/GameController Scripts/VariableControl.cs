@@ -54,6 +54,12 @@ public class VariableControl : MonoBehaviour {
 		if (Application.loadedLevelName == "CharacterSelect" && characterSelected[0] && characterSelected[1]) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
+		} else {
+			timeToChangeGameState = false;
+		}
+
+		if (currentCharacterSelectNum < characterSelectNum) {
+			print (true);
 		}
 	}
 

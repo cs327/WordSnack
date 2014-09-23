@@ -9,6 +9,10 @@ public class StartScreenGUI : MonoBehaviour {
 	float buttonHeight = 200;
 	float scale = 0f;
 	public Texture2D buttonBackground;
+    string playButton;
+    string instructionButton;
+    public Transform target;
+    public float movementSpeed;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,10 +21,22 @@ public class StartScreenGUI : MonoBehaviour {
 		titleHeight *= scale;
 		buttonWidth *= scale;
 		buttonHeight *= scale;
+
+        if (Application.loadedLevelName == "ScoreScreen")
+        {
+            playButton = "Play Again";
+            instructionButton = "Main Menu";
+        }
+        else
+        {
+            playButton = "Play";
+            instructionButton = "Instructions";
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
 		
 	}
 	
@@ -38,15 +54,25 @@ public class StartScreenGUI : MonoBehaviour {
 		ButtonStyle.normal.background = buttonBackground;
 		ButtonStyle.alignment = TextAnchor.LowerCenter;
 		GUI.BeginGroup (new Rect (Screen.width / 2 - buttonWidth/2, Screen.height * 0.5f, buttonWidth, buttonHeight));
-		if (GUILayout.Button ("Play", ButtonStyle)) {
+		if (GUILayout.Button (playButton, ButtonStyle)) {
 			Debug.Log ("Play is pressed");
 			Application.LoadLevel(1);
 		}
-		GUILayout.Button ( "Instructions", ButtonStyle);
+		if (GUILayout.Button ( instructionButton, ButtonStyle))
+        {
+            if (Application.loadedLevelName == "ScoreScreen")
+            {
+                Debug.Log("Main Menu Clicked.");
+                Application.LoadLevel("StartScreen");
+            }
+        }
 		GUILayout.Button ( "About", ButtonStyle);
 		GUI.EndGroup ();
 		
 		Debug.Log (Screen.height);
 		Debug.Log (Screen.width);
 	}
+
+
+    public GUIStyle ButtonStyle { get; set; }
 }
