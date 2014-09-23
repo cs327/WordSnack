@@ -23,15 +23,11 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-																																								GlobalSection(MonoDevelopProperties) = preSolution
+																																										GlobalSection(MonoDevelopProperties) = preSolution
 =======
 =======
 <<<<<<< HEAD
 																											GlobalSection(MonoDevelopProperties) = preSolution
-=======
-																																						GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> isaiahWork
 =======
 <<<<<<< HEAD
 																																					GlobalSection(MonoDevelopProperties) = preSolution
@@ -41,6 +37,9 @@ Global
 																												GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> isaiahWork
+=======
+																																					GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> isaiahWork
 =======
 <<<<<<< HEAD
