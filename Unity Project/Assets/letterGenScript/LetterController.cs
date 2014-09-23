@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class randomLetters : MonoBehaviour {
+public class LetterController : MonoBehaviour {
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
-	public letterScript [] letterObjs;
-	public letterScript spawnMe;
-	public letterScript [] lettersOnBoard;
-	public letterScript [] lettersOnStove;
+	public letterBehaviour [] letterObjs;
+	public letterBehaviour spawnMe;
+	public letterBehaviour [] lettersOnBoard;
+	public letterBehaviour [] lettersOnStove;
 	public int numLettersOnStove = 0;
 	public float timer = 0f;
 	public int boardSize = 7;
 	public Vector3 [] stoveSpots;
 	public Vector3 [] bankSpots;
-	public bool needsUpkeep = false;
+	public bool needsUpkeep = true;
 
 
 	void Awake(){
@@ -22,47 +22,39 @@ public class randomLetters : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print ("beginning of start function");
-		//initialize the lettersOnBoard array as the size of the board, as letterScripts
-		lettersOnBoard = new letterScript[boardSize];
-		lettersOnStove = new letterScript[boardSize];
+		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
+		lettersOnBoard = new letterBehaviour[boardSize];
+		lettersOnStove = new letterBehaviour[boardSize];
+
+		//establishes tuning list, frequencies letters are likely to show up.
+		TuningList();
+
+
+		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
-
-
-		//initialize all spots on board according to amount of letters on board
 		for (int i = 0; i < boardSize; i++){
-			stoveSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-6,1,0);
-			bankSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-6,0,0);
+			stoveSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-4,-.5f,0);
+			bankSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-5,-2,0);
 		}
-		//Create the first bank of letters and establisht the tuning list
-		InitializeBoard();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//keep time
+		//keep local time in scripts
 		timer += Time.deltaTime;
-//		UpkeepBank(needsUpkeep);
 
-		ReorderBankArray();
-		UpkeepStove();
-		ReplaceBankLetters();
+		//Calls MoveToFromStoveArray, which in turn calls three functions related to making sure any letters clicked either go to the stove,
+		//are removed from stove (if they are clicked off the stove)
+		moveToAndFromStove();
+
+		//if there are fewer than boardSize letters (basically if a word has been sent to a character) refills the letter banks
+		//to the adequate size
+		replaceBankLetters();
 	}
-
-	void InitializeBoard(){
-			//run Tuning list, which establishes letter frequency
-			TuningList();
-
-			//create a String length of board of random letters generated using returnLetters
-			string myLetters = returnLetters(boardSize);
-
-			//run CreateLetters to turn the random string (myLetters) into GameObjects on screen.
-			CreateLetters(myLetters);
-
-		}
 	
+
 
 	string returnLetters(int n)
 	{
@@ -362,7 +354,7 @@ public class randomLetters : MonoBehaviour {
 			//Add the letter into the array Letters on Board, and create the object
 			// at the place it is in the returned string from RandomLetters
 			//This puts the letters on screen 
-			lettersOnBoard[boardSize-i-1] = Instantiate(spawnMe, bankSpots[boardSize-i-1],new Quaternion(0,0,0,0)) as letterScript;
+			lettersOnBoard[boardSize-i-1] = Instantiate(spawnMe, bankSpots[boardSize-i-1],new Quaternion(0,0,0,0)) as letterBehaviour;
 			lettersOnBoard[boardSize-i-1].letter = letterArray[i].ToString();
 		}
 
@@ -392,16 +384,25 @@ public class randomLetters : MonoBehaviour {
 //		}
 //	}
 
-	void ReorderBankArray(){
+
+
+	void replaceBankLetters(){
+
+		//makes sure the array containing the letters on board is filled from the front until there are no more letters
+		//so there are no spaces in the array between letters. Only has any effect if a word was sent out recently and there
+		//are now fewer letters on board than boardSize.
+
 		for (int i = (boardSize-1); i> 0; i--){
 			if(lettersOnBoard[i] != null && lettersOnBoard[i-1] == null){
 				lettersOnBoard[i-1] = lettersOnBoard[i];
 				lettersOnBoard[i] = null;
 			}
 		}
-	}
 
-	void ReplaceBankLetters(){
+		//if a letter was sent out recently and it has been one second since then,
+		//this block of code replaces all missing letters on board with random ones
+		// and effectively fills the bank.
+
 		if(timer > 1 && needsUpkeep){
 			//print ("time to replace");
 			int needsReplacing = 0;
@@ -419,17 +420,11 @@ public class randomLetters : MonoBehaviour {
 		}
 	}
 
-	void UpkeepStove(){
+	void moveToAndFromStove(){
 
-		MoveToFromStoveArray();
-		ReorderStoveArrays();
-		PlaceAllLetters ();
-
-	}
-
-	void MoveToFromStoveArray(){
-
+		//runs a loop through every letter on board
 		for (int i=0; i < lettersOnBoard.Length; i++){
+
 			//checks if any letters on the board should be moved to the stove and adds them to the stove array if so
 			if(lettersOnBoard[i] != null){
 				if(!lettersOnBoard[i].onStove && lettersOnBoard[i].selected){
@@ -439,46 +434,71 @@ public class randomLetters : MonoBehaviour {
 					numLettersOnStove++;
 				}
 
-				//checks if any of the letters on the board should be removed from the stove, and if so removes htem from the stove array
+				//checks if any of the letters on the board should be removed from the stove, and if so removes them from the stove array
 				if(lettersOnBoard[i].onStove && !lettersOnBoard[i].selected){
-					lettersOnStove[lettersOnBoard[i].orderOnStove] = null;
-					lettersOnBoard[i].onStove = false;
-					numLettersOnStove--;
+
+					//the following actions go through and get rid of every letter on the stove to the right of the selected one for removal, by for looping through all the letters on the stove
+					numLettersOnStove = lettersOnBoard[i].orderOnStove;
+					for (int x = lettersOnBoard[i].orderOnStove; x < boardSize ; x++){
+						if(lettersOnStove[x] != null){
+							
+							lettersOnStove[x].orderOnStove = -1;
+							lettersOnStove[x].selected = false;
+							lettersOnStove[x].onStove = false;
+							lettersOnStove[x] = null;
+						}
+					}
+				}
+				//checks all letters on stove, and puts them in the correct position
+				if(lettersOnStove[i] != null){
+					lettersOnStove[i].transform.position = stoveSpots[i];
+				}
+
+				//checks all letters that are on the board but not the stove, and puts them in the correct position
+				if(!lettersOnBoard[i].onStove){
+					lettersOnBoard[i].transform.position = bankSpots[i];
 				}
 			}
 		}
 
+
+
 	}
 
-	void ReorderStoveArrays(){
-		//this function pushes all members of the stove array to the front of it
-		//runs a reverse for loop to count down and move any letters whos next lower element is empty
-		for (int i = (boardSize-1); i> 0; i--){
-			if(lettersOnStove[i] != null && lettersOnStove[i-1] ==null){
-				lettersOnStove[i-1] = lettersOnStove[i];
-				lettersOnStove[i] = null;
-				lettersOnStove[i-1].orderOnStove = (i-1);
+//	void ReorderStoveArrays(){
+//		//this function pushes all members of the stove array to the front of it
+//		//runs a reverse for loop to count down and move any letters whos next lower element is empty
+//		for (int i = (boardSize-1); i> 0; i--){
+//			if(lettersOnStove[i] != null && lettersOnStove[i-1] ==null){
+//				lettersOnStove[i-1] = lettersOnStove[i];
+//				lettersOnStove[i] = null;
+//				lettersOnStove[i-1].orderOnStove = (i-1);
+//
+//			}
+//		}
+//	}
 
-			}
-		}
-	}
+//	void PlaceAllLetters(){
+//
+//		for(int i = 0; i < boardSize; i++){
+//			if(lettersOnStove[i] != null){
+//				lettersOnStove[i].transform.position = stoveSpots[i];
+//			}
+//
+//			if(lettersOnBoard[i] != null && !lettersOnBoard[i].onStove){
+//				lettersOnBoard[i].transform.position = bankSpots[i];
+//			}
+//		}
+//	}
 
-	void PlaceAllLetters(){
 
-		for(int i = 0; i < boardSize; i++){
-			if(lettersOnStove[i] != null){
-				lettersOnStove[i].transform.position = stoveSpots[i];
-			}
-
-			if(lettersOnBoard[i] != null && !lettersOnBoard[i].onStove){
-				lettersOnBoard[i].transform.position = bankSpots[i];
-			}
-		}
-	}
-
-	string SendStoveWord(){
+	//can be called to return whatever is on the stove as a string
+	string sendWord(){
+		//creates a local variable to be returned- whatever word is on stove
 		string currentWord = null;
 
+		//runs through all letters on stove, adds their char to the currentword in the order it is on the stove,
+		//and then destroys the letters (SHOULD BE CHANGED IF METHOD OF CHECKING/DISCARDING WORDS CHANGED)!!
 		for(int i =0; i<boardSize; i++){
 			if(lettersOnStove[i] != null){
 				currentWord += lettersOnStove[i].letter;
@@ -487,6 +507,8 @@ public class randomLetters : MonoBehaviour {
 				lettersOnStove[i] = null;
 			}
 		}
+
+		//resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
 		numLettersOnStove = 0;
 		timer = 0;
 		needsUpkeep = true;
@@ -495,9 +517,10 @@ public class randomLetters : MonoBehaviour {
 
 	}
 
+	//current test for sending words from stove
 	void OnGUI(){
-		if (GUI.Button(new Rect(10, 70, 50, 30), "Finish Word")){
-			SendStoveWord();
+		if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+			sendWord();
 		}
 	}
 }

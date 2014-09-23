@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class letterScript : MonoBehaviour {
+public class letterBehaviour : MonoBehaviour {
 	public bool selected = false;
 	public bool onStove = false;
 	public bool used = false;
