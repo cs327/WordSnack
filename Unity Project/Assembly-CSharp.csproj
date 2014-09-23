@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Background\Background Scripts\BackgroundBehavior.cs" />
+     <Compile Include="Assets\Background\Background Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\CharacterTimers.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\SelectScript.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\MainGUI.cs" />

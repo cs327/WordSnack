@@ -56,7 +56,7 @@ public class StartScreenGUI : MonoBehaviour {
 		GUI.BeginGroup (new Rect (Screen.width / 2 - buttonWidth/2, Screen.height * 0.5f, buttonWidth, buttonHeight));
 		if (GUILayout.Button (playButton, ButtonStyle)) {
 			Debug.Log ("Play is pressed");
-			Application.LoadLevel(1);
+			Application.LoadLevel("CharacterSelect");
 		}
 		if (GUILayout.Button ( instructionButton, ButtonStyle))
         {
