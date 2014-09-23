@@ -23,10 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-																																						GlobalSection(MonoDevelopProperties) = preSolution
+																																							GlobalSection(MonoDevelopProperties) = preSolution
 =======
 =======
 <<<<<<< HEAD
@@ -107,6 +104,9 @@ Global
 =======
 								GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Ning_StartScreen
+>>>>>>> FETCH_HEAD
+=======
+	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> FETCH_HEAD
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
