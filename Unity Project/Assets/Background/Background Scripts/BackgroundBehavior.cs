@@ -23,10 +23,10 @@ public class BackgroundBehavior : MonoBehaviour {
 			deactivateAllBackgrounds();
 			splashBackground.transform.renderer.enabled = true; 
 			print ("should have changed textures");
-		} else if (Application.loadedLevelName == "StartScreen") {
+		} else if (Application.loadedLevelName == "StartScreenTest") {
 			deactivateAllBackgrounds();
-			startBackground.transform.renderer.enabled = true;
-		} else if (Application.loadedLevelName == "CharacterSelect" || Application.loadedLevelName == "WordBuilding" ) {
+			//startBackground.transform.renderer.enabled = true;
+		} else if (Application.loadedLevelName == "CharacterSelect" || Application.loadedLevelName == "WordMaking" ) {
 			deactivateAllBackgrounds();
 			gameBackground.transform.renderer.enabled = true;
 		} else if (Application.loadedLevelName == "ScoreScreen") {
