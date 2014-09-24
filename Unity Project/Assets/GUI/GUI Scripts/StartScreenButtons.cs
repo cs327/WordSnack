@@ -24,7 +24,7 @@ public class StartScreenButtons : UIButton{
 			Debug.Log ("clicked about");
 		}
 		else if (ButtonName == "main menu"){
-			Application.LoadLevel("StartScreen");
+			Application.LoadLevel("StartScreenTest");
 		}
 	}
 }
