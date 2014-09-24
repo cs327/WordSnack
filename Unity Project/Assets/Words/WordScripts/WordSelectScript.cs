@@ -14,9 +14,9 @@ public class WordSelectScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//toggles the word inactive if it has been consumed
-		if (variables.wordSelected == false && selected == true) {
-			toggleSelect();
-		}
+		//if (variables.wordSelected == false && selected == true) {
+		//	toggleSelect();
+		//}
 	}
 
 	void OnMouseDown() {
