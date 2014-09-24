@@ -16,3 +16,7 @@
 .DS_Store
 *.swp
 *.Trashes
+
+*.sln
+
+*.userprefs
