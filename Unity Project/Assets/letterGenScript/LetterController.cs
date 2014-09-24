@@ -545,7 +545,13 @@ public class LetterController : MonoBehaviour {
 	//current test for sending words from stove
 	void OnGUI(){
 		if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
-			sendWord();
+			if(checkForWord(sendWord())){
+				print ("I'm a word!");
+			}
+			else{
+				print ("Not a word");
+			}
+
 		}
 	}
 }
