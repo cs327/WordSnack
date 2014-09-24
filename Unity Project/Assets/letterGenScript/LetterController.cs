@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
@@ -14,6 +15,10 @@ public class LetterController : MonoBehaviour {
 	public Vector3 [] stoveSpots;
 	public Vector3 [] bankSpots;
 	public bool needsUpkeep = true;
+	public TextAsset sowpods;
+	public int minWordLength;
+	public int maxWordLength;
+	private List<string> wordList = new List<string>();
 
 
 	void Awake(){
@@ -28,6 +33,8 @@ public class LetterController : MonoBehaviour {
 
 		//establishes tuning list, frequencies letters are likely to show up.
 		TuningList();
+		//Creates the list of valid words
+		makeWordList ();
 
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
@@ -516,6 +523,24 @@ public class LetterController : MonoBehaviour {
 		return currentWord;
 
 	}
+
+	void makeWordList () {
+		//This method makes the word list once
+		string [] tempWordList = sowpods.text.Split ('\n');
+		for (int j = 0; j < tempWordList.Length; j++) {
+			string proposedWord = tempWordList [j].Trim ();
+			if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength)) {
+				wordList.Add (proposedWord);
+			}
+		}
+	}
+	
+	bool checkForWord (string word){
+		//This method will, when passed a word, check if it's a valid word
+		//Our word list happens to contain uppercase only words, so convert before checking
+		return (wordList.Contains (word.ToUpper ()));
+	}
+
 
 	//current test for sending words from stove
 	void OnGUI(){
