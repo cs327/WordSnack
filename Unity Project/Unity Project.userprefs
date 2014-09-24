@@ -1,19 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Background/Background Scripts/BackgroundBehavior.cs">
     <Files>
-      <File FileName="Assets/Background/Background Scripts/BackgroundBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/Background/Background Scripts/BackgroundBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Background/Background Scripts/ChangeScene.cs" Line="9" Column="3" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/NGUI/Scripts/Interaction/UIButton.cs">
-    <Files>
-      <File FileName="Assets/NGUI/Scripts/UI/UILabel.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/StartScreenButtons.cs" Line="1" Column="1" />
       <File FileName="Assets/NGUI/Scripts/Interaction/UIButton.cs" Line="1" Column="1" />
->>>>>>> Ning
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="1" Column="1" />
+      <File FileName="Assets/NGUI/Scripts/Editor/UICreateWidgetWizard.cs" Line="1" Column="1" />
+      <File FileName="Assets/NGUI/Scripts/Editor/UIPopupListInspector.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Manager/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Background/Background Scripts/BackgroundBehavior.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
