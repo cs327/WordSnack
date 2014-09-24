@@ -22,3 +22,7 @@
 *.userprefs
 
 *.sln
+
+*.csproj
+
+*.sln
