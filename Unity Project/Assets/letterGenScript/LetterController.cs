@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
+    VariableControl variables = new VariableControl();
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
 	public letterBehaviour [] letterObjs;
@@ -544,9 +545,11 @@ public class LetterController : MonoBehaviour {
 
 	//current test for sending words from stove
 	void OnGUI(){
-		if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
 			if(checkForWord(sendWord())){
+                variables.score++;
 				print ("I'm a word!");
+                print("Current Score: " + variables.score);
 			}
 			else{
 				print ("Not a word");
