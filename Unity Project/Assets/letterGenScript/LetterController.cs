@@ -16,15 +16,15 @@ public class LetterController : MonoBehaviour {
 	public Vector3 [] stoveSpots;
 	public Vector3 [] bankSpots;
 	public bool needsUpkeep = true;
-<<<<<<< HEAD
+
 	public int next;
 	public bool [] newArraySpot;
-=======
+
 	public TextAsset sowpods;
 	public int minWordLength;
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
->>>>>>> FETCH_HEAD
+
 
 
 	void Awake(){
@@ -530,9 +530,8 @@ public class LetterController : MonoBehaviour {
 		return currentWord;
 
 	}
-
-<<<<<<< HEAD
-	//shefflers the letters currently in your hand
+	
+	//shuffles the letters currently in your hand
 	void shuffleLetters () {
 		int nextSpotNum = -1;
 		//creates an array to temporarily store the new array locations for each letter
@@ -583,7 +582,19 @@ public class LetterController : MonoBehaviour {
 			sendWord();
 		} else if (GUI.Button(new Rect( 430, 320, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
-=======
+		}
+		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
+			if(checkForWord(sendWord())){
+				variables.score++;
+				print ("I'm a word!");
+				print("Current Score: " + variables.score);
+			}
+			else{
+				print ("Not a word");
+			}
+		}
+	}
+
 	void makeWordList () {
 		//This method makes the word list once
 		string [] tempWordList = sowpods.text.Split ('\n');
@@ -601,21 +612,5 @@ public class LetterController : MonoBehaviour {
 		return (wordList.Contains (word.ToUpper ()));
 	}
 
-
-	//current test for sending words from stove
-	void OnGUI(){
-		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
-			if(checkForWord(sendWord())){
-                variables.score++;
-				print ("I'm a word!");
-                print("Current Score: " + variables.score);
-			}
-			else{
-				print ("Not a word");
-			}
-
->>>>>>> FETCH_HEAD
-		}
-	}
 }
 
