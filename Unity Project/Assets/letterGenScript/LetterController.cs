@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
+    VariableControl variables = new VariableControl();
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
 	public letterBehaviour [] letterObjs;
@@ -14,8 +16,15 @@ public class LetterController : MonoBehaviour {
 	public Vector3 [] stoveSpots;
 	public Vector3 [] bankSpots;
 	public bool needsUpkeep = true;
+<<<<<<< HEAD
 	public int next;
 	public bool [] newArraySpot;
+=======
+	public TextAsset sowpods;
+	public int minWordLength;
+	public int maxWordLength;
+	private List<string> wordList = new List<string>();
+>>>>>>> FETCH_HEAD
 
 
 	void Awake(){
@@ -31,6 +40,8 @@ public class LetterController : MonoBehaviour {
 
 		//establishes tuning list, frequencies letters are likely to show up.
 		TuningList();
+		//Creates the list of valid words
+		makeWordList ();
 
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
@@ -520,6 +531,7 @@ public class LetterController : MonoBehaviour {
 
 	}
 
+<<<<<<< HEAD
 	//shefflers the letters currently in your hand
 	void shuffleLetters () {
 		int nextSpotNum = -1;
@@ -571,6 +583,38 @@ public class LetterController : MonoBehaviour {
 			sendWord();
 		} else if (GUI.Button(new Rect( 430, 320, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
+=======
+	void makeWordList () {
+		//This method makes the word list once
+		string [] tempWordList = sowpods.text.Split ('\n');
+		for (int j = 0; j < tempWordList.Length; j++) {
+			string proposedWord = tempWordList [j].Trim ();
+			if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength)) {
+				wordList.Add (proposedWord);
+			}
+		}
+	}
+	
+	bool checkForWord (string word){
+		//This method will, when passed a word, check if it's a valid word
+		//Our word list happens to contain uppercase only words, so convert before checking
+		return (wordList.Contains (word.ToUpper ()));
+	}
+
+
+	//current test for sending words from stove
+	void OnGUI(){
+		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
+			if(checkForWord(sendWord())){
+                variables.score++;
+				print ("I'm a word!");
+                print("Current Score: " + variables.score);
+			}
+			else{
+				print ("Not a word");
+			}
+
+>>>>>>> FETCH_HEAD
 		}
 	}
 }
