@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
+    VariableControl variables = new VariableControl();
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
 	public letterBehaviour [] letterObjs;
@@ -15,6 +17,15 @@ public class LetterController : MonoBehaviour {
 	public Vector3 [] bankSpots;
 	public bool needsUpkeep = true;
 
+	public int next;
+	public bool [] newArraySpot;
+
+	public TextAsset sowpods;
+	public int minWordLength;
+	public int maxWordLength;
+	private List<string> wordList = new List<string>();
+
+
 
 	void Awake(){
 		print ("im awake");
@@ -25,9 +36,12 @@ public class LetterController : MonoBehaviour {
 		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
 		lettersOnBoard = new letterBehaviour[boardSize];
 		lettersOnStove = new letterBehaviour[boardSize];
+		newArraySpot = new bool[boardSize];
 
 		//establishes tuning list, frequencies letters are likely to show up.
 		TuningList();
+		//Creates the list of valid words
+		makeWordList ();
 
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
@@ -516,12 +530,87 @@ public class LetterController : MonoBehaviour {
 		return currentWord;
 
 	}
+	
+	//shuffles the letters currently in your hand
+	void shuffleLetters () {
+		int nextSpotNum = -1;
+		//creates an array to temporarily store the new array locations for each letter
+		letterBehaviour[] nextLetters;
+		nextLetters = new letterBehaviour[boardSize];
+		//clears the boolean array that determines which spots are taken
+		clearSpots();
+		//finds a new spot for each letter in the array
+		for (int i = 0; i < boardSize; i++) {
+			//finds an untaken spot for that letter
+			while (nextSpotNum == -1) {
+				nextSpotNum = findNewSpot();
+			}
+			//stores the letter in the temp array
+			nextLetters[nextSpotNum] = lettersOnBoard[i];
+			newArraySpot[nextSpotNum] = true;
+			nextSpotNum = -1;
+		}
+		//sets the letter array to the temp array and changes positions
+		for (int i = 0; i < boardSize; i++) {
+			lettersOnBoard[i] = nextLetters[i];
+			lettersOnBoard[i].transform.position = bankSpots[i];
+		}
+	}
+
+
+	//clears the spots in the bool array for new letter spots
+	void clearSpots () { 
+		for (int i = 0; i < boardSize; i++) {
+			newArraySpot[i] = false;
+		}
+	}
+
+	//returns a random int if that spot in the array is untaken
+	int findNewSpot () {
+		int nextSpotNum = 0;
+		nextSpotNum = (int) Random.Range (0, 7);
+		if (newArraySpot[nextSpotNum] == false) {
+			return nextSpotNum;
+		} else {
+			return -1;
+		}	 
+	}
 
 	//current test for sending words from stove
 	void OnGUI(){
 		if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
 			sendWord();
+		} else if (GUI.Button(new Rect( 430, 320, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
+			shuffleLetters();
+		}
+		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
+			if(checkForWord(sendWord())){
+				variables.score++;
+				print ("I'm a word!");
+				print("Current Score: " + variables.score);
+			}
+			else{
+				print ("Not a word");
+			}
 		}
 	}
+
+	void makeWordList () {
+		//This method makes the word list once
+		string [] tempWordList = sowpods.text.Split ('\n');
+		for (int j = 0; j < tempWordList.Length; j++) {
+			string proposedWord = tempWordList [j].Trim ();
+			if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength)) {
+				wordList.Add (proposedWord);
+			}
+		}
+	}
+	
+	bool checkForWord (string word){
+		//This method will, when passed a word, check if it's a valid word
+		//Our word list happens to contain uppercase only words, so convert before checking
+		return (wordList.Contains (word.ToUpper ()));
+	}
+
 }
 
