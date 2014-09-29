@@ -6,13 +6,20 @@ using System.Collections;
 
 public static class TasteCollection
 {
-	public delegate int Taste(string word);
+		public delegate int Taste(string word);
+
+    private static char[] consonants =
+    {
+        'a', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
+        't', 'v', 'w', 'x', 'y', 'z',
+    };
+
+    private static char[] vowels =
+    {
+        'a','e','i','o','u',
+    };
 
 
-	public static int WordsLongerThan5(string word)
-	{
-		return (word.Length <= 5)? 0 : word.Length - 5;
-	}
 	public static int ThreeLetterWords(string word)
 	{
 				if (word.Length == 3)
@@ -20,6 +27,49 @@ public static class TasteCollection
 				else
 						return 0;
 	}
+    public static int FourLetterWords(string word)
+	{
+				if (word.Length == 4)
+						return 1;
+				else
+						return 0;
+	}
+    public static int FiveLetterWords(string word)
+    {
+        if (word.Length == 5)
+            return 1;
+        else
+            return 0;
+    }
+
+    public static int WordsLongerThan5(string word)
+    {
+        return (word.Length <= 5) ? 0 : 1;
+    }
+
+    public static int WordsEndingInVowel(string word)
+    {
+        if (vowels.Contains(word[word.Length - 1]))
+            return 1;
+        return 0;
+    }
+
+    // Returns 1 if the word has at least 2 vowels
+    // Otherwise returns 0
+    public static int WordsWith2OrMoreVowels(string word)
+    {
+        int vowelCount = 0;
+        foreach (char letter in word)
+        {
+            if (vowels.Contains(letter))
+                vowelCount++;
+            if (vowelCount == 2)
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
 }
 
 /*
