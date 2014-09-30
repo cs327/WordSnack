@@ -5,7 +5,7 @@ public class SelectScript : MonoBehaviour {
 	//script reference 
 	public GameObject gameController;
 	VariableControl variables;
-
+	Character character;
 	//parent reference
 	public GameObject characterParent;
 
@@ -17,6 +17,7 @@ public class SelectScript : MonoBehaviour {
 	void Start () {
 		//establishes script reference
 		variables = gameController.GetComponent<VariableControl>();
+		character = gameObject.GetComponent<Character>();
 	}
 	
 	// Update is called once per frame
@@ -45,7 +46,8 @@ public class SelectScript : MonoBehaviour {
 			if (selected && gameController.transform.childCount < 2) {
 				selectNum = variables.currentCharacterSelectNum;
 				variables.characterSelected[variables.currentCharacterSelectNum] = true;
-				variables.selectedCharacters[variables.currentCharacterSelectNum++] = gameObject;
+				variables.selectedCharacters[variables.currentCharacterSelectNum] = gameObject;
+				variables.selectedCharacterNums[variables.currentCharacterSelectNum++] = character.characterNum;
 				gameObject.transform.parent = gameController.transform;
 			} else if (selected == false) {
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays

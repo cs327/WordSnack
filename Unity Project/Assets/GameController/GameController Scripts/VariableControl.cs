@@ -15,6 +15,7 @@ public class VariableControl : MonoBehaviour {
 	//character variables 
 	public Vector3 [] phase2CharacterPositions;
 	public GameObject [] selectedCharacters;
+	public int [] selectedCharacterNums; 
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
 
@@ -30,19 +31,19 @@ public class VariableControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
-		//preserves object between loads 
-		DontDestroyOnLoad(transform.gameObject);
+		phase2CharacterPositions = new Vector3[characterSelectNum];
+		
+		//establishes the character position for phase 2
+		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
+		phase2CharacterPositions[1] = new Vector3(5, 0, 0);
 	}
 
 	void Start () {
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
-		phase2CharacterPositions = new Vector3[characterSelectNum];
-
-		//establishes the character position for phase 2
-		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
-		phase2CharacterPositions[1] = new Vector3(5, 0, 0);
+		selectedCharacterNums = new int[characterSelectNum]; 
+	
 	}
 	
 	// Update is called once per frame
@@ -50,7 +51,7 @@ public class VariableControl : MonoBehaviour {
 		//sets the selectNum back to lowest unclaimed position in the array
 		currentCharacterSelectNum = gameObject.transform.childCount;
 		if (gameObject.transform.childCount < 2) {
-			print ("Can Select Another Object");
+
 		}
 		//checks if all three characters are selected 
 		if (Application.loadedLevelName == "CharacterSelect" && currentCharacterSelectNum == 2) {
@@ -58,10 +59,6 @@ public class VariableControl : MonoBehaviour {
 			timeToChangeGameState = true;
 		} else {
 			timeToChangeGameState = false;
-		}
-
-		if (currentCharacterSelectNum < characterSelectNum) {
-			print (true);
 		}
 	}
 }

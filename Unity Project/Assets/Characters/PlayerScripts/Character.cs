@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class CharacterClass {
+public class Character : MonoBehaviour {
 	private List<TasteCollection.Taste> myTastes;
 	public CharacterTimers Timer;
-
-	public CharacterClass(List<TasteCollection.Taste> myTastes)
+	public int characterNum;
+	public Character (List<TasteCollection.Taste> myTastes)
 	{
 		this.myTastes = myTastes;
 		//Timer = new CharacterTimers ();

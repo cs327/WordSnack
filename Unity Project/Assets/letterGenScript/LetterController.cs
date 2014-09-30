@@ -28,7 +28,6 @@ public class LetterController : MonoBehaviour {
 
 
 	void Awake(){
-		print ("im awake");
 	}
 
 	// Use this for initialization
@@ -427,7 +426,7 @@ public class LetterController : MonoBehaviour {
 			}
 			if(needsReplacing > 0){
 				string newLetters = returnLetters(needsReplacing);
-				print (newLetters);
+				//print (newLetters);
 				CreateLetters(newLetters);
 			}
 			needsUpkeep = false;
