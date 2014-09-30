@@ -18,7 +18,7 @@ public class StartScreenGUI : MonoBehaviour {
 		if (UniversalInput.press){
 			if( UniversalInput.inRect (new Rect(Screen.width * 0.35f, Screen.height * 0.36f, Screen.width * 0.25f, Screen.height * 0.12f))) {
 				Debug.Log ("pressed on the play area");
-				Application.LoadLevel("WordMaking");
+				Application.LoadLevel("CharacterSelect");
 			}else if(UniversalInput.inRect (new Rect (Screen.width*0.25f, Screen.height*0.6f, Screen.width*0.45f, Screen.height*0.12f))){
 				Debug.Log ("pressed on the characters area");
 				Application.LoadLevel("CharacterSelect");
