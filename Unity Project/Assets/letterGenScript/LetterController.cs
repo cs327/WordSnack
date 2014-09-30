@@ -577,12 +577,13 @@ public class LetterController : MonoBehaviour {
 
 	//current test for sending words from stove
 	void OnGUI(){
-		if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
-			sendWord();
-		} else if (GUI.Button(new Rect( 430, 320, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
+		//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+		//	sendWord();
+		//} else 
+		if (GUI.Button(new Rect( 100, 290, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
-		if (GUI.Button(new Rect(360, 250, 100, 30), "Send Word")){
+		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
 			if(checkForWord(sendWord())){
 				variables.score++;
 				print ("I'm a word!");
