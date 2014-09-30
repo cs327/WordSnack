@@ -1,8 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ChangeScene : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +14,7 @@ public class ChangeScene : MonoBehaviour {
 
 	void OnMouseDown () {
 		if (Application.loadedLevelName == "SplashScreen") {
-			Application.LoadLevel("StartScreenTest");
+			Application.LoadLevel("StartScreen");
 		}
 	}
 }

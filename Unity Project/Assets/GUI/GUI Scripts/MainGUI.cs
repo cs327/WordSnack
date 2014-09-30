@@ -10,7 +10,6 @@ public class MainGUI : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		//preserves the GUI between level loads
-		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start () {
