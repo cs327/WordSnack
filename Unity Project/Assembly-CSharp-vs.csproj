@@ -180,7 +180,6 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Scenes\Test.cs" />
      <Compile Include="Assets\Words\WordScripts\WordSelectScript.cs" />
      <Compile Include="Assets\letterGenScript\LetterController.cs" />
      <Compile Include="Assets\letterGenScript\debugLetters.cs" />
