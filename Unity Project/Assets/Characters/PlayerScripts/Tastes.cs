@@ -44,7 +44,7 @@ public static class TasteCollection
 	public static int TwoOrMoreSame(string word)
 	{
 						
-				if (word.Distinct == word)
+				if (word.Distinct() == word)
 						return 0;
 				else
 						return 1;
