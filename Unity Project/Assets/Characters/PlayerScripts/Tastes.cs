@@ -19,6 +19,45 @@ public static class TasteCollection
 	'a','e','i','o','u',
 	};
 
+	private static char[] uncommonLetters =
+	{
+		'f', 'h', 'v', 'w', 'y', 'k', 'j', 'x', 'q', 'z',
+	};
+
+	public static int UncommonLetters(string word)
+	{
+				foreach (char letter in word) { 
+						if (uncommonLetters.Contains (letter))
+								return 1;		
+				}
+				return 0;
+		}
+
+	public static int StartsWithE(string word)
+	{
+				if (word [0] == 'e')
+						return 1;
+				else
+						return 0;
+		}
+
+	public static int TwoOrMoreSame(string word)
+	{
+						
+				if (word.Distinct == word)
+						return 0;
+				else
+						return 1;
+		}
+	public static int StartsAndEndsWithSame(string word)
+	{
+				if (word [0] == word [word.Length - 1])
+						return 1;
+				else
+						return 0;
+		}
+
+
 
 	public static int ThreeLetterWords(string word)
 	{
