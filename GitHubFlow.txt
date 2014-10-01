@@ -19,4 +19,5 @@ else
 			send me an email at msf12@hampshire.edu or a text and we can figure it out;
 		}
 	}
+	delete the branch after merging;
 }
