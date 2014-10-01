@@ -1,0 +1,23 @@
+if (you are fixing a bug on the master branch that is a quick fix)
+{
+	send an email to the programming team as a whole announcing the file you will be changing when you start;
+	send another email when you have finished letting the team know to pull the new master;
+}
+else
+{
+	create a new branch for your task; //try to name it appropriately
+	sync with the master frequently to keep your code up to date and prevent merge conflicts;
+	merge when you are done; //send an email to anyone waiting on your code to be done
+	if (there is a merge conflict)
+	{
+		try
+		{
+			resolve the merge conflict;
+		}
+		catch (you cannot figure it out)
+		{
+			send me an email at msf12@hampshire.edu or a text and we can figure it out;
+		}
+	}
+	delete the branch after merging;
+}
