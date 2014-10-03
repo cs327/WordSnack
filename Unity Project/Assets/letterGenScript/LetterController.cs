@@ -508,8 +508,23 @@ public class LetterController : MonoBehaviour {
 //	}
 
 
+	public void ResetStove(){
+
+		for(int i =0; i<boardSize; i++){
+			if(lettersOnStove[i] != null){
+				lettersOnStove[i].used = true;
+				Destroy(lettersOnStove[i].gameObject);
+				lettersOnStove[i] = null;
+			}
+		}
+		numLettersOnStove = 0;
+		timer = 0;
+		needsUpkeep = true;
+
+	}
+
 	//can be called to return whatever is on the stove as a string
-	string sendWord(){
+	public string sendWord(){
 		//creates a local variable to be returned- whatever word is on stove
 		string currentWord = null;
 
@@ -518,17 +533,11 @@ public class LetterController : MonoBehaviour {
 		for(int i =0; i<boardSize; i++){
 			if(lettersOnStove[i] != null){
 				currentWord += lettersOnStove[i].letter;
-				lettersOnStove[i].used = true;
-				Destroy(lettersOnStove[i].gameObject);
-				lettersOnStove[i] = null;
 			}
 		}
 
 		//resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
-		numLettersOnStove = 0;
-		timer = 0;
-		needsUpkeep = true;
-		print("WORD SUBMITTED: " + currentWord.ToString());
+//		print("WORD SUBMITTED: " + currentWord.ToString());
 		return currentWord;
 
 	}
@@ -586,16 +595,16 @@ public class LetterController : MonoBehaviour {
 		if (GUI.Button(new Rect( 100, 290, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
-		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-			if(checkForWord(sendWord())){
-				variables.score++;
-				print ("I'm a word!");
-				print("Current Score: " + variables.score);
-			}
-			else{
-				print ("Not a word");
-			}
-		}
+//		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
+//			if(checkForWord(sendWord())){
+//				variables.score++;
+//				print ("I'm a word!");
+//				print("Current Score: " + variables.score);
+//			}
+//			else{
+//				print ("Not a word");
+//			}
+//		}
 	}
 
 	void makeWordList () {

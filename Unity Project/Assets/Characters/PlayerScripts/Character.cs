@@ -6,6 +6,9 @@ public class Character : MonoBehaviour {
 	private List<TasteCollection.Taste> myTastes;
 	public CharacterTimers Timer;
 	public int characterNum;
+	public LetterController letterControl;
+	public GameObject letterGenerator;
+
 	public Character (List<TasteCollection.Taste> myTastes)
 	{
 		this.myTastes = myTastes;
@@ -46,11 +49,31 @@ public class Character : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		if(Application.loadedLevelName == "WordMaking"){
+
+			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
+			letterControl = letterGenerator.GetComponent<LetterController>();
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+
+	void OnMouseDown(){
+		if(Application.loadedLevelName == "WordMaking"){
+			print(letterControl.sendWord());
+			//if(Likes(letterControl.sendWord()) > 0){
+			if(1 > 0){
+				letterControl.ResetStove();
+			}
+
+				
+		}
+	}
+
+
+
+
 }
