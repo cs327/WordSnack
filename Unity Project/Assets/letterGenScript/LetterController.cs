@@ -592,7 +592,7 @@ public class LetterController : MonoBehaviour {
 		//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
 		//	sendWord();
 		//} else 
-		if (GUI.Button(new Rect( 100, 290, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
+		if (GUI.Button(new Rect( 50, 400, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
 //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
