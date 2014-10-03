@@ -6,7 +6,18 @@ using System.Linq;
 
 public static class TasteCollection
 {
-	public delegate int Taste(string word);
+	public delegate float Taste(string word);
+
+	public static float UnCommonMult;
+	public static float StartsWithEMult;
+	public static float TwoOrMoreSameMult;
+	public static float StartsAndEndsWithSameMult;
+	public static float ThreeLetterWordsMult;
+	public static float FourLetterWordsMult;
+	public static float FiveLetterWordsMult;
+	public static float WordsLongerThanFiveMult;
+	public static float WordsEndingInVowelMult;
+	public static float WordsWith2OrMoreVowelsMult;
 
 	private static char[] consonants =
 	{
@@ -24,16 +35,16 @@ public static class TasteCollection
 		'f', 'h', 'v', 'w', 'y', 'k', 'j', 'x', 'q', 'z',
 	};
 
-	public static int UncommonLetters(string word)
+	public static float UncommonLetters(string word)
 	{
 				foreach (char letter in word) { 
 						if (uncommonLetters.Contains (letter))
-								return 1;		
+								return 1*UnCommonMult;		
 				}
 				return 0;
 		}
 
-	public static int StartsWithE(string word)
+	public static float StartsWithE(string word)
 	{
 				if (word [0] == 'e')
 						return 1;
@@ -41,15 +52,15 @@ public static class TasteCollection
 						return 0;
 		}
 
-	public static int TwoOrMoreSame(string word)
+	public static float TwoOrMoreSame(string word)
 	{
-						
-				if (word.Distinct() == word)
+		var distinct = word.Distinct ();				
+				if (distinct.Count() == word.Length)
 						return 0;
 				else
 						return 1;
 		}
-	public static int StartsAndEndsWithSame(string word)
+	public static float StartsAndEndsWithSame(string word)
 	{
 				if (word [0] == word [word.Length - 1])
 						return 1;
@@ -59,21 +70,21 @@ public static class TasteCollection
 
 
 
-	public static int ThreeLetterWords(string word)
+	public static float ThreeLetterWords(string word)
 	{
 		if (word.Length == 3)
 				return 1;
 		else
 				return 0;
 	}
-    	public static int FourLetterWords(string word)
+    	public static float FourLetterWords(string word)
 	{
 		if (word.Length == 4)
 				return 1;
 		else
 				return 0;
 	}
-	public static int FiveLetterWords(string word)
+	public static float FiveLetterWords(string word)
 	{
 		if (word.Length == 5)
 		    return 1;
@@ -81,12 +92,12 @@ public static class TasteCollection
 		    return 0;
 	}
 	
-	public static int WordsLongerThan5(string word)
+	public static float WordsLongerThan5(string word)
 	{
 		return (word.Length <= 5) ? 0 : 1;
 	}
 	
-	public static int WordsEndingInVowel(string word)
+	public static float WordsEndingInVowel(string word)
 	{
 		if (vowels.Contains(word[word.Length - 1]))
 		    return 1;
@@ -95,7 +106,7 @@ public static class TasteCollection
 
 	// Returns 1 if the word has at least 2 vowels
 	// Otherwise returns 0
-	public static int WordsWith2OrMoreVowels(string word)
+	public static float WordsWith2OrMoreVowels(string word)
 	{
 		int vowelCount = 0;
 		foreach (char letter in word)

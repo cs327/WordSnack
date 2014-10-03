@@ -9,26 +9,36 @@ public class Character : MonoBehaviour {
 	public LetterController letterControl;
 	public GameObject letterGenerator;
 
-	public Character (List<TasteCollection.Taste> myTastes)
-	{
-		this.myTastes = myTastes;
-		//Timer = new CharacterTimers ();
+	/* Characters:
+	 * 0 = Trash Character
+	 * 1 = Steve
+	 * 2 = Bob
+	 * 3 = Sue
+	 * */
 
-	}
 
-	public int Likes(string word) 
+	public float Likes(string word) 
 	{
-		int satisfied = 0;
-		int bonus = 0;
+		float score = 0;
+		if (characterNum != 0) { //It's the trash character
+			if (letterControl.checkForWord(word) == false)
+				return 0;
+				}
+		//If we get here, either we're the trash character, or it was a proper word
 		foreach (TasteCollection.Taste t in myTastes) {
-			if (satisfied > 0 && t(word) > 0)			
-				bonus++;
-			
-			satisfied += t(word);
+			score += t(word);
 		}
-		return satisfied + bonus;
+		score += scoreWord (word);
+		return score;
 	}
 
+	float scoreWord (string word) {
+		float wordScore = 0;
+				foreach (char letter in word) {
+			wordScore += LetterController.letterScores[letter];
+				}
+				return wordScore;
+		}
 	public void AddTaste(TasteCollection.Taste taste)
 	{
 		myTastes.Add(taste);
@@ -49,10 +59,12 @@ public class Character : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.myTastes = myTastes;
 		if(Application.loadedLevelName == "WordMaking"){
-
+			this.AddTaste(TasteCollection.StartsAndEndsWithSame);
 			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 			letterControl = letterGenerator.GetComponent<LetterController>();
+
 		}
 	}
 	
@@ -64,9 +76,12 @@ public class Character : MonoBehaviour {
 	void OnMouseDown(){
 		if(Application.loadedLevelName == "WordMaking"){
 			print(letterControl.sendWord());
-			//if(Likes(letterControl.sendWord()) > 0){
-			if(1 > 0){
-				letterControl.ResetStove();
+			float wordScore = Likes (letterControl.sendWord ());
+			Debug.Log ("The wordScore is");
+			Debug.Log (wordScore);
+			if(wordScore > 0){
+			//if(1 > 0){
+			letterControl.ResetStove();
 			}
 
 				
