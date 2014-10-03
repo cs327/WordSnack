@@ -1,0 +1,1940 @@
+fileFormatVersion: 2
+guid: a01f5b9c983a24d20bf4efaf1e5eb0db
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Chompers_v1_SpriteFinal
+    21300002: Chompers_v1_SpriteFinal_0
+    21300004: Chompers_v1_SpriteFinal_1
+    21300006: Chompers_v1_SpriteFinal_2
+    21300008: Chompers_v1_SpriteFinal_3
+    21300010: Chompers_v1_SpriteFinal_4
+    21300012: Chompers_v1_SpriteFinal_5
+    21300014: Chompers_v1_SpriteFinal_6
+    21300016: Chompers_v1_SpriteFinal_7
+    21300018: Chompers_v1_SpriteFinal_8
+    21300020: Chompers_v1_SpriteFinal_9
+    21300022: Chompers_v1_SpriteFinal_10
+    21300024: Chompers_v1_SpriteFinal_11
+    21300026: Chompers_v1_SpriteFinal_12
+    21300028: Chompers_v1_SpriteFinal_13
+    21300030: Chompers_v1_SpriteFinal_14
+    21300032: Chompers_v1_SpriteFinal_15
+    21300034: Chompers_v1_SpriteFinal_16
+    21300036: Chompers_v1_SpriteFinal_17
+    21300038: Chompers_v1_SpriteFinal_18
+    21300040: Chompers_v1_SpriteFinal_19
+    21300042: Chompers_v1_SpriteFinal_20
+    21300044: Chompers_v1_SpriteFinal_21
+    21300046: Chompers_v1_SpriteFinal_22
+    21300048: Chompers_v1_SpriteFinal_23
+    21300050: Chompers_v1_SpriteFinal_24
+    21300052: Chompers_v1_SpriteFinal_25
+    21300054: Chompers_v1_SpriteFinal_26
+    21300056: Chompers_v1_SpriteFinal_27
+    21300058: Chompers_v1_SpriteFinal_28
+    21300060: Chompers_v1_SpriteFinal_29
+    21300062: Chompers_v1_SpriteFinal_30
+    21300064: Chompers_v1_SpriteFinal_31
+    21300066: Chompers_v1_SpriteFinal_32
+    21300068: Chompers_v1_SpriteFinal_33
+    21300070: Chompers_v1_SpriteFinal_34
+    21300072: Chompers_v1_SpriteFinal_35
+    21300074: Chompers_v1_SpriteFinal_36
+    21300076: Chompers_v1_SpriteFinal_37
+    21300078: Chompers_v1_SpriteFinal_38
+    21300080: Chompers_v1_SpriteFinal_39
+    21300082: Chompers_v1_SpriteFinal_40
+    21300084: Chompers_v1_SpriteFinal_41
+    21300086: Chompers_v1_SpriteFinal_42
+    21300088: Chompers_v1_SpriteFinal_43
+    21300090: Chompers_v1_SpriteFinal_44
+    21300092: Chompers_v1_SpriteFinal_45
+    21300094: Chompers_v1_SpriteFinal_46
+    21300096: Chompers_v1_SpriteFinal_47
+    21300098: Chompers_v1_SpriteFinal_48
+    21300100: Chompers_v1_SpriteFinal_49
+    21300102: Chompers_v1_SpriteFinal_50
+    21300104: Chompers_v1_SpriteFinal_51
+    21300106: Chompers_v1_SpriteFinal_52
+    21300108: Chompers_v1_SpriteFinal_53
+    21300110: Chompers_v1_SpriteFinal_54
+    21300112: Chompers_v1_SpriteFinal_55
+    21300114: Chompers_v1_SpriteFinal_56
+    21300116: Chompers_v1_SpriteFinal_57
+    21300118: Chompers_v1_SpriteFinal_58
+    21300120: Chompers_v1_SpriteFinal_59
+    21300122: Chompers_v1_SpriteFinal_60
+    21300124: Chompers_v1_SpriteFinal_61
+    21300126: Chompers_v1_SpriteFinal_62
+    21300128: Chompers_v1_SpriteFinal_63
+    21300130: Chompers_v1_SpriteFinal_64
+    21300132: Chompers_v1_SpriteFinal_65
+    21300134: Chompers_v1_SpriteFinal_66
+    21300136: Chompers_v1_SpriteFinal_67
+    21300138: Chompers_v1_SpriteFinal_68
+    21300140: Chompers_v1_SpriteFinal_69
+    21300142: Chompers_v1_SpriteFinal_70
+    21300144: Chompers_v1_SpriteFinal_71
+    21300146: Chompers_v1_SpriteFinal_72
+    21300148: Chompers_v1_SpriteFinal_73
+    21300150: Chompers_v1_SpriteFinal_74
+    21300152: Chompers_v1_SpriteFinal_75
+    21300154: Chompers_v1_SpriteFinal_76
+    21300156: Chompers_v1_SpriteFinal_77
+    21300158: Chompers_v1_SpriteFinal_78
+    21300160: Chompers_v1_SpriteFinal_79
+    21300162: Chompers_v1_SpriteFinal_80
+    21300164: Chompers_v1_SpriteFinal_81
+    21300166: Chompers_v1_SpriteFinal_82
+    21300168: Chompers_v1_SpriteFinal_83
+    21300170: Chompers_v1_SpriteFinal_84
+    21300172: Chompers_v1_SpriteFinal_85
+    21300174: Chompers_v1_SpriteFinal_86
+    21300176: Chompers_v1_SpriteFinal_87
+    21300178: Chompers_v1_SpriteFinal_88
+    21300180: Chompers_v1_SpriteFinal_89
+    21300182: Chompers_v1_SpriteFinal_90
+    21300184: Chompers_v1_SpriteFinal_91
+    21300186: Chompers_v1_SpriteFinal_92
+    21300188: Chompers_v1_SpriteFinal_93
+    21300190: Chompers_v1_SpriteFinal_94
+    21300192: Chompers_v1_SpriteFinal_95
+    21300194: Chompers_v1_SpriteFinal_96
+    21300196: Chompers_v1_SpriteFinal_97
+    21300198: Chompers_v1_SpriteFinal_98
+    21300200: Chompers_v1_SpriteFinal_99
+    21300202: Chompers_v1_SpriteFinal_100
+    21300204: Chompers_v1_SpriteFinal_101
+    21300206: Chompers_v1_SpriteFinal_102
+    21300208: Chompers_v1_SpriteFinal_103
+    21300210: Chompers_v1_SpriteFinal_104
+    21300212: Chompers_v1_SpriteFinal_105
+    21300214: Chompers_v1_SpriteFinal_106
+    21300216: Chompers_v1_SpriteFinal_107
+    21300218: Chompers_v1_SpriteFinal_108
+    21300220: Chompers_v1_SpriteFinal_109
+    21300222: Chompers_v1_SpriteFinal_110
+    21300224: Chompers_v1_SpriteFinal_111
+    21300226: Chompers_v1_SpriteFinal_112
+    21300228: Chompers_v1_SpriteFinal_113
+    21300230: Chompers_v1_SpriteFinal_114
+    21300232: Chompers_v1_SpriteFinal_115
+    21300234: Chompers_v1_SpriteFinal_116
+    21300236: Chompers_v1_SpriteFinal_117
+    21300238: Chompers_v1_SpriteFinal_118
+    21300240: Chompers_v1_SpriteFinal_119
+    21300242: Chompers_v1_SpriteFinal_120
+    21300244: Chompers_v1_SpriteFinal_121
+    21300246: Chompers_v1_SpriteFinal_122
+    21300248: Chompers_v1_SpriteFinal_123
+    21300250: Chompers_v1_SpriteFinal_124
+    21300252: Chompers_v1_SpriteFinal_125
+    21300254: Chompers_v1_SpriteFinal_126
+    21300256: Chompers_v1_SpriteFinal_127
+    21300258: Chompers_v1_SpriteFinal_128
+    21300260: Chompers_v1_SpriteFinal_129
+    21300262: Chompers_v1_SpriteFinal_130
+    21300264: Chompers_v1_SpriteFinal_131
+    21300266: Chompers_v1_SpriteFinal_132
+    21300268: Chompers_v1_SpriteFinal_133
+    21300270: Chompers_v1_SpriteFinal_134
+    21300272: Chompers_v1_SpriteFinal_135
+    21300274: Chompers_v1_SpriteFinal_136
+    21300276: Chompers_v1_SpriteFinal_137
+    21300278: Chompers_v1_SpriteFinal_138
+    21300280: Chompers_v1_SpriteFinal_139
+    21300282: Chompers_v1_SpriteFinal_140
+    21300284: Chompers_v1_SpriteFinal_141
+    21300286: Chompers_v1_SpriteFinal_142
+    21300288: Chompers_v1_SpriteFinal_143
+    21300290: Chompers_v1_SpriteFinal_144
+    21300292: Chompers_v1_SpriteFinal_145
+    21300294: Chompers_v1_SpriteFinal_146
+    21300296: Chompers_v1_SpriteFinal_147
+    21300298: Chompers_v1_SpriteFinal_148
+    21300300: Chompers_v1_SpriteFinal_149
+    21300302: Chompers_v1_SpriteFinal_150
+    21300304: Chompers_v1_SpriteFinal_151
+    21300306: Chompers_v1_SpriteFinal_152
+    21300308: Chompers_v1_SpriteFinal_153
+    21300310: Chompers_v1_SpriteFinal_154
+    21300312: Chompers_v1_SpriteFinal_155
+    21300314: Chompers_v1_SpriteFinal_156
+    21300316: Chompers_v1_SpriteFinal_157
+    21300318: Chompers_v1_SpriteFinal_158
+    21300320: Chompers_v1_SpriteFinal_159
+    21300322: Chompers_v1_SpriteFinal_160
+    21300324: Chompers_v1_SpriteFinal_161
+    21300326: Chompers_v1_SpriteFinal_162
+    21300328: Chompers_v1_SpriteFinal_163
+    21300330: Chompers_v1_SpriteFinal_164
+    21300332: Chompers_v1_SpriteFinal_165
+    21300334: Chompers_v1_SpriteFinal_166
+    21300336: Chompers_v1_SpriteFinal_167
+    21300338: Chompers_v1_SpriteFinal_168
+    21300340: Chompers_v1_SpriteFinal_169
+    21300342: Chompers_v1_SpriteFinal_170
+    21300344: Chompers_v1_SpriteFinal_171
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Chompers_v1_SpriteFinal_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 7742
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_1
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_2
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_3
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_4
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 7742
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_5
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_6
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_7
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_8
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 7742
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_9
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_10
+      rect:
+        serializedVersion: 2
+        x: 5284
+        y: 7744
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_11
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 7232
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_12
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 7232
+        width: 192
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_13
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 7232
+        width: 192
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_14
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 7230
+        width: 192
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_15
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_16
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 7232
+        width: 196
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_17
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_18
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_19
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_20
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_21
+      rect:
+        serializedVersion: 2
+        x: 5284
+        y: 7232
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_22
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 6720
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_23
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 6718
+        width: 192
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_24
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 6720
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_25
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 6720
+        width: 192
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_26
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 6720
+        width: 192
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_27
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 6720
+        width: 192
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_28
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 6718
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_29
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 6720
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_30
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 6718
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_31
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 6720
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_32
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 6720
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_33
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 6206
+        width: 200
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_34
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_35
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 6206
+        width: 200
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_36
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_37
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_38
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_39
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_40
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_41
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_42
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_43
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 6208
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_44
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 5694
+        width: 200
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_45
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_46
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_47
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_48
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 5694
+        width: 200
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_49
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_50
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_51
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_52
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 5694
+        width: 200
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_53
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_54
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 5696
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_55
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_56
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_57
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_58
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_59
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_60
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_61
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 5184
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_62
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 5184
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_63
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 5184
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_64
+      rect:
+        serializedVersion: 2
+        x: 4772
+        y: 5184
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_65
+      rect:
+        serializedVersion: 2
+        x: 5284
+        y: 5182
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_66
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 4672
+        width: 184
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_67
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 4672
+        width: 184
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_68
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 4672
+        width: 184
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_69
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 4672
+        width: 184
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_70
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 4672
+        width: 184
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_71
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 4684
+        width: 184
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_72
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 4684
+        width: 184
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_73
+      rect:
+        serializedVersion: 2
+        x: 3748
+        y: 4684
+        width: 184
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_74
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 4684
+        width: 184
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_75
+      rect:
+        serializedVersion: 2
+        x: 4768
+        y: 4684
+        width: 196
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_76
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 4684
+        width: 200
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_77
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 4173
+        width: 208
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_78
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 4180
+        width: 224
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_79
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 4180
+        width: 244
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_80
+      rect:
+        serializedVersion: 2
+        x: 1668
+        y: 4180
+        width: 264
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_81
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 4180
+        width: 272
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_82
+      rect:
+        serializedVersion: 2
+        x: 2684
+        y: 4180
+        width: 288
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_83
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 4180
+        width: 288
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_84
+      rect:
+        serializedVersion: 2
+        x: 3716
+        y: 4180
+        width: 284
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_85
+      rect:
+        serializedVersion: 2
+        x: 4236
+        y: 4180
+        width: 256
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_86
+      rect:
+        serializedVersion: 2
+        x: 4749
+        y: 4180
+        width: 247
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_87
+      rect:
+        serializedVersion: 2
+        x: 5268
+        y: 4180
+        width: 236
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_88
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 3668
+        width: 216
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_89
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 3668
+        width: 216
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_90
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 3668
+        width: 216
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_91
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 3668
+        width: 222
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_92
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 3668
+        width: 224
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_93
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 3668
+        width: 216
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_94
+      rect:
+        serializedVersion: 2
+        x: 3220
+        y: 3668
+        width: 216
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_95
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 3661
+        width: 208
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_96
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 3661
+        width: 200
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_97
+      rect:
+        serializedVersion: 2
+        x: 4765
+        y: 3661
+        width: 191
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_98
+      rect:
+        serializedVersion: 2
+        x: 5284
+        y: 3668
+        width: 184
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_99
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 3156
+        width: 184
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_100
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 3156
+        width: 188
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_101
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 3156
+        width: 184
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_102
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 3156
+        width: 184
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_103
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 3156
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_104
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 3156
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_105
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 3156
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_106
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 3156
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_107
+      rect:
+        serializedVersion: 2
+        x: 4246
+        y: 3156
+        width: 198
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_108
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 3156
+        width: 198
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_109
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 3156
+        width: 200
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_110
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2638
+        width: 200
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_111
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2636
+        width: 200
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_112
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2636
+        width: 200
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_113
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 2636
+        width: 200
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_114
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 2636
+        width: 200
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_115
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 2636
+        width: 200
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_116
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 2636
+        width: 200
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_117
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 2624
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_118
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 2622
+        width: 200
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_119
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 2624
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_120
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 2624
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_121
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_122
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_123
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_124
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_125
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_126
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_127
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 2112
+        width: 200
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_128
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 2110
+        width: 200
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_129
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 2112
+        width: 200
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_130
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 2112
+        width: 200
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_131
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 2112
+        width: 200
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_132
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1598
+        width: 199
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_133
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1598
+        width: 198
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_134
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1600
+        width: 192
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_135
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 1600
+        width: 200
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_136
+      rect:
+        serializedVersion: 2
+        x: 2196
+        y: 1598
+        width: 200
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_137
+      rect:
+        serializedVersion: 2
+        x: 2708
+        y: 1600
+        width: 204
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_138
+      rect:
+        serializedVersion: 2
+        x: 3220
+        y: 1600
+        width: 192
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_139
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 1600
+        width: 184
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_140
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 1598
+        width: 184
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_141
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 1600
+        width: 184
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_142
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 1600
+        width: 184
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_143
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1088
+        width: 196
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_144
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 1088
+        width: 192
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_145
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1088
+        width: 196
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_146
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1088
+        width: 192
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_147
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 1088
+        width: 192
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_148
+      rect:
+        serializedVersion: 2
+        x: 2716
+        y: 1088
+        width: 192
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_149
+      rect:
+        serializedVersion: 2
+        x: 3228
+        y: 1088
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_150
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 1088
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_151
+      rect:
+        serializedVersion: 2
+        x: 4252
+        y: 1088
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_152
+      rect:
+        serializedVersion: 2
+        x: 4764
+        y: 1088
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_153
+      rect:
+        serializedVersion: 2
+        x: 5276
+        y: 1088
+        width: 198
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_154
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 576
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_155
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 576
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_156
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 576
+        width: 200
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_157
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 576
+        width: 199
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_158
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 576
+        width: 200
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_159
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 576
+        width: 198
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_160
+      rect:
+        serializedVersion: 2
+        x: 3229
+        y: 576
+        width: 199
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_161
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 576
+        width: 200
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_162
+      rect:
+        serializedVersion: 2
+        x: 4254
+        y: 576
+        width: 198
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_163
+      rect:
+        serializedVersion: 2
+        x: 4766
+        y: 574
+        width: 198
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_164
+      rect:
+        serializedVersion: 2
+        x: 5277
+        y: 576
+        width: 199
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_165
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 64
+        width: 198
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_166
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 64
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_167
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 64
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_168
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 64
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_169
+      rect:
+        serializedVersion: 2
+        x: 2212
+        y: 64
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_170
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 62
+        width: 192
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Chompers_v1_SpriteFinal_171
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 64
+        width: 192
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
