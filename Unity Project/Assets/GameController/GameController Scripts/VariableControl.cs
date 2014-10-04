@@ -20,7 +20,7 @@ public class VariableControl : MonoBehaviour {
 	public int currentCharacterSelectNum = 0;
 
 	//gamesate variables
-	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
+	public float score = 0; //Initialized at 0 by Mike. Just needed an initial value.
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;

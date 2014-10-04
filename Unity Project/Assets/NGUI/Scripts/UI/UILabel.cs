@@ -134,6 +134,7 @@ public class UILabel : UIWidget
 				hasChanged = true;
 			}
 		}
+
 	}
 
 	/// <summary>
