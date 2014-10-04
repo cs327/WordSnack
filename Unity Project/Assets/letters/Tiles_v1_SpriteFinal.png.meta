@@ -21,7 +21,7 @@ TextureImporter:
     21300032: letterQ
     21300034: letterR
     21300036: letterS
-    21300038: leterT
+    21300038: letterT
     21300040: letterU
     21300042: letterV
     21300044: letterW
@@ -260,7 +260,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: leterT
+    - name: letterT
       rect:
         serializedVersion: 2
         x: 1536

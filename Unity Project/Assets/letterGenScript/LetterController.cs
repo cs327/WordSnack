@@ -6,8 +6,9 @@ public class LetterController : MonoBehaviour {
     VariableControl variables = new VariableControl();
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 	public int totalLetters,totalVowels;
-	public letterBehaviour [] letterObjs;
-	public letterBehaviour spawnMe;
+//	public letterBehaviour [] letterObjs;
+//	public letterBehaviour spawnMe;
+	public letterBehaviour letterObj;
 	public letterBehaviour [] lettersOnBoard;
 	public letterBehaviour [] lettersOnStove;
 	public int numLettersOnStove = 0;
@@ -47,8 +48,8 @@ public class LetterController : MonoBehaviour {
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++){
-			stoveSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-4,-.5f,0);
-			bankSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-5,-2,0);
+			stoveSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-4,-1.5f,0);
+			bankSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-5,-3.5f,0);
 		}
 
 	}
@@ -231,143 +232,145 @@ public class LetterController : MonoBehaviour {
 		print (l.ToString());
 		//run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
 		for (int i = 0; i < l.Length; i++){
-			//print(letterArray[i]);
-			switch(letterArray[i]){
-			case 'a':
-				//print("its a");
-				spawnMe = letterObjs[0];
-				//Instantiate(letterObjs[0], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'b':
-				//print("its b");
-				spawnMe = letterObjs[1];
-				//Instantiate(letterObjs[1], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'c':
-				//print("its c");
-				spawnMe = letterObjs[2];
-				//Instantiate(letterObjs[2], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'd':
-				//print("its d");
-				spawnMe = letterObjs[3];
-				//Instantiate(letterObjs[3], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'e':
-				//print("its e");
-				spawnMe = letterObjs[4];
-				//Instantiate(letterObjs[4], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'f':
-				//print("its f");
-				spawnMe = letterObjs[5];
-				//Instantiate(letterObjs[5], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'g':
-				//print("its g");
-				spawnMe = letterObjs[6];
-				//Instantiate(letterObjs[6], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'h':
-				//print("its h");
-				spawnMe = letterObjs[7];
-				//Instantiate(letterObjs[7], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'i':
-				//print("its i");
-				spawnMe = letterObjs[8];
-				//Instantiate(letterObjs[8], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'j':
-				//print("its j");
-				spawnMe = letterObjs[9];
-				//Instantiate(letterObjs[9], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'k':
-				//print("its k");
-				spawnMe = letterObjs[10];
-				//Instantiate(letterObjs[10], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'l':
-				//print("its l");
-				spawnMe = letterObjs[11];
-				//Instantiate(letterObjs[11], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'm':
-				//print("its m");
-				spawnMe = letterObjs[12];
-				//Instantiate(letterObjs[12], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'n':
-				//print("its n");
-				spawnMe = letterObjs[13];
-				//Instantiate(letterObjs[13], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'o':
-				//print("its o");
-				spawnMe = letterObjs[14];
-				//Instantiate(letterObjs[14], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'p':
-				//print("its p");
-				spawnMe = letterObjs[15];
-				//Instantiate(letterObjs[15], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'q':
-				//print("its q");
-				spawnMe = letterObjs[16];
-				//Instantiate(letterObjs[16], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'r':
-				//print("its r");
-				spawnMe = letterObjs[17];
-				//Instantiate(letterObjs[17], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 's':
-				//print("its s");
-				spawnMe = letterObjs[18];
-				//Instantiate(letterObjs[18], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 't':
-				//print("its t");
-				spawnMe = letterObjs[19];
-				//Instantiate(letterObjs[19], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'u':
-				//print("its u");
-				spawnMe = letterObjs[20];
-				//Instantiate(letterObjs[20], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'v':
-				//print("its v");
-				spawnMe = letterObjs[21];
-				//Instantiate(letterObjs[21], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'w':
-				//print("its w");
-				spawnMe = letterObjs[22];
-				//Instantiate(letterObjs[22], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'x':
-				//print("its x");
-				spawnMe = letterObjs[23];
-				//Instantiate(letterObjs[23], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'y':
-				//print("its y");
-				spawnMe = letterObjs[24];
-				//Instantiate(letterObjs[24], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			case 'z':
-				//print("its z");
-				spawnMe = letterObjs[25];
-				//Instantiate(letterObjs[25], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
-				break;
-			}
+//			//print(letterArray[i]);
+//			switch(letterArray[i]){
+//			case 'a':
+//				//print("its a");
+//				spawnMe = letterObjs[0];
+//				//Instantiate(letterObjs[0], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'b':
+//				//print("its b");
+//				spawnMe = letterObjs[1];
+//				//Instantiate(letterObjs[1], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'c':
+//				//print("its c");
+//				spawnMe = letterObjs[2];
+//				//Instantiate(letterObjs[2], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'd':
+//				//print("its d");
+//				spawnMe = letterObjs[3];
+//				//Instantiate(letterObjs[3], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'e':
+//				//print("its e");
+//				spawnMe = letterObjs[4];
+//				//Instantiate(letterObjs[4], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'f':
+//				//print("its f");
+//				spawnMe = letterObjs[5];
+//				//Instantiate(letterObjs[5], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'g':
+//				//print("its g");
+//				spawnMe = letterObjs[6];
+//				//Instantiate(letterObjs[6], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'h':
+//				//print("its h");
+//				spawnMe = letterObjs[7];
+//				//Instantiate(letterObjs[7], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'i':
+//				//print("its i");
+//				spawnMe = letterObjs[8];
+//				//Instantiate(letterObjs[8], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'j':
+//				//print("its j");
+//				spawnMe = letterObjs[9];
+//				//Instantiate(letterObjs[9], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'k':
+//				//print("its k");
+//				spawnMe = letterObjs[10];
+//				//Instantiate(letterObjs[10], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'l':
+//				//print("its l");
+//				spawnMe = letterObjs[11];
+//				//Instantiate(letterObjs[11], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'm':
+//				//print("its m");
+//				spawnMe = letterObjs[12];
+//				//Instantiate(letterObjs[12], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'n':
+//				//print("its n");
+//				spawnMe = letterObjs[13];
+//				//Instantiate(letterObjs[13], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'o':
+//				//print("its o");
+//				spawnMe = letterObjs[14];
+//				//Instantiate(letterObjs[14], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'p':
+//				//print("its p");
+//				spawnMe = letterObjs[15];
+//				//Instantiate(letterObjs[15], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'q':
+//				//print("its q");
+//				spawnMe = letterObjs[16];
+//				//Instantiate(letterObjs[16], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'r':
+//				//print("its r");
+//				spawnMe = letterObjs[17];
+//				//Instantiate(letterObjs[17], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 's':
+//				//print("its s");
+//				spawnMe = letterObjs[18];
+//				//Instantiate(letterObjs[18], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 't':
+//				//print("its t");
+//				spawnMe = letterObjs[19];
+//				//Instantiate(letterObjs[19], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'u':
+//				//print("its u");
+//				spawnMe = letterObjs[20];
+//				//Instantiate(letterObjs[20], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'v':
+//				//print("its v");
+//				spawnMe = letterObjs[21];
+//				//Instantiate(letterObjs[21], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'w':
+//				//print("its w");
+//				spawnMe = letterObjs[22];
+//				//Instantiate(letterObjs[22], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'x':
+//				//print("its x");
+//				spawnMe = letterObjs[23];
+//				//Instantiate(letterObjs[23], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'y':
+//				//print("its y");
+//				spawnMe = letterObjs[24];
+//				//Instantiate(letterObjs[24], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			case 'z':
+//				//print("its z");
+//				spawnMe = letterObjs[25];
+//				//Instantiate(letterObjs[25], new Vector3 (i*2-5,0,0),new Quaternion (0,0,0,0));
+//				break;
+//			}
 			//Add the letter into the array Letters on Board, and create the object
 			// at the place it is in the returned string from RandomLetters
 			//This puts the letters on screen 
-			lettersOnBoard[boardSize-i-1] = Instantiate(spawnMe, bankSpots[boardSize-i-1],new Quaternion(0,0,0,0)) as letterBehaviour;
+			//lettersOnBoard[boardSize-i-1] = Instantiate(spawnMe, bankSpots[boardSize-i-1],new Quaternion(0,0,0,0)) as letterBehaviour;
+
+			lettersOnBoard[boardSize-i-1] = Instantiate(letterObj, bankSpots[boardSize-i-1],new Quaternion(0,0,0,0)) as letterBehaviour;
 			lettersOnBoard[boardSize-i-1].letter = letterArray[i].ToString();
 		}
 
@@ -505,8 +508,23 @@ public class LetterController : MonoBehaviour {
 //	}
 
 
+	public void ResetStove(){
+
+		for(int i =0; i<boardSize; i++){
+			if(lettersOnStove[i] != null){
+				lettersOnStove[i].used = true;
+				Destroy(lettersOnStove[i].gameObject);
+				lettersOnStove[i] = null;
+			}
+		}
+		numLettersOnStove = 0;
+		timer = 0;
+		needsUpkeep = true;
+
+	}
+
 	//can be called to return whatever is on the stove as a string
-	string sendWord(){
+	public string sendWord(){
 		//creates a local variable to be returned- whatever word is on stove
 		string currentWord = null;
 
@@ -515,17 +533,11 @@ public class LetterController : MonoBehaviour {
 		for(int i =0; i<boardSize; i++){
 			if(lettersOnStove[i] != null){
 				currentWord += lettersOnStove[i].letter;
-				lettersOnStove[i].used = true;
-				Destroy(lettersOnStove[i].gameObject);
-				lettersOnStove[i] = null;
 			}
 		}
 
 		//resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
-		numLettersOnStove = 0;
-		timer = 0;
-		needsUpkeep = true;
-		print("WORD SUBMITTED: " + currentWord.ToString());
+//		print("WORD SUBMITTED: " + currentWord.ToString());
 		return currentWord;
 
 	}
@@ -580,19 +592,19 @@ public class LetterController : MonoBehaviour {
 		//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
 		//	sendWord();
 		//} else 
-		if (GUI.Button(new Rect( 100, 290, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
+		if (GUI.Button(new Rect( 50, 400, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
-		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-			if(checkForWord(sendWord())){
-				variables.score++;
-				print ("I'm a word!");
-				print("Current Score: " + variables.score);
-			}
-			else{
-				print ("Not a word");
-			}
-		}
+//		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
+//			if(checkForWord(sendWord())){
+//				variables.score++;
+//				print ("I'm a word!");
+//				print("Current Score: " + variables.score);
+//			}
+//			else{
+//				print ("Not a word");
+//			}
+//		}
 	}
 
 	void makeWordList () {
