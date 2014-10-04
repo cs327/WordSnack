@@ -50,8 +50,10 @@
      <Compile Include="Assets\Background\Background Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\CharacterTimers.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\SelectScript.cs" />
+     <Compile Include="Assets\GUI\GUI Scripts\CharacterSelectGUI.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\InputManager.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\MainGUI.cs" />
+     <Compile Include="Assets\GUI\GUI Scripts\MoveLevelSelection.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\StartScreenButtons.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\StartScreenGUI.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\UIElement.cs" />
