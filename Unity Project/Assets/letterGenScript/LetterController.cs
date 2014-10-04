@@ -25,6 +25,7 @@ public class LetterController : MonoBehaviour {
 	public int minWordLength;
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
+	public static Dictionary<char,int> letterScores;
 
 
 
@@ -45,7 +46,32 @@ public class LetterController : MonoBehaviour {
 		//TuningList();
 		//Creates the list of valid words
 		makeWordList ();
-
+		//if it hasn't already been done by another character, create the letter score dictionary
+		if(letterScores == null)
+		{
+			letterScores = new Dictionary<char, int> ();
+			
+			//Create the dictionary of letter scores
+			foreach (char letter in "eaionrtlsu") {
+				letterScores.Add (letter, 1);
+			}
+			foreach (char letter in "dg") {
+				letterScores.Add (letter, 2);
+			}
+			foreach (char letter in "bcmp") {
+				letterScores.Add (letter, 3);
+			}
+			foreach (char letter in "fhvwy") {
+				letterScores.Add (letter, 4);
+			}
+			letterScores.Add ('k',5);
+			foreach (char letter in "jx") {
+				letterScores.Add (letter, 8);
+			}
+			foreach (char letter in "qz") {
+				letterScores.Add (letter, 10);
+			}
+		}
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
 		stoveSpots = new Vector3[boardSize];
@@ -556,7 +582,7 @@ public class LetterController : MonoBehaviour {
 		}
 	}
 	
-	bool checkForWord (string word){
+	public bool checkForWord (string word){
 		//This method will, when passed a word, check if it's a valid word
 		//Our word list happens to contain uppercase only words, so convert before checking
 		return (wordList.Contains (word.ToUpper ()));
