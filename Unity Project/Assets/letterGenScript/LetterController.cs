@@ -3,9 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
+<<<<<<< HEAD
 	public VariableControl variables;
 //	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 //	public int totalLetters,totalVowels;
+=======
+    VariableControl variables = new VariableControl();
+	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
+	public int totalLetters,totalVowels;
+>>>>>>> Ning
 //	public letterBehaviour [] letterObjs;
 //	public letterBehaviour spawnMe;
 	public letterBehaviour letterObj;
@@ -25,7 +31,10 @@ public class LetterController : MonoBehaviour {
 	public int minWordLength;
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
+<<<<<<< HEAD
 	public static Dictionary<char,int> letterScores;
+=======
+>>>>>>> Ning
 
 
 
@@ -43,6 +52,7 @@ public class LetterController : MonoBehaviour {
 		newArraySpot = new bool[boardSize];
 
 		//establishes tuning list, frequencies letters are likely to show up.
+<<<<<<< HEAD
 		//TuningList();
 		//Creates the list of valid words
 		makeWordList ();
@@ -72,6 +82,12 @@ public class LetterController : MonoBehaviour {
 				letterScores.Add (letter, 10);
 			}
 		}
+=======
+		TuningList();
+		//Creates the list of valid words
+		makeWordList ();
+
+>>>>>>> Ning
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
 		stoveSpots = new Vector3[boardSize];
@@ -569,6 +585,16 @@ public class LetterController : MonoBehaviour {
 		if (GUI.Button(new Rect( 50, 400, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
+//		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
+//			if(checkForWord(sendWord())){
+//				variables.score++;
+//				print ("I'm a word!");
+//				print("Current Score: " + variables.score);
+//			}
+//			else{
+//				print ("Not a word");
+//			}
+//		}
 	}
 
 	void makeWordList () {
@@ -582,7 +608,11 @@ public class LetterController : MonoBehaviour {
 		}
 	}
 	
+<<<<<<< HEAD
 	public bool checkForWord (string word){
+=======
+	bool checkForWord (string word){
+>>>>>>> Ning
 		//This method will, when passed a word, check if it's a valid word
 		//Our word list happens to contain uppercase only words, so convert before checking
 		return (wordList.Contains (word.ToUpper ()));

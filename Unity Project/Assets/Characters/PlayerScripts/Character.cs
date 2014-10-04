@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Linq;
+=======
+
+>>>>>>> Ning
 public class Character : MonoBehaviour {
 	private List<TasteCollection.Taste> myTastes;
 	public CharacterTimers Timer;
 	public int characterNum;
 	public LetterController letterControl;
 	public GameObject letterGenerator;
+<<<<<<< HEAD
 	
 	/* Characters:
 	 * 0 = Trash Character
@@ -38,6 +43,29 @@ public class Character : MonoBehaviour {
 		}
 		return wordScore;
 	}
+=======
+
+	public Character (List<TasteCollection.Taste> myTastes)
+	{
+		this.myTastes = myTastes;
+		//Timer = new CharacterTimers ();
+
+	}
+
+	public int Likes(string word) 
+	{
+		int satisfied = 0;
+		int bonus = 0;
+		foreach (TasteCollection.Taste t in myTastes) {
+			if (satisfied > 0 && t(word) > 0)			
+				bonus++;
+			
+			satisfied += t(word);
+		}
+		return satisfied + bonus;
+	}
+
+>>>>>>> Ning
 	public void AddTaste(TasteCollection.Taste taste)
 	{
 		myTastes.Add(taste);
@@ -48,13 +76,18 @@ public class Character : MonoBehaviour {
 			if(!myTastes.Contains(t))
 				myTastes.Add(t);
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> Ning
 	public void RemoveTaste(TasteCollection.Taste taste)
 	{
 		if (myTastes.Contains (taste))
 			myTastes.Remove (taste);
 	}
 	
+<<<<<<< HEAD
 	
 	// Use this for initialization
 	void Start () {
@@ -64,11 +97,21 @@ public class Character : MonoBehaviour {
 			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 			letterControl = letterGenerator.GetComponent<LetterController>();
 			
+=======
+
+	// Use this for initialization
+	void Start () {
+		if(Application.loadedLevelName == "WordMaking"){
+
+			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
+			letterControl = letterGenerator.GetComponent<LetterController>();
+>>>>>>> Ning
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 		
 	}
 	
@@ -90,4 +133,24 @@ public class Character : MonoBehaviour {
 	
 	
 	
+=======
+	
+	}
+
+	void OnMouseDown(){
+		if(Application.loadedLevelName == "WordMaking"){
+			print(letterControl.sendWord());
+			//if(Likes(letterControl.sendWord()) > 0){
+			if(1 > 0){
+				letterControl.ResetStove();
+			}
+
+				
+		}
+	}
+
+
+
+
+>>>>>>> Ning
 }
