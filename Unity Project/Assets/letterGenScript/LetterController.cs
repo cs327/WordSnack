@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
-    VariableControl variables = new VariableControl();
-	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
-	public int totalLetters,totalVowels;
+	public VariableControl variables;
+//	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
+//	public int totalLetters,totalVowels;
 //	public letterBehaviour [] letterObjs;
 //	public letterBehaviour spawnMe;
 	public letterBehaviour letterObj;
@@ -25,6 +25,7 @@ public class LetterController : MonoBehaviour {
 	public int minWordLength;
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
+	public static Dictionary<char,int> letterScores;
 
 
 
@@ -33,16 +34,44 @@ public class LetterController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//initialize variablecontrol reference
+		variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+
 		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
 		lettersOnBoard = new letterBehaviour[boardSize];
 		lettersOnStove = new letterBehaviour[boardSize];
 		newArraySpot = new bool[boardSize];
 
 		//establishes tuning list, frequencies letters are likely to show up.
-		TuningList();
+		//TuningList();
 		//Creates the list of valid words
 		makeWordList ();
-
+		//if it hasn't already been done by another character, create the letter score dictionary
+		if(letterScores == null)
+		{
+			letterScores = new Dictionary<char, int> ();
+			
+			//Create the dictionary of letter scores
+			foreach (char letter in "eaionrtlsu") {
+				letterScores.Add (letter, 1);
+			}
+			foreach (char letter in "dg") {
+				letterScores.Add (letter, 2);
+			}
+			foreach (char letter in "bcmp") {
+				letterScores.Add (letter, 3);
+			}
+			foreach (char letter in "fhvwy") {
+				letterScores.Add (letter, 4);
+			}
+			letterScores.Add ('k',5);
+			foreach (char letter in "jx") {
+				letterScores.Add (letter, 8);
+			}
+			foreach (char letter in "qz") {
+				letterScores.Add (letter, 10);
+			}
+		}
 
 		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
 		stoveSpots = new Vector3[boardSize];
@@ -82,149 +111,94 @@ public class LetterController : MonoBehaviour {
 		return letters;
 	}
 
-//	char randomVowel(int r)
-//	{	
-//		int currentPos = 0;
-//		//TuningList tl = new TuningList();
-//		int letter = Mathf.RoundToInt(Random.Range(0,totalVowels));
-//		
-//		// System.Console.WriteLine(totalVowels + " " + letter);
-//
-//		if(letter < numE)
-//			return 'e';
-//		currentPos += numE;
-//		if(letter < (currentPos + numA))
-//			return 'a';
-//		currentPos += numA;
-//		if(letter < (currentPos + numI))
-//			return 'i';
-//		currentPos += numI;
-//		if(letter < (currentPos + numO))
-//			return 'o';
-//		currentPos += numO;
-//		if(letter < (currentPos + numU))
-//			return 'u';
-//		return '.';
-//	}
-	
+
 	char randomLetter()
 	{
 		int currentPos = 0;
-//		TuningList tl = new TuningList();
-		int letter = Random.Range(0,totalLetters);
+
+		int letter = Random.Range(0,variables.totalLetters);
+
 		
-		// System.Console.WriteLine(totalLetters + " " + letter);
-		
-		if(letter < numE)
+		if(letter < variables.numE)
 			return 'e';
-		currentPos += numE;
-		if(letter < (currentPos + numA))
+		currentPos += variables.numE;
+		if(letter < (currentPos + variables.numA))
 			return 'a';
-		currentPos += numA;
-		if(letter < (currentPos + numI))
+		currentPos += variables.numA;
+		if(letter < (currentPos + variables.numI))
 			return 'i';
-		currentPos += numI;
-		if(letter < (currentPos + numO))
+		currentPos += variables.numI;
+		if(letter < (currentPos + variables.numO))
 			return 'o';
-		currentPos += numO;
-		if(letter < (currentPos + numN))
+		currentPos += variables.numO;
+		if(letter < (currentPos + variables.numN))
 			return 'n';
-		currentPos += numN;
-		if(letter < (currentPos + numR))
+		currentPos += variables.numN;
+		if(letter < (currentPos + variables.numR))
 			return 'r';
-		currentPos += numR;
-		if(letter < (currentPos + numT))
+		currentPos += variables.numR;
+		if(letter < (currentPos + variables.numT))
 			return 't';
-		currentPos += numT;
-		if(letter < (currentPos + numL))
+		currentPos += variables.numT;
+		if(letter < (currentPos + variables.numL))
 			return 'l';
-		currentPos += numL;
-		if(letter < (currentPos + numS))
+		currentPos += variables.numL;
+		if(letter < (currentPos + variables.numS))
 			return 's';
-		currentPos += numS;
-		if(letter < (currentPos + numU))
+		currentPos += variables.numS;
+		if(letter < (currentPos + variables.numU))
 			return 'u';
-		currentPos += numU;
-		if(letter < (currentPos + numD))
+		currentPos += variables.numU;
+		if(letter < (currentPos + variables.numD))
 			return 'd';
-		currentPos += numD;
-		if(letter < (currentPos + numG))
+		currentPos += variables.numD;
+		if(letter < (currentPos + variables.numG))
 			return 'g';
-		currentPos += numG;
-		if(letter < (currentPos + numB))
+		currentPos += variables.numG;
+		if(letter < (currentPos + variables.numB))
 			return 'b';
-		currentPos += numB;
-		if(letter < (currentPos + numC))
+		currentPos += variables.numB;
+		if(letter < (currentPos + variables.numC))
 			return 'c';
-		currentPos += numC;
-		if(letter < (currentPos + numM))
+		currentPos += variables.numC;
+		if(letter < (currentPos + variables.numM))
 			return 'm';
-		currentPos += numM;
-		if(letter < (currentPos + numP))
+		currentPos += variables.numM;
+		if(letter < (currentPos + variables.numP))
 			return 'p';
-		currentPos += numP;
-		if(letter < (currentPos + numF))
+		currentPos += variables.numP;
+		if(letter < (currentPos + variables.numF))
 			return 'f';
-		currentPos += numF;
-		if(letter < (currentPos + numH))
+		currentPos += variables.numF;
+		if(letter < (currentPos + variables.numH))
 			return 'h';
-		currentPos += numH;
-		if(letter < (currentPos + numV))
+		currentPos += variables.numH;
+		if(letter < (currentPos + variables.numV))
 			return 'v';
-		currentPos += numV;
-		if(letter < (currentPos + numW))
+		currentPos += variables.numV;
+		if(letter < (currentPos + variables.numW))
 			return 'w';
-		currentPos += numW;
-		if(letter < (currentPos + numY))
+		currentPos += variables.numW;
+		if(letter < (currentPos + variables.numY))
 			return 'y';
-		currentPos += numY;
-		if(letter < (currentPos + numK))
+		currentPos += variables.numY;
+		if(letter < (currentPos + variables.numK))
 			return 'k';
-		currentPos += numK;
-		if(letter < (currentPos + numJ))
+		currentPos += variables.numK;
+		if(letter < (currentPos + variables.numJ))
 			return 'j';
-		currentPos += numJ;
-		if(letter < (currentPos + numX))
+		currentPos += variables.numJ;
+		if(letter < (currentPos + variables.numX))
 			return 'x';
-		currentPos += numX;
-		if(letter < (currentPos + numQ))
+		currentPos += variables.numX;
+		if(letter < (currentPos + variables.numQ))
 			return 'q';
-		currentPos += numQ;
-		if(letter < (currentPos + numZ))
+		currentPos += variables.numQ;
+		if(letter < (currentPos + variables.numZ))
 			return 'z';
 		return '.';
 	}
 
-	void TuningList(){
-		numA = 9;
-		numB = 2;
-		numC = 2;
-		numD = 4;
-		numE = 12;
-		numF = 2;
-		numG = 3;
-		numH = 2;
-		numI = 9;
-		numJ = 1;
-		numK = 1;
-		numL = 4;
-		numM = 2;
-		numN = 6;
-		numO = 8;
-		numP = 2;
-		numQ = 1;
-		numR = 6;
-		numX = 1;
-		numT = 6;
-		numU = 4;
-		numV = 2;
-		numW = 2;
-		numX = 1;
-		numY = 2;
-		numZ = 1;
-		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
-		totalVowels = numA + numE + numI + numO + numU;
-	}
 
 	void CreateLetters(string l){
 		//take the string of letters to turn into on screen objects, and chop it into an array of its characters
@@ -595,16 +569,6 @@ public class LetterController : MonoBehaviour {
 		if (GUI.Button(new Rect( 50, 400, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
 		}
-//		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-//			if(checkForWord(sendWord())){
-//				variables.score++;
-//				print ("I'm a word!");
-//				print("Current Score: " + variables.score);
-//			}
-//			else{
-//				print ("Not a word");
-//			}
-//		}
 	}
 
 	void makeWordList () {
@@ -618,7 +582,7 @@ public class LetterController : MonoBehaviour {
 		}
 	}
 	
-	bool checkForWord (string word){
+	public bool checkForWord (string word){
 		//This method will, when passed a word, check if it's a valid word
 		//Our word list happens to contain uppercase only words, so convert before checking
 		return (wordList.Contains (word.ToUpper ()));
