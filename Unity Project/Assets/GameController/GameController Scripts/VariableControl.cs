@@ -4,6 +4,36 @@ using System.Collections;
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
 
+	//letter tuning variables
+	public int numA = 9;
+	public int numB = 2;
+	public int numC = 2;
+	public int numD = 4;
+	public int numE = 12;
+	public int numF = 2;
+	public int numG = 3;
+	public int numH = 2;
+	public int numI = 9;
+	public int numJ = 1;
+	public int numK = 1;
+	public int numL = 4;
+	public int numM = 2;
+	public int numN = 6;
+	public int numO = 8;
+	public int numP = 2;
+	public int numQ = 1;
+	public int numR = 6;
+	public int numS = 4;
+	public int numT = 6;
+	public int numU = 4;
+	public int numV = 2;
+	public int numW = 2;
+	public int numX = 1;
+	public int numY = 2;
+	public int numZ = 1;
+	public int totalLetters,totalVowels;
+
+
 	//tweakable variables: 
 	public int characterSelectNum = 2;
 	public int maxFed = 10;
@@ -39,6 +69,10 @@ public class VariableControl : MonoBehaviour {
 	}
 
 	void Start () {
+		//sets totals for tuning variables of letters
+		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
+		totalVowels = numA + numE + numI + numO + numU;
+
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];

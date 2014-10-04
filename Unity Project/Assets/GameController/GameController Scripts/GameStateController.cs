@@ -72,4 +72,6 @@ public class GameStateController : MonoBehaviour {
 		}
 		variables.timeToChangeGameState = false;
 	}
+
+	//THIS IS A TEST!!!!
 }
