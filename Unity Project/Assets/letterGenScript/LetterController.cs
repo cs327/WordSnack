@@ -26,7 +26,7 @@ public class LetterController : MonoBehaviour {
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
 
-
+	public static Dictionary<char,int> letterScores;
 
 	void Awake(){
 	}
@@ -52,6 +52,31 @@ public class LetterController : MonoBehaviour {
 			bankSpots[i] = new Vector3 (i*(1.5f * (boardSize/7))-5,-3.5f,0);
 		}
 
+		if(letterScores == null)
+		{
+			letterScores = new Dictionary<char, int> ();
+
+			//Create the dictionary of letter scores
+			foreach (char letter in "eaionrtlsu") {
+					letterScores.Add (letter, 1);
+			}
+			foreach (char letter in "dg") {
+				letterScores.Add (letter, 2);
+			}
+			foreach (char letter in "bcmp") {
+				letterScores.Add (letter, 3);
+			}
+			foreach (char letter in "fhvwy") {
+				letterScores.Add (letter, 4);
+			}
+			letterScores.Add ('k',5);
+			foreach (char letter in "jx") {
+				letterScores.Add (letter, 8);
+			}
+			foreach (char letter in "qz") {
+				letterScores.Add (letter, 10);
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -618,7 +643,7 @@ public class LetterController : MonoBehaviour {
 		}
 	}
 	
-	bool checkForWord (string word){
+	public bool checkForWord (string word){
 		//This method will, when passed a word, check if it's a valid word
 		//Our word list happens to contain uppercase only words, so convert before checking
 		return (wordList.Contains (word.ToUpper ()));
