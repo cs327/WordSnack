@@ -5,8 +5,6 @@ using System.Collections.Generic;
 public class LetterController : MonoBehaviour
 {
     VariableControl variables = new VariableControl();
-    public int numA, numB, numC, numD, numE, numF, numG, numH, numI, numJ, numK, numL, numM, numN, numO, numP, numQ, numR, numS, numT, numU, numV, numW, numX, numY, numZ;
-    public int totalLetters, totalVowels;
     //	public letterBehaviour [] letterObjs;
     //	public letterBehaviour spawnMe;
     public letterBehaviour letterObj;
@@ -23,8 +21,6 @@ public class LetterController : MonoBehaviour
     public bool[] newArraySpot;
 
     public TextAsset sowpods;
-    public int minWordLength;
-    public int maxWordLength;
     private List<string> wordList = new List<string>();
 
     public static Dictionary<char, int> letterScores;
@@ -479,7 +475,7 @@ public class LetterController : MonoBehaviour
         for (int j = 0; j < tempWordList.Length; j++)
         {
             string proposedWord = tempWordList[j].Trim();
-            if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength))
+            if ((proposedWord.Length >= variables.minWordLength) && (proposedWord.Length <= variables.maxWordLength))
             {
                 wordList.Add(proposedWord);
             }
