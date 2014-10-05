@@ -53,6 +53,8 @@ public class VariableControl : MonoBehaviour {
 	public int[] TastesForCharacter4;
 	public int[] TastesForCharacter5;
 	//tweakable variables: 
+	public int minWordLength;
+	public int maxWordLength;
 	public int characterSelectNum = 2;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;

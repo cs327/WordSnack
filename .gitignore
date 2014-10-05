@@ -58,3 +58,5 @@ sysinfo.txt
 *.cs
 =======
 >>>>>>> Ning
+
+*.csproj
