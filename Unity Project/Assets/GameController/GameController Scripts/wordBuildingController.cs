@@ -2,14 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class wordBuildingController : MonoBehaviour {
-<<<<<<< HEAD
 	public GameObject [] characters = new GameObject[6];
-	VariableControl variables;
-=======
-	public GameObject [] characters = new GameObject[5];
-	public Texture2D endGameButton;
 	public VariableControl variables;
->>>>>>> Ning
+	public Texture2D endGameButton;
 	int character1Num = 1;
 	int character2Num = 2;
 	public GameObject character1;

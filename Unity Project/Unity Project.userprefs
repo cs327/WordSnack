@@ -1,32 +1,34 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/PlayerScripts/Character.cs">
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/wordBuildingController.cs">
->>>>>>> Ning
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUI/GUI Scripts/CharacterSelectUI.cs">
     <Files>
+      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="32" Column="6" />
+      <File FileName="Assets/GUI/GUI Scripts/UIManager.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Manager/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Background/Background Scripts/BackgroundBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Misc/Menu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Background/Background Scripts/ChangeScene.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/UI/UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/scoreScreenScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="1" Column="1" />
       <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets/Characters/PlayerScripts/Character.cs" Line="126" Column="2" />
-      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="17" Column="28" />
-      <File FileName="Assets/GameController/GameController Scripts/characterSelectController.cs" Line="1" Column="1" />
-=======
       <File FileName="Assets/Characters/PlayerScripts/SelectScript.cs" Line="1" Column="1" />
       <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Misc/MoveLevelSelection.cs" Line="1" Column="1" />
       <File FileName="Assets/GameController/GameController Scripts/characterSelectController.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/CharacterSelectUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/CharacterSelectUI.cs" Line="32" Column="48" />
       <File FileName="Assets/Characters/PlayerScripts/Character.cs" Line="1" Column="1" />
       <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
       <File FileName="Assets/GameController/GameController Scripts/scoreScreenController.cs" Line="1" Column="1" />
       <File FileName="Assets/GameController/GameController Scripts/splashScreenController.cs" Line="1" Column="1" />
       <File FileName="Assets/GameController/GameController Scripts/startScreenController.cs" Line="1" Column="1" />
-      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="1" Column="1" />
-      <File FileName="Assets/letterGenScript/LetterController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="7" Column="9" />
+      <File FileName="Assets/letterGenScript/LetterController.cs" Line="461" Column="108" />
       <File FileName="Assets/Characters/PlayerScripts/TasteCollection.cs" Line="1" Column="1" />
-      <File FileName="Assets/GUI/GUI Scripts/ScoreGUI.cs" Line="23" Column="26" />
->>>>>>> Ning
+      <File FileName="Assets/GUI/GUI Scripts/ScoreGUI.cs" Line="24" Column="5" />
+      <File FileName="Assets/GUI/GUI Scripts/WordMakingGUI.cs" Line="31" Column="85" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
