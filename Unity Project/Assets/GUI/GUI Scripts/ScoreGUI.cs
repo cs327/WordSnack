@@ -31,14 +31,8 @@ public class ScoreGUI : MonoBehaviour {
 		big.normal.textColor = Color.black;
 
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
-<<<<<<< HEAD
 		GUI.color = Color.black;
-		//GUI.Label(new Rect(600, 150, 100, 30), score.ToString(), big);
-		GUIUtility.RotateAroundPivot (-90, new Vector2 (160, 30));
-		GUI.Label(new Rect(600, 150, 100, 30), score.ToString(), big);
-=======
 		GUIUtility.RotateAroundPivot(-9.8f, new Vector2(Screen.width/2, Screen.height/2));
 		GUI.Label(new Rect(Screen.width*0.65f, Screen.height*0.71f, Screen.width*0.2f, Screen.height*0.2f), score.ToString(), big);
->>>>>>> Ning
 	}
 }
