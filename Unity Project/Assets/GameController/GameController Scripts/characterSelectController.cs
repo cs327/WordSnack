@@ -4,7 +4,10 @@ using System.Collections;
 public class characterSelectController : MonoBehaviour {
 	VariableControl variables;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public GUIStyle big;
+=======
+>>>>>>> Ning
 =======
 >>>>>>> Ning
 	// Use this for initialization
@@ -20,17 +23,23 @@ public class characterSelectController : MonoBehaviour {
 	void OnGUI () {
 		if (variables.timeToChangeGameState) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if (GUI.Button(new Rect (100, 100, 75, 200), "GO", big)) {
 				loadMainGame();
 			}
 		} else {
 			GUI.Box (new Rect (50, 0, 600, 200), "Click Characters to Select Them", big);
 =======
+=======
+>>>>>>> Ning
 			//if (GUI.Button(new Rect (100, 100, 100, 30), "GO")) {
 				//loadMainGame();
 			//}
 		} else {
 
+<<<<<<< HEAD
+>>>>>>> Ning
+=======
 >>>>>>> Ning
 		}
 	}

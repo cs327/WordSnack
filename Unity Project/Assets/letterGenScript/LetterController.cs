@@ -4,9 +4,15 @@ using System.Collections.Generic;
 
 public class LetterController : MonoBehaviour {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public VariableControl variables;
 //	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
 //	public int totalLetters,totalVowels;
+=======
+    VariableControl variables = new VariableControl();
+	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
+	public int totalLetters,totalVowels;
+>>>>>>> Ning
 =======
     VariableControl variables = new VariableControl();
 	public int numA,numB,numC,numD,numE,numF,numG,numH,numI,numJ,numK,numL,numM,numN,numO,numP,numQ,numR,numS,numT,numU,numV,numW,numX,numY,numZ;
@@ -32,7 +38,10 @@ public class LetterController : MonoBehaviour {
 	public int maxWordLength;
 	private List<string> wordList = new List<string>();
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static Dictionary<char,int> letterScores;
+=======
+>>>>>>> Ning
 =======
 >>>>>>> Ning
 
@@ -584,6 +593,7 @@ public class LetterController : MonoBehaviour {
 		//} else 
 		if (GUI.Button(new Rect( 50, 400, 100, 30), "Shuffle Letters")) { //shuffles the letters in your hand
 			shuffleLetters();
+<<<<<<< HEAD
 		}
 //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
 //			if(checkForWord(sendWord())){
@@ -605,12 +615,40 @@ public class LetterController : MonoBehaviour {
 			if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength)) {
 				wordList.Add (proposedWord);
 			}
+=======
+>>>>>>> Ning
 		}
+//		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
+//			if(checkForWord(sendWord())){
+//				variables.score++;
+//				print ("I'm a word!");
+//				print("Current Score: " + variables.score);
+//			}
+//			else{
+//				print ("Not a word");
+//			}
+//		}
 	}
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 	public bool checkForWord (string word){
 =======
+	bool checkForWord (string word){
+>>>>>>> Ning
+=======
+
+	void makeWordList () {
+		//This method makes the word list once
+		string [] tempWordList = sowpods.text.Split ('\n');
+		for (int j = 0; j < tempWordList.Length; j++) {
+			string proposedWord = tempWordList [j].Trim ();
+			if ((proposedWord.Length >= minWordLength) && (proposedWord.Length <= maxWordLength)) {
+				wordList.Add (proposedWord);
+			}
+		}
+	}
+	
 	bool checkForWord (string word){
 >>>>>>> Ning
 		//This method will, when passed a word, check if it's a valid word

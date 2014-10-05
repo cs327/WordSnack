@@ -23,7 +23,10 @@ public class wordBuildingController : MonoBehaviour {
 	void OnGUI () {
 		if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			PlayerPrefs.SetFloat ("Score", variables.score);
+=======
+>>>>>>> Ning
 =======
 >>>>>>> Ning
 			Application.LoadLevel("ScoreScreen");

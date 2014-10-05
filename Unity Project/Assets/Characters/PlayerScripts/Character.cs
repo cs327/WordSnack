@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Linq;
+=======
+
+>>>>>>> Ning
 =======
 
 >>>>>>> Ning
@@ -12,6 +16,7 @@ public class Character : MonoBehaviour {
 	public int characterNum;
 	public LetterController letterControl;
 	public GameObject letterGenerator;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	/* Characters:
@@ -44,6 +49,8 @@ public class Character : MonoBehaviour {
 		return wordScore;
 	}
 =======
+=======
+>>>>>>> Ning
 
 	public Character (List<TasteCollection.Taste> myTastes)
 	{
@@ -65,6 +72,9 @@ public class Character : MonoBehaviour {
 		return satisfied + bonus;
 	}
 
+<<<<<<< HEAD
+>>>>>>> Ning
+=======
 >>>>>>> Ning
 	public void AddTaste(TasteCollection.Taste taste)
 	{
@@ -77,7 +87,11 @@ public class Character : MonoBehaviour {
 				myTastes.Add(t);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> Ning
 =======
 
 >>>>>>> Ning
@@ -87,6 +101,7 @@ public class Character : MonoBehaviour {
 			myTastes.Remove (taste);
 	}
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	// Use this for initialization
@@ -98,6 +113,8 @@ public class Character : MonoBehaviour {
 			letterControl = letterGenerator.GetComponent<LetterController>();
 			
 =======
+=======
+>>>>>>> Ning
 
 	// Use this for initialization
 	void Start () {
@@ -105,12 +122,16 @@ public class Character : MonoBehaviour {
 
 			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 			letterControl = letterGenerator.GetComponent<LetterController>();
+<<<<<<< HEAD
+>>>>>>> Ning
+=======
 >>>>>>> Ning
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
 <<<<<<< HEAD
 		
 	}
@@ -134,6 +155,8 @@ public class Character : MonoBehaviour {
 	
 	
 =======
+=======
+>>>>>>> Ning
 	
 	}
 
@@ -152,5 +175,8 @@ public class Character : MonoBehaviour {
 
 
 
+<<<<<<< HEAD
+>>>>>>> Ning
+=======
 >>>>>>> Ning
 }
