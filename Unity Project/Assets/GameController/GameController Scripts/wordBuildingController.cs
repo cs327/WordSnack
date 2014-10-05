@@ -22,6 +22,7 @@ public class wordBuildingController : MonoBehaviour {
 
 	void OnGUI () {
 		if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
+			PlayerPrefs.SetFloat ("Score", variables.score);
 			Application.LoadLevel("ScoreScreen");
 		}
 		GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");

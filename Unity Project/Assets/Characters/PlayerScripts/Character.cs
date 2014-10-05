@@ -2,20 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 public class Character : MonoBehaviour {
 	private List<TasteCollection.Taste> myTastes;
 	//public CharacterTimers Timer;
 	public int characterNum;
 	public LetterController letterControl;
 	public GameObject letterGenerator;
+
 	private VariableControl variables;
-	
-	/* Characters:
-	 * 0 = Trash Character
-	 * 1 = Steve
-	 * 2 = Bob
-	 * 3 = Sue
-	 * */
+
 	
 	//Dictionary of taste ID's to names
 	public static Dictionary<int,TasteCollection.Taste> tasteDictionary;
@@ -42,6 +38,7 @@ public class Character : MonoBehaviour {
 		}
 		return wordScore;
 	}
+
 	public void AddTaste(TasteCollection.Taste taste)
 	{
 		myTastes.Add(taste);
@@ -53,14 +50,14 @@ public class Character : MonoBehaviour {
 			if(!myTastes.Contains(t))
 				myTastes.Add(t);
 	}
-	
+
 	public void RemoveTaste(TasteCollection.Taste taste)
 	{
 		if (myTastes.Contains (taste))
 			myTastes.Remove (taste);
 	}
 	
-	
+
 	// Use this for initialization
 	void Start () {
 		//get the same variables everyone else is using
@@ -117,19 +114,20 @@ public class Character : MonoBehaviour {
 			}
 			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 			letterControl = letterGenerator.GetComponent<LetterController>();
-			
+
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 	
 	void OnMouseDown(){
 		if(Application.loadedLevelName == "WordMaking"){
 			//First grab the word - we're gonna need it!
 			string word = letterControl.sendWord ();
+			Debug.Log (word);
 			//score the word - do we have a score?
 			int wordScore = Likes(word);
 			Debug.Log ("The wordScore is");
@@ -147,8 +145,5 @@ public class Character : MonoBehaviour {
 			
 		}
 	}
-	
-	
-	
-	
+
 }

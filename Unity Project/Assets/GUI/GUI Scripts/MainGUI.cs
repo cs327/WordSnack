@@ -34,14 +34,7 @@ public class MainGUI : MonoBehaviour {
 		} else if (Application.loadedLevelName == "ScoreScreen") {
 			GUI.Box (new Rect (100, 100, 100, 30), "Score: " + variables.score);
 		} else if (Application.loadedLevelName == "CharacterSelect") {
-			GUI.Box (new Rect (400, 50, 200, 30), "Character Select Phase");
-			if (variables.timeToChangeGameState) {
-				if (GUI.Button(new Rect (100, 100, 100, 30), "GO")) {
-					gameState.loadMainGame();
-				}
-			} else {
-				GUI.Box (new Rect (100, 100, 200, 30), "Click Characters to Select Them");
-			}
+
 		}
 	}
 }

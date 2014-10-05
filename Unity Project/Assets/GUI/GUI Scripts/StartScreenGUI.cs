@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class StartScreenGUI : MonoBehaviour {
 
-	public GUITexture MainMenu;
-	float scaleFactor;
+	public Texture background;
 
-	void Start(){
-		scaleFactor = Mathf.Max (Screen.width / MainMenu.pixelInset.width, Screen.height / MainMenu.pixelInset.height);
-		float newWidth = MainMenu.pixelInset.width * scaleFactor;
-		float newHeight = MainMenu.pixelInset.height * scaleFactor;
-		MainMenu.pixelInset = new Rect (-newWidth / 2, -newHeight / 2, newWidth, newHeight);
+	void OnGUI(){
+		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
 	}
 	
 	// Update is called once per frame
