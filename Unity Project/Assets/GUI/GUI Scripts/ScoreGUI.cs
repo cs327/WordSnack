@@ -4,6 +4,7 @@ using System.Collections;
 public class ScoreGUI : MonoBehaviour {
 	public float score;
 	public GUIStyle big;
+	public Texture background;
 	// Use this for initialization
 	void Start () {
 		score = PlayerPrefs.GetFloat("Score");
@@ -18,7 +19,8 @@ public class ScoreGUI : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		GUI.color = Color.white;
-		GUI.Box(new Rect(600, 150, 100, 30), score.ToString(), big);
+		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
+		GUI.color = Color.black;
+		//GUI.Box(new Rect(600, 150, 100, 30), score.ToString(), big);
 	}
 }

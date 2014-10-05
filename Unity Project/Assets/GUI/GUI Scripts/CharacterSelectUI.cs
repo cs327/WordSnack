@@ -22,14 +22,14 @@ public class CharacterSelectUI : MonoBehaviour {
 		style.normal.background = background;
 		GUI.Label (new Rect (Screen.width * 0.17f, Screen.height*0.12f, Screen.width*0.65f, Screen.height*0.13f), "", style);
 		style.normal.background = null;
-		GUI.Label (new Rect (Screen.width * 0.15f, Screen.height*0.15f, Screen.width*0.7f, Screen.height*0.15f), "\t\tChoose Exactly Two Characters!", style);
+		GUI.Label (new Rect (Screen.width * 0.19f, Screen.height*0.15f, Screen.width*0.7f, Screen.height*0.15f), "Choose Exactly Two Characters!", style);
 	
 		if(GameObject.Find("GameController").GetComponent<VariableControl>().timeToChangeGameState){
 			style.fontSize = Mathf.RoundToInt(16*scale);
 			style.normal.background = background;
 			GUI.Label (new Rect (Screen.width * 0.78f, Screen.height*0.85f, Screen.width*0.18f, Screen.height*0.12f), "", style);
 			style.normal.background = null;
-			if(GUI.Button (new Rect (Screen.width * 0.75f, Screen.height*0.88f, Screen.width*0.16f, Screen.height*0.1f), "\t\tFeed them", style)){
+			if(GUI.Button (new Rect (Screen.width * 0.79f, Screen.height*0.88f, Screen.width*0.16f, Screen.height*0.1f), "Feed them", style)){
 				GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 			}
 		}

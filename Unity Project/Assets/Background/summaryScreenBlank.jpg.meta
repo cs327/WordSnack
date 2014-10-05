@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 7ddd6144bc4c64a9cb9135827c370458
+guid: 609f4f6cb2ddd464e95f1671f8f8f199
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SplashScreen2
+    21300000: summaryScreenBlank
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

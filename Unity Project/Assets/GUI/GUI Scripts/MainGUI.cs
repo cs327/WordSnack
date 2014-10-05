@@ -29,7 +29,7 @@ public class MainGUI : MonoBehaviour {
 			if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
 				Application.LoadLevel("ScoreScreen");
 			}
-			GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
+			//GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
 		//displays the player's score during the scorescreen
 		} else if (Application.loadedLevelName == "ScoreScreen") {
 			GUI.Box (new Rect (100, 100, 100, 30), "Score: " + variables.score);
