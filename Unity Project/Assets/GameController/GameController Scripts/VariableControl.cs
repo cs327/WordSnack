@@ -73,10 +73,6 @@ public class VariableControl : MonoBehaviour {
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
 	public bool wordSelected;
-	public bool gotOne;
-
-    //Mike - vector to store the words fed to the characters throughout the game.
-    public string[] fedWords;
 
 	// Use this for initialization
 	void Awake() {
