@@ -26,5 +26,6 @@ public class wordBuildingController : MonoBehaviour {
 			Application.LoadLevel("ScoreScreen");
 		}
 		GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
+		GUI.Box (new Rect (400, 100, 200, 30), "Score: " + variables.score);
 	}
 }
