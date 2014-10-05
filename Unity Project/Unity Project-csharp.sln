@@ -23,8 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
-																																																																		GlobalSection(MonoDevelopProperties) = preSolution
+																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Ning
@@ -32,7 +31,13 @@ Global
 																																																																			GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Ning
 =======
-																																																																				GlobalSection(MonoDevelopProperties) = preSolution
+																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Ning
+=======
+																																																																						GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
 >>>>>>> Ning
 =======
 =======

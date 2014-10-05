@@ -13,7 +13,7 @@ public class characterSelectController : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	
 	public void loadMainGame () {
 		for (int i = 0; i < variables.characterSelectNum; i++) {
 			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];

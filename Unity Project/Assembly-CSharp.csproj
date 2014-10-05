@@ -52,7 +52,6 @@
      <Compile Include="Assets\Characters\PlayerScripts\CharacterTimers.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\SelectScript.cs" />
      <Compile Include="Assets\Characters\PlayerScripts\TasteCollection.cs" />
-     <Compile Include="Assets\Characters\PlayerScripts\Tastes.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\CharacterSelectGUI.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\CharacterSelectUI.cs" />
      <Compile Include="Assets\GUI\GUI Scripts\InputManager.cs" />
