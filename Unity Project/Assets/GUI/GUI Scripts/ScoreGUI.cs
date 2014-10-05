@@ -21,6 +21,8 @@ public class ScoreGUI : MonoBehaviour {
 	void OnGUI () {
 		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
 		GUI.color = Color.black;
-		//GUI.Box(new Rect(600, 150, 100, 30), score.ToString(), big);
+		//GUI.Label(new Rect(600, 150, 100, 30), score.ToString(), big);
+		GUIUtility.RotateAroundPivot (-90, new Vector2 (160, 30));
+		GUI.Label(new Rect(600, 150, 100, 30), score.ToString(), big);
 	}
 }
