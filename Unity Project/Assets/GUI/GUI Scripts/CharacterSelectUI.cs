@@ -20,9 +20,9 @@ public class CharacterSelectUI : MonoBehaviour {
 		style.fontSize = Mathf.RoundToInt(20 * scale);
 		style.normal.textColor = Color.black;
 		style.normal.background = background;
-		GUI.Label (new Rect (Screen.width * 0.17f, Screen.height*0.12f, Screen.width*0.65f, Screen.height*0.13f), "", style);
+		GUI.Label (new Rect (Screen.width * 0.17f, Screen.height*0.08f, Screen.width*0.65f, Screen.height*0.13f), "", style);
 		style.normal.background = null;
-		GUI.Label (new Rect (Screen.width * 0.19f, Screen.height*0.15f, Screen.width*0.7f, Screen.height*0.15f), "Choose Exactly Two Characters!", style);
+		GUI.Label (new Rect (Screen.width * 0.19f, Screen.height*0.1f, Screen.width*0.7f, Screen.height*0.15f), "Choose Exactly Two Characters!", style);
 	
 		if(GameObject.Find("GameController").GetComponent<VariableControl>().timeToChangeGameState){
 			style.fontSize = Mathf.RoundToInt(16*scale);
