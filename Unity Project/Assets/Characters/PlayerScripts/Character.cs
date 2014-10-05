@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Character : MonoBehaviour
 {
-    private List<TasteCollection.Taste> myTastes;
+    public List<TasteCollection.Taste> myTastes;
     //public CharacterTimers Timer;
     public int characterNum;
     public LetterController letterControl;

@@ -25,6 +25,7 @@ public class SelectScript : MonoBehaviour {
 		//increases the character's size if it is selected
 		if (selected) {
 			gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
+
 		} else {
 			//otherwise resets character to regular size
 			gameObject.transform.localScale = new Vector3 (1, 1, 1);
@@ -64,6 +65,15 @@ public class SelectScript : MonoBehaviour {
 			selected = false;
 		} else if (selected == false) {
 			selected = true;
+		}
+	}
+
+	void OnGUI(){
+		if(selected){
+			float scale = Mathf.Max (Screen.width / 479.0f, Screen.height/ 319.0f);
+			Camera c = GameObject.Find ("Main Camera").camera;
+			Vector3 screenPoint = c.WorldToScreenPoint(gameObject.transform.position);
+			GUI.Box( new Rect( screenPoint.x - 30*scale, screenPoint.y + 80*scale, Screen.width* 0.13f,Screen.height*0.2f), "Tastes: " );
 		}
 	}
 }
