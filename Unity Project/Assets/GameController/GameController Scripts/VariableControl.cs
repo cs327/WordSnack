@@ -33,6 +33,25 @@ public class VariableControl : MonoBehaviour {
 	public int numZ = 1;
 	public int totalLetters,totalVowels;
 
+	//tweakable taste multipliers
+	public float threeLettersMult;
+	public float fiveOrLongerMult;
+	public float uncommonLettersMult;
+	public float endsWithVowelMult;
+	public float twoOrMoreVowelsMult;
+	public float twoOrMoreSameMult;
+	public float startsWithVowelMult;
+	public float startsAndEndsWithSameMult;
+	public float fourLettersMult;
+	public float noPreferenceMult;
+	public float trashCollectionMult;
+	//tweakable character tastes
+	public int[] TastesForCharacter1;
+	public int[] TastesForCharacter2;
+	public int[] TastesForCharacter3;
+	public int[] TastesForCharacter4;
+	public int[] TastesForCharacter5;
+
 
 	//tweakable variables: 
 	public int characterSelectNum = 2;
