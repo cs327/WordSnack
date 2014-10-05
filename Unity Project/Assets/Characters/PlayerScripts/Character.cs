@@ -17,16 +17,19 @@ public class Character : MonoBehaviour
 
     public int Likes(string word)
     {
-        if (characterNum != 0)
-        { //It's the trash character
-            if (letterControl.checkForWord(word) == false)
-            {
-                Debug.Log("Not a word and this isn't the trash character");
-                return 0;
-            }
-        }
+        if (characterNum != 0) { //If we're not the trash character... 
+						if (letterControl.checkForWord (word) == false) {
+								Debug.Log ("Not a word and this isn't the trash character");
+								return 0;
+						}
+				} else {
+						//If we ARE the trash character, don't let people throw away single letters
+						if (word.Length == 1) {
+							return 0;
+						}
+				}
         //If we get here, either we're the trash character, or it was a proper word
-        Debug.Log("About to score the word");
+        //Debug.Log("About to score the word");
         float tempScore = scoreWord(word);
         return (int)tempScore;
     }
@@ -38,15 +41,13 @@ public class Character : MonoBehaviour
         {
             wordScore += LetterController.letterScores[letter];
         }
-        Debug.Log("Score for the letters is");
-        Debug.Log(wordScore);
+        Debug.Log("Score for the letters is" + wordScore);
         foreach (TasteCollection.Taste t in myTastes)
         {
-            Debug.Log("Checking a taste");
+            //Debug.Log("Checking a taste");
             wordScore *= t(word);
         }
-        Debug.Log("Score after tastes is");
-        Debug.Log(wordScore);
+        Debug.Log("Score after tastes is" + wordScore);
         return wordScore;
     }
 
@@ -141,8 +142,7 @@ public class Character : MonoBehaviour
                 wordsFedToMe.Add(word);
                 //update the score!
                 variables.score += wordScore;
-                Debug.Log("The total score is");
-                Debug.Log(variables.score);
+                Debug.Log("The total score is" + variables.score);
                 letterControl.ResetStove();
             }
         }
