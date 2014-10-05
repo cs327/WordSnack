@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 public class Character : MonoBehaviour {
 	private List<TasteCollection.Taste> myTastes;
-	public CharacterTimers Timer;
+	//public CharacterTimers Timer;
 	public int characterNum;
 	public LetterController letterControl;
 	public GameObject letterGenerator;
+	private VariableControl variables;
 	
 	/* Characters:
 	 * 0 = Trash Character
@@ -16,16 +17,19 @@ public class Character : MonoBehaviour {
 	 * 3 = Sue
 	 * */
 	
-	
-	public float Likes(string word) 
+	//Dictionary of taste ID's to names
+	public static Dictionary<int,TasteCollection.Taste> tasteDictionary;
+	public List<string> wordsFedToMe;
+
+	public int Likes(string word) 
 	{
-		float score = 0;
 		if (characterNum != 0) { //It's the trash character
 			if (letterControl.checkForWord(word) == false)
+				Debug.Log ("Not a word and this isn't the trash character");
 				return 0;
 		}
 		//If we get here, either we're the trash character, or it was a proper word
-		return scoreWord(word);
+		return (int)scoreWord(word);
 	}
 	
 	float scoreWord (string word) {
@@ -42,6 +46,7 @@ public class Character : MonoBehaviour {
 	{
 		myTastes.Add(taste);
 	}
+
 	public void AddTaste(List<TasteCollection.Taste> tastes)
 	{
 		foreach(TasteCollection.Taste t in tastes)
@@ -58,9 +63,58 @@ public class Character : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		//get the same variables everyone else is using
+		variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+		//get my character number in the stupidest way possible - FIXME!!
+		/*if (variables.gotOne == false) {
+						variables.gotOne = true;
+						characterNum = variables.selectedCharacterNums [0];
+				} else {
+						characterNum = variables.selectedCharacterNums [1];
+				}
+*/
+		//print my character Number for debugging purposes
+		//if (Application.loadedLevelName == "WordMaking") {
+						print ("My character number is");
+						print (characterNum);
+		//		}
+
+		if(tasteDictionary == null)
+		{
+			tasteDictionary = new Dictionary<int,TasteCollection.Taste> ();
+			
+			//Create the dictionary of taste ID's to functions
+			tasteDictionary.Add (0, TasteCollection.threeLetters);
+			tasteDictionary.Add (1, TasteCollection.fiveOrLonger);
+			tasteDictionary.Add (2, TasteCollection.unCommonLetters);
+			tasteDictionary.Add (3, TasteCollection.endsWithVowel);
+			tasteDictionary.Add (4, TasteCollection.twoOrMoreVowels);
+			tasteDictionary.Add (5, TasteCollection.twoOrMoreSame);
+			tasteDictionary.Add (6, TasteCollection.startsWithVowel);
+			tasteDictionary.Add (7, TasteCollection.startsAndEndsWithSame);
+			tasteDictionary.Add (8, TasteCollection.fourLetters);
+			tasteDictionary.Add (9, TasteCollection.noPreference);
+			tasteDictionary.Add (10, TasteCollection.trashCollection);
+
+		}
+
 		myTastes = new List<TasteCollection.Taste>();
 		if(Application.loadedLevelName == "WordMaking"){
-			this.AddTaste(TasteCollection.StartsAndEndsWithSame);
+			//initialize the tastes for the characters
+			//First make a generic list of the character taste arrays so that I can
+			//easily access my tastes with my character number
+			List<int[]> characterTastes = new List<int[]>();
+			characterTastes.Add (new int[] {10}); //The trash character, ID 0, has one taste, taste 10
+			characterTastes.Add (variables.TastesForCharacter1);
+			characterTastes.Add (variables.TastesForCharacter2);
+			characterTastes.Add (variables.TastesForCharacter3);
+			characterTastes.Add (variables.TastesForCharacter4);
+			characterTastes.Add (variables.TastesForCharacter5);
+		
+			//now we add an arbitrary number of tastes
+			foreach(int t in characterTastes[characterNum]) {
+				this.AddTaste(tasteDictionary[t]);
+			}
 			letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 			letterControl = letterGenerator.GetComponent<LetterController>();
 			
@@ -74,12 +128,19 @@ public class Character : MonoBehaviour {
 	
 	void OnMouseDown(){
 		if(Application.loadedLevelName == "WordMaking"){
-			print(letterControl.sendWord());
-			float wordScore = Likes (letterControl.sendWord ());
+			//First grab the word - we're gonna need it!
+			string word = letterControl.sendWord ();
+			//score the word - do we have a score?
+			int wordScore = Likes(word);
 			Debug.Log ("The wordScore is");
 			Debug.Log (wordScore);
+			//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 			if(wordScore > 0){
 				//if(1 > 0){
+				//Keep track of words fed to me!
+				wordsFedToMe.Add(word);
+				//update the score!
+				variables.score += wordScore;
 				letterControl.ResetStove();
 			}
 			
