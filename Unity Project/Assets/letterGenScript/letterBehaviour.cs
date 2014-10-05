@@ -45,7 +45,8 @@ public class letterBehaviour : MonoBehaviour {
 
 		letterAlphabetOrder = thisChar[0].GetHashCode() - 97;
 
-		thisSprite.sprite = sprites[letterAlphabetOrder];
+		if (letterAlphabetOrder >= 0)
+        thisSprite.sprite = sprites[letterAlphabetOrder];
 
 	}
 
