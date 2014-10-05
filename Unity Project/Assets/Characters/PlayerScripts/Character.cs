@@ -17,25 +17,34 @@ public class Character : MonoBehaviour {
 	public static Dictionary<int,TasteCollection.Taste> tasteDictionary;
 	public List<string> wordsFedToMe;
 
+
 	public int Likes(string word) 
-	{
-		if (characterNum != 0) { //It's the trash character
-			if (letterControl.checkForWord(word) == false)
+	{	
+		if (characterNum != 0) { //It's the trash character		
+			if (letterControl.checkForWord (word) == false) {			
 				Debug.Log ("Not a word and this isn't the trash character");
-				return 0;
+				return 0;			
+			}	
 		}
 		//If we get here, either we're the trash character, or it was a proper word
-		return (int)scoreWord(word);
+		Debug.Log ("About to score the word");
+		float tempScore = scoreWord (word);
+		return (int)tempScore;	
 	}
-	
+
 	float scoreWord (string word) {
 		float wordScore = 0;
 		foreach (char letter in word) {
 			wordScore += LetterController.letterScores[letter];
 		}
+		Debug.Log ("Score for the letters is");
+		Debug.Log (wordScore);
 		foreach (TasteCollection.Taste t in myTastes) {
+			Debug.Log ("Checking a taste");
 			wordScore *= t(word);
 		}
+		Debug.Log ("Score after tastes is");
+		Debug.Log (wordScore);
 		return wordScore;
 	}
 
@@ -62,19 +71,14 @@ public class Character : MonoBehaviour {
 	void Start () {
 		//get the same variables everyone else is using
 		variables = GameObject.Find("GameController").GetComponent<VariableControl>();
-		//get my character number in the stupidest way possible - FIXME!!
-		/*if (variables.gotOne == false) {
-						variables.gotOne = true;
-						characterNum = variables.selectedCharacterNums [0];
-				} else {
-						characterNum = variables.selectedCharacterNums [1];
-				}
-*/
+		//For testing because I can't get a real character number
+		if(Application.loadedLevelName == "WordMaking")
+			characterNum = Random.Range (0, 5);
 		//print my character Number for debugging purposes
-		//if (Application.loadedLevelName == "WordMaking") {
+		if (Application.loadedLevelName == "WordMaking") {
 						print ("My character number is");
 						print (characterNum);
-		//		}
+				}
 
 		if(tasteDictionary == null)
 		{
@@ -127,11 +131,9 @@ public class Character : MonoBehaviour {
 		if(Application.loadedLevelName == "WordMaking"){
 			//First grab the word - we're gonna need it!
 			string word = letterControl.sendWord ();
-			Debug.Log (word);
 			//score the word - do we have a score?
 			int wordScore = Likes(word);
-			Debug.Log ("The wordScore is");
-			Debug.Log (wordScore);
+			Debug.Log (word);
 			//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 			if(wordScore > 0){
 				//if(1 > 0){
@@ -139,6 +141,8 @@ public class Character : MonoBehaviour {
 				wordsFedToMe.Add(word);
 				//update the score!
 				variables.score += wordScore;
+				Debug.Log ("The total score is");
+				Debug.Log (variables.score);
 				letterControl.ResetStove();
 			}
 			

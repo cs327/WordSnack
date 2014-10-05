@@ -438,6 +438,7 @@ public class LetterController : MonoBehaviour {
 	public bool checkForWord (string word){
 		//This method will, when passed a word, check if it's a valid word
 		//Our word list happens to contain uppercase only words, so convert before checking
+		//Debug.Log ("Checking a word in checkForWord!");
 		return (wordList.Contains (word.ToUpper ()));
 	}
 
