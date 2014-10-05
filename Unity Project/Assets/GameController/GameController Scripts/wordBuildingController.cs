@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class wordBuildingController : MonoBehaviour {
@@ -22,7 +22,6 @@ public class wordBuildingController : MonoBehaviour {
 
 	void OnGUI () {
 		if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
-
 			PlayerPrefs.SetFloat ("Score", variables.score);
 			Application.LoadLevel("ScoreScreen");
 		}

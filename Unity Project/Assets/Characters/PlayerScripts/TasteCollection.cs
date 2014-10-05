@@ -8,8 +8,10 @@ using System.Linq;
 public static class TasteCollection
 {
 	public delegate float Taste(string word);
+
 	//makes sure we're using the same copy as everybody else
 	private static VariableControl variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+	
 	private static char[] consonants =
 	{
 		'a', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
@@ -19,31 +21,35 @@ public static class TasteCollection
 	{
 		'a','e','i','o','u',
 	};
+
 	private static char[] uncommonLetterList =
 	{
 		'f', 'h', 'v', 'w', 'y', 'k', 'j', 'x', 'q', 'z',
 	};
+	
 	public static float unCommonLetters(string word)
 	{
-		foreach (char letter in word) {
+		foreach (char letter in word) { 
 			if (uncommonLetterList.Contains (letter))
-				return variables.uncommonLettersMult;	
+				return variables.uncommonLettersMult;		
 		}
 		return 1;
 	}
+	
 	/*
-* This preference no longer exists in the GDD
-* public static float startsWithE(string word)
-{
-if (word [0] == 'e')
-return variables.startsWithEMult;
-else
-return 1;
-}
-*/
+	 * This preference no longer exists in the GDD
+	 * public static float startsWithE(string word)
+	{
+		if (word [0] == 'e')
+			return variables.startsWithEMult;
+		else
+			return 1;
+	}
+	*/
+	
 	public static float twoOrMoreSame(string word)
 	{
-		var distinct = word.Distinct ();	
+		var distinct = word.Distinct ();				
 		if (distinct.Count() == word.Length)
 			return 1;
 		else
@@ -56,6 +62,7 @@ return 1;
 		else
 			return 1;
 	}
+
 	public static float fourLetters(string word)
 	{
 		if (word.Length == 4)
@@ -63,6 +70,7 @@ return 1;
 		else
 			return 1;
 	}
+
 	public static float threeLetters(string word)
 	{
 		if (word.Length == 3)
@@ -70,18 +78,21 @@ return 1;
 		else
 			return 1;
 	}
+	
 	public static float fiveOrLonger(string word)
 	{
-		return (word.Length <= 5) ?
-			1 :
-				variables.fiveOrLongerMult;
+		return (word.Length <= 5) ? 
+			1 : 
+			variables.fiveOrLongerMult;
 	}
+	
 	public static float endsWithVowel(string word)
 	{
 		if (vowels.Contains(word[word.Length - 1]))
 			return variables.endsWithVowelMult;
 		return 1;
 	}
+
 	public static float startsWithVowel(string word)
 	{
 		if (vowels.Contains(word[0]))
@@ -104,13 +115,15 @@ return 1;
 		}
 		return 1;
 	}
+
 	public static float noPreference(string word)
 	{
-		return variables.noPreferenceMult;
-	}
+				return variables.noPreferenceMult;
+		}
 	public static float trashCollection(string word)
 	{
 		//Debug.Log ("Collecting trash!");
-		return variables.trashCollectionMult;
-	}
+				return variables.trashCollectionMult;
+		}
 }
+

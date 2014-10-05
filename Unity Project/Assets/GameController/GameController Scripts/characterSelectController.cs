@@ -3,6 +3,7 @@ using System.Collections;
 
 public class characterSelectController : MonoBehaviour {
 	VariableControl variables;
+	public GUIStyle big;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,7 @@ public class characterSelectController : MonoBehaviour {
 	void Update () {
 	
 	}
-	
+
 	public void loadMainGame () {
 		for (int i = 0; i < variables.characterSelectNum; i++) {
 			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];

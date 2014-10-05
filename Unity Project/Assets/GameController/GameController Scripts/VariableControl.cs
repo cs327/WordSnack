@@ -45,14 +45,13 @@ public class VariableControl : MonoBehaviour {
 	public float fourLettersMult;
 	public float noPreferenceMult;
 	public float trashCollectionMult;
+
 	//tweakable character tastes
 	public int[] TastesForCharacter1;
 	public int[] TastesForCharacter2;
 	public int[] TastesForCharacter3;
 	public int[] TastesForCharacter4;
 	public int[] TastesForCharacter5;
-
-
 	//tweakable variables: 
 	public int characterSelectNum = 2;
 	public int maxFed = 10;
@@ -68,12 +67,13 @@ public class VariableControl : MonoBehaviour {
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
 
-	//gamesate variables
-	public float score = 0; //Initialized at 0 by Mike. Just needed an initial value.
+	//gamestate variables
+	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
 	public bool wordSelected;
+	public bool gotOne;
 
     //Mike - vector to store the words fed to the characters throughout the game.
     public string[] fedWords;
