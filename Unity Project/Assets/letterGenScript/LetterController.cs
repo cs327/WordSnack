@@ -25,6 +25,8 @@ public class LetterController : MonoBehaviour
 
     public static Dictionary<char, int> letterScores;
 
+	public Texture2D shuffleButton;
+
     void Awake()
     {
     }
@@ -87,8 +89,8 @@ public class LetterController : MonoBehaviour
         bankSpots = new Vector3[boardSize];
         for (int i = 0; i < boardSize; i++)
         {
-            stoveSpots[i] = new Vector3(i * (1.5f * (boardSize / 7)) - 4, -1.5f, 0);
-            bankSpots[i] = new Vector3(i * (1.5f * (boardSize / 7)) - 5, -3.5f, 0);
+            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -2.5f, 0);
+            bankSpots[i] = new Vector3(i * (1.7f * (boardSize / 7)) - 5, -4.2f, 0);
         }
 
     }
@@ -452,7 +454,11 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
-        if (GUI.Button(new Rect(50, 400, 100, 30), "Shuffle Letters"))
+
+		GUIStyle style = new GUIStyle ();
+		style.normal.background = shuffleButton;
+
+		if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style))
         { //shuffles the letters in your hand
             shuffleLetters();
         }

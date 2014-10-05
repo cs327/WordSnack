@@ -3,7 +3,8 @@ using System.Collections;
 
 public class wordBuildingController : MonoBehaviour {
 	public GameObject [] characters = new GameObject[5];
-	VariableControl variables;
+	public Texture2D endGameButton;
+	public VariableControl variables;
 	int character1Num = 1;
 	int character2Num = 2;
 	// Use this for initialization
@@ -21,11 +22,13 @@ public class wordBuildingController : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
+		GUIStyle style = new GUIStyle ();
+		style.normal.background = endGameButton;
+		if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
 			PlayerPrefs.SetFloat ("Score", variables.score);
 			Application.LoadLevel("ScoreScreen");
 		}
-		GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
-		GUI.Box (new Rect (400, 100, 200, 30), "Score: " + variables.score);
+		//GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
+		//GUI.Box (new Rect (400, 100, 200, 30), "Score: " + variables.score);
 	}
 }
