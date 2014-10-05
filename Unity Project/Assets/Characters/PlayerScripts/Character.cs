@@ -74,14 +74,13 @@ public class Character : MonoBehaviour
         //get the same variables everyone else is using
         variables = GameObject.Find("GameController").GetComponent<VariableControl>();
         //For testing because I can't get a real character number
-        if (Application.loadedLevelName == "WordMaking")
-            characterNum = Random.Range(0, 5);
+        //if (Application.loadedLevelName == "WordMaking")
+            //characterNum = Random.Range(0, 5);
         //print my character Number for debugging purposes
-        if (Application.loadedLevelName == "WordMaking")
-        {
-            print("My character number is");
-            print(characterNum);
-        }
+        //if (Application.loadedLevelName == "WordMaking")
+        //{
+            print("My character number is " + characterNum);
+        //}
         if (tasteDictionary == null)
         {
             tasteDictionary = new Dictionary<int, TasteCollection.Taste>();
@@ -123,7 +122,7 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
+	}
 
     void OnMouseDown()
     {
