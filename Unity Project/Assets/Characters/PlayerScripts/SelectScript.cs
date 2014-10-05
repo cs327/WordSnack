@@ -25,6 +25,11 @@ public class SelectScript : MonoBehaviour {
 		//increases the character's size if it is selected
 		if (selected) {
 			gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
+
+			Debug.Log (gameObject.GetComponent<Character>().myTastes[0]);
+			Debug.Log ("my taste is: " + gameObject.GetComponent<Character>().myTastes[0]);
+
+
 		} else {
 			//otherwise resets character to regular size
 			gameObject.transform.localScale = new Vector3 (1, 1, 1);
