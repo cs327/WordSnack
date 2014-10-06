@@ -44,12 +44,12 @@ public class Character : MonoBehaviour
         {
             wordScore += LetterController.letterScores[letter];
         }
-        Debug.Log("Score for the letters is " + wordScore);
+        Debug.Log("Score for the letters in " + word + " is " + wordScore);
         foreach (TasteCollection.Taste t in myTastes)
         {
             wordScore *= t(word);
         }
-        Debug.Log("Score after tastes is " + wordScore);
+        Debug.Log("Score after tastes for " + word + " is " + wordScore);
         return wordScore;
     }
 
@@ -152,7 +152,7 @@ public class Character : MonoBehaviour
             string word = letterControl.sendWord();
             //score the word - do we have a score?
             int wordScore = Likes(word);
-            Debug.Log(word);
+            //Debug.Log(word);
             //If it was valid, we'll get a score above 0, so update our score and get that word out of here!
             if (wordScore > 0)
             {
@@ -161,7 +161,7 @@ public class Character : MonoBehaviour
                 wordsFedToMe.Add(word);
                 //update the score!
                 variables.score += wordScore;
-                Debug.Log("The total score is" + variables.score);
+                //Debug.Log("The total score is" + variables.score);
                 letterControl.ResetStove();
             }
         }

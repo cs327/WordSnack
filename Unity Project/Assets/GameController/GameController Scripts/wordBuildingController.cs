@@ -23,13 +23,6 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//print (PlayerPrefs.GetInt("Character 1"));
-		//If we're out of letters, end the game
-		if (GameObject.Find ("GameController").GetComponent<VariableControl> ().totalLetters <= 1) {
-			PlayerPrefs.SetFloat ("Score", variables.score);
-			Application.LoadLevel ("ScoreScreen");
-		}
-
 	}
 
 	void OnGUI () {
