@@ -29,7 +29,7 @@ public class CharacterSelectUI : MonoBehaviour {
 			style.normal.background = background;
 			GUI.Label (new Rect (Screen.width * 0.84f, Screen.height*0.85f, Screen.width*0.15f, Screen.height*0.12f), "", style);
 			style.normal.background = null;
-			if(GUI.Button (new Rect (Screen.width * 0.85f, Screen.height*0.88f, Screen.width*0.13f, Screen.height*0.1f), "Feed them", style)){
+			if(GUI.Button (new Rect (Screen.width * 0.84f, Screen.height*0.85f, Screen.width*0.15f, Screen.height*0.12f), "Feed them", style)){
 				GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 			}
 		}
