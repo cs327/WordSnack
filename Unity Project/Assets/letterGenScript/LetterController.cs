@@ -114,7 +114,7 @@ public class LetterController : MonoBehaviour
         replaceBankLetters();
 
         
-        if (emptyLetterCount == 6)
+        if (emptyLetterCount >= 5)
             Application.LoadLevel("ScoreScreen");
     }
 
