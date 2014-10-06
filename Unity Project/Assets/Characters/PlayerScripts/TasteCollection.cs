@@ -82,7 +82,7 @@ public static class TasteCollection
 
     public static float fiveOrLonger(string word)
     {
-        return (word.Length <= 5) ?
+        return (word.Length >= 5) ?
             variables.fiveOrLongerMult :
             1;
     }
