@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     //Dictionary of taste ID's to names
     public static Dictionary<int, TasteCollection.Taste> tasteDictionary;
     public List<string> wordsFedToMe;
-	public string thingsILike = "I like "; //What should be displayed as the creatures tastes when you click it
+	public string thingsILike = ""; //What should be displayed as the creatures tastes when you click it
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
 
     public int Likes(string word)
@@ -95,15 +95,15 @@ public class Character : MonoBehaviour
 		if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 			humanReadableTasteDictionary = new Dictionary<int, string> ();
 			//Create the dictionary of taste ID's to Human-readable text
-			humanReadableTasteDictionary.Add (0, "three-letter words");
-			humanReadableTasteDictionary.Add (1, "words that are five letters or more");
-			humanReadableTasteDictionary.Add (2, "words with uncommon letters(F,H,V,W,Y,K,J,X,Q,Z)");
-			humanReadableTasteDictionary.Add (3, "words that end in a vowel");
-			humanReadableTasteDictionary.Add (4, "words that contain more than one vowel");
-			humanReadableTasteDictionary.Add (5, "words that have two or more of the same letter");
-			humanReadableTasteDictionary.Add (6, "words that start with a vowel");
-			humanReadableTasteDictionary.Add (7, "words that start and end with the same letter");
-			humanReadableTasteDictionary.Add (8, "four-letter words");
+			humanReadableTasteDictionary.Add (0, "three letters");
+			humanReadableTasteDictionary.Add (1, "five letters or more");
+			humanReadableTasteDictionary.Add (2, "uncommon letters(F,H,V,W,Y,K,J,X,Q,Z)");
+			humanReadableTasteDictionary.Add (3, "ends in a vowel");
+			humanReadableTasteDictionary.Add (4, "more than one vowel");
+			humanReadableTasteDictionary.Add (5, "two or more of the same letter");
+			humanReadableTasteDictionary.Add (6, "starts with a vowel");
+			humanReadableTasteDictionary.Add (7, "starts and ends with same");
+			humanReadableTasteDictionary.Add (8, "four letters");
 			humanReadableTasteDictionary.Add (9, "anything");
 			humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
 				}
@@ -133,7 +133,7 @@ public class Character : MonoBehaviour
 				}
             }
 			//Let's see if all that text-making worked or not
-			Debug.Log("My character number is " + characterNum + " and " + thingsILike);
+			Debug.Log("My character number is " + characterNum + " and I like " + thingsILike);
 		if (Application.loadedLevelName == "WordMaking"){
             letterGenerator = GameObject.FindGameObjectWithTag("letterController");
             letterControl = letterGenerator.GetComponent<LetterController>();
