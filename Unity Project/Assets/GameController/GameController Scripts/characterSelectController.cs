@@ -16,9 +16,9 @@ public class characterSelectController : MonoBehaviour {
 	}
 
 	public void loadMainGame () {
-		for (int i = 0; i < variables.characterSelectNum; i++) {
-			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
-		}
+//		for (int i = 0; i < variables.characterSelectNum; i++) {
+//			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
+//		}
 		variables.timeToChangeGameState = false;
 		PlayerPrefs.SetInt("Character 1", variables.selectedCharacterNums[0]);
 		PlayerPrefs.SetInt("Character 2", variables.selectedCharacterNums[1]);
