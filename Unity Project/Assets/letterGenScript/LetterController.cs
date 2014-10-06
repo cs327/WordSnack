@@ -114,8 +114,10 @@ public class LetterController : MonoBehaviour
         replaceBankLetters();
 
         
-        if (emptyLetterCount >= 5)
-            Application.LoadLevel("ScoreScreen");
+        if (emptyLetterCount >= 5) {
+			PlayerPrefs.SetFloat ("Score", variables.score);
+			Application.LoadLevel ("ScoreScreen");
+		}
     }
 
 
