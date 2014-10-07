@@ -15,6 +15,7 @@ public class Character : MonoBehaviour
     public static Dictionary<int, TasteCollection.Taste> tasteDictionary;
     public List<string> wordsFedToMe;
 	public string thingsILike = ""; //What should be displayed as the creatures tastes when you click it
+	public List<int> tasteIDs;
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
 
     public int Likes(string word)
@@ -128,6 +129,7 @@ public class Character : MonoBehaviour
 				//also we set up the text to be displayed for the character's tastes
 	            foreach (int t in characterTastes[characterNum]) //step through this character's tastes and store the ID of the taste in t
 	            {
+					tasteIDs.Add (t); //Add this taste ID to our personal list of taste IDs
 	                this.AddTaste(tasteDictionary[t]); //look it up in the dictionary and add Delegate function to our list of Taste delegate functions
 					thingsILike = thingsILike + humanReadableTasteDictionary[t]; //Then add it to our text to display
 					//if the size of myTastes isn't the same as the size of the array of this character's tastes, then we
