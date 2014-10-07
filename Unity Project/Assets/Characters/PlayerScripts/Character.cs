@@ -44,14 +44,14 @@ public class Character : MonoBehaviour
         {
             wordScore += LetterController.letterScores[letter];
         }
-		variables.mostRecentLetterScore = wordScore;
+		variables.mostRecentLetterScore = (int)wordScore;
         Debug.Log("Score for the letters in " + word + " is " + wordScore);
         foreach (TasteCollection.Taste t in myTastes)
         {
             wordScore *= t(word);
         }
-		variables.mostRecentWordScore = wordScore;
-		variables.mostRecentBonus = wordScore - variables.mostRecentLetterScore;
+		variables.mostRecentWordScore = (int)wordScore;
+		variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
         Debug.Log("Score after tastes for " + word + " is " + wordScore);
         return wordScore;
     }
