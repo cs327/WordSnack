@@ -156,7 +156,7 @@ public class Character : MonoBehaviour
 				variables.characterSatisfaction[characterNum] = variables.maxTurnsNotFed;
 				//figure out the other character's ID number so we can decrement its satisfaction when we're fed
 				if (characterNum != 0) {
-					if (variables.characterNums[0] == 0)
+					if (variables.characterNums[0] == characterNum)
 						otherCharacterNum = variables.characterNums[1];
 					else
 						otherCharacterNum = variables.characterNums[0];
