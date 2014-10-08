@@ -21,7 +21,7 @@ public class WordMakingGUI : MonoBehaviour {
 		style.normal.textColor = Color.black;
 		style.normal.background = background;
 		// score display
-		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height*0.01f, Screen.width*0.2f, Screen.height*0.08f), "", style);
+		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height*0.01f, Screen.width*0.22f, Screen.height*0.08f), "", style);
 		style.normal.background = null;
 		GUI.Label (new Rect (Screen.width * 0.008f, Screen.height*0.018f, Screen.width*0.18f, Screen.height*0.08f), "\tScore:  " + variableController.GetComponent<VariableControl>().score, style);
 

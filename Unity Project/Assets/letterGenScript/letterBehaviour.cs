@@ -10,7 +10,8 @@ public class letterBehaviour : MonoBehaviour {
 	public SpriteRenderer thisSprite;
 	public Sprite [] sprites;
 	public int letterAlphabetOrder;
-
+//	public GameObject steamPrefab;
+//	public GameObject mySteam;
 	// Use this for initialization
 	void Start () {
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -20,7 +21,6 @@ public class letterBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckSelected(selected);
-
 	}
 
 	void OnMouseDown(){
@@ -30,6 +30,7 @@ public class letterBehaviour : MonoBehaviour {
 		else{
 			selected = false;
 		}
+
 	}
 
 	void CheckSelected(bool on){
@@ -40,14 +41,13 @@ public class letterBehaviour : MonoBehaviour {
 			gameObject.renderer.material.color = Color.white;
 		}
 	}
-	void SetLetter (){
+	void SetLetter(){
+
 		char [] thisChar = letter.ToCharArray();
 
 		letterAlphabetOrder = thisChar[0].GetHashCode() - 97;
 
 		if (letterAlphabetOrder >= 0)
         thisSprite.sprite = sprites[letterAlphabetOrder];
-
 	}
-
 }
