@@ -78,6 +78,9 @@ public class VariableControl : MonoBehaviour {
 	public int mostRecentWordScore;
 	public int mostRecentBonus;
 	public int mostRecentLetterScore;
+    //Saving High score variables
+    //The number of scores to save, at most
+    public int scoreListSize = 10;
 
 	// Use this for initialization
 	void Awake() {
