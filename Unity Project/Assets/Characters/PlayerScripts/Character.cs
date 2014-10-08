@@ -79,7 +79,7 @@ public class Character : MonoBehaviour
     {
         //get the same variables everyone else is using
 		if (Application.loadedLevelName != "StartScreenTest") {
-			variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+			variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
         
 	        if (tasteDictionary == null) //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 	        {

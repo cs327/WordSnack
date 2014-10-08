@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SelectScript : MonoBehaviour {
 	//script reference 
-	public GameObject gameController;
+	public GameObject variableController;
 	VariableControl variables;
 	Character character;
 	//parent reference
@@ -16,7 +16,7 @@ public class SelectScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//establishes script reference
-		variables = gameController.GetComponent<VariableControl>();
+		variables = variableController.GetComponent<VariableControl>();
 		character = gameObject.GetComponent<Character>();
 	}
 	
@@ -43,13 +43,13 @@ public class SelectScript : MonoBehaviour {
 		if (Application.loadedLevelName == "CharacterSelect" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
 			//changes the selected state
 			toggleSelect();
-			//adds the character to the selected array and parents it to the main gameController
-			if (selected && gameController.transform.childCount < 2) {
+			//adds the character to the selected array and parents it to the main variableController
+			if (selected && variableController.transform.childCount < 2) {
 				selectNum = variables.currentCharacterSelectNum;
 				variables.characterSelected[variables.currentCharacterSelectNum] = true;
 				variables.selectedCharacters[variables.currentCharacterSelectNum] = gameObject;
 				variables.selectedCharacterNums[variables.currentCharacterSelectNum++] = character.characterNum;
-				gameObject.transform.parent = gameController.transform;
+				gameObject.transform.parent = variableController.transform;
 			} else if (selected == false) {
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
 				gameObject.transform.parent = characterParent.transform;

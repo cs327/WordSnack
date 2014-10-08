@@ -39,7 +39,7 @@ public class LetterController : MonoBehaviour
     void Start()
     {
         //initialize variablecontrol reference
-        variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+        variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
         //initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
         lettersOnBoard = new letterBehaviour[boardSize];
