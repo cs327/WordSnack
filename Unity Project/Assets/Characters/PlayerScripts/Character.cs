@@ -17,7 +17,7 @@ public class Character : MonoBehaviour
 	public string thingsILike; //What should be displayed as the creatures tastes when you click it
 	public List<int> tasteIDs;
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
-
+	public int otherCharacterNum; //for storing the other character's ID number in
     public int Likes(string word)
     {
         if (characterNum != 0) { //If we're not the trash character... 
@@ -41,16 +41,22 @@ public class Character : MonoBehaviour
     float scoreWord(string word)
     {
         float wordScore = 0;
+		float letterScore = 0;
         foreach (char letter in word)
         {
-            wordScore += LetterController.letterScores[letter];
+            letterScore += LetterController.letterScores[letter];
         }
-		variables.mostRecentLetterScore = (int)wordScore;
-        Debug.Log("Score for the letters in " + word + " is " + wordScore);
+		variables.mostRecentLetterScore = (int)letterScore;
+        Debug.Log("Score for the letters in " + word + " is " + letterScore);
+		wordScore = letterScore; //set them equal, then modify wordScore
         foreach (TasteCollection.Taste t in myTastes)
         {
             wordScore *= t(word);
         }
+		if (wordScore == letterScore) {//if they're the same, then you didn't match the taste - REJECT
+						print ("This doesn't match a taste!");			
+						return 0;
+				}
 		variables.mostRecentWordScore = (int)wordScore;
 		variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
         Debug.Log("Score after tastes for " + word + " is " + wordScore);
@@ -145,6 +151,16 @@ public class Character : MonoBehaviour
 			if (Application.loadedLevelName == "WordMaking"){
 	            letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 	            letterControl = letterGenerator.GetComponent<LetterController>();
+				//initialize the hunger level of the character
+				//print ("Size of characterNum is " + variables.selectedCharacterNums.Count());
+				variables.characterSatisfaction[characterNum] = variables.maxTurnsNotFed;
+				//figure out the other character's ID number so we can decrement its satisfaction when we're fed
+				if (characterNum != 0) {
+					if (variables.characterNums[0] == 0)
+						otherCharacterNum = variables.characterNums[1];
+					else
+						otherCharacterNum = variables.characterNums[0];
+				}
 	        }
 		}
     }
@@ -163,11 +179,23 @@ public class Character : MonoBehaviour
             int wordScore = Likes(word);
             //Debug.Log(word);
             //If it was valid, we'll get a score above 0, so update our score and get that word out of here!
-            if (wordScore > 0)
+            if (wordScore != 0)
             {
                 //if(1 > 0){
                 //Keep track of words fed to me!
                 wordsFedToMe.Add(word);
+				//update my satisfaction level
+				variables.characterSatisfaction[characterNum] = variables.maxTurnsNotFed;
+				//update the other character's satisfaction level
+				variables.characterSatisfaction[otherCharacterNum]--;
+				if (characterNum != 0)
+					print ("Other character's (" + otherCharacterNum + ") satisfaction level is " + variables.characterSatisfaction[otherCharacterNum]);
+					//If you failed to feed a character for five turns, you lose!
+				if (variables.characterSatisfaction[variables.characterNums[0]] == 0 || variables.characterSatisfaction[variables.characterNums[1]] == 0) {
+					print ("You failed to feed a character for five turns! You lose!");
+					PlayerPrefs.SetFloat ("Score", variables.score);
+					Application.LoadLevel ("ScoreScreen");
+				}
                 //update the score!
                 variables.score += wordScore;
                 //Debug.Log("The total score is" + variables.score);

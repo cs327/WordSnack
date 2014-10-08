@@ -29,12 +29,13 @@ public static class TasteCollection
 
     public static float unCommonLetters(string word)
     {
-        foreach (char letter in word)
+		float scoreMultiplier = 1;
+        foreach (char letter in word) //give a multiplier for EACH uncommon letter
         {
             if (uncommonLetterList.Contains(letter))
-                return variables.uncommonLettersMult;
+                scoreMultiplier *= variables.uncommonLettersMult;
         }
-        return 1;
+        return scoreMultiplier;
     }
 
     /*
@@ -50,11 +51,9 @@ public static class TasteCollection
 
     public static float twoOrMoreSame(string word)
     {
-        var distinct = word.Distinct();
-        if (distinct.Count() == word.Length)
-            return 1;
-        else
-            return variables.twoOrMoreSameMult;
+        var distinct = word.Distinct(); //the number of distinct letters in the word
+		int difference = word.Length - distinct.Count();
+            return variables.twoOrMoreSameMult * (difference +1); //give an extra multiplier for each similar letter
     }
     public static float startsAndEndsWithSame(string word)
     {
@@ -109,12 +108,11 @@ public static class TasteCollection
         {
             if (vowels.Contains(letter))
                 vowelCount++;
-            if (vowelCount == 2)
-            {
-                return variables.twoOrMoreVowelsMult;
-            }
         }
-        return 1;
+		if (vowelCount <= 1)
+						return 0; //If it doesn't have two or more vowels, No!
+		else
+        	return variables.twoOrMoreVowelsMult*(vowelCount-1); //If it does, give an extra multiplier for each beyond the second
     }
 
     public static float noPreference(string word)

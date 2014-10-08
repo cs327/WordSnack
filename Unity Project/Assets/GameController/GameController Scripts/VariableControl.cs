@@ -61,6 +61,8 @@ public class VariableControl : MonoBehaviour {
 	public int maxHungerTime = 15;
 	public int maxEatingTime = 12;
 	public int maxMultiplier = 5;
+	public int maxTurnsNotFed;
+	public int numCharacters;
 
 	//character variables 
 	public Vector3 [] phase2CharacterPositions;
@@ -68,6 +70,7 @@ public class VariableControl : MonoBehaviour {
 	public int [] selectedCharacterNums; 
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
+	public int[] characterNums;
 
 	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
@@ -78,6 +81,7 @@ public class VariableControl : MonoBehaviour {
 	public int mostRecentWordScore;
 	public int mostRecentBonus;
 	public int mostRecentLetterScore;
+	public int[] characterSatisfaction;
 
 	// Use this for initialization
 	void Awake() {
@@ -96,8 +100,14 @@ public class VariableControl : MonoBehaviour {
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
-		selectedCharacterNums = new int[characterSelectNum]; 
-	
+		selectedCharacterNums = new int[characterSelectNum];
+		if (Application.loadedLevelName == "WordMaking") {
+			characterSatisfaction = new int[numCharacters];
+			characterNums = new int[characterSelectNum];
+			characterNums[0] = PlayerPrefs.GetInt("Character 1");
+			characterNums[1] = PlayerPrefs.GetInt("Character 2");
+				}
+		print ("Done initializing VariableControl!");
 	}
 	
 	// Update is called once per frame
