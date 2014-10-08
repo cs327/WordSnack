@@ -16,6 +16,9 @@ public class LetterController : MonoBehaviour
     public Vector3[] stoveSpots;
     public Vector3[] bankSpots;
     public bool needsUpkeep = true;
+	public GameObject steamPrefab;
+	public GameObject [] stoveSteam;
+
 
     public string letters;
 
@@ -96,7 +99,7 @@ public class LetterController : MonoBehaviour
             stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -2.5f, 0);
             bankSpots[i] = new Vector3(i * (1.7f * (boardSize / 7)) - 5, -4.2f, 0);
         }
-
+		CreateSteam();
     }
 
     // Update is called once per frame
@@ -118,8 +121,28 @@ public class LetterController : MonoBehaviour
 			PlayerPrefs.SetFloat ("Score", variables.score);
 			Application.LoadLevel ("ScoreScreen");
 		}
+		TurnOnOffSteam();
     }
 
+	void CreateSteam (){
+		stoveSteam = new GameObject[7];
+
+		for( int x = 0; x < boardSize; x++){
+			stoveSteam[x] = Instantiate (steamPrefab,stoveSpots[x] + new Vector3(0,-.5f,-.5f),new Quaternion (0,0,0,0)) as GameObject;
+			stoveSteam[x].transform.eulerAngles = new Vector3 (-90,0,0);
+		}
+	}
+
+	void TurnOnOffSteam(){
+		for(int x = 0; x < boardSize; x++){
+			if(x < numLettersOnStove){
+				stoveSteam[x].particleSystem.emissionRate = 30;
+			}
+			else{
+				stoveSteam[x].particleSystem.emissionRate = 0;
+			}
+		}
+	}
 
 
     string returnLetters(int n)
@@ -563,16 +586,6 @@ public class LetterController : MonoBehaviour
         { //shuffles the letters in your hand
             shuffleLetters();
         }
-        //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-        //			if(checkForWord(sendWord())){
-        //				variables.score++;
-        //				print ("I'm a word!");
-        //				print("Current Score: " + variables.score);
-        //			}
-        //			else{
-        //				print ("Not a word");
-        //			}
-        //		}
     }
 
     void makeWordList()
@@ -587,16 +600,6 @@ public class LetterController : MonoBehaviour
                 wordList.Add(proposedWord);
             }
         }
-        //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-        //			if(checkForWord(sendWord())){
-        //				variables.score++;
-        //				print ("I'm a word!");
-        //				print("Current Score: " + variables.score);
-        //			}
-        //			else{
-        //				print ("Not a word");
-        //			}
-        //		}
     }
 
     public bool checkForWord(string word)
