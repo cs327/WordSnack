@@ -10,7 +10,7 @@ public static class TasteCollection
     public delegate float Taste(string word);
 
     //makes sure we're using the same copy as everybody else
-    private static VariableControl variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+    private static VariableControl variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
     private static char[] consonants =
 	{
