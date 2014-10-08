@@ -53,7 +53,10 @@ public static class TasteCollection
     {
         var distinct = word.Distinct(); //the number of distinct letters in the word
 		int difference = word.Length - distinct.Count();
-            return variables.twoOrMoreSameMult * (difference +1); //give an extra multiplier for each similar letter
+		if (difference == 0)
+						return 1;
+		else
+            return variables.twoOrMoreSameMult * difference; //give an extra multiplier for each similar letter
     }
     public static float startsAndEndsWithSame(string word)
     {
@@ -109,8 +112,9 @@ public static class TasteCollection
             if (vowels.Contains(letter))
                 vowelCount++;
         }
-		if (vowelCount <= 1)
-						return 0; //If it doesn't have two or more vowels, No!
+		if (vowelCount <= 1) {
+						return 1; //If it doesn't have two or more vowels, No!
+				}
 		else
         	return variables.twoOrMoreVowelsMult*(vowelCount-1); //If it does, give an extra multiplier for each beyond the second
     }
