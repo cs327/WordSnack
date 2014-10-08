@@ -40,7 +40,6 @@ public class SelectScript : MonoBehaviour
 						gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
 				}
 		}
-		
 	
 		void OnMouseDown ()
 		{
@@ -63,7 +62,7 @@ public class SelectScript : MonoBehaviour
 								selectNum = -1;
 						}
 				}
-		}		
+		}
 
 		void toggleSelect ()
 		{
@@ -80,9 +79,10 @@ public class SelectScript : MonoBehaviour
 						float scale = Mathf.Max (Screen.width / 479.0f, Screen.height / 319.0f);
 						Camera c = GameObject.Find ("Main Camera").camera;
 						Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
+						string taste = gameObject.GetComponent<Character> ().thingsILike;
 						GUIStyle boxStyle = "box";
 						boxStyle.wordWrap = true;
-						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 80 * scale, Screen.width * 0.13f, Screen.height * 0.2f), "Tastes: " + character.thingsILike);
+						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 80 * scale, Screen.width * 0.15f, Screen.height * 0.2f), "Tastes:" + character.thingsILike);
 				}
 		}
 }

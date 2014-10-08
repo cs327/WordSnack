@@ -1,9 +1,9 @@
-if (you are fixing a bug on the master branch that is a quick fix)
+if (you are fixing a bug on the master branch that is a quick fix OR the changes you are implementing are minor)
 {
 	send an email to the programming team as a whole announcing the file you will be changing when you start;
 	send another email when you have finished letting the team know to pull the new master;
 }
-else
+else //if the changes are a new featureset or will take more than a few hours
 {
 	create a new branch for your task; //try to name it appropriately
 	sync with the master frequently to keep your code up to date and prevent merge conflicts;
