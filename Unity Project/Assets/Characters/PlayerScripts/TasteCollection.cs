@@ -82,9 +82,9 @@ public static class TasteCollection
 
     public static float fiveOrLonger(string word)
     {
-        return (word.Length <= 5) ?
-            1 :
-            variables.fiveOrLongerMult;
+        return (word.Length >= 5) ?
+            variables.fiveOrLongerMult :
+            1;
     }
 
     public static float endsWithVowel(string word)

@@ -75,6 +75,9 @@ public class VariableControl : MonoBehaviour {
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
 	public bool wordSelected;
+	public int mostRecentWordScore;
+	public int mostRecentBonus;
+	public int mostRecentLetterScore;
 
 	// Use this for initialization
 	void Awake() {
