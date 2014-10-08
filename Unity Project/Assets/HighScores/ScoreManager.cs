@@ -21,7 +21,7 @@ public static class ScoreManager
 
     public static void AddHighScore(int score)
     {
-        int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().
+        int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
 
         if (scoreList == null)
             LoadScores();
