@@ -10,7 +10,7 @@ public static class ScoreManager
 {
     public static List<int> scoreList;
     
-    public static void SaveScores()
+    private static void SaveScores()
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + 
@@ -19,21 +19,26 @@ public static class ScoreManager
         file.Close();
     }
 
-    public static void AddHighScore(int score)
+    // Given a score, this loads the score list, adds it to the list,
+    // saves the list back to file and the returns the score list
+    public static List<int> AddHighScore(int score)
     {
         int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
 
         if (scoreList == null)
             LoadScores();
+       
         scoreList.Add(score);
         if (scoreList.Count > scoreListSizeLimit)
         {
             scoreList.Sort();
             scoreList.RemoveRange(scoreListSizeLimit, scoreList.Count - scoreListSizeLimit);
         }
+        SaveScores();
+        return scoreList;
     }
 
-    public static void LoadScores()
+    private static void LoadScores()
     {
         if (File.Exists(Application.persistentDataPath + 
             "/Unity Project/Assets/HighScores/HighScoreSaveFile.hs"))
