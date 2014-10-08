@@ -73,7 +73,8 @@ public class SelectScript : MonoBehaviour {
 			float scale = Mathf.Max (Screen.width / 479.0f, Screen.height/ 319.0f);
 			Camera c = GameObject.Find ("Main Camera").camera;
 			Vector3 screenPoint = c.WorldToScreenPoint(gameObject.transform.position);
-			GUI.Box( new Rect( screenPoint.x - 30*scale, screenPoint.y + 80*scale, Screen.width* 0.13f,Screen.height*0.2f), "Tastes: " );
+			string taste = gameObject.GetComponent<Character>().thingsILike;
+			GUI.Box( new Rect( screenPoint.x - 30*scale, screenPoint.y + 80*scale, Screen.width* 0.15f,Screen.height*0.2f), "taste" );
 		}
 	}
 }

@@ -95,17 +95,17 @@ public class Character : MonoBehaviour
 		if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 			humanReadableTasteDictionary = new Dictionary<int, string> ();
 			//Create the dictionary of taste ID's to Human-readable text
-			humanReadableTasteDictionary.Add (0, "three letters");
-			humanReadableTasteDictionary.Add (1, "five letters or more");
-			humanReadableTasteDictionary.Add (2, "uncommon letters(F,H,V,W,Y,K,J,X,Q,Z)");
-			humanReadableTasteDictionary.Add (3, "ends in a vowel");
-			humanReadableTasteDictionary.Add (4, "more than one vowel");
-			humanReadableTasteDictionary.Add (5, "two or more of the same letter");
-			humanReadableTasteDictionary.Add (6, "starts with a vowel");
-			humanReadableTasteDictionary.Add (7, "starts and ends with same");
-			humanReadableTasteDictionary.Add (8, "four letters");
+			humanReadableTasteDictionary.Add (0, "3 letters");
+			humanReadableTasteDictionary.Add (1, "5+ letters");
+			humanReadableTasteDictionary.Add (2, "F,H,V,W,Y,K,J,X,Q,Z");
+			humanReadableTasteDictionary.Add (3, "ends with vowel");
+			humanReadableTasteDictionary.Add (4, "2+ vowels");
+			humanReadableTasteDictionary.Add (5, "2+ same letter");
+			humanReadableTasteDictionary.Add (6, "starts with vowel");
+			humanReadableTasteDictionary.Add (7, "starts/ends with same");
+			humanReadableTasteDictionary.Add (8, "4 letters");
 			humanReadableTasteDictionary.Add (9, "anything");
-			humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
+			humanReadableTasteDictionary.Add (10, "trash");
 				}
 		myTastes = new List<TasteCollection.Taste>();
 		//We have to do this all the time now, in order to display the tastes correctly.
