@@ -54,9 +54,9 @@ public class letterBehaviour : MonoBehaviour {
         thisSprite.sprite = sprites[letterAlphabetOrder];
 	}
 	void MakeSteam(){
-		Vector3 steamOffset = new Vector3(0,0,.5f);
+		Vector3 steamOffset = new Vector3(0,.5f,.5f);
 
-		mySteam = Instantiate (steamPrefab, (gameObject.transform.position + steamOffset), new Quaternion (0,0,0,0)) as GameObject;
+		mySteam = Instantiate (steamPrefab, (gameObject.transform.position - steamOffset), new Quaternion (0,0,0,0)) as GameObject;
 		mySteam.transform.parent = gameObject.transform;
 		mySteam.transform.eulerAngles = new Vector3 (-90,0,0);
 	}
