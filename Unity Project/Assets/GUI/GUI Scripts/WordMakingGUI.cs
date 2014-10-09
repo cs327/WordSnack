@@ -2,19 +2,12 @@
 using System.Collections;
 
 public class WordMakingGUI : MonoBehaviour {
-
-	public GameObject audio;
-	AudioManager audioManager;
-
 	public Texture2D background;
 	float scale;
 	public GameObject variableController;
 	// Use this for initialization
 	void Start () {
 		scale = Mathf.Max (Screen.width / 479.0f, Screen.height/ 319.0f);
-
-		audioManager = audio.GetComponent<AudioManager>();
-		audioManager.PlayLoop(9);
 	}
 	
 	// Update is called once per frame
