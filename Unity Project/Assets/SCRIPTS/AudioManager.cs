@@ -6,22 +6,17 @@ public class AudioManager : MonoBehaviour {
     
     
     public AudioClip[] audioClipArray;
-    //GameObject AudioManager;
-    AudioSource [] audioSourceArray;
+	public bool loopPlay;
+  	
     
     int i;
+
     private int y;
+	private float timerCountDown = .5f;
     
     // Use this for initialization
     void Start () {
-        audioSourceArray = new AudioSource [audioClipArray.Length];
-        
-        for (i=0; i< audioSourceArray.Length; i++)
-        {
-            AudioSource newSource = gameObject.AddComponent<AudioSource>(); //add component to obj
-            newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
-            audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
-        }
+  
     }
     
     // Update is called once per frame
@@ -30,22 +25,58 @@ public class AudioManager : MonoBehaviour {
     }
     
     public void Play(int i){
-        audioSourceArray[i].Play();
+		Debug.Log ("play");
+		audio.clip = audioClipArray [i];
+		audio.Play ();
+       
+    }
+
+	public void PlayLoop(int i){
+		audio.clip = audioClipArray [i];
+
+		audio.loop = true;
+		audio.Play ();
+				
+		}
+    
+   public void Pause(int i){
+		audio.clip = audioClipArray [i];
+		audio.Pause ();
     }
     
-    void Pause(int i){
-        audioSourceArray[i].Pause();
+    public void Stop(int i){
+		audio.clip = audioClipArray [i];
+		audio.Stop ();
     }
     
-    void Stop(int i){
-        audioSourceArray[i].Stop();
-    }
-    
-    void KillAll(){
-        for (y=0; y<=audioSourceArray.Length; y++){
-            if(audioSourceArray[i].isPlaying){
-                audioSourceArray[i].Pause();
-            }
+    public void KillAll(){
+        for (y=0; y<=audioClipArray.Length; y++) {
+			audio.clip= audioClipArray[y];
+						if (audio.isPlaying) {
+						audio.Pause ();
+						}
+				}
+            
         }
-    }
+
+	/*public void FadeOut(int i){
+		audio.clip = audioClipArray [i];
+		while (audio.volume>0) {
+			timerCountDown -= timerCountDown - Time.deltaTime;
+			if(timerCountDown <= 0){
+			audio.volume = audio.volume - .02f;
+			}
+			timerCountDown = .5f;
+			Debug.Log(audio.volume);
+				}
+	}
+*/
+	public void FadeIn(int i){
+
+	}
+
+	public void CrossFade(int i, int y){
+
+	}
+    
 }
