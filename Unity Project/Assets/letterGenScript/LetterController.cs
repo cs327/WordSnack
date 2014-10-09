@@ -18,25 +18,15 @@ public class LetterController : MonoBehaviour
     public bool needsUpkeep = true;
 	public GameObject steamPrefab;
 	public GameObject [] stoveSteam;
-
-
     public string letters;
-
     public int next;
     public bool[] newArraySpot;
-
     public int emptyLetterCount = 0;
-
     public TextAsset sowpods;
     private List<string> wordList = new List<string>();
-
     public static Dictionary<char, int> letterScores;
-
 	public Texture2D shuffleButton;
 
-    void Awake()
-    {
-    }
 
     // Use this for initialization
     void Start()
@@ -49,55 +39,16 @@ public class LetterController : MonoBehaviour
         lettersOnStove = new letterBehaviour[boardSize];
         newArraySpot = new bool[boardSize];
 
-        //establishes tuning list, frequencies letters are likely to show up.
-        //TuningList();
-        //Creates the list of valid words
-        makeWordList();
-        //if it hasn't already been done by another character, create the letter score dictionary
-        if (letterScores == null)
-        {
-            letterScores = new Dictionary<char, int>();
-
-            //Create the dictionary of letter scores
-            foreach (char letter in "eaionrtlsu")
-            {
-                letterScores.Add(letter, 1);
-            }
-            foreach (char letter in "dg")
-            {
-                letterScores.Add(letter, 2);
-            }
-            foreach (char letter in "bcmp")
-            {
-                letterScores.Add(letter, 3);
-            }
-            foreach (char letter in "fhvwy")
-            {
-                letterScores.Add(letter, 4);
-            }
-            letterScores.Add('k', 5);
-            foreach (char letter in "jx")
-            {
-                letterScores.Add(letter, 8);
-            }
-            foreach (char letter in "qz")
-            {
-                letterScores.Add(letter, 10);
-            }
-        }
-
-        //TuningList();
-        //Creates the list of valid words
-        makeWordList();
-
+        //creates the list of valid words and letter scores
+        makeWordListAndScoreDict();
 
         //initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
         stoveSpots = new Vector3[boardSize];
         bankSpots = new Vector3[boardSize];
         for (int i = 0; i < boardSize; i++)
         {
-            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -2.5f, 0);
-            bankSpots[i] = new Vector3(i * (1.7f * (boardSize / 7)) - 5, -4.2f, 0);
+            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
+            bankSpots[i] = new Vector3(i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
         }
 		CreateSteam();
     }
@@ -588,8 +539,40 @@ public class LetterController : MonoBehaviour
         }
     }
 
-    void makeWordList()
+    void makeWordListAndScoreDict()
     {
+		if (letterScores == null)
+		{
+			letterScores = new Dictionary<char, int>();
+			
+			//Create the dictionary of letter scores
+			foreach (char letter in "eaionrtlsu")
+			{
+				letterScores.Add(letter, 1);
+			}
+			foreach (char letter in "dg")
+			{
+				letterScores.Add(letter, 2);
+			}
+			foreach (char letter in "bcmp")
+			{
+				letterScores.Add(letter, 3);
+			}
+			foreach (char letter in "fhvwy")
+			{
+				letterScores.Add(letter, 4);
+			}
+			letterScores.Add('k', 5);
+			foreach (char letter in "jx")
+			{
+				letterScores.Add(letter, 8);
+			}
+			foreach (char letter in "qz")
+			{
+				letterScores.Add(letter, 10);
+			}
+		}
+
         //This method makes the word list once
         string[] tempWordList = sowpods.text.Split('\n');
         for (int j = 0; j < tempWordList.Length; j++)
