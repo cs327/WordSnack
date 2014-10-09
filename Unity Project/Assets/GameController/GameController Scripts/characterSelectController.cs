@@ -3,11 +3,12 @@ using System.Collections;
 
 public class characterSelectController : MonoBehaviour {
 	VariableControl variables;
+	public GameObject variableController; 
 	public GUIStyle big;
 
 	// Use this for initialization
 	void Start () {
-		variables = gameObject.GetComponent<VariableControl>();
+		variables = variableController.GetComponent<VariableControl>();
 	}
 	
 	// Update is called once per frame

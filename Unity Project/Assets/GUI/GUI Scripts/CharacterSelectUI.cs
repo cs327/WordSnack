@@ -30,7 +30,7 @@ public class CharacterSelectUI : MonoBehaviour {
 		style.normal.background = null;
 		GUI.Label (new Rect (Screen.width * 0.25f, Screen.height*0.1f, Screen.width*0.55f, Screen.height*0.15f), "Choose Two Characters!", style);
 	
-		if(GameObject.Find("GameController").GetComponent<VariableControl>().timeToChangeGameState){
+		if(GameObject.Find("VariableController").GetComponent<VariableControl>().timeToChangeGameState){
 			style.fontSize = Mathf.RoundToInt(14*scale);
 			style.normal.background = background;
 			GUI.Label (new Rect (Screen.width * 0.84f, Screen.height*0.85f, Screen.width*0.15f, Screen.height*0.12f), "", style);

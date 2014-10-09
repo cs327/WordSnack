@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SCRIPTS/PlayMusic.cs">
     <Files>
       <File FileName="Assets/SCRIPTS/AudioManager.cs" Line="34" Column="30" />
@@ -8,6 +9,11 @@
       <File FileName="Assets/Characters/PlayerScripts/Character.cs" Line="8" Column="49" />
       <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="19" Column="2" />
       <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="12" Column="32" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/letterGenScript/LetterController.cs">
+    <Files>
+      <File FileName="Assets/letterGenScript/LetterController.cs" Line="31" Column="14" />
+>>>>>>> 4438268040b0b5ac283604e9f7565e4bff3f8121
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

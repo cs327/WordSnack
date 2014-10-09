@@ -16,87 +16,41 @@ public class LetterController : MonoBehaviour
     public Vector3[] stoveSpots;
     public Vector3[] bankSpots;
     public bool needsUpkeep = true;
-
+	public GameObject steamPrefab;
+	public GameObject [] stoveSteam;
     public string letters;
-
     public int next;
     public bool[] newArraySpot;
-
     public int emptyLetterCount = 0;
-
     public TextAsset sowpods;
     private List<string> wordList = new List<string>();
-
     public static Dictionary<char, int> letterScores;
-
 	public Texture2D shuffleButton;
 
-    void Awake()
-    {
-    }
 
     // Use this for initialization
     void Start()
     {
         //initialize variablecontrol reference
-        variables = GameObject.Find("GameController").GetComponent<VariableControl>();
+        variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
         //initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
         lettersOnBoard = new letterBehaviour[boardSize];
         lettersOnStove = new letterBehaviour[boardSize];
         newArraySpot = new bool[boardSize];
 
-        //establishes tuning list, frequencies letters are likely to show up.
-        //TuningList();
-        //Creates the list of valid words
-        makeWordList();
-        //if it hasn't already been done by another character, create the letter score dictionary
-        if (letterScores == null)
-        {
-            letterScores = new Dictionary<char, int>();
-
-            //Create the dictionary of letter scores
-            foreach (char letter in "eaionrtlsu")
-            {
-                letterScores.Add(letter, 1);
-            }
-            foreach (char letter in "dg")
-            {
-                letterScores.Add(letter, 2);
-            }
-            foreach (char letter in "bcmp")
-            {
-                letterScores.Add(letter, 3);
-            }
-            foreach (char letter in "fhvwy")
-            {
-                letterScores.Add(letter, 4);
-            }
-            letterScores.Add('k', 5);
-            foreach (char letter in "jx")
-            {
-                letterScores.Add(letter, 8);
-            }
-            foreach (char letter in "qz")
-            {
-                letterScores.Add(letter, 10);
-            }
-        }
-
-        //TuningList();
-        //Creates the list of valid words
-        makeWordList();
-
+        //creates the list of valid words and letter scores
+        makeWordListAndScoreDict();
 
         //initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
         stoveSpots = new Vector3[boardSize];
         bankSpots = new Vector3[boardSize];
         for (int i = 0; i < boardSize; i++)
         {
-            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -2.5f, 0);
-            bankSpots[i] = new Vector3(i * (1.7f * (boardSize / 7)) - 5, -4.2f, 0);
+            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
+            bankSpots[i] = new Vector3(i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
         }
-
+		CreateSteam();
     }
 
     // Update is called once per frame
@@ -118,8 +72,28 @@ public class LetterController : MonoBehaviour
 			PlayerPrefs.SetFloat ("Score", variables.score);
 			Application.LoadLevel ("ScoreScreen");
 		}
+		TurnOnOffSteam();
     }
 
+	void CreateSteam (){
+		stoveSteam = new GameObject[7];
+
+		for( int x = 0; x < boardSize; x++){
+			stoveSteam[x] = Instantiate (steamPrefab,stoveSpots[x] + new Vector3(0,-.5f,-.5f),new Quaternion (0,0,0,0)) as GameObject;
+			stoveSteam[x].transform.eulerAngles = new Vector3 (-90,0,0);
+		}
+	}
+
+	void TurnOnOffSteam(){
+		for(int x = 0; x < boardSize; x++){
+			if(x < numLettersOnStove){
+				stoveSteam[x].particleSystem.emissionRate = 30;
+			}
+			else{
+				stoveSteam[x].particleSystem.emissionRate = 0;
+			}
+		}
+	}
 
 
     string returnLetters(int n)
@@ -563,20 +537,42 @@ public class LetterController : MonoBehaviour
         { //shuffles the letters in your hand
             shuffleLetters();
         }
-        //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-        //			if(checkForWord(sendWord())){
-        //				variables.score++;
-        //				print ("I'm a word!");
-        //				print("Current Score: " + variables.score);
-        //			}
-        //			else{
-        //				print ("Not a word");
-        //			}
-        //		}
     }
 
-    void makeWordList()
+    void makeWordListAndScoreDict()
     {
+		if (letterScores == null)
+		{
+			letterScores = new Dictionary<char, int>();
+			
+			//Create the dictionary of letter scores
+			foreach (char letter in "eaionrtlsu")
+			{
+				letterScores.Add(letter, 1);
+			}
+			foreach (char letter in "dg")
+			{
+				letterScores.Add(letter, 2);
+			}
+			foreach (char letter in "bcmp")
+			{
+				letterScores.Add(letter, 3);
+			}
+			foreach (char letter in "fhvwy")
+			{
+				letterScores.Add(letter, 4);
+			}
+			letterScores.Add('k', 5);
+			foreach (char letter in "jx")
+			{
+				letterScores.Add(letter, 8);
+			}
+			foreach (char letter in "qz")
+			{
+				letterScores.Add(letter, 10);
+			}
+		}
+
         //This method makes the word list once
         string[] tempWordList = sowpods.text.Split('\n');
         for (int j = 0; j < tempWordList.Length; j++)
@@ -587,16 +583,6 @@ public class LetterController : MonoBehaviour
                 wordList.Add(proposedWord);
             }
         }
-        //		if (GUI.Button(new Rect(100, 330, 100, 30), "Send Word")){
-        //			if(checkForWord(sendWord())){
-        //				variables.score++;
-        //				print ("I'm a word!");
-        //				print("Current Score: " + variables.score);
-        //			}
-        //			else{
-        //				print ("Not a word");
-        //			}
-        //		}
     }
 
     public bool checkForWord(string word)
