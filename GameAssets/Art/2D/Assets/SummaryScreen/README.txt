@@ -7,3 +7,4 @@ Summary Screen Information
 -A mockup of what scoring will look like is included in this file for reference.  
 -The font used for the text (which should also be used for generating scoring) is OCR A Std.
 -The font color is #333333.
+-The menu button looks different in the reference, but it is in the correct location.
