@@ -45,8 +45,8 @@ public class StartScreenGUI : MonoBehaviour {
 			aboutSelected.SetActive(true);
 			if(UniversalInput.press){
 				aboutButtonPos.z += 0.5f;
-				aboutSelected.transform.position = playButtonPos;
-				Debug.Log ("go to the about page");
+				aboutSelected.transform.position = aboutButtonPos;
+				Application.LoadLevel("About");
 			}
 		}else{
 			aboutUnselected.SetActive(true);
