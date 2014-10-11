@@ -11,17 +11,39 @@ public class SelectScript : MonoBehaviour {
 	//click control variables 
 	public bool selected = false;
 	int selectNum = -1;
+	public GameObject chooseTwoMessage;
+
+	public bool newSelect;
+	Camera camera;
+	Bounds characterBounds;
+	SpriteRenderer card;
+
 
 	// Use this for initialization
 	void Start () {
 		//establishes script reference
 		variables = variableController.GetComponent<VariableControl>();
 		character = gameObject.GetComponent<Character>();
+		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
+		characterBounds = gameObject.GetComponent<BoxCollider> ().bounds;
+		card = gameObject.GetComponent<SpriteRenderer> ();
+
 	}
 		// Use this for initialization
 		// Update is called once per frame
 		void Update ()
 		{
+			if(newSelect){
+				
+				if(UniversalInput.press && UniversalInput.inRect(characterBounds, camera)){
+					card.enabled = false;
+					chooseTwoMessage.SetActive(false);
+			
+				}
+
+
+			}
+			else{
 				//increases the character's size if it is selected
 				if (selected) {
 						gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
@@ -36,7 +58,9 @@ public class SelectScript : MonoBehaviour {
 						selected = false;
 						gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
 				}
+			}
 		}
+
 	
 
 	void OnMouseDown () {
