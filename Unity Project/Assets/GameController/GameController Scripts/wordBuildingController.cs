@@ -4,6 +4,7 @@ using System.Collections;
 public class wordBuildingController : MonoBehaviour {
 	public GameObject [] characters = new GameObject[6];
 	public VariableControl variables;
+	public GameObject variableController;
 	public Texture2D endGameButton;
 	int character1Num = 1;
 	int character2Num = 2;
@@ -11,7 +12,7 @@ public class wordBuildingController : MonoBehaviour {
 	public GameObject character2;
 	// Use this for initialization
 	void Start () {
-		variables = gameObject.GetComponent<VariableControl>();
+		variables = variableController.GetComponent<VariableControl>();
 		character1Num = PlayerPrefs.GetInt("Character 1");
 		character2Num = PlayerPrefs.GetInt("Character 2");
 		character1 = (GameObject)Instantiate(characters[character1Num], variables.phase2CharacterPositions[0], Quaternion.identity); 

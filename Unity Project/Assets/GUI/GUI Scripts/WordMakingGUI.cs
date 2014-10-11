@@ -4,6 +4,7 @@ using System.Collections;
 public class WordMakingGUI : MonoBehaviour {
 	public Texture2D background;
 	float scale;
+	public GameObject variableController;
 	// Use this for initialization
 	void Start () {
 		scale = Mathf.Max (Screen.width / 479.0f, Screen.height/ 319.0f);
@@ -22,13 +23,13 @@ public class WordMakingGUI : MonoBehaviour {
 		// score display
 		GUI.Label (new Rect (Screen.width * 0.01f, Screen.height*0.01f, Screen.width*0.22f, Screen.height*0.08f), "", style);
 		style.normal.background = null;
-		GUI.Label (new Rect (Screen.width * 0.008f, Screen.height*0.018f, Screen.width*0.18f, Screen.height*0.08f), "\tScore:  " + GameObject.Find("GameController").GetComponent<wordBuildingController>().variables.score, style);
+		GUI.Label (new Rect (Screen.width * 0.008f, Screen.height*0.018f, Screen.width*0.18f, Screen.height*0.08f), "\tScore:  " + variableController.GetComponent<VariableControl>().score, style);
 
 		// tiles remaining
 		style.normal.background = background;
 		GUI.Label (new Rect (Screen.width * 0.32f, Screen.height*0.01f, Screen.width*0.38f, Screen.height*0.08f), "", style);
 		style.normal.background = null;
-		GUI.Label (new Rect (Screen.width * 0.34f, Screen.height*0.018f, Screen.width*0.35f, Screen.height*0.08f), "Tiles Remaining:  " + GameObject.Find("GameController").GetComponent<VariableControl>().totalLetters, style);
+		GUI.Label (new Rect (Screen.width * 0.34f, Screen.height*0.018f, Screen.width*0.35f, Screen.height*0.08f), "Tiles Remaining:  " + variableController.GetComponent<VariableControl>().totalLetters, style);
 
 
 		// menu button
