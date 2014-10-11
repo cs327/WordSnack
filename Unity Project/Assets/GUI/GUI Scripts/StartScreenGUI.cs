@@ -2,25 +2,37 @@
 
 public class StartScreenGUI : MonoBehaviour {
 
-	public Texture background;
+	public GameObject playUnselected;
+	public GameObject playSelected;
+	Bounds playBounds;
+	Camera camera;
+	Vector3 playButtonPos;
 
-	void OnGUI(){
-//		GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), background);
+
+	void Start(){
+		camera = gameObject.GetComponent<Camera> ();
+		playBounds = playUnselected.GetComponent<BoxCollider> ().bounds;
+		playButtonPos = playSelected.transform.position;
+		playSelected.SetActive (false);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if (UniversalInput.press){
-			if( UniversalInput.inRect (new Rect(Screen.width * 0.35f, Screen.height * 0.36f, Screen.width * 0.25f, Screen.height * 0.12f))) {
-				Debug.Log ("pressed on the play area");
+
+		if(UniversalInput.inRect(playBounds, camera)){
+			playUnselected.SetActive(false);
+			playSelected.SetActive(true);
+			if(UniversalInput.press){
+				playButtonPos.z += 0.5f;
+				playSelected.transform.position = playButtonPos;
 				Application.LoadLevel("CharacterSelect");
-			}else if(UniversalInput.inRect (new Rect (Screen.width*0.25f, Screen.height*0.6f, Screen.width*0.45f, Screen.height*0.12f))){
-				Debug.Log ("pressed on the characters area");
-				Application.LoadLevel("CharacterSelect");
-			}else if(UniversalInput.inRect(new Rect (Screen.width*0.28f, Screen.height*0.81f, Screen.width*0.4f, Screen.height*0.12f))){
-				Debug.Log ("pressed on the options area");
 			}
+		}else{
+			playUnselected.SetActive(true);
+			playSelected.SetActive(false);
 		}
+
+
 	}
 
 }

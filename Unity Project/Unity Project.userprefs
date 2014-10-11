@@ -30,7 +30,7 @@
       <File FileName="Assets/GameController/GameController Scripts/characterSelectController.cs" Line="1" Column="1" />
       <File FileName="Assets/HighScores/ScoreManager.cs" Line="1" Column="1" />
       <File FileName="Assets/GUI/GUI Scripts/ReceiptMove.cs" Line="17" Column="17" />
-      <File FileName="Assets/GoBackToMenu.cs" Line="17" Column="45" />
+      <File FileName="Assets/GoBackToMenu.cs" Line="10" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
