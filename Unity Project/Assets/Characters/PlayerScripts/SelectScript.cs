@@ -11,13 +11,14 @@ public class SelectScript : MonoBehaviour {
 	//click control variables 
 	public bool selected = false;
 	int selectNum = -1;
-	public GameObject chooseTwoMessage;
 
+	// variables added for displaying new UI - Ning
+	public GameObject chooseTwoMessage;
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
 	SpriteRenderer card;
-
+	//-----------------------------------
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,7 @@ public class SelectScript : MonoBehaviour {
 		// Update is called once per frame
 		void Update ()
 		{
+			// for testing new UI - Ning
 			if(newSelect){
 				
 				if(UniversalInput.press && UniversalInput.inRect(characterBounds, camera)){
