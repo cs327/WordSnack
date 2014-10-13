@@ -34,7 +34,7 @@ public class StartScreenGUI : MonoBehaviour {
 			if(UniversalInput.press){
 				playButtonPos.z += 0.5f;
 				playSelected.transform.position = playButtonPos;
-				Application.LoadLevel("CharacterSelect");
+				Application.LoadLevel("CharacterSelectTest");
 				buttonPressed = true; 
 			}
 		}else{
