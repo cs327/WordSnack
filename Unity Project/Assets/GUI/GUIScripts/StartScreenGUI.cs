@@ -12,6 +12,8 @@ public class StartScreenGUI : MonoBehaviour {
 	Vector3 playButtonPos;
 	Vector3 aboutButtonPos;
 
+	public bool buttonPressed = false;
+
 
 	void Start(){
 		camera = gameObject.GetComponent<Camera> ();
@@ -33,6 +35,7 @@ public class StartScreenGUI : MonoBehaviour {
 				playButtonPos.z += 0.5f;
 				playSelected.transform.position = playButtonPos;
 				Application.LoadLevel("CharacterSelect");
+				buttonPressed = true; 
 			}
 		}else{
 			playUnselected.SetActive(true);
@@ -47,6 +50,7 @@ public class StartScreenGUI : MonoBehaviour {
 				aboutButtonPos.z += 0.5f;
 				aboutSelected.transform.position = aboutButtonPos;
 				Application.LoadLevel("About");
+				buttonPressed = true;
 			}
 		}else{
 			aboutUnselected.SetActive(true);
