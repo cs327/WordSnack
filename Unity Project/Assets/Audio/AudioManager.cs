@@ -44,7 +44,6 @@ public class AudioManager : MonoBehaviour {
 		//dio.loop = true;
 		if (audioSourceArray [i].isPlaying == false) {
 			audioSourceArray [i].Play ();
-			
 		}
 		//audio.Play;
 	}
