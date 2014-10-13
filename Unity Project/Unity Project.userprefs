@@ -1,14 +1,42 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Characters/PlayerScripts/SelectScript.cs">
     <Files>
-      <File FileName="Assets/Characters/PlayerScripts/SelectScript.cs" Line="54" Column="58" />
+      <File FileName="Assets/GUI/GUI Scripts/MainGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/UIManager.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Manager/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Background/Background Scripts/BackgroundBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/StartScreenGUI.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/Misc/Menu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Background/Background Scripts/ChangeScene.cs" Line="1" Column="1" />
+      <File FileName="../../../Perforce/xie22n_Nings-MacBook-Pro_2353/massdigi/BedroomMonsters/NightTerrorsDev/Assets/Scripts/UI/UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Words/WordScripts/WordSelectScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/scoreScreenScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/GameStateController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Characters/PlayerScripts/SelectScript.cs" Line="26" Column="1" />
+      <File FileName="Assets/Characters/PlayerScripts/CharacterTimers.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/scoreScreenController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/splashScreenController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/startScreenController.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="1" Column="1" />
+      <File FileName="Assets/letterGenScript/LetterController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Characters/PlayerScripts/TasteCollection.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/ScoreGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/WordMakingGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Characters/PlayerScripts/Character.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/CharacterSelectUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/characterSelectController.cs" Line="1" Column="1" />
+      <File FileName="Assets/HighScores/ScoreManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/ReceiptMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/AboutUsMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUI Scripts/Loading.cs" Line="6" Column="23" />
+      <File FileName="Assets/Background/PlayScreen/starfield_files/RotateBackground.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/hklales/Documents/cs327/WordSnack/Unity Project/Assets/HighScores/ScoreManager.cs" line="29" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
