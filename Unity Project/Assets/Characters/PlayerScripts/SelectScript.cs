@@ -14,7 +14,7 @@ public class SelectScript : MonoBehaviour {
 
 	// variables added for displaying new UI - Ning
 	public GameObject chooseTwoMessage;
-	//public GameObject chooseOneMore;
+	public GameObject chooseOneMore;
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
@@ -31,7 +31,7 @@ public class SelectScript : MonoBehaviour {
 		card = gameObject.GetComponent<SpriteRenderer> ();
 		//setting the choose one more image to false so it will not show up until two characters 
 		//are selected
-		//chooseOneMore.SetActive (false);
+		chooseOneMore.SetActive (false);
 
 	}
 		// Use this for initialization
@@ -39,20 +39,29 @@ public class SelectScript : MonoBehaviour {
 		void Update ()
 		{
 			// for testing new UI - Ning
-			if(newSelect){
+			if (newSelect) {
+						if (UniversalInput.press && UniversalInput.inRect (characterBounds, camera)) {
+								//card.enabled = false;
+								chooseTwoMessage.SetActive (false);
+								//setting the choose one more to true telling the player to choose one more 
+								chooseOneMore.SetActive (true); 
+						}
+						if (selected) {
+								Debug.Log ("Something Has been pressed"); 
+								gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
 				
-				if(UniversalInput.press && UniversalInput.inRect(characterBounds, camera)){
-					card.enabled = false;
-					chooseTwoMessage.SetActive(false);
-					//setting the choose one more to true telling the player to choose one more 
-					//chooseOneMore.SetActive(true); 
+						} else {
+								//otherwise resets character to regular size
+								gameObject.transform.localScale = new Vector3 (1, 1, 1);
+								chooseTwoMessage.SetActive(true);
+								chooseOneMore.SetActive(false);
+						}
 				}
 
-
-			}
-			else{
+			else {
 				//increases the character's size if it is selected
 				if (selected) {
+						Debug.Log("Something Has been pressed"); 
 						gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
 
 				} else {
@@ -71,10 +80,13 @@ public class SelectScript : MonoBehaviour {
 	
 
 	void OnMouseDown () {
+		newSelect = true;
+		//selected = true;
+		toggleSelect(); 
 		//only active during the selection phase
 		if (Application.loadedLevelName == "CharacterSelectTest" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
 			//changes the selected state
-			toggleSelect();
+			//toggleSelect();
 			//adds the character to the selected array and parents it to the main variableController
 			if (selected && variableController.transform.childCount < 2) {
 				selectNum = variables.currentCharacterSelectNum;
@@ -113,5 +125,16 @@ public class SelectScript : MonoBehaviour {
 					boxStyle.wordWrap = true;
 					GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 80 * scale, Screen.width * 0.15f, Screen.height * 0.2f), "Tastes:" + character.thingsILike);
 			}
+	}
+
+	public void loadMainGame () {
+		//		for (int i = 0; i < variables.characterSelectNum; i++) {
+		//			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
+		//		}
+		variables.timeToChangeGameState = false;
+		PlayerPrefs.SetInt("Character 1", variables.selectedCharacterNums[0]);
+		PlayerPrefs.SetInt("Character 2", variables.selectedCharacterNums[1]);
+		Application.LoadLevel("WordMaking");
+		//moves the characters into their appropriate positions
 	}
 }
