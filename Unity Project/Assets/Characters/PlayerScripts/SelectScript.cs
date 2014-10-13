@@ -14,6 +14,7 @@ public class SelectScript : MonoBehaviour {
 
 	// variables added for displaying new UI - Ning
 	public GameObject chooseTwoMessage;
+	//public GameObject chooseOneMore;
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
@@ -28,6 +29,9 @@ public class SelectScript : MonoBehaviour {
 		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
 		characterBounds = gameObject.GetComponent<BoxCollider> ().bounds;
 		card = gameObject.GetComponent<SpriteRenderer> ();
+		//setting the choose one more image to false so it will not show up until two characters 
+		//are selected
+		//chooseOneMore.SetActive (false);
 
 	}
 		// Use this for initialization
@@ -40,7 +44,8 @@ public class SelectScript : MonoBehaviour {
 				if(UniversalInput.press && UniversalInput.inRect(characterBounds, camera)){
 					card.enabled = false;
 					chooseTwoMessage.SetActive(false);
-			
+					//setting the choose one more to true telling the player to choose one more 
+					//chooseOneMore.SetActive(true); 
 				}
 
 
@@ -67,7 +72,7 @@ public class SelectScript : MonoBehaviour {
 
 	void OnMouseDown () {
 		//only active during the selection phase
-		if (Application.loadedLevelName == "CharacterSelect" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
+		if (Application.loadedLevelName == "CharacterSelectTest" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
 			//changes the selected state
 			toggleSelect();
 			//adds the character to the selected array and parents it to the main variableController
