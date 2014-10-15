@@ -53,7 +53,7 @@ public class StartScreenGUI : MonoBehaviour {
 				aboutSelected.transform.position = aboutButtonPos;
 				buttonPressed = true; 
 				Application.LoadLevel("About");
-				buttonPressed = true;
+
 			}
 		}else{
 			aboutUnselected.SetActive(true);
