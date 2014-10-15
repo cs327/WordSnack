@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: c6cbd797b03dd471b9049edd4ec62204
+guid: c2de1adc388b3410fb247145d550a419
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KelvinCard
+    21300000: SpikeCard
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
