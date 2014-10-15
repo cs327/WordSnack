@@ -13,6 +13,14 @@ public class SelectScript : MonoBehaviour {
 	public bool selected = false;
 	int selectNum = -1;
 
+	//remember initial position
+	public Vector3 startingSpot;
+
+	//Character Card images
+	public Sprite selectedImage;
+	public Sprite standbyImage;
+	public SpriteRenderer thisSprite;
+
 	// variables added for displaying new UI - Ning
 	SpriteRenderer chooseTwoSprite;
 	SpriteRenderer chooseOneMoreSprite;
@@ -26,21 +34,18 @@ public class SelectScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//start the character with the correct sprite image (standby)
+		thisSprite = gameObject.GetComponent<SpriteRenderer>();
+		thisSprite.sprite = standbyImage;
+
+		//gives the character a memory of its initial position
+		startingSpot = gameObject.transform.position;
+
 		//establishes script reference
 		variables = variableController.GetComponent<VariableControl>();
 		character = gameObject.GetComponent<Character>();
 		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
 		characterBounds = gameObject.GetComponent<BoxCollider> ().bounds;
-		//setting the choose one more image to false so it will not show up until two characters 
-		//are selected
-		chooseTwoSprite = GameObject.Find ("chooseTwo").GetComponent<SpriteRenderer> ();
-		chooseOneMoreSprite = GameObject.Find ("whoElse").GetComponent<SpriteRenderer> ();
-		chooseTwoSprite.enabled = true;
-		chooseOneMoreSprite.enabled = false;
-
-		leftCard.SetActive (false);
-		rightCard.SetActive (false);
-
 	}
 		// Use this for initialization
 		// Update is called once per frame
@@ -61,55 +66,48 @@ public class SelectScript : MonoBehaviour {
 	
 
 	void OnMouseDown () {
-		if (variables.currentCharacterSelectNum > 1) {
-			print ("this error is happening");
-		}
-		newSelect = true;
-		//selected = true;
+		//change it to be selected or deselected based on what it already was
 		toggleSelect(); 
-		Debug.Log ("variables.currentCharacterSelectNum: " + variables.currentCharacterSelectNum);
-		//only active during the selection phase
-		if (Application.loadedLevelName == "CharacterSelectTest" && (variables.currentCharacterSelectNum < variables.characterSelectNum - 1 || selected)) {
-			//changes the selected state
-			//toggleSelect();
-			//adds the character to the selected array and parents it to the main variableController
-			if (selected) {
 
-				selectNum = variables.currentCharacterSelectNum;
-				variables.characterSelected[variables.currentCharacterSelectNum] = true;
-				variables.selectedCharacters[variables.currentCharacterSelectNum] = gameObject;
-				variables.selectedCharacterNums[variables.currentCharacterSelectNum] = character.characterNum;
+
+		//only run the following during the selection phase
+		if (Application.loadedLevelName == "CharacterSelectTest"){
+			//if clicking the character selected it and there are still open spaces for selection
+			if (selected && variables.currentCharacterSelectNum < variables.characterSelectNum) {
+				//checks if its the first spot that is open, and places the character there
+				if(variables.selectedCharacters[0] == null){
+					selectNum = 0;
+					variables.characterSelected[0] = true;
+					variables.selectedCharacters[0] = gameObject;
+					variables.selectedCharacterNums[0] = character.characterNum;
+				}
+				//if its not the first spot, it puts the character in the second spot
+				else{
+					selectNum = 1;
+					variables.characterSelected[1] = true;
+					variables.selectedCharacters[1] = gameObject;
+					variables.selectedCharacterNums[1] = character.characterNum;
+				}
+				//makes the sprite renderer show the "selected" card and gives it the correct transform
+				thisSprite.sprite = selectedImage;
+				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
 				variables.currentCharacterSelectNum++;
-//				gameObject.transform.parent = variableController.transform;
-			} else if (selected == false) {
+			} 
+			//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
+			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
+				toggleSelect();
+			}
+
+			//last check, if a player deselects a character that is already active
+			else {
+				thisSprite.sprite = standbyImage;
+				gameObject.transform.position = startingSpot;
+
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
-//				gameObject.transform.parent = characterParent.transform;
 				variables.characterSelected[selectNum] = false;
 				variables.selectedCharacters[selectNum] = null;
 				selectNum = -1;
 				variables.currentCharacterSelectNum--;
-			}
-
-			if (selected) {
-				Debug.Log("Something Has been pressed"); 
-				//gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
-				if(variables.currentCharacterSelectNum == 1){
-					chooseTwoSprite.enabled = false;
-					chooseOneMoreSprite.enabled = true;
-					leftCard.SetActive(true);
-					gameObject.GetComponent<SpriteRenderer>().enabled = false;
-				}else if(variables.currentCharacterSelectNum == 2){
-					chooseOneMoreSprite.enabled = false;
-					rightCard.SetActive(true);
-					gameObject.GetComponent<SpriteRenderer>().enabled = false;
-				}else{
-					gameObject.GetComponent<SpriteRenderer>().enabled = true;
-				}
-				
-				
-			} else {
-				//otherwise resets character to regular size
-				gameObject.transform.localScale = new Vector3 (1, 1, 1);
 			}
 		}
 	}
@@ -117,8 +115,12 @@ public class SelectScript : MonoBehaviour {
 
 	void toggleSelect ()
 	{
-		if (variables.currentCharacterSelectNum < variables.characterSelectNum) {
-			selected = !selected;
+		//simply toggles the select bool whenever it is called.
+		if(selected != true){
+			selected = true;
+		}
+		else{
+			selected = false;
 		}
 	}
 	
