@@ -94,9 +94,12 @@ public class SelectScript : MonoBehaviour {
 				Debug.Log("Something Has been pressed"); 
 				//gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
 				if(variables.currentCharacterSelectNum == 1){
+					chooseTwoSprite.enabled = false;
+					chooseOneMoreSprite.enabled = true;
 					leftCard.SetActive(true);
 					gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				}else if(variables.currentCharacterSelectNum == 2){
+					chooseOneMoreSprite.enabled = false;
 					rightCard.SetActive(true);
 					gameObject.GetComponent<SpriteRenderer>().enabled = false;
 				}else{
