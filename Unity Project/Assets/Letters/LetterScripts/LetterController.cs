@@ -31,26 +31,27 @@ public class LetterController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //initialize variablecontrol reference
-        variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
-        //initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
-        lettersOnBoard = new letterBehaviour[boardSize];
-        lettersOnStove = new letterBehaviour[boardSize];
-        newArraySpot = new bool[boardSize];
+		//initialize variablecontrol reference
+		variables = GameObject.Find ("VariableController").GetComponent<VariableControl> ();
 
-        //creates the list of valid words and letter scores
-        makeWordListAndScoreDict();
+		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
+		lettersOnBoard = new letterBehaviour[boardSize];
+		lettersOnStove = new letterBehaviour[boardSize];
+		newArraySpot = new bool[boardSize];
 
-        //initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
-        stoveSpots = new Vector3[boardSize];
-        bankSpots = new Vector3[boardSize];
-        for (int i = 0; i < boardSize; i++)
-        {
-            stoveSpots[i] = new Vector3(i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
-            bankSpots[i] = new Vector3(i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
-        }
-		CreateSteam();
+		//creates the list of valid words and letter scores
+		makeWordListAndScoreDict ();
+
+		//initialize all physical spots on board (as arrays of Vector3's according to amount of letters on board
+		stoveSpots = new Vector3[boardSize];
+		bankSpots = new Vector3[boardSize];
+		for (int i = 0; i < boardSize; i++) {
+				stoveSpots [i] = new Vector3 (i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
+				bankSpots [i] = new Vector3 (i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
+		}
+		CreateSteam ();
+		
     }
 
     // Update is called once per frame
@@ -110,13 +111,11 @@ public class LetterController : MonoBehaviour
                 emptyLetterCount++;
         }
         return letters;
-
     }
 
-
+    // Takes a random letter "out of the bag"
     char randomLetter()
     {
-
         int currentPos = 0;
 
         int letter = Random.Range(0, variables.totalLetters);
@@ -301,7 +300,6 @@ public class LetterController : MonoBehaviour
             lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1], new Quaternion(0, 0, 0, 0)) as letterBehaviour;
             lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
         }
-
     }
 
 
@@ -347,6 +345,7 @@ public class LetterController : MonoBehaviour
         }
     }
 
+   
     void moveToAndFromStove()
     {
 

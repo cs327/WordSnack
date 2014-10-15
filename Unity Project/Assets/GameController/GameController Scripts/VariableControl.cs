@@ -68,6 +68,7 @@ public class VariableControl : MonoBehaviour {
 	public int [] selectedCharacterNums; 
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
+	public Vector3 [] phase1SelectedCharPositions;
 
 	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
@@ -85,10 +86,15 @@ public class VariableControl : MonoBehaviour {
 	// Use this for initialization
 	void Awake() {
 		phase2CharacterPositions = new Vector3[characterSelectNum];
-		
+		phase1SelectedCharPositions = new Vector3[characterSelectNum];
+
+		//establishes the selected characters positions for phase 1
+		phase1SelectedCharPositions[0] = new Vector3(-3.1f,-3.3f,0);
+		phase1SelectedCharPositions[1] = new Vector3(3.1f,-3.3f,0);
+
 		//establishes the character position for phase 2
-		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
-		phase2CharacterPositions[1] = new Vector3(5, 0, 0);
+		phase2CharacterPositions[0] = new Vector3(-3.5f, 1.5f, 0);
+		phase2CharacterPositions[1] = new Vector3(3.8f, 1.5f, 0);
 	}
 
 	void Start () {
@@ -106,12 +112,12 @@ public class VariableControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//sets the selectNum back to lowest unclaimed position in the array
-		currentCharacterSelectNum = gameObject.transform.childCount;
+//		currentCharacterSelectNum = gameObject.transform.childCount;
 		if (gameObject.transform.childCount < 2) {
 
 		}
 		//checks if all three characters are selected 
-		if (Application.loadedLevelName == "CharacterSelect" && currentCharacterSelectNum == 2) {
+		if (Application.loadedLevelName == "CharacterSelectTest" && currentCharacterSelectNum == 2) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
 		} else {

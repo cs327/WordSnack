@@ -10,6 +10,7 @@ public static class ScoreManager
 {
     public static List<int> scoreList;
     
+    // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -38,6 +39,7 @@ public static class ScoreManager
         return scoreList;
     }
 
+    // Reads the save file if it exists, loads the scores into scoreList
     private static void LoadScores()
     {
         if (File.Exists(Application.persistentDataPath + 

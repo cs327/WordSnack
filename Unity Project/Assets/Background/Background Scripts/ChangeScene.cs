@@ -12,6 +12,7 @@ public class ChangeScene : MonoBehaviour {
 	
 	}
 
+    
 	void OnMouseDown () {
 		if (Application.loadedLevelName == "SplashScreen") {
 			Application.LoadLevel("StartScreenTest");

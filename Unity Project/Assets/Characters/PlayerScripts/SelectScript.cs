@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// 
 public class SelectScript : MonoBehaviour {
 	//script reference 
 	public GameObject variableController;
@@ -12,82 +13,101 @@ public class SelectScript : MonoBehaviour {
 	public bool selected = false;
 	int selectNum = -1;
 
+	//remember initial position
+	public Vector3 startingSpot;
+
+	//Character Card images
+	public Sprite selectedImage;
+	public Sprite standbyImage;
+	public SpriteRenderer thisSprite;
+
 	// variables added for displaying new UI - Ning
-	public GameObject chooseTwoMessage;
-	//public GameObject chooseOneMore;
+	SpriteRenderer chooseTwoSprite;
+	SpriteRenderer chooseOneMoreSprite;
+    // A reference to the 
+	public GameObject leftCard;
+	public GameObject rightCard;
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
-	SpriteRenderer card;
 	//-----------------------------------
 
 	// Use this for initialization
 	void Start () {
+		//start the character with the correct sprite image (standby)
+		thisSprite = gameObject.GetComponent<SpriteRenderer>();
+		thisSprite.sprite = standbyImage;
+
+		//gives the character a memory of its initial position
+		startingSpot = gameObject.transform.position;
+
 		//establishes script reference
 		variables = variableController.GetComponent<VariableControl>();
 		character = gameObject.GetComponent<Character>();
 		camera = GameObject.Find ("Main Camera").GetComponent<Camera>();
 		characterBounds = gameObject.GetComponent<BoxCollider> ().bounds;
-		card = gameObject.GetComponent<SpriteRenderer> ();
-		//setting the choose one more image to false so it will not show up until two characters 
-		//are selected
-		//chooseOneMore.SetActive (false);
-
 	}
 		// Use this for initialization
 		// Update is called once per frame
 		void Update ()
 		{
-			// for testing new UI - Ning
-			if(newSelect){
-				
-				if(UniversalInput.press && UniversalInput.inRect(characterBounds, camera)){
-					card.enabled = false;
-					chooseTwoMessage.SetActive(false);
-					//setting the choose one more to true telling the player to choose one more 
-					//chooseOneMore.SetActive(true); 
-				}
-
-
-			}
-			else{
+		print (variables.currentCharacterSelectNum);
 				//increases the character's size if it is selected
-				if (selected) {
-						gameObject.transform.localScale = new Vector3 (1.5F, 1.5F, 1.5F);
-
-				} else {
-						//otherwise resets character to regular size
-						gameObject.transform.localScale = new Vector3 (1, 1, 1);
-				}
+				
 
 				//deselects character when "Phase2" is loaded 
 				if (Application.loadedLevelName == "WordMaking" && selected) {
 						selected = false;
 						gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
 				}
-			}
 		}
+		
 
 	
 
 	void OnMouseDown () {
-		//only active during the selection phase
-		if (Application.loadedLevelName == "CharacterSelectTest" && (variables.currentCharacterSelectNum < variables.characterSelectNum || selected)) {
-			//changes the selected state
-			toggleSelect();
-			//adds the character to the selected array and parents it to the main variableController
-			if (selected && variableController.transform.childCount < 2) {
-				selectNum = variables.currentCharacterSelectNum;
-				variables.characterSelected[variables.currentCharacterSelectNum] = true;
-				variables.selectedCharacters[variables.currentCharacterSelectNum] = gameObject;
-				variables.selectedCharacterNums[variables.currentCharacterSelectNum++] = character.characterNum;
-				gameObject.transform.parent = variableController.transform;
-			} else if (selected == false) {
+		//change it to be selected or deselected based on what it already was
+		toggleSelect(); 
+
+
+		//only run the following during the selection phase
+		if (Application.loadedLevelName == "CharacterSelectTest"){
+			//if clicking the character selected it and there are still open spaces for selection
+			if (selected && variables.currentCharacterSelectNum < variables.characterSelectNum) {
+				//checks if its the first spot that is open, and places the character there
+				if(variables.selectedCharacters[0] == null){
+					selectNum = 0;
+					variables.characterSelected[0] = true;
+					variables.selectedCharacters[0] = gameObject;
+					variables.selectedCharacterNums[0] = character.characterNum;
+				}
+				//if its not the first spot, it puts the character in the second spot
+				else{
+					selectNum = 1;
+					variables.characterSelected[1] = true;
+					variables.selectedCharacters[1] = gameObject;
+					variables.selectedCharacterNums[1] = character.characterNum;
+				}
+				//makes the sprite renderer show the "selected" card and gives it the correct transform
+				thisSprite.sprite = selectedImage;
+				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
+				variables.currentCharacterSelectNum++;
+			} 
+			//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
+			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
+				toggleSelect();
+			}
+
+			//last check, if a player deselects a character that is already active
+			else {
+				thisSprite.sprite = standbyImage;
+				gameObject.transform.position = startingSpot;
+
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
-				gameObject.transform.parent = characterParent.transform;
 				variables.characterSelected[selectNum] = false;
 				variables.selectedCharacters[selectNum] = null;
 				selectNum = -1;
+				variables.currentCharacterSelectNum--;
 			}
 		}
 	}
@@ -95,23 +115,24 @@ public class SelectScript : MonoBehaviour {
 
 	void toggleSelect ()
 	{
-			if (selected == true) {
-					selected = false;
-			} else if (selected == false) {
-					selected = true;
-			}
+		//simply toggles the select bool whenever it is called.
+		if(selected != true){
+			selected = true;
+		}
+		else{
+			selected = false;
+		}
 	}
+	
 
-	void OnGUI ()
-	{
-			if (selected) {
-					float scale = Mathf.Max (Screen.width / 479.0f, Screen.height / 319.0f);
-					Camera c = GameObject.Find ("Main Camera").camera;
-					Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
-					string taste = gameObject.GetComponent<Character> ().thingsILike;
-					GUIStyle boxStyle = "box";
-					boxStyle.wordWrap = true;
-					GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 80 * scale, Screen.width * 0.15f, Screen.height * 0.2f), "Tastes:" + character.thingsILike);
-			}
+	public void loadMainGame () {
+		//		for (int i = 0; i < variables.characterSelectNum; i++) {
+		//			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
+		//		}
+		variables.timeToChangeGameState = false;
+		PlayerPrefs.SetInt("Character 1", variables.selectedCharacterNums[0]);
+		PlayerPrefs.SetInt("Character 2", variables.selectedCharacterNums[1]);
+		Application.LoadLevel("WordMaking");
+		//moves the characters into their appropriate positions
 	}
 }

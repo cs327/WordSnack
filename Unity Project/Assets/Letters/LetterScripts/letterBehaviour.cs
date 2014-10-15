@@ -23,6 +23,7 @@ public class letterBehaviour : MonoBehaviour {
 		CheckSelected(selected);
 	}
 
+    // Switch the checked status
 	void OnMouseDown(){
 		if(!selected){
 			selected = true;
@@ -33,6 +34,7 @@ public class letterBehaviour : MonoBehaviour {
 
 	}
 
+    // Colors the letter depending on if it's selected or not
 	void CheckSelected(bool on){
 		if(on){
 			gameObject.renderer.material.color = Color.magenta;
