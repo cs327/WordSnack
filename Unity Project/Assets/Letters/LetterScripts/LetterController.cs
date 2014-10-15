@@ -111,13 +111,11 @@ public class LetterController : MonoBehaviour
                 emptyLetterCount++;
         }
         return letters;
-
     }
 
-
+    // Takes a random letter "out of the bag"
     char randomLetter()
     {
-
         int currentPos = 0;
 
         int letter = Random.Range(0, variables.totalLetters);
@@ -347,6 +345,7 @@ public class LetterController : MonoBehaviour
         }
     }
 
+   
     void moveToAndFromStove()
     {
 
