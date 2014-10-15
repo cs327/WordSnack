@@ -5,19 +5,30 @@ using System.Linq;
 
 public class Character : MonoBehaviour
 {
+    // This is a list of delegates (i.e functions) 
+    // Each is given a word and returns the taste multiplier for that word. 
     public List<TasteCollection.Taste> myTastes;
     //public CharacterTimers Timer;
     public int characterNum;
+
+    // Used to retrieve words to potentially send to a character
     public LetterController letterControl;
     public GameObject letterGenerator;
+    // Used to add default tastes to characters
     private VariableControl variables;
-    //Dictionary of taste ID's to names
+
+    // Dictionary of taste ID's to names. 
+    // Give it a key (an int ID) and it will return the correct taste -> tasteDictionary[5] returns the '5' taste
     public static Dictionary<int, TasteCollection.Taste> tasteDictionary;
+    // Keeps track of fed words to calculate combo's 
     public List<string> wordsFedToMe;
-	public string thingsILike; //What should be displayed as the creatures tastes when you click it
+    //What should be displayed as the creatures tastes when you click it
+	public string thingsILike; 
 	public List<int> tasteIDs;
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
 
+    // Give it a word - if the character can eat the word this returns the word score
+    // If it's a trash character it will always accept
     public int Likes(string word)
     {
         if (characterNum != 0) { //If we're not the trash character... 
@@ -38,6 +49,7 @@ public class Character : MonoBehaviour
         return (int)tempScore;
     }
 
+    // Sums the score of the letters, then multiplies it by all the taste modifiers
     float scoreWord(string word)
     {
         float wordScore = 0;
@@ -57,18 +69,22 @@ public class Character : MonoBehaviour
         return wordScore;
     }
 
+    // Add a single taste to the collection
     public void AddTaste(TasteCollection.Taste taste)
     {
-        myTastes.Add(taste);
+        if(!myTastes.Contains(taste))
+            myTastes.Add(taste);
     }
 
+    // Add a list of tastes to the collection
     public void AddTaste(List<TasteCollection.Taste> tastes)
     {
         foreach (TasteCollection.Taste t in tastes)
             if (!myTastes.Contains(t))
                 myTastes.Add(t);
     }
-
+    
+    // Remove a single taste
     public void RemoveTaste(TasteCollection.Taste taste)
     {
         if (myTastes.Contains(taste))
@@ -154,6 +170,7 @@ public class Character : MonoBehaviour
     {
 	}
 
+    // If I'm clicked on, attempt to feed me the word on the stove
     void OnMouseDown()
     {
         if (Application.loadedLevelName == "WordMaking")

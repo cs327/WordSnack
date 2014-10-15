@@ -87,8 +87,8 @@ public class VariableControl : MonoBehaviour {
 		phase2CharacterPositions = new Vector3[characterSelectNum];
 		
 		//establishes the character position for phase 2
-		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
-		phase2CharacterPositions[1] = new Vector3(5, 0, 0);
+		phase2CharacterPositions[0] = new Vector3(-1, 0, 0);
+		phase2CharacterPositions[1] = new Vector3(6, 0, 0);
 	}
 
 	void Start () {
@@ -106,7 +106,7 @@ public class VariableControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//sets the selectNum back to lowest unclaimed position in the array
-		currentCharacterSelectNum = gameObject.transform.childCount;
+//		currentCharacterSelectNum = gameObject.transform.childCount;
 		if (gameObject.transform.childCount < 2) {
 
 		}

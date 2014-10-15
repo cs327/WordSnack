@@ -7,11 +7,14 @@ using System.Linq;
 //are tweakable in the inspector by the Game Designers.
 public static class TasteCollection
 {
+    // This is a delegate. It shows what the taste methods below should look like
+    // They all take a string and return a float representing the taste modifier for that word. 
     public delegate float Taste(string word);
 
     //makes sure we're using the same copy as everybody else
     private static VariableControl variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
+    // These three arrays below are used to see if words contain consonants/vowels/uncommon letters
     private static char[] consonants =
 	{
 		'a', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
@@ -21,7 +24,6 @@ public static class TasteCollection
 	{
 		'a','e','i','o','u',
 	};
-
     private static char[] uncommonLetterList =
 	{
 		'f', 'h', 'v', 'w', 'y', 'k', 'j', 'x', 'q', 'z',
@@ -37,16 +39,6 @@ public static class TasteCollection
         return 1;
     }
 
-    /*
-     * This preference no longer exists in the GDD
-     * public static float startsWithE(string word)
-    {
-        if (word [0] == 'e')
-            return variables.startsWithEMult;
-        else
-            return 1;
-    }
-    */
 
     public static float twoOrMoreSame(string word)
     {
@@ -121,6 +113,7 @@ public static class TasteCollection
     {
         return variables.noPreferenceMult;
     }
+
     public static float trashCollection(string word)
     {
         //Debug.Log ("Collecting trash!");
