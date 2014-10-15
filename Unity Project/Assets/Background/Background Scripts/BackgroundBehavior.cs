@@ -18,6 +18,7 @@ public class BackgroundBehavior : MonoBehaviour {
 		changeImage();
 	}
 
+    // This selects the appropriate gameBackground for the given state/scene
 	void changeImage () {
 		if (Application.loadedLevelName == "SplashScreen") {
 			deactivateAllBackgrounds();
@@ -34,6 +35,8 @@ public class BackgroundBehavior : MonoBehaviour {
 			endBackground.transform.renderer.enabled = true;
 		}
 	}
+
+    // This deactivates all backgrounds so a single one can be activated
 	void deactivateAllBackgrounds () {
 		splashBackground.transform.renderer.enabled = false; 
 		startBackground.transform.renderer.enabled = false;
