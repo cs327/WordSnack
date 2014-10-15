@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// 
 public class SelectScript : MonoBehaviour {
 	//script reference 
 	public GameObject variableController;
@@ -15,6 +16,7 @@ public class SelectScript : MonoBehaviour {
 	// variables added for displaying new UI - Ning
 	SpriteRenderer chooseTwoSprite;
 	SpriteRenderer chooseOneMoreSprite;
+    // A reference to the 
 	public GameObject leftCard;
 	public GameObject rightCard;
 	public bool newSelect;
