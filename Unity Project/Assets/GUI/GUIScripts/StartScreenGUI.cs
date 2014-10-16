@@ -29,15 +29,13 @@ public class StartScreenGUI : MonoBehaviour {
 	void Update () {
 		// for the play button
 		if(UniversalInput.inRect(playBounds, camera)){
-
 			playUnselected.SetActive(false);
 			playSelected.SetActive(true);
 			if(UniversalInput.press){
 				playButtonPos.z += 0.5f;
 				playSelected.transform.position = playButtonPos;
-				buttonPressed = true; 
 				Application.LoadLevel("CharacterSelectTest");
-
+				buttonPressed = true; 
 			}
 		}else{
 			playUnselected.SetActive(true);
@@ -51,9 +49,8 @@ public class StartScreenGUI : MonoBehaviour {
 			if(UniversalInput.press){
 				aboutButtonPos.z += 0.5f;
 				aboutSelected.transform.position = aboutButtonPos;
-				buttonPressed = true; 
 				Application.LoadLevel("About");
-
+				buttonPressed = true;
 			}
 		}else{
 			aboutUnselected.SetActive(true);
