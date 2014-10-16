@@ -32,10 +32,10 @@ public class StartScreenGUI : MonoBehaviour {
 			playUnselected.SetActive(false);
 			playSelected.SetActive(true);
 			if(UniversalInput.press){
+				buttonPressed = true;
 				playButtonPos.z += 0.5f;
 				playSelected.transform.position = playButtonPos;
-				Application.LoadLevel("CharacterSelectTest");
-				buttonPressed = true; 
+				Application.LoadLevel("CharacterSelectTest"); 
 			}
 		}else{
 			playUnselected.SetActive(true);
@@ -47,10 +47,10 @@ public class StartScreenGUI : MonoBehaviour {
 			aboutUnselected.SetActive(false);
 			aboutSelected.SetActive(true);
 			if(UniversalInput.press){
+				buttonPressed = true;
 				aboutButtonPos.z += 0.5f;
 				aboutSelected.transform.position = aboutButtonPos;
 				Application.LoadLevel("About");
-				buttonPressed = true;
 			}
 		}else{
 			aboutUnselected.SetActive(true);
