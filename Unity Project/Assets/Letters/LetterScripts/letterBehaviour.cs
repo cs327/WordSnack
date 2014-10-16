@@ -10,17 +10,23 @@ public class letterBehaviour : MonoBehaviour {
 	public SpriteRenderer thisSprite;
 	public Sprite [] sprites;
 	public int letterAlphabetOrder;
-//	public GameObject steamPrefab;
-//	public GameObject mySteam;
-	// Use this for initialization
+	LetterController l; 
+
 	void Start () {
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
 		SetLetter();
+		l = GameObject.Find ("letterGeneration").GetComponent<LetterController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		CheckSelected(selected);
+		if (l.gamePaused) {
+			thisSprite.enabled = false;
+		}
+		else{
+			thisSprite.enabled = true;
+		}
 	}
 
     // Switch the checked status

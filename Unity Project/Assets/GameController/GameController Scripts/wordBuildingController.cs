@@ -10,6 +10,8 @@ public class wordBuildingController : MonoBehaviour {
 	int character2Num = 2;
 	public GameObject character1;
 	public GameObject character2;
+	public bool gamePaused;
+
 	// Use this for initialization
 	void Start () {
 		variables = variableController.GetComponent<VariableControl>();
@@ -27,13 +29,13 @@ public class wordBuildingController : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		GUIStyle style = new GUIStyle ();
-		style.normal.background = endGameButton;
-		if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
-			PlayerPrefs.SetFloat ("Score", variables.score);
-			Application.LoadLevel("ScoreScreen");
+		if(!gamePaused){
+			GUIStyle style = new GUIStyle ();
+			style.normal.background = endGameButton;
+			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
+				PlayerPrefs.SetFloat ("Score", variables.score);
+				Application.LoadLevel("ScoreScreen");
+			}
 		}
-		//GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");
-		//GUI.Box (new Rect (400, 100, 200, 30), "Score: " + variables.score);
 	}
 }

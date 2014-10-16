@@ -26,12 +26,11 @@ public class LetterController : MonoBehaviour
     private List<string> wordList = new List<string>();
     public static Dictionary<char, int> letterScores;
 	public Texture2D shuffleButton;
-
+	public bool gamePaused;
 
     // Use this for initialization
     void Start()
     {
-
 		//initialize variablecontrol reference
 		variables = GameObject.Find ("VariableController").GetComponent<VariableControl> ();
 
@@ -51,7 +50,6 @@ public class LetterController : MonoBehaviour
 				bankSpots [i] = new Vector3 (i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
 		}
 		CreateSteam ();
-		
     }
 
     // Update is called once per frame
@@ -289,17 +287,19 @@ public class LetterController : MonoBehaviour
 
     void CreateLetters(string l)
     {
-        //take the string of letters to turn into on screen objects, and chop it into an array of its characters
-        char[] letterArray = l.ToCharArray();
-        print(l.ToString());
-        //run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
-        for (int i = 0; i < l.Length; i++)
-        {
-            //			//print(letterArray[i]);
+		if(!gamePaused){
+	        //take the string of letters to turn into on screen objects, and chop it into an array of its characters
+	        char[] letterArray = l.ToCharArray();
+	        print(l.ToString());
+	        //run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
+	        for (int i = 0; i < l.Length; i++)
+	        {
+	            //			//print(letterArray[i]);
 
-            lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1], new Quaternion(0, 0, 0, 0)) as letterBehaviour;
-            lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
-        }
+	            lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1], new Quaternion(0, 0, 0, 0)) as letterBehaviour;
+	            lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
+	        }
+		}
     }
 
 
@@ -528,14 +528,15 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
+		if(!gamePaused){
+			GUIStyle style = new GUIStyle ();
+			style.normal.background = shuffleButton;
 
-		GUIStyle style = new GUIStyle ();
-		style.normal.background = shuffleButton;
-
-		if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style))
-        { //shuffles the letters in your hand
-            shuffleLetters();
-        }
+			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style))
+	        { //shuffles the letters in your hand
+	            shuffleLetters();
+	        }
+		}
     }
 
     void makeWordListAndScoreDict()
