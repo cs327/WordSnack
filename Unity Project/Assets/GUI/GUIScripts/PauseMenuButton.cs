@@ -35,7 +35,7 @@ public class PauseMenuButton : MonoBehaviour {
 			mPauseButton.renderer.enabled = false;
 			mTrash.renderer.enabled = false;
 			resumeUnclicked.SetActive(true);
-			Time.timeScale = 0;
+
 		}else{
 			
 		}
@@ -59,6 +59,7 @@ public class PauseMenuButton : MonoBehaviour {
 				pauseMenuBackground.SetActive(false);
 				dinerRoom.SetActive(true);
 				mPauseButton.renderer.enabled = true;
+				mTrash.renderer.enabled = true;
 				resumeClicked.SetActive(false);
 				resumeUnclicked.SetActive(false);
 			}else{
