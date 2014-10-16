@@ -24,7 +24,7 @@ public class PlayMusic : MonoBehaviour {
 	void Update () {
 		audioManager.PlayLoop(7);
 		
-		if (gui.buttonPressed = true) {
+		if (gui.buttonPressed == true) {
 			audioManager.Play(1);
 			Debug.Log("its true");
 		}
