@@ -91,6 +91,9 @@ public class SelectScript : MonoBehaviour {
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				thisSprite.sprite = selectedImage;
 				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
+				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
+				center.x -= 1.36f;
+				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
 			} 
 			//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
@@ -102,10 +105,12 @@ public class SelectScript : MonoBehaviour {
 			else {
 				thisSprite.sprite = standbyImage;
 				gameObject.transform.position = startingSpot;
-
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
 				variables.characterSelected[selectNum] = false;
 				variables.selectedCharacters[selectNum] = null;
+				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
+				center.x += 1.36f;
+				gameObject.GetComponent<BoxCollider>().center = center;
 				selectNum = -1;
 				variables.currentCharacterSelectNum--;
 			}
@@ -116,7 +121,7 @@ public class SelectScript : MonoBehaviour {
 	void toggleSelect ()
 	{
 		//simply toggles the select bool whenever it is called.
-		if(selected != true){
+		if(selected != true ){
 			selected = true;
 		}
 		else{
