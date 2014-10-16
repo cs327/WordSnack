@@ -92,7 +92,7 @@ public class SelectScript : MonoBehaviour {
 				thisSprite.sprite = selectedImage;
 				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
 				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
-				center.x -= 1.36f;
+				center.x -= 1.4f;
 				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
 			} 
@@ -109,7 +109,7 @@ public class SelectScript : MonoBehaviour {
 				variables.characterSelected[selectNum] = false;
 				variables.selectedCharacters[selectNum] = null;
 				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
-				center.x += 1.36f;
+				center.x += 1.4f;
 				gameObject.GetComponent<BoxCollider>().center = center;
 				selectNum = -1;
 				variables.currentCharacterSelectNum--;
