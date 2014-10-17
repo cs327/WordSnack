@@ -51,15 +51,16 @@ public class SelectScript : MonoBehaviour {
 		// Update is called once per frame
 		void Update ()
 		{
-		print (variables.currentCharacterSelectNum);
-				//increases the character's size if it is selected
-				
-
-				//deselects character when "Phase2" is loaded 
-				if (Application.loadedLevelName == "WordMaking" && selected) {
-						selected = false;
-						gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
-				}
+			if (variables.timeToChangeGameState && !selected) {
+				gameObject.transform.renderer.enabled = false;
+			} else {
+				gameObject.transform.renderer.enabled = true;
+			}
+			//deselects character when "Phase2" is loaded 
+			if (Application.loadedLevelName == "WordMaking" && selected) {
+					selected = false;
+					gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
+			}
 		}
 		
 
