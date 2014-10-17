@@ -91,8 +91,10 @@ public class SelectScript : MonoBehaviour {
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				thisSprite.sprite = selectedImage;
 				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
+				gameObject.GetComponent<BoxCollider>().size = new Vector3(5,3,0);
 				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
-				center.x -= 1.4f;
+				//center.x -= 1.4f;
+				center.x = 0;
 				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
 			} 
