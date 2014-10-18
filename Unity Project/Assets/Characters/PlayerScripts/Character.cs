@@ -177,6 +177,10 @@ public class Character : MonoBehaviour
         {
             //First grab the word - we're gonna need it!
             string word = letterControl.sendWord();
+			//check if there even is a word!
+			if (word == null){
+				return;
+			}
             //score the word - do we have a score?
             int wordScore = Likes(word);
             //Debug.Log(word);
