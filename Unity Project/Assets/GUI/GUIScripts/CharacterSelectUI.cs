@@ -7,6 +7,7 @@ public class CharacterSelectUI : MonoBehaviour {
 	public GameObject whoElse;
 	public GameObject characters;
 	SpriteRenderer feedMeSprite;
+    public bool FeedPressed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +52,7 @@ public class CharacterSelectUI : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+        FeedPressed = true;
 		characters.SetActive(false);
 		GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 	}
