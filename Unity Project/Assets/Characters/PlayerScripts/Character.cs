@@ -151,11 +151,12 @@ public class Character : MonoBehaviour
 	            //easily access my tastes with my character number
 	            List<int[]> characterTastes = new List<int[]>();
 	            characterTastes.Add(new int[] { 10 }); //The trash character, ID 0, has one taste, taste 10
-	            characterTastes.Add(variables.TastesForCharacter1);
-	            characterTastes.Add(variables.TastesForCharacter2);
-	            characterTastes.Add(variables.TastesForCharacter3);
-	            characterTastes.Add(variables.TastesForCharacter4);
-	            characterTastes.Add(variables.TastesForCharacter5);
+				characterTastes.Add(variables.TastesForFred);
+	            characterTastes.Add(variables.TastesForKelvin);
+	            characterTastes.Add(variables.TastesForSpike);
+	            characterTastes.Add(variables.TastesForStella);
+	            characterTastes.Add(variables.TastesForMeghan);
+				characterTastes.Add (variables.TastesForTrash);
 	            //now we add an arbitrary number of tastes
 				//also we set up the text to be displayed for the character's tastes
 				//blank it out first so that the user cannot mess with it.

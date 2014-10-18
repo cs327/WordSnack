@@ -47,11 +47,12 @@ public class VariableControl : MonoBehaviour {
 	public float trashCollectionMult;
 
 	//tweakable character tastes
-	public int[] TastesForCharacter1;
-	public int[] TastesForCharacter2;
-	public int[] TastesForCharacter3;
-	public int[] TastesForCharacter4;
-	public int[] TastesForCharacter5;
+	public int[] TastesForTrash;
+	public int[] TastesForMeghan;
+	public int[] TastesForStella;
+	public int[] TastesForKelvin;
+	public int[] TastesForFred;
+	public int[] TastesForSpike;
 	//tweakable variables: 
 	public int minWordLength;
 	public int maxWordLength;
