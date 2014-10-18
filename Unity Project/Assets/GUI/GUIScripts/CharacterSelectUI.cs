@@ -13,7 +13,7 @@ public class CharacterSelectUI : MonoBehaviour {
 		variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
 		feedMeSprite = gameObject.GetComponent<SpriteRenderer> ();
-		feedMeSprite.enabled = false;
+//		feedMeSprite.enabled = false;
 		whoElse.SetActive(false);
 		chooseTwo.SetActive(false);
 	}
@@ -23,12 +23,12 @@ public class CharacterSelectUI : MonoBehaviour {
 		if(variables.currentCharacterSelectNum == 0){
 			chooseTwo.SetActive(true);
 			whoElse.SetActive(false);
-			feedMeSprite.enabled = false;
+				
 		}
 		if(variables.currentCharacterSelectNum == 1){
 			chooseTwo.SetActive(false);
 			whoElse.SetActive(true);
-			feedMeSprite.enabled = false;
+//			feedMeSprite.enabled = false;
 
 			if(variables.selectedCharacters[0] == null){
 				whoElse.transform.position = new Vector3(-5.01f,-.786f,0);
@@ -36,12 +36,15 @@ public class CharacterSelectUI : MonoBehaviour {
 			else{
 				whoElse.transform.position = new Vector3(2.01f,-.786f,0);
 			}
-
-
 		}
 
+		if (variables.currentCharacterSelectNum < 2) {
+			gameObject.transform.position = new Vector3 (0, -1, -20);
+		}
+
+
 		if(variables.currentCharacterSelectNum == variables.characterSelectNum){
-			feedMeSprite.enabled = true;
+			gameObject.transform.position = new Vector3 (0, -1, -10);
 			chooseTwo.SetActive(false);
 			whoElse.SetActive(false);
 		}
