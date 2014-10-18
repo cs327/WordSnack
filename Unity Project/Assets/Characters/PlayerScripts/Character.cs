@@ -37,10 +37,10 @@ public class Character : MonoBehaviour
     public int Likes(string word)
     {
         if (characterNum != 0) { //If we're not the trash character... 
-						if (letterControl.checkForWord (word) == false) {
-								Debug.Log ("Not a word and this isn't the trash character");
-								return 0;
-						}
+					if (word != null && letterControl.checkForWord (word) == false) {
+							Debug.Log ("Not a word and this isn't the trash character");
+							return 0;
+					}
 				} else {
 						//If we ARE the trash character, don't let people throw away single letters
 						if (word.Length == 1) {
@@ -57,27 +57,28 @@ public class Character : MonoBehaviour
     // Sums the score of the letters, then multiplies it by all the taste modifiers
     float scoreWord(string word)
     {
-        float wordScore = 0;
-        foreach (char letter in word)
-        {
-            wordScore += LetterController.letterScores[letter];
-			//calculate the raw score of the letters fed - without the bonus
-			rawScoreFedToMe += (int) LetterController.letterScores[letter];
-			//increase the number of letters fed to the character
-			numLettersFedToMe++;
-        }
-		variables.mostRecentLetterScore = (int)wordScore;
-        Debug.Log("Score for the letters in " + word + " is " + wordScore);
-		foreach (TasteCollection.Taste t in myTastes)
-        {
-            wordScore *= t(word);
-        }
-		variables.mostRecentWordScore = (int)wordScore;
-		variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
-		//calculate the raw bonus score 
-		rawBonusScoreFedToMe = variables.mostRecentBonus;
-        Debug.Log("Score after tastes for " + word + " is " + wordScore);
-        return wordScore;
+		float wordScore = 0;
+		if (word != null) {     
+			foreach (char letter in word){
+	            wordScore += LetterController.letterScores[letter];
+				//calculate the raw score of the letters fed - without the bonus
+				rawScoreFedToMe += (int) LetterController.letterScores[letter];
+				//increase the number of letters fed to the character
+				numLettersFedToMe++;
+			}
+			variables.mostRecentLetterScore = (int)wordScore;
+	        Debug.Log("Score for the letters in " + word + " is " + wordScore);
+			foreach (TasteCollection.Taste t in myTastes)
+	        {
+	            wordScore *= t(word);
+	        }
+			variables.mostRecentWordScore = (int)wordScore;
+			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
+			//calculate the raw bonus score 
+			rawBonusScoreFedToMe = variables.mostRecentBonus;
+	        Debug.Log("Score after tastes for " + word + " is " + wordScore);
+		}
+		return wordScore;
     }
 
     // Add a single taste to the collection
