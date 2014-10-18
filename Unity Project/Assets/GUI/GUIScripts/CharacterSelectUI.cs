@@ -5,6 +5,7 @@ public class CharacterSelectUI : MonoBehaviour {
 	public VariableControl variables;
 	public GameObject chooseTwo;
 	public GameObject whoElse;
+	public GameObject characters;
 	SpriteRenderer feedMeSprite;
 
 	// Use this for initialization
@@ -47,6 +48,7 @@ public class CharacterSelectUI : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
+		characters.SetActive(false);
 		GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 	}
 }
