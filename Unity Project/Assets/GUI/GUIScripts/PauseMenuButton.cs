@@ -73,7 +73,6 @@ public class PauseMenuButton : MonoBehaviour {
 				dinerRoom.SetActive(true);
 				mPauseButton.renderer.enabled = true;
 				mTrash.renderer.enabled = true;
-				resumeClicked.SetActive(false);
 				resumeUnclicked.SetActive(false);
 				l.gamePaused = false;
 				w.gamePaused = false;

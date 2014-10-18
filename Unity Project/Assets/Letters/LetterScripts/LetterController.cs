@@ -528,7 +528,7 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
-		if(!gamePaused){
+		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 

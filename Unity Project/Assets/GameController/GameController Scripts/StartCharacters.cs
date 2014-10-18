@@ -15,4 +15,8 @@ public class StartCharacters : MonoBehaviour {
 	void Update () {
 	
 	}
+
+
+	void OnGUI(){
+	}
 }
