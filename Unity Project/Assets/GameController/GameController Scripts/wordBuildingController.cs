@@ -10,6 +10,7 @@ public class wordBuildingController : MonoBehaviour {
 	int character2Num = 2;
 	public GameObject character1;
 	public GameObject character2;
+	public GameObject trashCharacter;
 	public bool gamePaused;
 
 	// Use this for initialization
@@ -33,9 +34,23 @@ public class wordBuildingController : MonoBehaviour {
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = endGameButton;
 			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
-				PlayerPrefs.SetFloat ("Score", variables.score);
+				sendVariablestoScoreScreen();
 				Application.LoadLevel("ScoreScreen");
 			}
 		}
+	}
+	public void sendVariablestoScoreScreen () {
+		//updates score related variables 
+		variables.totalLetterScore = character1.GetComponent<Character>().rawScoreFedToMe + character2.GetComponent<Character>().rawScoreFedToMe + trashCharacter.GetComponent<Character>().rawScoreFedToMe;
+		variables.totalMultiplierScore = character1.GetComponent<Character>().rawBonusScoreFedToMe + character2.GetComponent<Character>().rawBonusScoreFedToMe + trashCharacter.GetComponent<Character>().rawBonusScoreFedToMe;
+		variables.trashedLetters = trashCharacter.GetComponent<Character>().numLettersFedToMe;
+		variables.trashedLetterScore = trashCharacter.GetComponent<Character>().rawScoreFedToMe;
+
+		//saves those variables in Player Prefs
+		PlayerPrefs.SetFloat ("Score", variables.score);
+		PlayerPrefs.SetInt( "Total Letter Score" , variables.totalLetterScore ); 
+		PlayerPrefs.SetInt( "Total Multiplier Score" , variables.totalMultiplierScore ); 
+		PlayerPrefs.SetInt( "Trashed Letters" , variables.trashedLetters ); 
+		PlayerPrefs.SetInt( "Trashed Letter Score" , variables.trashedLetterScore ); 
 	}
 }

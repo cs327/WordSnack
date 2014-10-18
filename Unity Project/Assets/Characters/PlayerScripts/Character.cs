@@ -10,7 +10,12 @@ public class Character : MonoBehaviour
     public List<TasteCollection.Taste> myTastes;
     //public CharacterTimers Timer;
     public int characterNum;
-
+	//number of letters fed to the character
+	public int numLettersFedToMe;
+	//raw score from the letters fed to the character
+	public int rawScoreFedToMe;
+	//bonus score from tastes without letter score
+	public int rawBonusScoreFedToMe;
     // Used to retrieve words to potentially send to a character
     public LetterController letterControl;
     public GameObject letterGenerator;
@@ -56,15 +61,21 @@ public class Character : MonoBehaviour
         foreach (char letter in word)
         {
             wordScore += LetterController.letterScores[letter];
+			//calculate the raw score of the letters fed - without the bonus
+			rawScoreFedToMe += (int) LetterController.letterScores[letter];
+			//increase the number of letters fed to the character
+			numLettersFedToMe++;
         }
 		variables.mostRecentLetterScore = (int)wordScore;
         Debug.Log("Score for the letters in " + word + " is " + wordScore);
-        foreach (TasteCollection.Taste t in myTastes)
+		foreach (TasteCollection.Taste t in myTastes)
         {
             wordScore *= t(word);
         }
 		variables.mostRecentWordScore = (int)wordScore;
 		variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
+		//calculate the raw bonus score 
+		rawBonusScoreFedToMe = variables.mostRecentBonus;
         Debug.Log("Score after tastes for " + word + " is " + wordScore);
         return wordScore;
     }
@@ -90,6 +101,8 @@ public class Character : MonoBehaviour
         if (myTastes.Contains(taste))
             myTastes.Remove(taste);
     }
+
+
     // Use this for initialization
     void Start()
     {

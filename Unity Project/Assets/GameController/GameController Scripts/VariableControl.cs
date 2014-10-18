@@ -72,6 +72,14 @@ public class VariableControl : MonoBehaviour {
 
 	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
+
+	//only updates when the game is over 
+	//all of them used on the receipt 
+	public int totalLetterScore = 0;
+	public int totalMultiplierScore = 0;
+	public int trashedLetters = 0;
+	public int trashedLetterScore = 0;
+
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
