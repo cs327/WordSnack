@@ -12,9 +12,15 @@ public class wordBuildingController : MonoBehaviour {
 	public GameObject character2;
 	public GameObject trashCharacter;
 	public bool gamePaused;
+	public GameObject instructions;
+	public GameObject instructionsClose;
+	public GameObject check;
 
 	// Use this for initialization
 	void Start () {
+
+		PlayerPrefs.SetInt("Instructions",0);
+
 		variables = variableController.GetComponent<VariableControl>();
 		character1Num = PlayerPrefs.GetInt("Character 1");
 		character2Num = PlayerPrefs.GetInt("Character 2");
@@ -27,10 +33,19 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
+		// if the instructions is enabled 
+		if(PlayerPrefs.GetInt("instructions") == 0){
+			instructions.SetActive (true);
+			instructionsClose.SetActive(true);
+		}else{
+			instructions.SetActive (false);
+			instructionsClose.SetActive(false);
+		}
 	}
 
 	void OnGUI () {
-		if(!gamePaused){
+		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = endGameButton;
 			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
