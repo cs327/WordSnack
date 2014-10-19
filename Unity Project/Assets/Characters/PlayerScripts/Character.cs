@@ -70,15 +70,15 @@ public class Character : MonoBehaviour
 			foreach (TasteCollection.Taste t in myTastes)
 	        {
 	            wordScore *= t(word);
-                if(t(word) > 0)
-                {
-                    variables.bonus = true;
-                }
 	        }
 			variables.mostRecentWordScore = (int)wordScore;
 			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
 			//calculate the raw bonus score 
 			rawBonusScoreFedToMe = variables.mostRecentBonus;
+            if (rawBonusScoreFedToMe > 0)
+            {
+                variables.bonus = true;
+            }
 	        Debug.Log("Score after tastes for " + word + " is " + wordScore);
 		}
 		return wordScore;
@@ -240,7 +240,7 @@ public class Character : MonoBehaviour
                 letterControl.ResetStove();
                 
                 //Checks for bonus and sets value of happy sound for Audio Manager
-                if (variables.bonus){
+                if (variables.bonus == true){
                     variables.happySound = CharacterHappy();
                 }
             }

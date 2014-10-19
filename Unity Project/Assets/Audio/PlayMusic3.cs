@@ -49,6 +49,7 @@ public class PlayMusic3 : MonoBehaviour {
         {
             audioManager.Play(variables.happySound);
             variables.bonus = false;
+            variables.happySound = 0;
         }
     }
 
