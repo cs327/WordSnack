@@ -38,6 +38,7 @@ public class PauseMenuButton : MonoBehaviour {
 		pauseMenuBackground.SetActive (false);
 		character1 = w.character1.GetComponent<SpriteRenderer> ();
 		character2 = w.character2.GetComponent<SpriteRenderer> ();
+		exitGameUnclicked.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -52,6 +53,7 @@ public class PauseMenuButton : MonoBehaviour {
 			w.gamePaused = true;
 			character1.enabled = false;
 			character2.enabled = false;
+			exitGameUnclicked.SetActive(true);
 		}else{
 
 		}
@@ -78,6 +80,7 @@ public class PauseMenuButton : MonoBehaviour {
 				w.gamePaused = false;
 				character1.enabled = true;
 				character2.enabled = true;
+				exitGameUnclicked.SetActive (false);
 			}else{
 			}
 		}
