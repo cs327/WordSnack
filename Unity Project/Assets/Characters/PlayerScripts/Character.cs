@@ -257,7 +257,7 @@ public class Character : MonoBehaviour
                 wordsFedToMe.Add(word);
 
 				// output score particle
-//				ParticleHelper.Instance.OutputScore (new Vector3(0.0f, 0.0f, -3.2f));
+				ParticleHelper.Instance.OutputScore (new Vector3(0.0f, 0.0f, -3.2f));
 
                 //update the score!
                 variables.score += wordScore;
