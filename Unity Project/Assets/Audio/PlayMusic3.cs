@@ -5,18 +5,21 @@ using System.Collections;
 
 public class PlayMusic3 : MonoBehaviour {
 
-	int i =0;
+	int i = 0;
 
 	public GameObject audio;
 	AudioManager audioManager;
 
 	public GameObject letterCont;
 	LetterController letterController;
+
+    VariableControl variables;
 	
 	// Use this for initialization
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
 		letterController = letterCont.GetComponent<LetterController>();
+        variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 	}
 	
 	// Update is called once per frame
@@ -24,11 +27,15 @@ public class PlayMusic3 : MonoBehaviour {
 		
 		audioManager.PlayLoop(9);
 		NewOnStove ();
+
         Sizzle();
+
+
+        HappySound();
 
 		
 	}
-
+        
 	void NewOnStove(){
 				if (letterController.numLettersOnStove == 0) {
 						i = 0;
@@ -42,6 +49,14 @@ public class PlayMusic3 : MonoBehaviour {
 						i--;
 				}
 		}
+    void HappySound(){
+        if ((variables.happySound > 0) && (variables.bonus))
+        {
+            audioManager.Play(variables.happySound);
+            variables.bonus = false;
+            variables.happySound = 0;
+        }
+    }
 
     void Sizzle(){
         audioManager.PlayLoop(16);
