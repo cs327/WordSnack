@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3f62cc34cc32b45858b6982516f15949
+guid: c59d25d00882742fabc05f48f3316f6a
 TextureImporter:
   fileIDToRecycleName:
     21300000: Stella
@@ -38,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 150
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

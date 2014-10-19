@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 117fd27c3ebf345119c6cb2339bdbcb0
+guid: 23bebba9582254cefa151025db643082
 TextureImporter:
   fileIDToRecycleName:
     21300000: Meghan
@@ -38,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 150
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

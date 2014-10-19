@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cd156eff5f1c4b08a8aef119d72d210
+guid: cc188c0aa254f46e3819f77074b63baa
 TextureImporter:
   fileIDToRecycleName:
     21300000: Spike
@@ -38,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 150
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []

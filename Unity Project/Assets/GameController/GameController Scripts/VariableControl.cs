@@ -102,8 +102,8 @@ public class VariableControl : MonoBehaviour {
 		phase1SelectedCharPositions[1] = new Vector3(3.1f,-3.3f,0);
 
 		//establishes the character position for phase 2
-		phase2CharacterPositions[0] = new Vector3(-3.5f, 1.5f, 0);
-		phase2CharacterPositions[1] = new Vector3(3.8f, 1.5f, 0);
+		phase2CharacterPositions[0] = new Vector3(-3.5f, 0.5f, 1);
+		phase2CharacterPositions[1] = new Vector3(3.8f, 0.5f, 1);
 	}
 
 	void Start () {

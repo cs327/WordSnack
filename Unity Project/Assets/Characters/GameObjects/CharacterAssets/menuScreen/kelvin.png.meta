@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 50241a240bf4a463eb2dfd9ccf3dc08d
+guid: a3f85ae6f60da4d3fb0a819f42e5ccd3
 TextureImporter:
   fileIDToRecycleName:
     21300000: kelvin
@@ -38,7 +38,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 150
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
