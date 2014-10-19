@@ -10,10 +10,17 @@ public class wordBuildingController : MonoBehaviour {
 	int character2Num = 2;
 	public GameObject character1;
 	public GameObject character2;
+	public GameObject trashCharacter;
 	public bool gamePaused;
+	public GameObject instructions;
+	public GameObject instructionsClose;
+	public GameObject check;
 
 	// Use this for initialization
 	void Start () {
+
+		PlayerPrefs.SetInt("Instructions",0);
+
 		variables = variableController.GetComponent<VariableControl>();
 		character1Num = PlayerPrefs.GetInt("Character 1");
 		character2Num = PlayerPrefs.GetInt("Character 2");
@@ -26,16 +33,39 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
+		// if the instructions is enabled 
+		if(PlayerPrefs.GetInt("instructions") == 0){
+			instructions.SetActive (true);
+			instructionsClose.SetActive(true);
+		}else{
+			instructions.SetActive (false);
+			instructionsClose.SetActive(false);
+		}
 	}
 
 	void OnGUI () {
-		if(!gamePaused){
+		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = endGameButton;
 			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
-				PlayerPrefs.SetFloat ("Score", variables.score);
+				sendVariablestoScoreScreen();
 				Application.LoadLevel("ScoreScreen");
 			}
 		}
+	}
+	public void sendVariablestoScoreScreen () {
+		//updates score related variables 
+		variables.totalLetterScore = character1.GetComponent<Character>().rawScoreFedToMe + character2.GetComponent<Character>().rawScoreFedToMe + trashCharacter.GetComponent<Character>().rawScoreFedToMe;
+		variables.totalMultiplierScore = character1.GetComponent<Character>().rawBonusScoreFedToMe + character2.GetComponent<Character>().rawBonusScoreFedToMe + trashCharacter.GetComponent<Character>().rawBonusScoreFedToMe;
+		variables.trashedLetters = trashCharacter.GetComponent<Character>().numLettersFedToMe;
+		variables.trashedLetterScore = trashCharacter.GetComponent<Character>().rawScoreFedToMe;
+
+		//saves those variables in Player Prefs
+		PlayerPrefs.SetFloat ("Score", variables.score);
+		PlayerPrefs.SetInt( "Total Letter Score" , variables.totalLetterScore ); 
+		PlayerPrefs.SetInt( "Total Multiplier Score" , variables.totalMultiplierScore ); 
+		PlayerPrefs.SetInt( "Trashed Letters" , variables.trashedLetters ); 
+		PlayerPrefs.SetInt( "Trashed Letter Score" , variables.trashedLetterScore ); 
 	}
 }

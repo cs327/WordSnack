@@ -10,7 +10,12 @@ public class Character : MonoBehaviour
     public List<TasteCollection.Taste> myTastes;
     //public CharacterTimers Timer;
     public int characterNum;
-
+	//number of letters fed to the character
+	public int numLettersFedToMe;
+	//raw score from the letters fed to the character
+	public int rawScoreFedToMe;
+	//bonus score from tastes without letter score
+	public int rawBonusScoreFedToMe;
     // Used to retrieve words to potentially send to a character
     public LetterController letterControl;
     public GameObject letterGenerator;
@@ -32,10 +37,10 @@ public class Character : MonoBehaviour
     public int Likes(string word)
     {
         if (characterNum != 0) { //If we're not the trash character... 
-						if (letterControl.checkForWord (word) == false) {
-								Debug.Log ("Not a word and this isn't the trash character");
-								return 0;
-						}
+					if (word != null && letterControl.checkForWord (word) == false) {
+							Debug.Log ("Not a word and this isn't the trash character");
+							return 0;
+					}
 				} else {
 						//If we ARE the trash character, don't let people throw away single letters
 						if (word.Length == 1) {
@@ -52,21 +57,28 @@ public class Character : MonoBehaviour
     // Sums the score of the letters, then multiplies it by all the taste modifiers
     float scoreWord(string word)
     {
-        float wordScore = 0;
-        foreach (char letter in word)
-        {
-            wordScore += LetterController.letterScores[letter];
-        }
-		variables.mostRecentLetterScore = (int)wordScore;
-        Debug.Log("Score for the letters in " + word + " is " + wordScore);
-        foreach (TasteCollection.Taste t in myTastes)
-        {
-            wordScore *= t(word);
-        }
-		variables.mostRecentWordScore = (int)wordScore;
-		variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
-        Debug.Log("Score after tastes for " + word + " is " + wordScore);
-        return wordScore;
+		float wordScore = 0;
+		if (word != null) {     
+			foreach (char letter in word){
+	            wordScore += LetterController.letterScores[letter];
+				//calculate the raw score of the letters fed - without the bonus
+				rawScoreFedToMe += (int) LetterController.letterScores[letter];
+				//increase the number of letters fed to the character
+				numLettersFedToMe++;
+			}
+			variables.mostRecentLetterScore = (int)wordScore;
+	        Debug.Log("Score for the letters in " + word + " is " + wordScore);
+			foreach (TasteCollection.Taste t in myTastes)
+	        {
+	            wordScore *= t(word);
+	        }
+			variables.mostRecentWordScore = (int)wordScore;
+			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
+			//calculate the raw bonus score 
+			rawBonusScoreFedToMe = variables.mostRecentBonus;
+	        Debug.Log("Score after tastes for " + word + " is " + wordScore);
+		}
+		return wordScore;
     }
 
     // Add a single taste to the collection
@@ -90,6 +102,8 @@ public class Character : MonoBehaviour
         if (myTastes.Contains(taste))
             myTastes.Remove(taste);
     }
+
+
     // Use this for initialization
     void Start()
     {
@@ -137,11 +151,12 @@ public class Character : MonoBehaviour
 	            //easily access my tastes with my character number
 	            List<int[]> characterTastes = new List<int[]>();
 	            characterTastes.Add(new int[] { 10 }); //The trash character, ID 0, has one taste, taste 10
-	            characterTastes.Add(variables.TastesForCharacter1);
-	            characterTastes.Add(variables.TastesForCharacter2);
-	            characterTastes.Add(variables.TastesForCharacter3);
-	            characterTastes.Add(variables.TastesForCharacter4);
-	            characterTastes.Add(variables.TastesForCharacter5);
+				characterTastes.Add(variables.TastesForFred);
+	            characterTastes.Add(variables.TastesForKelvin);
+	            characterTastes.Add(variables.TastesForSpike);
+	            characterTastes.Add(variables.TastesForStella);
+	            characterTastes.Add(variables.TastesForMeghan);
+				characterTastes.Add (variables.TastesForTrash);
 	            //now we add an arbitrary number of tastes
 				//also we set up the text to be displayed for the character's tastes
 				//blank it out first so that the user cannot mess with it.

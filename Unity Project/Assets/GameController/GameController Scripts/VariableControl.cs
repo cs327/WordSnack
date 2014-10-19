@@ -47,11 +47,12 @@ public class VariableControl : MonoBehaviour {
 	public float trashCollectionMult;
 
 	//tweakable character tastes
-	public int[] TastesForCharacter1;
-	public int[] TastesForCharacter2;
-	public int[] TastesForCharacter3;
-	public int[] TastesForCharacter4;
-	public int[] TastesForCharacter5;
+	public int[] TastesForTrash;
+	public int[] TastesForMeghan;
+	public int[] TastesForStella;
+	public int[] TastesForKelvin;
+	public int[] TastesForFred;
+	public int[] TastesForSpike;
 	//tweakable variables: 
 	public int minWordLength;
 	public int maxWordLength;
@@ -72,6 +73,14 @@ public class VariableControl : MonoBehaviour {
 
 	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
+
+	//only updates when the game is over 
+	//all of them used on the receipt 
+	public int totalLetterScore = 0;
+	public int totalMultiplierScore = 0;
+	public int trashedLetters = 0;
+	public int trashedLetterScore = 0;
+
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;

@@ -27,6 +27,7 @@ public class LetterController : MonoBehaviour
     public static Dictionary<char, int> letterScores;
 	public Texture2D shuffleButton;
 	public bool gamePaused;
+	public GameObject gameController;
 
     // Use this for initialization
     void Start()
@@ -66,9 +67,9 @@ public class LetterController : MonoBehaviour
         //to the adequate size
         replaceBankLetters();
 
-        
+        //ends the game if the player has run out of letters
         if (emptyLetterCount >= 5) {
-			PlayerPrefs.SetFloat ("Score", variables.score);
+			gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
 			Application.LoadLevel ("ScoreScreen");
 		}
 		TurnOnOffSteam();
@@ -528,7 +529,7 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
-		if(!gamePaused){
+		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
