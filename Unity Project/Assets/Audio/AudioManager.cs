@@ -67,12 +67,6 @@ public class AudioManager : MonoBehaviour {
 		}
 		
 	}
-
-    public void SetVolume(int i, float y){
-
-        audioSourceArray[i].volume = y;
-
-    }
 	
 	public void FadeOut(int i){
 		
