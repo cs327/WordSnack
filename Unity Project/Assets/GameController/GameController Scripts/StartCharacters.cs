@@ -18,5 +18,9 @@ public class StartCharacters : MonoBehaviour {
 
 
 	void OnGUI(){
+
+		if(GUI.Button (new Rect (Screen.width * 0.1f, Screen.height * 0.8f, Screen.width * 0.12f, Screen.height * 0.12f), "Reset\nData")){
+			PlayerPrefs.DeleteAll();
+		}
 	}
 }
