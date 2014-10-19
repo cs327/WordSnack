@@ -14,7 +14,6 @@ public class wordBuildingController : MonoBehaviour {
 	public bool gamePaused;
 	public GameObject instructions;
 	public GameObject instructionsClose;
-	public GameObject check;
 
 	// Use this for initialization
 	void Start () {
@@ -29,11 +28,14 @@ public class wordBuildingController : MonoBehaviour {
 		//Set the characterNums correctly
 		character1.GetComponent<Character> ().characterNum = character1Num;
 		character2.GetComponent<Character> ().characterNum = character2Num;
+
+		instructions = GameObject.Find ("instructionsBackground");
+		instructionsClose = GameObject.Find ("close");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
+		Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 		// if the instructions is enabled 
 		if(PlayerPrefs.GetInt("instructions") == 0){
 			instructions.SetActive (true);

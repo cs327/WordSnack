@@ -20,7 +20,7 @@ public class HideInstructions : MonoBehaviour {
 
 	void OnMouseDown(){
 		Debug.Log ("clicked on the don't show");
-		checkMarkPosition.x = -2.02f;
+		checkMarkPosition.x = 1.06f;
 		checkMark.GetComponent<Transform> ().position = checkMarkPosition;
 		// disable the instrucitons
 		disableInstructions = true;
