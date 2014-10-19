@@ -62,7 +62,7 @@ public class PlayMusic3 : MonoBehaviour {
         audioManager.PlayLoop(16);
         if (letterController.numLettersOnStove > 0)
         {
-            audioManager.SetVolume(16, 1.0f);
+            audioManager.SetVolume(16, .1f);
         } else
         {
             audioManager.SetVolume(16, 0.0f);
