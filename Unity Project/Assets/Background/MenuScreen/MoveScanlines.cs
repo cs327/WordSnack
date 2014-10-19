@@ -11,8 +11,8 @@ public class MoveScanlines : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float moveAmount = 0.5f * Time.deltaTime;
-		if (transform.position.y < 2.2f) {
-			transform.position = new Vector3(0.0f, 4.0f, 11.0f);
+		if (transform.position.y < 2.1f) {
+			transform.position = new Vector3(0.0f, 4.0f, 2.0f);
 		}
 
 		transform.Translate(new Vector3(0.0f, 0.0f, moveAmount));
