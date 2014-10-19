@@ -127,29 +127,6 @@ public class Character : MonoBehaviour
                             return 0;
                 }
     }
-    public int CharacterSad()
-    {
-        switch (characterNum)
-        {
-            case 1:
-                Debug.Log("Fred does not like this");
-                return 23;
-            case 2:
-                Debug.Log("Kelvin does not like this");
-                return 32;
-            case 3:
-                Debug.Log("Spike does not like this");
-                return 26;
-            case 4:
-                Debug.Log("Stella does not like this");
-                return 35;
-            case 5:
-                Debug.Log("Meghan does not this");
-                return 29;
-            default:
-                return 0;
-        }
-    }
 
 
     // Use this for initialization
@@ -246,8 +223,6 @@ public class Character : MonoBehaviour
 			}
             //score the word - do we have a score?
             int wordScore = Likes(word);
-            if (letterControl.checkForWord(word) == false)
-                variables.notWord = true;
             //Debug.Log(word);
             //If it was valid, we'll get a score above 0, so update our score and get that word out of here!
             if (wordScore > 0)
@@ -268,13 +243,7 @@ public class Character : MonoBehaviour
                 if (variables.bonus == true){
                     variables.happySound = CharacterHappy();
                 }
-
             }
-            if (wordScore == 0)
-            {
-                Debug.Log("True");
-                variables.sadSound = CharacterSad();
-            }                    
         }
     }
 }

@@ -42,6 +42,7 @@ public class PlayMusic2 : MonoBehaviour {
             }
             else{
             audioManager.Play(1);
+                Debug.Log("ding");
             numSelected ++;
             }
         }

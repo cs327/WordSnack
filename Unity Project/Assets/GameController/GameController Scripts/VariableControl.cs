@@ -53,14 +53,9 @@ public class VariableControl : MonoBehaviour {
 	public int[] TastesForKelvin;
 	public int[] TastesForFred;
 	public int[] TastesForSpike;
-
-    //Sound related variables
     public bool bonus = false;
-    public bool notWord = false;
-    public bool hungry = false;
+    //Int variable used for playing the Happy sound when a character likes a word.
     public int happySound;
-    public int sadSound;
-    public int hungrySound;
 
 	//tweakable variables: 
 	public int minWordLength;
