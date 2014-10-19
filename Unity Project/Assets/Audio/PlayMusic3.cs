@@ -24,6 +24,8 @@ public class PlayMusic3 : MonoBehaviour {
 		
 		audioManager.PlayLoop(9);
 		NewOnStove ();
+        Sizzle();
+
 		
 	}
 
@@ -41,5 +43,20 @@ public class PlayMusic3 : MonoBehaviour {
 				}
 		}
 
+    void Sizzle(){
+        audioManager.PlayLoop(16);
+        if (letterController.numLettersOnStove > 0)
+        {
+            audioManager.SetVolume(16, 1.0f);
+        } else
+        {
+            audioManager.SetVolume(16, 0.0f);
+        }
+           
 
-}
+
+        }
+    }
+
+
+
