@@ -27,12 +27,8 @@ public class PlayMusic3 : MonoBehaviour {
 		
 		audioManager.PlayLoop(9);
 		NewOnStove ();
-
-        Sizzle();
-
-
         HappySound();
-
+        SadSound();
 		
 	}
         
@@ -49,6 +45,7 @@ public class PlayMusic3 : MonoBehaviour {
 						i--;
 				}
 		}
+    //Method to play Happy sounds when a character likes a word.
     void HappySound(){
         if ((variables.happySound > 0) && (variables.bonus))
         {
@@ -57,21 +54,15 @@ public class PlayMusic3 : MonoBehaviour {
             variables.happySound = 0;
         }
     }
-
-    void Sizzle(){
-        audioManager.PlayLoop(16);
-        if (letterController.numLettersOnStove > 0)
+    void SadSound()
+    {
+        if ((variables.sadSound > 0) && (variables.notWord))
         {
-            audioManager.SetVolume(16, 1.0f);
-        } else
-        {
-            audioManager.SetVolume(16, 0.0f);
-        }
-           
-
-
+            audioManager.Play(variables.sadSound);
+            variables.notWord = false;
+            variables.sadSound = 0;
         }
     }
 
 
-
+}
