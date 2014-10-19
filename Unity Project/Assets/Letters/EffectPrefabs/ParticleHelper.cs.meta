@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: c9a3f666966234d6db7bedcbd305da5e
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scoreParticle: {instanceID: 0}
+  - multiplierParticle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
