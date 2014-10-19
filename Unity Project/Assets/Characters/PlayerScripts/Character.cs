@@ -21,7 +21,6 @@ public class Character : MonoBehaviour
     public GameObject letterGenerator;
     // Used to add default tastes to characters
     private VariableControl variables;
-
     // Dictionary of taste ID's to names. 
     // Give it a key (an int ID) and it will return the correct taste -> tasteDictionary[5] returns the '5' taste
     public static Dictionary<int, TasteCollection.Taste> tasteDictionary;
@@ -71,6 +70,10 @@ public class Character : MonoBehaviour
 			foreach (TasteCollection.Taste t in myTastes)
 	        {
 	            wordScore *= t(word);
+                if(t(word) > 0)
+                {
+                    variables.bonus = true;
+                }
 	        }
 			variables.mostRecentWordScore = (int)wordScore;
 			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
@@ -101,6 +104,28 @@ public class Character : MonoBehaviour
     {
         if (myTastes.Contains(taste))
             myTastes.Remove(taste);
+    }
+    //Determine if a bonus is satisfied for each character, used for audio manager - Mike
+    public int CharacterHappy (){
+                    switch(characterNum){
+                        case 1:
+                            Debug.Log("Fred likes this");
+                            return 22;
+                        case 2:
+                            Debug.Log("Kelvin likes this");
+                            return 31;
+                        case 3:
+                            Debug.Log("Spike likes this");
+                            return 25;
+                        case 4:
+                            Debug.Log("Stella likes this");
+                            return 34;
+                        case 5:
+                            Debug.Log("Meghan likes this");
+                            return 28;
+                        default:
+                            return 0;
+                }
     }
 
 
@@ -213,6 +238,11 @@ public class Character : MonoBehaviour
                 variables.score += wordScore;
                 //Debug.Log("The total score is" + variables.score);
                 letterControl.ResetStove();
+                
+                //Checks for bonus and sets value of happy sound for Audio Manager
+                if (variables.bonus){
+                    variables.happySound = CharacterHappy();
+                }
             }
         }
     }
