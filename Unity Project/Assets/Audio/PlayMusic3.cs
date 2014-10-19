@@ -3,50 +3,59 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayMusic3 : MonoBehaviour {
+public class PlayMusic3 : MonoBehaviour
+{
 
-	int i = 0;
+    int i = 0;
 
-	public GameObject audio;
-	AudioManager audioManager;
+    public GameObject audio;
+    AudioManager audioManager;
 
-	public GameObject letterCont;
-	LetterController letterController;
+    public GameObject letterCont;
+    LetterController letterController;
 
     VariableControl variables;
-	
-	// Use this for initialization
-	void Start () {
-		audioManager = audio.GetComponent<AudioManager>();
-		letterController = letterCont.GetComponent<LetterController>();
+
+    // Use this for initialization
+    void Start()
+    {
+        audioManager = audio.GetComponent<AudioManager>();
+        letterController = letterCont.GetComponent<LetterController>();
         variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-		audioManager.PlayLoop(9);
-		NewOnStove ();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        audioManager.PlayLoop(9);
+        NewOnStove();
+        Sizzle();
         HappySound();
         SadSound();
-		
-	}
-        
-	void NewOnStove(){
-				if (letterController.numLettersOnStove == 0) {
-						i = 0;
-				}
-				if (letterController.numLettersOnStove > i) {
-						audioManager.Play (13);
-						i++;
-				}
-				if (letterController.numLettersOnStove < i) {
-						audioManager.Play (14);
-						i--;
-				}
-		}
+
+    }
+
+    void NewOnStove()
+    {
+        if (letterController.numLettersOnStove == 0)
+        {
+            i = 0;
+        }
+        if (letterController.numLettersOnStove > i)
+        {
+            audioManager.Play(13);
+            i++;
+        }
+        if (letterController.numLettersOnStove < i)
+        {
+            audioManager.Play(14);
+            i--;
+        }
+    }
     //Method to play Happy sounds when a character likes a word.
-    void HappySound(){
+    void HappySound()
+    {
         if ((variables.happySound > 0) && (variables.bonus))
         {
             audioManager.Play(variables.happySound);
@@ -63,6 +72,18 @@ public class PlayMusic3 : MonoBehaviour {
             variables.sadSound = 0;
         }
     }
+    void Sizzle()
+    {
+        audioManager.PlayLoop(16);
+        if (letterController.numLettersOnStove > 0)
+        {
+            audioManager.SetVolume(16, 1.0f);
+        }
+        else
+        {
+            audioManager.SetVolume(16, 0.0f);
+        }
 
 
+    }
 }
