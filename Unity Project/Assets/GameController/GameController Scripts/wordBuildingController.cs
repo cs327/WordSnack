@@ -27,7 +27,13 @@ public class wordBuildingController : MonoBehaviour {
 		character1 = (GameObject)Instantiate(characters[character1Num], variables.phase2CharacterPositions[0], Quaternion.identity);
 		Instantiate(characterTasteBoxes[character1Num-1], variables.phase2CharacterPositions[0] + new Vector3(-2, 2.25F, 0), Quaternion.identity);
 		character2 = (GameObject)Instantiate(characters[character2Num], variables.phase2CharacterPositions[1], Quaternion.identity);
+<<<<<<< HEAD
 		Instantiate(characterTasteBoxes[character2Num-1], variables.phase2CharacterPositions[1] + new Vector3(2, 2.25F, 0), Quaternion.identity);
+=======
+		character1.transform.localScale = new Vector3 (2,2,2);
+		character2.transform.localScale = new Vector3 (2,2,2);
+
+>>>>>>> FETCH_HEAD
 		//Set the characterNums correctly
 		character1.GetComponent<Character> ().characterNum = character1Num;
 		character2.GetComponent<Character> ().characterNum = character2Num;
