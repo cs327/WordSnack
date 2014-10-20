@@ -25,6 +25,9 @@ public class wordBuildingController : MonoBehaviour {
 		character2Num = PlayerPrefs.GetInt("Character 2");
 		character1 = (GameObject)Instantiate(characters[character1Num], variables.phase2CharacterPositions[0], Quaternion.identity); 
 		character2 = (GameObject)Instantiate(characters[character2Num], variables.phase2CharacterPositions[1], Quaternion.identity);
+		character1.transform.localScale = new Vector3 (2,2,2);
+		character2.transform.localScale = new Vector3 (2,2,2);
+
 		//Set the characterNums correctly
 		character1.GetComponent<Character> ().characterNum = character1Num;
 		character2.GetComponent<Character> ().characterNum = character2Num;
