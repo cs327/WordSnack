@@ -235,7 +235,7 @@ public class Character : MonoBehaviour
     {
         if (characterNum == 0)
             variables.chewingSound = 17;
-        else
+        else if (wordScore > 0)
             variables.chewingSound = 19;
     }
     // Update is called once per frame
