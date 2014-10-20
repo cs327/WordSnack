@@ -279,6 +279,7 @@ public class Character : MonoBehaviour
                     variables.happySound = CharacterHappy();
                 }
                 WordSound();
+            	variables.chewing = true;
 
             }
             if (wordScore == 0)
@@ -286,7 +287,7 @@ public class Character : MonoBehaviour
                 Debug.Log("True");
                 variables.sadSound = CharacterSad();
             }
-            variables.chewing = true;
+
         }
     }
 }
