@@ -39,6 +39,7 @@ public class PlayMusic2 : MonoBehaviour {
             if(variableControl.currentCharacterSelectNum == 2){
                 audioManager.Play(6);
                 Debug.Log("booop");
+                numSelected++;
             }
             else{
             audioManager.Play(1);
@@ -57,6 +58,7 @@ public class PlayMusic2 : MonoBehaviour {
         if (charSel.FeedPressed == true)
         {
             audioManager.Play(3);
+            charSel.FeedPressed = false;
         }
     }
 }

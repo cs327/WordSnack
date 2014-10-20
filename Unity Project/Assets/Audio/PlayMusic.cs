@@ -5,15 +5,15 @@ public class PlayMusic : MonoBehaviour {
 	public GameObject audio;
 	AudioManager audioManager;
 	
-//	StartScreenGUI gui;
-//	public GameObject guiScript;
+	StartScreenGUI gui;
+	public GameObject guiScript;
 	
 	//public GameObject audioManager;
 	
 	// Use this for initialization
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
-		//gui = guiScript.GetComponent<StartScreenGUI>();
+		gui = guiScript.GetComponent<StartScreenGUI>();
 	
 	}
 	
@@ -21,9 +21,9 @@ public class PlayMusic : MonoBehaviour {
 	void Update () {
 		audioManager.PlayLoop(7);
 		
-//		if (gui.buttonPressed == true) {
-//			audioManager.Play(1);
-//			Debug.Log("its true");
-//		}
+	if (gui.buttonPressed == true) {
+			audioManager.Play(1);
+			Debug.Log("its true");
+		}
 	}
 }

@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour {
 	private float timerCountDown = .5f;
 	
 	// Use this for initialization
+
+ 
 	void Start () {
 		
 		audioSourceArray = new AudioSource [audioClipArray.Length];

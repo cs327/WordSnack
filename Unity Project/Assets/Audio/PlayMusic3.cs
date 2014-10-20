@@ -16,6 +16,8 @@ public class PlayMusic3 : MonoBehaviour
 
     VariableControl variables;
 
+
+ 
     // Use this for initialization
     void Start()
     {
@@ -38,10 +40,10 @@ public class PlayMusic3 : MonoBehaviour
 
     void NewOnStove()
     {
-        if (letterController.numLettersOnStove == 0)
-        {
-            i = 0;
-        }
+       // if (letterController.numLettersOnStove == 0)
+        //{
+          //  i = 0;
+       // }
         if (letterController.numLettersOnStove > i)
         {
             audioManager.Play(13);
