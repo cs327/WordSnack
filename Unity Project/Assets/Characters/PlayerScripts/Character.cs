@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+ 
 
 public class Character : MonoBehaviour
 {
@@ -265,7 +269,18 @@ public class Character : MonoBehaviour
             {
                 //if(1 > 0){
                 //Keep track of words fed to me!
-                wordsFedToMe.Add(word);
+                int letterScore = 0;
+                foreach (char letter in word)
+                {
+                    letterScore += LetterController.letterScores[letter];                   
+                }
+
+                float multiplier = 1;
+                foreach (TasteCollection.Taste t in myTastes)
+                {
+                    multiplier *= t(word);
+                }
+                wordsFedToMe.Add(String.Format("{0} {1] {2}", word, letterScore, multiplier));
 
 				// output score particle
 				//ParticleHelper.Instance.OutputScore (new Vector3(0.0f, 0.0f, -3.2f));
@@ -289,5 +304,17 @@ public class Character : MonoBehaviour
             }
             variables.chewing = true;
         }
+    }
+
+    void OnDestroy()
+    {
+        // I serialize the WordsFed list so I can retrieve it in the summary screen
+        var binaryFormatter = new BinaryFormatter();
+        var memStream = new MemoryStream();
+        binaryFormatter.Serialize(memStream, wordsFedToMe);
+
+        // Retrieve the list with the string "WordsFedToCharacter " + characterNum
+        PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
+            Convert.FromBase64String(memStream.GetBuffer()));
     }
 }
