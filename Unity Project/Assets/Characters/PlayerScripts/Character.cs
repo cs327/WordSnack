@@ -123,6 +123,9 @@ public class Character : MonoBehaviour
                         case 5:
                             Debug.Log("Meghan likes this");
                             return 28;
+                        case 0:
+                            Debug.Log("Word Trashed");
+                            return 17;
                         default:
                             return 0;
                 }
@@ -228,6 +231,11 @@ public class Character : MonoBehaviour
 	        }
 		}
     }
+    void TrashSound()
+    {
+        if (characterNum == 0)
+            variables.happySound = 17;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -268,13 +276,14 @@ public class Character : MonoBehaviour
                 if (variables.bonus == true){
                     variables.happySound = CharacterHappy();
                 }
+                TrashSound();
 
             }
             if (wordScore == 0)
             {
                 Debug.Log("True");
                 variables.sadSound = CharacterSad();
-            }                    
+            }            
         }
     }
 }

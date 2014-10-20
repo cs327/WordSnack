@@ -56,7 +56,7 @@ public class PlayMusic3 : MonoBehaviour
     //Method to play Happy sounds when a character likes a word.
     void HappySound()
     {
-        if ((variables.happySound > 0) && (variables.bonus))
+        if (variables.happySound > 0)
         {
             audioManager.Play(variables.happySound);
             variables.bonus = false;
