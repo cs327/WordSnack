@@ -15,7 +15,7 @@ public class wordBuildingController : MonoBehaviour {
 	public bool gamePaused;
 	public GameObject instructions;
 	public GameObject instructionsClose;
-
+	public TextMesh lettersRemaining;
 	// Use this for initialization
 	void Start () {
 
@@ -25,9 +25,9 @@ public class wordBuildingController : MonoBehaviour {
 		character1Num = PlayerPrefs.GetInt("Character 1");
 		character2Num = PlayerPrefs.GetInt("Character 2");
 		character1 = (GameObject)Instantiate(characters[character1Num], variables.phase2CharacterPositions[0], Quaternion.identity);
-		Instantiate(characterTasteBoxes[character1Num-1], variables.phase2CharacterPositions[0] + new Vector3(-2, 2.25F, 0), Quaternion.identity);
+		Instantiate(characterTasteBoxes[character1Num-1], variables.phase2CharacterPositions[0] + new Vector3(-2.5F, 2.25F, 0), Quaternion.identity);
 		character2 = (GameObject)Instantiate(characters[character2Num], variables.phase2CharacterPositions[1], Quaternion.identity);
-		Instantiate(characterTasteBoxes[character2Num-1], variables.phase2CharacterPositions[1] + new Vector3(2, 2.25F, 0), Quaternion.identity);
+		Instantiate(characterTasteBoxes[character2Num-1], variables.phase2CharacterPositions[1] + new Vector3(2.25F, 3.25F, 0), Quaternion.identity);
 		character1.transform.localScale = new Vector3 (2,2,2);
 		character2.transform.localScale = new Vector3 (2,2,2);
 		//Set the characterNums correctly
@@ -40,6 +40,7 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		lettersRemaining.text = "Tiles Remaining: " + variables.lettersRemaining;
 		Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 		// if the instructions is enabled 
 		if(PlayerPrefs.GetInt("instructions") == 0){

@@ -99,6 +99,7 @@ public class VariableControl : MonoBehaviour {
 	public int mostRecentWordScore;
 	public int mostRecentBonus;
 	public int mostRecentLetterScore;
+	public int lettersRemaining; 
     //Saving High score variables
     //The number of scores to save, at most
     public int scoreListSize = 10;
@@ -126,7 +127,7 @@ public class VariableControl : MonoBehaviour {
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
 		selectedCharacterNums = new int[characterSelectNum]; 
-	
+		lettersRemaining = totalLetters;
 	}
 	
 	// Update is called once per frame

@@ -64,6 +64,7 @@ public class Character : MonoBehaviour
 				rawScoreFedToMe += (int) LetterController.letterScores[letter];
 				//increase the number of letters fed to the character
 				numLettersFedToMe++;
+				variables.lettersRemaining--;
 			}
 			variables.mostRecentLetterScore = (int)wordScore;
 	        Debug.Log("Score for the letters in " + word + " is " + wordScore);
