@@ -12,7 +12,7 @@ public class LetterController : MonoBehaviour
     public letterBehaviour[] lettersOnStove;
     public int numLettersOnStove = 0;
     public float timer = 0f;
-    public int boardSize = 7;
+    private int boardSize;
     public Vector3[] stoveSpots;
     public Vector3[] bankSpots;
     public bool needsUpkeep = true;
@@ -35,6 +35,10 @@ public class LetterController : MonoBehaviour
 		//initialize variablecontrol reference
 		variables = GameObject.Find ("VariableController").GetComponent<VariableControl> ();
 
+		//connects boardSize variable to the value in the variable controller
+		boardSize = variables.boardSize;
+
+
 		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
 		lettersOnBoard = new letterBehaviour[boardSize];
 		lettersOnStove = new letterBehaviour[boardSize];
@@ -47,8 +51,8 @@ public class LetterController : MonoBehaviour
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
-				stoveSpots [i] = new Vector3 (i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
-				bankSpots [i] = new Vector3 (i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
+				stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
+				bankSpots [i] = new Vector3 (i * 1.38f - 5, -3.8f, 0);
 		}
         CreateSteam ();
     }
@@ -77,7 +81,7 @@ public class LetterController : MonoBehaviour
     }
 
 	void CreateSteam (){
-		stoveSteam = new GameObject[7];
+		stoveSteam = new GameObject[boardSize];
 
 		for( int x = 0; x < boardSize; x++){
 			stoveSteam[x] = Instantiate (steamPrefab,stoveSpots[x] + new Vector3(0,-.5f,-.5f),new Quaternion (0,0,0,0)) as GameObject;
@@ -513,7 +517,7 @@ public class LetterController : MonoBehaviour
     int findNewSpot()
     {
         int nextSpotNum = 0;
-        nextSpotNum = (int)Random.Range(0, 7);
+        nextSpotNum = (int)Random.Range(0, boardSize);
         if (newArraySpot[nextSpotNum] == false)
         {
             return nextSpotNum;
