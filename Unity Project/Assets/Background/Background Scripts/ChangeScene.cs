@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChangeScene : MonoBehaviour {
 
-	string versionNum = "version 0.0.5";
+	string versionNum = "version 0.0.6";
 	// Use this for initialization
 	void Start () {
 	}
