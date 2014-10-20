@@ -7,6 +7,12 @@ public class PlayMusic : MonoBehaviour {
 	
 	StartScreenGUI gui;
 	public GameObject guiScript;
+
+    ReceiptMove receipt;
+    public GameObject receiptScript;
+
+    GoBackToMenu toMenu;
+    public GameObject toMenuScript;
 	
 	//public GameObject audioManager;
 	
@@ -15,19 +21,46 @@ public class PlayMusic : MonoBehaviour {
 		audioManager = audio.GetComponent<AudioManager>();
 		if(Application.loadedLevelName == "StartScreenTest"){
 			gui = guiScript.GetComponent<StartScreenGUI>();
+           
 		}
+        if (Application.loadedLevelName == "ScoreScreen")
+        {
+            receipt = receiptScript.GetComponent<ReceiptMove>();
+            toMenu = toMenuScript.GetComponent<GoBackToMenu>();
+        }
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		audioManager.PlayLoop (7);
-		if(Application.loadedLevelName == "StartScreenTest"){	
-	if (gui.buttonPressed == true) {
-			audioManager.Play(1);
-			Debug.Log("its true");
-		}
+
+        if (Application.loadedLevelName == "StartScreenTest")
+        {	
+            audioManager.PlayLoop(7);
+            if (gui.buttonPressed == true)
+            {
+                audioManager.Play(1);
+			
+            }
 	
-	}
-	}
+        }
+
+        if (Application.loadedLevelName == "ScoreScreen")
+        {   
+            if (receipt.winSound == true)
+            {
+                audioManager.PlayLoop(20);
+              //  audioManager.FadeOut(20);
+                //receipt.winSound = false;
+            }
+
+            if(toMenu.backToStart == true){
+                Debug.Log("it has played");
+                audioManager.Play(1);
+
+
+            }
+
+        }
+    }
 }

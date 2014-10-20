@@ -76,8 +76,16 @@ public class AudioManager : MonoBehaviour {
 
     }
 	
-	public void FadeOut(int i){
-		
+	public void FadeOut(int i){      // bug:cant use this function in update... so where can we use it?
+        while(audioSourceArray[i].volume >=0)
+        {
+            while(timerCountDown>0){
+                timerCountDown = timerCountDown-= Time.deltaTime;
+
+            }
+            audioSourceArray[i].volume-=.2f;
+            timerCountDown=.5f;
+        }
 	}
 	
 	public void FadeIn(int i){

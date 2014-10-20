@@ -50,12 +50,13 @@ public class LetterController : MonoBehaviour
 				stoveSpots [i] = new Vector3 (i * (1.3f * (boardSize / 7)) - 4, -1.8f, 0);
 				bankSpots [i] = new Vector3 (i * (1.6f * (boardSize / 7)) - 5, -3.8f, 0);
 		}
-		CreateSteam ();
+        CreateSteam ();
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         //keep local time in scripts
         timer += Time.deltaTime;
 

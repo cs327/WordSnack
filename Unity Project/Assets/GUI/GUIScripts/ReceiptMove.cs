@@ -3,14 +3,17 @@ using System.Collections;
 
 public class ReceiptMove : MonoBehaviour {
 	Camera c;
+    public bool winSound; //for PlayMusic script
 
 	// Use this for initialization
 	void Start () {
 		c = GameObject.Find ("Main Camera").GetComponent<Camera>();
+        winSound = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		Vector3 pos = gameObject.transform.position;
 
 		if (UniversalInput.press && UniversalInput.inRect (gameObject.collider.bounds, c)) {
