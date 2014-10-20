@@ -38,6 +38,7 @@ public class StartScreenGUI : MonoBehaviour {
 				Application.LoadLevel("CharacterSelectTest"); 
 			}
 		}else{
+			buttonPressed = false;
 			playUnselected.SetActive(true);
 			playSelected.SetActive(false);
 		}

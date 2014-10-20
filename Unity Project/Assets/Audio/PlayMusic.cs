@@ -13,18 +13,21 @@ public class PlayMusic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
-		gui = guiScript.GetComponent<StartScreenGUI>();
+		if(Application.loadedLevelName == "StartScreenTest"){
+			gui = guiScript.GetComponent<StartScreenGUI>();
+		}
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-				audioManager.PlayLoop (7);
-		
+		audioManager.PlayLoop (7);
+		if(Application.loadedLevelName == "StartScreenTest"){	
 	if (gui.buttonPressed == true) {
 			audioManager.Play(1);
-//			Debug.Log("its true");
-//		}
-	}
+			Debug.Log("its true");
 		}
+	
+	}
+	}
 }
