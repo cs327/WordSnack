@@ -231,10 +231,12 @@ public class Character : MonoBehaviour
 	        }
 		}
     }
-    void TrashSound()
+    void WordSound()
     {
         if (characterNum == 0)
-            variables.happySound = 17;
+            variables.chewingSound = 17;
+        else
+            variables.chewingSound = 19;
     }
     // Update is called once per frame
     void Update()
@@ -276,14 +278,15 @@ public class Character : MonoBehaviour
                 if (variables.bonus == true){
                     variables.happySound = CharacterHappy();
                 }
-                TrashSound();
+                WordSound();
 
             }
             if (wordScore == 0)
             {
                 Debug.Log("True");
                 variables.sadSound = CharacterSad();
-            }            
+            }
+            variables.chewing = true;
         }
     }
 }

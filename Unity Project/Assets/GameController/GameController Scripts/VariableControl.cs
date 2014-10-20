@@ -58,9 +58,11 @@ public class VariableControl : MonoBehaviour {
     public bool bonus = false;
     public bool notWord = false;
     public bool hungry = false;
+    public bool chewing = false;
     public int happySound;
     public int sadSound;
     public int hungrySound;
+    public int chewingSound;
 
 	//tweakable variables: 
 	public int minWordLength;

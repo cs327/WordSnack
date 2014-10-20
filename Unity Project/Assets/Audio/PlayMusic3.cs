@@ -33,6 +33,7 @@ public class PlayMusic3 : MonoBehaviour
         Sizzle();
         HappySound();
         SadSound();
+        Chewing();
 
     }
 
@@ -85,6 +86,14 @@ public class PlayMusic3 : MonoBehaviour
         }
         
 }
+    void Chewing()
+    {
+        if (variables.chewing == true)
+        {
+            audioManager.Play(variables.chewingSound);
+            variables.chewing = false;
+        }
+    }
 
 
 
