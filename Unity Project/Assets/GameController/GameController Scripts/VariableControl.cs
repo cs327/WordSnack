@@ -3,6 +3,8 @@ using System.Collections;
 
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
+	public int boardSize = 8;
+
 
 	//letter tuning variables
 	public int numA = 9;
