@@ -71,16 +71,17 @@ public class PauseMenuButton : MonoBehaviour {
 		if (resumeClicked != null) {
 			resumeClickedBounds = resumeClicked.GetComponent<BoxCollider> ().bounds;
 			if(UniversalInput.press && UniversalInput.inRect(resumeClickedBounds, camera)){
-				pauseMenuBackground.SetActive(false);
-				dinerRoom.SetActive(true);
-				mPauseButton.renderer.enabled = true;
-				mTrash.renderer.enabled = true;
-				resumeUnclicked.SetActive(false);
-				l.gamePaused = false;
-				w.gamePaused = false;
-				character1.enabled = true;
-				character2.enabled = true;
-				exitGameUnclicked.SetActive (false);
+//				pauseMenuBackground.SetActive(false);
+//				dinerRoom.SetActive(true);
+//				mPauseButton.renderer.enabled = true;
+				StartCoroutine(waitForButtonPress("UnPause"));
+//				mTrash.renderer.enabled = true;
+//				resumeUnclicked.SetActive(false);
+//				l.gamePaused = false;
+//				w.gamePaused = false;
+//				character1.enabled = true;
+//				character2.enabled = true;
+//				exitGameUnclicked.SetActive (false);
 			}else{
 			}
 		}
@@ -100,14 +101,29 @@ public class PauseMenuButton : MonoBehaviour {
 		if (exitGameClicked != null) {
 			exitGameClickedBounds = exitGameClicked.GetComponent<BoxCollider> ().bounds;
 			if(UniversalInput.press && UniversalInput.inRect(exitGameClickedBounds, camera)){
+				exitGameClicked.SetActive(true);
+				StartCoroutine(waitForButtonPress("StartScreenTest"));
 				Application.LoadLevel("StartScreenTest");
 			}else{
 			}
 		}
+	}
 
-
-
-
-
+	IEnumerator waitForButtonPress (string scene) {
+		yield return new WaitForSeconds (0.5f);
+		if (scene != "UnPause") {
+			Application.LoadLevel(scene);
+		} else {
+			pauseMenuBackground.SetActive(false);
+			dinerRoom.SetActive(true);
+			mPauseButton.renderer.enabled = true;
+			mTrash.renderer.enabled = true;
+			resumeUnclicked.SetActive(false);
+			l.gamePaused = false;
+			w.gamePaused = false;
+			character1.enabled = true;
+			character2.enabled = true;
+			exitGameUnclicked.SetActive (false);
+		}
 	}
 }
