@@ -315,6 +315,6 @@ public class Character : MonoBehaviour
 
         // Retrieve the list with the string "WordsFedToCharacter " + characterNum
         PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
-            Convert.FromBase64String(memStream.GetBuffer()));
+            Convert.ToBase64String(memStream.GetBuffer()));
     }
 }
