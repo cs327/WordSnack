@@ -106,6 +106,9 @@ public class VariableControl : MonoBehaviour {
     //The number of scores to save, at most
     public int scoreListSize = 10;
 
+	// score text "particles" (really textmeshes)
+	public TextMesh scoreText;
+
 	// Use this for initialization
 	void Awake() {
 		phase2CharacterPositions = new Vector3[characterSelectNum];
