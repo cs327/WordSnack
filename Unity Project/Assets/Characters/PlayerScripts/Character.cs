@@ -34,7 +34,7 @@ public class Character : MonoBehaviour
 	public string thingsILike; 
 	public List<int> tasteIDs;
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
-
+	
     // Give it a word - if the character can eat the word this returns the word score
     // If it's a trash character it will always accept
     public int Likes(string word)
@@ -280,10 +280,11 @@ public class Character : MonoBehaviour
                 {
                     multiplier *= t(word);
                 }
-                wordsFedToMe.Add(String.Format("{0} {1] {2}", word, letterScore, multiplier));
+//                wordsFedToMe.Add(String.Format("{0} {1] {2}", word, letterScore, multiplier));
 
-				// output score particle
-				//ParticleHelper.Instance.OutputScore (new Vector3(0.0f, 0.0f, -3.2f));
+				// output score text "particle"
+				variables.scoreText.text = wordScore.ToString ();
+				Instantiate (variables.scoreText, new Vector3(0.0f, 0.0f, -4.0f), Quaternion.identity);
 
                 //update the score!
                 variables.score += wordScore;
@@ -314,7 +315,9 @@ public class Character : MonoBehaviour
         binaryFormatter.Serialize(memStream, wordsFedToMe);
 
         // Retrieve the list with the string "WordsFedToCharacter " + characterNum
+
         PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
             Convert.ToBase64String(memStream.GetBuffer()));
+
     }
 }
