@@ -10,6 +10,8 @@ public class ReceiptGUI : MonoBehaviour
 
     public GUIStyle big;
     public int characterNum;
+    public GameObject rowPrefab;
+    public GameObject bottomPrefab;
 
     //text meshes for each value on the receipt 
     //Later gets set with the correct string and int 
@@ -32,8 +34,12 @@ public class ReceiptGUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+
+        // Add code for character names
+
 
         var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
         var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
@@ -54,6 +60,16 @@ public class ReceiptGUI : MonoBehaviour
             var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
             char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
         }
+
+
+        // Add code to create rows/fill them
+
+
+        // Add code for bottom of receipt
+        GameObject receiptBottom = (GameObject)Instantiate(bottomPrefab);
+        Vector3 bottomPos = receiptBottom.transform.position;
+        bottomPos.y -= 2;
+        receiptBottom.transform.position = bottomPos;
 
     }
 
