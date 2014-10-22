@@ -9,14 +9,21 @@ public class CharacterSelectUI : MonoBehaviour {
 	SpriteRenderer feedMeSprite;
     public bool FeedPressed = false;
 
+	public Texture feedMeClicked;
+	//public GameObject feedMePressed;
+
 	// Use this for initialization
 	void Start () {
 		variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 
 		feedMeSprite = gameObject.GetComponent<SpriteRenderer> ();
+		//feedMePressed = GameObject.Find ("feedMePressed");
 //		feedMeSprite.enabled = false;
 		whoElse.SetActive(false);
-		chooseTwo.SetActive(false);
+		chooseTwo.SetActive (false);
+
+//		//hide the highlited feed them button
+//		feedMePressed.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -45,13 +52,14 @@ public class CharacterSelectUI : MonoBehaviour {
 
 
 		if(variables.currentCharacterSelectNum == variables.characterSelectNum){
-			gameObject.transform.position = new Vector3 (0, -1, -10);
+			gameObject.transform.position = new Vector3 (0, 1, -10);
 			chooseTwo.SetActive(false);
 			whoElse.SetActive(false);
 		}
 	}
 
 	void OnMouseDown(){
+		gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeClicked;
         FeedPressed = true;
 		characters.SetActive(false);
 		GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();

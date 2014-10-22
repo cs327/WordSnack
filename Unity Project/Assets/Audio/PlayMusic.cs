@@ -5,8 +5,8 @@ public class PlayMusic : MonoBehaviour {
 	public GameObject audio;
 	AudioManager audioManager;
 	
-	StartScreenGUI gui;
-	public GameObject guiScript;
+	PlayButtonHandler playButtonHandler;
+	AboutButtonHandler aboutButtonHandler;
 
     ReceiptMove receipt;
     public GameObject receiptScript;
@@ -20,7 +20,8 @@ public class PlayMusic : MonoBehaviour {
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
 		if(Application.loadedLevelName == "StartScreenTest"){
-			gui = guiScript.GetComponent<StartScreenGUI>();
+			playButtonHandler = GameObject.Find ("PlayButton").GetComponent<PlayButtonHandler>();
+			aboutButtonHandler = GameObject.Find ("AboutButton").GetComponent<AboutButtonHandler>();
            
 		}
         if (Application.loadedLevelName == "ScoreScreen")
@@ -37,7 +38,7 @@ public class PlayMusic : MonoBehaviour {
         if (Application.loadedLevelName == "StartScreenTest")
         {	
             audioManager.PlayLoop(7);
-            if (gui.buttonPressed == true)
+            if (playButtonHandler.buttonPressed == true || aboutButtonHandler.buttonPressed == true)
             {
                 audioManager.Play(1);
 			

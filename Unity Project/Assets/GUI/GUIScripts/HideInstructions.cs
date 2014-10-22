@@ -2,15 +2,16 @@
 using System.Collections;
 
 public class HideInstructions : MonoBehaviour {
-	public GameObject checkMark;
 	Vector3 checkMarkPosition;
 	public bool disableInstructions;
+	public Texture checkMark;
+	public Texture checkBox;
+	MeshRenderer m;
 
 	// Use this for initialization
 	void Start () {
-		checkMark = GameObject.Find ("checkMark");
-		checkMarkPosition = checkMark.GetComponent<Transform>().position;
 		disableInstructions = false;
+		m = gameObject.GetComponent<MeshRenderer> ();
 	}
 	
 	// Update is called once per frame
@@ -20,13 +21,13 @@ public class HideInstructions : MonoBehaviour {
 
 	void OnMouseDown(){
 		Debug.Log ("clicked on the don't show");
-		checkMarkPosition.x = 1.06f;
-		checkMark.GetComponent<Transform> ().position = checkMarkPosition;
 		// disable the instrucitons
-		disableInstructions = true;
-
-		if (disableInstructions) {
-			Debug.Log("disabled instructions");
+		if(m.renderer.material.mainTexture == checkBox){
+			m.renderer.material.mainTexture = checkMark;
+			disableInstructions = true;
+		}else{
+			m.renderer.material.mainTexture = checkBox;
+			disableInstructions = false;
 		}
 	}
 }

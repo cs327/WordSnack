@@ -43,7 +43,7 @@ public class letterBehaviour : MonoBehaviour {
     // Colors the letter depending on if it's selected or not
 	void CheckSelected(bool on){
 		if(on){
-			gameObject.renderer.material.color = Color.magenta;
+			//gameObject.renderer.material.color = Color.magenta;
 		}
 		else{
 			gameObject.renderer.material.color = Color.white;

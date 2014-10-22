@@ -286,6 +286,9 @@ public class Character : MonoBehaviour
 				variables.scoreText.text = wordScore.ToString ();
 				Instantiate (variables.scoreText, new Vector3(0.0f, 0.0f, -4.0f), Quaternion.identity);
 
+				// output the crumbs
+				ParticleHelper.Instance.outputCrumbs(new Vector3(0.0f, 0.0f, -4.0f));
+
                 //update the score!
                 variables.score += wordScore;
                 //Debug.Log("The total score is" + variables.score);
