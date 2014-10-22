@@ -253,6 +253,7 @@ public class Character : MonoBehaviour
     {
         if (Application.loadedLevelName == "WordMaking")
         {
+
             //First grab the word - we're gonna need it!
             string word = letterControl.sendWord();
 			//check if there even is a word!
@@ -284,11 +285,15 @@ public class Character : MonoBehaviour
 
 				// output score text "particle"
 				variables.scoreText.text = wordScore.ToString ();
-				Instantiate (variables.scoreText, new Vector3(0.0f, 0.0f, -4.0f), Quaternion.identity);
+				Vector3 characterPosition = this.gameObject.transform.position;
+				characterPosition.y += 1.5f;
+				characterPosition.z = -3.2f;
+				Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
 
 				// output the crumbs
-				ParticleHelper.Instance.outputCrumbs(new Vector3(0.0f, 0.0f, -4.0f));
-
+				if(characterNum != 0){
+					ParticleHelper.Instance.outputCrumbs(gameObject.transform.position + new Vector3(0,1,-3));
+				}
                 //update the score!
                 variables.score += wordScore;
                 //Debug.Log("The total score is" + variables.score);
