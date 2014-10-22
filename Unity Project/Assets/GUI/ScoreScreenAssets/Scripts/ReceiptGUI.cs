@@ -38,8 +38,21 @@ public class ReceiptGUI : MonoBehaviour
         
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+        
 
-        // Add code for character names
+        Component[] parentMeshes = gameObject.GetComponents<TextMesh>();
+        foreach (TextMesh mesh in parentMeshes)
+        {
+            switch (mesh.name)
+            {
+                case "Character 1":
+                    mesh.text = Character.CharacterNameLookup[selectedCharacter1];
+                    break;
+                case "Character 2":
+                    mesh.text = Character.CharacterNameLookup[selectedCharacter2];
+                    break;
+            }
+        }
 
 
         var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
@@ -124,16 +137,16 @@ public class ReceiptGUI : MonoBehaviour
 
         // Add code for bottom of receipt
         
-        GameObject receiptInstance = (GameObject)Instantiate(bottomPrefab);
-        receiptInstance.transform.parent = gameObject.transform;
-        pos = receiptInstance.transform.position;
-        Debug.Log(pos + " before");
+        GameObject bottomInstance = (GameObject)Instantiate(bottomPrefab);
+        bottomInstance.transform.parent = gameObject.transform;
+        pos = bottomInstance.transform.position;
+        
         pos.y += rowOffset * rowCount;
-        Debug.Log(rowOffset * rowCount + " is the bottom offset");
-        receiptInstance.transform.position = pos;
-        Debug.Log(receiptInstance.transform.position + " after");
+        
+        bottomInstance.transform.position = pos;
+        
 
-        Component[] meshes = receiptInstance.GetComponentsInChildren<TextMesh>();
+        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
 
         foreach(TextMesh mesh in meshes)
         {

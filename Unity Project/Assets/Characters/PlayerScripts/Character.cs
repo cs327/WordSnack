@@ -14,6 +14,19 @@ public class Character : MonoBehaviour
     public List<TasteCollection.Taste> myTastes;
     //public CharacterTimers Timer;
     public int characterNum;
+
+    public static Dictionary<int, string> CharacterNameLookup = 
+        new Dictionary<int,string>()
+        {
+            { 0, "Trash Character"},
+            { 1, "Kelvin"},
+            { 2, "Fred"},
+            { 3, "Stella"},
+            { 4, "Meghan"},
+            { 5, "Spike"}
+
+        };
+
 	//number of letters fed to the character
 	public int numLettersFedToMe;
 	//raw score from the letters fed to the character
@@ -325,11 +338,7 @@ public class Character : MonoBehaviour
         binaryFormatter.Serialize(memStream, wordsFedToMe);
 
         // Retrieve the list with the string "WordsFedToCharacter " + characterNum
-        
-        foreach(string s in wordsFedToMe)
-        {
-            Debug.Log(characterNum + " ate " + s);
-        }
+  
         PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
             Convert.ToBase64String(memStream.GetBuffer()));
 
