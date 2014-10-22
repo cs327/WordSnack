@@ -45,7 +45,7 @@ public class CharacterSelectUI : MonoBehaviour {
 
 
 		if(variables.currentCharacterSelectNum == variables.characterSelectNum){
-			gameObject.transform.position = new Vector3 (0, -1, -10);
+			gameObject.transform.position = new Vector3 (0, 1, -10);
 			chooseTwo.SetActive(false);
 			whoElse.SetActive(false);
 		}
