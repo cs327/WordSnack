@@ -330,7 +330,7 @@ public class LetterController : MonoBehaviour
         //this block of code replaces all missing letters on board with random ones
         // and effectively fills the bank.
 
-        if (timer > 1 && needsUpkeep)
+        if (timer > .25f && needsUpkeep)
         {
             //print ("time to replace");
             int needsReplacing = 0;
