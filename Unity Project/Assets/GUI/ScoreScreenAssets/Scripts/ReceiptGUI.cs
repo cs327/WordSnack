@@ -44,8 +44,8 @@ public class ReceiptGUI : MonoBehaviour
 
         var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
         var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
-        List<string> char1WordsFed;
-        List<string> char2WordsFed;
+        List<string> char1WordsFed = new List<string>();
+        List<string> char2WordsFed = new List<string>();
 
         // I deserialize the player pref data into a list of strings representing the
         // words eaten and the scores associated. 
@@ -55,38 +55,29 @@ public class ReceiptGUI : MonoBehaviour
             var memStream = new MemoryStream(Convert.FromBase64String(char1Data));
             char1WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
         }
-        else
-        {
-            char1WordsFed = new List<string>();
-            char1WordsFed.Add("Dog");
-            Debug.Log("Char1 empty");
-        }
+        
         if (!string.IsNullOrEmpty(char2Data))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
             char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
         }
-        else
-        {
-            char2WordsFed = new List<string>();
-            char2WordsFed.Add("Dog");
-            Debug.Log("Char2 empty");
-        }
+
 
         //char1WordsFed = new List<string>();
-        //char1WordsFed.Add("Dog");
+        //char1WordsFed.Add("Dog 3 2");
+        //char1WordsFed.Add("lol 3 2");
         //Debug.Log("Char1 empty");
 
         //char2WordsFed = new List<string>();
-        //char2WordsFed.Add("Dog");
+        //char2WordsFed.Add("Dog 3 2");
         //Debug.Log("Char2 empty");
 
 
         // Add code to create rows/fill them
-        int rowCount = Math.Min(char1WordsFed.Count, char2WordsFed.Count);
+        int rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
         Vector3 pos;
-        Debug.Log(char1WordsFed.Count);
+        
         for(int i = 0; i < rowCount; i++)
         {
             GameObject rowInstance = (GameObject)Instantiate(rowPrefab);
@@ -94,15 +85,77 @@ public class ReceiptGUI : MonoBehaviour
             pos = rowInstance.transform.position;
             pos.y += rowOffset * i;
             rowInstance.transform.position = pos;
+            
+            
+            Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
 
+            string[] wordInfo;
+            foreach(TextMesh mesh in rowMeshes)
+            {
+                if(i < char1WordsFed.Count)
+                {
+                    wordInfo = char1WordsFed[i].Split(' ');
+                    switch(mesh.name)
+                    {
+                        case "char1Word":
+                            mesh.text = wordInfo[0];
+                            break;
+                        case "char1Score":
+                            mesh.text = wordInfo[1] + " x " + wordInfo[2];
+                            break;
+                    }
+                }
+                if(i < char2WordsFed.Count)
+                {
+                    wordInfo = char2WordsFed[i].Split(' ');
+                    switch(mesh.name)
+                    {
+                        case "char2Word":
+                            mesh.text = wordInfo[0];
+                            break;
+                        case "char2Score":
+                            mesh.text = wordInfo[1] + " x " + wordInfo[2];
+                            break;
+                    }
+
+                }
+            }
         }
 
         // Add code for bottom of receipt
+        
         GameObject receiptInstance = (GameObject)Instantiate(bottomPrefab);
         receiptInstance.transform.parent = gameObject.transform;
         pos = receiptInstance.transform.position;
+        Debug.Log(pos + " before");
         pos.y += rowOffset * rowCount;
+        Debug.Log(rowOffset * rowCount + " is the bottom offset");
         receiptInstance.transform.position = pos;
+        Debug.Log(receiptInstance.transform.position + " after");
+
+        Component[] meshes = receiptInstance.GetComponentsInChildren<TextMesh>();
+
+        foreach(TextMesh mesh in meshes)
+        {
+            switch(mesh.name)
+            {
+                case "Discarded Letters Mesh":
+                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+                    break;
+                case "Discarded Points Mesh":
+                    mesh.text = PlayerPrefs.GetInt("Trashed Letter Score").ToString();
+                    break;
+                case "Word Score Mesh":
+                    mesh.text = PlayerPrefs.GetInt("Total Letter Score").ToString();
+                    break;
+                case "Multiplier Bonus Mesh":
+                    mesh.text = PlayerPrefs.GetInt("Total Multiplier Score").ToString();
+                    break;
+                case "Total Mesh":
+                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+                    break;
+            }
+        }
 
     }
 

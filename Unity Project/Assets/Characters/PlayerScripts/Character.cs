@@ -318,7 +318,7 @@ public class Character : MonoBehaviour
         binaryFormatter.Serialize(memStream, wordsFedToMe);
 
         // Retrieve the list with the string "WordsFedToCharacter " + characterNum
-
+        Debug.Log("WordsFedToCharacter " + characterNum);
         PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
             Convert.ToBase64String(memStream.GetBuffer()));
 
