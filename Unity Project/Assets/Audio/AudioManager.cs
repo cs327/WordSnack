@@ -80,7 +80,7 @@ public class AudioManager : MonoBehaviour {
         while(audioSourceArray[i].volume >=0)
         {
             while(timerCountDown>0){
-                timerCountDown = timerCountDown-= Time.deltaTime;
+                timerCountDown -= Time.deltaTime;
 
             }
             audioSourceArray[i].volume-=.2f;

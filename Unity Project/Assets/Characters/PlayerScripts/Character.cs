@@ -281,7 +281,9 @@ public class Character : MonoBehaviour
                 {
                     multiplier *= t(word);
                 }
-//                wordsFedToMe.Add(String.Format("{0} {1] {2}", word, letterScore, multiplier));
+                Debug.Log(word + " " + letterScore.ToString() + " " + multiplier.ToString());
+
+                wordsFedToMe.Add(word + " " + letterScore + " " + multiplier);
 
 				// output score text "particle"
 				variables.scoreText.text = wordScore.ToString ();
@@ -323,7 +325,11 @@ public class Character : MonoBehaviour
         binaryFormatter.Serialize(memStream, wordsFedToMe);
 
         // Retrieve the list with the string "WordsFedToCharacter " + characterNum
-        Debug.Log("WordsFedToCharacter " + characterNum);
+        
+        foreach(string s in wordsFedToMe)
+        {
+            Debug.Log(characterNum + " ate " + s);
+        }
         PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
             Convert.ToBase64String(memStream.GetBuffer()));
 
