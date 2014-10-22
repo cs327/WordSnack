@@ -69,8 +69,8 @@ public class Character : MonoBehaviour
 								//calculate the raw score of the letters fed - without the bonus
 								rawScoreFedToMe += (int)LetterController.letterScores [letter];
 								//increase the number of letters fed to the character
-								numLettersFedToMe++;
-								variables.lettersRemaining--;
+								//numLettersFedToMe++;
+								//variables.lettersRemaining--;
 						}
 						letterScore = wordScore; //stash the raw letter value
 
@@ -79,7 +79,7 @@ public class Character : MonoBehaviour
 								wordScore *= t (word);
 						}
 						//Are our monsters picky?
-						if (variables.pickyMonsters == 1) {
+						if (variables.pickyMonsters == 1 && characterNum != 0) {
 								if (letterScore == wordScore) {
 										Debug.Log ("That didn't match a taste and you asked for Picky Monsters");
 										return 0;
@@ -96,6 +96,8 @@ public class Character : MonoBehaviour
 						}
 						Debug.Log ("Score after tastes for " + word + " is " + wordScore);
 				}
+				numLettersFedToMe += word.Length;
+				variables.lettersRemaining -= word.Length;
 				return wordScore;
 		}
 
@@ -315,7 +317,7 @@ public class Character : MonoBehaviour
 										if (characterNum != 0)
 												print ("Other character's (" + otherCharacterNum + ") satisfaction level is " + variables.characterSatisfaction [otherCharacterNum]);
 										//If you failed to feed a character for x turns, you lose x points!
-										if (variables.characterSatisfaction [variables.characterNums [0]] <= 0 || variables.characterSatisfaction [variables.characterNums [1]] == 0) {
+										if (variables.characterSatisfaction [variables.characterNums [0]] <= 0 || variables.characterSatisfaction [variables.characterNums [1]] <= 0) {
 												print ("You failed to feed a character for " + variables.maxTurnsNotFed + " turns! You lose " + variables.hungerLoss + " points!");
 												variables.score -= variables.hungerLoss;
 										}
@@ -338,6 +340,18 @@ public class Character : MonoBehaviour
 								variables.sadSound = CharacterSad ();
 						}
 						variables.chewing = true;
+				}
+		}
+		void OnGUI ()
+		{
+				if (Application.loadedLevelName == "WordMaking" && characterNum != 0 && variables.impatientMonsters == 1) {
+						//Debug.Log ("Displaying satisfaction level for character " + characterNum);
+						float scale = Mathf.Max (Screen.width / 479.0f, Screen.height / 319.0f);
+						Camera c = GameObject.Find ("Main Camera").camera;
+						Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
+						GUIStyle boxStyle = "box";
+						boxStyle.wordWrap = true;
+						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y - 10 * scale, Screen.width * 0.1f, Screen.height * 0.05f), "Satisfaction:" + variables.characterSatisfaction [characterNum]);
 				}
 		}
 
