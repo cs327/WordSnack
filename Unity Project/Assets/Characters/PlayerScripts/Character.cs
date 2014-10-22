@@ -315,7 +315,7 @@ public class Character : MonoBehaviour
 										if (characterNum != 0)
 												print ("Other character's (" + otherCharacterNum + ") satisfaction level is " + variables.characterSatisfaction [otherCharacterNum]);
 										//If you failed to feed a character for x turns, you lose x points!
-										if (variables.characterSatisfaction [variables.characterNums [0]] == 0 || variables.characterSatisfaction [variables.characterNums [1]] == 0) {
+										if (variables.characterSatisfaction [variables.characterNums [0]] <= 0 || variables.characterSatisfaction [variables.characterNums [1]] == 0) {
 												print ("You failed to feed a character for " + variables.maxTurnsNotFed + " turns! You lose " + variables.hungerLoss + " points!");
 												variables.score -= variables.hungerLoss;
 										}
