@@ -299,11 +299,13 @@ public class Character : MonoBehaviour
                 wordsFedToMe.Add(word + " " + letterScore + " " + multiplier);
 
 				// output score text "particle"
-				variables.scoreText.text = wordScore.ToString ();
-				Vector3 characterPosition = this.gameObject.transform.position;
-				characterPosition.y += 1.5f;
-				characterPosition.z = -3.2f;
-				Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+				if (characterNum != 0) {
+					variables.scoreText.text = wordScore.ToString ();
+					Vector3 characterPosition = this.gameObject.transform.position;
+					characterPosition.y += 1.5f;
+					characterPosition.z = -3.2f;
+					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+				}
 
 				// output the crumbs
 				if(characterNum != 0){
