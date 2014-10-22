@@ -1,9 +1,8 @@
-﻿//Hannah
+//Hannah
 using UnityEngine;
 using System.Collections;
 
-public class AudioManager : MonoBehaviour
-{
+public class AudioManager : MonoBehaviour {
 	
 	
 		public AudioClip[] audioClipArray;
@@ -85,11 +84,11 @@ public class AudioManager : MonoBehaviour
 
 		}
 	
-		public void FadeOut (int i)
-		{      // bug:cant use this function in update... so where can we use it?
-				while (audioSourceArray[i].volume >=0) {
-						while (timerCountDown>0) {
-								timerCountDown = timerCountDown -= Time.deltaTime;
+	public void FadeOut(int i){      // bug:cant use this function in update... so where can we use it?
+        while(audioSourceArray[i].volume >=0)
+        {
+            while(timerCountDown>0){
+                timerCountDown -= Time.deltaTime;
 
 						}
 						audioSourceArray [i].volume -= .2f;
