@@ -11,7 +11,7 @@ public class ChangeScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Time.time > 1.3) {
+		if (Time.time > 3) {
 			if (Application.loadedLevelName == "SplashScreen") {
 				Application.LoadLevel("StartScreenTest");
 			}
