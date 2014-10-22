@@ -10,6 +10,7 @@ public class ReceiptGUI : MonoBehaviour
 
     public GUIStyle big;
     public int characterNum;
+    public float rowOffset;
     public GameObject rowPrefab;
     public GameObject bottomPrefab;
 
@@ -54,22 +55,54 @@ public class ReceiptGUI : MonoBehaviour
             var memStream = new MemoryStream(Convert.FromBase64String(char1Data));
             char1WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
         }
+        else
+        {
+            char1WordsFed = new List<string>();
+            char1WordsFed.Add("Dog");
+            Debug.Log("Char1 empty");
+        }
         if (!string.IsNullOrEmpty(char2Data))
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
-            char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
+            char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
         }
+        else
+        {
+            char2WordsFed = new List<string>();
+            char2WordsFed.Add("Dog");
+            Debug.Log("Char2 empty");
+        }
+
+        //char1WordsFed = new List<string>();
+        //char1WordsFed.Add("Dog");
+        //Debug.Log("Char1 empty");
+
+        //char2WordsFed = new List<string>();
+        //char2WordsFed.Add("Dog");
+        //Debug.Log("Char2 empty");
 
 
         // Add code to create rows/fill them
+        int rowCount = Math.Min(char1WordsFed.Count, char2WordsFed.Count);
+        Vector3 pos;
+        Debug.Log(char1WordsFed.Count);
+        for(int i = 0; i < rowCount; i++)
+        {
+            GameObject rowInstance = (GameObject)Instantiate(rowPrefab);
+            rowInstance.transform.parent = gameObject.transform;
+            pos = rowInstance.transform.position;
+            pos.y += rowOffset * i;
+            rowInstance.transform.position = pos;
 
+        }
 
         // Add code for bottom of receipt
-        GameObject receiptBottom = (GameObject)Instantiate(bottomPrefab);
-        Vector3 bottomPos = receiptBottom.transform.position;
-        bottomPos.y -= 2;
-        receiptBottom.transform.position = bottomPos;
+        GameObject receiptInstance = (GameObject)Instantiate(bottomPrefab);
+        receiptInstance.transform.parent = gameObject.transform;
+        pos = receiptInstance.transform.position;
+        pos.y += rowOffset * rowCount;
+        receiptInstance.transform.position = pos;
 
     }
 
