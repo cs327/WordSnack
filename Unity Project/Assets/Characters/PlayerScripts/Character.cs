@@ -288,9 +288,6 @@ public class Character : MonoBehaviour
 
 				// output the crumbs
 				ParticleHelper.Instance.outputCrumbs(new Vector3(0.0f, 0.0f, -4.0f));
-				//Instantiate (variables.crumbParticles, new Vector3(0.0f, 2.0f, -4.0f), Quaternion.identity);
-				// destroy it right away, don't need forever
-				//Destroy (variables.crumbParticles);
 
                 //update the score!
                 variables.score += wordScore;
