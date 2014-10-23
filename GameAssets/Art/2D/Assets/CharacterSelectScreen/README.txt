@@ -1,4 +1,6 @@
 Character Selection Information
+-Appears when player selects “Play” on menu screen.  Background is splash screen.
+-Additional semi-transparent black layer appears over splash screen
 This step has 3 looks:
 -First, all the character cards over the starfield background with the "Choose Two Customers" text at the bottom.
 -Second, the first character is selected by tapping their card.  The selected character's card disappears, and their selected box appears on the bottom left of the screen.
