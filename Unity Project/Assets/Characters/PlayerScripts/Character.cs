@@ -9,14 +9,8 @@ using System.IO;
 
 public class Character : MonoBehaviour
 {
-    // This is a list of delegates (i.e functions) 
-    // Each is given a word and returns the taste multiplier for that word. 
-    public List<TasteCollection.Taste> myTastes;
-    //public CharacterTimers Timer;
-    public int characterNum;
-
-    public static Dictionary<int, string> CharacterNameLookup = 
-        new Dictionary<int,string>()
+		public static Dictionary<int, string> CharacterNameLookup = 
+        new Dictionary<int,string> ()
         {
             { 0, "Trash Character"},
             { 1, "Kelvin"},
@@ -27,31 +21,6 @@ public class Character : MonoBehaviour
 
         };
 
-	//number of letters fed to the character
-	public int numLettersFedToMe;
-	//raw score from the letters fed to the character
-	public int rawScoreFedToMe;
-	//bonus score from tastes without letter score
-	public int rawBonusScoreFedToMe;
-    // Used to retrieve words to potentially send to a character
-    public LetterController letterControl;
-    public GameObject letterGenerator;
-    // Used to add default tastes to characters
-    private VariableControl variables;
-    // Dictionary of taste ID's to names. 
-    // Give it a key (an int ID) and it will return the correct taste -> tasteDictionary[5] returns the '5' taste
-    public static Dictionary<int, TasteCollection.Taste> tasteDictionary;
-    // Keeps track of fed words to calculate combo's 
-    public List<string> wordsFedToMe;
-    //What should be displayed as the creatures tastes when you click it
-	public string thingsILike; 
-	public List<int> tasteIDs;
-	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
-		// This is a list of delegates (i.e functions) 
-		// Each is given a word and returns the taste multiplier for that word. 
-		public List<TasteCollection.Taste> myTastes;
-		//public CharacterTimers Timer;
-		public int characterNum;
 		//number of letters fed to the character
 		public int numLettersFedToMe;
 		//raw score from the letters fed to the character
@@ -72,21 +41,27 @@ public class Character : MonoBehaviour
 		public string thingsILike; 
 		public List<int> tasteIDs;
 		private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
+		// This is a list of delegates (i.e functions) 
+		// Each is given a word and returns the taste multiplier for that word. 
+		public List<TasteCollection.Taste> myTastes;
+		//What is my character number, and what is the other character's character number?
+		//For the hunger mechanic.
+		public int characterNum;
 		private int otherCharacterNum;
 	
-    // Give it a word - if the character can eat the word this returns the word score
-    // If it's a trash character it will always accept
-    public int Likes(string word)
-    {
-        if (characterNum != 0) { //If we're not the trash character... 
-					if (word != null && letterControl.checkForWord (word) == false) {
-							Debug.Log ("Not a word and this isn't the trash character");
-							return 0;
-					}
+		// Give it a word - if the character can eat the word this returns the word score
+		// If it's a trash character it will always accept
+		public int Likes (string word)
+		{
+				if (characterNum != 0) { //If we're not the trash character... 
+						if (word != null && letterControl.checkForWord (word) == false) {
+								Debug.Log ("Not a word and this isn't the trash character");
+								return 0;
+						}
 				} else {
 						//If we ARE the trash character, don't let people throw away single letters
-						if (word.Length == variables.minLettersToTrash) {
-								Debug.Log ("You can't throw away fewer than two letters. The GDD says so.");
+						if (word.Length < variables.minLettersToTrash) {
+								Debug.Log ("You can't throw away fewer than " + variables.minLettersToTrash + " letters. The GDD says so.");
 								return 0;
 						}
 				}
@@ -330,32 +305,26 @@ public class Character : MonoBehaviour
 										letterScore += LetterController.letterScores [letter];                   
 								}
 
-                float multiplier = 1;
-                foreach (TasteCollection.Taste t in myTastes)
-                {
-                    multiplier *= t(word);
-                }
-                Debug.Log(word + " " + letterScore.ToString() + " " + multiplier.ToString());
+								float multiplier = 1;
+								foreach (TasteCollection.Taste t in myTastes) {
+										multiplier *= t (word);
+								}
+								Debug.Log (word + " " + letterScore.ToString () + " " + multiplier.ToString ());
 
-                wordsFedToMe.Add(word + " " + letterScore + " " + multiplier);
+								wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 
-				// output score text "particle"
-				variables.scoreText.text = wordScore.ToString ();
-				Vector3 characterPosition = this.gameObject.transform.position;
-				characterPosition.y += 1.5f;
-				characterPosition.z = -3.2f;
-				Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
-
-				// output the crumbs
-				if(characterNum != 0){
-					ParticleHelper.Instance.outputCrumbs(gameObject.transform.position + new Vector3(0,1,-3));
-				}
-                //update the score!
-                variables.score += wordScore;
-                //Debug.Log("The total score is" + variables.score);
-                letterControl.ResetStove();
+						
+								// output score text "particle"
+								variables.scoreText.text = wordScore.ToString ();
+								Vector3 characterPosition = this.gameObject.transform.position;
+								characterPosition.y += 1.5f;
+								characterPosition.z = -3.2f;
+								Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
 								// output the crumbs
-								ParticleHelper.Instance.outputCrumbs (new Vector3 (0.0f, 0.0f, -4.0f));
+								if (characterNum != 0) {
+										ParticleHelper.Instance.outputCrumbs (gameObject.transform.position + new Vector3 (0, 1, -3));
+								}
+
 								if (variables.impatientMonsters == 1) {
 										//update my satisfaction level
 										variables.characterSatisfaction [characterNum] = variables.maxTurnsNotFed;
@@ -414,10 +383,10 @@ public class Character : MonoBehaviour
 				var memStream = new MemoryStream ();
 				binaryFormatter.Serialize (memStream, wordsFedToMe);
 
-        // Retrieve the list with the string "WordsFedToCharacter " + characterNum
+				// Retrieve the list with the string "WordsFedToCharacter " + characterNum
   
-        PlayerPrefs.SetString("WordsFedToCharacter " + characterNum,
-            Convert.ToBase64String(memStream.GetBuffer()));
+				PlayerPrefs.SetString ("WordsFedToCharacter " + characterNum,
+            Convert.ToBase64String (memStream.GetBuffer ()));
 
 		}
 }

@@ -79,6 +79,7 @@ public class VariableControl : MonoBehaviour
 		public int maxMultiplier = 5;
 		public int maxTurnsNotFed;
 		public int hungerLoss;
+		public int minLettersToTrash;
 
 		//character variables 
 		public Vector3[] phase2CharacterPositions;
