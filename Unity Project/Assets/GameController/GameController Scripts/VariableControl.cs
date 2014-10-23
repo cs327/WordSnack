@@ -4,6 +4,7 @@ using System.Collections;
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
 	public int boardSize = 8;
+	public Vector3 [] characterTasteSpots;
 
 
 	//letter tuning variables
@@ -113,6 +114,7 @@ public class VariableControl : MonoBehaviour {
 	void Awake() {
 		phase2CharacterPositions = new Vector3[characterSelectNum];
 		phase1SelectedCharPositions = new Vector3[characterSelectNum];
+		characterTasteSpots = new Vector3[characterSelectNum];
 
 		//establishes the selected characters positions for phase 1
 		phase1SelectedCharPositions[0] = new Vector3(-3.1f,-3.3f,0);
@@ -121,9 +123,14 @@ public class VariableControl : MonoBehaviour {
 		//establishes the character position for phase 2
 		phase2CharacterPositions[0] = new Vector3(-3.5f, 0.5f, 1);
 		phase2CharacterPositions[1] = new Vector3(3.8f, 0.5f, 1);
+
+		//sets where the character tastes should be put for wordbuilding phase
+		characterTasteSpots[0] = new Vector3 (-1.7f,1.7f,-1f);
+		characterTasteSpots[1] = new Vector3 (0,1.7f,-1f);
 	}
 
 	void Start () {
+
 		//sets totals for tuning variables of letters
 		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
 		totalVowels = numA + numE + numI + numO + numU;
