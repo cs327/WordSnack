@@ -10,6 +10,7 @@ public class LetterController : MonoBehaviour
     public letterBehaviour letterObj;
     public letterBehaviour[] lettersOnBoard;
     public letterBehaviour[] lettersOnStove;
+	public int[] positionOnBoard;
     public int numLettersOnStove = 0;
     public float timer = 0f;
     private int boardSize;
@@ -43,6 +44,7 @@ public class LetterController : MonoBehaviour
 		lettersOnBoard = new letterBehaviour[boardSize];
 		lettersOnStove = new letterBehaviour[boardSize];
 		newArraySpot = new bool[boardSize];
+		positionOnBoard = new int[boardSize];
 
 		//creates the list of valid words and letter scores
 		makeWordListAndScoreDict ();
@@ -51,8 +53,9 @@ public class LetterController : MonoBehaviour
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
-				stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
-				bankSpots [i] = new Vector3 (i * 1.38f - 5, -3.8f, 0);
+			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
+			bankSpots [i] = new Vector3 (i * 1.38f - 5, -3.8f, 0);
+			positionOnBoard [i] = -1;
 		}
         CreateSteam ();
     }
@@ -365,6 +368,7 @@ public class LetterController : MonoBehaviour
                 if (!lettersOnBoard[i].onStove && lettersOnBoard[i].selected)
                 {
                     lettersOnStove[numLettersOnStove] = lettersOnBoard[i];
+					positionOnBoard[numLettersOnStove] = i;
                     lettersOnBoard[i].onStove = true;
                     lettersOnBoard[i].orderOnStove = numLettersOnStove;
                     numLettersOnStove++;
@@ -385,6 +389,7 @@ public class LetterController : MonoBehaviour
                             lettersOnStove[x].selected = false;
                             lettersOnStove[x].onStove = false;
                             lettersOnStove[x] = null;
+							positionOnBoard[x] = -1;
                         }
                     }
                 }
@@ -485,21 +490,25 @@ public class LetterController : MonoBehaviour
         //finds a new spot for each letter in the array
         for (int i = 0; i < boardSize; i++)
         {
-            //finds an untaken spot for that letter
-            while (nextSpotNum == -1)
-            {
-                nextSpotNum = findNewSpot();
-            }
-            //stores the letter in the temp array
-            nextLetters[nextSpotNum] = lettersOnBoard[i];
-            newArraySpot[nextSpotNum] = true;
-            nextSpotNum = -1;
+			if (!spotIsOnBoard(i)) {
+	            //finds an untaken spot for that letter
+	            while (nextSpotNum == -1)
+	            {
+	                nextSpotNum = findNewSpot();
+	            }
+	            //stores the letter in the temp array
+	            nextLetters[nextSpotNum] = lettersOnBoard[i];
+	            newArraySpot[nextSpotNum] = true;
+	            nextSpotNum = -1;
+			}
         }
         //sets the letter array to the temp array and changes positions
         for (int i = 0; i < boardSize; i++)
         {
-            lettersOnBoard[i] = nextLetters[i];
-            lettersOnBoard[i].transform.position = bankSpots[i];
+			if (!spotIsOnBoard(i)) {
+	            lettersOnBoard[i] = nextLetters[i];
+	            lettersOnBoard[i].transform.position = bankSpots[i];
+			}
         }
     }
 
@@ -518,7 +527,7 @@ public class LetterController : MonoBehaviour
     {
         int nextSpotNum = 0;
         nextSpotNum = (int)Random.Range(0, boardSize);
-        if (newArraySpot[nextSpotNum] == false)
+        if (newArraySpot[nextSpotNum] == false && !spotIsOnBoard(nextSpotNum))
         {
             return nextSpotNum;
         }
@@ -528,6 +537,15 @@ public class LetterController : MonoBehaviour
         }
     }
 
+	bool spotIsOnBoard(int spotNum) {
+		bool onBoard = false;
+		for (int i = 0; i < boardSize; i++) {
+			if (positionOnBoard[i] == spotNum) {
+				onBoard = true;
+			}
+		}
+		return onBoard;
+	}
     //current test for sending words from stove
     void OnGUI()
     {
