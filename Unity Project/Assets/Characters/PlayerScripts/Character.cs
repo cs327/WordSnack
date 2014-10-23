@@ -372,7 +372,17 @@ public class Character : MonoBehaviour
 						Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
 						GUIStyle boxStyle = "box";
 						boxStyle.wordWrap = true;
-						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y - 10 * scale, Screen.width * 0.1f, Screen.height * 0.05f), "Satisfaction:" + variables.characterSatisfaction [characterNum]);
+						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 2 * scale, Screen.width * 0.1f, Screen.height * 0.05f), "Satisfaction:" + variables.characterSatisfaction [characterNum]);
+				}
+				if (Application.loadedLevelName == "WordMaking" && characterNum != 0) {
+						//Display character tastes in hacky but procedural way
+						//Debug.Log ("Displaying character taste in hacky way");
+						float scale = Mathf.Max (Screen.width / 479.0f, Screen.height / 319.0f);
+						Camera c = GameObject.Find ("Main Camera").camera;
+						Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
+						GUIStyle boxStyle = "box";
+						boxStyle.wordWrap = true;
+						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y - 20 * scale, Screen.width * 0.2f, Screen.height * 0.08f), thingsILike);
 				}
 		}
 
