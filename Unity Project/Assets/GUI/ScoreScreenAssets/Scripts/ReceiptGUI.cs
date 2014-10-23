@@ -13,14 +13,8 @@ public class ReceiptGUI : MonoBehaviour
     public float rowOffset;
     public GameObject rowPrefab;
     public GameObject bottomPrefab;
-
-    //text meshes for each value on the receipt 
-    //Later gets set with the correct string and int 
-    //public TextMesh totalScoreTextMesh;
-    //public TextMesh rawScoreTextMesh;
-    //public TextMesh MultiplierTextMesh;
-    //public TextMesh DiscardedLettersTextMesh;
-    //public TextMesh DiscardedPointsTextMesh;
+    public TextMesh Character1Name;
+    public TextMesh Character2Name;
 
     int selectedCharacter1;
     int selectedCharacter2;
@@ -38,23 +32,15 @@ public class ReceiptGUI : MonoBehaviour
         
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+        Debug.Log("Char 1 " + selectedCharacter1);
+        Debug.Log("Char 2 " + selectedCharacter2);
+        Debug.Log(Character.CharacterNameLookup[selectedCharacter1]);
+        Debug.Log(Character.CharacterNameLookup[selectedCharacter2]);
+
+
+        Character1Name.text = Character.CharacterNameLookup[selectedCharacter1];
+        Character2Name.text = Character.CharacterNameLookup[selectedCharacter2];
         
-
-        Component[] parentMeshes = gameObject.GetComponents<TextMesh>();
-        foreach (TextMesh mesh in parentMeshes)
-        {
-            switch (mesh.name)
-            {
-                case "Character 1":
-                    mesh.text = Character.CharacterNameLookup[selectedCharacter1];
-                    break;
-                case "Character 2":
-                    mesh.text = Character.CharacterNameLookup[selectedCharacter2];
-                    break;
-            }
-        }
-
-
         var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
         var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
         List<string> char1WordsFed = new List<string>();
