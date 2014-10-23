@@ -11,7 +11,7 @@ public class SelectScript : MonoBehaviour {
 	public GameObject characterParent;
 	//click control variables 
 	public bool selected = false;
-	int selectNum = -1;
+	public int selectNum = -1;
 
 	//remember initial position
 	public Vector3 startingSpot;
@@ -25,8 +25,7 @@ public class SelectScript : MonoBehaviour {
 	SpriteRenderer chooseTwoSprite;
 	SpriteRenderer chooseOneMoreSprite;
     // A reference to the 
-	public GameObject leftCard;
-	public GameObject rightCard;
+
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
@@ -81,6 +80,7 @@ public class SelectScript : MonoBehaviour {
 					variables.characterSelected[0] = true;
 					variables.selectedCharacters[0] = gameObject;
 					variables.selectedCharacterNums[0] = character.characterNum;
+					character.charSelectOrder = 0;
 				}
 				//if its not the first spot, it puts the character in the second spot
 				else{
@@ -88,6 +88,7 @@ public class SelectScript : MonoBehaviour {
 					variables.characterSelected[1] = true;
 					variables.selectedCharacters[1] = gameObject;
 					variables.selectedCharacterNums[1] = character.characterNum;
+					character.charSelectOrder = 1;
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				thisSprite.sprite = selectedImage;
@@ -116,6 +117,7 @@ public class SelectScript : MonoBehaviour {
 				gameObject.GetComponent<BoxCollider>().center = center;
 				selectNum = -1;
 				variables.currentCharacterSelectNum--;
+				character.charSelectOrder = -1;
 			}
 		}
 	}
