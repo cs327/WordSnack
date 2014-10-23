@@ -213,14 +213,14 @@ public class Character : MonoBehaviour
 								//Create the dictionary of taste ID's to Human-readable text
 								humanReadableTasteDictionary.Add (0, "3 letters");
 								humanReadableTasteDictionary.Add (1, "5+ letters");
-								humanReadableTasteDictionary.Add (2, "4+ point-value letters");
+								humanReadableTasteDictionary.Add (2, "4+ point letters");
 								humanReadableTasteDictionary.Add (3, "ends in vowel");
 								humanReadableTasteDictionary.Add (4, "2+ vowels");
 								humanReadableTasteDictionary.Add (5, "2+ same letter");
 								humanReadableTasteDictionary.Add (6, "starts with vowel");
-								humanReadableTasteDictionary.Add (7, "starts/ends with same");
+								humanReadableTasteDictionary.Add (7, "start/end same");
 								humanReadableTasteDictionary.Add (8, "4 letters");
-								humanReadableTasteDictionary.Add (9, "equal consonants/vowels");
+								humanReadableTasteDictionary.Add (9, "= cons/vowels");
 								humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
 						}
 						myTastes = new List<TasteCollection.Taste> ();
@@ -248,7 +248,7 @@ public class Character : MonoBehaviour
 								//if the size of myTastes isn't the same as the size of the array of this character's tastes, then we
 								//haven't gotten all of them yet and therefore need an "and" in our human-readable string
 								if (myTastes.Count != characterTastes [characterNum].Length) { //If this isn't the last taste we've got
-										thingsILike = thingsILike + " and ";
+										thingsILike = thingsILike + "\n";
 								}
 						}
 						//Let's see if all that text-making worked or not
@@ -374,7 +374,7 @@ public class Character : MonoBehaviour
 						boxStyle.wordWrap = true;
 						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y + 2 * scale, Screen.width * 0.1f, Screen.height * 0.05f), "Satisfaction:" + variables.characterSatisfaction [characterNum]);
 				}
-				if (Application.loadedLevelName == "WordMaking" && characterNum != 0) {
+				if (characterNum != 0) {
 						//Display character tastes in hacky but procedural way
 						//Debug.Log ("Displaying character taste in hacky way");
 						float scale = Mathf.Max (Screen.width / 479.0f, Screen.height / 319.0f);
@@ -382,7 +382,7 @@ public class Character : MonoBehaviour
 						Vector3 screenPoint = c.WorldToScreenPoint (gameObject.transform.position);
 						GUIStyle boxStyle = "box";
 						boxStyle.wordWrap = true;
-						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y - 20 * scale, Screen.width * 0.2f, Screen.height * 0.08f), thingsILike);
+						GUI.Box (new Rect (screenPoint.x - 30 * scale, screenPoint.y - 20 * scale, Screen.width * 0.15f, Screen.height * 0.08f), thingsILike);
 				}
 		}
 
