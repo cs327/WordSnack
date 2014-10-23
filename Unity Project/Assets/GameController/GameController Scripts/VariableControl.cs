@@ -46,7 +46,7 @@ public class VariableControl : MonoBehaviour {
 	public float startsWithVowelMult;
 	public float startsAndEndsWithSameMult;
 	public float fourLettersMult;
-	public float noPreferenceMult;
+	public float equalVowelsAndConsonantsMult;
 	public float trashCollectionMult;
 
 	//tweakable character tastes
