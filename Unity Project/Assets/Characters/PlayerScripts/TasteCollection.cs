@@ -108,11 +108,27 @@ public static class TasteCollection
         }
         return 1;
     }
+	//removed from GDD and commented out here
+//    public static float noPreference(string word)
+//    {
+//        return variables.noPreferenceMult;
+//    }
 
-    public static float noPreference(string word)
-    {
-        return variables.noPreferenceMult;
-    }
+	public static float equalVowelsAndConsonants (string word)
+	{
+		int vowelCount = 0;
+		int consonantCount = 0;
+		foreach (char letter in word) {
+			if (vowels.Contains (letter))
+				vowelCount++;
+			if (consonants.Contains (letter))
+				consonantCount++;
+		}
+		if (vowelCount == consonantCount)
+			return variables.equalVowelsAndConsonantsMult;
+		else
+			return 1;
+	}
 
     public static float trashCollection(string word)
     {

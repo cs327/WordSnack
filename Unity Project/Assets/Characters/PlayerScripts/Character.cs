@@ -47,9 +47,45 @@ public class Character : MonoBehaviour
 	public string thingsILike; 
 	public List<int> tasteIDs;
 	private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
-	
+
+	//This is for displaying taste cards
+	// each character should have 2 child objects with text meshes on them that are created
+	// on initialization
+	public GameObject visTastePrefab;
+	public GameObject tasteObj;
+	public TextMesh tasteText;
+	public int charSelectOrder;
+
+
+	//so we can know if the character is selected
+	public SelectScript selectScript;
+
     // Give it a word - if the character can eat the word this returns the word score
     // If it's a trash character it will always accept
+
+
+
+	public void CreateVisibleTastes(){
+		if(characterNum != 0){
+			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
+			tasteObj.transform.parent = gameObject.transform;
+			if(Application.loadedLevelName == "CharacterSelectTest"){
+				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);
+			}
+			if (Application.loadedLevelName == "WordMaking"){
+				if(PlayerPrefs.GetInt("Character 1") == characterNum){
+					tasteObj.transform.localPosition = variables.characterTasteSpots[0];
+				} 
+				else{
+					tasteObj.transform.localPosition = variables.characterTasteSpots[1];
+				}
+			}
+			tasteText = tasteObj.GetComponent<TextMesh>();
+			tasteText.text = thingsILike;
+		}
+
+	}
+
     public int Likes(string word)
     {
         if (characterNum != 0) { //If we're not the trash character... 
@@ -179,39 +215,40 @@ public class Character : MonoBehaviour
         //get the same variables everyone else is using
 		if (Application.loadedLevelName != "StartScreenTest") {
 
+			selectScript = gameObject.GetComponent<SelectScript>();
+
 			variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
         
-	        if (tasteDictionary == null) //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
-	        {
-	            tasteDictionary = new Dictionary<int, TasteCollection.Taste>();
-	            //Create the dictionary of taste ID's to functions
-	            tasteDictionary.Add(0, TasteCollection.threeLetters);
-	            tasteDictionary.Add(1, TasteCollection.fiveOrLonger);
-	            tasteDictionary.Add(2, TasteCollection.unCommonLetters);
-	            tasteDictionary.Add(3, TasteCollection.endsWithVowel);
-	            tasteDictionary.Add(4, TasteCollection.twoOrMoreVowels);
-	            tasteDictionary.Add(5, TasteCollection.twoOrMoreSame);
-	            tasteDictionary.Add(6, TasteCollection.startsWithVowel);
-	            tasteDictionary.Add(7, TasteCollection.startsAndEndsWithSame);
-	            tasteDictionary.Add(8, TasteCollection.fourLetters);
-	            tasteDictionary.Add(9, TasteCollection.noPreference);
-	            tasteDictionary.Add(10, TasteCollection.trashCollection);
-	        }
+			if (tasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
+				tasteDictionary = new Dictionary<int, TasteCollection.Taste> ();
+				//Create the dictionary of taste ID's to functions
+				tasteDictionary.Add (0, TasteCollection.threeLetters);
+				tasteDictionary.Add (1, TasteCollection.fiveOrLonger);
+				tasteDictionary.Add (2, TasteCollection.unCommonLetters);
+				tasteDictionary.Add (3, TasteCollection.endsWithVowel);
+				tasteDictionary.Add (4, TasteCollection.twoOrMoreVowels);
+				tasteDictionary.Add (5, TasteCollection.twoOrMoreSame);
+				tasteDictionary.Add (6, TasteCollection.startsWithVowel);
+				tasteDictionary.Add (7, TasteCollection.startsAndEndsWithSame);
+				tasteDictionary.Add (8, TasteCollection.fourLetters);
+				tasteDictionary.Add (9, TasteCollection.equalVowelsAndConsonants);
+				tasteDictionary.Add (10, TasteCollection.trashCollection);
+			}
 			if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 				humanReadableTasteDictionary = new Dictionary<int, string> ();
 				//Create the dictionary of taste ID's to Human-readable text
 				humanReadableTasteDictionary.Add (0, "3 letters");
 				humanReadableTasteDictionary.Add (1, "5+ letters");
-				humanReadableTasteDictionary.Add (2, "F,H,V,W,Y,K,J,X,Q,Z");
+				humanReadableTasteDictionary.Add (2, "4+ point-value letters");
 				humanReadableTasteDictionary.Add (3, "ends in vowel");
 				humanReadableTasteDictionary.Add (4, "2+ vowels");
 				humanReadableTasteDictionary.Add (5, "2+ same letter");
 				humanReadableTasteDictionary.Add (6, "starts with vowel");
 				humanReadableTasteDictionary.Add (7, "starts/ends with same");
 				humanReadableTasteDictionary.Add (8, "4 letters");
-				humanReadableTasteDictionary.Add (9, "anything");
+				humanReadableTasteDictionary.Add (9, "equal consonants/vowels");
 				humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
-					}
+			}
 			myTastes = new List<TasteCollection.Taste>();
 			//We have to do this all the time now, in order to display the tastes correctly.
 			//{
@@ -238,7 +275,7 @@ public class Character : MonoBehaviour
 					//if the size of myTastes isn't the same as the size of the array of this character's tastes, then we
 					//haven't gotten all of them yet and therefore need an "and" in our human-readable string
 					if (myTastes.Count != characterTastes[characterNum].Length) { //If this isn't the last taste we've got
-						thingsILike = thingsILike + " and ";
+						thingsILike = thingsILike + " \n \n ";
 					}
 	            }
 				//Let's see if all that text-making worked or not
@@ -247,6 +284,9 @@ public class Character : MonoBehaviour
 	            letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 	            letterControl = letterGenerator.GetComponent<LetterController>();
 	        }
+			//make the Tastes Visible on screen if it is the character selectionphase
+			CreateVisibleTastes();
+			
 		}
     }
     void WordSound()
@@ -259,11 +299,22 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if(Application.loadedLevelName == "CharacterSelectTest"){
+
+			if(selectScript.selected){
+				tasteObj.SetActive(true);
+			}
+			else{
+				tasteObj.SetActive(false);
+			}
+		}
+
 	}
 
     // If I'm clicked on, attempt to feed me the word on the stove
     void OnMouseDown()
     {
+
         if (Application.loadedLevelName == "WordMaking")
         {
 
