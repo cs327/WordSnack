@@ -34,7 +34,7 @@ public class PlayMusic3 : MonoBehaviour
         NewOnStove();
         Sizzle();
         HappySound();
-        SadSound();
+        RejectedSound();
         Chewing();
 
     }
@@ -66,13 +66,12 @@ public class PlayMusic3 : MonoBehaviour
             variables.happySound = 0;
         }
     }
-    void SadSound()
+    void RejectedSound()
     {
-        if ((variables.sadSound > 0) && (variables.notWord))
+        if (variables.notWord)
         {
-            audioManager.Play(variables.sadSound);
+            audioManager.Play(17);
             variables.notWord = false;
-            variables.sadSound = 0;
         }
     }
     void Sizzle()
