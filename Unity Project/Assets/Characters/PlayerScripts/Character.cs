@@ -352,10 +352,13 @@ public class Character : MonoBehaviour
 				// output score text "particle"
 				if (characterNum != 0) {
 					variables.scoreText.text = wordScore.ToString ();
+					variables.outlineText.text = wordScore.ToString ();
 					Vector3 characterPosition = this.gameObject.transform.position;
 					characterPosition.y += 1.5f;
 					characterPosition.z = -3.2f;
 					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+					characterPosition.z = -3.1f;
+					Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
 				}
 
 				// output the crumbs
