@@ -353,10 +353,24 @@ public class Character : MonoBehaviour
 				if (characterNum != 0) {
 					variables.scoreText.text = wordScore.ToString ();
 					variables.outlineText.text = wordScore.ToString ();
+					variables.outlineText.color = new Color(0.0f, 0.0f, 0.0f);
 					Vector3 characterPosition = this.gameObject.transform.position;
 					characterPosition.y += 1.5f;
 					characterPosition.z = -3.2f;
 					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+					characterPosition.z = -3.1f;
+					Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
+				}
+
+				// output the multiplier
+				if (characterNum != 0 && multiplier != 1) {
+					variables.multiplierText.text = multiplier.ToString() + "x";
+					variables.outlineText.text = multiplier.ToString () + "x";
+					variables.outlineText.color = new Color(1.0f, 0.0f, 0.0f);
+					Vector3 characterPosition = this.gameObject.transform.position;
+					characterPosition.y += 2.0f;
+					characterPosition.z = -3.2f;
+					Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
 					characterPosition.z = -3.1f;
 					Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
 				}
