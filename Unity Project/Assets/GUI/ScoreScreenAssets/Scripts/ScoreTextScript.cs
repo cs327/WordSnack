@@ -18,16 +18,18 @@ public class ScoreTextScript : MonoBehaviour {
 		float scorePosY = 0.0f;
 
 		if (GetComponent<TextMesh> ().text.IndexOf ("x") != -1) {
-			scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * -0.2f;
-			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.2f;
+			// multiplier
+			//scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * 0.2f;
+			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.2f * alpha;
 		} else {
-			scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * 0.2f;
-			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.2f;
+			// word score
+			scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * -0.6f * alpha;
+			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.6f * alpha;
 		}
 		
 		GetComponent<TextMesh> ().transform.Translate (new Vector3 (scorePosX, scorePosY, 0.0f));
 
-		alpha -= timeAmount * 0.4f;
+		alpha -= timeAmount * 0.5f;
 		GetComponent<TextMesh>().renderer.material.color = new Color (1.0f, 1.0f, 1.0f, alpha);
 
 		if (alpha <= 0.0f) {
