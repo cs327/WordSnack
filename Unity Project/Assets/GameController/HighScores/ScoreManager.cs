@@ -39,7 +39,9 @@ public static class ScoreManager
     // saves the list back to file and the returns the score list
     public static List<string> AddHighScore(string char1, string char2, int score)
     {
-        int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
+        
+        //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
+        int scoreListSizeLimit = 10;
 
         if (scoreList == null)
             LoadScores();
