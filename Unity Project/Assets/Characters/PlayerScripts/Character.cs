@@ -312,6 +312,8 @@ public class Character : MonoBehaviour
 				tasteObj.SetActive(false);
 			}
 		}
+		if(characterNum == 2) {
+		}
 
 	}
 
@@ -347,8 +349,8 @@ public class Character : MonoBehaviour
 					break;
 				case 2:
 					Debug.Log("Kelvin eating animation");
-					animation.Play("KelvinEatingAnim", PlayMode.StopAll);
-					//anim.Play("KelvinEatingAnim");
+					GetComponent<Animator>().SetBool("eat", true);
+//					animation.Play("KelvinEatingAnim");
 					//return 32;
 					break;
 				case 3:
