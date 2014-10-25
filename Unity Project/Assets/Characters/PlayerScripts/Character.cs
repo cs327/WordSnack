@@ -56,7 +56,7 @@ public class Character : MonoBehaviour
 	public TextMesh tasteText;
 	public int charSelectOrder;
 
-
+	public Animator anim; 
 	//so we can know if the character is selected
 	public SelectScript selectScript;
 
@@ -70,7 +70,8 @@ public class Character : MonoBehaviour
 			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
 			tasteObj.transform.parent = gameObject.transform;
 			if(Application.loadedLevelName == "CharacterSelectTest"){
-				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);
+				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);   
+                //tasteObj.transform.localPosition = new Vector3 (-1.0f,-.3f,-1);
 			}
 			if (Application.loadedLevelName == "WordMaking"){
 				if(PlayerPrefs.GetInt("Character 1") == characterNum){
@@ -82,6 +83,9 @@ public class Character : MonoBehaviour
 			}
 			tasteText = tasteObj.GetComponent<TextMesh>();
 			tasteText.text = thingsILike;
+			if (Application.loadedLevelName == "WordMaking"){
+				tasteText.fontSize = 60;
+			}
 		}
 
 	}
@@ -237,16 +241,16 @@ public class Character : MonoBehaviour
 			if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 				humanReadableTasteDictionary = new Dictionary<int, string> ();
 				//Create the dictionary of taste ID's to Human-readable text
-				humanReadableTasteDictionary.Add (0, "3 letters");
-				humanReadableTasteDictionary.Add (1, "5+ letters");
-				humanReadableTasteDictionary.Add (2, "4+ point-value letters");
-				humanReadableTasteDictionary.Add (3, "ends in vowel");
-				humanReadableTasteDictionary.Add (4, "2+ vowels");
-				humanReadableTasteDictionary.Add (5, "2+ same letter");
-				humanReadableTasteDictionary.Add (6, "starts with vowel");
-				humanReadableTasteDictionary.Add (7, "starts/ends with same");
-				humanReadableTasteDictionary.Add (8, "4 letters");
-				humanReadableTasteDictionary.Add (9, "equal consonants/vowels");
+				humanReadableTasteDictionary.Add (0, "- 3 letters");
+				humanReadableTasteDictionary.Add (1, "- 5+ letters");
+				humanReadableTasteDictionary.Add (2, "- Letters worth 4+");
+				humanReadableTasteDictionary.Add (3, "- Ends in vowel");
+				humanReadableTasteDictionary.Add (4, "- 2+ vowels");
+				humanReadableTasteDictionary.Add (5, "- 2+ same letter");
+				humanReadableTasteDictionary.Add (6, "- Starts with vowel");
+				humanReadableTasteDictionary.Add (7, "- Starts/ends with\n same letter");
+				humanReadableTasteDictionary.Add (8, "- 4 letters");
+				humanReadableTasteDictionary.Add (9, "- Equal vowels \n and consonants");
 				humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
 			}
 			myTastes = new List<TasteCollection.Taste>();
@@ -332,7 +336,43 @@ public class Character : MonoBehaviour
             //If it was valid, we'll get a score above 0, so update our score and get that word out of here!
             if (wordScore > 0)
             {
-                //if(1 > 0){
+                
+				switch (characterNum)
+				{
+				case 1:
+					//FRED EATING ANIMATION GOES HERE 
+					//return 23;
+					//Animation.CrossFade("KelvinEatingAnim");
+					Debug.Log("Fred does not like this");
+					break;
+				case 2:
+					Debug.Log("Kelvin eating animation");
+					animation.Play("KelvinEatingAnim", PlayMode.StopAll);
+					//anim.Play("KelvinEatingAnim");
+					//return 32;
+					break;
+				case 3:
+					//SPIKE EATING ANIMATION GOES HERE
+					//return 26;
+					Debug.Log("Spike does not like this");
+					break;
+				case 4:
+					//STELLA EATING ANIMATION GOES HERE
+					//return 35;
+					Debug.Log("Stella does not like this");
+					break;
+				case 5:
+					//MEGAN EATING ANIMATION GOES HERE
+					//return 29;
+					Debug.Log("Megan does not like this");
+					break;
+				default:
+					//return 0;
+					Debug.Log("Default");
+					break;
+				}
+
+				//if(1 > 0){
                 //Keep track of words fed to me!
                 int letterScore = 0;
                 foreach (char letter in word)
@@ -401,7 +441,6 @@ public class Character : MonoBehaviour
                 Debug.Log("True");
                 variables.sadSound = CharacterSad();
             }
-            variables.chewing = true;
         }
     }
 

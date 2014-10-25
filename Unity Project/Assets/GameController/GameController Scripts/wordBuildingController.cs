@@ -37,7 +37,7 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		lettersRemaining.text = "Tiles Remaining: " + variables.lettersRemaining;
+		lettersRemaining.text = "Tiles: " + variables.lettersRemaining;
 		Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 		// if the instructions is enabled 
 		if(PlayerPrefs.GetInt("instructions") == 0){
