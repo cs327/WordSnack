@@ -70,7 +70,8 @@ public class Character : MonoBehaviour
 			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
 			tasteObj.transform.parent = gameObject.transform;
 			if(Application.loadedLevelName == "CharacterSelectTest"){
-				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);
+				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);   
+                //tasteObj.transform.localPosition = new Vector3 (-1.0f,-.3f,-1);
 			}
 			if (Application.loadedLevelName == "WordMaking"){
 				if(PlayerPrefs.GetInt("Character 1") == characterNum){

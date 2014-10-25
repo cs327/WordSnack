@@ -119,8 +119,8 @@ public class VariableControl : MonoBehaviour {
 		characterTasteSpots = new Vector3[characterSelectNum];
 
 		//establishes the selected characters positions for phase 1
-		phase1SelectedCharPositions[0] = new Vector3(-3.1f,-3.3f,0);
-		phase1SelectedCharPositions[1] = new Vector3(3.1f,-3.3f,0);
+		phase1SelectedCharPositions[0] = new Vector3(-4.33f,-2.81f,0);
+		phase1SelectedCharPositions[1] = new Vector3(4.33f,-2.81f,0);
 
 		//establishes the character position for phase 2
 		phase2CharacterPositions[0] = new Vector3(-3.5f, 0.5f, 1);
