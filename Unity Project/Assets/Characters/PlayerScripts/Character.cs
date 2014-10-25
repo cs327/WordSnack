@@ -441,7 +441,6 @@ public class Character : MonoBehaviour
                 Debug.Log("True");
                 variables.sadSound = CharacterSad();
             }
-            variables.chewing = true;
         }
     }
 
