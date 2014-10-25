@@ -12,24 +12,44 @@ public class AudioManager : MonoBehaviour {
 	
 	private int y;
 	private float timerCountDown = .5f;
+
+    private PlayMusic soundScript;
+   // private PlayMusic2 soundScript2;
+    private PlayMusic3 soundScript3;
+
 	
 	// Use this for initialization
 
- 
 	void Start () {
-		
+
+        DontDestroyOnLoad(transform.gameObject);
+
 		audioSourceArray = new AudioSource [audioClipArray.Length];
 		
 		for (i=0; i< audioSourceArray.Length; i++) {
 			AudioSource newSource = gameObject.AddComponent<AudioSource> (); //add component to obj
 			newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
 			audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
-			
+            soundScript = GetComponent<PlayMusic>();
+          //  soundScript2 = GetComponent<PlayMusic2>();
+            soundScript3 = GetComponent<PlayMusic3>();
 		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if ((Application.loadedLevelName == "SplashScreen") || (Application.loadedLevelName == "ScoreScreen"))
+        {
+            soundScript.enabled = true;
+         //   soundScript2.enabled = false;
+            soundScript3.enabled = false;
+        }
+        else if (Application.loadedLevelName == "WordMaking")
+        {
+            soundScript.enabled = false;
+           // soundScript2.enabled = false;
+            soundScript3.enabled = true;
+        }
 		
 	}
 	

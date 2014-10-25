@@ -8,6 +8,14 @@ public class PlayMusic : MonoBehaviour {
 	PlayButtonHandler playButtonHandler;
 	AboutButtonHandler aboutButtonHandler;
 
+    public GameObject selecter;
+    CharacterSelectUI charSel;
+
+    public GameObject vControl;
+    VariableControl variableControl;
+
+    int numSelected = 0;
+
     ReceiptMove receipt;
     public GameObject receiptScript;
 
@@ -19,6 +27,10 @@ public class PlayMusic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
+
+        charSel = selecter.GetComponent<CharacterSelectUI>();
+        variableControl = vControl.GetComponent<VariableControl>();
+
 		if(Application.loadedLevelName == "StartScreenTest"){
 			playButtonHandler = GameObject.Find ("PlayButton").GetComponent<PlayButtonHandler>();
 			aboutButtonHandler = GameObject.Find ("AboutButton").GetComponent<AboutButtonHandler>();
@@ -63,5 +75,41 @@ public class PlayMusic : MonoBehaviour {
             }
 
         }
+
+        if (variableControl.currentCharacterSelectNum == 0)
+        {
+            numSelected = 0;
+
+        }
+
+        if (variableControl.currentCharacterSelectNum > numSelected)
+        {
+            if (variableControl.currentCharacterSelectNum == 2)
+            {
+                audioManager.Play(6);
+                Debug.Log("booop");
+                numSelected++;
+            }
+            else
+            {
+                audioManager.Play(1);
+                Debug.Log("ding");
+                numSelected++;
+            }
+        }
+
+        if (variableControl.currentCharacterSelectNum < numSelected)
+        {
+            audioManager.Play(1);
+            numSelected--;
+        }
+
+
+        if (charSel.FeedPressed == true)
+        {
+            audioManager.Play(3);
+            charSel.FeedPressed = false;
+        }
+
     }
 }
