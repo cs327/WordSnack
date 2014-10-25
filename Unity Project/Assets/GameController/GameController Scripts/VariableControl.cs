@@ -109,6 +109,8 @@ public class VariableControl : MonoBehaviour {
 
 	// score text "particles" (really textmeshes)
 	public TextMesh scoreText;
+	public TextMesh outlineText;
+	public TextMesh multiplierText;
 
 	// Use this for initialization
 	void Awake() {

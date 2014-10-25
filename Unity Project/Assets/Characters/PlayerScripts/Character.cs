@@ -353,9 +353,31 @@ public class Character : MonoBehaviour
 				if (characterNum != 0) {
 					variables.scoreText.text = wordScore.ToString ();
 					Vector3 characterPosition = this.gameObject.transform.position;
+					if (characterPosition.x > 0.0) {
+						characterPosition.x -= 1.0f;
+					} else {
+						characterPosition.x += 1.0f;
+					}
 					characterPosition.y += 1.5f;
 					characterPosition.z = -3.2f;
 					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+					//variables.outlineText.text = wordScore.ToString ();
+					//variables.outlineText.color = new Color(0.0f, 0.0f, 0.0f);
+					//characterPosition.z = -3.1f;
+					//Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
+				}
+
+				// output the multiplier
+				if (characterNum != 0 && multiplier != 1) {
+					variables.multiplierText.text = multiplier.ToString() + "x";
+					Vector3 characterPosition = this.gameObject.transform.position;
+					characterPosition.y += 2.5f;
+					characterPosition.z = -3.2f;
+					Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
+					//variables.outlineText.text = multiplier.ToString () + "x";
+					//variables.outlineText.color = new Color(1.0f, 0.0f, 0.0f);
+					//characterPosition.z = -3.1f;
+					//Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
 				}
 
 				// output the crumbs
