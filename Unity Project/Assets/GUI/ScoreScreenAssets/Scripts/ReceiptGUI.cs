@@ -38,10 +38,11 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Char 1 " + char1String);
         Debug.Log("Char 2 " + char2String);
 
-        
-        //List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 100);
+        //Debug.Log(Application.persistentDataPath);
+        //List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 10000);
         //scores = ScoreManager.AddHighScore(char2String, char1String, 110);
-        //Debug.Log(ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count + " count");
+        //Debug.Log(ScoreManager.scoreList.Count + " entries in scoreList -> " + ScoreManager.scoreList[0]);
+        //Debug.Log("Specific scores " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count);
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;

@@ -17,9 +17,15 @@ public static class ScoreManager
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + 
-            @"/Unity Project/Assets/GameController/HighScores/HighScoreSaveFile.hs");
+            "/HighScores.gd");
         bf.Serialize(file, scoreList);
         file.Close();
+    }
+
+    public static void ClearScores()
+    {
+        scoreList = new List<string>();
+        SaveScores();
     }
 
     // Give it two characters (i.e "Spike" and "Fred") and it will return
@@ -28,11 +34,21 @@ public static class ScoreManager
     {
         string[] characters = {char1, char2};
         LoadScores();
+        Debug.Log("before has " + scoreList.Count + " entries");
 
         // Filter the list such that each score is only for the two given characters
-        var tempList = scoreList.Where<string>((x) => characters.Contains<string>(x.Split(' ')[0]) && characters.Contains<string>(x.Split()[1]));
+        //var tempList = scoreList.Where<string>((x) => characters.Contains<string>(x.Split(' ')[0]) && characters.Contains<string>(x.Split()[1]));
 
-        return tempList.ToList<string>();
+        List<string> evaluatedList = new List<String>();
+        foreach(string s in scoreList)
+        {
+            string[] scoreInfo = s.Split(' ');
+            if (characters.Contains<string>(scoreInfo[0]) && 
+                characters.Contains<string>(scoreInfo[1]))
+                evaluatedList.Add(s);
+        }
+        Debug.Log("Eval list: " + evaluatedList.Count);
+        return evaluatedList;
     }
 
     // Given a score, this loads the score list, adds it to the list,
@@ -42,15 +58,14 @@ public static class ScoreManager
         
         //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
         int scoreListSizeLimit = 10;
+        LoadScores();
 
-        if (scoreList == null)
-            LoadScores();
         string newScore = char1 + " " + char2 + " " + score.ToString();
         scoreList.Add(newScore);
-        if (scoreList.Count > scoreListSizeLimit)
-        {            
-            scoreList.RemoveRange(scoreListSizeLimit, scoreList.Count - scoreListSizeLimit);
-        }
+        //if (scoreList.Count > scoreListSizeLimit)
+        //{            
+        //    scoreList.RemoveRange(scoreListSizeLimit, scoreList.Count - scoreListSizeLimit);
+        //}
         SaveScores();
         return scoreList;
     }
@@ -64,12 +79,12 @@ public static class ScoreManager
     private static void LoadScores()
     {
         if (File.Exists(Application.persistentDataPath +
-            @"/Unity Project/Assets/GameController/HighScores/HighScoreSaveFile.hs"))
+            "HighScores.gd"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + "/HighScores.gd", FileMode.Open);
             scoreList = (List<string>) bf.Deserialize(file);
-            scoreList.Sort();
+            //sortByScore(scoreList);
             file.Close();
         }
         else
