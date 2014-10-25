@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour {
 	private float timerCountDown = .5f;
 
     private PlayMusic soundScript;
-   // private PlayMusic2 soundScript2;
+    //private PlayMusic2 soundScript2;
     private PlayMusic3 soundScript3;
 
 	

@@ -9,15 +9,16 @@ public class PlayMusic2 : MonoBehaviour {
     AudioManager audioManager;
     
     public GameObject selecter;
-    CharacterSelectUI charSel;
+    CharacterSelectUI charSel = new CharacterSelectUI();
     
     public GameObject vControl;
-    VariableControl variableControl;
+    VariableControl variableControl = new VariableControl();
     
     int numSelected = 0;
     
     // Use this for initialization
     void Start () {
+        if (Application.loadedLevelName == "")
         audioManager = audio.GetComponent<AudioManager>();
         charSel = selecter.GetComponent<CharacterSelectUI>();
         variableControl = vControl.GetComponent<VariableControl>();

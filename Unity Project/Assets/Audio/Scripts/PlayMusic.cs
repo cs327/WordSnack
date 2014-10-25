@@ -53,7 +53,6 @@ public class PlayMusic : MonoBehaviour {
             if (playButtonHandler.buttonPressed == true || aboutButtonHandler.buttonPressed == true)
             {
                 audioManager.Play(1);
-			
             }
 	
         }

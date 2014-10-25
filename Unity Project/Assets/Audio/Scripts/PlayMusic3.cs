@@ -9,12 +9,14 @@ public class PlayMusic3 : MonoBehaviour
     int i = 0;
 
     public GameObject audio;
-    AudioManager audioManager;
+    AudioManager audioManager = new AudioManager();
 
     public GameObject letterCont;
+    
     LetterController letterController;
 
-    VariableControl variables;
+    public GameObject VariableControl;
+    VariableControl variables = new VariableControl();
 
 
  
@@ -22,8 +24,11 @@ public class PlayMusic3 : MonoBehaviour
     void Start()
     {
         audioManager = audio.GetComponent<AudioManager>();
-        letterController = letterCont.GetComponent<LetterController>();
-        variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
+        //if (Application.loadedLevelName == "WordMaking")
+        //{
+        //    letterController = letterCont.GetComponent<LetterController>();
+        //}
+        //variables = VariableControl.GetComponent<VariableControl>();
     }
 
     // Update is called once per frame
