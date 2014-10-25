@@ -19,11 +19,11 @@ public class Character : MonoBehaviour
         new Dictionary<int,string>()
         {
             { 0, "Trash Character"},
-            { 1, "Kelvin"},
-            { 2, "Fred"},
-            { 3, "Stella"},
-            { 4, "Meghan"},
-            { 5, "Spike"}
+            { 1, "Fred"},
+            { 2, "Kelvin"},
+            { 3, "Spike"},
+            { 4, "Stella"},
+            { 5, "Meghan"}
 
         };
 
@@ -283,7 +283,7 @@ public class Character : MonoBehaviour
 					}
 	            }
 				//Let's see if all that text-making worked or not
-				Debug.Log("My character number is " + characterNum + " and I like " + thingsILike);
+				//Debug.Log("My character number is " + characterNum + " and I like " + thingsILike);
 			if (Application.loadedLevelName == "WordMaking"){
 	            letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 	            letterControl = letterGenerator.GetComponent<LetterController>();
@@ -311,6 +311,8 @@ public class Character : MonoBehaviour
 			else{
 				tasteObj.SetActive(false);
 			}
+		}
+		if(characterNum == 2) {
 		}
 
 	}
@@ -347,8 +349,8 @@ public class Character : MonoBehaviour
 					break;
 				case 2:
 					Debug.Log("Kelvin eating animation");
-					animation.Play("KelvinEatingAnim", PlayMode.StopAll);
-					//anim.Play("KelvinEatingAnim");
+					GetComponent<Animator>().SetBool("eat", true);
+//					animation.Play("KelvinEatingAnim");
 					//return 32;
 					break;
 				case 3:

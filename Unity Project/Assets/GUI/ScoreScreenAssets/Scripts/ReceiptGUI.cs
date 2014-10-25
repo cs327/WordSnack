@@ -11,16 +11,11 @@ public class ReceiptGUI : MonoBehaviour
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
-    public GameObject rowPrefab;
+    public GameObject lightRowPrefab;
+    public GameObject darkRowPrefab;
     public GameObject bottomPrefab;
-
-    //text meshes for each value on the receipt 
-    //Later gets set with the correct string and int 
-    //public TextMesh totalScoreTextMesh;
-    //public TextMesh rawScoreTextMesh;
-    //public TextMesh MultiplierTextMesh;
-    //public TextMesh DiscardedLettersTextMesh;
-    //public TextMesh DiscardedPointsTextMesh;
+    public TextMesh Character1Name;
+    public TextMesh Character2Name;
 
     int selectedCharacter1;
     int selectedCharacter2;
@@ -38,23 +33,20 @@ public class ReceiptGUI : MonoBehaviour
         
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+        string char1String = Character.CharacterNameLookup[selectedCharacter1];
+        string char2String = Character.CharacterNameLookup[selectedCharacter2];
+        Debug.Log("Char 1 " + char1String);
+        Debug.Log("Char 2 " + char2String);
+
+        //Debug.Log(Application.persistentDataPath);
+        //List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 10000);
+        //scores = ScoreManager.AddHighScore(char2String, char1String, 110);
+        //Debug.Log(ScoreManager.scoreList.Count + " entries in scoreList -> " + ScoreManager.scoreList[0]);
+        //Debug.Log("Specific scores " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count);
+
+        Character1Name.text = char1String;
+        Character2Name.text = char2String;
         
-
-        Component[] parentMeshes = gameObject.GetComponents<TextMesh>();
-        foreach (TextMesh mesh in parentMeshes)
-        {
-            switch (mesh.name)
-            {
-                case "Character 1":
-                    mesh.text = Character.CharacterNameLookup[selectedCharacter1];
-                    break;
-                case "Character 2":
-                    mesh.text = Character.CharacterNameLookup[selectedCharacter2];
-                    break;
-            }
-        }
-
-
         var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
         var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
         List<string> char1WordsFed = new List<string>();
@@ -89,11 +81,16 @@ public class ReceiptGUI : MonoBehaviour
 
         // Add code to create rows/fill them
         int rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
+        Debug.Log("Rowcount: " + rowCount);
         Vector3 pos;
         
         for(int i = 0; i < rowCount; i++)
         {
-            GameObject rowInstance = (GameObject)Instantiate(rowPrefab);
+            GameObject rowInstance;
+            if (i % 2 == 0)
+                rowInstance = (GameObject)Instantiate(darkRowPrefab);
+            else
+                rowInstance = (GameObject)Instantiate(lightRowPrefab);
             rowInstance.transform.parent = gameObject.transform;
             pos = rowInstance.transform.position;
             pos.y += rowOffset * i;
@@ -174,12 +171,7 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-        //updating the text mesh variables with the correct score from game play
-        //totalScoreTextMesh.text = score.ToString();
-        ////rawScoreTextMesh.text = "Raw Score: " + rawScore.ToString();
-        //MultiplierTextMesh.text = "Multiplier Score: " + multiScore.ToString();
-        //DiscardedLettersTextMesh.text = "Trashed Letters: " + trashLetterNum.ToString();
-        //DiscardedPointsTextMesh.text = "Trashed Letter Score: " + trashedLetterScore.ToString();
+        
 
     }
 
