@@ -38,12 +38,13 @@ public class AudioManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if ((Application.loadedLevelName == "SplashScreen") || (Application.loadedLevelName == "ScoreScreen"))
+        if ((Application.loadedLevelName == "SplashScreen") || (Application.loadedLevelName == "ScoreScreen") || (Application.loadedLevelName == "StartScreenTest"))
         {
             
             soundScript.enabled = true;
          //   soundScript2.enabled = false;
             soundScript3.enabled = false;
+            Stop(9);
         }
         else if (Application.loadedLevelName == "WordMaking")
         {
