@@ -56,7 +56,7 @@ public class Character : MonoBehaviour
 	public TextMesh tasteText;
 	public int charSelectOrder;
 
-
+	public Animator anim; 
 	//so we can know if the character is selected
 	public SelectScript selectScript;
 
@@ -332,7 +332,43 @@ public class Character : MonoBehaviour
             //If it was valid, we'll get a score above 0, so update our score and get that word out of here!
             if (wordScore > 0)
             {
-                //if(1 > 0){
+                
+				switch (characterNum)
+				{
+				case 1:
+					//FRED EATING ANIMATION GOES HERE 
+					//return 23;
+					//Animation.CrossFade("KelvinEatingAnim");
+					Debug.Log("Fred does not like this");
+					break;
+				case 2:
+					Debug.Log("Kelvin eating animation");
+					animation.Play("KelvinEatingAnim", PlayMode.StopAll);
+					//anim.Play("KelvinEatingAnim");
+					//return 32;
+					break;
+				case 3:
+					//SPIKE EATING ANIMATION GOES HERE
+					//return 26;
+					Debug.Log("Spike does not like this");
+					break;
+				case 4:
+					//STELLA EATING ANIMATION GOES HERE
+					//return 35;
+					Debug.Log("Stella does not like this");
+					break;
+				case 5:
+					//MEGAN EATING ANIMATION GOES HERE
+					//return 29;
+					Debug.Log("Megan does not like this");
+					break;
+				default:
+					//return 0;
+					Debug.Log("Default");
+					break;
+				}
+
+				//if(1 > 0){
                 //Keep track of words fed to me!
                 int letterScore = 0;
                 foreach (char letter in word)
