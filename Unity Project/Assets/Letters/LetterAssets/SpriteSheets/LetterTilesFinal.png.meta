@@ -1,35 +1,34 @@
 fileFormatVersion: 2
-guid: e489595f81f684306974ed2817a61614
+guid: 8626ac3a8ed40492e940ffdf67c51c30
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StoveLetterTiles
-    21300002: StoveLetterTiles_0
-    21300004: StoveLetterTiles_1
-    21300006: StoveLetterTiles_2
-    21300008: StoveLetterTiles_3
-    21300010: StoveLetterTiles_4
-    21300012: StoveLetterTiles_5
-    21300014: StoveLetterTiles_6
-    21300016: StoveLetterTiles_7
-    21300018: StoveLetterTiles_8
-    21300020: StoveLetterTiles_9
-    21300022: StoveLetterTiles_10
-    21300024: StoveLetterTiles_11
-    21300026: StoveLetterTiles_12
-    21300028: StoveLetterTiles_13
-    21300030: StoveLetterTiles_14
-    21300032: StoveLetterTiles_15
-    21300034: StoveLetterTiles_16
-    21300036: StoveLetterTiles_17
-    21300038: StoveLetterTiles_18
-    21300040: StoveLetterTiles_19
-    21300042: StoveLetterTiles_20
-    21300044: StoveLetterTiles_21
-    21300046: StoveLetterTiles_22
-    21300048: StoveLetterTiles_23
-    21300050: StoveLetterTiles_24
-    21300052: StoveLetterTiles_25
-    21300054: StoveLetterTiles_26
+    21300000: LetterTilesFinal_0
+    21300002: LetterTilesFinal_1
+    21300004: LetterTilesFinal_2
+    21300006: LetterTilesFinal_3
+    21300008: LetterTilesFinal_4
+    21300010: LetterTilesFinal_5
+    21300012: LetterTilesFinal_6
+    21300014: LetterTilesFinal_7
+    21300016: LetterTilesFinal_8
+    21300018: LetterTilesFinal_9
+    21300020: LetterTilesFinal_10
+    21300022: LetterTilesFinal_11
+    21300024: LetterTilesFinal_12
+    21300026: LetterTilesFinal_13
+    21300028: LetterTilesFinal_14
+    21300030: LetterTilesFinal_15
+    21300032: LetterTilesFinal_16
+    21300034: LetterTilesFinal_17
+    21300036: LetterTilesFinal_18
+    21300038: LetterTilesFinal_19
+    21300040: LetterTilesFinal_20
+    21300042: LetterTilesFinal_21
+    21300044: LetterTilesFinal_22
+    21300046: LetterTilesFinal_23
+    21300048: LetterTilesFinal_24
+    21300050: LetterTilesFinal_25
+    21300052: LetterTilesFinal_26
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -71,7 +70,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: StoveLetterTiles_0
+    - name: LetterTilesFinal_0
       rect:
         serializedVersion: 2
         x: 0
@@ -81,7 +80,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_1
+    - name: LetterTilesFinal_1
       rect:
         serializedVersion: 2
         x: 512
@@ -91,7 +90,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_2
+    - name: LetterTilesFinal_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -101,7 +100,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_3
+    - name: LetterTilesFinal_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -111,7 +110,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_4
+    - name: LetterTilesFinal_4
       rect:
         serializedVersion: 2
         x: 0
@@ -121,7 +120,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_5
+    - name: LetterTilesFinal_5
       rect:
         serializedVersion: 2
         x: 512
@@ -131,7 +130,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_6
+    - name: LetterTilesFinal_6
       rect:
         serializedVersion: 2
         x: 1024
@@ -141,7 +140,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_7
+    - name: LetterTilesFinal_7
       rect:
         serializedVersion: 2
         x: 1536
@@ -151,7 +150,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_8
+    - name: LetterTilesFinal_8
       rect:
         serializedVersion: 2
         x: 0
@@ -161,7 +160,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_9
+    - name: LetterTilesFinal_9
       rect:
         serializedVersion: 2
         x: 512
@@ -171,7 +170,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_10
+    - name: LetterTilesFinal_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -181,7 +180,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_11
+    - name: LetterTilesFinal_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -191,7 +190,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_12
+    - name: LetterTilesFinal_12
       rect:
         serializedVersion: 2
         x: 0
@@ -201,7 +200,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_13
+    - name: LetterTilesFinal_13
       rect:
         serializedVersion: 2
         x: 512
@@ -211,7 +210,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_14
+    - name: LetterTilesFinal_14
       rect:
         serializedVersion: 2
         x: 1024
@@ -221,7 +220,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_15
+    - name: LetterTilesFinal_15
       rect:
         serializedVersion: 2
         x: 1536
@@ -231,7 +230,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_16
+    - name: LetterTilesFinal_16
       rect:
         serializedVersion: 2
         x: 0
@@ -241,7 +240,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_17
+    - name: LetterTilesFinal_17
       rect:
         serializedVersion: 2
         x: 512
@@ -251,7 +250,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_18
+    - name: LetterTilesFinal_18
       rect:
         serializedVersion: 2
         x: 1024
@@ -261,7 +260,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_19
+    - name: LetterTilesFinal_19
       rect:
         serializedVersion: 2
         x: 1536
@@ -271,7 +270,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_20
+    - name: LetterTilesFinal_20
       rect:
         serializedVersion: 2
         x: 0
@@ -281,7 +280,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_21
+    - name: LetterTilesFinal_21
       rect:
         serializedVersion: 2
         x: 512
@@ -291,7 +290,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_22
+    - name: LetterTilesFinal_22
       rect:
         serializedVersion: 2
         x: 1024
@@ -301,7 +300,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_23
+    - name: LetterTilesFinal_23
       rect:
         serializedVersion: 2
         x: 1536
@@ -311,7 +310,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_24
+    - name: LetterTilesFinal_24
       rect:
         serializedVersion: 2
         x: 0
@@ -321,7 +320,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_25
+    - name: LetterTilesFinal_25
       rect:
         serializedVersion: 2
         x: 512
@@ -331,7 +330,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StoveLetterTiles_26
+    - name: LetterTilesFinal_26
       rect:
         serializedVersion: 2
         x: 1024
