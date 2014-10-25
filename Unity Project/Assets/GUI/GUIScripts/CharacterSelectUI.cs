@@ -42,7 +42,8 @@ public class CharacterSelectUI : MonoBehaviour {
 				whoElse.transform.position = new Vector3(-5.01f,-.786f,0);
 			}
 			else{
-				whoElse.transform.position = new Vector3(2.01f,-.786f,0);
+				//whoElse.transform.position = new Vector3(2.01f,-.786f,0);
+                whoElse.transform.position = new Vector3(3.7f,-4.0f,0);
 			}
 		}
 

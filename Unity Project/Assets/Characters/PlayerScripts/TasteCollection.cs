@@ -17,7 +17,7 @@ public static class TasteCollection
     // These three arrays below are used to see if words contain consonants/vowels/uncommon letters
     private static char[] consonants =
 	{
-		'a', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
+		'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
 		't', 'v', 'w', 'x', 'y', 'z',
 	};
     private static char[] vowels =
