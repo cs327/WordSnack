@@ -17,7 +17,7 @@ public static class ScoreManager
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + 
-            "/Unity Project/Assets/HighScores/HighScoreSaveFile.hs");
+            @"/Unity Project/Assets/GameController/HighScores/HighScoreSaveFile.hs");
         bf.Serialize(file, scoreList);
         file.Close();
     }
@@ -45,8 +45,8 @@ public static class ScoreManager
 
         if (scoreList == null)
             LoadScores();
-
-        scoreList.Add(String.Format("{0] {1} {2}", char1, char2, score.ToString()));
+        string newScore = char1 + " " + char2 + " " + score.ToString();
+        scoreList.Add(newScore);
         if (scoreList.Count > scoreListSizeLimit)
         {            
             scoreList.RemoveRange(scoreListSizeLimit, scoreList.Count - scoreListSizeLimit);
@@ -63,8 +63,8 @@ public static class ScoreManager
     // Reads the save file if it exists, loads the scores into scoreList
     private static void LoadScores()
     {
-        if (File.Exists(Application.persistentDataPath + 
-            "/Unity Project/Assets/HighScores/HighScoreSaveFile.hs"))
+        if (File.Exists(Application.persistentDataPath +
+            @"/Unity Project/Assets/GameController/HighScores/HighScoreSaveFile.hs"))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);

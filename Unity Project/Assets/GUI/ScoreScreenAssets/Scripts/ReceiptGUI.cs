@@ -11,7 +11,8 @@ public class ReceiptGUI : MonoBehaviour
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
-    public GameObject rowPrefab;
+    public GameObject lightRowPrefab;
+    public GameObject darkRowPrefab;
     public GameObject bottomPrefab;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
@@ -38,15 +39,15 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Char 2 " + char2String);
 
         
-        List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 100);
+        //List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 100);
         //scores = ScoreManager.AddHighScore(char2String, char1String, 110);
-        Debug.Log("High score: " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String)[0]);
+        //Debug.Log(ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count + " count");
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;
         
-        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + char1String);
-        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + char2String);
+        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
+        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
         List<string> char1WordsFed = new List<string>();
         List<string> char2WordsFed = new List<string>();
 
@@ -79,11 +80,16 @@ public class ReceiptGUI : MonoBehaviour
 
         // Add code to create rows/fill them
         int rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
+        Debug.Log("Rowcount: " + rowCount);
         Vector3 pos;
         
         for(int i = 0; i < rowCount; i++)
         {
-            GameObject rowInstance = (GameObject)Instantiate(rowPrefab);
+            GameObject rowInstance;
+            if (i % 2 == 0)
+                rowInstance = (GameObject)Instantiate(darkRowPrefab);
+            else
+                rowInstance = (GameObject)Instantiate(lightRowPrefab);
             rowInstance.transform.parent = gameObject.transform;
             pos = rowInstance.transform.position;
             pos.y += rowOffset * i;
@@ -164,12 +170,7 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-        //updating the text mesh variables with the correct score from game play
-        //totalScoreTextMesh.text = score.ToString();
-        ////rawScoreTextMesh.text = "Raw Score: " + rawScore.ToString();
-        //MultiplierTextMesh.text = "Multiplier Score: " + multiScore.ToString();
-        //DiscardedLettersTextMesh.text = "Trashed Letters: " + trashLetterNum.ToString();
-        //DiscardedPointsTextMesh.text = "Trashed Letter Score: " + trashedLetterScore.ToString();
+        
 
     }
 
