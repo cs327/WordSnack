@@ -9,14 +9,13 @@ public class PlayMusic3 : MonoBehaviour
     int i = 0;
 
     public GameObject audio;
-    AudioManager audioManager = new AudioManager();
-
+    AudioManager audioManager;
     public GameObject letterCont;
     
     LetterController letterController;
 
     public GameObject VariableControl;
-    VariableControl variables = new VariableControl();
+    VariableControl variables;
 
 
  
@@ -27,14 +26,16 @@ public class PlayMusic3 : MonoBehaviour
         //if (Application.loadedLevelName == "WordMaking")
         //{
         //    letterController = letterCont.GetComponent<LetterController>();
+        //    variables = VariableControl.GetComponent<VariableControl>();
         //}
-        //variables = VariableControl.GetComponent<VariableControl>();
+        
+        audioManager.SetVolume(7, 0.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        audioManager.SetVolume(9, 1.0f);
         audioManager.PlayLoop(9);
         NewOnStove();
         Sizzle();
@@ -46,16 +47,16 @@ public class PlayMusic3 : MonoBehaviour
 
     void NewOnStove()
     {
-       // if (letterController.numLettersOnStove == 0)
+       // if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
         //{
           //  i = 0;
        // }
-        if (letterController.numLettersOnStove > i)
+        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
         {
             audioManager.Play(13);
             i++;
         }
-        if (letterController.numLettersOnStove < i)
+        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
         {
             audioManager.Play(14);
             i--;
@@ -64,25 +65,25 @@ public class PlayMusic3 : MonoBehaviour
     //Method to play Happy sounds when a character likes a word.
     void HappySound()
     {
-        if (variables.happySound > 0)
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().happySound > 0)
         {
-            audioManager.Play(variables.happySound);
-            variables.bonus = false;
-            variables.happySound = 0;
+            audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().happySound);
+            GameObject.Find("VariableController").GetComponent<VariableControl>().bonus = false;
+            GameObject.Find("VariableController").GetComponent<VariableControl>().happySound = 0;
         }
     }
     void RejectedSound()
     {
-        if (variables.notWord)
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().notWord)
         {
             audioManager.Play(17);
-            variables.notWord = false;
+            GameObject.Find("VariableController").GetComponent<VariableControl>().notWord = false;
         }
     }
     void Sizzle()
     {
         audioManager.PlayLoop(16);
-        if (letterController.numLettersOnStove > 0)
+        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
 
             audioManager.SetVolume(16, .1f);
@@ -94,13 +95,10 @@ public class PlayMusic3 : MonoBehaviour
 }
     void Chewing()
     {
-        if (variables.chewing == true)
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewing == true)
         {
-            audioManager.Play(variables.chewingSound);
-            variables.chewing = false;
+            audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
+            GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
         }
     }
-
-
-
 }

@@ -28,18 +28,21 @@ public class PlayMusic : MonoBehaviour {
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
 
-        charSel = selecter.GetComponent<CharacterSelectUI>();
-        variableControl = vControl.GetComponent<VariableControl>();
+        if (Application.loadedLevelName == "CharacterSelectTest")
+        {
+            charSel = selecter.GetComponent<CharacterSelectUI>();
+            variableControl = vControl.GetComponent<VariableControl>();
+        }
+        if (Application.loadedLevelName == "StartScreenTest")
+        {
+            playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
+            aboutButtonHandler = GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>();
 
-		if(Application.loadedLevelName == "StartScreenTest"){
-			playButtonHandler = GameObject.Find ("PlayButton").GetComponent<PlayButtonHandler>();
-			aboutButtonHandler = GameObject.Find ("AboutButton").GetComponent<AboutButtonHandler>();
-           
-		}
+        }
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            receipt = receiptScript.GetComponent<ReceiptMove>();
-            toMenu = toMenuScript.GetComponent<GoBackToMenu>();
+            gameObject.AddComponent<ReceiptMove>();
+            gameObject.AddComponent<GoBackToMenu>();
         }
 	
 	}
@@ -47,26 +50,34 @@ public class PlayMusic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Application.loadedLevelName == "StartScreenTest")
-        {	
+        if (Application.loadedLevelName == "SplashScreen")
+        {
             audioManager.PlayLoop(7);
-            if (playButtonHandler.buttonPressed == true || aboutButtonHandler.buttonPressed == true)
+        }
+        if (Application.loadedLevelName == "StartScreenTest")
+        {
+            audioManager.SetVolume(20, 0.0f);
+            audioManager.SetVolume(7, 1.0f);
+            if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
             {
                 audioManager.Play(1);
+
             }
-	
         }
 
         if (Application.loadedLevelName == "ScoreScreen")
-        {   
-            if (receipt.winSound == true)
+        {
+            audioManager.SetVolume(9, 0.0f);
+         // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
+                audioManager.SetVolume(20, 1.0f);
                 audioManager.PlayLoop(20);
               //  audioManager.FadeOut(20);
                 //receipt.winSound = false;
             }
 
-            if(toMenu.backToStart == true){
+            if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
+            {
                 Debug.Log("it has played");
                 audioManager.Play(1);
 
@@ -74,40 +85,42 @@ public class PlayMusic : MonoBehaviour {
             }
 
         }
-
-        if (variableControl.currentCharacterSelectNum == 0)
+        if (Application.loadedLevelName == "CharacterSelectTest")
         {
-            numSelected = 0;
-
-        }
-
-        if (variableControl.currentCharacterSelectNum > numSelected)
-        {
-            if (variableControl.currentCharacterSelectNum == 2)
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
             {
-                audioManager.Play(6);
-                Debug.Log("booop");
-                numSelected++;
+                numSelected = 0;
+
             }
-            else
+
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
+            {
+                if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
+                {
+                    audioManager.Play(6);
+                    Debug.Log("booop");
+                    numSelected++;
+                }
+                else
+                {
+                    audioManager.Play(1);
+                    Debug.Log("ding");
+                    numSelected++;
+                }
+            }
+
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
             {
                 audioManager.Play(1);
-                Debug.Log("ding");
-                numSelected++;
+                numSelected--;
             }
-        }
-
-        if (variableControl.currentCharacterSelectNum < numSelected)
-        {
-            audioManager.Play(1);
-            numSelected--;
-        }
 
 
-        if (charSel.FeedPressed == true)
-        {
-            audioManager.Play(3);
-            charSel.FeedPressed = false;
+            if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
+            {
+                audioManager.Play(3);
+                GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
+            }
         }
 
     }

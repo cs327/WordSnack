@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour {
 	void Update () {
         if ((Application.loadedLevelName == "SplashScreen") || (Application.loadedLevelName == "ScoreScreen"))
         {
+            
             soundScript.enabled = true;
          //   soundScript2.enabled = false;
             soundScript3.enabled = false;

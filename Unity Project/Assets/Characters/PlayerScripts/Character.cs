@@ -434,7 +434,7 @@ public class Character : MonoBehaviour
                     variables.happySound = CharacterHappy();
                 }
                 WordSound();
-
+                variables.chewing = true;
             }
             if (wordScore == 0)
             {
