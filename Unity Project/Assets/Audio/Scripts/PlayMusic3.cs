@@ -28,8 +28,6 @@ public class PlayMusic3 : MonoBehaviour
         //    letterController = letterCont.GetComponent<LetterController>();
         //    variables = VariableControl.GetComponent<VariableControl>();
         //}
-        
-        audioManager.SetVolume(7, 0.0f);
     }
 
     // Update is called once per frame
@@ -37,6 +35,7 @@ public class PlayMusic3 : MonoBehaviour
     {
         audioManager.SetVolume(9, 1.0f);
         audioManager.PlayLoop(9);
+        audioManager.SetVolume(7, 0.0f);
         NewOnStove();
         Sizzle();
         HappySound();
