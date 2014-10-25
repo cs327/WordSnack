@@ -32,17 +32,20 @@ public class ReceiptGUI : MonoBehaviour
         
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+        string char1String = Character.CharacterNameLookup[selectedCharacter1])
+        string char2String = Character.CharacterNameLookup[selectedCharacter2])
         Debug.Log("Char 1 " + selectedCharacter1);
         Debug.Log("Char 2 " + selectedCharacter2);
-        Debug.Log(Character.CharacterNameLookup[selectedCharacter1]);
-        Debug.Log(Character.CharacterNameLookup[selectedCharacter2]);
 
+        List<String> scores = ScoreManager.AddHighScore(char1String, char2String, 100);
+        scores = ScoreManager.AddHighScore(char2String, char1String, 110);
+        Debug.Log("High score: " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String)[0]);
 
-        Character1Name.text = Character.CharacterNameLookup[selectedCharacter1];
-        Character2Name.text = Character.CharacterNameLookup[selectedCharacter2];
+        Character1Name.text = char1String;
+        Character2Name.text = char2String;
         
-        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
-        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
+        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + char1String);
+        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + char2String);
         List<string> char1WordsFed = new List<string>();
         List<string> char2WordsFed = new List<string>();
 
