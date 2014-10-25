@@ -127,8 +127,8 @@ public class VariableControl : MonoBehaviour {
 		phase2CharacterPositions[1] = new Vector3(3.8f, 0.5f, 1);
 
 		//sets where the character tastes should be put for wordbuilding phase
-		characterTasteSpots[0] = new Vector3 (-1.9f,1.25f,-1f);
-		characterTasteSpots[1] = new Vector3 (0.4f,1.25f,-1f);
+		characterTasteSpots[0] = new Vector3 (-2.0f,1.25f,-1f);
+		characterTasteSpots[1] = new Vector3 (-0.2f,1.9f,-1f);
 	}
 
 	void Start () {

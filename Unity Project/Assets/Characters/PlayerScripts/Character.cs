@@ -83,6 +83,9 @@ public class Character : MonoBehaviour
 			}
 			tasteText = tasteObj.GetComponent<TextMesh>();
 			tasteText.text = thingsILike;
+			if (Application.loadedLevelName == "WordMaking"){
+				tasteText.fontSize = 60;
+			}
 		}
 
 	}
@@ -245,7 +248,7 @@ public class Character : MonoBehaviour
 				humanReadableTasteDictionary.Add (4, "- 2+ vowels");
 				humanReadableTasteDictionary.Add (5, "- 2+ same letter");
 				humanReadableTasteDictionary.Add (6, "- Starts with vowel");
-				humanReadableTasteDictionary.Add (7, "- Sarts/ends with\n same letter");
+				humanReadableTasteDictionary.Add (7, "- Starts/ends with\n same letter");
 				humanReadableTasteDictionary.Add (8, "- 4 letters");
 				humanReadableTasteDictionary.Add (9, "- Equal vowels \n and consonants");
 				humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
