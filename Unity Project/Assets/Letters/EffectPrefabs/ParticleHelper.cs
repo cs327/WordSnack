@@ -12,7 +12,7 @@ public class ParticleHelper : MonoBehaviour {
 		// Register the singleton
 		if (Instance != null)
 		{
-			Debug.LogError("Multiple instances of ParticleHelper!");
+//			Debug.LogError("Multiple instances of ParticleHelper!");
 		}
 		
 		Instance = this;

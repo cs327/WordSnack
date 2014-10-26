@@ -349,7 +349,7 @@ public class Character : MonoBehaviour
 					break;
 				case 2:
 					Debug.Log("Kelvin eating animation");
-					GetComponent<Animator>().SetBool("eat", true);
+					GetComponent<Animator>().SetTrigger("eat");
 //					animation.Play("KelvinEatingAnim");
 					//return 32;
 					break;
