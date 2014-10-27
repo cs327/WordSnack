@@ -57,15 +57,12 @@ public class AudioManager : MonoBehaviour {
 	
 	public void Play(int i){
 		Debug.Log ("play");
-		//audio.clip = audioClipArray [i];
-		//    audio.Play;
 		audioSourceArray[i].Play ();
 		
 	}
 	
 	public void PlayLoop(int i){  // call this in update!
-		//audio.clip = audioClipArray[i];
-		//dio.loop = true;
+		
 		if (audioSourceArray [i].isPlaying == false) {
 			audioSourceArray [i].Play ();
 		}
@@ -73,20 +70,18 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	public void Pause(int i){
-		audio.clip = audioClipArray [i];
-		audio.Pause ();
+        audioSourceArray[i].Pause ();
 	}
 	
 	public void Stop(int i){
-		audio.clip = audioClipArray [i];
-		audio.Stop ();
+        audioSourceArray[i].Stop ();
 	}
 	
 	public void KillAll(){
 		for (y=0; y<=audioClipArray.Length; y++) {
-			audio.clip= audioClipArray[y];
-			if (audio.isPlaying) {
-				audio.Pause ();
+			
+            if (audioSourceArray[y].isPlaying) {
+                audioSourceArray[i].Pause ();
 			}
 		}
 		

@@ -68,7 +68,7 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            audioManager.SetVolume(9, 0.0f);
+            audioManager.SetVolume(6, 0.0f);
          // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
                 audioManager.SetVolume(17, 1.0f);
@@ -98,7 +98,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
                 {
-                    audioManager.Play(6);
+                    audioManager.Play(4);
                     Debug.Log("booop");
                     numSelected++;
                 }
@@ -112,14 +112,15 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
             {
-                audioManager.Play(1);
+                audioManager.Play(3);
                 numSelected--;
+                Debug.Log(numSelected.ToString());
             }
 
 
             if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
             {
-                audioManager.Play(3);
+                audioManager.Play(2);
                 GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
             }
         }

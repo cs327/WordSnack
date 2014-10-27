@@ -496,6 +496,7 @@ public class LetterController : MonoBehaviour
     //shuffles the letters currently in your hand
     void shuffleLetters()
     {
+        variables.shuffleSound = true;
         int nextSpotNum = -1;
         //creates an array to temporarily store the new array locations for each letter
         letterBehaviour[] nextLetters;
@@ -522,7 +523,10 @@ public class LetterController : MonoBehaviour
         {
 			if (!spotIsOnBoard(i)) {
 	            lettersOnBoard[i] = nextLetters[i];
-	            lettersOnBoard[i].transform.position = bankSpots[i];
+	            //I commented out the following line because it is taken care of in moveToFromStove() 
+				//in general letter placement upkeep
+				//lettersOnBoard[i].transform.position = bankSpots[i];
+
 			}
         }
     }
