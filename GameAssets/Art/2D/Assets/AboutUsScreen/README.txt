@@ -3,3 +3,4 @@ About Us Screen Information
 -Let the image scroll slowly
 -Have it come to a stop at the end
 -Let a tap on the screen at any time return to the game
+-Our URL at the bottom should be a live link.
