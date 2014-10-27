@@ -183,7 +183,7 @@ public class Character : MonoBehaviour
                             return 28;
                         case 0:
                             Debug.Log("Word Trashed");
-                            return 17;
+                            return 19;
                         default:
                             return 0;
                 }
@@ -296,9 +296,9 @@ public class Character : MonoBehaviour
     void WordSound()
     {
         if (characterNum == 0)
-            variables.chewingSound = 17;
-        else
             variables.chewingSound = 19;
+        else
+            variables.chewingSound = 14;
     }
     // Update is called once per frame
     void Update()
@@ -438,10 +438,13 @@ public class Character : MonoBehaviour
                 WordSound();
                 variables.chewing = true;
             }
-            if (wordScore == 0)
+            if (characterNum != 0)
             {
-                Debug.Log("True");
-                variables.sadSound = CharacterSad();
+                if (wordScore == 0)
+                {
+                    Debug.Log("True");
+                    variables.sadSound = 12;
+                }
             }
         }
     }

@@ -29,6 +29,8 @@ public class LetterController : MonoBehaviour
 	public Texture2D shuffleButton;
 	public bool gamePaused;
 	public GameObject gameController;
+	public bool needsReordering = true;
+
 
     // Use this for initialization
     void Start()
@@ -54,9 +56,10 @@ public class LetterController : MonoBehaviour
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
 			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
-			bankSpots [i] = new Vector3 (i * 1.38f - 5, -3.8f, 0);
+			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.8f, 0);
 			positionOnBoard [i] = -1;
 		}
+        variables.letterGenerationSound = true;
         CreateSteam ();
     }
 
@@ -82,6 +85,19 @@ public class LetterController : MonoBehaviour
 		}
 		TurnOnOffSteam();
     }
+
+	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
+		Vector3 saveThis = new Vector3 (0,0,0);
+	 	for (float i = 0; i < .5f; i += .3f){
+			if(i == 0){
+				saveThis = currentSpot;
+			}
+	 		letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i);
+	 		yield return null;
+		}
+	 }
+	
+	 
 
 	void CreateSteam (){
 		stoveSteam = new GameObject[boardSize];
@@ -394,20 +410,20 @@ public class LetterController : MonoBehaviour
                     }
                 }
                 //checks all letters on stove, and puts them in the correct position
-                if (lettersOnStove[i] != null)
-                {
-                    lettersOnStove[i].transform.position = stoveSpots[i];
-                }
-
-                //checks all letters that are on the board but not the stove, and puts them in the correct position
-                if (!lettersOnBoard[i].onStove)
-                {
-                    lettersOnBoard[i].transform.position = bankSpots[i];
-                }
-            }
-        }
-
-
+				if (lettersOnStove[i] != null)
+				{
+					//lettersOnStove[i].transform.position = stoveSpots[i];
+					 StartCoroutine(animateLetters(lettersOnStove[i],lettersOnStove[i].transform.position, stoveSpots[i]));
+				}
+				//checks all letters that are on the board but not the stove, and puts them in the correct position
+				if (!lettersOnBoard[i].onStove)
+				{
+					//lettersOnBoard[i].transform.position = bankSpots[i];
+					StartCoroutine(animateLetters(lettersOnBoard[i],lettersOnBoard[i].transform.position, bankSpots[i]));
+				}
+			}
+		}
+		needsReordering = false;
 
     }
 
@@ -453,6 +469,8 @@ public class LetterController : MonoBehaviour
         numLettersOnStove = 0;
         timer = 0;
         needsUpkeep = true;
+       
+        variables.letterGenerationSound = true;
 
     }
 
@@ -481,6 +499,7 @@ public class LetterController : MonoBehaviour
     //shuffles the letters currently in your hand
     void shuffleLetters()
     {
+        variables.shuffleSound = true;
         int nextSpotNum = -1;
         //creates an array to temporarily store the new array locations for each letter
         letterBehaviour[] nextLetters;
@@ -507,7 +526,10 @@ public class LetterController : MonoBehaviour
         {
 			if (!spotIsOnBoard(i)) {
 	            lettersOnBoard[i] = nextLetters[i];
-	            lettersOnBoard[i].transform.position = bankSpots[i];
+	            //I commented out the following line because it is taken care of in moveToFromStove() 
+				//in general letter placement upkeep
+				//lettersOnBoard[i].transform.position = bankSpots[i];
+
 			}
         }
     }
@@ -552,11 +574,11 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
-		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
+		if(!gamePaused ){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
-			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style))
+			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.65f, Screen.width*0.07f, Screen.width*0.07f), "", style))
 	        { //shuffles the letters in your hand
 	            shuffleLetters();
 	        }

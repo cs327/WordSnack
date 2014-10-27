@@ -21,6 +21,8 @@ public class PlayMusic : MonoBehaviour {
 
     GoBackToMenu toMenu;
     public GameObject toMenuScript;
+
+    bool playedVictory = false;
 	
 	//public GameObject audioManager;
 	
@@ -52,13 +54,13 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "SplashScreen")
         {
-            audioManager.PlayLoop(7);
+            audioManager.PlayLoop(5);
         }
         if (Application.loadedLevelName == "StartScreenTest")
         {
-            audioManager.SetVolume(20, 0.0f);
-            audioManager.SetVolume(7, 1.0f);
-            audioManager.SetVolume(9, 0.0f);
+            audioManager.SetVolume(17, 0.0f);
+            audioManager.SetVolume(5, 1.0f);
+            audioManager.SetVolume(6, 0.0f);
             if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
             {
                 audioManager.Play(1);
@@ -68,24 +70,36 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            audioManager.SetVolume(9, 0.0f);
-         // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+            audioManager.SetVolume(6, 0.0f);
+            // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
-                audioManager.SetVolume(20, 1.0f);
-                audioManager.PlayLoop(20);
-              //  audioManager.FadeOut(20);
-                //receipt.winSound = false;
+                if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+                {
+                    audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
+                    audioManager.PlayLoop(21);
+                    audioManager.PlayLoop(15);
+                    //  audioManager.FadeOut(17);
+                    //receipt.winSound = false;
+                } 
+                else if(playedVictory == false && audioManager.audioSourceArray[15].isPlaying == false){
+                   // audioManager.KillAll();
+                    audioManager.Play(16);
+                    playedVictory =true;
+                    Debug.Log("helllyeah");
+                }
+            
+
+                if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
+                {
+                    Debug.Log("it has played");
+                    audioManager.Play(1);
+
+
+                }
             }
-
-            if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
-            {
-                Debug.Log("it has played");
-                audioManager.Play(1);
-
-
-            }
-
         }
+
+
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
@@ -98,7 +112,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
                 {
-                    audioManager.Play(6);
+                    audioManager.Play(4);
                     Debug.Log("booop");
                     numSelected++;
                 }
@@ -112,14 +126,15 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
             {
-                audioManager.Play(1);
+                audioManager.Play(3);
                 numSelected--;
+                Debug.Log(numSelected.ToString());
             }
 
 
             if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
             {
-                audioManager.Play(3);
+                audioManager.Play(2);
                 GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
             }
         }

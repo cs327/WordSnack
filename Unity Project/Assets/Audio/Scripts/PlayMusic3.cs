@@ -33,14 +33,17 @@ public class PlayMusic3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioManager.SetVolume(9, 1.0f);
-        audioManager.PlayLoop(9);
-        audioManager.SetVolume(7, 0.0f);
+        audioManager.PlayLoop(6);
+        audioManager.SetVolume(6, 1.0f);
+        audioManager.SetVolume(5, 0.0f);
+        //audioManager.Stop(5);
         NewOnStove();
         Sizzle();
         HappySound();
         RejectedSound();
         Chewing();
+        Shuffle();
+        LetterGeneration();
 
     }
 
@@ -52,12 +55,12 @@ public class PlayMusic3 : MonoBehaviour
        // }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
         {
-            audioManager.Play(13);
+            audioManager.Play(7);
             i++;
         }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
         {
-            audioManager.Play(14);
+            audioManager.Play(9);
             i--;
         }
     }
@@ -75,20 +78,20 @@ public class PlayMusic3 : MonoBehaviour
     {
         if (GameObject.Find("VariableController").GetComponent<VariableControl>().notWord)
         {
-            audioManager.Play(17);
+            audioManager.Play(12);
             GameObject.Find("VariableController").GetComponent<VariableControl>().notWord = false;
         }
     }
     void Sizzle()
     {
-        audioManager.PlayLoop(16);
+        audioManager.PlayLoop(11);
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
 
-            audioManager.SetVolume(16, .1f);
+            audioManager.SetVolume(11, .1f);
         } else{
 
-            audioManager.SetVolume(16, 0.0f);
+            audioManager.SetVolume(11, 0.0f);
         }
         
 }
@@ -98,6 +101,21 @@ public class PlayMusic3 : MonoBehaviour
         {
             audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
             GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
+        }
+    }
+    void Shuffle()
+    {
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound == true)
+            audioManager.Play(20);
+        GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
+
+    }
+    void LetterGeneration()
+    {
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound == true)
+        {
+            audioManager.Play(8);
+            GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
         }
     }
 }
