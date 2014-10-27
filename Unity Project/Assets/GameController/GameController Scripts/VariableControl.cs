@@ -67,6 +67,7 @@ public class VariableControl : MonoBehaviour {
     public int hungrySound;
     public int chewingSound;
     public bool shuffleSound;
+    public bool letterGenerationSound;
 
 	//tweakable variables: 
 	public int minWordLength;
