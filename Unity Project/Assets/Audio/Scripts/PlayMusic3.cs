@@ -76,20 +76,20 @@ public class PlayMusic3 : MonoBehaviour
     {
         if (GameObject.Find("VariableController").GetComponent<VariableControl>().notWord)
         {
-            audioManager.Play(17);
+            audioManager.Play(12);
             GameObject.Find("VariableController").GetComponent<VariableControl>().notWord = false;
         }
     }
     void Sizzle()
     {
-        audioManager.PlayLoop(16);
+        audioManager.PlayLoop(11);
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
 
-            audioManager.SetVolume(16, .1f);
+            audioManager.SetVolume(11, .1f);
         } else{
 
-            audioManager.SetVolume(16, 0.0f);
+            audioManager.SetVolume(11, 0.0f);
         }
         
 }

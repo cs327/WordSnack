@@ -98,7 +98,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
                 {
-                    audioManager.Play(6);
+                    audioManager.Play(4);
                     Debug.Log("booop");
                     numSelected++;
                 }
@@ -119,7 +119,7 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
             {
-                audioManager.Play(3);
+                audioManager.Play(2);
                 GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
             }
         }
