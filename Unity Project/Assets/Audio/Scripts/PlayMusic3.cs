@@ -33,10 +33,10 @@ public class PlayMusic3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioManager.PlayLoop(9);
-        audioManager.SetVolume(9, 1.0f);
-        audioManager.SetVolume(7, 0.0f);
-        //audioManager.Stop(7);
+        audioManager.PlayLoop(6);
+        audioManager.SetVolume(6, 1.0f);
+        audioManager.SetVolume(5, 0.0f);
+        //audioManager.Stop(5);
         NewOnStove();
         Sizzle();
         HappySound();
@@ -53,12 +53,12 @@ public class PlayMusic3 : MonoBehaviour
        // }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
         {
-            audioManager.Play(13);
+            audioManager.Play(7);
             i++;
         }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
         {
-            audioManager.Play(14);
+            audioManager.Play(9);
             i--;
         }
     }
