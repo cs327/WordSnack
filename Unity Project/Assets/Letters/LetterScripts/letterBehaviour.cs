@@ -17,11 +17,11 @@ public class letterBehaviour : MonoBehaviour {
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
 		SetLetter();
 		l = GameObject.Find ("letterGeneration").GetComponent<LetterController> ();
+		gameObject.transform.localScale = new Vector3 (.33f,.33f,.33f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CheckSelected(selected);
 		if (l.gamePaused) {
 			thisSprite.enabled = false;
 		}
@@ -35,6 +35,9 @@ public class letterBehaviour : MonoBehaviour {
 		if (!onStove) { 
 			thisSprite.sprite = sprites[letterAlphabetOrder];
 		}
+
+		checkSelected(selected);
+
 	}
 
     // Switch the checked status
@@ -42,25 +45,30 @@ public class letterBehaviour : MonoBehaviour {
 		if(!selected){
 			selected = true;
 			//put it on the stove and change the color
-			thisSprite.sprite = spriteStove [letterAlphabetOrder]; 
+			thisSprite.sprite = spriteStove [letterAlphabetOrder];
+
+
 		}
 		else{
 			selected = false;
 			//change the color back to green when it's no longer on the stove
 			thisSprite.sprite = sprites[letterAlphabetOrder];
+
+
 		}
 
 	}
 
-    // Colors the letter depending on if it's selected or not
-	void CheckSelected(bool on){
-		if(on){
-			//gameObject.renderer.material.color = Color.magenta;
+	void checkSelected(bool s){
+		if(s){
+			gameObject.transform.localScale = new Vector3 (.275f,.275f,.275f);
 		}
 		else{
-			gameObject.renderer.material.color = Color.white;
+			gameObject.transform.localScale = new Vector3 (.33f,.33f,.33f);
 		}
 	}
+
+  
 	void SetLetter(){
 
 		char [] thisChar = letter.ToCharArray();

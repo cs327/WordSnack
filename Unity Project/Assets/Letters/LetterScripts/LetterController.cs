@@ -29,6 +29,7 @@ public class LetterController : MonoBehaviour
 	public Texture2D shuffleButton;
 	public bool gamePaused;
 	public GameObject gameController;
+	public bool needsReordering = false;
 
     // Use this for initialization
     void Start()
@@ -54,7 +55,7 @@ public class LetterController : MonoBehaviour
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
 			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
-			bankSpots [i] = new Vector3 (i * 1.38f - 5, -3.8f, 0);
+			bankSpots [i] = new Vector3 (i * (14f/boardSize) - 6, -3.8f, 0);
 			positionOnBoard [i] = -1;
 		}
         CreateSteam ();
@@ -82,6 +83,16 @@ public class LetterController : MonoBehaviour
 		}
 		TurnOnOffSteam();
     }
+
+//	IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
+//		Vector3 saveThis =currentSpot;
+//		for (float i = 0; i < .5f; i += Time.deltaTime){
+//
+//			letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i*2);
+//			yield return null;
+//		}
+//
+//	}
 
 	void CreateSteam (){
 		stoveSteam = new GameObject[boardSize];
@@ -372,12 +383,13 @@ public class LetterController : MonoBehaviour
                     lettersOnBoard[i].onStove = true;
                     lettersOnBoard[i].orderOnStove = numLettersOnStove;
                     numLettersOnStove++;
+					needsReordering = true;
                 }
 
                 //checks if any of the letters on the board should be removed from the stove, and if so removes them from the stove array
                 if (lettersOnBoard[i].onStove && !lettersOnBoard[i].selected)
                 {
-
+					needsReordering = true;
                     //the following actions go through and get rid of every letter on the stove to the right of the selected one for removal, by for looping through all the letters on the stove
                     numLettersOnStove = lettersOnBoard[i].orderOnStove;
                     for (int x = lettersOnBoard[i].orderOnStove; x < boardSize; x++)
@@ -394,21 +406,23 @@ public class LetterController : MonoBehaviour
                     }
                 }
                 //checks all letters on stove, and puts them in the correct position
-                if (lettersOnStove[i] != null)
-                {
-                    lettersOnStove[i].transform.position = stoveSpots[i];
-                }
+	
+					if (lettersOnStove[i] != null)
+					{
+						lettersOnStove[i].transform.position = stoveSpots[i];
+					//	StartCoroutine(animateLetters(lettersOnStove[i],lettersOnStove[i].transform.position, stoveSpots[i]));
+					}
+					
+					//checks all letters that are on the board but not the stove, and puts them in the correct position
+					if (!lettersOnBoard[i].onStove)
+					{
+						   lettersOnBoard[i].transform.position = bankSpots[i];
+						//StartCoroutine(animateLetters(lettersOnBoard[i],lettersOnBoard[i].transform.position, bankSpots[i]));
+					}
 
-                //checks all letters that are on the board but not the stove, and puts them in the correct position
-                if (!lettersOnBoard[i].onStove)
-                {
-                    lettersOnBoard[i].transform.position = bankSpots[i];
-                }
             }
         }
-
-
-
+		needsReordering = false;
     }
 
     //	void ReorderStoveArrays(){
