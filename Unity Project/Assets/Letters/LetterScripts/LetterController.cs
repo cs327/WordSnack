@@ -496,6 +496,7 @@ public class LetterController : MonoBehaviour
     //shuffles the letters currently in your hand
     void shuffleLetters()
     {
+        variables.shuffleSound = true;
         int nextSpotNum = -1;
         //creates an array to temporarily store the new array locations for each letter
         letterBehaviour[] nextLetters;

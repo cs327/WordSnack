@@ -42,6 +42,7 @@ public class PlayMusic3 : MonoBehaviour
         HappySound();
         RejectedSound();
         Chewing();
+        Shuffle();
 
     }
 
@@ -100,5 +101,12 @@ public class PlayMusic3 : MonoBehaviour
             audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
             GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
         }
+    }
+    void Shuffle()
+    {
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound == true)
+            audioManager.Play(20);
+        GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
+
     }
 }
