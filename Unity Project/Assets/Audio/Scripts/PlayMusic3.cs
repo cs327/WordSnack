@@ -45,6 +45,7 @@ public class PlayMusic3 : MonoBehaviour
         RejectedSound();
         Chewing();
         Shuffle();
+        LetterGeneration();
 
     }
 
@@ -141,5 +142,13 @@ public class PlayMusic3 : MonoBehaviour
             audioManager.Play(20);
         GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
 
+    }
+    void LetterGeneration()
+    {
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound == true)
+        {
+            audioManager.Play(8);
+            GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
+        }
     }
 }

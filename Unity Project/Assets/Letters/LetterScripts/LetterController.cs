@@ -59,6 +59,7 @@ public class LetterController : MonoBehaviour
 			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.8f, 0);
 			positionOnBoard [i] = -1;
 		}
+        variables.letterGenerationSound = true;
         CreateSteam ();
     }
 
@@ -468,6 +469,8 @@ public class LetterController : MonoBehaviour
         numLettersOnStove = 0;
         timer = 0;
         needsUpkeep = true;
+       
+        variables.letterGenerationSound = true;
 
     }
 
