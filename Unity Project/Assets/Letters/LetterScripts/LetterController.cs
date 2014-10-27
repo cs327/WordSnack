@@ -54,7 +54,7 @@ public class LetterController : MonoBehaviour
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
-			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
+			stoveSpots [i] = new Vector3 (i * 1.3f - 4.5f, -1.8f, 0);
 			bankSpots [i] = new Vector3 (i * (14f/boardSize) - 6, -3.8f, 0);
 			positionOnBoard [i] = -1;
 		}
@@ -570,7 +570,7 @@ public class LetterController : MonoBehaviour
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
-			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style))
+			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.65f, Screen.width*0.07f, Screen.width*0.07f), "", style))
 	        { //shuffles the letters in your hand
 	            shuffleLetters();
 	        }
