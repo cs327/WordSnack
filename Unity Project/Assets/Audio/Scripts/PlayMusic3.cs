@@ -35,8 +35,8 @@ public class PlayMusic3 : MonoBehaviour
     {
         audioManager.PlayLoop(9);
         audioManager.SetVolume(9, 1.0f);
-        audioManager.SetVolume(7, 0.0f);
-        //audioManager.Stop(7);
+        //audioManager.SetVolume(7, 0.0f);
+        audioManager.Stop(7);
         NewOnStove();
         Sizzle();
         HappySound();
