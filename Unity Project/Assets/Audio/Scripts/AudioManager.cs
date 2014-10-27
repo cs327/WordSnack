@@ -73,20 +73,20 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	public void Pause(int i){
-        audioSourceArray [i].Pause();
+		audio.clip = audioClipArray [i];
+		audio.Pause ();
 	}
 	
 	public void Stop(int i){
-	//	audio.clip = audioClipArray [i];
-	//	audio.Stop ();
-        audioSourceArray [i].Play();
+		audio.clip = audioClipArray [i];
+		audio.Stop ();
 	}
 	
 	public void KillAll(){
 		for (y=0; y<=audioClipArray.Length; y++) {
-			//audio.clip= audioClipArray[y];
-			if (audioSourceArray[y].isPlaying) {
-                audioSourceArray[y].Pause();
+			audio.clip= audioClipArray[y];
+			if (audio.isPlaying) {
+				audio.Pause ();
 			}
 		}
 		

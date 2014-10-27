@@ -33,8 +33,8 @@ public class PlayMusic3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioManager.SetVolume(9, 1.0f);
         audioManager.PlayLoop(9);
+        audioManager.SetVolume(9, 1.0f);
         audioManager.SetVolume(7, 0.0f);
         //audioManager.Stop(7);
         NewOnStove();

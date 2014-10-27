@@ -29,7 +29,8 @@ public class LetterController : MonoBehaviour
 	public Texture2D shuffleButton;
 	public bool gamePaused;
 	public GameObject gameController;
-	public bool needsReordering = false;
+	public bool needsReordering = true;
+
 
     // Use this for initialization
     void Start()
@@ -54,8 +55,8 @@ public class LetterController : MonoBehaviour
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
-			stoveSpots [i] = new Vector3 (i * 1.3f - 4.5f, -1.8f, 0);
-			bankSpots [i] = new Vector3 (i * (14f/boardSize) - 6, -3.8f, 0);
+			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
+			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.8f, 0);
 			positionOnBoard [i] = -1;
 		}
         CreateSteam ();
@@ -84,15 +85,18 @@ public class LetterController : MonoBehaviour
 		TurnOnOffSteam();
     }
 
-//	IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
-//		Vector3 saveThis =currentSpot;
-//		for (float i = 0; i < .5f; i += Time.deltaTime){
-//
-//			letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i*2);
-//			yield return null;
-//		}
-//
-//	}
+	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
+		Vector3 saveThis = new Vector3 (0,0,0);
+	 	for (float i = 0; i < .5f; i += .3f){
+			if(i == 0){
+				saveThis = currentSpot;
+			}
+	 		letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i);
+	 		yield return null;
+		}
+	 }
+	
+	 
 
 	void CreateSteam (){
 		stoveSteam = new GameObject[boardSize];
@@ -383,13 +387,12 @@ public class LetterController : MonoBehaviour
                     lettersOnBoard[i].onStove = true;
                     lettersOnBoard[i].orderOnStove = numLettersOnStove;
                     numLettersOnStove++;
-					needsReordering = true;
                 }
 
                 //checks if any of the letters on the board should be removed from the stove, and if so removes them from the stove array
                 if (lettersOnBoard[i].onStove && !lettersOnBoard[i].selected)
                 {
-					needsReordering = true;
+
                     //the following actions go through and get rid of every letter on the stove to the right of the selected one for removal, by for looping through all the letters on the stove
                     numLettersOnStove = lettersOnBoard[i].orderOnStove;
                     for (int x = lettersOnBoard[i].orderOnStove; x < boardSize; x++)
@@ -406,23 +409,21 @@ public class LetterController : MonoBehaviour
                     }
                 }
                 //checks all letters on stove, and puts them in the correct position
-	
-					if (lettersOnStove[i] != null)
-					{
-						lettersOnStove[i].transform.position = stoveSpots[i];
-					//	StartCoroutine(animateLetters(lettersOnStove[i],lettersOnStove[i].transform.position, stoveSpots[i]));
-					}
-					
-					//checks all letters that are on the board but not the stove, and puts them in the correct position
-					if (!lettersOnBoard[i].onStove)
-					{
-						   lettersOnBoard[i].transform.position = bankSpots[i];
-						//StartCoroutine(animateLetters(lettersOnBoard[i],lettersOnBoard[i].transform.position, bankSpots[i]));
-					}
-
-            }
-        }
+				if (lettersOnStove[i] != null)
+				{
+					//lettersOnStove[i].transform.position = stoveSpots[i];
+					 StartCoroutine(animateLetters(lettersOnStove[i],lettersOnStove[i].transform.position, stoveSpots[i]));
+				}
+				//checks all letters that are on the board but not the stove, and puts them in the correct position
+				if (!lettersOnBoard[i].onStove)
+				{
+					//lettersOnBoard[i].transform.position = bankSpots[i];
+					StartCoroutine(animateLetters(lettersOnBoard[i],lettersOnBoard[i].transform.position, bankSpots[i]));
+				}
+			}
+		}
 		needsReordering = false;
+
     }
 
     //	void ReorderStoveArrays(){
@@ -566,7 +567,7 @@ public class LetterController : MonoBehaviour
         //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
         //	sendWord();
         //} else 
-		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
+		if(!gamePaused ){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
