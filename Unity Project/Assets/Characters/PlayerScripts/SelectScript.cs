@@ -93,6 +93,8 @@ public class SelectScript : MonoBehaviour {
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				thisSprite.sprite = selectedImage;
 				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
+				gameObject.transform.localScale = new Vector3 (1.37f,1.37f,1);
+
 				gameObject.GetComponent<BoxCollider>().size = new Vector3(5,3,0);
 				Vector3 center = gameObject.GetComponent<BoxCollider>().center;
 				//center.x -= 1.4f;
@@ -109,6 +111,7 @@ public class SelectScript : MonoBehaviour {
 			else {
 				thisSprite.sprite = standbyImage;
 				gameObject.transform.position = startingSpot;
+				gameObject.transform.localScale = new Vector3 (1.5f,1.5f,1);
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
 				variables.characterSelected[selectNum] = false;
 				variables.selectedCharacters[selectNum] = null;

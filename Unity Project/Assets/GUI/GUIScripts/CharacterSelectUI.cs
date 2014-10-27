@@ -39,11 +39,11 @@ public class CharacterSelectUI : MonoBehaviour {
 //			feedMeSprite.enabled = false;
 
 			if(variables.selectedCharacters[0] == null){
-				whoElse.transform.position = new Vector3(-5.01f,-.786f,0);
+				whoElse.transform.position = new Vector3(-3f,-4.0f,0);
 			}
 			else{
 				//whoElse.transform.position = new Vector3(2.01f,-.786f,0);
-                whoElse.transform.position = new Vector3(3.7f,-4.0f,0);
+                whoElse.transform.position = new Vector3(3f,-4.0f,0);
 			}
 		}
 
