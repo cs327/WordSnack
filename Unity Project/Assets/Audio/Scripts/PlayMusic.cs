@@ -112,8 +112,9 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
             {
-                audioManager.Play(1);
+                audioManager.Play(3);
                 numSelected--;
+                Debug.Log(numSelected.ToString());
             }
 
 
