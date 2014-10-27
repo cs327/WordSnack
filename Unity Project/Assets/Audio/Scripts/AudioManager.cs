@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour {
 	
 	
 	public AudioClip[] audioClipArray;
-	AudioSource [] audioSourceArray; //new
+	public AudioSource [] audioSourceArray; //new
 	
 	int i;
 	
@@ -78,10 +78,10 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	public void KillAll(){
-		for (y=0; y<=audioClipArray.Length; y++) {
+		for (y=0; y<audioSourceArray.Length; y++) {
 			
             if (audioSourceArray[y].isPlaying) {
-                audioSourceArray[i].Pause ();
+                audioSourceArray[y].Pause ();
 			}
 		}
 		

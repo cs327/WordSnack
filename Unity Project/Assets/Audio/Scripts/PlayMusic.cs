@@ -21,6 +21,8 @@ public class PlayMusic : MonoBehaviour {
 
     GoBackToMenu toMenu;
     public GameObject toMenuScript;
+
+    bool playedVictory = false;
 	
 	//public GameObject audioManager;
 	
@@ -69,23 +71,35 @@ public class PlayMusic : MonoBehaviour {
         if (Application.loadedLevelName == "ScoreScreen")
         {
             audioManager.SetVolume(6, 0.0f);
-         // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+            // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
-                audioManager.SetVolume(17, 1.0f);
-                audioManager.PlayLoop(17);
-              //  audioManager.FadeOut(17);
-                //receipt.winSound = false;
+                if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+                {
+                    audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
+                    audioManager.PlayLoop(21);
+                    audioManager.PlayLoop(15);
+                    //  audioManager.FadeOut(17);
+                    //receipt.winSound = false;
+                } 
+                else if(playedVictory == false && audioManager.audioSourceArray[15].isPlaying == false){
+                   // audioManager.KillAll();
+                    audioManager.Play(16);
+                    playedVictory =true;
+                    Debug.Log("helllyeah");
+                }
+            
+
+                if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
+                {
+                    Debug.Log("it has played");
+                    audioManager.Play(1);
+
+
+                }
             }
-
-            if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
-            {
-                Debug.Log("it has played");
-                audioManager.Play(1);
-
-
-            }
-
         }
+
+
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
