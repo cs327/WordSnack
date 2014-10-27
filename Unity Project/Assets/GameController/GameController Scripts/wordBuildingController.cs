@@ -50,7 +50,7 @@ public class wordBuildingController : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		if(!gamePaused && PlayerPrefs.GetInt("instructions") == 1){
+		if(!gamePaused){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = endGameButton;
 			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.88f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
