@@ -17,7 +17,9 @@ public class PlayMusic3 : MonoBehaviour
     public GameObject VariableControl;
     VariableControl variables;
 
-
+    bool sizzleStart = false;
+    bool sizzleEnd = false;
+    bool playedSteamEnd = false;
  
     // Use this for initialization
     void Start()
@@ -84,7 +86,7 @@ public class PlayMusic3 : MonoBehaviour
     }
     void Sizzle()
     {
-        audioManager.PlayLoop(11);
+       /* audioManager.PlayLoop(11);
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
 
@@ -93,6 +95,37 @@ public class PlayMusic3 : MonoBehaviour
 
             audioManager.SetVolume(11, 0.0f);
         }
+        */
+        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
+        {
+            sizzleStart = false;
+            audioManager.Stop(10);
+        }
+        audioManager.SetVolume(11, 0.0f);
+        audioManager.PlayLoop(11);
+
+
+        if (sizzleStart == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0 )
+        {
+            audioManager.Play(10);
+            sizzleStart = true;
+        }
+
+        if (sizzleStart == true && audioManager.audioSourceArray [10].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
+        {
+            audioManager.SetVolume(11,0.2f);
+        }
+
+
+
+        else if(playedSteamEnd == false && audioManager.audioSourceArray[10].isPlaying == false){
+            audioManager.Play(37);
+            playedSteamEnd = true;
+
+        }
+
+
+
         
 }
     void Chewing()
