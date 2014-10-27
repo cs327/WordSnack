@@ -33,8 +33,15 @@ public class ReceiptGUI : MonoBehaviour
         
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
+
         string char1String = Character.CharacterNameLookup[selectedCharacter1];
         string char2String = Character.CharacterNameLookup[selectedCharacter2];
+
+        
+        if (selectedCharacter1 == null)
+            char1String = "Error";
+        if (selectedCharacter2 == null)
+            char2String = "Error";
         Debug.Log("Char 1 " + char1String);
         Debug.Log("Char 2 " + char2String);
 
