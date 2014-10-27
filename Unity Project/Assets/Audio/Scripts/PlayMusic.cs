@@ -59,6 +59,12 @@ public class PlayMusic : MonoBehaviour {
             audioManager.SetVolume(20, 0.0f);
             audioManager.SetVolume(7, 1.0f);
             audioManager.SetVolume(9, 0.0f);
+
+            //audioManager.Stop(20);
+            //audioManager.Stop(9);
+
+                audioManager.PlayLoop(7);
+
             if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
             {
                 audioManager.Play(1);
