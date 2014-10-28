@@ -32,7 +32,7 @@ public class letterBehaviour : MonoBehaviour {
 		//if not on the stove - make sure the letter is green 
 		//Used because there was a bug when taking multiple letters off the stove
 		//didn't change every color. 
-		if (!onStove) { 
+		if (!onStove && letter != ".") { 
 			thisSprite.sprite = sprites[letterAlphabetOrder];
 		}
 	}

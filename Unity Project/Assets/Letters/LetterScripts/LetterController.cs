@@ -55,8 +55,8 @@ public class LetterController : MonoBehaviour
 		stoveSpots = new Vector3[boardSize];
 		bankSpots = new Vector3[boardSize];
 		for (int i = 0; i < boardSize; i++) {
-			stoveSpots [i] = new Vector3 (i * 1.3f - 4, -1.8f, 0);
-			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.8f, 0);
+			stoveSpots [i] = new Vector3 (i * 1.4f - 5.7f, -1.26f, 0);
+			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 			positionOnBoard [i] = -1;
 		}
         variables.letterGenerationSound = true;
@@ -580,7 +580,7 @@ public class LetterController : MonoBehaviour
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
-			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.65f, Screen.width*0.07f, Screen.width*0.07f), "", style))
+			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.43f, Screen.width*0.07f, Screen.width*0.07f), "", style))
 	        { //shuffles the letters in your hand
 	            shuffleLetters();
 	        }
@@ -619,6 +619,8 @@ public class LetterController : MonoBehaviour
 			{
 				letterScores.Add(letter, 10);
 			}
+			letterScores.Add('.', 0);
+
 		}
 
         //This method makes the word list once

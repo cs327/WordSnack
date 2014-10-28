@@ -37,7 +37,7 @@ public class wordBuildingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		lettersRemaining.text = "Tiles: " + variables.lettersRemaining;
+		lettersRemaining.text = variables.lettersRemaining.ToString();
 		Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 		// if the instructions is enabled 
 		if(PlayerPrefs.GetInt("instructions") == 0){
@@ -53,7 +53,7 @@ public class wordBuildingController : MonoBehaviour {
 		if(!gamePaused){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = endGameButton;
-			if (GUI.Button (new Rect(Screen.width*0.92f, Screen.height*0.65f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
+			if (GUI.Button (new Rect(Screen.width*0.013f, Screen.height*0.315f, Screen.width*0.07f, Screen.width*0.07f), "", style)) {
 				sendVariablestoScoreScreen();
 				Application.LoadLevel("ScoreScreen");
 			}
