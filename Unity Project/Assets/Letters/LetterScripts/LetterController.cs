@@ -22,6 +22,11 @@ public class LetterController : MonoBehaviour
 	public GameObject heatPrefab;
 	public GameObject [] stoveHeat;
     public string letters;
+	public int vowels = 0;
+	public string myLetters;
+	public bool firstHand = true;
+	int safetyCount;
+	int vowelsAddedInCycle = 0;
     public int next;
     public bool[] newArraySpot;
     public int emptyLetterCount = 0;
@@ -42,7 +47,6 @@ public class LetterController : MonoBehaviour
 
 		//connects boardSize variable to the value in the variable controller
 		boardSize = variables.boardSize;
-
 
 		//initialize the lettersOnBoard array as the size of the board, as letterBehaviour. Also creates array for lettersOnStove
 		lettersOnBoard = new letterBehaviour[boardSize];
@@ -68,7 +72,14 @@ public class LetterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+		//waits to count letters until they've been initialized 
+		if (safetyCount > 10) {
+			firstHand = false;
+			myLetters = lettersInHand();
+			vowels = countVowels();
+		} else {
+			safetyCount++;
+		}
         //keep local time in scripts
         timer += Time.deltaTime;
 
@@ -142,180 +153,355 @@ public class LetterController : MonoBehaviour
             if (randLetterChar == '.')
                 emptyLetterCount++;
         }
+		//resets the vowels added in cycle variable
+		vowelsAddedInCycle = 0;
         return letters;
     }
 
     // Takes a random letter "out of the bag"
     char randomLetter()
-    {
-        int currentPos = 0;
-
-        int letter = Random.Range(0, variables.totalLetters);
-        //Each letter decrements it's own number by one when selected and resets the total number of letters.
-        while (variables.totalLetters > 0)
-        {
-            variables.totalLetters = variables.numA + variables.numB + variables.numC + variables.numD + variables.numE + variables.numF +
-                variables.numG + variables.numH + variables.numI + variables.numJ + variables.numK + variables.numL + variables.numM
-                + variables.numN + variables.numO + variables.numP + variables.numQ + variables.numR + variables.numS + variables.numT
-                + variables.numU + variables.numV + variables.numW + variables.numX + variables.numY + variables.numZ;
-
-            if (letter < variables.numE)
-            {
-                variables.numE--;
-                return 'e';
-            }
-            currentPos += variables.numE;
-            if (letter < (currentPos + variables.numA))
-            {
-                variables.numA--;
-                return 'a';
-            }
-            currentPos += variables.numA;
-            if (letter < (currentPos + variables.numI))
-            {
-                variables.numI--;
-                return 'i';
-            }
-            currentPos += variables.numI;
-            if (letter < (currentPos + variables.numO))
-            {
-                variables.numO--;
-                return 'o';
-            }
-            currentPos += variables.numO;
-            if (letter < (currentPos + variables.numN))
-            {
-                variables.numN--;
-                return 'n';
-            }
-            currentPos += variables.numN;
-            if (letter < (currentPos + variables.numR))
-            {
-                variables.numR--;
-                return 'r';
-            }
-            currentPos += variables.numR;
-            if (letter < (currentPos + variables.numT))
-            {
-                variables.numT--;
-                return 't';
-            }
-            currentPos += variables.numT;
-            if (letter < (currentPos + variables.numL))
-            {
-                variables.numL--;
-                return 'l';
-            }
-            currentPos += variables.numL;
-            if (letter < (currentPos + variables.numS))
-            {
-                variables.numS--;
-                return 's';
-            }
-            currentPos += variables.numS;
-            if (letter < (currentPos + variables.numU))
-            {
-                variables.numU--;
-                return 'u';
-            }
-            currentPos += variables.numU;
-            if (letter < (currentPos + variables.numD))
-            {
-                variables.numD--;
-                return 'd';
-            }
-            currentPos += variables.numD;
-            if (letter < (currentPos + variables.numG))
-            {
-                variables.numG--;
-                return 'g';
-            }
-            currentPos += variables.numG;
-            if (letter < (currentPos + variables.numB))
-            {
-                variables.numB--;
-                return 'b';
-            }
-            currentPos += variables.numB;
-            if (letter < (currentPos + variables.numC))
-            {
-                variables.numC--;
-                return 'c';
-            }
-            currentPos += variables.numC;
-            if (letter < (currentPos + variables.numM))
-            {
-                variables.numM--;
-                return 'm';
-            }
-            currentPos += variables.numM;
-            if (letter < (currentPos + variables.numP))
-            {
-                variables.numP--;
-                return 'p';
-            }
-            currentPos += variables.numP;
-            if (letter < (currentPos + variables.numF))
-            {
-                variables.numF--;
-                return 'f';
-            }
-            currentPos += variables.numF;
-            if (letter < (currentPos + variables.numH))
-            {
-                variables.numH--;
-                return 'h';
-            }
-            currentPos += variables.numH;
-            if (letter < (currentPos + variables.numV))
-            {
-                variables.numV--;
-                return 'v';
-            }
-            currentPos += variables.numV;
-            if (letter < (currentPos + variables.numW))
-            {
-                variables.numW--;
-                return 'w';
-            }
-            currentPos += variables.numW;
-            if (letter < (currentPos + variables.numY))
-            {
-                variables.numY--;
-                return 'y';
-            }
-            currentPos += variables.numY;
-            if (letter < (currentPos + variables.numK))
-            {
-                variables.numK--;
-                return 'k';
-            }
-            currentPos += variables.numK;
-            if (letter < (currentPos + variables.numJ))
-            {
-                variables.numJ--;
-                return 'j';
-            }
-            currentPos += variables.numJ;
-            if (letter < (currentPos + variables.numX))
-            {
-                variables.numX--;
-                return 'x';
-            }
-            currentPos += variables.numX;
-            if (letter < (currentPos + variables.numQ))
-            {
-                variables.numQ--;
-                return 'q';
-            }
-            currentPos += variables.numQ;
-            if (letter < (currentPos + variables.numZ))
-            {
-                variables.numZ--;
-                return 'z';
-            }
-        }
-        return '.';
+    {	
+		//updates the variables for total letters and total vowels 
+		variables.totalLetters = variables.numA + variables.numB + variables.numC + variables.numD + variables.numE + variables.numF +
+			variables.numG + variables.numH + variables.numI + variables.numJ + variables.numK + variables.numL + variables.numM
+				+ variables.numN + variables.numO + variables.numP + variables.numQ + variables.numR + variables.numS + variables.numT
+				+ variables.numU + variables.numV + variables.numW + variables.numX + variables.numY + variables.numZ;
+		variables.totalVowels = variables.numA + variables.numE + variables.numI + variables.numO + variables.numU;
+       
+		int currentPos = 0;
+		//if the letter should be from the pool of all letters 
+		if ((vowels >= variables.minNumVowels && vowels <= variables.maxNumVowels) || variables.totalVowels < 3 || firstHand || vowelsAddedInCycle == 2) { 
+			int letter = Random.Range(0, variables.totalLetters);
+	        //Each letter decrements it's own number by one when selected and resets the total number of letters.
+	        while (variables.totalLetters > 0)
+	        {
+	            if (letter < variables.numE)
+	            {
+	                variables.numE--;
+	                return 'e';
+	            }
+	            currentPos += variables.numE;
+	            if (letter < (currentPos + variables.numA))
+	            {
+	                variables.numA--;
+	                return 'a';
+	            }
+	            currentPos += variables.numA;
+	            if (letter < (currentPos + variables.numI))
+	            {
+	                variables.numI--;
+	                return 'i';
+	            }
+	            currentPos += variables.numI;
+	            if (letter < (currentPos + variables.numO))
+	            {
+	                variables.numO--;
+	                return 'o';
+	            }
+	            currentPos += variables.numO;
+	            if (letter < (currentPos + variables.numN))
+	            {
+	                variables.numN--;
+	                return 'n';
+	            }
+	            currentPos += variables.numN;
+	            if (letter < (currentPos + variables.numR))
+	            {
+	                variables.numR--;
+	                return 'r';
+	            }
+	            currentPos += variables.numR;
+	            if (letter < (currentPos + variables.numT))
+	            {
+	                variables.numT--;
+	                return 't';
+	            }
+	            currentPos += variables.numT;
+	            if (letter < (currentPos + variables.numL))
+	            {
+	                variables.numL--;
+	                return 'l';
+	            }
+	            currentPos += variables.numL;
+	            if (letter < (currentPos + variables.numS))
+	            {
+	                variables.numS--;
+	                return 's';
+	            }
+	            currentPos += variables.numS;
+	            if (letter < (currentPos + variables.numU))
+	            {
+	                variables.numU--;
+	                return 'u';
+	            }
+	            currentPos += variables.numU;
+	            if (letter < (currentPos + variables.numD))
+	            {
+	                variables.numD--;
+	                return 'd';
+	            }
+	            currentPos += variables.numD;
+	            if (letter < (currentPos + variables.numG))
+	            {
+	                variables.numG--;
+	                return 'g';
+	            }
+	            currentPos += variables.numG;
+	            if (letter < (currentPos + variables.numB))
+	            {
+	                variables.numB--;
+	                return 'b';
+	            }
+	            currentPos += variables.numB;
+	            if (letter < (currentPos + variables.numC))
+	            {
+	                variables.numC--;
+	                return 'c';
+	            }
+	            currentPos += variables.numC;
+	            if (letter < (currentPos + variables.numM))
+	            {
+	                variables.numM--;
+	                return 'm';
+	            }
+	            currentPos += variables.numM;
+	            if (letter < (currentPos + variables.numP))
+	            {
+	                variables.numP--;
+	                return 'p';
+	            }
+	            currentPos += variables.numP;
+	            if (letter < (currentPos + variables.numF))
+	            {
+	                variables.numF--;
+	                return 'f';
+	            }
+	            currentPos += variables.numF;
+	            if (letter < (currentPos + variables.numH))
+	            {
+	                variables.numH--;
+	                return 'h';
+	            }
+	            currentPos += variables.numH;
+	            if (letter < (currentPos + variables.numV))
+	            {
+	                variables.numV--;
+	                return 'v';
+	            }
+	            currentPos += variables.numV;
+	            if (letter < (currentPos + variables.numW))
+	            {
+	                variables.numW--;
+	                return 'w';
+	            }
+	            currentPos += variables.numW;
+	            if (letter < (currentPos + variables.numY))
+	            {
+	                variables.numY--;
+	                return 'y';
+	            }
+	            currentPos += variables.numY;
+	            if (letter < (currentPos + variables.numK))
+	            {
+	                variables.numK--;
+	                return 'k';
+	            }
+	            currentPos += variables.numK;
+	            if (letter < (currentPos + variables.numJ))
+	            {
+	                variables.numJ--;
+	                return 'j';
+	            }
+	            currentPos += variables.numJ;
+	            if (letter < (currentPos + variables.numX))
+	            {
+	                variables.numX--;
+	                return 'x';
+	            }
+	            currentPos += variables.numX;
+	            if (letter < (currentPos + variables.numQ))
+	            {
+	                variables.numQ--;
+	                return 'q';
+	            }
+	            currentPos += variables.numQ;
+	            if (letter < (currentPos + variables.numZ))
+	            {
+	                variables.numZ--;
+	                return 'z';
+	            }
+	        }
+		} 
+		//if the function should only return a vowel 
+		else if (vowels < variables.minNumVowels) {
+			vowelsAddedInCycle++;
+			int letter = Random.Range(0, variables.totalVowels);
+			while (variables.totalLetters > 0)
+			{
+				if (letter < variables.numE)
+				{
+					variables.numE--;
+					return 'e';
+				}
+				currentPos += variables.numE;
+				if (letter < (currentPos + variables.numA))
+				{
+					variables.numA--;
+					return 'a';
+				}
+				currentPos += variables.numA;
+				if (letter < (currentPos + variables.numI))
+				{
+					variables.numI--;
+					return 'i';
+				}
+				currentPos += variables.numI;
+				if (letter < (currentPos + variables.numO))
+				{
+					variables.numO--;
+					return 'o';
+				}
+				currentPos += variables.numO;
+				if (letter < (currentPos + variables.numU))
+				{
+					variables.numU--;
+					return 'u';
+				}
+			}
+		}
+		//if the function should only return a consonant 
+		else if (vowels > variables.maxNumVowels) {
+			int letter = Random.Range(0, variables.totalLetters- variables.totalVowels);
+			while (variables.totalLetters > 0)
+			{
+				if (letter < (currentPos + variables.numN))
+				{
+					variables.numN--;
+					return 'n';
+				}
+				currentPos += variables.numN;
+				if (letter < (currentPos + variables.numR))
+				{
+					variables.numR--;
+					return 'r';
+				}
+				currentPos += variables.numR;
+				if (letter < (currentPos + variables.numT))
+				{
+					variables.numT--;
+					return 't';
+				}
+				currentPos += variables.numT;
+				if (letter < (currentPos + variables.numL))
+				{
+					variables.numL--;
+					return 'l';
+				}
+				currentPos += variables.numL;
+				if (letter < (currentPos + variables.numS))
+				{
+					variables.numS--;
+					return 's';
+				}
+				currentPos += variables.numS;
+				if (letter < (currentPos + variables.numD))
+				{
+					variables.numD--;
+					return 'd';
+				}
+				currentPos += variables.numD;
+				if (letter < (currentPos + variables.numG))
+				{
+					variables.numG--;
+					return 'g';
+				}
+				currentPos += variables.numG;
+				if (letter < (currentPos + variables.numB))
+				{
+					variables.numB--;
+					return 'b';
+				}
+				currentPos += variables.numB;
+				if (letter < (currentPos + variables.numC))
+				{
+					variables.numC--;
+					return 'c';
+				}
+				currentPos += variables.numC;
+				if (letter < (currentPos + variables.numM))
+				{
+					variables.numM--;
+					return 'm';
+				}
+				currentPos += variables.numM;
+				if (letter < (currentPos + variables.numP))
+				{
+					variables.numP--;
+					return 'p';
+				}
+				currentPos += variables.numP;
+				if (letter < (currentPos + variables.numF))
+				{
+					variables.numF--;
+					return 'f';
+				}
+				currentPos += variables.numF;
+				if (letter < (currentPos + variables.numH))
+				{
+					variables.numH--;
+					return 'h';
+				}
+				currentPos += variables.numH;
+				if (letter < (currentPos + variables.numV))
+				{
+					variables.numV--;
+					return 'v';
+				}
+				currentPos += variables.numV;
+				if (letter < (currentPos + variables.numW))
+				{
+					variables.numW--;
+					return 'w';
+				}
+				currentPos += variables.numW;
+				if (letter < (currentPos + variables.numY))
+				{
+					variables.numY--;
+					return 'y';
+				}
+				currentPos += variables.numY;
+				if (letter < (currentPos + variables.numK))
+				{
+					variables.numK--;
+					return 'k';
+				}
+				currentPos += variables.numK;
+				if (letter < (currentPos + variables.numJ))
+				{
+					variables.numJ--;
+					return 'j';
+				}
+				currentPos += variables.numJ;
+				if (letter < (currentPos + variables.numX))
+				{
+					variables.numX--;
+					return 'x';
+				}
+				currentPos += variables.numX;
+				if (letter < (currentPos + variables.numQ))
+				{
+					variables.numQ--;
+					return 'q';
+				}
+				currentPos += variables.numQ;
+				if (letter < (currentPos + variables.numZ))
+				{
+					variables.numZ--;
+					return 'z';
+				}
+			}
+		}
+		return '.';
     }
 
 
@@ -653,6 +839,30 @@ public class LetterController : MonoBehaviour
         //Debug.Log ("Checking a word in checkForWord!");
         return (wordList.Contains(word.ToUpper()));
     }
-
+	//counts the current number of vowels
+	public int countVowels (){
+		int vowelCount = 0;
+		if (myLetters.Length == 8) {
+			char[] vowels = new char[] {'a', 'e', 'i', 'o', 'u'};
+			for (int i = 0; i < boardSize; i++) {
+				for (int j = 0; j < 5; j++) {
+					if (myLetters[i] == vowels[j]) {
+						vowelCount++;
+					}
+				}
+			}
+		}
+		return vowelCount;
+	}
+	//stores a stringo of the current letters 
+	public string lettersInHand () {
+		string letters = "";
+		for (int i = 0; i < boardSize; i++) {
+			if (lettersOnBoard[i]!= null) {
+				letters += lettersOnBoard[i].letter;
+			}
+		}
+		return letters;
+	}
 }
 

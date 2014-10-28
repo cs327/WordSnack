@@ -72,6 +72,8 @@ public class VariableControl : MonoBehaviour {
 	//tweakable variables: 
 	public int minWordLength;
 	public int maxWordLength;
+	public int minNumVowels;
+	public int maxNumVowels;
 	public int characterSelectNum = 2;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;
