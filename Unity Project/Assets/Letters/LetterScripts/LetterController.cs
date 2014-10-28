@@ -19,6 +19,8 @@ public class LetterController : MonoBehaviour
     public bool needsUpkeep = true;
 	public GameObject steamPrefab;
 	public GameObject [] stoveSteam;
+	public GameObject heatPrefab;
+	public GameObject [] stoveHeat;
     public string letters;
     public int next;
     public bool[] newArraySpot;
@@ -101,10 +103,15 @@ public class LetterController : MonoBehaviour
 
 	void CreateSteam (){
 		stoveSteam = new GameObject[boardSize];
+		stoveHeat = new GameObject[boardSize];
 
 		for( int x = 0; x < boardSize; x++){
 			stoveSteam[x] = Instantiate (steamPrefab,stoveSpots[x] + new Vector3(0,-.5f,-.5f),new Quaternion (0,0,0,0)) as GameObject;
 			stoveSteam[x].transform.eulerAngles = new Vector3 (-90,0,0);
+
+			stoveHeat[x] = Instantiate (heatPrefab, stoveSpots[x] + new Vector3(0,-.5f,-.5f),new Quaternion (0,0,0,0)) as GameObject;
+			//stoveHeat[x].transform.eulerAngles = new Vector3 (-90,0,0);
+			stoveHeat[x].transform.Translate(new Vector3(0.0f, 0.5f, 0.0f));
 		}
 	}
 
@@ -112,9 +119,11 @@ public class LetterController : MonoBehaviour
 		for(int x = 0; x < boardSize; x++){
 			if(x < numLettersOnStove){
 				stoveSteam[x].particleSystem.emissionRate = 30;
+				stoveHeat[x].particleSystem.emissionRate = 10;
 			}
 			else{
 				stoveSteam[x].particleSystem.emissionRate = 0;
+				stoveHeat[x].particleSystem.emissionRate = 0;
 			}
 		}
 	}
