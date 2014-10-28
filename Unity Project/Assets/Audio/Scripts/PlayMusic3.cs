@@ -91,6 +91,7 @@ public class PlayMusic3 : MonoBehaviour
         {
             sizzleStart = false;
             sizzleEnd = false;
+           
             audioManager.Stop(10);
         }
         audioManager.SetVolume(11, 0.0f);
@@ -108,6 +109,7 @@ public class PlayMusic3 : MonoBehaviour
         {
             audioManager.SetVolume(11, 0.2f); //play sizzle loop
             sizzled = true;
+            playedSteamEnd = false;
 
         } else
         {
