@@ -317,15 +317,17 @@ public class LetterController : MonoBehaviour
 	        char[] letterArray = l.ToCharArray();
 	        print(l.ToString());
 	        //run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
-	        for (int i = 0; i < l.Length; i++)
+
+			for (int i = 0; i < l.Length; i++)
 	        {
 	            //			//print(letterArray[i]);
 
-	            lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1], new Quaternion(0, 0, 0, 0)) as letterBehaviour;
+	            lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1] - new Vector3 (0,10,0), new Quaternion(0, 0, 0, 0)) as letterBehaviour;
 	            lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
 	        }
 		}
     }
+
 
 
 
