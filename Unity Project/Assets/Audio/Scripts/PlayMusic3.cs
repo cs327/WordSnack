@@ -20,7 +20,7 @@ public class PlayMusic3 : MonoBehaviour
     bool sizzleStart = false;
     bool sizzleEnd = false;
     bool playedSteamEnd = false;
- 
+    bool sizzled = false;
     // Use this for initialization
     void Start()
     {
@@ -86,19 +86,11 @@ public class PlayMusic3 : MonoBehaviour
     }
     void Sizzle()
     {
-       /* audioManager.PlayLoop(11);
-        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
-        {
-
-            audioManager.SetVolume(11, .1f);
-        } else{
-
-            audioManager.SetVolume(11, 0.0f);
-        }
-        */
+       
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
         {
             sizzleStart = false;
+            sizzleEnd = false;
             audioManager.Stop(10);
         }
         audioManager.SetVolume(11, 0.0f);
@@ -107,19 +99,27 @@ public class PlayMusic3 : MonoBehaviour
 
         if (sizzleStart == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0 )
         {
-            audioManager.Play(10);
+            audioManager.Play(10); // start sound goes 
             sizzleStart = true;
+           
         }
 
         if (sizzleStart == true && audioManager.audioSourceArray [10].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
-            audioManager.SetVolume(11,0.2f);
+            audioManager.SetVolume(11, 0.2f); //play sizzle loop
+            sizzled = true;
+
+        } else
+        {
+            audioManager.SetVolume(11, 0.0f);
         }
 
 
 
-        else if(playedSteamEnd == false && audioManager.audioSourceArray[10].isPlaying == false){
+        if(playedSteamEnd == false && audioManager.audioSourceArray[10].isPlaying == false && sizzled == true && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
+        {
             audioManager.Play(37);
+            Debug.Log("steamend");
             playedSteamEnd = true;
 
         }
