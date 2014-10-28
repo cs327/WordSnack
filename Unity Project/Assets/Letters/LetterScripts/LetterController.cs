@@ -65,7 +65,7 @@ public class LetterController : MonoBehaviour
 			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 			positionOnBoard [i] = -1;
 		}
-        variables.letterGenerationSound = true;
+        GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = true;
         CreateSteam ();
     }
 
@@ -521,6 +521,7 @@ public class LetterController : MonoBehaviour
 	            lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
 	        }
 		}
+
     }
 
 
@@ -564,7 +565,9 @@ public class LetterController : MonoBehaviour
                 string newLetters = returnLetters(needsReplacing);
                 //print (newLetters);
                 CreateLetters(newLetters);
+                
             }
+
             needsUpkeep = false;
         }
     }
