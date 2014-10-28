@@ -393,7 +393,7 @@ public class Character : MonoBehaviour
 
 				// output score text "particle"
 				if (characterNum != 0) {
-					variables.scoreText.text = "+" + wordScore.ToString ();
+					variables.scoreText.text = wordScore.ToString ();
 					Vector3 characterPosition = this.gameObject.transform.position;
 					if (characterPosition.x > 0.0) {
 						characterPosition.x -= 1.0f;
@@ -411,7 +411,7 @@ public class Character : MonoBehaviour
 
 				// output the multiplier
 				if (characterNum != 0 && multiplier != 1) {
-					variables.multiplierText.text = multiplier.ToString() + "x";
+					variables.multiplierText.text = "x" + multiplier.ToString();
 					Vector3 characterPosition = this.gameObject.transform.position;
 					characterPosition.y += 2.5f;
 					characterPosition.z = -3.2f;
