@@ -359,6 +359,8 @@ public class LetterController : MonoBehaviour
                 {
                     needsReplacing++;
                 }
+
+				positionOnBoard[i] = -1;
             }
             if (needsReplacing > 0)
             {
