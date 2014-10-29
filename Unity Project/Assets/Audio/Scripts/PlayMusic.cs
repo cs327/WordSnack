@@ -33,7 +33,7 @@ public class PlayMusic : MonoBehaviour {
     bool playedSteamEnd = false;
     bool sizzled = false;
     bool letterGen;
-	
+
 
 	//public GameObject audioManager;
 	
@@ -41,12 +41,14 @@ public class PlayMusic : MonoBehaviour {
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
 
+        audioManager.SetAllVolume();
 
-        if (Application.loadedLevelName == "CharacterSelectTest")
-        {
-            charSel = selecter.GetComponent<CharacterSelectUI>();
-            variables = GetComponent<VariableControl>();
-        }
+
+            if (Application.loadedLevelName == "CharacterSelectTest")
+            {
+                charSel = selecter.GetComponent<CharacterSelectUI>();
+                variables = GetComponent<VariableControl>();
+            }
         if (Application.loadedLevelName == "StartScreenTest")
         {
             playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
@@ -107,7 +109,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
                 {
-                    audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
+              //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
                     audioManager.PlayLoop(21);
                     audioManager.PlayLoop(15);
                     //  audioManager.FadeOut(17);
@@ -248,8 +250,6 @@ public class PlayMusic : MonoBehaviour {
            
             audioManager.Stop(10);
         }
-        audioManager.SetVolume(11, 0.0f);
-        audioManager.PlayLoop(11);
 
 
         if (sizzleStart == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0 )
@@ -261,13 +261,14 @@ public class PlayMusic : MonoBehaviour {
 
         if (sizzleStart == true && audioManager.audioSourceArray [10].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
         {
-            audioManager.SetVolume(11, 0.2f); //play sizzle loop
+//           audioManager.SetVolume(11, 0.2f); //play sizzle loop
+            audioManager.PlayLoop(11);
             sizzled = true;
             playedSteamEnd = false;
 
         } else
         {
-            audioManager.SetVolume(11, 0.0f);
+            audioManager.Stop(11);
         }
 
 
@@ -338,4 +339,6 @@ public class PlayMusic : MonoBehaviour {
     {
         Invoke("SuccessSound", 0.5f);
     }
+
+
 }

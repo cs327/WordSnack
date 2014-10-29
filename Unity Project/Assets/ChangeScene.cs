@@ -9,6 +9,11 @@ public class ChangeScene : MonoBehaviour
     void Start()
     {
 		PlayerPrefs.DeleteAll ();
+
+        if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
+        {
+            Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
