@@ -101,7 +101,7 @@ public class LetterController : MonoBehaviour
 
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
 		Vector3 saveThis = new Vector3 (0,0,0);
-		for (float i = 0; i < .5f; i += .3f){
+		for (float i = 0; i < .5f; i += .4f){
 			if(i == 0){
 				saveThis = currentSpot;
 			}
@@ -791,13 +791,14 @@ public class LetterController : MonoBehaviour
 				}
 			 }
 			 //checks all letters on stove, and puts them in the correct position
-				if (lettersOnStove[i] != null)
+				if (lettersOnStove[i] != null && lettersOnStove[i].transform.position != stoveSpots[i])
 				{
 					//lettersOnStove[i].transform.position = stoveSpots[i];
+
 					 StartCoroutine(animateLetters(lettersOnStove[i],lettersOnStove[i].transform.position, stoveSpots[i]));
 				}
 				//checks all letters that are on the board but not the stove, and puts them in the correct position
-				if (!lettersOnBoard[i].onStove)
+				if (!lettersOnBoard[i].onStove && lettersOnBoard[i].transform.position != bankSpots[i])
 				{
 					//lettersOnBoard[i].transform.position = bankSpots[i];
 					StartCoroutine(animateLetters(lettersOnBoard[i],lettersOnBoard[i].transform.position, bankSpots[i]));
