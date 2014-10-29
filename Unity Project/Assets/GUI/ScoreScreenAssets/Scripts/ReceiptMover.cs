@@ -29,7 +29,7 @@ public class ReceiptMover : MonoBehaviour
         {
 
 
-            if (pos.y <= 1.2)
+            if (pos.y <= 2.72)
             {
                 if (Time.time < 0.2)
                 {
