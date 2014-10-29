@@ -19,7 +19,7 @@ public class AboutUsMove : MonoBehaviour {
 		}
 
 		pos = gameObject.transform.position;
-		if(pos.y <= 15.5 ){
+		if(pos.y <= 12.8f ){
 			pos.y += Time.deltaTime*speed;
 			transform.position = pos;
 		}
