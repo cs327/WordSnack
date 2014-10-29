@@ -120,7 +120,7 @@ public class PlayMusic : MonoBehaviour {
                 }
             
 
-                if (GameObject.Find("Background").GetComponent<GoBackToMenu>().backToStart == true)
+                if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().backToStart == true)
                 {
                     Debug.Log("it has played");
                     audioManager.Play(1);
