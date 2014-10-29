@@ -65,9 +65,14 @@ public class Tutorial : MonoBehaviour {
 			character2.transform.localPosition = new Vector3(character2.transform.localPosition.x,character2.transform.localPosition.y, 1);
 		}
 		else if(m.renderer.material.mainTexture == instructions[3]){
-
-			//if((Input.mousePosition.x>=Screen.width * 0.32f && Input.mousePosition.x<=(Screen.width * 0.32f+Screen.width * 0.04f)) && (Input.mousePosition.y>=Screen.height * 0.54f && Input.mousePosition.y<=(Screen.height * 0.54f+Screen.height * 0.055f))){
+			// for mouse clicks
 			if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
+				m.renderer.material.mainTexture = instructions[4];
+				transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
+				transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
+			}
+			// for touch 
+			else if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
 				m.renderer.material.mainTexture = instructions[4];
 				transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
 				transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
@@ -77,7 +82,14 @@ public class Tutorial : MonoBehaviour {
 				PlayerPrefs.SetInt("instructions",0);
 			}
 		}else if(m.renderer.material.mainTexture == instructions[4]){
+			// for mouse clicks
 			if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
+				m.renderer.material.mainTexture = instructions[3];
+				transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
+				transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
+			}
+			// for touch
+			else if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
 				m.renderer.material.mainTexture = instructions[3];
 				transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
 				transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
