@@ -1,6 +1,8 @@
-﻿//Hannah
+﻿//Hanna
 using UnityEngine;
 using System.Collections;
+
+
 
 public class AudioManager : MonoBehaviour {
 	
@@ -14,16 +16,21 @@ public class AudioManager : MonoBehaviour {
 	private float timerCountDown = .5f;
 
     private PlayMusic soundScript;
+
+    public float[] volumeArray = new float[60];
+  
 	
 	// Use this for initialization
 
 	void Start () {
 
+
+
         DontDestroyOnLoad(transform.gameObject);
 
 		audioSourceArray = new AudioSource [audioClipArray.Length];
 		
-		for (i=0; i< audioSourceArray.Length; i++) {
+		for (i=0; i < audioSourceArray.Length; i++) {
 			AudioSource newSource = gameObject.AddComponent<AudioSource> (); //add component to obj
 			newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
 			audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
@@ -32,7 +39,8 @@ public class AudioManager : MonoBehaviour {
 	}
 	
 	void Update () {
-	
+
+
 	}
 	
 	public void Play(int i){
@@ -92,5 +100,14 @@ public class AudioManager : MonoBehaviour {
 	public void CrossFade(int i, int y){
 		
 	}
+
+    public void SetAllVolume()
+    {
+        for (int j = 0; j < volumeArray.Length; j++)
+        {
+            SetVolume(j, volumeArray[j]);
+            Debug.Log(volumeArray[j].ToString());
+        }
+    }
 	
 }
