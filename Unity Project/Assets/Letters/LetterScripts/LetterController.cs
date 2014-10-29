@@ -169,8 +169,12 @@ public class LetterController : MonoBehaviour
 		variables.totalVowels = variables.numA + variables.numE + variables.numI + variables.numO + variables.numU;
        
 		int currentPos = 0;
-		//if the letter should be from the pool of all letters 
-		if ((vowels >= variables.minNumVowels && vowels <= variables.maxNumVowels) || variables.totalVowels < 3 || vowelsAddedInCycle == 2) { 
+		//if the letter should be from the pool of all letters
+
+		//Eva edited this.  Something was happening with variables.maxNumVowels and the min 
+		//I will further debug this later - however, hardcoding it like so works
+		//2 and 5 are the numbers in the game design document for min and max vowels.
+		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle == 2) { 
 			int letter = Random.Range(0, variables.totalLetters);
 	        //Each letter decrements it's own number by one when selected and resets the total number of letters.
 	        while (variables.totalLetters > 0)
@@ -510,173 +514,173 @@ public class LetterController : MonoBehaviour
 				}
 			}
 		}
-		else{ 
-			int letter = Random.Range(0, variables.totalLetters);
-			//Each letter decrements it's own number by one when selected and resets the total number of letters.
-			while (variables.totalLetters > 0)
-			{
-				if (letter < variables.numE)
-				{
-					variables.numE--;
-					vowelsAddedInCycle++;
-					return 'e';
-				}
-				currentPos += variables.numE;
-				if (letter < (currentPos + variables.numA))
-				{
-					variables.numA--;
-					vowelsAddedInCycle++;
-					return 'a';
-				}
-				currentPos += variables.numA;
-				if (letter < (currentPos + variables.numI))
-				{
-					variables.numI--;
-					vowelsAddedInCycle++;
-					return 'i';
-				}
-				currentPos += variables.numI;
-				if (letter < (currentPos + variables.numO))
-				{
-					variables.numO--;
-					vowelsAddedInCycle++;
-					return 'o';
-				}
-				currentPos += variables.numO;
-				if (letter < (currentPos + variables.numN))
-				{
-					variables.numN--;
-					return 'n';
-				}
-				currentPos += variables.numN;
-				if (letter < (currentPos + variables.numR))
-				{
-					variables.numR--;
-					return 'r';
-				}
-				currentPos += variables.numR;
-				if (letter < (currentPos + variables.numT))
-				{
-					variables.numT--;
-					return 't';
-				}
-				currentPos += variables.numT;
-				if (letter < (currentPos + variables.numL))
-				{
-					variables.numL--;
-					return 'l';
-				}
-				currentPos += variables.numL;
-				if (letter < (currentPos + variables.numS))
-				{
-					variables.numS--;
-					return 's';
-				}
-				currentPos += variables.numS;
-				if (letter < (currentPos + variables.numU))
-				{
-					variables.numU--;
-					return 'u';
-				}
-				currentPos += variables.numU;
-				if (letter < (currentPos + variables.numD))
-				{
-					variables.numD--;
-					vowelsAddedInCycle++;
-					return 'd';
-				}
-				currentPos += variables.numD;
-				if (letter < (currentPos + variables.numG))
-				{
-					variables.numG--;
-					return 'g';
-				}
-				currentPos += variables.numG;
-				if (letter < (currentPos + variables.numB))
-				{
-					variables.numB--;
-					return 'b';
-				}
-				currentPos += variables.numB;
-				if (letter < (currentPos + variables.numC))
-				{
-					variables.numC--;
-					return 'c';
-				}
-				currentPos += variables.numC;
-				if (letter < (currentPos + variables.numM))
-				{
-					variables.numM--;
-					return 'm';
-				}
-				currentPos += variables.numM;
-				if (letter < (currentPos + variables.numP))
-				{
-					variables.numP--;
-					return 'p';
-				}
-				currentPos += variables.numP;
-				if (letter < (currentPos + variables.numF))
-				{
-					variables.numF--;
-					return 'f';
-				}
-				currentPos += variables.numF;
-				if (letter < (currentPos + variables.numH))
-				{
-					variables.numH--;
-					return 'h';
-				}
-				currentPos += variables.numH;
-				if (letter < (currentPos + variables.numV))
-				{
-					variables.numV--;
-					return 'v';
-				}
-				currentPos += variables.numV;
-				if (letter < (currentPos + variables.numW))
-				{
-					variables.numW--;
-					return 'w';
-				}
-				currentPos += variables.numW;
-				if (letter < (currentPos + variables.numY))
-				{
-					variables.numY--;
-					return 'y';
-				}
-				currentPos += variables.numY;
-				if (letter < (currentPos + variables.numK))
-				{
-					variables.numK--;
-					return 'k';
-				}
-				currentPos += variables.numK;
-				if (letter < (currentPos + variables.numJ))
-				{
-					variables.numJ--;
-					return 'j';
-				}
-				currentPos += variables.numJ;
-				if (letter < (currentPos + variables.numX))
-				{
-					variables.numX--;
-					return 'x';
-				}
-				currentPos += variables.numX;
-				if (letter < (currentPos + variables.numQ))
-				{
-					variables.numQ--;
-					return 'q';
-				}
-				currentPos += variables.numQ;
-				if (letter < (currentPos + variables.numZ))
-				{
-					variables.numZ--;
-					return 'z';
-				}
-			}
-		} 
+//		else{ 
+//			int letter = Random.Range(0, variables.totalLetters);
+//			//Each letter decrements it's own number by one when selected and resets the total number of letters.
+//			while (variables.totalLetters > 0)
+//			{
+//				if (letter < variables.numE)
+//				{
+//					variables.numE--;
+//					vowelsAddedInCycle++;
+//					return 'e';
+//				}
+//				currentPos += variables.numE;
+//				if (letter < (currentPos + variables.numA))
+//				{
+//					variables.numA--;
+//					vowelsAddedInCycle++;
+//					return 'a';
+//				}
+//				currentPos += variables.numA;
+//				if (letter < (currentPos + variables.numI))
+//				{
+//					variables.numI--;
+//					vowelsAddedInCycle++;
+//					return 'i';
+//				}
+//				currentPos += variables.numI;
+//				if (letter < (currentPos + variables.numO))
+//				{
+//					variables.numO--;
+//					vowelsAddedInCycle++;
+//					return 'o';
+//				}
+//				currentPos += variables.numO;
+//				if (letter < (currentPos + variables.numN))
+//				{
+//					variables.numN--;
+//					return 'n';
+//				}
+//				currentPos += variables.numN;
+//				if (letter < (currentPos + variables.numR))
+//				{
+//					variables.numR--;
+//					return 'r';
+//				}
+//				currentPos += variables.numR;
+//				if (letter < (currentPos + variables.numT))
+//				{
+//					variables.numT--;
+//					return 't';
+//				}
+//				currentPos += variables.numT;
+//				if (letter < (currentPos + variables.numL))
+//				{
+//					variables.numL--;
+//					return 'l';
+//				}
+//				currentPos += variables.numL;
+//				if (letter < (currentPos + variables.numS))
+//				{
+//					variables.numS--;
+//					return 's';
+//				}
+//				currentPos += variables.numS;
+//				if (letter < (currentPos + variables.numU))
+//				{
+//					variables.numU--;
+//					return 'u';
+//				}
+//				currentPos += variables.numU;
+//				if (letter < (currentPos + variables.numD))
+//				{
+//					variables.numD--;
+//					vowelsAddedInCycle++;
+//					return 'd';
+//				}
+//				currentPos += variables.numD;
+//				if (letter < (currentPos + variables.numG))
+//				{
+//					variables.numG--;
+//					return 'g';
+//				}
+//				currentPos += variables.numG;
+//				if (letter < (currentPos + variables.numB))
+//				{
+//					variables.numB--;
+//					return 'b';
+//				}
+//				currentPos += variables.numB;
+//				if (letter < (currentPos + variables.numC))
+//				{
+//					variables.numC--;
+//					return 'c';
+//				}
+//				currentPos += variables.numC;
+//				if (letter < (currentPos + variables.numM))
+//				{
+//					variables.numM--;
+//					return 'm';
+//				}
+//				currentPos += variables.numM;
+//				if (letter < (currentPos + variables.numP))
+//				{
+//					variables.numP--;
+//					return 'p';
+//				}
+//				currentPos += variables.numP;
+//				if (letter < (currentPos + variables.numF))
+//				{
+//					variables.numF--;
+//					return 'f';
+//				}
+//				currentPos += variables.numF;
+//				if (letter < (currentPos + variables.numH))
+//				{
+//					variables.numH--;
+//					return 'h';
+//				}
+//				currentPos += variables.numH;
+//				if (letter < (currentPos + variables.numV))
+//				{
+//					variables.numV--;
+//					return 'v';
+//				}
+//				currentPos += variables.numV;
+//				if (letter < (currentPos + variables.numW))
+//				{
+//					variables.numW--;
+//					return 'w';
+//				}
+//				currentPos += variables.numW;
+//				if (letter < (currentPos + variables.numY))
+//				{
+//					variables.numY--;
+//					return 'y';
+//				}
+//				currentPos += variables.numY;
+//				if (letter < (currentPos + variables.numK))
+//				{
+//					variables.numK--;
+//					return 'k';
+//				}
+//				currentPos += variables.numK;
+//				if (letter < (currentPos + variables.numJ))
+//				{
+//					variables.numJ--;
+//					return 'j';
+//				}
+//				currentPos += variables.numJ;
+//				if (letter < (currentPos + variables.numX))
+//				{
+//					variables.numX--;
+//					return 'x';
+//				}
+//				currentPos += variables.numX;
+//				if (letter < (currentPos + variables.numQ))
+//				{
+//					variables.numQ--;
+//					return 'q';
+//				}
+//				currentPos += variables.numQ;
+//				if (letter < (currentPos + variables.numZ))
+//				{
+//					variables.numZ--;
+//					return 'z';
+//				}
+//			}
+//		} 
 		return',';
     }
 
