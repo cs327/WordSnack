@@ -338,7 +338,11 @@ public class LetterController : MonoBehaviour
 	        }
 		} 
 		//if the function should only return a vowel 
-		else if (vowels < variables.minNumVowels && vowelsAddedInCycle < variables.minNumVowels) {
+		//Isaiah, I removed your line of code here && vowelsAddedInCycle < variables.minNumVowels 
+		//it didn't make sense to me that you would always be checking if the vowels added are less than the 
+		//min number of vowels.  This means you would constantly be added vowels even when they aren't needed. 
+		//Works a little better - but not great yet. 
+		else if (vowels < variables.minNumVowels) {
 			vowelsAddedInCycle++;
 			int letter = Random.Range(0, variables.totalVowels);
 			while (variables.totalLetters > 0)
