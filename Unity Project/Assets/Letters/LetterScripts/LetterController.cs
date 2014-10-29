@@ -92,7 +92,8 @@ public class LetterController : MonoBehaviour
 	   replaceBankLetters();
 
 	   //ends the game if the player has run out of letters
-	   if (emptyLetterCount >= 5) {
+		//changed - used to be emptyLetterCount >= 5
+	   if (variables.totalLetters == 0) {
 			gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
 			Application.LoadLevel ("ScoreScreen");
 		}
