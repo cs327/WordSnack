@@ -77,7 +77,13 @@ public class AudioManager : MonoBehaviour {
 
     public void SetVolume(int i, float y){
 
-        audioSourceArray[i].volume = y;
+
+        if (i < audioSourceArray.Length)
+        {
+            audioSourceArray[i].volume = y;
+        }
+        
+        
 
     }
 	
@@ -106,7 +112,6 @@ public class AudioManager : MonoBehaviour {
         for (int j = 0; j < volumeArray.Length; j++)
         {
             SetVolume(j, volumeArray[j]);
-            Debug.Log(volumeArray[j].ToString());
         }
     }
 	
