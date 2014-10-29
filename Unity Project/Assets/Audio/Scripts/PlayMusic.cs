@@ -33,7 +33,9 @@ public class PlayMusic : MonoBehaviour {
     bool playedSteamEnd = false;
     bool sizzled = false;
     bool letterGen;
-	
+
+    public const int X = 24;
+    public float[] volumeArray = new float[X];
 
 	//public GameObject audioManager;
 	
@@ -41,6 +43,12 @@ public class PlayMusic : MonoBehaviour {
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
 
+        foreach (UnityEngine.AudioSource element in audioManager.audioSourceArray)
+        {
+            int j = 1;
+            audioManager.SetVolume(i, volumeArray[j]);
+        }
+        
 
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
