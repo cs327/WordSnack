@@ -174,7 +174,7 @@ public class LetterController : MonoBehaviour
 		//Eva edited this.  Something was happening with variables.maxNumVowels and the min 
 		//I will further debug this later - however, hardcoding it like so works
 		//2 and 5 are the numbers in the game design document for min and max vowels.
-		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle >= 2 || firstHand) { 
+		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle >= 2 || firstHand ) { 
 			int letter = Random.Range(0, variables.totalLetters);
 		   //Each letter decrements it's own number by one when selected and resets the total number of letters.
 		   while (variables.totalLetters > 0)
@@ -509,7 +509,7 @@ public class LetterController : MonoBehaviour
 		//it didn't make sense to me that you would always be checking if the vowels added are less than the 
 		//min number of vowels.  This means you would constantly be added vowels even when they aren't needed. 
 		//Works a little better - but not great yet. 
-		else if (vowels < variables.minNumVowels) {
+		else if (vowels < variables.minNumVowels && variables.totalVowels != 0) {
 			vowelsAddedInCycle++;
 			int letter = Random.Range(0, variables.totalVowels);
 			while (variables.totalLetters > 0)
@@ -551,7 +551,7 @@ public class LetterController : MonoBehaviour
 			}
 		}
 		//if the function should only return a consonant 
-		else if (vowels > variables.maxNumVowels) {
+		else if (vowels > variables.maxNumVowels || variables.totalVowels == 0) {
 			int letter = Random.Range(0, variables.totalLetters- variables.totalVowels);
 			while (variables.totalLetters > 0)
 			{
