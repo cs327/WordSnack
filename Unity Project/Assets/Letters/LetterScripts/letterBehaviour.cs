@@ -12,7 +12,7 @@ public class letterBehaviour : MonoBehaviour {
 	public Sprite [] spriteStove;
 	public int letterAlphabetOrder;
 	LetterController l; 
-
+	public bool isMoving = false;
 	void Start () {
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
 		SetLetter();
