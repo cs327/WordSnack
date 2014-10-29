@@ -65,38 +65,55 @@ public class Tutorial : MonoBehaviour {
 			character2.transform.localPosition = new Vector3(character2.transform.localPosition.x,character2.transform.localPosition.y, 1);
 		}
 		else if(m.renderer.material.mainTexture == instructions[3]){
-			// for mouse clicks
-			if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
-				m.renderer.material.mainTexture = instructions[4];
-				transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
-				transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
-			}
-			// for touch 
-			else if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
-				m.renderer.material.mainTexture = instructions[4];
-				transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
-				transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
+
+			if(Input.touchCount > 0){
+				// for touch
+				if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
+					m.renderer.material.mainTexture = instructions[4];
+					transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
+					transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
+				}else{
+					parentPos.x = -20.0f;
+					transform.parent.transform.position = parentPos;
+					PlayerPrefs.SetInt("instructions",0);
+				}
 			}else{
-				parentPos.x = -20.0f;
-				transform.parent.transform.position = parentPos;
-				PlayerPrefs.SetInt("instructions",0);
+				// for mouse clicks
+				if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
+					m.renderer.material.mainTexture = instructions[4];
+					transform.localPosition = new Vector3(0.07f, 0.429f, 0.41f);
+					transform.localScale = new Vector3(0.76f, 1.21f, 0.67f);
+				}else{
+					parentPos.x = -20.0f;
+					transform.parent.transform.position = parentPos;
+					PlayerPrefs.SetInt("instructions",0);
+				}
 			}
+
 		}else if(m.renderer.material.mainTexture == instructions[4]){
-			// for mouse clicks
-			if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
-				m.renderer.material.mainTexture = instructions[3];
-				transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
-				transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
-			}
-			// for touch
-			else if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
-				m.renderer.material.mainTexture = instructions[3];
-				transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
-				transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
+			if(Input.touchCount > 0){
+				// for touch
+				if(checkBox.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y))){
+					m.renderer.material.mainTexture = instructions[3];
+					transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
+					transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
+				}else{
+					parentPos.x = -20.0f;
+					transform.parent.transform.position = parentPos;
+					PlayerPrefs.SetInt("instructions", 1);
+				}
 			}else{
-				parentPos.x = -20.0f;
-				transform.parent.transform.position = parentPos;
-				PlayerPrefs.SetInt("instructions", 1);
+				// for mouse clicks
+				if(checkBox.Contains(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y))){
+					m.renderer.material.mainTexture = instructions[3];
+					transform.localPosition = new Vector3(0.06f, 0.429f, 0.45f);
+					transform.localScale = new Vector3(0.73f, 1.21f, 0.64f);
+				}else{
+					parentPos.x = -20.0f;
+					transform.parent.transform.position = parentPos;
+					PlayerPrefs.SetInt("instructions", 1);
+				}
+
 			}
 		}
 	}
