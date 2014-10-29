@@ -11,6 +11,11 @@ public class ReceiptMover : MonoBehaviour
     {
         c = GameObject.Find("Main Camera").GetComponent<Camera>();
         winSound = true;
+
+        if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
+        {
+            Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
