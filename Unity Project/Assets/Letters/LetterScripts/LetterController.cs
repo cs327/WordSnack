@@ -106,7 +106,7 @@ public class LetterController : MonoBehaviour
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
 		letterToMove.isMoving = true;
 		//Vector3 saveThis = new Vector3 (0,0,0);
-		int numSteps = 12;
+		int numSteps = 10;
 		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
 		for (int i = 0; i< numSteps; i++){
 			letterToMove.transform.position += stepIncrement;
