@@ -170,39 +170,39 @@ public class LetterController : MonoBehaviour
        
 		int currentPos = 0;
 		//if the letter should be from the pool of all letters 
-		if ((vowels >= variables.minNumVowels && vowels <= variables.maxNumVowels) || variables.totalVowels < 3 || firstHand || vowelsAddedInCycle == 2) { 
+		if ((vowels >= variables.minNumVowels && vowels <= variables.maxNumVowels) || variables.totalVowels < 3 || vowelsAddedInCycle == 2) { 
 			int letter = Random.Range(0, variables.totalLetters);
 	        //Each letter decrements it's own number by one when selected and resets the total number of letters.
 	        while (variables.totalLetters > 0)
 	        {
-	            if (letter < variables.numE)
-	            {
-	                variables.numE--;
-					vowelsAddedInCycle++;
-	                return 'e';
-	            }
-	            currentPos += variables.numE;
-	            if (letter < (currentPos + variables.numA))
-	            {
-	                variables.numA--;
-					vowelsAddedInCycle++;
-	                return 'a';
-	            }
-	            currentPos += variables.numA;
-	            if (letter < (currentPos + variables.numI))
-	            {
-	                variables.numI--;
-					vowelsAddedInCycle++;
-	                return 'i';
-	            }
-	            currentPos += variables.numI;
-	            if (letter < (currentPos + variables.numO))
-	            {
-	                variables.numO--;
-					vowelsAddedInCycle++;
-	                return 'o';
-	            }
-	            currentPos += variables.numO;
+//	            if (letter < variables.numE)
+//	            {
+//	                variables.numE--;
+//					vowelsAddedInCycle++;
+//	                return 'e';
+//	            }
+//	            currentPos += variables.numE;
+//	            if (letter < (currentPos + variables.numA))
+//	            {
+//	                variables.numA--;
+//					vowelsAddedInCycle++;
+//	                return 'a';
+//	            }
+//	            currentPos += variables.numA;
+//	            if (letter < (currentPos + variables.numI))
+//	            {
+//	                variables.numI--;
+//					vowelsAddedInCycle++;
+//	                return 'i';
+//	            }
+//	            currentPos += variables.numI;
+//	            if (letter < (currentPos + variables.numO))
+//	            {
+//	                variables.numO--;
+//					vowelsAddedInCycle++;
+//	                return 'o';
+//	            }
+//	            currentPos += variables.numO;
 	            if (letter < (currentPos + variables.numN))
 	            {
 	                variables.numN--;
@@ -233,12 +233,12 @@ public class LetterController : MonoBehaviour
 	                return 's';
 	            }
 	            currentPos += variables.numS;
-	            if (letter < (currentPos + variables.numU))
-	            {
-	                variables.numU--;
-	                return 'u';
-	            }
-	            currentPos += variables.numU;
+//	            if (letter < (currentPos + variables.numU))
+//	            {
+//	                variables.numU--;
+//	                return 'u';
+//	            }
+//	            currentPos += variables.numU;
 	            if (letter < (currentPos + variables.numD))
 	            {
 	                variables.numD--;
