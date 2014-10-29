@@ -14,9 +14,6 @@ public class AudioManager : MonoBehaviour {
 	private float timerCountDown = .5f;
 
     private PlayMusic soundScript;
-    //private PlayMusic2 soundScript2;
-    private PlayMusic3 soundScript3;
-
 	
 	// Use this for initialization
 
@@ -31,28 +28,11 @@ public class AudioManager : MonoBehaviour {
 			newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
 			audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
             soundScript = GetComponent<PlayMusic>();
-          //  soundScript2 = GetComponent<PlayMusic2>();
-            soundScript3 = GetComponent<PlayMusic3>();
 		}
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        //if ((Application.loadedLevelName == "SplashScreen") || (Application.loadedLevelName == "ScoreScreen") || (Application.loadedLevelName == "StartScreenTest"))
-        //{
-            
-        //    soundScript.enabled = true;
-        // //   soundScript2.enabled = false;
-        //    soundScript3.enabled = false;
-        //    Stop(9);
-        //}
-        //else if (Application.loadedLevelName == "WordMaking")
-        //{
-        //    soundScript.enabled = false;
-        //   // soundScript2.enabled = false;
-        //    soundScript3.enabled = true;
-        //}
-		
+	
 	}
 	
 	public void Play(int i){
