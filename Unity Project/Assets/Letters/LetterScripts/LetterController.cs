@@ -37,6 +37,7 @@ public class LetterController : MonoBehaviour
 	public bool gamePaused;
 	public GameObject gameController;
 	public bool needsReordering = true;
+    public int countToEndGame;
 
 
 	// Use this for initialization
@@ -93,11 +94,13 @@ public class LetterController : MonoBehaviour
 
 	   //ends the game if the player has run out of letters
 		//changed - used to be emptyLetterCount >= 5
-	   if (variables.totalLetters == 0) {
+	   if ((variables.totalLetters == 0) && (countToEndGame >= 7)) {
 			gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
 			Application.LoadLevel ("ScoreScreen");
 		}
 		TurnOnOffSteam();
+        countToEndGame = CountEmptyLetters(myLetters);
+        
 	}
 
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
@@ -1050,5 +1053,17 @@ public class LetterController : MonoBehaviour
 		}
 		return letters;
 	}
+    int CountEmptyLetters(string myLetters)
+    {
+        int count = 0;
+        foreach (char element in myLetters.ToCharArray())
+        {
+            if ((element == ',') || (element == '.'))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 }
 
