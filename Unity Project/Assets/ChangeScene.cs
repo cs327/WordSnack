@@ -4,16 +4,16 @@ using System.Collections;
 public class ChangeScene : MonoBehaviour
 {
 
-    public string versionNum = "version 0.0.6";
+    public string versionNum;
     // Use this for initialization
     void Start()
     {
+		PlayerPrefs.DeleteAll ();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Time.time > 3)
         {
             if (Application.loadedLevelName == "SplashScreen")

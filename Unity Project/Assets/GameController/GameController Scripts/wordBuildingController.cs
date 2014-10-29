@@ -12,14 +12,11 @@ public class wordBuildingController : MonoBehaviour {
 	public GameObject character2;
 	public GameObject trashCharacter;
 	public bool gamePaused;
-	public GameObject instructions;
-	public GameObject instructionsClose;
+	public GameObject tutorial;
+	//public GameObject instructionsClose;
 	public TextMesh lettersRemaining;
 	// Use this for initialization
 	void Start () {
-
-		PlayerPrefs.SetInt("Instructions",0);
-
 		variables = variableController.GetComponent<VariableControl>();
 		character1Num = PlayerPrefs.GetInt("Character 1");
 		character2Num = PlayerPrefs.GetInt("Character 2");
@@ -31,8 +28,9 @@ public class wordBuildingController : MonoBehaviour {
 		character1.GetComponent<Character> ().characterNum = character1Num;
 		character2.GetComponent<Character> ().characterNum = character2Num;
 
-		instructions = GameObject.Find ("instructionsBackground");
-		instructionsClose = GameObject.Find ("close");
+		PlayerPrefs.SetInt("Instructions",0);
+		tutorial = GameObject.Find ("Tutorial");
+		//instructionsClose = GameObject.Find ("close");
 	}
 	
 	// Update is called once per frame
@@ -41,11 +39,11 @@ public class wordBuildingController : MonoBehaviour {
 		Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 		// if the instructions is enabled 
 		if(PlayerPrefs.GetInt("instructions") == 0){
-			instructions.SetActive (true);
-			instructionsClose.SetActive(true);
+			tutorial.SetActive (true);
+			//instructionsClose.SetActive(true);
 		}else{
-			instructions.SetActive (false);
-			instructionsClose.SetActive(false);
+			tutorial.SetActive (false);
+			//instructionsClose.SetActive(false);
 		}
 	}
 
