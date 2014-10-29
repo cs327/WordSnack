@@ -14,7 +14,9 @@ public class AboutButtonHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Application.loadedLevelName == "About") {
+			mAbout.renderer.material.mainTexture = aboutUnselected;
+		}
 	}
 	
 	void OnMouseDown(){
