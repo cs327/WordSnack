@@ -174,7 +174,7 @@ public class LetterController : MonoBehaviour
 		//Eva edited this.  Something was happening with variables.maxNumVowels and the min 
 		//I will further debug this later - however, hardcoding it like so works
 		//2 and 5 are the numbers in the game design document for min and max vowels.
-		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle == 2) { 
+		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle == 2 || firstHand) { 
 			int letter = Random.Range(0, variables.totalLetters);
 	        //Each letter decrements it's own number by one when selected and resets the total number of letters.
 	        while (variables.totalLetters > 0)
@@ -246,8 +246,7 @@ public class LetterController : MonoBehaviour
 	            if (letter < (currentPos + variables.numD))
 	            {
 	                variables.numD--;
-					vowelsAddedInCycle++;
-	                return 'd';
+				    return 'd';
 	            }
 	            currentPos += variables.numD;
 	            if (letter < (currentPos + variables.numG))
