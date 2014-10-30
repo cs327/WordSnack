@@ -266,7 +266,7 @@ public class Character : MonoBehaviour
 				characterTastes.Add(variables.TastesForSpike);
 				characterTastes.Add(variables.TastesForStella);
 				characterTastes.Add(variables.TastesForMeghan);
-				characterTastes.Add (variables.TastesForTrash);
+				characterTastes.Add(variables.TastesForTrash);
 				//now we add an arbitrary number of tastes
 				//also we set up the text to be displayed for the character's tastes
 				//blank it out first so that the user cannot mess with it.
