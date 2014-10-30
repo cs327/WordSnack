@@ -103,25 +103,31 @@ public class LetterController : MonoBehaviour
         
 	}
 
+
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
 		letterToMove.isMoving = true;
-		//Vector3 saveThis = new Vector3 (0,0,0);
-		int numSteps = 10;
-		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
-		for (int i = 0; i< numSteps; i++){
-			letterToMove.transform.position += stepIncrement;
-			yield return null;
-		}
-		letterToMove.isMoving = false;
-
-//		for (float i = 0; i < .6f; i += .1f){
-//			if(i == 0){
-//				saveThis = currentSpot;
-//			}
-//			letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i);
+//		int numSteps = 10;
+//		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
+//		for (int i = 0; i< numSteps; i++){
+//			letterToMove.transform.position += stepIncrement;
 //			yield return null;
 //		}
-//		letterToMove.isMoving = false;
+
+//		for( float i = 0f; i < 1; i += .15f){
+//			letterToMove.transform.position = Vector3.Slerp(currentSpot, moveToHere, i);
+//			yield return null;
+//		}
+		Vector3 velocity = new Vector3(0,0,0);
+		int dontCrash = 0;
+		//for( float i = 0f; i < 1; i += .15f){
+		while(letterToMove.transform.position != moveToHere && dontCrash<100){
+			dontCrash++;
+			letterToMove.transform.position = Vector3.SmoothDamp(letterToMove.transform.position, moveToHere, ref velocity, .05f);
+			yield return null;	
+		}
+		//}
+		letterToMove.isMoving = false;
+
 	 }
 	
 	 
