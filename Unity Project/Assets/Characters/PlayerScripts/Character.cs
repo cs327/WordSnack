@@ -146,7 +146,7 @@ public class Character : MonoBehaviour
 	public void AddTaste(TasteCollection.Taste taste)
 	{
 		if(!myTastes.Contains(taste))
-			myTastes.Add(taste);
+			myTastes.Add (taste);
 	}
 
 	// Add a list of tastes to the collection
@@ -154,7 +154,7 @@ public class Character : MonoBehaviour
 	{
 		foreach (TasteCollection.Taste t in tastes)
 			if (!myTastes.Contains(t))
-				myTastes.Add(t);
+				myTastes.Add (t);
 	}
 	
 	// Remove a single taste
@@ -216,7 +216,7 @@ public class Character : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		 //get the same variables everyone else is using
+		//get the same variables everyone else is using
 		if (Application.loadedLevelName != "StartScreenTest") {
 
 			selectScript = gameObject.GetComponent<SelectScript>();
@@ -260,13 +260,13 @@ public class Character : MonoBehaviour
 				//First make a generic list of the character taste arrays so that I can
 				//easily access my tastes with my character number
 				List<int[]> characterTastes = new List<int[]>();
-				characterTastes.Add(new int[] { 10 }); //The trash character, ID 0, has one taste, taste 10
-				characterTastes.Add(variables.TastesForFred);
-				characterTastes.Add(variables.TastesForKelvin);
-				characterTastes.Add(variables.TastesForSpike);
-				characterTastes.Add(variables.TastesForStella);
-				characterTastes.Add(variables.TastesForMeghan);
-				characterTastes.Add(variables.TastesForTrash);
+				characterTastes.Add (new int[] { 10 }); //The trash character, ID 0, has one taste, taste 10
+				characterTastes.Add (variables.TastesForFred);
+				characterTastes.Add (variables.TastesForKelvin);
+				characterTastes.Add (variables.TastesForSpike);
+				characterTastes.Add (variables.TastesForStella);
+				characterTastes.Add (variables.TastesForMeghan);
+				characterTastes.Add (variables.TastesForTrash);
 				//now we add an arbitrary number of tastes
 				//also we set up the text to be displayed for the character's tastes
 				//blank it out first so that the user cannot mess with it.
@@ -389,7 +389,7 @@ public class Character : MonoBehaviour
 				}
 				Debug.Log(word + " " + letterScore.ToString() + " " + multiplier.ToString());
 
-				wordsFedToMe.Add(word + " " + letterScore + " " + multiplier);
+				wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 
 				// output score text "particle"
 				if (characterNum != 0) {
