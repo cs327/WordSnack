@@ -45,7 +45,7 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Char 1 " + char1String);
         Debug.Log("Char 2 " + char2String);
 
-
+        ScoreManager.ClearHighScores();
         ScoreManager.AddHighScore(char2String, char1String, 2000);
         ScoreManager.AddHighScore(char2String, char1String, 6000);
         ScoreManager.AddHighScore(char2String, char1String, 7000);

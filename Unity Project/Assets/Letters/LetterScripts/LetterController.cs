@@ -105,6 +105,7 @@ public class LetterController : MonoBehaviour
 
 
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
+
 		letterToMove.isMoving = true;
 //		int numSteps = 10;
 //		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
@@ -120,7 +121,9 @@ public class LetterController : MonoBehaviour
 		Vector3 velocity = new Vector3(0,0,0);
 		int dontCrash = 0;
 		//for( float i = 0f; i < 1; i += .15f){
-		while(letterToMove.transform.position != moveToHere && dontCrash<100){
+        if (letterToMove == null)
+            Debug.Log("LetterToMove is null and shouldn't be!! Error!");
+		while(letterToMove.transform.position != moveToHere && dontCrash < 100){
 			dontCrash++;
 			letterToMove.transform.position = Vector3.SmoothDamp(letterToMove.transform.position, moveToHere, ref velocity, .05f);
 			yield return null;	
