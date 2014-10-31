@@ -3,9 +3,78 @@ using System.Collections;
 
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
+	public int boardSize = 8;
+	public Vector3 [] characterTasteSpots;
+
+
+	//letter tuning variables
+	public int numA = 9;
+	public int numB = 2;
+	public int numC = 2;
+	public int numD = 4;
+	public int numE = 12;
+	public int numF = 2;
+	public int numG = 3;
+	public int numH = 2;
+	public int numI = 9;
+	public int numJ = 1;
+	public int numK = 1;
+	public int numL = 4;
+	public int numM = 2;
+	public int numN = 6;
+	public int numO = 8;
+	public int numP = 2;
+	public int numQ = 1;
+	public int numR = 6;
+	public int numS = 4;
+	public int numT = 6;
+	public int numU = 4;
+	public int numV = 2;
+	public int numW = 2;
+	public int numX = 1;
+	public int numY = 2;
+	public int numZ = 1;
+	public int totalLetters,totalVowels;
+
+	//tweakable taste multipliers
+	public float threeLettersMult;
+	public float fiveOrLongerMult;
+	public float uncommonLettersMult;
+	public float endsWithVowelMult;
+	public float twoOrMoreVowelsMult;
+	public float twoOrMoreSameMult;
+	public float startsWithVowelMult;
+	public float startsAndEndsWithSameMult;
+	public float fourLettersMult;
+	public float equalVowelsAndConsonantsMult;
+	public float trashCollectionMult;
+
+	//tweakable character tastes
+	public int[] TastesForTrash;
+	public int[] TastesForMeghan;
+	public int[] TastesForStella;
+	public int[] TastesForKelvin;
+	public int[] TastesForFred;
+	public int[] TastesForSpike;
+
+	//Sound related variables
+	public bool bonus = false;
+	public bool notWord = false;
+	public bool hungry = false;
+	public bool chewing = false;
+	public int happySound;
+	public int sadSound;
+	public int hungrySound;
+	public int chewingSound;
+	public bool shuffleSound;
+	public bool letterGenerationSound = false;
 
 	//tweakable variables: 
-	public int characterSelectNum = 3;
+	public int minWordLength;
+	public int maxWordLength;
+	public int minNumVowels = 1;
+	public int maxNumVowels = 3;
+	public int characterSelectNum = 2;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;
 	public int maxHungerTime = 15;
@@ -15,57 +84,83 @@ public class VariableControl : MonoBehaviour {
 	//character variables 
 	public Vector3 [] phase2CharacterPositions;
 	public GameObject [] selectedCharacters;
+	public int [] selectedCharacterNums; 
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
+	public Vector3 [] phase1SelectedCharPositions;
 
-	//gamesate variables
+	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
+
+	//only updates when the game is over 
+	//all of them used on the receipt 
+	public int totalLetterScore = 0;
+	public int totalMultiplierScore = 0;
+	public int trashedLetters = 0;
+	public int trashedLetterScore = 0;
+
 	public float gameTimer;
 	public bool timeToChangeGameState;
 	public bool timeToEndGame;
 	public bool wordSelected;
+	public int mostRecentWordScore;
+	public int mostRecentBonus;
+	public int mostRecentLetterScore;
+	public int lettersRemaining; 
+	//Saving High score variables
+	//The number of scores to save, at most
+	public int scoreListSize = 10;
 
-    //Mike - vector to store the words fed to the characters throughout the game.
-    public string[] fedWords;
+	// score text "particles" (really textmeshes)
+	public TextMesh scoreText;
+	public TextMesh outlineText;
+	public TextMesh multiplierText;
 
 	// Use this for initialization
 	void Awake() {
-		//preserves object between loads 
-		DontDestroyOnLoad(transform.gameObject);
+		phase2CharacterPositions = new Vector3[characterSelectNum];
+		phase1SelectedCharPositions = new Vector3[characterSelectNum];
+		characterTasteSpots = new Vector3[characterSelectNum];
+
+		//establishes the selected characters positions for phase 1
+		phase1SelectedCharPositions[0] = new Vector3(-3.7f,-2.81f,0);
+		phase1SelectedCharPositions[1] = new Vector3(3.7f,-2.81f,0);
+
+		//establishes the character position for phase 2
+		phase2CharacterPositions[0] = new Vector3(-3.5f, 0.5f, 1);
+		phase2CharacterPositions[1] = new Vector3(3.8f, 0.5f, 1);
+
+		//sets where the character tastes should be put for wordbuilding phase
+		characterTasteSpots[0] = new Vector3 (-2.0f,1.25f,-1f);
+		characterTasteSpots[1] = new Vector3 (-0.2f,1.9f,-1f);
 	}
 
 	void Start () {
+
+		//sets totals for tuning variables of letters
+		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
+		totalVowels = numA + numE + numI + numO + numU;
+
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
-		phase2CharacterPositions = new Vector3[characterSelectNum];
-
-		//establishes the character position for phase 2
-		phase2CharacterPositions[0] = new Vector3(-5, 0, 0);
-		phase2CharacterPositions[1] = new Vector3(0, -2.5F, 0);
-		phase2CharacterPositions[2] = new Vector3(5, 0, 0);
+		selectedCharacterNums = new int[characterSelectNum]; 
+		lettersRemaining = totalLetters;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//sets the selectNum back to lowest unclaimed position in the array
-		setSelectNum();
+//		currentCharacterSelectNum = gameObject.transform.childCount;
+		if (gameObject.transform.childCount < 2) {
 
+		}
 		//checks if all three characters are selected 
-		if (Application.loadedLevelName == "Phase1" && characterSelected[0] && characterSelected[1] && characterSelected[2]) {
+		if (Application.loadedLevelName == "CharacterSelectTest" && currentCharacterSelectNum == 2) {
 			//triggers the load of "Phase2" if conditions are met
 			timeToChangeGameState = true;
-		}
-	}
-
-	//sets the selectNum (current target in the arrays) to the lowest unclaimed value
-	void setSelectNum () { 
-		if (characterSelected[0] == false) {
-			currentCharacterSelectNum = 0;
-		} else if (characterSelected[1] == false) {
-			currentCharacterSelectNum = 1;
-		} else if (characterSelected[2] == false) {
-			currentCharacterSelectNum = 2;
+		} else {
+			timeToChangeGameState = false;
 		}
 	}
 }

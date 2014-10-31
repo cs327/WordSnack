@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 2ae2092501d1048dc9eee5955de11810
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - letterControl: {instanceID: 0}
+  - letterGenerator: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

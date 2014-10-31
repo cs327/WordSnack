@@ -15,22 +15,16 @@ public class GameStateController : MonoBehaviour {
 	void Start () {
 		//establishes script reference
 		variables = gameObject.GetComponent<VariableControl>();
+
+		//automatically sets the iPhone rotation 
+		Screen.autorotateToLandscapeLeft = true;
+		Screen.orientation = ScreenOrientation.AutoRotation;
 	}	
 	
 	// Update is called once per frame
 	void Update () {
-		//changes to "Phase2 when all the characters are selected
-		if (variables.timeToChangeGameState) {
-			Application.LoadLevel("Phase2");
-			//moves the characters into their appropriate positions 
-			for (int i = 0; i < variables.characterSelectNum; i++) {
-				variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
-			}
-			variables.timeToChangeGameState = false;
-		}
-
 		//counts up the game timer which displays onscreen 
-		if (stopTiming == false && Application.loadedLevelName == "Phase2") {
+		if (stopTiming == false && Application.loadedLevelName == "WordMaking") {
 			variables.gameTimer += Time.deltaTime;
 		} else if (stopTiming && variables.gameTimer > 0) {
 			variables.gameTimer = 0;
@@ -39,7 +33,7 @@ public class GameStateController : MonoBehaviour {
 		//checks whether all the characters are currently in the "IMPATIENT" state 
 		int trueCount = 0;
 		for (int i = 0; i < variables.selectedCharacters.Length; i++) { 
-			if (Application.loadedLevelName == "Phase2" && isInactive (variables.selectedCharacters[i])) {
+			if (Application.loadedLevelName == "WordMaking" && isInactive (variables.selectedCharacters[i])) {
 				trueCount++;
 			}
 		}
@@ -69,4 +63,15 @@ public class GameStateController : MonoBehaviour {
 			return false;
 		}
 	}
+
+	public void loadMainGame () {
+		Application.LoadLevel("WordMaking");
+		//moves the characters into their appropriate positions 
+		for (int i = 0; i < variables.characterSelectNum; i++) {
+			variables.selectedCharacters[i].transform.position = variables.phase2CharacterPositions[i];
+		}
+		variables.timeToChangeGameState = false;
+	}
+
+	//THIS IS A TEST!!!!
 }
