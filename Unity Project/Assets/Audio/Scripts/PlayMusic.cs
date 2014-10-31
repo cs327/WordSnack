@@ -46,7 +46,7 @@ public class PlayMusic : MonoBehaviour {
 
             if (Application.loadedLevelName == "CharacterSelectTest")
             {
-                charSel = selecter.GetComponent<CharacterSelectUI>();
+                //charSel = selecter.GetComponent<CharacterSelectUI>();
                 variables = GetComponent<VariableControl>();
             }
         if (Application.loadedLevelName == "StartScreenTest")

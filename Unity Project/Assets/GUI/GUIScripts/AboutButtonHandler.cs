@@ -14,7 +14,7 @@ public class AboutButtonHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Application.loadedLevelName == "About") {
+		if (Application.loadedLevelName != "StartScreenTest") {
 			mAbout.renderer.material.mainTexture = aboutUnselected;
 		}
 	}

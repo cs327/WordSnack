@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// 
+
 public class SelectScript : MonoBehaviour {
 	//script reference 
 	public GameObject variableController;
@@ -24,7 +24,7 @@ public class SelectScript : MonoBehaviour {
 	// variables added for displaying new UI - Ning
 	SpriteRenderer chooseTwoSprite;
 	SpriteRenderer chooseOneMoreSprite;
-    // A reference to the 
+	// A reference to the 
 
 	public bool newSelect;
 	Camera camera;
@@ -57,8 +57,8 @@ public class SelectScript : MonoBehaviour {
 			}
 			//deselects character when "Phase2" is loaded 
 			if (Application.loadedLevelName == "WordMaking" && selected) {
-					selected = false;
-					gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
+				selected = false;
+				gameObject.transform.localScale = new Vector3 (0.5F, 0.5F, 0.5F);
 			}
 		}
 		

@@ -57,17 +57,17 @@ public class VariableControl : MonoBehaviour {
 	public int[] TastesForFred;
 	public int[] TastesForSpike;
 
-    //Sound related variables
-    public bool bonus = false;
-    public bool notWord = false;
-    public bool hungry = false;
-    public bool chewing = false;
-    public int happySound;
-    public int sadSound;
-    public int hungrySound;
-    public int chewingSound;
-    public bool shuffleSound;
-    public bool letterGenerationSound = false;
+	//Sound related variables
+	public bool bonus = false;
+	public bool notWord = false;
+	public bool hungry = false;
+	public bool chewing = false;
+	public int happySound;
+	public int sadSound;
+	public int hungrySound;
+	public int chewingSound;
+	public bool shuffleSound;
+	public bool letterGenerationSound = false;
 
 	//tweakable variables: 
 	public int minWordLength;
@@ -107,9 +107,9 @@ public class VariableControl : MonoBehaviour {
 	public int mostRecentBonus;
 	public int mostRecentLetterScore;
 	public int lettersRemaining; 
-    //Saving High score variables
-    //The number of scores to save, at most
-    public int scoreListSize = 10;
+	//Saving High score variables
+	//The number of scores to save, at most
+	public int scoreListSize = 10;
 
 	// score text "particles" (really textmeshes)
 	public TextMesh scoreText;

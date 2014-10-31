@@ -37,7 +37,7 @@ public class LetterController : MonoBehaviour
 	public bool gamePaused;
 	public GameObject gameController;
 	public bool needsReordering = true;
-    public int countToEndGame;
+	public int countToEndGame;
 
 
 	// Use this for initialization
@@ -66,8 +66,8 @@ public class LetterController : MonoBehaviour
 			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 			positionOnBoard [i] = -1;
 		}
-	   GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = true;
-	   CreateSteam ();
+		GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = true;
+		CreateSteam ();
 	}
 
 	// Update is called once per frame
@@ -81,47 +81,53 @@ public class LetterController : MonoBehaviour
 		} else {
 			safetyCount++;
 		}
-	   //keep local time in scripts
-	   timer += Time.deltaTime;
+		//keep local time in scripts
+		timer += Time.deltaTime;
 
-	   //Calls MoveToFromStoveArray, which in turn calls three functions related to making sure any letters clicked either go to the stove,
-	   //are removed from stove (if they are clicked off the stove)
-	   moveToAndFromStove();
+		//Calls MoveToFromStoveArray, which in turn calls three functions related to making sure any letters clicked either go to the stove,
+		//are removed from stove (if they are clicked off the stove)
+		moveToAndFromStove();
 
-	   //if there are fewer than boardSize letters (basically if a word has been sent to a character) refills the letter banks
-	   //to the adequate size
-	   replaceBankLetters();
+		//if there are fewer than boardSize letters (basically if a word has been sent to a character) refills the letter banks
+		//to the adequate size
+		replaceBankLetters();
 
-	   //ends the game if the player has run out of letters
+		//ends the game if the player has run out of letters
 		//changed - used to be emptyLetterCount >= 5
-	   if ((variables.totalLetters == 0) && (countToEndGame >= 7)) {
+		if ((variables.totalLetters == 0) && (countToEndGame >= 7)) {
 			gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
 			Application.LoadLevel ("ScoreScreen");
 		}
 		TurnOnOffSteam();
-        countToEndGame = CountEmptyLetters(myLetters);
-        
+		  countToEndGame = CountEmptyLetters(myLetters);
+		  
 	}
+
 
 	 IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere){
 		letterToMove.isMoving = true;
-		//Vector3 saveThis = new Vector3 (0,0,0);
-		int numSteps = 10;
-		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
-		for (int i = 0; i< numSteps; i++){
-			letterToMove.transform.position += stepIncrement;
-			yield return null;
-		}
-		letterToMove.isMoving = false;
-
-//		for (float i = 0; i < .6f; i += .1f){
-//			if(i == 0){
-//				saveThis = currentSpot;
-//			}
-//			letterToMove.transform.position = Vector3.Lerp(saveThis, moveToHere, i);
+//		int numSteps = 10;
+//		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
+//		for (int i = 0; i< numSteps; i++){
+//			letterToMove.transform.position += stepIncrement;
 //			yield return null;
 //		}
-//		letterToMove.isMoving = false;
+
+//		for( float i = 0f; i < 1; i += .15f){
+//			letterToMove.transform.position = Vector3.Slerp(currentSpot, moveToHere, i);
+//			yield return null;
+//		}
+		Vector3 velocity = new Vector3(0,0,0);
+		int dontCrash = 0;
+		//for( float i = 0f; i < 1; i += .15f){
+		while(letterToMove.transform.position != moveToHere && dontCrash<100){
+			dontCrash++;
+			letterToMove.transform.position = Vector3.SmoothDamp(letterToMove.transform.position, moveToHere, ref velocity, .05f);
+			yield return null;	
+		}
+		//}
+		letterToMove.isMoving = false;
+
 	 }
 	
 	 
@@ -156,20 +162,20 @@ public class LetterController : MonoBehaviour
 
 	string returnLetters(int n)
 	{
-	   //Random r = new Random();
-	   //for the number of letters asked for, return a string with that many random letters in it
-	   letters = randomLetter().ToString();
-	   char randLetterChar;
-	   for (int i = 1; i < n; i++)
-	   {
+		//Random r = new Random();
+		//for the number of letters asked for, return a string with that many random letters in it
+		letters = randomLetter().ToString();
+		char randLetterChar;
+		for (int i = 1; i < n; i++)
+		{
 		  randLetterChar = randomLetter();
 		  letters += randLetterChar;
 		  if (randLetterChar == '.')
 			 emptyLetterCount++;
-	   }
+		}
 		//resets the vowels added in cycle variable
 		vowelsAddedInCycle = 0;
-	   return letters;
+		return letters;
 	}
 
 	// Takes a random letter "out of the bag"
@@ -190,9 +196,9 @@ public class LetterController : MonoBehaviour
 		//2 and 5 are the numbers in the game design document for min and max vowels.
 		if ((vowels >= 2 && vowels <= 5) || vowelsAddedInCycle >= 2 || firstHand ) { 
 			int letter = Random.Range(0, variables.totalLetters);
-		   //Each letter decrements it's own number by one when selected and resets the total number of letters.
-		   while (variables.totalLetters > 0)
-		   {
+			//Each letter decrements it's own number by one when selected and resets the total number of letters.
+			while (variables.totalLetters > 0)
+			{
 				if (letter < variables.numE)
 				{
 					variables.numE--;
@@ -353,170 +359,170 @@ public class LetterController : MonoBehaviour
 				 variables.numZ--;
 				 return 'z';
 			  }
-		   }
-	        //Each letter decrements it's own number by one when selected and resets the total number of letters.
-	        while (variables.totalLetters > 0)
-	        {
-	            if (letter < variables.numE)
-	            {
-	                variables.numE--;
+			}
+			  //Each letter decrements it's own number by one when selected and resets the total number of letters.
+			  while (variables.totalLetters > 0)
+			  {
+					if (letter < variables.numE)
+					{
+						 variables.numE--;
 					vowelsAddedInCycle++;
-	                return 'e';
-	            }
-	            currentPos += variables.numE;
-	            if (letter < (currentPos + variables.numA))
-	            {
-	                variables.numA--;
+						 return 'e';
+					}
+					currentPos += variables.numE;
+					if (letter < (currentPos + variables.numA))
+					{
+						 variables.numA--;
 					vowelsAddedInCycle++;
-	                return 'a';
-	            }
-	            currentPos += variables.numA;
-	            if (letter < (currentPos + variables.numI))
-	            {
-	                variables.numI--;
+						 return 'a';
+					}
+					currentPos += variables.numA;
+					if (letter < (currentPos + variables.numI))
+					{
+						 variables.numI--;
 					vowelsAddedInCycle++;
-	                return 'i';
-	            }
-	            currentPos += variables.numI;
-	            if (letter < (currentPos + variables.numO))
-	            {
-	                variables.numO--;
+						 return 'i';
+					}
+					currentPos += variables.numI;
+					if (letter < (currentPos + variables.numO))
+					{
+						 variables.numO--;
 					vowelsAddedInCycle++;
-	                return 'o';
-	            }
-	            currentPos += variables.numO;
-	            if (letter < (currentPos + variables.numN))
-	            {
-	                variables.numN--;
-	                return 'n';
-	            }
-	            currentPos += variables.numN;
-	            if (letter < (currentPos + variables.numR))
-	            {
-	                variables.numR--;
-	                return 'r';
-	            }
-	            currentPos += variables.numR;
-	            if (letter < (currentPos + variables.numT))
-	            {
-	                variables.numT--;
-	                return 't';
-	            }
-	            currentPos += variables.numT;
-	            if (letter < (currentPos + variables.numL))
-	            {
-	                variables.numL--;
-	                return 'l';
-	            }
-	            currentPos += variables.numL;
-	            if (letter < (currentPos + variables.numS))
-	            {
-	                variables.numS--;
-	                return 's';
-	            }
-	            currentPos += variables.numS;
-	            if (letter < (currentPos + variables.numU))
-	            {
-	                variables.numU--;
-	                return 'u';
-	            }
-	            currentPos += variables.numU;
-	            if (letter < (currentPos + variables.numD))
-	            {
-	                variables.numD--;
-				    return 'd';
-	            }
-	            currentPos += variables.numD;
-	            if (letter < (currentPos + variables.numG))
-	            {
-	                variables.numG--;
-	                return 'g';
-	            }
-	            currentPos += variables.numG;
-	            if (letter < (currentPos + variables.numB))
-	            {
-	                variables.numB--;
-	                return 'b';
-	            }
-	            currentPos += variables.numB;
-	            if (letter < (currentPos + variables.numC))
-	            {
-	                variables.numC--;
-	                return 'c';
-	            }
-	            currentPos += variables.numC;
-	            if (letter < (currentPos + variables.numM))
-	            {
-	                variables.numM--;
-	                return 'm';
-	            }
-	            currentPos += variables.numM;
-	            if (letter < (currentPos + variables.numP))
-	            {
-	                variables.numP--;
-	                return 'p';
-	            }
-	            currentPos += variables.numP;
-	            if (letter < (currentPos + variables.numF))
-	            {
-	                variables.numF--;
-	                return 'f';
-	            }
-	            currentPos += variables.numF;
-	            if (letter < (currentPos + variables.numH))
-	            {
-	                variables.numH--;
-	                return 'h';
-	            }
-	            currentPos += variables.numH;
-	            if (letter < (currentPos + variables.numV))
-	            {
-	                variables.numV--;
-	                return 'v';
-	            }
-	            currentPos += variables.numV;
-	            if (letter < (currentPos + variables.numW))
-	            {
-	                variables.numW--;
-	                return 'w';
-	            }
-	            currentPos += variables.numW;
-	            if (letter < (currentPos + variables.numY))
-	            {
-	                variables.numY--;
-	                return 'y';
-	            }
-	            currentPos += variables.numY;
-	            if (letter < (currentPos + variables.numK))
-	            {
-	                variables.numK--;
-	                return 'k';
-	            }
-	            currentPos += variables.numK;
-	            if (letter < (currentPos + variables.numJ))
-	            {
-	                variables.numJ--;
-	                return 'j';
-	            }
-	            currentPos += variables.numJ;
-	            if (letter < (currentPos + variables.numX))
-	            {
-	                variables.numX--;
-	                return 'x';
-	            }
-	            currentPos += variables.numX;
-	            if (letter < (currentPos + variables.numQ))
-	            {
-	                variables.numQ--;
-	                return 'q';
-	            }
-	            currentPos += variables.numQ;
-	            if (letter < (currentPos + variables.numZ))
-	            {
-	                variables.numZ--;
-	                return 'z';
-	            }
-	        }
+						 return 'o';
+					}
+					currentPos += variables.numO;
+					if (letter < (currentPos + variables.numN))
+					{
+						 variables.numN--;
+						 return 'n';
+					}
+					currentPos += variables.numN;
+					if (letter < (currentPos + variables.numR))
+					{
+						 variables.numR--;
+						 return 'r';
+					}
+					currentPos += variables.numR;
+					if (letter < (currentPos + variables.numT))
+					{
+						 variables.numT--;
+						 return 't';
+					}
+					currentPos += variables.numT;
+					if (letter < (currentPos + variables.numL))
+					{
+						 variables.numL--;
+						 return 'l';
+					}
+					currentPos += variables.numL;
+					if (letter < (currentPos + variables.numS))
+					{
+						 variables.numS--;
+						 return 's';
+					}
+					currentPos += variables.numS;
+					if (letter < (currentPos + variables.numU))
+					{
+						 variables.numU--;
+						 return 'u';
+					}
+					currentPos += variables.numU;
+					if (letter < (currentPos + variables.numD))
+					{
+						 variables.numD--;
+					 return 'd';
+					}
+					currentPos += variables.numD;
+					if (letter < (currentPos + variables.numG))
+					{
+						 variables.numG--;
+						 return 'g';
+					}
+					currentPos += variables.numG;
+					if (letter < (currentPos + variables.numB))
+					{
+						 variables.numB--;
+						 return 'b';
+					}
+					currentPos += variables.numB;
+					if (letter < (currentPos + variables.numC))
+					{
+						 variables.numC--;
+						 return 'c';
+					}
+					currentPos += variables.numC;
+					if (letter < (currentPos + variables.numM))
+					{
+						 variables.numM--;
+						 return 'm';
+					}
+					currentPos += variables.numM;
+					if (letter < (currentPos + variables.numP))
+					{
+						 variables.numP--;
+						 return 'p';
+					}
+					currentPos += variables.numP;
+					if (letter < (currentPos + variables.numF))
+					{
+						 variables.numF--;
+						 return 'f';
+					}
+					currentPos += variables.numF;
+					if (letter < (currentPos + variables.numH))
+					{
+						 variables.numH--;
+						 return 'h';
+					}
+					currentPos += variables.numH;
+					if (letter < (currentPos + variables.numV))
+					{
+						 variables.numV--;
+						 return 'v';
+					}
+					currentPos += variables.numV;
+					if (letter < (currentPos + variables.numW))
+					{
+						 variables.numW--;
+						 return 'w';
+					}
+					currentPos += variables.numW;
+					if (letter < (currentPos + variables.numY))
+					{
+						 variables.numY--;
+						 return 'y';
+					}
+					currentPos += variables.numY;
+					if (letter < (currentPos + variables.numK))
+					{
+						 variables.numK--;
+						 return 'k';
+					}
+					currentPos += variables.numK;
+					if (letter < (currentPos + variables.numJ))
+					{
+						 variables.numJ--;
+						 return 'j';
+					}
+					currentPos += variables.numJ;
+					if (letter < (currentPos + variables.numX))
+					{
+						 variables.numX--;
+						 return 'x';
+					}
+					currentPos += variables.numX;
+					if (letter < (currentPos + variables.numQ))
+					{
+						 variables.numQ--;
+						 return 'q';
+					}
+					currentPos += variables.numQ;
+					if (letter < (currentPos + variables.numZ))
+					{
+						 variables.numZ--;
+						 return 'z';
+					}
+			  }
 		} 
 		//if the function should only return a vowel 
 		//Isaiah, I removed your line of code here && vowelsAddedInCycle < variables.minNumVowels 
@@ -703,18 +709,18 @@ public class LetterController : MonoBehaviour
 	void CreateLetters(string l)
 	{
 		if(!gamePaused){
-		   //take the string of letters to turn into on screen objects, and chop it into an array of its characters
-		   char[] letterArray = l.ToCharArray();
-		   print(l.ToString());
-		   //run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
+			//take the string of letters to turn into on screen objects, and chop it into an array of its characters
+			char[] letterArray = l.ToCharArray();
+			print(l.ToString());
+			//run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
 
 			for (int i = 0; i < l.Length; i++)
-		   {
+			{
 			  //			//print(letterArray[i]);
 
 			  lettersOnBoard[boardSize - i - 1] = Instantiate(letterObj, bankSpots[boardSize - i - 1] - new Vector3 (0,10,0), new Quaternion(0, 0, 0, 0)) as letterBehaviour;
 			  lettersOnBoard[boardSize - i - 1].letter = letterArray[i].ToString();
-		   }
+			}
 		}
 
 	}
@@ -725,25 +731,25 @@ public class LetterController : MonoBehaviour
 	void replaceBankLetters()
 	{
 
-	   //makes sure the array containing the letters on board is filled from the front until there are no more letters
-	   //so there are no spaces in the array between letters. Only has any effect if a word was sent out recently and there
-	   //are now fewer letters on board than boardSize.
+		//makes sure the array containing the letters on board is filled from the front until there are no more letters
+		//so there are no spaces in the array between letters. Only has any effect if a word was sent out recently and there
+		//are now fewer letters on board than boardSize.
 
-	   for (int i = (boardSize - 1); i > 0; i--)
-	   {
+		for (int i = (boardSize - 1); i > 0; i--)
+		{
 		  if (lettersOnBoard[i] != null && lettersOnBoard[i - 1] == null)
 		  {
 			 lettersOnBoard[i - 1] = lettersOnBoard[i];
 			 lettersOnBoard[i] = null;
 		  }
-	   }
+		}
 
-	   //if a letter was sent out recently and it has been one second since then,
-	   //this block of code replaces all missing letters on board with random ones
-	   // and effectively fills the bank.
+		//if a letter was sent out recently and it has been one second since then,
+		//this block of code replaces all missing letters on board with random ones
+		// and effectively fills the bank.
 
-	   if (timer > .25f && needsUpkeep)
-	   {
+		if (timer > .25f && needsUpkeep)
+		{
 		  //print ("time to replace");
 		  int needsReplacing = 0;
 		  for (int i = 0; i < boardSize; i++)
@@ -764,16 +770,16 @@ public class LetterController : MonoBehaviour
 		  }
 
 		  needsUpkeep = false;
-	   }
+		}
 	}
 
-   
+	
 	void moveToAndFromStove()
 	{
 
-	   //runs a loop through every letter on board
-	   for (int i = 0; i < lettersOnBoard.Length; i++)
-	   {
+		//runs a loop through every letter on board
+		for (int i = 0; i < lettersOnBoard.Length; i++)
+		{
 
 		  //checks if any letters on the board should be moved to the stove and adds them to the stove array if so
 		  if (lettersOnBoard[i] != null)
@@ -798,10 +804,10 @@ public class LetterController : MonoBehaviour
 					if (lettersOnStove[x] != null)
 					{
 
-					   lettersOnStove[x].orderOnStove = -1;
-					   lettersOnStove[x].selected = false;
-					   lettersOnStove[x].onStove = false;
-					   lettersOnStove[x] = null;
+						lettersOnStove[x].orderOnStove = -1;
+						lettersOnStove[x].selected = false;
+						lettersOnStove[x].onStove = false;
+						lettersOnStove[x] = null;
 							positionOnBoard[x] = -1;
 					}
 				}
@@ -858,58 +864,58 @@ public class LetterController : MonoBehaviour
 	public void ResetStove()
 	{
 
-	   for (int i = 0; i < boardSize; i++)
-	   {
+		for (int i = 0; i < boardSize; i++)
+		{
 		  if (lettersOnStove[i] != null)
 		  {
 			 lettersOnStove[i].used = true;
 			 Destroy(lettersOnStove[i].gameObject);
 			 lettersOnStove[i] = null;
 		  }
-	   }
-	   numLettersOnStove = 0;
-	   timer = 0;
-	   needsUpkeep = true;
+		}
+		numLettersOnStove = 0;
+		timer = 0;
+		needsUpkeep = true;
 	  
-	   variables.letterGenerationSound = true;
+		variables.letterGenerationSound = true;
 
 	}
 
 	//can be called to return whatever is on the stove as a string
 	public string sendWord()
 	{
-	   //creates a local variable to be returned- whatever word is on stove
-	   string currentWord = null;
+		//creates a local variable to be returned- whatever word is on stove
+		string currentWord = null;
 
-	   //runs through all letters on stove, adds their char to the currentword in the order it is on the stove,
-	   //and then destroys the letters (SHOULD BE CHANGED IF METHOD OF CHECKING/DISCARDING WORDS CHANGED)!!
-	   for (int i = 0; i < boardSize; i++)
-	   {
+		//runs through all letters on stove, adds their char to the currentword in the order it is on the stove,
+		//and then destroys the letters (SHOULD BE CHANGED IF METHOD OF CHECKING/DISCARDING WORDS CHANGED)!!
+		for (int i = 0; i < boardSize; i++)
+		{
 		  if (lettersOnStove[i] != null)
 		  {
 			 currentWord += lettersOnStove[i].letter;
 		  }
-	   }
+		}
 
-	   //resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
-	   //		print("WORD SUBMITTED: " + currentWord.ToString());
-	   return currentWord;
+		//resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
+		//		print("WORD SUBMITTED: " + currentWord.ToString());
+		return currentWord;
 
 	}
 
 	//shuffles the letters currently in your hand
 	void shuffleLetters()
 	{
-	   variables.shuffleSound = true;
-	   int nextSpotNum = -1;
-	   //creates an array to temporarily store the new array locations for each letter
-	   letterBehaviour[] nextLetters;
-	   nextLetters = new letterBehaviour[boardSize];
-	   //clears the boolean array that determines which spots are taken
-	   clearSpots();
-	   //finds a new spot for each letter in the array
-	   for (int i = 0; i < boardSize; i++)
-	   {
+		variables.shuffleSound = true;
+		int nextSpotNum = -1;
+		//creates an array to temporarily store the new array locations for each letter
+		letterBehaviour[] nextLetters;
+		nextLetters = new letterBehaviour[boardSize];
+		//clears the boolean array that determines which spots are taken
+		clearSpots();
+		//finds a new spot for each letter in the array
+		for (int i = 0; i < boardSize; i++)
+		{
 			if (!spotIsOnBoard(i)) {
 			  //finds an untaken spot for that letter
 			  while (nextSpotNum == -1)
@@ -921,10 +927,10 @@ public class LetterController : MonoBehaviour
 			  newArraySpot[nextSpotNum] = true;
 			  nextSpotNum = -1;
 			}
-	   }
-	   //sets the letter array to the temp array and changes positions
-	   for (int i = 0; i < boardSize; i++)
-	   {
+		}
+		//sets the letter array to the temp array and changes positions
+		for (int i = 0; i < boardSize; i++)
+		{
 			if (!spotIsOnBoard(i)) {
 			  lettersOnBoard[i] = nextLetters[i];
 			  //I commented out the following line because it is taken care of in moveToFromStove() 
@@ -932,32 +938,32 @@ public class LetterController : MonoBehaviour
 				//lettersOnBoard[i].transform.position = bankSpots[i];
 
 			}
-	   }
+		}
 	}
 
 
 	//clears the spots in the bool array for new letter spots
 	void clearSpots()
 	{
-	   for (int i = 0; i < boardSize; i++)
-	   {
+		for (int i = 0; i < boardSize; i++)
+		{
 		  newArraySpot[i] = false;
-	   }
+		}
 	}
 
 	//returns a random int if that spot in the array is untaken
 	int findNewSpot()
 	{
-	   int nextSpotNum = 0;
-	   nextSpotNum = (int)Random.Range(0, boardSize);
-	   if (newArraySpot[nextSpotNum] == false && !spotIsOnBoard(nextSpotNum))
-	   {
+		int nextSpotNum = 0;
+		nextSpotNum = (int)Random.Range(0, boardSize);
+		if (newArraySpot[nextSpotNum] == false && !spotIsOnBoard(nextSpotNum))
+		{
 		  return nextSpotNum;
-	   }
-	   else
-	   {
+		}
+		else
+		{
 		  return -1;
-	   }
+		}
 	}
 
 	bool spotIsOnBoard(int spotNum) {
@@ -972,17 +978,17 @@ public class LetterController : MonoBehaviour
 	//current test for sending words from stove
 	void OnGUI()
 	{
-	   //if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
-	   //	sendWord();
-	   //} else 
+		//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+		//	sendWord();
+		//} else 
 		if(!gamePaused ){
 			GUIStyle style = new GUIStyle ();
 			style.normal.background = shuffleButton;
 
 			if (GUI.Button(new Rect(Screen.width*0.013f, Screen.height*0.43f, Screen.width*0.07f, Screen.width*0.07f), "", style))
-		   { //shuffles the letters in your hand
+			{ //shuffles the letters in your hand
 			  shuffleLetters();
-		   }
+			}
 		}
 	}
 
@@ -1022,24 +1028,24 @@ public class LetterController : MonoBehaviour
 
 		}
 
-	   //This method makes the word list once
-	   string[] tempWordList = sowpods.text.Split('\n');
-	   for (int j = 0; j < tempWordList.Length; j++)
-	   {
+		//This method makes the word list once
+		string[] tempWordList = sowpods.text.Split('\n');
+		for (int j = 0; j < tempWordList.Length; j++)
+		{
 		  string proposedWord = tempWordList[j].Trim();
 		  if ((proposedWord.Length >= variables.minWordLength) && (proposedWord.Length <= variables.maxWordLength))
 		  {
 			 wordList.Add(proposedWord);
 		  }
-	   }
+		}
 	}
 
 	public bool checkForWord(string word)
 	{
-	   //This method will, when passed a word, check if it's a valid word
-	   //Our word list happens to contain uppercase only words, so convert before checking
-	   //Debug.Log ("Checking a word in checkForWord!");
-	   return (wordList.Contains(word.ToUpper()));
+		//This method will, when passed a word, check if it's a valid word
+		//Our word list happens to contain uppercase only words, so convert before checking
+		//Debug.Log ("Checking a word in checkForWord!");
+		return (wordList.Contains(word.ToUpper()));
 	}
 	//counts the current number of vowels
 	public int countVowels (){
@@ -1066,17 +1072,17 @@ public class LetterController : MonoBehaviour
 		}
 		return letters;
 	}
-    int CountEmptyLetters(string myLetters)
-    {
-        int count = 0;
-        foreach (char element in myLetters.ToCharArray())
-        {
-            if ((element == ',') || (element == '.'))
-            {
-                count++;
-            }
-        }
-        return count;
-    }
+	 int CountEmptyLetters(string myLetters)
+	 {
+		  int count = 0;
+		  foreach (char element in myLetters.ToCharArray())
+		  {
+				if ((element == ',') || (element == '.'))
+				{
+					 count++;
+				}
+		  }
+		  return count;
+	 }
 }
 

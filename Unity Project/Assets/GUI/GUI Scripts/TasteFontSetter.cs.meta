@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 20f3a1f4992a34444ab0ea91a6226f3a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - wordMakingFont: {fileID: 12800000, guid: 875a11d5403dd064097bb40287e6e2ea, type: 3}
+  - fontForCharacterSelect: {fileID: 12800000, guid: aa1213ee670d048028dca175616aeb4e,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
