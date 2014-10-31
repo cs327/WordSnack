@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Linq;
 
 public static class ScoreManager 
 {
@@ -71,9 +72,11 @@ public static class ScoreManager
         
         if (scoreList[charKey].Count > scoreListSizeLimit)
         {                       
-            scoreList[charKey].RemoveRange(scoreListSizeLimit, scoreList.Count - scoreListSizeLimit);
+            scoreList[charKey].RemoveRange(scoreListSizeLimit, scoreList[charKey].Count - scoreListSizeLimit);
         }
-        scoreList[charKey].Sort(); 
+
+        List<int> temp = scoreList[charKey];
+        scoreList[charKey] = temp.OrderByDescending(x => x).ToList();
         SaveScores();
 
         // If the current score is the highest score, return true

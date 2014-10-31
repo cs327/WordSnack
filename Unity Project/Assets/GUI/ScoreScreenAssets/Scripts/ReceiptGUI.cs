@@ -45,11 +45,20 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Char 1 " + char1String);
         Debug.Log("Char 2 " + char2String);
 
-        //Debug.Log(Application.persistentDataPath);
+
+        ScoreManager.AddHighScore(char2String, char1String, 2000);
+        ScoreManager.AddHighScore(char2String, char1String, 6000);
+        ScoreManager.AddHighScore(char2String, char1String, 7000);
         bool isHighScore = ScoreManager.AddHighScore(char1String, char2String, 1000);
-        //isHighScore = ScoreManager.AddHighScore(char2String, char1String, 110);
+        
+        Debug.Log("is high score: " + isHighScore);
         Debug.Log(ScoreManager.GetCharacterScore(char1String, char2String).Count + " entries in scoreList -> " + ScoreManager.GetCharacterScore(char1String, char2String)[0]);
         //Debug.Log("Specific scores " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count);
+
+        foreach(int i in ScoreManager.GetCharacterScore(char1String, char2String))
+        {
+            Debug.Log("Highscore: " + i);
+        }
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;
