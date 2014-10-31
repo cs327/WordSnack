@@ -60,15 +60,16 @@ public static class ScoreManager
         //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
         int scoreListSizeLimit = 10;
 
-        if (scoreList == null)
-            LoadScores();
+        LoadScores();
    
         // Used to lookup scores given a key (in this case made of the character names in sorted order)
         string charKey = GetCharacterHash(char1, char2);
 
         if (!scoreList.ContainsKey(charKey))
             scoreList.Add(charKey, new List<int>());
-        scoreList[charKey].Add(score);
+        if (!scoreList[charKey].Contains(score))
+            scoreList[charKey].Add(score);
+        
         
         if (scoreList[charKey].Count > scoreListSizeLimit)
         {                       
@@ -97,6 +98,22 @@ public static class ScoreManager
         {
             scoreList = new Dictionary<string, List<int>>();
         }
+    }
+
+    public static string ToString()
+    {
+        LoadScores();
+        string str = "";
+        foreach(var key in scoreList.Keys)
+        {
+            str += key + "have scores of ";
+            foreach(int i in scoreList[key])
+            {
+                str += i + ", ";
+            }
+            str += "\n";
+        }
+        return str;
     }
 
 

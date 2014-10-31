@@ -29,36 +29,22 @@ public class ReceiptGUI : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        
+    {        
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
 
         string char1String = Character.CharacterNameLookup[selectedCharacter1];
-        string char2String = Character.CharacterNameLookup[selectedCharacter2];
-
-        
+        string char2String = Character.CharacterNameLookup[selectedCharacter2];        
         if (selectedCharacter1 == null)
             char1String = "Error";
         if (selectedCharacter2 == null)
             char2String = "Error";
+
         Debug.Log("Char 1 " + char1String);
         Debug.Log("Char 2 " + char2String);
-
-        ScoreManager.ClearHighScores();
-        ScoreManager.AddHighScore(char2String, char1String, 2000);
-        ScoreManager.AddHighScore(char2String, char1String, 6000);
-        ScoreManager.AddHighScore(char2String, char1String, 7000);
-        bool isHighScore = ScoreManager.AddHighScore(char1String, char2String, 1000);
+        Debug.Log(Application.persistentDataPath + " is the save file location");        
         
-        Debug.Log("is high score: " + isHighScore);
-        Debug.Log(ScoreManager.GetCharacterScore(char1String, char2String).Count + " entries in scoreList -> " + ScoreManager.GetCharacterScore(char1String, char2String)[0]);
-        //Debug.Log("Specific scores " + ScoreManager.GetScoresForSpecificCharacters(char1String, char2String).Count);
-
-        foreach(int i in ScoreManager.GetCharacterScore(char1String, char2String))
-        {
-            Debug.Log("Highscore: " + i);
-        }
+        Debug.Log(ScoreManager.ToString());        
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;
@@ -84,20 +70,8 @@ public class ReceiptGUI : MonoBehaviour
             char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
         }
 
-
-        //char1WordsFed = new List<string>();
-        //char1WordsFed.Add("Dog 3 2");
-        //char1WordsFed.Add("lol 3 2");
-        //Debug.Log("Char1 empty");
-
-        //char2WordsFed = new List<string>();
-        //char2WordsFed.Add("Dog 3 2");
-        //Debug.Log("Char2 empty");
-
-
         // Add code to create rows/fill them
         int rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
-        Debug.Log("Rowcount: " + rowCount);
         Vector3 pos;
         
         for(int i = 0; i < rowCount; i++)
@@ -110,8 +84,7 @@ public class ReceiptGUI : MonoBehaviour
             rowInstance.transform.parent = gameObject.transform;
             pos = rowInstance.transform.position;
             pos.y += rowOffset * i;
-            rowInstance.transform.position = pos;
-            
+            rowInstance.transform.position = pos;            
             
             Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
 
@@ -145,6 +118,37 @@ public class ReceiptGUI : MonoBehaviour
                     }
 
                 }
+            }
+        }
+
+        if(ScoreManager.AddHighScore(char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
+        {
+            GameObject rowInstance;
+            if (rowCount % 2 == 0)
+                rowInstance = (GameObject)Instantiate(darkRowPrefab);
+            else
+                rowInstance = (GameObject)Instantiate(lightRowPrefab);
+
+            rowInstance.transform.parent = gameObject.transform;
+            pos = rowInstance.transform.position;
+            pos.y += rowOffset * rowCount;
+            rowInstance.transform.position = pos;
+            rowCount++;
+
+            Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
+
+            string[] wordInfo;
+            foreach (TextMesh mesh in rowMeshes)
+            {
+                switch (mesh.name)
+                {
+                    case "char1Word":
+                        mesh.text = "High";
+                        break;
+                    case "char2Word":
+                        mesh.text = "Score";
+                        break;                    
+                }               
             }
         }
 
