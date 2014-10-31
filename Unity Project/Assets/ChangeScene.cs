@@ -19,7 +19,7 @@ public class ChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > 3)
+        if (Time.time > 5.2)
         {
             if (Application.loadedLevelName == "SplashScreen")
             {
