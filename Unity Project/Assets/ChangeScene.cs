@@ -14,6 +14,9 @@ public class ChangeScene : MonoBehaviour
         {
             Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
         }
+
+		DontDestroyOnLoad (gameObject);
+		DontDestroyOnLoad (GameObject.Find ("Starfield Background"));
     }
 
     // Update is called once per frame
