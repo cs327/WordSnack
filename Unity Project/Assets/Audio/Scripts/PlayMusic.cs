@@ -40,15 +40,16 @@ public class PlayMusic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioManager = audio.GetComponent<AudioManager>();
-
         audioManager.SetAllVolume();
+        variables = GetComponent<VariableControl>();
+        gameObject.AddComponent<ReceiptMove>();
+        gameObject.AddComponent<GoBackToMenu>();
 
+        if (Application.loadedLevelName == "SplashScreen")
+        {
+            audioManager.KillAll();
+        }
 
-            if (Application.loadedLevelName == "CharacterSelectTest")
-            {
-                //charSel = selecter.GetComponent<CharacterSelectUI>();
-                variables = GetComponent<VariableControl>();
-            }
         if (Application.loadedLevelName == "StartScreenTest")
         {
             playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
@@ -58,13 +59,13 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            gameObject.AddComponent<ReceiptMove>();
-            gameObject.AddComponent<GoBackToMenu>();
+            audioManager.KillAll();
         }
 
 
         if (Application.loadedLevelName == "WordMaking")
         {
+            audioManager.KillAll();
             DelayedLetterGeneration();
         }
 	
@@ -75,25 +76,29 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "WordMaking")
         {
-            audioManager.PlayLoop(6);
+            audioManager.PlayLoop(5);
+            NewOnStove();
+            Sizzle();
+            HappySound();
+            RejectedSound();
+            Chewing();
+            Shuffle();
+            Pause();
+            letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
+
         }
 
         if (Application.loadedLevelName == "SplashScreen")
         {
-            audioManager.PlayLoop(5);
+            audioManager.PlayLoop(4);
         }
         if (Application.loadedLevelName == "StartScreenTest")
         {
-            audioManager.Stop(17);
-            audioManager.Stop(16);
-            audioManager.Stop(15);
-            audioManager.Stop(21);
-            if (audioManager.audioSourceArray[5].isPlaying == false)
-            {
-                audioManager.PlayLoop(5);
-            }
 
-            audioManager.Stop(6);
+            if (audioManager.audioSourceArray[4].isPlaying == false)
+            {
+                audioManager.PlayLoop(4);
+            }
 
             if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
             {
@@ -104,20 +109,19 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            audioManager.Stop(6);
             // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
                 {
               //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
-                    audioManager.PlayLoop(21);
-                    audioManager.PlayLoop(15);
+                    audioManager.PlayLoop(20);
+                    audioManager.PlayLoop(14);
                     //  audioManager.FadeOut(17);
                     //receipt.winSound = false;
                 } 
                 else if(playedVictory == false && audioManager.audioSourceArray[15].isPlaying == false){
                    // audioManager.KillAll();
-                    audioManager.Play(16);
+                    audioManager.Play(15);
                     playedVictory =true;
                     Debug.Log("helllyeah");
                 }
@@ -136,15 +140,11 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
-            audioManager.Stop(18);
-            audioManager.Stop(17);
-            audioManager.Stop(16);
-            audioManager.Stop(15);
-            audioManager.Stop(21);
+            audioManager.KillAll();
 
-            if (audioManager.audioSourceArray[5].isPlaying == false)
+            if (audioManager.audioSourceArray[4].isPlaying == false)
             {
-                audioManager.PlayLoop(5);
+                audioManager.PlayLoop(4);
             }
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
@@ -156,7 +156,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
                 {
-                    audioManager.Play(4);
+                    audioManager.Play(3);
                     Debug.Log("booop");
                     numSelected++;
                 }
@@ -170,7 +170,7 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
             {
-                audioManager.Play(3);
+                audioManager.Play(1);
                 numSelected--;
                 Debug.Log(numSelected.ToString());
             }
@@ -182,23 +182,6 @@ public class PlayMusic : MonoBehaviour {
                 GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
             }
         }
-
-        if (Application.loadedLevelName == "WordMaking")
-        {
-            audioManager.PlayLoop(6);
-            audioManager.Stop(5);
-            //audioManager.Stop(5);
-            NewOnStove();
-            Sizzle();
-            HappySound();
-            RejectedSound();
-            Chewing();
-            Shuffle();
-            Pause();
-            letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
-        }
-
-
     }
 
 
@@ -213,7 +196,7 @@ public class PlayMusic : MonoBehaviour {
        // }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
         {
-            audioManager.Play(7);
+            audioManager.Play(6);
             i++;
         }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)

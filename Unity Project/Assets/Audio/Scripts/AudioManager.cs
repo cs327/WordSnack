@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour {
 		for (y=0; y<audioSourceArray.Length; y++) {
 			
             if (audioSourceArray[y].isPlaying) {
-                audioSourceArray[y].Pause ();
+                audioSourceArray[y].Stop ();
 			}
 		}
 		

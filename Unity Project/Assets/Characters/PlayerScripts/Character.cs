@@ -133,10 +133,14 @@ public class Character : MonoBehaviour
 			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
 			//calculate the raw bonus score 
 			rawBonusScoreFedToMe = variables.mostRecentBonus;
-			if (rawBonusScoreFedToMe > 0)
-			{
-			variables.bonus = true;
-			}
+            if (rawBonusScoreFedToMe > 0)
+                {
+                    variables.bonus = true;
+                }
+            else if (rawBonusScoreFedToMe == 0)
+                {
+                    variables.bonus = false;
+                }
 			Debug.Log("Score after tastes for " + word + " is " + wordScore);
 		}
 		return wordScore;
@@ -165,51 +169,11 @@ public class Character : MonoBehaviour
 	}
 	//Determine if a bonus is satisfied for each character, used for audio manager - Mike
 	public int CharacterHappy (){
-		switch(characterNum){
-			case 1:
-				Debug.Log("Fred likes this");
-						 return 22;
-			case 2:
-				Debug.Log("Kelvin likes this");
-				return 31;
-			case 3:
-				Debug.Log("Spike likes this");
-				return 25;
-			case 4:
-				Debug.Log("Stella likes this");
-				return 34;
-			case 5:
-				Debug.Log("Meghan likes this");
-				return 28;
-			case 0:
-				Debug.Log("Word Trashed");
-				return 19;
-			default:
-				return 0;
-			}
+        return 21;
 	}
 	public int CharacterSad()
 	{
-		switch (characterNum)
-		{
-			case 1:
-				Debug.Log("Fred does not like this");
-				return 23;
-			case 2:
-				Debug.Log("Kelvin does not like this");
-				return 32;
-			case 3:
-				Debug.Log("Spike does not like this");
-				return 26;
-			case 4:
-				Debug.Log("Stella does not like this");
-				return 35;
-			case 5:
-				Debug.Log("Meghan does not this");
-				return 29;
-			default:
-				return 0;
-		}
+        return 22;
 	}
 
 
@@ -433,8 +397,13 @@ public class Character : MonoBehaviour
 			 
 				//Checks for bonus and sets value of happy sound for Audio Manager
 				if (variables.bonus == true){
-					variables.happySound = CharacterHappy();
+					
+                    variables.happySound = CharacterHappy();
 				}
+                else if (variables.bonus == false)
+                {
+                    variables.sadSound = CharacterSad();
+                }
 				WordSound();
 				variables.chewing = true;
 			}
