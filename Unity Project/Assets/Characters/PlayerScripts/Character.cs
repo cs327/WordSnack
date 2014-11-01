@@ -96,6 +96,7 @@ public class Character : MonoBehaviour
 			if (word != null && letterControl.checkForWord (word) == false) {
 				Debug.Log ("Not a word and this isn't the trash character");
                 variables.sadSound = 12;
+				GetComponent<Animator>().SetTrigger("sad");
 				return 0;
 			}
 		} else {
@@ -172,6 +173,7 @@ public class Character : MonoBehaviour
 	public int CharacterHappy (){
         return 21;
 	}
+	
 
 
 	// Use this for initialization
@@ -268,6 +270,9 @@ public class Character : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (characterNum != 0) { 
+			print (thingsILike);
+		}
 		if(Application.loadedLevelName == "CharacterSelectTest"){
 
 			if(selectScript.selected){
@@ -431,4 +436,20 @@ public class Character : MonoBehaviour
 			Convert.ToBase64String(memStream.GetBuffer()));
 
 	}
+
+//	int TasteGlow () {
+//		string currentWord;
+//		currentWord = letterControl.sendWord();
+//		if (characterNum != 0) { 
+//			if (true) {
+//				return 1;
+//			} else if (myTastes[0]) {
+//				return 2;
+//			} else {
+//				return -1;
+//			}
+//		} else {
+//			return -1;
+//		}
+//	}
 }
