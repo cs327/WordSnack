@@ -109,6 +109,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
                 {
+                    playedVictory = false;
               //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
                     audioManager.PlayLoop(21);
                     audioManager.PlayLoop(15);
