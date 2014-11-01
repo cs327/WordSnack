@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: b32b10d6364e84d8b8f26549fc714f4a
+guid: 31cc06286981b455d8989ad4583fe1e6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tutorial04Unchecked
+    21300000: checkBox
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
