@@ -23,8 +23,7 @@ public class Tutorial : MonoBehaviour {
 		trash = GameObject.Find ("TrashCharacter").transform;
 		//checkBox = new Rect (Screen.width * 0.32f, Screen.height * 0.54f, Screen.width * 0.04f, Screen.height * 0.055f);
 		w = GameObject.Find ("GameController").GetComponent<wordBuildingController> ();
-		character1 = w.character1;
-		character2 = w.character2;
+
 		checkBox = GameObject.Find ("checkBox");
 	}
 
@@ -34,6 +33,9 @@ public class Tutorial : MonoBehaviour {
 			pos.z += Time.deltaTime*8.0f;
 			transform.localPosition = pos;
 		}
+
+		character1 = w.character1;
+		character2 = w.character2;
 	}
 	
 	// Update is called once per frame
