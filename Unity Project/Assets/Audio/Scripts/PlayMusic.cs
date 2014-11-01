@@ -39,15 +39,14 @@ public class PlayMusic : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		audioManager = audio.GetComponent<AudioManager>();
+		
+        audioManager = audio.GetComponent<AudioManager>();
         audioManager.SetAllVolume();
-        variables = GetComponent<VariableControl>();
-        gameObject.AddComponent<ReceiptMove>();
-        gameObject.AddComponent<GoBackToMenu>();
+
 
         if (Application.loadedLevelName == "SplashScreen")
         {
-            audioManager.KillAll();
+
         }
 
         if (Application.loadedLevelName == "StartScreenTest")
@@ -59,13 +58,14 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            audioManager.KillAll();
+            gameObject.AddComponent<ReceiptMove>();
+            gameObject.AddComponent<GoBackToMenu>();
         }
 
 
         if (Application.loadedLevelName == "WordMaking")
         {
-            audioManager.KillAll();
+            variables = GetComponent<VariableControl>();
             DelayedLetterGeneration();
         }
 	
@@ -76,6 +76,7 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "WordMaking")
         {
+            audioManager.Stop(4);
             audioManager.PlayLoop(5);
             NewOnStove();
             Sizzle();
@@ -90,7 +91,8 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "SplashScreen")
         {
-            audioManager.PlayLoop(4);
+                audioManager.Stop(5);
+                audioManager.PlayLoop(4);
         }
         if (Application.loadedLevelName == "StartScreenTest")
         {
@@ -109,6 +111,10 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
+            for (int x = 1; x == 1; x++)
+            {
+                audioManager.KillAll();
+            }
             // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
@@ -140,7 +146,10 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
-            audioManager.KillAll();
+            for (int x = 1; x == 1; x++)
+            {
+                audioManager.KillAll();
+            }
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
             {
