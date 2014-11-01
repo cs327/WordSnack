@@ -1,0 +1,1477 @@
+fileFormatVersion: 2
+guid: 622c6e8b0a4564073bd1b80d34b5a8f4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SplashScreenSprite_0
+    21300002: SplashScreenSprite_1
+    21300004: SplashScreenSprite_2
+    21300006: SplashScreenSprite_3
+    21300008: SplashScreenSprite_4
+    21300010: SplashScreenSprite_5
+    21300012: SplashScreenSprite_6
+    21300014: SplashScreenSprite_7
+    21300016: SplashScreenSprite_8
+    21300018: SplashScreenSprite_9
+    21300020: SplashScreenSprite_10
+    21300022: SplashScreenSprite_11
+    21300024: SplashScreenSprite_12
+    21300026: SplashScreenSprite_13
+    21300028: SplashScreenSprite_14
+    21300030: SplashScreenSprite_15
+    21300032: SplashScreenSprite_16
+    21300034: SplashScreenSprite_17
+    21300036: SplashScreenSprite_18
+    21300038: SplashScreenSprite_19
+    21300040: SplashScreenSprite_20
+    21300042: SplashScreenSprite_21
+    21300044: SplashScreenSprite_22
+    21300046: SplashScreenSprite_23
+    21300048: SplashScreenSprite_24
+    21300050: SplashScreenSprite_25
+    21300052: SplashScreenSprite_26
+    21300054: SplashScreenSprite_27
+    21300056: SplashScreenSprite_28
+    21300058: SplashScreenSprite_29
+    21300060: SplashScreenSprite_30
+    21300062: SplashScreenSprite_31
+    21300064: SplashScreenSprite_32
+    21300066: SplashScreenSprite_33
+    21300068: SplashScreenSprite_34
+    21300070: SplashScreenSprite_35
+    21300072: SplashScreenSprite_36
+    21300074: SplashScreenSprite_37
+    21300076: SplashScreenSprite_38
+    21300078: SplashScreenSprite_39
+    21300080: SplashScreenSprite_40
+    21300082: SplashScreenSprite_41
+    21300084: SplashScreenSprite_42
+    21300086: SplashScreenSprite_43
+    21300088: SplashScreenSprite_44
+    21300090: SplashScreenSprite_45
+    21300092: SplashScreenSprite_46
+    21300094: SplashScreenSprite_47
+    21300096: SplashScreenSprite_48
+    21300098: SplashScreenSprite_49
+    21300100: SplashScreenSprite_50
+    21300102: SplashScreenSprite_51
+    21300104: SplashScreenSprite_52
+    21300106: SplashScreenSprite_53
+    21300108: SplashScreenSprite_54
+    21300110: SplashScreenSprite_55
+    21300112: SplashScreenSprite_56
+    21300114: SplashScreenSprite_57
+    21300116: SplashScreenSprite_58
+    21300118: SplashScreenSprite_59
+    21300120: SplashScreenSprite_60
+    21300122: SplashScreenSprite_61
+    21300124: SplashScreenSprite_62
+    21300126: SplashScreenSprite_63
+    21300128: SplashScreenSprite_64
+    21300130: SplashScreenSprite_65
+    21300132: SplashScreenSprite_66
+    21300134: SplashScreenSprite_67
+    21300136: SplashScreenSprite_68
+    21300138: SplashScreenSprite_69
+    21300140: SplashScreenSprite_70
+    21300142: SplashScreenSprite_71
+    21300144: SplashScreenSprite_72
+    21300146: SplashScreenSprite_73
+    21300148: SplashScreenSprite_74
+    21300150: SplashScreenSprite_75
+    21300152: SplashScreenSprite_76
+    21300154: SplashScreenSprite_77
+    21300156: SplashScreenSprite_78
+    21300158: SplashScreenSprite_79
+    21300160: SplashScreenSprite_80
+    21300162: SplashScreenSprite_81
+    21300164: SplashScreenSprite_82
+    21300166: SplashScreenSprite_83
+    21300168: SplashScreenSprite_84
+    21300170: SplashScreenSprite_85
+    21300172: SplashScreenSprite_86
+    21300174: SplashScreenSprite_87
+    21300176: SplashScreenSprite_88
+    21300178: SplashScreenSprite_89
+    21300180: SplashScreenSprite_90
+    21300182: SplashScreenSprite_91
+    21300184: SplashScreenSprite_92
+    21300186: SplashScreenSprite_93
+    21300188: SplashScreenSprite_94
+    21300190: SplashScreenSprite_95
+    21300192: SplashScreenSprite_96
+    21300194: SplashScreenSprite_97
+    21300196: SplashScreenSprite_98
+    21300198: SplashScreenSprite_99
+    21300200: SplashScreenSprite_100
+    21300202: SplashScreenSprite_101
+    21300204: SplashScreenSprite_102
+    21300206: SplashScreenSprite_103
+    21300208: SplashScreenSprite_104
+    21300210: SplashScreenSprite_105
+    21300212: SplashScreenSprite_106
+    21300214: SplashScreenSprite_107
+    21300216: SplashScreenSprite_108
+    21300218: SplashScreenSprite_109
+    21300220: SplashScreenSprite_110
+    21300222: SplashScreenSprite_111
+    21300224: SplashScreenSprite_112
+    21300226: SplashScreenSprite_113
+    21300228: SplashScreenSprite_114
+    21300230: SplashScreenSprite_115
+    21300232: SplashScreenSprite_116
+    21300234: SplashScreenSprite_117
+    21300236: SplashScreenSprite_118
+    21300238: SplashScreenSprite_119
+    21300240: SplashScreenSprite_120
+    21300242: SplashScreenSprite_121
+    21300244: SplashScreenSprite_122
+    21300246: SplashScreenSprite_123
+    21300248: SplashScreenSprite_124
+    21300250: SplashScreenSprite_125
+    21300252: SplashScreenSprite_126
+    21300254: SplashScreenSprite_127
+    21300256: SplashScreenSprite_128
+    21300258: SplashScreenSprite_129
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SplashScreenSprite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_1
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_2
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_3
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_4
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_5
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_6
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_7
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_8
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_9
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 4000
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_11
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_12
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_13
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_14
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_15
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_16
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_17
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_18
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_19
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 3680
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_21
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_22
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_23
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_24
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_25
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_26
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_27
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_28
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_29
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 3360
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_31
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_32
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_33
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_34
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_35
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_36
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_37
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_38
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_39
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 3040
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_41
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_42
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_43
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_44
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_45
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_46
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_47
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_48
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_49
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 2720
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_51
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_52
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_53
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_54
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_55
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_56
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_57
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_58
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_59
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 2400
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_61
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_62
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_63
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_64
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_65
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_66
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_67
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_68
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_69
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 2080
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_71
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_72
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_73
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_74
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_75
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_76
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_77
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_78
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_79
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 1760
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_81
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_82
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_83
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_84
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_85
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_86
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_87
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_88
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_89
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 1440
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_91
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_92
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_93
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_94
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_95
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_96
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_97
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_98
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_99
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 1120
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_100
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_101
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_102
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_103
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_104
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_105
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_106
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_107
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_108
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_109
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 800
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_111
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_112
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_113
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_114
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_115
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_116
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_117
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_118
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_119
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 480
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_121
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_122
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_123
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_124
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_125
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_126
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_127
+      rect:
+        serializedVersion: 2
+        x: 3976
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_128
+      rect:
+        serializedVersion: 2
+        x: 4544
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SplashScreenSprite_129
+      rect:
+        serializedVersion: 2
+        x: 5112
+        y: 160
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

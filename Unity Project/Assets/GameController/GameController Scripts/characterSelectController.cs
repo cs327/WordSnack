@@ -28,6 +28,11 @@ public class characterSelectController : MonoBehaviour {
 		variables.timeToChangeGameState = false;
 		PlayerPrefs.SetInt("Character 1", variables.selectedCharacterNums[0]);
 		PlayerPrefs.SetInt("Character 2", variables.selectedCharacterNums[1]);
+
+		// delete the starfield and diner background stuff from the previous three scenes
+		Destroy (GameObject.Find ("Starfield Background"));
+		Destroy (GameObject.Find ("Diner Fly-In"));
+
 		Application.LoadLevel("WordMaking");
 		//moves the characters into their appropriate positions
 	}
