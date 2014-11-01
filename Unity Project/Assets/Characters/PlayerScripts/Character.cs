@@ -95,6 +95,7 @@ public class Character : MonoBehaviour
 		 if (characterNum != 0) { //If we're not the trash character... 
 			if (word != null && letterControl.checkForWord (word) == false) {
 				Debug.Log ("Not a word and this isn't the trash character");
+                variables.sadSound = 12;
 				return 0;
 			}
 		} else {
@@ -134,13 +135,13 @@ public class Character : MonoBehaviour
 			//calculate the raw bonus score 
 			rawBonusScoreFedToMe = variables.mostRecentBonus;
             if (rawBonusScoreFedToMe > 0)
-                {
-                    variables.bonus = true;
-                }
+            {
+                variables.bonus = true;
+            }
             else if (rawBonusScoreFedToMe == 0)
-                {
-                    variables.bonus = false;
-                }
+            {
+                variables.bonus = false;
+            }
 			Debug.Log("Score after tastes for " + word + " is " + wordScore);
 		}
 		return wordScore;
@@ -170,10 +171,6 @@ public class Character : MonoBehaviour
 	//Determine if a bonus is satisfied for each character, used for audio manager - Mike
 	public int CharacterHappy (){
         return 21;
-	}
-	public int CharacterSad()
-	{
-        return 22;
 	}
 
 
@@ -259,10 +256,14 @@ public class Character : MonoBehaviour
 	}
 	void WordSound()
 	{
-		if (characterNum == 0)
-			variables.chewingSound = 19;
-		else
-			variables.chewingSound = 14;
+        if (characterNum == 0)
+        {
+            variables.chewingSound = 18;
+        }
+        else
+        {
+            variables.chewingSound = 13;
+        }
 	}
 	// Update is called once per frame
 	void Update()
@@ -297,7 +298,7 @@ public class Character : MonoBehaviour
 			//score the word - do we have a score?
 			int wordScore = Likes(word);
 			if (letterControl.checkForWord(word) == false)
-			 variables.notWord = true;
+			variables.notWord = true;
 			//Debug.Log(word);
 			//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 			if (wordScore > 0)
@@ -397,24 +398,23 @@ public class Character : MonoBehaviour
 			 
 				//Checks for bonus and sets value of happy sound for Audio Manager
 				if (variables.bonus == true){
-					
-                    variables.happySound = CharacterHappy();
+					variables.happySound = CharacterHappy();
 				}
-                else if (variables.bonus == false)
-                {
-                    variables.sadSound = CharacterSad();
-                }
 				WordSound();
 				variables.chewing = true;
 			}
-			if (characterNum != 0)
-			{
 				if (wordScore == 0)
 				{
-					Debug.Log("True");
-					variables.sadSound = 12;
+                    if (characterNum != 0)
+                    {
+                        Debug.Log("True");
+                        variables.sadSound = 12;
+                    }
+                    if (characterNum == 0)
+                    {
+                        variables.sadSound = 18;
+                    }
 				}
-			}
 		}
 	}
 

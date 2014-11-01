@@ -66,7 +66,8 @@ public class PlayMusic : MonoBehaviour {
         if (Application.loadedLevelName == "WordMaking")
         {
             variables = GetComponent<VariableControl>();
-            DelayedLetterGeneration();
+            letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
+            
         }
 	
 	}
@@ -80,22 +81,28 @@ public class PlayMusic : MonoBehaviour {
             audioManager.PlayLoop(5);
             NewOnStove();
             Sizzle();
-            HappySound();
+            //HappySound();
             RejectedSound();
             Chewing();
             Shuffle();
             Pause();
-            letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
 
         }
 
         if (Application.loadedLevelName == "SplashScreen")
         {
                 audioManager.Stop(5);
+                audioManager.Stop(20);
+                audioManager.Stop(15);
+                audioManager.Stop(14);
                 audioManager.PlayLoop(4);
         }
         if (Application.loadedLevelName == "StartScreenTest")
         {
+            audioManager.Stop(5);
+            audioManager.Stop(20);
+            audioManager.Stop(15);
+            audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
             {
@@ -111,10 +118,8 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "ScoreScreen")
         {
-            for (int x = 1; x == 1; x++)
-            {
-                audioManager.KillAll();
-            }
+            audioManager.Stop(5);
+           
             // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
@@ -146,10 +151,10 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "CharacterSelectTest")
         {
-            for (int x = 1; x == 1; x++)
-            {
-                audioManager.KillAll();
-            }
+            audioManager.Stop(5);
+            audioManager.Stop(20);
+            audioManager.Stop(15);
+            audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
             {
@@ -210,26 +215,26 @@ public class PlayMusic : MonoBehaviour {
         }
         if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
         {
-            audioManager.Play(9);
+            audioManager.Play(8);
             i--;
         }
     }
     //Method to play Happy sounds when a character likes a word.
-    void HappySound()
-    {
-        if (GameObject.Find("VariableController").GetComponent<VariableControl>().happySound > 0)
-        {
-            audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().happySound);
-            GameObject.Find("VariableController").GetComponent<VariableControl>().bonus = false;
-            GameObject.Find("VariableController").GetComponent<VariableControl>().happySound = 0;
-        }
-    }
+    //void HappySound()
+    //{
+    //    if (GameObject.Find("VariableController").GetComponent<VariableControl>().happySound > 0)
+    //    {
+    //        audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().happySound);
+    //        GameObject.Find("VariableController").GetComponent<VariableControl>().bonus = false;
+    //        GameObject.Find("VariableController").GetComponent<VariableControl>().happySound = 0;
+    //    }
+    //}
     void RejectedSound()
     {
-        if (GameObject.Find("VariableController").GetComponent<VariableControl>().notWord)
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound != 0)
         {
-            audioManager.Play(12);
-            GameObject.Find("VariableController").GetComponent<VariableControl>().notWord = false;
+            audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound);
+            GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound = 0;
         }
     }
     void Sizzle()
@@ -283,25 +288,35 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
             GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
-            if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 14)
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
             {
-                DelayedSuccessSound();
-                MoreDelayedLetterGeneration();
+                //DelayedSuccessSound();
+                if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
+                {
+                    audioManager.Play(21);
+                    Debug.Log("Taste");
+
+                }
+                else 
+                {
+                    audioManager.Play(22);
+                    Debug.Log("Neutral");
+                }
             }
         }
+        MoreDelayedLetterGeneration();
     }
     void Shuffle()
     {
         if (GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound == true)
-            audioManager.Play(20);
+            audioManager.Play(19);
         GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
 
     }
     void LetterGeneration()
     {
-        audioManager.Play(8);
-
-        GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
+        audioManager.Play(7);
+  //      GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
         Debug.Log("generation");
     }
     void DelayedLetterGeneration()
@@ -310,7 +325,7 @@ public class PlayMusic : MonoBehaviour {
     }
     void MoreDelayedLetterGeneration()
     {
-        Invoke("LetterGeneration", 0.6f);
+        Invoke("LetterGeneration", 1.0f);
     }
     void Pause()
     {
@@ -323,14 +338,14 @@ public class PlayMusic : MonoBehaviour {
 
         //}
     }
-    void SuccessSound()
-    {
-        audioManager.Play(13);
-    }
-    void DelayedSuccessSound()
-    {
-        Invoke("SuccessSound", 0.5f);
-    }
+    //void SuccessSound()
+    //{
+    //    audioManager.Play(13);
+    //}
+    //void DelayedSuccessSound()
+    //{
+    //    Invoke("SuccessSound", 0.5f);
+    //}
 
 
 }
