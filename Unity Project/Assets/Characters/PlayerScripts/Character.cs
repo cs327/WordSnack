@@ -95,6 +95,7 @@ public class Character : MonoBehaviour
 		 if (characterNum != 0) { //If we're not the trash character... 
 			if (word != null && letterControl.checkForWord (word) == false) {
 				Debug.Log ("Not a word and this isn't the trash character");
+				GetComponent<Animator>().SetTrigger("sad");
 				return 0;
 			}
 		} else {
@@ -197,6 +198,7 @@ public class Character : MonoBehaviour
 				return 23;
 			case 2:
 				Debug.Log("Kelvin does not like this");
+				GetComponent<Animator>().SetTrigger("sad");
 				return 32;
 			case 3:
 				Debug.Log("Spike does not like this");
