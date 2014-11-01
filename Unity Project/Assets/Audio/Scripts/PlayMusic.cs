@@ -109,6 +109,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
                 {
+                    playedVictory = false;
               //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
                     audioManager.PlayLoop(21);
                     audioManager.PlayLoop(15);
@@ -146,35 +147,26 @@ public class PlayMusic : MonoBehaviour {
             {
                 audioManager.PlayLoop(5);
             }
+           
+
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
+            {
+              
+                    audioManager.Play(1);  //select sound for character
+                    numSelected++;
+            }
+
+            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
+            {
+                audioManager.Play(8); //deselect sound for character
+                numSelected--;
+                Debug.Log(numSelected.ToString());
+            }
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
             {
                 numSelected = 0;
             }
-
-            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
-            {
-                if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
-                {
-                    audioManager.Play(4);
-                    Debug.Log("booop");
-                    numSelected++;
-                }
-                else
-                {
-                    audioManager.Play(1);
-                    Debug.Log("ding");
-                    numSelected++;
-                }
-            }
-
-            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
-            {
-                audioManager.Play(3);
-                numSelected--;
-                Debug.Log(numSelected.ToString());
-            }
-
 
             if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
             {

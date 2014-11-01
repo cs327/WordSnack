@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 6f04a25c172b541eab6358640eed4e14
+guid: c791a1cc5bf9f47eea76f5f9c67884e5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LetterBank 1
-    21300002: LetterBank
+    21300000: halo
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
