@@ -303,8 +303,10 @@ public class PlayMusic : MonoBehaviour {
                     Debug.Log("Neutral");
                 }
             }
+            MoreDelayedLetterGeneration();
+            Debug.Log("Letter Generation");
         }
-        MoreDelayedLetterGeneration();
+        
     }
     void Shuffle()
     {
@@ -313,7 +315,7 @@ public class PlayMusic : MonoBehaviour {
         GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
 
     }
-    void LetterGeneration()
+    void LetterGenerationSound()
     {
         audioManager.Play(7);
   //      GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
@@ -321,11 +323,11 @@ public class PlayMusic : MonoBehaviour {
     }
     void DelayedLetterGeneration()
     {
-        Invoke("LetterGeneration", 0.5f);
+        Invoke("LetterGenerationSound", 0.5f);
     }
     void MoreDelayedLetterGeneration()
     {
-        Invoke("LetterGeneration", 1.0f);
+        Invoke("LetterGenerationSound", 0.4f);
     }
     void Pause()
     {
