@@ -303,6 +303,9 @@ public class Character : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (characterNum != 0) { 
+			print (thingsILike);
+		}
 		if(Application.loadedLevelName == "CharacterSelectTest"){
 
 			if(selectScript.selected){
@@ -462,4 +465,20 @@ public class Character : MonoBehaviour
 			Convert.ToBase64String(memStream.GetBuffer()));
 
 	}
+
+//	int TasteGlow () {
+//		string currentWord;
+//		currentWord = letterControl.sendWord();
+//		if (characterNum != 0) { 
+//			if (true) {
+//				return 1;
+//			} else if (myTastes[0]) {
+//				return 2;
+//			} else {
+//				return -1;
+//			}
+//		} else {
+//			return -1;
+//		}
+//	}
 }
