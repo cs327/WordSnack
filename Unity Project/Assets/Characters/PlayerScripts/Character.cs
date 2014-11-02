@@ -68,17 +68,20 @@ public class Character : MonoBehaviour
 	public void CreateVisibleTastes(){
 		if(characterNum != 0){
 			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
-			tasteObj.transform.parent = gameObject.transform;
+
 			if(Application.loadedLevelName == "CharacterSelectTest"){
+				tasteObj.transform.parent = gameObject.transform;
 				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);	 
 			 //tasteObj.transform.localPosition = new Vector3 (-1.0f,-.3f,-1);
 			}
 			if (Application.loadedLevelName == "WordMaking"){
 				if(PlayerPrefs.GetInt("Character 1") == characterNum){
+					tasteObj.transform.parent = GameObject.FindGameObjectWithTag("leftPanel").transform;
 					tasteObj.transform.localPosition = variables.characterTasteSpots[0];
 				
 				} 
 				else{
+					tasteObj.transform.parent = GameObject.FindGameObjectWithTag("rightPanel").transform;
 					tasteObj.transform.localPosition = variables.characterTasteSpots[1];
 				}
 			}
@@ -86,15 +89,6 @@ public class Character : MonoBehaviour
 			tasteText.text = thingsILike;
 			if (Application.loadedLevelName == "WordMaking"){
 				tasteText.fontSize = 60;
-
-				if(variables.iPhoneType == 2){
-					if(PlayerPrefs.GetInt("Character 1") == characterNum){
-						tasteObj.transform.localPosition += new Vector3(-.7f,0,0);
-					} 
-					else{
-						tasteObj.transform.localPosition += new Vector3(.7f,0,0);
-					}
-				}
 			}
 
 
