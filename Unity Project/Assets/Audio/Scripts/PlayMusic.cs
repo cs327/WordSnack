@@ -130,7 +130,7 @@ public class PlayMusic : MonoBehaviour {
                     //  audioManager.FadeOut(17);
                     //receipt.winSound = false;
                 } 
-                else if(playedVictory == false && audioManager.audioSourceArray[15].isPlaying == false){
+                else if(playedVictory == false && audioManager.audioSourceArray[14].isPlaying == false){
                    // audioManager.KillAll();
                     audioManager.Play(15);
                     playedVictory =true;
