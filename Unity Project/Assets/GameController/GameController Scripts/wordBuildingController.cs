@@ -93,7 +93,7 @@ public class wordBuildingController : MonoBehaviour
 				tasteHighlighters[i].transform.renderer.enabled = false;
 			}
 		}
-		//unhilights all tastes if the letters on the stove do not form a word
+//		//unhilights all tastes if the letters on the stove do not form a word
 		if (!variables.isWord) {
 			unhightlightAllTastes();
 		}
