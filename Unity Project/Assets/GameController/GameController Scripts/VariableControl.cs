@@ -5,7 +5,9 @@ public class VariableControl : MonoBehaviour {
 	//main game variables: 
 	public int boardSize = 8;
 	public Vector3 [] characterTasteSpots;
-
+	//what iphone model it is running on.
+	//0 = unidentified, 1 = 4S or older (below), 2 = 5 or newer (higher)
+	public int iPhoneType = 2;
 
 	//letter tuning variables
 	public int numA = 9;
@@ -140,8 +142,8 @@ public class VariableControl : MonoBehaviour {
 		phase2CharacterPositions[1] = new Vector3(3.8f, 0.5f, 1);
 
 		//sets where the character tastes should be put for wordbuilding phase
-		characterTasteSpots[0] = new Vector3 (-2.0f,1.25f,-1f);
-		characterTasteSpots[1] = new Vector3 (-0.2f,1.9f,-1f);
+		characterTasteSpots[0] = new Vector3 (-1.9f,1.75f,-1f);
+		characterTasteSpots[1] = new Vector3 (0f,1.75f,-1f);
 	}
 
 	void Start () {
@@ -163,6 +165,8 @@ public class VariableControl : MonoBehaviour {
 		allCharTastes[4] = TastesForStella;
 		allCharTastes[1] = TastesForFred;
 		allCharTastes[5] = TastesForMeghan;
+
+		//CheckIphoneType();
 	}
 	
 	// Update is called once per frame
@@ -182,4 +186,20 @@ public class VariableControl : MonoBehaviour {
 			timeToChangeGameState = false;
 		}
 	}
+	void CheckIphoneType(){
+
+		//sets an int telling what iPhone type this is being played on 
+		string gen = iPhoneGeneration.iPhone4S.ToString();
+		
+		if(gen == "iPhone" ||  gen == "iPhone3G" || gen == "iPhone3GS" || gen == "iPhone4S" || gen == "iPhone4"){
+			iPhoneType = 1;
+		}
+		if(gen == "iPhone5" ||  gen == "iPhone5S" || gen == "iPhone6" || gen == "iPhone6Plus"){
+			iPhoneType = 2;
+		}
+		else{
+			iPhoneType = 0;
+		}
+	}
+
 }

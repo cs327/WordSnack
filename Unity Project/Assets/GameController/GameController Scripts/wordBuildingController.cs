@@ -4,6 +4,11 @@ using System.Collections;
 public class wordBuildingController : MonoBehaviour
 {
 	public GameObject[] characters = new GameObject[6];
+	//for taste panels, index 0 is left and index 1 is right side
+	public GameObject[] tastePanels = new GameObject [2];
+	public Texture2D[] leftPanels = new Texture2D [6];
+	public Texture2D[] rightPanels = new Texture2D [6];
+
 	public VariableControl variables;
 	public GameObject variableController;
 	public Texture2D endGameButton;
@@ -47,6 +52,8 @@ public class wordBuildingController : MonoBehaviour
 		if (GameObject.Find ("AudioManager_Prefab(Clone)") == null) {
 				Instantiate (Resources.Load ("AudioManager_Prefab"), new Vector3 (0, 0, 0), Quaternion.identity);
 		}
+
+		SetDisplayColors();
 	}
 	
 	// Update is called once per frame
@@ -107,6 +114,17 @@ public class wordBuildingController : MonoBehaviour
 		for (int i = 0; i < tasteHighlighters.Length; i++) {
 			tasteHighlighters[i].transform.renderer.enabled = false;
 			variables.timeToHighlightTaste[i] = false;
+		}
+	}
+
+	public void SetDisplayColors(){
+		//for taste panels, index 0 is left and index 1 is right side
+		
+		tastePanels[0].renderer.material.SetTexture("_MainTex", leftPanels[character1Num]);
+		tastePanels[1].renderer.material.SetTexture("_MainTex", rightPanels[character2Num]);
+		if(variables.iPhoneType == 1){
+			tastePanels[0].transform.localPosition += (new Vector3 (-.7f,0,0));
+			tastePanels[1].transform.localPosition +=(new Vector3 (.7f,0,0));
 		}
 	}
 }

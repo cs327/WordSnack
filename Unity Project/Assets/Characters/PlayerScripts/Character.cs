@@ -85,7 +85,19 @@ public class Character : MonoBehaviour
 			tasteText.text = thingsILike;
 			if (Application.loadedLevelName == "WordMaking"){
 				tasteText.fontSize = 60;
+
+				if(variables.iPhoneType == 2){
+					if(PlayerPrefs.GetInt("Character 1") == characterNum){
+						tasteObj.transform.localPosition += new Vector3(-.7f,0,0);
+					} 
+					else{
+						tasteObj.transform.localPosition += new Vector3(.7f,0,0);
+					}
+				}
 			}
+
+
+
 		}
 
 	}
@@ -204,16 +216,16 @@ public class Character : MonoBehaviour
 			if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 				humanReadableTasteDictionary = new Dictionary<int, string> ();
 				//Create the dictionary of taste ID's to Human-readable text
-				humanReadableTasteDictionary.Add (0, "- 3 letters");
-				humanReadableTasteDictionary.Add (1, "- 5+ letters");
-				humanReadableTasteDictionary.Add (2, "- Letters worth 4+");
-				humanReadableTasteDictionary.Add (3, "- Ends in vowel");
-				humanReadableTasteDictionary.Add (4, "- 2+ vowels");
-				humanReadableTasteDictionary.Add (5, "- 2+ same letter");
-				humanReadableTasteDictionary.Add (6, "- Starts with vowel");
-				humanReadableTasteDictionary.Add (7, "- Starts/ends with\n same letter");
-				humanReadableTasteDictionary.Add (8, "- 4 letters");
-				humanReadableTasteDictionary.Add (9, "- Equal vowels \n and consonants");
+				humanReadableTasteDictionary.Add (0, "3 letters");
+				humanReadableTasteDictionary.Add (1, "5+ letters");
+				humanReadableTasteDictionary.Add (2, "Letters worth 4+");
+				humanReadableTasteDictionary.Add (3, "Ends in vowel");
+				humanReadableTasteDictionary.Add (4, "2+ vowels");
+				humanReadableTasteDictionary.Add (5, "2+ same letter");
+				humanReadableTasteDictionary.Add (6, "Starts with vowel");
+				humanReadableTasteDictionary.Add (7, "Starts/ends with\n same letter");
+				humanReadableTasteDictionary.Add (8, "4 letters");
+				humanReadableTasteDictionary.Add (9, "Equal vowels \n and consonants");
 				humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
 			}
 			myTastes = new List<TasteCollection.Taste>();
@@ -242,7 +254,7 @@ public class Character : MonoBehaviour
 					//if the size of myTastes isn't the same as the size of the array of this character's tastes, then we
 					//haven't gotten all of them yet and therefore need an "and" in our human-readable string
 					if (myTastes.Count != characterTastes[characterNum].Length) { //If this isn't the last taste we've got
-						thingsILike = thingsILike + " \n \n ";
+						thingsILike = thingsILike + "\n\n";
 					}
 				}
 				//Let's see if all that text-making worked or not
