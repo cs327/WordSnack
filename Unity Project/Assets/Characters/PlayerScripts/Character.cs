@@ -287,7 +287,6 @@ public class Character : MonoBehaviour
 			if(characterNum != 0 && variables.timeToCheckForTastes) {
 				int toHightlight = TasteGlow(characterNum);
 				if (toHightlight > -1) {
-					print ("actually checked");
 					if (toHightlight < 4) {
 						variables.timeToHighlightTaste[toHightlight] = true;
 					} else if (toHightlight == 4) {
@@ -469,8 +468,6 @@ public class Character : MonoBehaviour
 			variables.char2TasteChecked = true;
 		}
 		if (characterNum != 0) { 
-			print (tasteDictionary[charTastes[0]](currentWord));
-			print (tasteDictionary[charTastes[1]](currentWord));
 			if (tasteDictionary[charTastes[0]](currentWord) != 1 && tasteDictionary[charTastes[1]](currentWord) != 1) {
 				return bothTastes;
 			} else if (tasteDictionary[charTastes[0]](currentWord) != 1) {
