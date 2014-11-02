@@ -17,7 +17,7 @@ public class WordMakingGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		textMesh.text = variableControl.score.ToString();
+		textMesh.text = "Score: " + variableControl.score.ToString();
 	}
 
 //	void OnGUI(){

@@ -76,6 +76,7 @@ public class Character : MonoBehaviour
 			if (Application.loadedLevelName == "WordMaking"){
 				if(PlayerPrefs.GetInt("Character 1") == characterNum){
 					tasteObj.transform.localPosition = variables.characterTasteSpots[0];
+				
 				} 
 				else{
 					tasteObj.transform.localPosition = variables.characterTasteSpots[1];

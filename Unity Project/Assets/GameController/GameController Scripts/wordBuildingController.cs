@@ -25,6 +25,7 @@ public class wordBuildingController : MonoBehaviour
 	public GameObject char1Taste2;
 	public GameObject char2Taste1;
 	public GameObject char2Taste2;
+	public Vector3[] tasteHightLightPos = new Vector3[4];
 	public GameObject[] tasteHighlighters = new GameObject[4];
 	// Use this for initialization
 	void Start ()
@@ -34,7 +35,6 @@ public class wordBuildingController : MonoBehaviour
 		tasteHighlighters[2] = char2Taste1;
 		tasteHighlighters[3] = char2Taste2;
 		variables = variableController.GetComponent<VariableControl> ();
-//		unhightlightAllTastes();
 		character1Num = PlayerPrefs.GetInt ("Character 1");
 		character2Num = PlayerPrefs.GetInt ("Character 2");
 		character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
@@ -54,12 +54,28 @@ public class wordBuildingController : MonoBehaviour
 		}
 
 		SetDisplayColors();
+		//sets the taste highlighters to match the position of the tastes
+		for (int i = 0; i < tasteHighlighters.Length; i++) {
+			tasteHighlighters[i].transform.position = tasteHightLightPos[i];
+		}
+		//moves the highlighters over, if it's an iPhone 5
+		if (variables.iPhoneType == 2) {
+			for (int i = 0; i < tasteHighlighters.Length -2; i++) {
+				tasteHighlighters[i].transform.position += Vector3.left;
+			}
+			for (int i = 2; i < tasteHighlighters.Length; i++) {
+				tasteHighlighters[i].transform.position += Vector3.right;
+			}
+		}
+
+
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-			lettersRemaining.text = variables.lettersRemaining.ToString ();
+		// Update is called once per frame
+		void Update ()
+		{
+
+
+			lettersRemaining.text = "Tiles: " + variables.lettersRemaining.ToString ();
 			//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 			// if the instructions is enabled 
 			if (PlayerPrefs.GetInt ("instructions") == 0) {
