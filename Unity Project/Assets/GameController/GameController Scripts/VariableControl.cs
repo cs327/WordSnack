@@ -198,6 +198,10 @@ public class VariableControl : MonoBehaviour {
 		if(gen == "iPhone5" ||  gen == "iPhone5S" || gen == "iPhone6" || gen == "iPhone6Plus"){
 			iPhoneType = 2;
 		}
+        else
+        {
+            iPhoneType = 2;
+        }
 	}
 
 }
