@@ -56,10 +56,12 @@ public class VariableControl : MonoBehaviour {
 	public int[] TastesForKelvin;
 	public int[] TastesForFred;
 	public int[] TastesForSpike;
+	public int[][] allCharTastes;
 
 	//Sound related variables
 	public bool bonus = false;
 	public bool notWord = false;
+	public bool isWord;
 	public bool hungry = false;
 	public bool chewing = false;
 	public int happySound;
@@ -68,13 +70,14 @@ public class VariableControl : MonoBehaviour {
 	public int chewingSound;
 	public bool shuffleSound;
 	public bool letterGenerationSound = false;
-
+	
 	//tweakable variables: 
 	public int minWordLength;
 	public int maxWordLength;
 	public int minNumVowels = 1;
 	public int maxNumVowels = 3;
 	public int characterSelectNum = 2;
+	public int totalNumChar = 5;
 	public int maxFed = 10;
 	public int maxWaitingTime = 20;
 	public int maxHungerTime = 15;
@@ -88,6 +91,12 @@ public class VariableControl : MonoBehaviour {
 	public bool [] characterSelected;
 	public int currentCharacterSelectNum = 0;
 	public Vector3 [] phase1SelectedCharPositions;
+
+	//taste checking variables 
+	public bool[] timeToHighlightTaste = new bool[4];
+	public bool timeToCheckForTastes;
+	public bool char1TasteChecked;
+	public bool char2TasteChecked;
 
 	//gamestate variables
 	public int score = 0; //Initialized at 0 by Mike. Just needed an initial value.
@@ -146,14 +155,24 @@ public class VariableControl : MonoBehaviour {
 		selectedCharacters = new GameObject[characterSelectNum];
 		selectedCharacterNums = new int[characterSelectNum]; 
 		lettersRemaining = totalLetters;
+		//creates an array of character tastes (characterNum does not match order of characters on SelectScreen, this is why the array is out of order) 
+		allCharTastes = new int[totalNumChar + 1][];
+		allCharTastes[0] = TastesForTrash;
+		allCharTastes[3] = TastesForSpike;
+		allCharTastes[2] = TastesForKelvin;
+		allCharTastes[4] = TastesForStella;
+		allCharTastes[1] = TastesForFred;
+		allCharTastes[5] = TastesForMeghan;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//sets the selectNum back to lowest unclaimed position in the array
 //		currentCharacterSelectNum = gameObject.transform.childCount;
-		if (gameObject.transform.childCount < 2) {
-
+		if (timeToCheckForTastes && char1TasteChecked && char2TasteChecked) {
+			timeToCheckForTastes = false;
+			char1TasteChecked = false;
+			char2TasteChecked = false;
 		}
 		//checks if all three characters are selected 
 		if (Application.loadedLevelName == "CharacterSelectTest" && currentCharacterSelectNum == 2) {

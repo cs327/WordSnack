@@ -12,11 +12,13 @@ public class letterBehaviour : MonoBehaviour {
 	public Sprite [] spriteStove;
 	public int letterAlphabetOrder;
 	LetterController l; 
+	VariableControl variables;
 	public bool isMoving = false;
 	void Start () {
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
 		SetLetter();
 		l = GameObject.Find ("letterGeneration").GetComponent<LetterController> ();
+		variables = GameObject.Find ("VariableController").GetComponent<VariableControl>(); 
 	}
 	
 	// Update is called once per frame
@@ -39,6 +41,7 @@ public class letterBehaviour : MonoBehaviour {
 
     // Switch the checked status
 	void OnMouseDown(){
+
 		if(!selected){
 			selected = true;
 			//put it on the stove and change the color
@@ -49,7 +52,6 @@ public class letterBehaviour : MonoBehaviour {
 			//change the color back to green when it's no longer on the stove
 			thisSprite.sprite = sprites[letterAlphabetOrder];
 		}
-
 	}
 
     // Colors the letter depending on if it's selected or not

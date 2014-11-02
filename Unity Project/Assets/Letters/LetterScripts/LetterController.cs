@@ -38,6 +38,7 @@ public class LetterController : MonoBehaviour
 	public GameObject gameController;
 	public bool needsReordering = true;
 	public int countToEndGame;
+	public string lastWordChecked;
 
 
 	// Use this for initialization
@@ -73,6 +74,18 @@ public class LetterController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		string word = sendWord();
+		//check if there even is a word!
+		if (word == null || word.Length < variables.minWordLength || !checkForWord(word)) {
+			variables.isWord = false;
+		} else {
+			variables.isWord = true;
+		}
+		//triggers the check to met tastes if the word on the stove is a new and valid 
+		if (variables.isWord && lastWordChecked != word) {
+			lastWordChecked = word;
+			GameObject.Find ("VariableController").GetComponent<VariableControl>().timeToCheckForTastes = true;
+		} 
 		//waits to count letters until they've been initialized 
 		if (safetyCount > 10) {
 			firstHand = false;
@@ -1045,10 +1058,14 @@ public class LetterController : MonoBehaviour
 
 	public bool checkForWord(string word)
 	{
-		//This method will, when passed a word, check if it's a valid word
-		//Our word list happens to contain uppercase only words, so convert before checking
-		//Debug.Log ("Checking a word in checkForWord!");
-		return (wordList.Contains(word.ToUpper()));
+		if (word != null)  {
+			//This method will, when passed a word, check if it's a valid word
+			//Our word list happens to contain uppercase only words, so convert before checking
+			//Debug.Log ("Checking a word in checkForWord!");
+			return (wordList.Contains(word.ToUpper()));
+		} else {
+			return false;
+		}
 	}
 	//counts the current number of vowels
 	public int countVowels (){

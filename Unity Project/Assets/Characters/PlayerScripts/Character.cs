@@ -282,7 +282,23 @@ public class Character : MonoBehaviour
 				tasteObj.SetActive(false);
 			}
 		}
-		if(characterNum == 2) {
+		//checks to see if tastes should be highlighted 
+		if(Application.loadedLevelName == "WordMaking") {
+			if(characterNum != 0 && variables.timeToCheckForTastes) {
+				int toHightlight = TasteGlow(characterNum);
+				if (toHightlight > -1) {
+					print ("actually checked");
+					if (toHightlight < 4) {
+						variables.timeToHighlightTaste[toHightlight] = true;
+					} else if (toHightlight == 4) {
+						variables.timeToHighlightTaste[0] = true;
+						variables.timeToHighlightTaste[1] = true;
+					} else if (toHightlight == 5) {
+						variables.timeToHighlightTaste[2] = true;
+						variables.timeToHighlightTaste[3] = true;
+					}
+				}
+			}
 		}
 
 	}
@@ -293,7 +309,6 @@ public class Character : MonoBehaviour
 
 		if (Application.loadedLevelName == "WordMaking")
 		{
-
 			//First grab the word - we're gonna need it!
 			string word = letterControl.sendWord();
 			//check if there even is a word!
@@ -437,19 +452,37 @@ public class Character : MonoBehaviour
 
 	}
 
-//	int TasteGlow () {
-//		string currentWord;
-//		currentWord = letterControl.sendWord();
-//		if (characterNum != 0) { 
-//			if (true) {
-//				return 1;
-//			} else if (myTastes[0]) {
-//				return 2;
-//			} else {
-//				return -1;
-//			}
-//		} else {
-//			return -1;
-//		}
-//	}
+	//to check tastes for the characters when a word is on the stove
+	int TasteGlow (int charNum) {
+		int[]charTastes = variables.allCharTastes[charNum];
+		string currentWord;
+		currentWord = letterControl.sendWord();
+		int currentTaste = -1;
+		int bothTastes = -1;
+		if(PlayerPrefs.GetInt("Character 1") == characterNum) {
+			currentTaste = 0;
+			bothTastes = 4;
+			variables.char1TasteChecked = true;
+		} else if (PlayerPrefs.GetInt("Character 2") == characterNum) {
+			currentTaste = 2;
+			bothTastes = 5;
+			variables.char2TasteChecked = true;
+		}
+		if (characterNum != 0) { 
+			print (tasteDictionary[charTastes[0]](currentWord));
+			print (tasteDictionary[charTastes[1]](currentWord));
+			if (tasteDictionary[charTastes[0]](currentWord) != 1 && tasteDictionary[charTastes[1]](currentWord) != 1) {
+				return bothTastes;
+			} else if (tasteDictionary[charTastes[0]](currentWord) != 1) {
+				return currentTaste;
+			} else if (tasteDictionary[charTastes[1]](currentWord) != 1){
+				currentTaste++;
+				return currentTaste;
+			} else {
+				return -1;
+			}
+		} else {
+			return -1;
+		}
+	}
 }

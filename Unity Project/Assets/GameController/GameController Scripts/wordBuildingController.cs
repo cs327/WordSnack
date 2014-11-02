@@ -16,10 +16,20 @@ public class wordBuildingController : MonoBehaviour
 	public GameObject tutorial;
 	//public GameObject instructionsClose;
 	public TextMesh lettersRemaining;
+	public GameObject char1Taste1;
+	public GameObject char1Taste2;
+	public GameObject char2Taste1;
+	public GameObject char2Taste2;
+	public GameObject[] tasteHighlighters = new GameObject[4];
 	// Use this for initialization
 	void Start ()
 	{
+		tasteHighlighters[0] = char1Taste1;
+		tasteHighlighters[1] = char1Taste2;
+		tasteHighlighters[2] = char2Taste1;
+		tasteHighlighters[3] = char2Taste2;
 		variables = variableController.GetComponent<VariableControl> ();
+//		unhightlightAllTastes();
 		character1Num = PlayerPrefs.GetInt ("Character 1");
 		character2Num = PlayerPrefs.GetInt ("Character 2");
 		character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
@@ -52,6 +62,18 @@ public class wordBuildingController : MonoBehaviour
 					tutorial.SetActive (false);
 					//instructionsClose.SetActive(false);
 			}
+//		highlights and character tastes that are currently pleased
+		for (int i = 0; i < tasteHighlighters.Length; i++) {
+			if (variables.timeToHighlightTaste[i]) {
+				tasteHighlighters[i].transform.renderer.enabled = true;
+			} else {
+				tasteHighlighters[i].transform.renderer.enabled = false;
+			}
+		}
+		//unhilights all tastes if the letters on the stove do not form a word
+		if (!variables.isWord) {
+			unhightlightAllTastes();
+		}
 	}
 
 	void OnGUI ()
@@ -79,5 +101,12 @@ public class wordBuildingController : MonoBehaviour
 			PlayerPrefs.SetInt ("Total Multiplier Score", variables.totalMultiplierScore); 
 			PlayerPrefs.SetInt ("Trashed Letters", variables.trashedLetters); 
 			PlayerPrefs.SetInt ("Trashed Letter Score", variables.trashedLetterScore); 
+	}
+
+	public void unhightlightAllTastes () {
+		for (int i = 0; i < tasteHighlighters.Length; i++) {
+			tasteHighlighters[i].transform.renderer.enabled = false;
+			variables.timeToHighlightTaste[i] = false;
+		}
 	}
 }
