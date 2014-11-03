@@ -93,9 +93,9 @@ public class LetterController : MonoBehaviour
 		}
 		//triggers the check to met tastes if the word on the stove is a new and valid 
 		if (variables.isWord && lastWordChecked != word) {
-			lastWordChecked = word;
 			GameObject.Find ("VariableController").GetComponent<VariableControl>().timeToCheckForTastes = true;
 		} 
+		lastWordChecked = word;
 		//waits to count letters until they've been initialized 
 //		if (safetyCount > 10) {
 //			firstHand = false;
