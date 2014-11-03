@@ -78,7 +78,6 @@ public class Character : MonoBehaviour
 				if(PlayerPrefs.GetInt("Character 1") == characterNum){
 					tasteObj.transform.parent = GameObject.FindGameObjectWithTag("leftPanel").transform;
 					tasteObj.transform.localPosition = variables.characterTasteSpots[0];
-				
 				} 
 				else{
 					tasteObj.transform.parent = GameObject.FindGameObjectWithTag("rightPanel").transform;
