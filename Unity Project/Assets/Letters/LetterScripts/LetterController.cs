@@ -98,16 +98,9 @@ public class LetterController : MonoBehaviour
 			for (int i = 0; i < variables.timeToHighlightTaste.Length; i++) {
 				variables.timeToHighlightTaste[i] = false;
 			}
+			GameObject.Find ("VariableController").GetComponent<VariableControl>().timeToCheckForTastes = true;
 		} 
 		lastWordChecked = word;
-		//waits to count letters until they've been initialized 
-//		if (safetyCount > 10) {
-//			firstHand = false;
-//			myLetters = lettersInHand();
-//			numVowels = countVowels();
-//		} else {
-//			safetyCount++;
-//		}
 		//keep local time in scripts
 		myLetters = lettersInHand();
 		timer += Time.deltaTime;
