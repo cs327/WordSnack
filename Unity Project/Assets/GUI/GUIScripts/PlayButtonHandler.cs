@@ -22,8 +22,19 @@ public class PlayButtonHandler : MonoBehaviour {
 			mPlay.renderer.material.mainTexture = playSelected;
 		}
     }
-        void OnMouseUpAsButton(){
+    void OnMouseUp()
+    {
+        if (mPlay.renderer.material.mainTexture == playSelected)
+        {
+            mPlay.renderer.material.mainTexture = playUnselected;
+        }
+    }
+    void OnMouseUpAsButton(){
+        if (mPlay.renderer.material.mainTexture == playSelected)
+        {
+            mPlay.renderer.material.mainTexture = playUnselected;
+        }
 		buttonPressed = true;
 		Application.LoadLevel("CharacterSelectTest");
-        }
-	}
+    }
+}
