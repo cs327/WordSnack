@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class VariableControl : MonoBehaviour {
 	//main game variables: 
@@ -38,6 +39,7 @@ public class VariableControl : MonoBehaviour {
 	public int numY = 2;
 	public int numZ = 1;
 	public int totalLetters,totalVowels;
+	public Dictionary<char,int> letterBag;
 
 	//tweakable taste multipliers
 	public float threeLettersMult;
@@ -155,9 +157,49 @@ public class VariableControl : MonoBehaviour {
 	void Start () {
 
 		//sets totals for tuning variables of letters
-		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
-		totalVowels = numA + numE + numI + numO + numU;
-
+//		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
+//		totalVowels = numA + numE + numI + numO + numU;
+		
+		//sets totals for tuning variables of letters
+		if (Application.loadedLevelName == "WordMaking") { 
+			letterBag = new Dictionary<char, int> () {
+				{ 'a', numA},
+				{ 'b', numB},
+				{ 'c', numC},
+				{ 'd', numD},
+				{ 'e', numE},
+				{ 'f', numF},
+				{ 'g', numG},
+				{ 'h', numH},
+				{ 'i', numI},
+				{ 'j', numJ},
+				{ 'k', numK},
+				{ 'l', numL},
+				{ 'm', numM},
+				{ 'n', numN},
+				{ 'o', numO},
+				{ 'p', numP},
+				{ 'q', numQ},
+				{ 'r', numR},
+				{ 's', numS},
+				{ 't', numT},
+				{ 'u', numU},
+				{ 'v', numV},
+				{ 'w', numW},
+				{ 'x', numX},
+				{ 'y', numY},
+				{ 'z', numZ},
+			};
+			
+			totalLetters = 0;
+			
+			foreach (KeyValuePair<char, int> entry in letterBag) {
+				//Debug.Log ("Adding " + entry.Value + " " + entry.Key + "'s to letterBag");
+				totalLetters += entry.Value;
+			}
+			
+			totalVowels = numA + numE + numI + numO + numU;
+		}
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
