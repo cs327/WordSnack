@@ -35,8 +35,9 @@ public class letterBehaviour : MonoBehaviour {
 		//Used because there was a bug when taking multiple letters off the stove
 		//didn't change every color. 
 		if (!onStove && letter != ",") { 
-			// if there are fewer than 8 letters this crashes the game.
-			//thisSprite.sprite = sprites[letterAlphabetOrder];
+			// if there are fewer than 8 letters this creates an index out of bounds error.
+			//Debug.Log("Sprite size: " + sprites.Length + " letterAlphabetOrder: " + letterAlphabetOrder);
+			thisSprite.sprite = sprites[letterAlphabetOrder];
 		}
 	}
 
