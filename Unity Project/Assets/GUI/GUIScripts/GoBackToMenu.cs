@@ -15,10 +15,20 @@ public class GoBackToMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnMouseDown () {
-		backToStart = true;
 		s.sprite = menuClicked;
 		transform.localPosition = new Vector3 (-2.50f, 1, -1.43f);
 		transform.localScale = new Vector3 (0.25f, 0.49f, 0.49f);
-		Application.LoadLevel ("SplashScreen");
+
 	}
+
+    void OnMouseUp()
+    {
+        s.sprite = menuUnclicked;
+    }
+    void OnMouseUpAsButton()
+    {
+        s.sprite = menuUnclicked;
+        backToStart = true;
+        Application.LoadLevel("SplashScreen");
+    }
 }

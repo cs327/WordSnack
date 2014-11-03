@@ -10,6 +10,7 @@ public class CharacterSelectUI : MonoBehaviour {
     public bool FeedPressed = false;
 
 	public Texture feedMeClicked;
+    public Texture feedMeUnClicked;
 	//public GameObject feedMePressed;
 
 	// Use this for initialization
@@ -61,8 +62,16 @@ public class CharacterSelectUI : MonoBehaviour {
 
 	void OnMouseDown(){
 		gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeClicked;
-        FeedPressed = true;
-		characters.SetActive(false);
-		GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 	}
+    void OnMouseUp()
+    {
+        gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
+    }
+    void OnMouseUpAsButton()
+    {
+        gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
+        FeedPressed = true;
+        characters.SetActive(false);
+        GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
+    }
 }
