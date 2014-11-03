@@ -325,7 +325,7 @@ public class Character : MonoBehaviour
 			//score the word - do we have a score?
 			int wordScore = Likes(word);
 			if (letterControl.checkForWord(word) == false)
-			variables.notWord = true;
+				variables.notWord = true;
 			//Debug.Log(word);
 			//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 			if (wordScore > 0)
@@ -461,7 +461,7 @@ public class Character : MonoBehaviour
 
 	//to check tastes for the characters when a word is on the stove
 	int TasteGlow (int charNum) {
-		int[]charTastes = variables.allCharTastes[charNum];
+		int[] charTastes = variables.allCharTastes[charNum];
 		string currentWord;
 		currentWord = letterControl.sendWord();
 		int currentTaste = -1;
@@ -475,7 +475,7 @@ public class Character : MonoBehaviour
 			bothTastes = 5;
 			variables.char2TasteChecked = true;
 		}
-		if (characterNum != 0) { 
+		if (characterNum != 0) {
 			if (tasteDictionary[charTastes[0]](currentWord) != 1 && tasteDictionary[charTastes[1]](currentWord) != 1) {
 				return bothTastes;
 			} else if (tasteDictionary[charTastes[0]](currentWord) != 1) {
