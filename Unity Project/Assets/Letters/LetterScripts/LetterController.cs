@@ -77,7 +77,7 @@ public class LetterController : MonoBehaviour
 			bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 			positionOnBoard [i] = -1;
 		}
-		GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = true;
+		variables.letterGenerationSound = true;
 		CreateSteam ();
 	}
 
@@ -93,17 +93,14 @@ public class LetterController : MonoBehaviour
 		}
 		//triggers the check to met tastes if the word on the stove is a new and valid 
 		if (variables.isWord && lastWordChecked != word) {
+			variables.timeToCheckForTastes = true;
+			//sets the initial values for all highlighting options to false before they are checked
+			for (int i = 0; i < variables.timeToHighlightTaste.Length; i++) {
+				variables.timeToHighlightTaste[i] = false;
+			}
 			GameObject.Find ("VariableController").GetComponent<VariableControl>().timeToCheckForTastes = true;
 		} 
 		lastWordChecked = word;
-		//waits to count letters until they've been initialized 
-//		if (safetyCount > 10) {
-//			firstHand = false;
-//			myLetters = lettersInHand();
-//			numVowels = countVowels();
-//		} else {
-//			safetyCount++;
-//		}
 		//keep local time in scripts
 		myLetters = lettersInHand();
 		timer += Time.deltaTime;

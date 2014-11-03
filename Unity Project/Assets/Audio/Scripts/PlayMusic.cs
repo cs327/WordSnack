@@ -56,12 +56,6 @@ public class PlayMusic : MonoBehaviour {
 
         }
 
-        if (Application.loadedLevelName == "ScoreScreen")
-        {
-            gameObject.AddComponent<ReceiptMove>();
-            gameObject.AddComponent<GoBackToMenu>();
-        }
-
 
         if (Application.loadedLevelName == "WordMaking")
         {
@@ -161,24 +155,17 @@ public class PlayMusic : MonoBehaviour {
                 audioManager.PlayLoop(4);
             }
 
-            if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
-            {
-                numSelected = 0;
-            }
+           
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
             {
-                if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 2)
-                {
-                    audioManager.Play(3);
-                    Debug.Log("booop");
-                    numSelected++;
-                }
-                else
-                {
+               
                     audioManager.Play(1);
                     Debug.Log("ding");
                     numSelected++;
+                if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
+                {
+                    numSelected = 0;
                 }
             }
 

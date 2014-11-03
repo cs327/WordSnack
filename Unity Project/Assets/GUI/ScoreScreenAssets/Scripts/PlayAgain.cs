@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayAgain : MonoBehaviour {
 	public Sprite PlayAgainPressed;
+    public Sprite PlayAgainUnpressed;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,6 +17,15 @@ public class PlayAgain : MonoBehaviour {
 	void OnMouseDown () {
 		print ("clicked");
 		gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainPressed;
-		Application.LoadLevel("CharacterSelectTest");
 	}
+
+    void OnMouseUp()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainUnpressed;
+    }
+    void OnMouseUpAsButton()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainUnpressed;
+        Application.LoadLevel("CharacterSelectTest");
+    }
 }
