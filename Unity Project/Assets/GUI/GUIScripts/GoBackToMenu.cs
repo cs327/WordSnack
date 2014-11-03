@@ -19,6 +19,6 @@ public class GoBackToMenu : MonoBehaviour {
 		s.sprite = menuClicked;
 		transform.localPosition = new Vector3 (-2.50f, 1, -1.43f);
 		transform.localScale = new Vector3 (0.25f, 0.49f, 0.49f);
-		Application.LoadLevel ("StartScreenTest");
+		Application.LoadLevel ("SplashScreen");
 	}
 }

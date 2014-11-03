@@ -278,7 +278,8 @@ public class Character : MonoBehaviour
 	void Update()
 	{
 		if (characterNum != 0) { 
-			print (thingsILike);
+			// damon took this out - it was printing a lot of times!
+			//print (thingsILike);
 		}
 		if(Application.loadedLevelName == "CharacterSelectTest"){
 
