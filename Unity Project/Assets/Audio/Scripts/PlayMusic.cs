@@ -56,12 +56,6 @@ public class PlayMusic : MonoBehaviour {
 
         }
 
-        if (Application.loadedLevelName == "ScoreScreen")
-        {
-            gameObject.AddComponent<ReceiptMove>();
-            gameObject.AddComponent<GoBackToMenu>();
-        }
-
 
         if (Application.loadedLevelName == "WordMaking")
         {
