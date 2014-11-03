@@ -102,14 +102,14 @@ public class Character : MonoBehaviour
 		 if (characterNum != 0) { //If we're not the trash character... 
 			if (word != null && letterControl.checkForWord (word) == false) {
 				Debug.Log ("Not a word and this isn't the trash character");
-                variables.sadSound = 12;
+				variables.sadSound = 12;
 				GetComponent<Animator>().SetTrigger("sad");
 				return 0;
 			}
 		} else {
 			//If we ARE the trash character, don't let people throw away single letters
-			if (word.Length == 1) {
-			Debug.Log ("You can't throw away fewer than two letters. The GDD says so.");
+			if (word.Length < variables.minLettersToTrash) {
+				Debug.Log (string.Format("You can't throw away fewer than {0} letter. The GDD says so.",variables.minLettersToTrash-1));
 				return 0;
 			}
 		}
@@ -142,14 +142,14 @@ public class Character : MonoBehaviour
 			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
 			//calculate the raw bonus score 
 			rawBonusScoreFedToMe = variables.mostRecentBonus;
-            if (rawBonusScoreFedToMe > 0)
-            {
-                variables.bonus = true;
-            }
-            else if (rawBonusScoreFedToMe == 0)
-            {
-                variables.bonus = false;
-            }
+			if (rawBonusScoreFedToMe > 0)
+			{
+				variables.bonus = true;
+			}
+			else if (rawBonusScoreFedToMe == 0)
+			{
+				variables.bonus = false;
+			}
 			Debug.Log("Score after tastes for " + word + " is " + wordScore);
 		}
 		return wordScore;
@@ -178,7 +178,7 @@ public class Character : MonoBehaviour
 	}
 	//Determine if a bonus is satisfied for each character, used for audio manager - Mike
 	public int CharacterHappy (){
-        return 21;
+		return 21;
 	}
 	
 
@@ -265,14 +265,14 @@ public class Character : MonoBehaviour
 	}
 	void WordSound()
 	{
-        if (characterNum == 0)
-        {
-            variables.chewingSound = 18;
-        }
-        else
-        {
-            variables.chewingSound = 13;
-        }
+		if (characterNum == 0)
+		{
+			variables.chewingSound = 18;
+		}
+		else
+		{
+			variables.chewingSound = 13;
+		}
 	}
 	// Update is called once per frame
 	void Update()
@@ -330,7 +330,7 @@ public class Character : MonoBehaviour
 			//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 			if (wordScore > 0)
 			{
-			 
+
 				switch (characterNum)
 				{
 				case 1:
@@ -366,7 +366,6 @@ public class Character : MonoBehaviour
 					break;
 				}
 
-				//if(1 > 0){
 				//Keep track of words fed to me!
 				int letterScore = 0;
 				foreach (char letter in word)
@@ -430,18 +429,19 @@ public class Character : MonoBehaviour
 				WordSound();
 				variables.chewing = true;
 			}
-				if (wordScore == 0)
+			if (wordScore == 0)
+			{
+				if (characterNum != 0)
 				{
-                    if (characterNum != 0)
-                    {
-                        Debug.Log("True");
-                        variables.sadSound = 12;
-                    }
-                    if (characterNum == 0)
-                    {
-                        variables.sadSound = 18;
-                    }
+					Debug.Log("True");
+					variables.sadSound = 12;
 				}
+				if (characterNum == 0)
+				{
+					variables.sadSound = 18;
+					letterControl.ResetStove();
+				}
+			}
 		}
 	}
 

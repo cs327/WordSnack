@@ -88,6 +88,7 @@ public class VariableControl : MonoBehaviour {
 	public int maxHungerTime = 15;
 	public int maxEatingTime = 12;
 	public int maxMultiplier = 5;
+	public int minLettersToTrash = 1;
 
 	//character variables 
 	public Vector3 [] phase2CharacterPositions;
@@ -155,10 +156,6 @@ public class VariableControl : MonoBehaviour {
 	}
 
 	void Start () {
-
-		//sets totals for tuning variables of letters
-//		totalLetters =  numA + numB + numC + numD + numE + numF + numG + numH + numI + numJ + numK + numL + numM + numN + numO + numP + numQ + numR + numS + numT + numU + numV + numW + numX + numY + numZ;
-//		totalVowels = numA + numE + numI + numO + numU;
 		
 		//sets totals for tuning variables of letters
 		if (Application.loadedLevelName == "WordMaking") { 
