@@ -2,26 +2,26 @@
 using System.Collections;
 
 public class AboutUsMove : MonoBehaviour {
-	Camera c;
 	Vector3 pos;
 	public float speed;
 
 	// Use this for initialization
 	void Start () {
-		c = GameObject.Find ("Main Camera").GetComponent<Camera>();
+		pos = transform.localPosition;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(UniversalInput.press){
-			Application.LoadLevel("StartScreenTest");
+		if(pos.z > -10.43f ){
+			pos.z -= Time.deltaTime*speed;
+			transform.localPosition = pos;
 		}
+	}
 
-		pos = gameObject.transform.position;
-		if(pos.y <= 12.8f ){
-			pos.y += Time.deltaTime*speed;
-			transform.position = pos;
+	void OnMouseDown(){
+		if (pos.z > -10.43f) {
+		}else{
+			Application.LoadLevel ("StartScreenTest");
 		}
 	}
 }
