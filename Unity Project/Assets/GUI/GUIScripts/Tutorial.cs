@@ -68,9 +68,7 @@ public class Tutorial : MonoBehaviour
             Vector3 offScreenPos = gameObject.transform.position;
             offScreenPos.x = -20f;
             gameObject.transform.position = offScreenPos;
-            gameObject.transform.parent.transform.position = offScreenPos;
-            //checkMark.SetActive(false);
-            //gameObject.transform.parent.gameObject.SetActive(false);
+            gameObject.transform.parent.transform.position = offScreenPos;            
         }
     }
 
@@ -91,20 +89,16 @@ public class Tutorial : MonoBehaviour
         if (m.renderer.material.mainTexture == instructions[0])
         {
             m.renderer.material.mainTexture = instructions[1];
-            //transform.GetChild(0).transform.localPosition = new Vector3(-3.24f, 1.65f, -7.58f);
-            //transform.GetChild(0).transform.localScale = new Vector3(0.2f, 1, 0.36f);
-            transform.localPosition = new Vector3(-1.05f, 0.429f, 0.51f);
+            transform.localPosition = new Vector3(-1.0855f, .429f, .1266f);
             transform.localScale = new Vector3(0.55f, 1.21f, 0.53f);
             gameObject.GetComponent<BoxCollider>().center = new Vector3(1.87f, 0, -0.16f);
             trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
         }
         else if (m.renderer.material.mainTexture == instructions[1])
-        {
-            //transform.GetChild(0).transform.localPosition = new Vector3(-6.11f, 3.10f, -14.05f);
-            //transform.GetChild(0).transform.localScale = new Vector3(0.2f, 1, 0.5f);
+        {            
             m.renderer.material.mainTexture = instructions[2];
-            transform.localPosition = new Vector3(-0.06f, 0.429f, 1.6f);
-            transform.localScale = new Vector3(0.52f, 1.21f, 0.35f);
+            transform.localPosition = new Vector3(-0.06f, 0.429f, 1.0888f);
+            transform.localScale = new Vector3(0.67f, 1.21f, 0.59f);
             trash.position = new Vector3(trash.position.x, trash.position.y, -1.12f);
             gameObject.GetComponent<BoxCollider>().size = new Vector3(gameObject.GetComponent<BoxCollider>().size.x, gameObject.GetComponent<BoxCollider>().size.y, 27.59f);
             gameObject.GetComponent<BoxCollider>().center = new Vector3(-0.04f, 0, -4.4f);
@@ -124,7 +118,7 @@ public class Tutorial : MonoBehaviour
         {
             Debug.Log("reached the last instructions");
             m.renderer.material.mainTexture = instructions[4];
-            transform.localPosition = new Vector3(0, 0.429f, 0.49f);
+            transform.localPosition = new Vector3(0, 0.429f, -1.04f);
             transform.localScale = new Vector3(0.64f, 1.21f, 0.52f);
             checkMark.renderer.enabled = true;
             checkMark.GetComponent<BoxCollider>().enabled = true;
