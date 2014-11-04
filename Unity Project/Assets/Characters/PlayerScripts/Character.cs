@@ -313,7 +313,7 @@ public class Character : MonoBehaviour
 	}
 
 	// If I'm clicked on, attempt to feed me the word on the stove
-	void OnMouseDown()
+	void OnMouseUpAsButton()
 	{
 
 		if (Application.loadedLevelName == "WordMaking")
