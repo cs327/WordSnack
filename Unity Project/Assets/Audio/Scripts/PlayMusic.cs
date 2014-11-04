@@ -14,6 +14,9 @@ public class PlayMusic : MonoBehaviour {
     public GameObject VariableControl;
     VariableControl variables;
 
+    public GameObject wordControl;
+    wordBuildingController words;
+
     int numSelected = 0;
 
     ReceiptMove receipt;
@@ -61,7 +64,7 @@ public class PlayMusic : MonoBehaviour {
         {
             variables = GetComponent<VariableControl>();
             letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
-            
+            words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
         }
 	
 	}
@@ -277,13 +280,26 @@ public class PlayMusic : MonoBehaviour {
             GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
             {
+
+               // if(GameObject.Find("GameController").GetComponent<wordBuildingController>().bothTastes == true){
+                if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
+                     && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]) 
+                    || (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
+                    &&   GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])){
+                    audioManager.Play(23);
+                    Debug.Log("double taste");
+                   // words.bothTastes = false;
+                }
+
                 //DelayedSuccessSound();
-                if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
+               else if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
                 {
                     audioManager.Play(21);
                     Debug.Log("Taste");
 
                 }
+
+
                 else 
                 {
                     audioManager.Play(22);
@@ -292,8 +308,9 @@ public class PlayMusic : MonoBehaviour {
             }
             MoreDelayedLetterGeneration();
             Debug.Log("Letter Generation");
+
         }
-        
+       // words.bothTastes = false;
     }
     void Shuffle()
     {
