@@ -114,32 +114,41 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
            
-            // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+        // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+
+            //////////////////
+            //LOOPED VERSION//
+            //////////////////
+
+            //if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+            //{
+            //    audioManager.PlayLoop(20);
+            //    audioManager.PlayLoop(14);
+            //    //  audioManager.FadeOut(17);
+            //    //receipt.winSound = false;
+            //}
+            //else if (playedVictory == false && audioManager.audioSourceArray[14].isPlaying == false)
+            //{
+            //    // audioManager.KillAll();
+            //    audioManager.Play(15);
+            //    playedVictory = true;
+            //    Debug.Log("helllyeah");
+            //}
+
+            if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
             {
-                if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
-                {
-              //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
-                    audioManager.PlayLoop(20);
-                    audioManager.PlayLoop(14);
-                    //  audioManager.FadeOut(17);
-                    //receipt.winSound = false;
-                } 
-                else if(playedVictory == false && audioManager.audioSourceArray[14].isPlaying == false){
-                   // audioManager.KillAll();
-                    audioManager.Play(15);
-                    playedVictory =true;
-                    Debug.Log("helllyeah");
-                }
-            
-
-                if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().backToStart == true)
-                {
-                    Debug.Log("it has played");
-                    audioManager.Play(1);
-
-
-                }
+                audioManager.PlayLoop(20);
+                audioManager.PlayLoop(16);
             }
+
+            if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().backToStart == true)
+            {
+                Debug.Log("it has played");
+                audioManager.Play(1);
+
+
+            }
+            
         }
 
 
