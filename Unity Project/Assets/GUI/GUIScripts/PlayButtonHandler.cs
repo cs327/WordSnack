@@ -35,6 +35,7 @@ public class PlayButtonHandler : MonoBehaviour {
             mPlay.renderer.material.mainTexture = playUnselected;
         }
 		buttonPressed = true;
+		PlayerPrefs.SetInt("timed",0);
 		Application.LoadLevel("CharacterSelectTest");
     }
 }

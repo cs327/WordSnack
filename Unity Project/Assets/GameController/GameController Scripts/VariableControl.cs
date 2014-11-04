@@ -6,6 +6,11 @@ public class VariableControl : MonoBehaviour {
 	//main game variables: 
 	public int boardSize = 8;
 	public Vector3 [] characterTasteSpots;
+	public bool timedMode = false;
+	public float globalTimer;
+	public int gameLength = 180;
+
+
 	//what iphone model it is running on.
 	//0 = unidentified, 1 = 4S or older (below), 2 = 5 or newer (higher)
 	//[HideInInspector]
@@ -166,7 +171,13 @@ public class VariableControl : MonoBehaviour {
 	}
 
 	void Start () {
-		
+		if(PlayerPrefs.GetInt("timed") == 0){
+			timedMode = false;
+		} 
+		else{
+			timedMode = true;
+		}
+
 		//sets totals for tuning variables of letters
 		if (Application.loadedLevelName == "WordMaking") { 
 			letterBag = new Dictionary<char, int> () {
@@ -206,6 +217,10 @@ public class VariableControl : MonoBehaviour {
 			}
 			
 			totalVowels = numA + numE + numI + numO + numU;
+
+			if(timedMode){
+				globalTimer = gameLength;
+			}
 		}
 		//creates the arrays to handle character selection 
 		characterSelected = new bool[characterSelectNum];
@@ -226,6 +241,11 @@ public class VariableControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if(timedMode){
+			KeepTime();
+		}
+
 		//sets the selectNum back to lowest unclaimed position in the array
 //		currentCharacterSelectNum = gameObject.transform.childCount;
 		if (timeToCheckForTastes && char1TasteChecked && char2TasteChecked) {
@@ -244,18 +264,55 @@ public class VariableControl : MonoBehaviour {
 	void CheckIphoneType(){
 
 		//sets an int telling what iPhone type this is being played on 
-		string gen = iPhone.generation.ToString();
-		
-		if(gen == "iPhone" ||  gen == "iPhone3G" || gen == "iPhone3GS" || gen == "iPhone4S" || gen == "iPhone4"){
-			iPhoneType = 1;
+		string gen = iPhoneSettings.generation.ToString();
+
+//		if(gen == "iPhone" ||  gen == "iPhone3G" || gen == "iPhone3GS" || gen == "iPhone4S" || gen == "iPhone4"){
+//			iPhoneType = 1;
+//		}
+//		if(gen == "iPhone5" ||  gen == "iPhone5S" || gen == "iPhone6" || gen == "iPhone6Plus"){
+//			iPhoneType = 2;
+//		}
+//        else
+//        {
+//            iPhoneType = 2;
+//        }
+
+		switch(iPhoneSettings.generation){
+		case (iPhoneGeneration.iPhone):
+			iPhoneType = 1; 
+			break;
+		case (iPhoneGeneration.iPhone3G):
+			iPhoneType = 1; 
+			break;
+		case (iPhoneGeneration.iPhone3GS):
+			iPhoneType = 1; 
+			break;
+		case (iPhoneGeneration.iPhone4S):
+			iPhoneType = 1; 
+			break;
+		case (iPhoneGeneration.iPhone4):
+			iPhoneType = 1; 
+			break;
+		case (iPhoneGeneration.iPhone5):
+			iPhoneType = 2; 
+			break;
+		case (iPhoneGeneration.iPhone5S):
+			iPhoneType = 2; 
+			break;
+//		case (iPhoneGeneration.iPhone6):
+//			iPhoneType = 2; 
+//			break;
+//		case (iPhoneGeneration.iPhone6Plus):
+//			iPhoneType = 2; 
+//			break;
 		}
-		if(gen == "iPhone5" ||  gen == "iPhone5S" || gen == "iPhone6" || gen == "iPhone6Plus"){
-			iPhoneType = 2;
+	}
+
+	void KeepTime(){
+		if(Application.loadedLevelName == "WordMaking"){
+			globalTimer -= Time.deltaTime;
 		}
-        else
-        {
-            iPhoneType = 2;
-        }
+
 	}
 
 }

@@ -21,6 +21,7 @@ public class wordBuildingController : MonoBehaviour
 	public GameObject tutorial;
 	//public GameObject instructionsClose;
 	public TextMesh lettersRemaining;
+	public TextMesh timeRemaining;
 	public GameObject char1Taste1;
 	public GameObject char1Taste2;
 	public GameObject char2Taste1;
@@ -30,6 +31,8 @@ public class wordBuildingController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+
+
 		tasteHighlighters[0] = char1Taste1;
 		tasteHighlighters[1] = char1Taste2;
 		tasteHighlighters[2] = char2Taste1;
@@ -73,7 +76,15 @@ public class wordBuildingController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-
+		//Ends the game if time runs out:
+		if(variables.timedMode && variables.globalTimer < 0){
+			sendVariablestoScoreScreen ();
+			Application.LoadLevel ("ScoreScreen");
+		}
+		//updates time on screen
+		else{
+			timeRemaining.text = "Time: " + Mathf.RoundToInt(variables.globalTimer).ToString();
+		}
 
 			lettersRemaining.text = "Tiles: " + variables.lettersRemaining.ToString ();
 			//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
