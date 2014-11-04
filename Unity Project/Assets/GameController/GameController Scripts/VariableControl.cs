@@ -128,8 +128,18 @@ public class VariableControl : MonoBehaviour {
 
 	// score text "particles" (really textmeshes)
 	public TextMesh scoreText;
-	public TextMesh outlineText;
 	public TextMesh multiplierText;
+
+	// score text thresholds for different colors and sizes
+	public float smallMultiplierThreshold;
+	public float mediumMultiplierThreshold;
+	public float largeMultiplierThreshold;
+	public float smallScoreThreshold;
+	public float mediumScoreThreshold;
+	public float largeScoreThreshold;
+	public Color smallColor;
+	public Color mediumColor;
+	public Color largeColor;
 
 	// Use this for initialization
 	void Awake() {

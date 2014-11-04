@@ -393,10 +393,6 @@ public class Character : MonoBehaviour
 					characterPosition.y += 1.5f;
 					characterPosition.z = -3.2f;
 					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
-					//variables.outlineText.text = wordScore.ToString ();
-					//variables.outlineText.color = new Color(0.0f, 0.0f, 0.0f);
-					//characterPosition.z = -3.1f;
-					//Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
 				}
 
 				// output the multiplier
@@ -406,10 +402,6 @@ public class Character : MonoBehaviour
 					characterPosition.y += 2.5f;
 					characterPosition.z = -3.2f;
 					Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
-					//variables.outlineText.text = multiplier.ToString () + "x";
-					//variables.outlineText.color = new Color(1.0f, 0.0f, 0.0f);
-					//characterPosition.z = -3.1f;
-					//Instantiate (variables.outlineText, characterPosition, Quaternion.identity);
 				}
 
 				// output the crumbs

@@ -19,7 +19,6 @@ public class ScoreTextScript : MonoBehaviour {
 
 		if (GetComponent<TextMesh> ().text.IndexOf ("x") != -1) {
 			// multiplier
-			//scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * 0.2f;
 			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.2f * alpha;
 		} else {
 			// word score
