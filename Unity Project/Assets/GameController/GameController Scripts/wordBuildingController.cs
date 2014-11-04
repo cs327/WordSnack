@@ -31,7 +31,12 @@ public class wordBuildingController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-
+		if(PlayerPrefs.GetInt("timed") != 1){
+			timeRemaining.gameObject.SetActive(false);
+		}
+		else{
+			timeRemaining.gameObject.SetActive(true);
+		}
 
 		tasteHighlighters[0] = char1Taste1;
 		tasteHighlighters[1] = char1Taste2;
