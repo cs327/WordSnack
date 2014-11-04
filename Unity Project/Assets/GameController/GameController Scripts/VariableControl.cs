@@ -162,8 +162,8 @@ public class VariableControl : MonoBehaviour {
 
 		//sets where the character tastes should be put for wordbuilding phase
 
-		characterTasteSpots[0] = new Vector3 (4.8f,4,-4);
-		characterTasteSpots[1] = new Vector3 (-2.9f,4,-4);
+		characterTasteSpots[0] = new Vector3 (4.8f,4,-4.2f);
+		characterTasteSpots[1] = new Vector3 (-2.9f,4,-4.2f);
 
 //		characterTasteSpots[0] = new Vector3 (-1.9f,1.75f,-1f);
 //		characterTasteSpots[1] = new Vector3 (0.2f,1.75f,-1f);
@@ -264,7 +264,7 @@ public class VariableControl : MonoBehaviour {
 	void CheckIphoneType(){
 
 		//sets an int telling what iPhone type this is being played on 
-		string gen = iPhoneSettings.generation.ToString();
+		//string gen = iPhoneSettings.generation.ToString();
 
 //		if(gen == "iPhone" ||  gen == "iPhone3G" || gen == "iPhone3GS" || gen == "iPhone4S" || gen == "iPhone4"){
 //			iPhoneType = 1;
@@ -276,35 +276,36 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-
-		switch(iPhoneSettings.generation){
-		case (iPhoneGeneration.iPhone):
-			iPhoneType = 1; 
-			break;
-		case (iPhoneGeneration.iPhone3G):
-			iPhoneType = 1; 
-			break;
-		case (iPhoneGeneration.iPhone3GS):
-			iPhoneType = 1; 
-			break;
-		case (iPhoneGeneration.iPhone4S):
-			iPhoneType = 1; 
-			break;
-		case (iPhoneGeneration.iPhone4):
-			iPhoneType = 1; 
-			break;
-		case (iPhoneGeneration.iPhone5):
-			iPhoneType = 2; 
-			break;
-		case (iPhoneGeneration.iPhone5S):
-			iPhoneType = 2; 
-			break;
-//		case (iPhoneGeneration.iPhone6):
-//			iPhoneType = 2; 
-//			break;
-//		case (iPhoneGeneration.iPhone6Plus):
-//			iPhoneType = 2; 
-//			break;
+		if(SystemInfo.deviceType == DeviceType.Handheld){
+			switch(iPhoneSettings.generation){
+			case (iPhoneGeneration.iPhone):
+				iPhoneType = 1; 
+				break;
+			case (iPhoneGeneration.iPhone3G):
+				iPhoneType = 1; 
+				break;
+			case (iPhoneGeneration.iPhone3GS):
+				iPhoneType = 1; 
+				break;
+			case (iPhoneGeneration.iPhone4S):
+				iPhoneType = 1; 
+				break;
+			case (iPhoneGeneration.iPhone4):
+				iPhoneType = 1; 
+				break;
+			case (iPhoneGeneration.iPhone5):
+				iPhoneType = 2; 
+				break;
+			case (iPhoneGeneration.iPhone5S):
+				iPhoneType = 2; 
+				break;
+	//		case (iPhoneGeneration.iPhone6):
+	//			iPhoneType = 2; 
+	//			break;
+	//		case (iPhoneGeneration.iPhone6Plus):
+	//			iPhoneType = 2; 
+	//			break;
+			}
 		}
 	}
 

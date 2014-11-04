@@ -69,6 +69,7 @@ public class Character : MonoBehaviour
 		if(characterNum != 0){
 			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
 
+			tasteText = tasteObj.GetComponent<TextMesh>();
 			if(Application.loadedLevelName == "CharacterSelectTest"){
 				tasteObj.transform.parent = gameObject.transform;
 				tasteObj.transform.localPosition = new Vector3 (-.4f,-.3f,-1);	 
@@ -82,9 +83,11 @@ public class Character : MonoBehaviour
 				else{
 					tasteObj.transform.parent = GameObject.FindGameObjectWithTag("rightPanel").transform;
 					tasteObj.transform.localPosition = variables.characterTasteSpots[1];
+					tasteText.alignment = TextAlignment.Right;
+
 				}
 			}
-			tasteText = tasteObj.GetComponent<TextMesh>();
+			//tasteText = tasteObj.GetComponent<TextMesh>();
 			tasteText.text = thingsILike;
 			if (Application.loadedLevelName == "WordMaking"){
 				tasteText.fontSize = 60;
