@@ -91,7 +91,7 @@ public class PlayMusic : MonoBehaviour {
         {
                 audioManager.Stop(5);
                 audioManager.Stop(20);
-                audioManager.Stop(15);
+                audioManager.Stop(16);
                 audioManager.Stop(14);
                 audioManager.PlayLoop(4);
         }
@@ -99,7 +99,7 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
             audioManager.Stop(20);
-            audioManager.Stop(15);
+            audioManager.Stop(16);
             audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
@@ -160,7 +160,7 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
             audioManager.Stop(20);
-            audioManager.Stop(15);
+            audioManager.Stop(16);
             audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
