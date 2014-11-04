@@ -9,7 +9,7 @@ public class VariableControl : MonoBehaviour {
 	public bool timedMode = false;
 	public float globalTimer;
 	public int gameLength = 180;
-
+	public bool timerStart = false;
 
 	//what iphone model it is running on.
 	//0 = unidentified, 1 = 4S or older (below), 2 = 5 or newer (higher)
@@ -241,8 +241,14 @@ public class VariableControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(PlayerPrefs.GetInt ("instructions") == 0){
+			timerStart = false;
+		}
+		else{
+			timerStart = true;
+		}
 
-		if(timedMode){
+		if(timedMode && timerStart){
 			KeepTime();
 		}
 
