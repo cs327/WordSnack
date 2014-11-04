@@ -5,6 +5,7 @@ public class characterSelectController : MonoBehaviour {
 	VariableControl variables;
 	public GameObject variableController; 
 	public GUIStyle big;
+	public GameObject backgroundStars;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,14 @@ public class characterSelectController : MonoBehaviour {
 		{
 			Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
 		}
+
+		// if we get here and there's no background, create it
+		if (GameObject.Find ("Starfield Background") == null) {
+			Instantiate (backgroundStars, new Vector3(0, 0, 30), Quaternion.identity);
+		}
+
+		// remove the diner for this screen, it's too busy in the background
+		Destroy (GameObject.Find ("Diner Fly-In"));
 	}
 	
 	// Update is called once per frame
@@ -31,7 +40,6 @@ public class characterSelectController : MonoBehaviour {
 
 		// delete the starfield and diner background stuff from the previous three scenes
 		Destroy (GameObject.Find ("Starfield Background"));
-		Destroy (GameObject.Find ("Diner Fly-In"));
 
 		Application.LoadLevel("WordMaking");
 		//moves the characters into their appropriate positions
