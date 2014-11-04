@@ -236,7 +236,7 @@ public class VariableControl : MonoBehaviour {
 		allCharTastes[1] = TastesForFred;
 		allCharTastes[5] = TastesForMeghan;
 
-		//CheckIphoneType();
+		CheckIphoneType();
 	}
 	
 	// Update is called once per frame
