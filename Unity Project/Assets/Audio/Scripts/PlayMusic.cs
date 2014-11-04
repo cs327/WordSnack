@@ -83,6 +83,7 @@ public class PlayMusic : MonoBehaviour {
             Chewing();
             Shuffle();
             Pause();
+            ClickSound();
 
         }
 
@@ -361,6 +362,13 @@ public class PlayMusic : MonoBehaviour {
     //{
     //    Invoke("SuccessSound", 0.5f);
     //}
-
+    void ClickSound()
+    {
+        if (GameObject.Find("instructions").GetComponent<Tutorial>().clickSound == true)
+        {
+            audioManager.Play(1);
+            GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
+        }
+    }
 
 }
