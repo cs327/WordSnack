@@ -20,6 +20,7 @@ public class Tutorial : MonoBehaviour
     GameObject character1;
     GameObject character2;
     public GameObject checkMark;
+    public bool clickSound;
 
     // Use this for initialization
     void Start()
@@ -75,6 +76,7 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
+        clickSound = true;
         // 0 = how to make a work instruction
         // 1 = trashcan function
         // 2 = tap to feed customers message
