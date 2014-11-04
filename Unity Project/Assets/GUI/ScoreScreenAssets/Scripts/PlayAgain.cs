@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayAgain : MonoBehaviour {
 	public Sprite PlayAgainPressed;
     public Sprite PlayAgainUnpressed;
+    public bool clickSound;
 	// Use this for initialization
 	void Start () {
 	
@@ -27,5 +28,6 @@ public class PlayAgain : MonoBehaviour {
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainUnpressed;
         Application.LoadLevel("CharacterSelectTest");
+        clickSound = true;
     }
 }

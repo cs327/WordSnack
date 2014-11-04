@@ -145,10 +145,16 @@ public class PlayMusic : MonoBehaviour {
                 audioManager.PlayLoop(16);
             }
 
-            if ((GameObject.Find("Menu").GetComponent<GoBackToMenu>().backToStart == true) || (GameObject.Find("PlayAgain").GetComponent<PlayAgain>() == true))
+            if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound == true)
             {
                 Debug.Log("it has played");
                 audioManager.Play(1);
+                GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound = false;
+            }
+            if (GameObject.Find("PlayAgain").GetComponent<PlayAgain>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("PlayAgain").GetComponent<PlayAgain>().clickSound = false;
             }
             
         }

@@ -236,7 +236,7 @@ public class VariableControl : MonoBehaviour {
 		allCharTastes[1] = TastesForFred;
 		allCharTastes[5] = TastesForMeghan;
 
-		CheckIphoneType();
+		//CheckIphoneType();
 	}
 	
 	// Update is called once per frame
@@ -282,7 +282,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-		if(SystemInfo.deviceType == DeviceType.Handheld){
+		if(Application.platform == RuntimePlatform.IPhonePlayer){
 			switch(iPhoneSettings.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
