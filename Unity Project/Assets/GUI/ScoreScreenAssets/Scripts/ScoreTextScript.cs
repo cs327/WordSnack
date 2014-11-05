@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ScoreTextScript : MonoBehaviour {
-
+	
 	float alpha;
 
 	// Use this for initialization
@@ -29,7 +29,9 @@ public class ScoreTextScript : MonoBehaviour {
 		GetComponent<TextMesh> ().transform.Translate (new Vector3 (scorePosX, scorePosY, 0.0f));
 
 		alpha -= timeAmount * 0.5f;
-		GetComponent<TextMesh>().renderer.material.color = new Color (1.0f, 1.0f, 1.0f, alpha);
+		GetComponent<TextMesh>().color = new Color (GetComponent<TextMesh>().color.r,
+		                                            GetComponent<TextMesh>().color.g,
+		                                            GetComponent<TextMesh>().color.b, alpha);
 
 		if (alpha <= 0.0f) {
 			Destroy (gameObject);
