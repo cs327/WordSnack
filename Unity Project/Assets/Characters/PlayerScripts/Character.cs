@@ -357,7 +357,8 @@ public class Character : MonoBehaviour
 				case 3:
 					//SPIKE EATING ANIMATION GOES HERE
 					//return 26;
-					Debug.Log("Spike does not like this");
+					Debug.Log("Spike eating animation");
+					GetComponent<Animator>().SetTrigger("eat");
 					break;
 				case 4:
 					//STELLA EATING ANIMATION GOES HERE
