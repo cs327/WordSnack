@@ -14,6 +14,9 @@ public class PlayMusic : MonoBehaviour {
     public GameObject VariableControl;
     VariableControl variables;
 
+    public GameObject wordControl;
+    wordBuildingController words;
+
     int numSelected = 0;
 
     ReceiptMove receipt;
@@ -61,7 +64,7 @@ public class PlayMusic : MonoBehaviour {
         {
             variables = GetComponent<VariableControl>();
             letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
-            
+            words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
         }
 	
 	}
@@ -80,6 +83,7 @@ public class PlayMusic : MonoBehaviour {
             Chewing();
             Shuffle();
             Pause();
+            ClickSound();
 
         }
 
@@ -87,7 +91,7 @@ public class PlayMusic : MonoBehaviour {
         {
                 audioManager.Stop(5);
                 audioManager.Stop(20);
-                audioManager.Stop(15);
+                audioManager.Stop(16);
                 audioManager.Stop(14);
                 audioManager.PlayLoop(4);
         }
@@ -95,7 +99,7 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
             audioManager.Stop(20);
-            audioManager.Stop(15);
+            audioManager.Stop(16);
             audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
@@ -114,32 +118,45 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
            
-            // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+        // if (gameObject.GetComponent<ReceiptMove>().winSound == true)
+
+            //////////////////
+            //LOOPED VERSION//
+            //////////////////
+
+            //if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+            //{
+            //    audioManager.PlayLoop(20);
+            //    audioManager.PlayLoop(14);
+            //    //  audioManager.FadeOut(17);
+            //    //receipt.winSound = false;
+            //}
+            //else if (playedVictory == false && audioManager.audioSourceArray[14].isPlaying == false)
+            //{
+            //    // audioManager.KillAll();
+            //    audioManager.Play(15);
+            //    playedVictory = true;
+            //    Debug.Log("helllyeah");
+            //}
+
+            if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
             {
-                if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
-                {
-              //      audioManager.SetVolume(21, 1.0f);         //17, 1.0f);
-                    audioManager.PlayLoop(20);
-                    audioManager.PlayLoop(14);
-                    //  audioManager.FadeOut(17);
-                    //receipt.winSound = false;
-                } 
-                else if(playedVictory == false && audioManager.audioSourceArray[14].isPlaying == false){
-                   // audioManager.KillAll();
-                    audioManager.Play(15);
-                    playedVictory =true;
-                    Debug.Log("helllyeah");
-                }
-            
-
-                if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().backToStart == true)
-                {
-                    Debug.Log("it has played");
-                    audioManager.Play(1);
-
-
-                }
+                audioManager.PlayLoop(20);
+                audioManager.PlayLoop(16);
             }
+
+            if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound == true)
+            {
+                Debug.Log("it has played");
+                audioManager.Play(1);
+                GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound = false;
+            }
+            if (GameObject.Find("PlayAgain").GetComponent<PlayAgain>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("PlayAgain").GetComponent<PlayAgain>().clickSound = false;
+            }
+            
         }
 
 
@@ -147,7 +164,7 @@ public class PlayMusic : MonoBehaviour {
         {
             audioManager.Stop(5);
             audioManager.Stop(20);
-            audioManager.Stop(15);
+            audioManager.Stop(16);
             audioManager.Stop(14);
 
             if (audioManager.audioSourceArray[4].isPlaying == false)
@@ -277,13 +294,26 @@ public class PlayMusic : MonoBehaviour {
             GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
             {
+
+               // if(GameObject.Find("GameController").GetComponent<wordBuildingController>().bothTastes == true){
+                if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
+                     && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]) 
+                    || (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
+                    &&   GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])){
+                    audioManager.Play(23);
+                    Debug.Log("double taste");
+                   // words.bothTastes = false;
+                }
+
                 //DelayedSuccessSound();
-                if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
+               else if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
                 {
                     audioManager.Play(21);
                     Debug.Log("Taste");
 
                 }
+
+
                 else 
                 {
                     audioManager.Play(22);
@@ -292,8 +322,9 @@ public class PlayMusic : MonoBehaviour {
             }
             MoreDelayedLetterGeneration();
             Debug.Log("Letter Generation");
+
         }
-        
+       // words.bothTastes = false;
     }
     void Shuffle()
     {
@@ -335,6 +366,13 @@ public class PlayMusic : MonoBehaviour {
     //{
     //    Invoke("SuccessSound", 0.5f);
     //}
-
+    void ClickSound()
+    {
+        if (GameObject.Find("instructions").GetComponent<Tutorial>().clickSound == true)
+        {
+            audioManager.Play(1);
+            GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
+        }
+    }
 
 }

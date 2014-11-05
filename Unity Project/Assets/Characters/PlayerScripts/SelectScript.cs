@@ -65,7 +65,7 @@ public class SelectScript : MonoBehaviour {
 
 	
 
-	void OnMouseDown () {
+	void OnMouseUpAsButton () {
 		//change it to be selected or deselected based on what it already was
 		toggleSelect(); 
 

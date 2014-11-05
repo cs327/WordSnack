@@ -58,6 +58,8 @@ public class VariableControl : MonoBehaviour {
 	public float fourLettersMult;
 	public float equalVowelsAndConsonantsMult;
 	public float trashCollectionMult;
+    public float bigMealBonus;
+    public float doubleTasteMatchBonus;
 
 	//tweakable character tastes
 	public int[] TastesForTrash;
@@ -282,7 +284,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-		if(SystemInfo.deviceType == DeviceType.Handheld){
+		if(Application.platform == RuntimePlatform.IPhonePlayer){
 			switch(iPhoneSettings.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 

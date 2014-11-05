@@ -28,6 +28,7 @@ public class wordBuildingController : MonoBehaviour
 	public GameObject char2Taste2;
 	public Vector3[] tasteHightLightPos = new Vector3[4];
 	public GameObject[] tasteHighlighters = new GameObject[4];
+ 
 	// Use this for initialization
 	void Start ()
 	{
@@ -109,6 +110,7 @@ public class wordBuildingController : MonoBehaviour
 				tasteHighlighters[i].transform.renderer.enabled = false;
 			}
 		}
+
 //		//unhilights all tastes if the letters on the stove do not form a word
 		if (!variables.isWord) {
 			unhightlightAllTastes();

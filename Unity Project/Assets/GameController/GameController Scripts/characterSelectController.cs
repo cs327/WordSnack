@@ -22,7 +22,7 @@ public class characterSelectController : MonoBehaviour {
 		}
 
 		// remove the diner for this screen, it's too busy in the background
-		Destroy (GameObject.Find ("Diner Fly-In"));
+		Destroy (GameObject.Find ("Diner"));
 	}
 	
 	// Update is called once per frame

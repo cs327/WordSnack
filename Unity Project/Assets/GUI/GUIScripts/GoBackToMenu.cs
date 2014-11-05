@@ -6,6 +6,7 @@ public class GoBackToMenu : MonoBehaviour {
 	public Sprite menuClicked;
     public bool backToStart = false; //for PlayMusic.cs
 	SpriteRenderer s;
+    public bool clickSound;
 
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,6 @@ public class GoBackToMenu : MonoBehaviour {
         s.sprite = menuUnclicked;
         backToStart = true;
         Application.LoadLevel("SplashScreen");
+        clickSound = true;
     }
 }
