@@ -404,19 +404,15 @@ public class Character : MonoBehaviour
 					
 					// check the thresholds and change color and size accordingly
 					if (wordScore >= variables.smallScoreThreshold && wordScore < variables.mediumScoreThreshold) {
-						//variables.scoreText.renderer.material.color = variables.smallColor;
 						variables.scoreText.color = variables.smallColor;
 						variables.scoreText.transform.localScale = new Vector3(1.0f, 1.0f);
 					} else if (wordScore >= variables.mediumScoreThreshold && wordScore < variables.largeScoreThreshold) {
-						//variables.scoreText.renderer.material.color = variables.mediumColor;
 						variables.scoreText.color = variables.mediumColor;
 						variables.scoreText.transform.localScale = new Vector3(1.5f, 1.5f);
 					} else if (wordScore >= variables.largeScoreThreshold) {
-						//variables.scoreText.renderer.material.color = variables.largeColor;
 						variables.scoreText.color = variables.largeColor;
 						variables.scoreText.transform.localScale = new Vector3(2.5f, 2.5f);
 					} else {
-						//variables.scoreText.renderer.material.color = Color.white;
 						variables.scoreText.color = Color.white;
 						variables.scoreText.transform.localScale = new Vector3(1.0f, 1.0f);
 					}
@@ -433,19 +429,15 @@ public class Character : MonoBehaviour
 					
 					// check the thresholds and change color and size accordingly
 					if (multiplier >= variables.smallMultiplierThreshold && multiplier < variables.mediumMultiplierThreshold) {
-						//variables.multiplierText.renderer.material.color = variables.smallColor;
 						variables.multiplierText.color = variables.smallColor;
 						variables.multiplierText.transform.localScale = new Vector3(1.0f, 1.0f);
 					} else if (multiplier >= variables.mediumMultiplierThreshold && multiplier < variables.largeMultiplierThreshold) {
-						//variables.multiplierText.renderer.material.color = variables.mediumColor;
 						variables.multiplierText.color = variables.mediumColor;
 						variables.multiplierText.transform.localScale = new Vector3(1.5f, 1.5f);
 					} else if (multiplier >= variables.largeMultiplierThreshold) {
-						//variables.multiplierText.renderer.material.color = variables.largeColor;
 						variables.multiplierText.color = variables.largeColor;
 						variables.multiplierText.transform.localScale = new Vector3(2.5f, 2.5f);
 					} else {
-						//variables.multiplierText.renderer.material.color = Color.white;
 						variables.multiplierText.color = Color.white;
 						variables.multiplierText.transform.localScale = new Vector3(1.0f, 1.0f);
 					}
