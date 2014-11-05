@@ -372,7 +372,8 @@ public class Character : MonoBehaviour
 				case 3:
 					//SPIKE EATING ANIMATION GOES HERE
 					//return 26;
-					Debug.Log("Spike does not like this");
+					Debug.Log("Spike eating animation");
+					GetComponent<Animator>().SetTrigger("eat");
 					break;
 				case 4:
 					//STELLA EATING ANIMATION GOES HERE
@@ -406,7 +407,6 @@ public class Character : MonoBehaviour
 
 				wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 
-				// output score text "particle"
 				if (characterNum != 0) {
 					variables.scoreText.text = wordScore.ToString ();
 					Vector3 characterPosition = this.gameObject.transform.position;
@@ -417,15 +417,47 @@ public class Character : MonoBehaviour
 					}
 					characterPosition.y += 1.5f;
 					characterPosition.z = -3.2f;
+					
+					// check the thresholds and change color and size accordingly
+					if (wordScore >= variables.smallScoreThreshold && wordScore < variables.mediumScoreThreshold) {
+						variables.scoreText.color = variables.smallColor;
+						variables.scoreText.transform.localScale = new Vector3(1.0f, 1.0f);
+					} else if (wordScore >= variables.mediumScoreThreshold && wordScore < variables.largeScoreThreshold) {
+						variables.scoreText.color = variables.mediumColor;
+						variables.scoreText.transform.localScale = new Vector3(1.5f, 1.5f);
+					} else if (wordScore >= variables.largeScoreThreshold) {
+						variables.scoreText.color = variables.largeColor;
+						variables.scoreText.transform.localScale = new Vector3(2.5f, 2.5f);
+					} else {
+						variables.scoreText.color = Color.white;
+						variables.scoreText.transform.localScale = new Vector3(1.0f, 1.0f);
+					}
+					
 					Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
 				}
-
+				
 				// output the multiplier
 				if (characterNum != 0 && multiplier != 1) {
 					variables.multiplierText.text = "x" + multiplier.ToString();
 					Vector3 characterPosition = this.gameObject.transform.position;
 					characterPosition.y += 2.5f;
 					characterPosition.z = -3.2f;
+					
+					// check the thresholds and change color and size accordingly
+					if (multiplier >= variables.smallMultiplierThreshold && multiplier < variables.mediumMultiplierThreshold) {
+						variables.multiplierText.color = variables.smallColor;
+						variables.multiplierText.transform.localScale = new Vector3(1.0f, 1.0f);
+					} else if (multiplier >= variables.mediumMultiplierThreshold && multiplier < variables.largeMultiplierThreshold) {
+						variables.multiplierText.color = variables.mediumColor;
+						variables.multiplierText.transform.localScale = new Vector3(1.5f, 1.5f);
+					} else if (multiplier >= variables.largeMultiplierThreshold) {
+						variables.multiplierText.color = variables.largeColor;
+						variables.multiplierText.transform.localScale = new Vector3(2.5f, 2.5f);
+					} else {
+						variables.multiplierText.color = Color.white;
+						variables.multiplierText.transform.localScale = new Vector3(1.0f, 1.0f);
+					}
+					
 					Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
 				}
 
