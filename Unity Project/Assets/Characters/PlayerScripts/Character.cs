@@ -153,6 +153,13 @@ public class Character : MonoBehaviour
 				variables.bonus = false;
 			}
 			Debug.Log("Score after tastes for " + word + " is " + wordScore);
+            if(word.Length == 8){
+                wordScore *= variables.bigMealBonus+1;
+            }
+            else if (word.Length == 7){
+                wordScore*=variables.bigMealBonus;
+            }
+            Debug.Log("Score after bigmealbonus is "+wordScore);
 		}
 		return wordScore;
 	}
@@ -523,4 +530,7 @@ public class Character : MonoBehaviour
 			return -1;
 		}
 	}
+
+
+
 }

@@ -58,6 +58,8 @@ public class VariableControl : MonoBehaviour {
 	public float fourLettersMult;
 	public float equalVowelsAndConsonantsMult;
 	public float trashCollectionMult;
+    public float bigMealBonus;
+    public float doubleTasteMatchBonus;
 
 	//tweakable character tastes
 	public int[] TastesForTrash;
