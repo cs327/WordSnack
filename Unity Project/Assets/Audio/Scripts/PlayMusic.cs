@@ -17,6 +17,9 @@ public class PlayMusic : MonoBehaviour {
     public GameObject wordControl;
     wordBuildingController words;
 
+   // public GameObject character;
+    //Character charac;
+
     int numSelected = 0;
 
     ReceiptMove receipt;
@@ -65,6 +68,7 @@ public class PlayMusic : MonoBehaviour {
             variables = GetComponent<VariableControl>();
             letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
             words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
+
         }
 	
 	}
@@ -295,11 +299,14 @@ public class PlayMusic : MonoBehaviour {
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
             {
 
-               // if(GameObject.Find("GameController").GetComponent<wordBuildingController>().bothTastes == true){
-                if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
-                     && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]) 
-                    || (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
-                    &&   GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])){
+               
+                if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
+                     && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
+                   
+                    || GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
+                    &&   GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
+
+                {
                     audioManager.Play(23);
                     Debug.Log("double taste");
                    // words.bothTastes = false;

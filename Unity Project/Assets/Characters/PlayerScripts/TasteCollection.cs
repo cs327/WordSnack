@@ -103,7 +103,7 @@ public static class TasteCollection
 				vowelCount++;
 			if (vowelCount == 2)
 			{
-				return variables.twoOrMoreVowelsMult;
+				return variables.twoOrMoreVowelsMult+(vowelCount-2);
 			}
 		}
 		return 1;
@@ -136,38 +136,6 @@ public static class TasteCollection
 		return variables.trashCollectionMult;
 	}
 
-    /*public static float bigMeal(string word)
-    {
-        
-        if(word.Length == 8)
-            
-            
-            return variables.bigMealBonus + 1;
-        
-        else if (word.Length == 7)
-            
-            
-            return variables.bigMealBonus;
-        
-        else
-            
-            return 1;
-        
-    }
-    
-    public static float doubleTaste(string word){
-        if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [0] 
-             && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [1]) 
-            || (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [2] 
-            && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [3]))
-            
-            return variables.doubleTasteMatchBonus;
-        else
-            
-            return 1;
-        
-    }
-*/
 
 }
 
