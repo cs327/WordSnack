@@ -8,7 +8,7 @@ using System.Linq;
 
 public static class ScoreManager 
 {
-    private static Dictionary<string, List<int>> scoreList;
+    private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
     
     // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
@@ -36,7 +36,7 @@ public static class ScoreManager
         if (scoreList.ContainsKey(GetCharacterHash(char1, char2)))
             return scoreList[GetCharacterHash(char1, char2)];
         else
-            return null;
+            return new List<int>();
     }
 
     // Given two character names returns a unique value representing their set
