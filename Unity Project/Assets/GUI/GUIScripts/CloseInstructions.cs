@@ -36,7 +36,7 @@ public class CloseInstructions : MonoBehaviour
     }
 
     // Saves the current value of "Never show instructions?" in the file UserSettings.gd
-    private static void SaveInstructionsSetting(bool setting)
+    private static void SaveNeverShowSetting(bool setting)
     {
         Debug.Log("Saving 'never show? = " + setting + "'");
         BinaryFormatter bf = new BinaryFormatter();
@@ -52,7 +52,7 @@ public class CloseInstructions : MonoBehaviour
         Debug.Log("Checkmark collision");
         instructions.GetComponent<Transform>().position = position;
 
-        SaveInstructionsSetting(gameObject.renderer.enabled);
+        SaveNeverShowSetting(gameObject.renderer.enabled);
 
 
         if (character1.transform.localPosition.z == -1.8f)

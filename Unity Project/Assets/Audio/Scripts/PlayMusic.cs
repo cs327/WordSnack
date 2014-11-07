@@ -143,9 +143,13 @@ public class PlayMusic : MonoBehaviour {
             //    Debug.Log("helllyeah");
             //}
 
-            if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+            if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
             {
                 audioManager.PlayLoop(20);
+            }
+
+            if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+            {
                 audioManager.PlayLoop(16);
             }
 
@@ -180,8 +184,14 @@ public class PlayMusic : MonoBehaviour {
 
             if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
             {
-               
+                if (numSelected == 0)
+                {
                     audioManager.Play(1);
+                }
+                else
+                {
+                    audioManager.Play(3);
+                }
                     Debug.Log("ding");
                     numSelected++;
                 if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
