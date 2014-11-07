@@ -366,9 +366,9 @@ public class PlayMusic : MonoBehaviour {
     }
     void Pause()
     {
-        if (GameObject.Find("letterGeneration").GetComponent<LetterController>().gamePaused == true)
+        if (GameObject.Find("VariableController").GetComponent<VariableControl>().paused == true)
         {
-            audioManager.Pause(6);
+            audioManager.Pause(5);
         }
         //else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
         //{
@@ -390,6 +390,24 @@ public class PlayMusic : MonoBehaviour {
             audioManager.Play(1);
             GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
         }
+        if (GameObject.Find("pauseButton").GetComponent<pause>().clickSound == true)
+        {
+            audioManager.Play(1);
+            GameObject.Find("pauseButton").GetComponent<pause>().clickSound = false;
+        }
+
+        if (GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound == true)
+        {
+            audioManager.Play(1);
+            GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound = false;
+        }
+
+        if (GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound == true)
+        {
+            audioManager.Play(1);
+            GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound = false;
+        }
+
     }
 
 }

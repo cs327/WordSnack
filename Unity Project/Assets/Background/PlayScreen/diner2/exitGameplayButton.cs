@@ -3,6 +3,7 @@ using System.Collections;
 
 public class exitGameplayButton : MonoBehaviour {
 	pause p;
+    public bool clickSound;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,12 @@ public class exitGameplayButton : MonoBehaviour {
 	}
 	void OnMouseUp(){
 		gameObject.renderer.material.SetTexture("_MainTex",p.exitButtons[0]);
-		Application.LoadLevel("StartScreenTest");
 	}
+
+    void OnMouseUpAsButton()
+    {
+        clickSound = true;
+        gameObject.renderer.material.SetTexture("_MainTex", p.exitButtons[0]);
+        Application.LoadLevel("StartScreenTest");
+    }
 }

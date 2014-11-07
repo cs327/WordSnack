@@ -11,6 +11,7 @@ public class pause : MonoBehaviour {
 	public GameObject exitButtonObj;
 	public GameObject greyBg;
 	public bool unpause = false;
+    public bool clickSound;
 
 //notes on this script:
 //the pause function is called by clicking on the button,
@@ -39,10 +40,17 @@ public class pause : MonoBehaviour {
 		//when unclicked- change texture back, and if the game is not paused (which
 		//it probably isnt), pause it
 		gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
-		if(!variables.paused){
-			pauseGame();
+
 		}
 
+    void OnMouseUpAsButton()
+    {
+        clickSound = true;
+       	gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
+        if (!variables.paused)
+        {
+            pauseGame();
+        }
 	}
 
 	void pauseGame(){
