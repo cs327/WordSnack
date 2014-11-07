@@ -6,18 +6,14 @@ using System.Linq;
 public class LetterController : MonoBehaviour
 {
 		VariableControl variables = new VariableControl ();
-		//	public letterBehaviour [] letterObjs;
-		//	public letterBehaviour spawnMe;
 		public letterBehaviour letterObj;
 		public letterBehaviour[] lettersOnBoard;
 		public letterBehaviour[] lettersOnStove;
 		public int[] positionOnBoard;
 		public int numLettersOnStove = 0;
-		public float timer = 0f;
 		private int boardSize;
 		public Vector3[] stoveSpots;
 		public Vector3[] bankSpots;
-		//public bool needsUpkeep = true;
 		public GameObject steamPrefab;
 		public GameObject[] stoveSteam;
 		public GameObject heatPrefab;
@@ -96,13 +92,9 @@ public class LetterController : MonoBehaviour
 						for (int i = 0; i < variables.timeToHighlightTaste.Length; i++) {
 								variables.timeToHighlightTaste [i] = false;
 						}
-						GameObject.Find ("VariableController").GetComponent<VariableControl> ().timeToCheckForTastes = true;
+						variables.timeToCheckForTastes = true;
 				} 
 				lastWordChecked = word;
-				//keep local time in scripts
-				myLetters = lettersInHand ();
-				timer += Time.deltaTime;
-
 				//Calls MoveToFromStoveArray, which in turn calls three functions related to making sure any letters clicked either go to the stove,
 				//are removed from stove (if they are clicked off the stove)
 				moveToAndFromStove ();
@@ -231,9 +223,6 @@ public class LetterController : MonoBehaviour
 				}
 				//update the number of vowels in hand
 				numVowels = countVowels (); //count the number of vowels that are on the board so that we know what to do later in this function
-				//Debug.Log ("Number of vowels on board thinks it's " + numVowels);
-				//Debug.Log ("minVowels, maxVowels, totalVowels: " + variables.minNumVowels + ", " + variables.maxNumVowels + ", " + variables.totalVowels);
-				//Debug.Log ("Serialized Letter Bag's Length is " + serializedLetterBag.Count ());
 				//First check if there are any letters in the bag. If not, return a ",", which says to returnLetters that we're empty - we've got none letters. Too bad.
 				if (serializedLetterBag.Count () == 0)
 						return '.';
@@ -274,7 +263,7 @@ public class LetterController : MonoBehaviour
 				if (!gamePaused) {
 						//take the string of letters to turn into on screen objects, and chop it into an array of its characters
 						char[] letterArray = l.ToCharArray ();
-						//print (l.ToString ());
+						print (l.ToString ());
 						
 						//run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
 
@@ -320,8 +309,7 @@ public class LetterController : MonoBehaviour
 				//this block of code replaces all missing letters on board with random ones
 				// and effectively fills the bank.
 
-				//if (timer > 1f && needsUpkeep) {
-				//print ("time to replace");
+			
 				int needsReplacing = 0;
 				for (int i = 0; i < boardSize; i++) {
 						if (lettersOnBoard [i] == null) {
@@ -337,9 +325,6 @@ public class LetterController : MonoBehaviour
 						CreateLetters (newLetters);
 			 
 				}
-				//Debug.Log ("Now lettersOnBoard is " + lettersOnBoard.ToString () + " after replacing");
-				//needsUpkeep = false;
-				//}
 		}
 
 	
@@ -395,36 +380,22 @@ public class LetterController : MonoBehaviour
 
 		}
 
-		//	void ReorderStoveArrays(){
-		//		//this function pushes all members of the stove array to the front of it
-		//		//runs a reverse for loop to count down and move any letters whos next lower element is empty
-		//		for (int i = (boardSize-1); i> 0; i--){
-		//			if(lettersOnStove[i] != null && lettersOnStove[i-1] ==null){
-		//				lettersOnStove[i-1] = lettersOnStove[i];
-		//				lettersOnStove[i] = null;
-		//				lettersOnStove[i-1].orderOnStove = (i-1);
-		//
-		//			}
-		//		}
-		//	}
-
-		//	void PlaceAllLetters(){
-		//
-		//		for(int i = 0; i < boardSize; i++){
-		//			if(lettersOnStove[i] != null){
-		//				lettersOnStove[i].transform.position = stoveSpots[i];
-		//			}
-		//
-		//			if(lettersOnBoard[i] != null && !lettersOnBoard[i].onStove){
-		//				lettersOnBoard[i].transform.position = bankSpots[i];
-		//			}
-		//		}
-		//	}
-
 
 		public void ResetStove ()
 		{
-
+				//First, since we still have the non-null array of letters on the stove, go through and kill their lettersOnBoard equivalents
+				//It is unclear to me why this is necessary, since I thought that lettersOnStove contained a subset of the same objects
+				//that is in lettersOnBoard... if we wait a couple of Updates, they go away, so I think it's just Unity doing things non-atomically
+				//Still, this is worth it because doing this means that we don't have to update myLetters on every Update.
+				foreach (letterBehaviour stoveLetter in lettersOnStove) {
+						for (int j = 0; j < boardSize; j++) {
+								if (lettersOnBoard [j] != null && stoveLetter != null && stoveLetter == lettersOnBoard [j]) {
+										//Debug.Log ("Destroying " + lettersOnBoard [j].letter);
+										lettersOnBoard [j] = null;
+								}
+						}
+				}
+				//Now destroy the ones on the stove. Theoretically, this should have already been done above... but, see above.
 				for (int i = 0; i < boardSize; i++) {
 						if (lettersOnStove [i] != null) {
 								lettersOnStove [i].used = true;
@@ -432,10 +403,9 @@ public class LetterController : MonoBehaviour
 								lettersOnStove [i] = null;
 						}
 				}
+				myLetters = lettersInHand ();
+				//Debug.Log ("myLetters is now " + myLetters);
 				numLettersOnStove = 0;
-				timer = 0;
-				//needsUpkeep = true;
-	  
 				variables.letterGenerationSound = true;
 
 		}
@@ -454,7 +424,7 @@ public class LetterController : MonoBehaviour
 						}
 				}
 
-				//resets all variables related to whats on stove, resets local timer, and then returns the string of whats on stove
+				//resets all variables related to whats on stove, and then returns the string of whats on stove
 				//		print("WORD SUBMITTED: " + currentWord.ToString());
 				return currentWord;
 
@@ -592,21 +562,6 @@ public class LetterController : MonoBehaviour
 						return false;
 				}
 		}
-		//counts the current number of vowels
-//	public int countVowels (){
-//		int vowelCount = 0;
-//		if (myLetters.Length == 8) {
-//			char[] vowels = new char[] {'a', 'e', 'i', 'o', 'u'};
-//			for (int i = 0; i < boardSize; i++) {
-//				for (int j = 0; j < 5; j++) {
-//					if (myLetters[i] == vowels[j]) {
-//						vowelCount++;
-//					}
-//				}
-//			}
-//		}
-//		return vowelCount;
-//	}
 
 		public int countVowels ()
 		{
@@ -618,7 +573,7 @@ public class LetterController : MonoBehaviour
 				}
 				return vowelCount;
 		}
-//	stores a stringo of the current letters 
+//	Returns a string of the current letters on the board
 		public string lettersInHand ()
 		{
 				string letters = "";
