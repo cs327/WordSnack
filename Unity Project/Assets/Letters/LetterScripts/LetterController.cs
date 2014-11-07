@@ -17,7 +17,7 @@ public class LetterController : MonoBehaviour
 		private int boardSize;
 		public Vector3[] stoveSpots;
 		public Vector3[] bankSpots;
-		public bool needsUpkeep = true;
+		//public bool needsUpkeep = true;
 		public GameObject steamPrefab;
 		public GameObject[] stoveSteam;
 		public GameObject heatPrefab;
@@ -109,7 +109,10 @@ public class LetterController : MonoBehaviour
 
 				//if there are fewer than boardSize letters (basically if a word has been sent to a character) refills the letter banks
 				//to the adequate size
-				replaceBankLetters ();
+				if (myLetters.Length < variables.boardSize) {
+						//Debug.Log ("Replacing letters because " + myLetters.Length + " is less than " + variables.boardSize);
+						replaceBankLetters ();
+				}
 
 				//ends the game if the player has run out of letters
 				//changed - used to be emptyLetterCount >= 5
@@ -229,19 +232,21 @@ public class LetterController : MonoBehaviour
 				//update the number of vowels in hand
 				numVowels = countVowels (); //count the number of vowels that are on the board so that we know what to do later in this function
 				//Debug.Log ("Number of vowels on board thinks it's " + numVowels);
+				//Debug.Log ("minVowels, maxVowels, totalVowels: " + variables.minNumVowels + ", " + variables.maxNumVowels + ", " + variables.totalVowels);
 				//Debug.Log ("Serialized Letter Bag's Length is " + serializedLetterBag.Count ());
 				//First check if there are any letters in the bag. If not, return a ",", which says to returnLetters that we're empty - we've got none letters. Too bad.
 				if (serializedLetterBag.Count () == 0)
 						return '.';
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
-			//Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
+						Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
 						//Debug.Log ("Logic says we MUST return a vowel and we've got one to give");
 						char vowelToReturn = vowelsInLetterBag [Random.Range (0, vowelsInLetterBag.Count () - 1)]; //pick a random vowel
 						variables.totalVowels--; //decrement total number of Vowels
 						variables.totalLetters--; //decrement total number of letters
 						variables.letterBag [vowelToReturn] = variables.letterBag [vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
+						//Debug.Log ("Returning " + vowelToReturn);
 						return vowelToReturn; //return that vowel!
 				}
 				if (numVowels >= variables.maxNumVowels) { //If we already have enough vowels (or too many, but we screwed up if that happens), return a consonant
@@ -249,6 +254,7 @@ public class LetterController : MonoBehaviour
 						char consonantToReturn = consonantsInLetterBag [Random.Range (0, consonantsInLetterBag.Count () - 1)]; //pick a random consonant
 						variables.letterBag [consonantToReturn] = variables.letterBag [consonantToReturn] - 1; //decrement the number of that letter in the global letterBag
 						variables.totalLetters--; //decrement total number of letters to display to player
+						//Debug.Log ("Returning " + consonantToReturn);
 						return consonantToReturn;
 				} else { //Else, we're free to return anything - we don't have the max number of vowels or too few vowels
 						//Debug.Log ("Logic says we can return anything we want.");
@@ -257,6 +263,7 @@ public class LetterController : MonoBehaviour
 						if (vowelList.Contains (letterToReturn))
 								variables.totalVowels--; //if it's a vowel, decrement global vowel number
 						variables.totalLetters--; //decrement total number of tiles in bag to display to player
+						//Debug.Log ("Returning " + letterToReturn);
 						return letterToReturn;
 				}
 		}
@@ -267,7 +274,8 @@ public class LetterController : MonoBehaviour
 				if (!gamePaused) {
 						//take the string of letters to turn into on screen objects, and chop it into an array of its characters
 						char[] letterArray = l.ToCharArray ();
-						print (l.ToString ());
+						//print (l.ToString ());
+						
 						//run all the characters through a loop, find them, and then at the end of each loop iteration, instantiate the found letter in the array lettersOnBoard
 
 						for (int i = 0; i < l.Length; i++) {
@@ -277,49 +285,61 @@ public class LetterController : MonoBehaviour
 								lettersOnBoard [boardSize - i - 1].letter = letterArray [i].ToString ();
 						}
 				}
-
+				//Debug.Log ("Put new letters on board: " + l.ToString () + " and now I have " + lettersInHand ());
 		}
-
-
-
-
+	
 		void replaceBankLetters ()
 		{
 
 				//makes sure the array containing the letters on board is filled from the front until there are no more letters
 				//so there are no spaces in the array between letters. Only has any effect if a word was sent out recently and there
 				//are now fewer letters on board than boardSize.
+				//This code is intended to move everything to the left in the array, so that all the blank spaces are on the right.
+				letterBehaviour [] temp = new letterBehaviour[boardSize];
+				int counter = 0;
+				for (int i = 0; i < boardSize; i++) {
+						if (lettersOnBoard [i] != null) {
+								temp [counter] = lettersOnBoard [i];
+								counter++;
+						}
 
-				for (int i = (boardSize - 1); i > 0; i--) {
+				}
+				lettersOnBoard = temp;
+				/*
+				 * for (int i = (boardSize - 1); i > 0; i--) {
 						if (lettersOnBoard [i] != null && lettersOnBoard [i - 1] == null) {
 								lettersOnBoard [i - 1] = lettersOnBoard [i];
 								lettersOnBoard [i] = null;
 						}
 				}
+				*/
+				//print out lettersOnBoard for debugging purposes
+				//Debug.Log ("Now lettersOnBoard is " + lettersOnBoard.ToString () + " before replacing");
 
 				//if a letter was sent out recently and it has been one second since then,
 				//this block of code replaces all missing letters on board with random ones
 				// and effectively fills the bank.
 
-				if (timer > .25f && needsUpkeep) {
-						//print ("time to replace");
-						int needsReplacing = 0;
-						for (int i = 0; i < boardSize; i++) {
-								if (lettersOnBoard [i] == null) {
-										needsReplacing++;
-								}
-
-								positionOnBoard [i] = -1;
-						}
-						if (needsReplacing > 0) {
-								string newLetters = returnLetters (needsReplacing);
-								//print (newLetters);
-								CreateLetters (newLetters);
-			 
+				//if (timer > 1f && needsUpkeep) {
+				//print ("time to replace");
+				int needsReplacing = 0;
+				for (int i = 0; i < boardSize; i++) {
+						if (lettersOnBoard [i] == null) {
+								needsReplacing++;
 						}
 
-						needsUpkeep = false;
+						positionOnBoard [i] = -1;
 				}
+				if (needsReplacing > 0) {
+						string newLetters = returnLetters (needsReplacing);
+						//Debug.Log ("Got new letters from returnLetters: " + newLetters);
+						//print (newLetters);
+						CreateLetters (newLetters);
+			 
+				}
+				//Debug.Log ("Now lettersOnBoard is " + lettersOnBoard.ToString () + " after replacing");
+				//needsUpkeep = false;
+				//}
 		}
 
 	
@@ -414,7 +434,7 @@ public class LetterController : MonoBehaviour
 				}
 				numLettersOnStove = 0;
 				timer = 0;
-				needsUpkeep = true;
+				//needsUpkeep = true;
 	  
 				variables.letterGenerationSound = true;
 
