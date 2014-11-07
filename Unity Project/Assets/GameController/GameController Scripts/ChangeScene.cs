@@ -5,6 +5,8 @@ public class ChangeScene : MonoBehaviour
 {
 
     public string versionNum;
+	float timeGoneBy;
+	
     // Use this for initialization
     void Start()
     {
@@ -15,6 +17,8 @@ public class ChangeScene : MonoBehaviour
             Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
         }
 
+		timeGoneBy = 0.0f;
+
 		DontDestroyOnLoad (GameObject.Find ("Diner"));
 		DontDestroyOnLoad (GameObject.Find ("Starfield Background"));
     }
@@ -22,7 +26,9 @@ public class ChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > 5.2)
+		timeGoneBy += Time.deltaTime;
+
+        if (timeGoneBy > 5.2f)
         {
             if (Application.loadedLevelName == "SplashScreen")
             {
