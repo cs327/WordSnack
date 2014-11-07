@@ -20,9 +20,6 @@ public class characterSelectController : MonoBehaviour {
 		if (GameObject.Find ("Starfield Background") == null) {
 			Instantiate (backgroundStars, new Vector3(0, 0, 30), Quaternion.identity);
 		}
-
-		// remove the diner for this screen, it's too busy in the background
-		Destroy (GameObject.Find ("Diner"));
 	}
 	
 	// Update is called once per frame
@@ -40,6 +37,7 @@ public class characterSelectController : MonoBehaviour {
 
 		// delete the starfield and diner background stuff from the previous three scenes
 		Destroy (GameObject.Find ("Starfield Background"));
+		Destroy (GameObject.Find ("Diner"));
 
 		Application.LoadLevel("WordMaking");
 		//moves the characters into their appropriate positions
