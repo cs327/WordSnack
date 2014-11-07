@@ -49,8 +49,8 @@ public class PauseMenuButton : MonoBehaviour {
 			mPauseButton.renderer.enabled = false;
 			mTrash.renderer.enabled = false;
 			resumeUnclicked.SetActive(true);
-			l.gamePaused = true;
-			w.gamePaused = true;
+			//l.gamePaused = true;
+			//w.gamePaused = true;
 			character1.enabled = false;
 			character2.enabled = false;
 			exitGameUnclicked.SetActive(true);
@@ -77,8 +77,8 @@ public class PauseMenuButton : MonoBehaviour {
 //				StartCoroutine(waitForButtonPress("UnPause"));
 				mTrash.renderer.enabled = true;
 				resumeUnclicked.SetActive(false);
-				l.gamePaused = false;
-				w.gamePaused = false;
+				//l.gamePaused = false;
+				//w.gamePaused = false;
 				character1.enabled = true;
 				character2.enabled = true;
 				exitGameUnclicked.SetActive (false);
@@ -119,8 +119,8 @@ public class PauseMenuButton : MonoBehaviour {
 			mPauseButton.renderer.enabled = true;
 			mTrash.renderer.enabled = true;
 			resumeUnclicked.SetActive(false);
-			l.gamePaused = false;
-			w.gamePaused = false;
+			//l.gamePaused = false;
+			//w.gamePaused = false;
 			character1.enabled = true;
 			character2.enabled = true;
 			exitGameUnclicked.SetActive (false);

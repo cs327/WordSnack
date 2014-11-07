@@ -17,7 +17,6 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject character1;
 		public GameObject character2;
 		public GameObject trashCharacter;
-		public bool gamePaused;
 		public GameObject tutorial;
 		//public GameObject instructionsClose;
 		public TextMesh lettersRemaining;
@@ -120,7 +119,7 @@ public class wordBuildingController : MonoBehaviour
 
 		void OnGUI ()
 		{
-				if (!gamePaused) {
+				if (!variables.paused) {
 						GUIStyle style = new GUIStyle ();
 						style.normal.background = endGameButton;
 						if (GUI.Button (new Rect (Screen.width * 0.013f, Screen.height * 0.315f, Screen.width * 0.07f, Screen.width * 0.07f), "", style)) {
