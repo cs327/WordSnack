@@ -30,7 +30,7 @@ public class GoBackToMenu : MonoBehaviour {
     {
         s.sprite = menuUnclicked;
         backToStart = true;
-        Application.LoadLevel("SplashScreen");
+        Application.LoadLevel("StartScreenTest");
         clickSound = true;
     }
 }

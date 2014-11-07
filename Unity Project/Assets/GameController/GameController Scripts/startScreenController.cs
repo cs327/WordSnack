@@ -6,6 +6,9 @@ public class startScreenController : MonoBehaviour {
     public Transform AudioManager_Prefab;
 	public string versionNum;
 
+	public GameObject backgroundStars;
+	public GameObject diner;
+
 	// Use this for initialization
 	void Start () {
 
@@ -13,6 +16,12 @@ public class startScreenController : MonoBehaviour {
         {
             Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
         }
+
+		// if we get here and there's no background, create it and the diner
+		if (GameObject.Find ("Starfield Background") == null) {
+			Instantiate (backgroundStars, new Vector3(0, 0, 30), Quaternion.identity);
+			Instantiate (diner, new Vector3(0, 0, 5), Quaternion.identity);
+		}
 	}
 	
 	// Update is called once per frame
