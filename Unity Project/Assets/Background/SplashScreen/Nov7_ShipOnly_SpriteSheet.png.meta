@@ -1,81 +1,81 @@
 fileFormatVersion: 2
-guid: 1952adf886aad45168d4a763b5c49b94
+guid: 13031b049773547c19687100a418a1dd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Nov5_24fps_ShipOnlySpriteSheet_0
-    21300002: Nov5_24fps_ShipOnlySpriteSheet_1
-    21300004: Nov5_24fps_ShipOnlySpriteSheet_2
-    21300006: Nov5_24fps_ShipOnlySpriteSheet_3
-    21300008: Nov5_24fps_ShipOnlySpriteSheet_4
-    21300010: Nov5_24fps_ShipOnlySpriteSheet_5
-    21300012: Nov5_24fps_ShipOnlySpriteSheet_6
-    21300014: Nov5_24fps_ShipOnlySpriteSheet_7
-    21300016: Nov5_24fps_ShipOnlySpriteSheet_8
-    21300018: Nov5_24fps_ShipOnlySpriteSheet_9
-    21300020: Nov5_24fps_ShipOnlySpriteSheet_10
-    21300022: Nov5_24fps_ShipOnlySpriteSheet_11
-    21300024: Nov5_24fps_ShipOnlySpriteSheet_12
-    21300026: Nov5_24fps_ShipOnlySpriteSheet_13
-    21300028: Nov5_24fps_ShipOnlySpriteSheet_14
-    21300030: Nov5_24fps_ShipOnlySpriteSheet_15
-    21300032: Nov5_24fps_ShipOnlySpriteSheet_16
-    21300034: Nov5_24fps_ShipOnlySpriteSheet_17
-    21300036: Nov5_24fps_ShipOnlySpriteSheet_18
-    21300038: Nov5_24fps_ShipOnlySpriteSheet_19
-    21300040: Nov5_24fps_ShipOnlySpriteSheet_20
-    21300042: Nov5_24fps_ShipOnlySpriteSheet_21
-    21300044: Nov5_24fps_ShipOnlySpriteSheet_22
-    21300046: Nov5_24fps_ShipOnlySpriteSheet_23
-    21300048: Nov5_24fps_ShipOnlySpriteSheet_24
-    21300050: Nov5_24fps_ShipOnlySpriteSheet_25
-    21300052: Nov5_24fps_ShipOnlySpriteSheet_26
-    21300054: Nov5_24fps_ShipOnlySpriteSheet_27
-    21300056: Nov5_24fps_ShipOnlySpriteSheet_28
-    21300058: Nov5_24fps_ShipOnlySpriteSheet_29
-    21300060: Nov5_24fps_ShipOnlySpriteSheet_30
-    21300062: Nov5_24fps_ShipOnlySpriteSheet_31
-    21300064: Nov5_24fps_ShipOnlySpriteSheet_32
-    21300066: Nov5_24fps_ShipOnlySpriteSheet_33
-    21300068: Nov5_24fps_ShipOnlySpriteSheet_34
-    21300070: Nov5_24fps_ShipOnlySpriteSheet_35
-    21300072: Nov5_24fps_ShipOnlySpriteSheet_36
-    21300074: Nov5_24fps_ShipOnlySpriteSheet_37
-    21300076: Nov5_24fps_ShipOnlySpriteSheet_38
-    21300078: Nov5_24fps_ShipOnlySpriteSheet_39
-    21300080: Nov5_24fps_ShipOnlySpriteSheet_40
-    21300082: Nov5_24fps_ShipOnlySpriteSheet_41
-    21300084: Nov5_24fps_ShipOnlySpriteSheet_42
-    21300086: Nov5_24fps_ShipOnlySpriteSheet_43
-    21300088: Nov5_24fps_ShipOnlySpriteSheet_44
-    21300090: Nov5_24fps_ShipOnlySpriteSheet_45
-    21300092: Nov5_24fps_ShipOnlySpriteSheet_46
-    21300094: Nov5_24fps_ShipOnlySpriteSheet_47
-    21300096: Nov5_24fps_ShipOnlySpriteSheet_48
-    21300098: Nov5_24fps_ShipOnlySpriteSheet_49
-    21300100: Nov5_24fps_ShipOnlySpriteSheet_50
-    21300102: Nov5_24fps_ShipOnlySpriteSheet_51
-    21300104: Nov5_24fps_ShipOnlySpriteSheet_52
-    21300106: Nov5_24fps_ShipOnlySpriteSheet_53
-    21300108: Nov5_24fps_ShipOnlySpriteSheet_54
-    21300110: Nov5_24fps_ShipOnlySpriteSheet_55
-    21300112: Nov5_24fps_ShipOnlySpriteSheet_56
-    21300114: Nov5_24fps_ShipOnlySpriteSheet_57
-    21300116: Nov5_24fps_ShipOnlySpriteSheet_58
-    21300118: Nov5_24fps_ShipOnlySpriteSheet_59
-    21300120: Nov5_24fps_ShipOnlySpriteSheet_60
-    21300122: Nov5_24fps_ShipOnlySpriteSheet_61
-    21300124: Nov5_24fps_ShipOnlySpriteSheet_62
-    21300126: Nov5_24fps_ShipOnlySpriteSheet_63
-    21300128: Nov5_24fps_ShipOnlySpriteSheet_64
-    21300130: Nov5_24fps_ShipOnlySpriteSheet_65
-    21300132: Nov5_24fps_ShipOnlySpriteSheet_66
-    21300134: Nov5_24fps_ShipOnlySpriteSheet_67
-    21300136: Nov5_24fps_ShipOnlySpriteSheet_68
-    21300138: Nov5_24fps_ShipOnlySpriteSheet_69
-    21300140: Nov5_24fps_ShipOnlySpriteSheet_70
-    21300142: Nov5_24fps_ShipOnlySpriteSheet_71
-    21300144: Nov5_24fps_ShipOnlySpriteSheet_72
-    21300146: Nov5_24fps_ShipOnlySpriteSheet_73
+    21300000: Nov7_ShipOnly_SpriteSheet_0
+    21300002: Nov7_ShipOnly_SpriteSheet_1
+    21300004: Nov7_ShipOnly_SpriteSheet_2
+    21300006: Nov7_ShipOnly_SpriteSheet_3
+    21300008: Nov7_ShipOnly_SpriteSheet_4
+    21300010: Nov7_ShipOnly_SpriteSheet_5
+    21300012: Nov7_ShipOnly_SpriteSheet_6
+    21300014: Nov7_ShipOnly_SpriteSheet_7
+    21300016: Nov7_ShipOnly_SpriteSheet_8
+    21300018: Nov7_ShipOnly_SpriteSheet_9
+    21300020: Nov7_ShipOnly_SpriteSheet_10
+    21300022: Nov7_ShipOnly_SpriteSheet_11
+    21300024: Nov7_ShipOnly_SpriteSheet_12
+    21300026: Nov7_ShipOnly_SpriteSheet_13
+    21300028: Nov7_ShipOnly_SpriteSheet_14
+    21300030: Nov7_ShipOnly_SpriteSheet_15
+    21300032: Nov7_ShipOnly_SpriteSheet_16
+    21300034: Nov7_ShipOnly_SpriteSheet_17
+    21300036: Nov7_ShipOnly_SpriteSheet_18
+    21300038: Nov7_ShipOnly_SpriteSheet_19
+    21300040: Nov7_ShipOnly_SpriteSheet_20
+    21300042: Nov7_ShipOnly_SpriteSheet_21
+    21300044: Nov7_ShipOnly_SpriteSheet_22
+    21300046: Nov7_ShipOnly_SpriteSheet_23
+    21300048: Nov7_ShipOnly_SpriteSheet_24
+    21300050: Nov7_ShipOnly_SpriteSheet_25
+    21300052: Nov7_ShipOnly_SpriteSheet_26
+    21300054: Nov7_ShipOnly_SpriteSheet_27
+    21300056: Nov7_ShipOnly_SpriteSheet_28
+    21300058: Nov7_ShipOnly_SpriteSheet_29
+    21300060: Nov7_ShipOnly_SpriteSheet_30
+    21300062: Nov7_ShipOnly_SpriteSheet_31
+    21300064: Nov7_ShipOnly_SpriteSheet_32
+    21300066: Nov7_ShipOnly_SpriteSheet_33
+    21300068: Nov7_ShipOnly_SpriteSheet_34
+    21300070: Nov7_ShipOnly_SpriteSheet_35
+    21300072: Nov7_ShipOnly_SpriteSheet_36
+    21300074: Nov7_ShipOnly_SpriteSheet_37
+    21300076: Nov7_ShipOnly_SpriteSheet_38
+    21300078: Nov7_ShipOnly_SpriteSheet_39
+    21300080: Nov7_ShipOnly_SpriteSheet_40
+    21300082: Nov7_ShipOnly_SpriteSheet_41
+    21300084: Nov7_ShipOnly_SpriteSheet_42
+    21300086: Nov7_ShipOnly_SpriteSheet_43
+    21300088: Nov7_ShipOnly_SpriteSheet_44
+    21300090: Nov7_ShipOnly_SpriteSheet_45
+    21300092: Nov7_ShipOnly_SpriteSheet_46
+    21300094: Nov7_ShipOnly_SpriteSheet_47
+    21300096: Nov7_ShipOnly_SpriteSheet_48
+    21300098: Nov7_ShipOnly_SpriteSheet_49
+    21300100: Nov7_ShipOnly_SpriteSheet_50
+    21300102: Nov7_ShipOnly_SpriteSheet_51
+    21300104: Nov7_ShipOnly_SpriteSheet_52
+    21300106: Nov7_ShipOnly_SpriteSheet_53
+    21300108: Nov7_ShipOnly_SpriteSheet_54
+    21300110: Nov7_ShipOnly_SpriteSheet_55
+    21300112: Nov7_ShipOnly_SpriteSheet_56
+    21300114: Nov7_ShipOnly_SpriteSheet_57
+    21300116: Nov7_ShipOnly_SpriteSheet_58
+    21300118: Nov7_ShipOnly_SpriteSheet_59
+    21300120: Nov7_ShipOnly_SpriteSheet_60
+    21300122: Nov7_ShipOnly_SpriteSheet_61
+    21300124: Nov7_ShipOnly_SpriteSheet_62
+    21300126: Nov7_ShipOnly_SpriteSheet_63
+    21300128: Nov7_ShipOnly_SpriteSheet_64
+    21300130: Nov7_ShipOnly_SpriteSheet_65
+    21300132: Nov7_ShipOnly_SpriteSheet_66
+    21300134: Nov7_ShipOnly_SpriteSheet_67
+    21300136: Nov7_ShipOnly_SpriteSheet_68
+    21300138: Nov7_ShipOnly_SpriteSheet_69
+    21300140: Nov7_ShipOnly_SpriteSheet_70
+    21300142: Nov7_ShipOnly_SpriteSheet_71
+    21300144: Nov7_ShipOnly_SpriteSheet_72
+    21300146: Nov7_ShipOnly_SpriteSheet_73
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -95,7 +95,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -3
   maxTextureSize: 4096
   textureSettings:
     filterMode: 0
@@ -117,7 +117,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Nov5_24fps_ShipOnlySpriteSheet_0
+    - name: Nov7_ShipOnly_SpriteSheet_0
       rect:
         serializedVersion: 2
         x: 2840
@@ -127,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_1
+    - name: Nov7_ShipOnly_SpriteSheet_1
       rect:
         serializedVersion: 2
         x: 3408
@@ -137,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_2
+    - name: Nov7_ShipOnly_SpriteSheet_2
       rect:
         serializedVersion: 2
         x: 2840
@@ -147,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_3
+    - name: Nov7_ShipOnly_SpriteSheet_3
       rect:
         serializedVersion: 2
         x: 3408
@@ -157,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_4
+    - name: Nov7_ShipOnly_SpriteSheet_4
       rect:
         serializedVersion: 2
         x: 3976
@@ -167,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_5
+    - name: Nov7_ShipOnly_SpriteSheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -177,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_6
+    - name: Nov7_ShipOnly_SpriteSheet_6
       rect:
         serializedVersion: 2
         x: 568
@@ -187,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_7
+    - name: Nov7_ShipOnly_SpriteSheet_7
       rect:
         serializedVersion: 2
         x: 1136
@@ -197,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_8
+    - name: Nov7_ShipOnly_SpriteSheet_8
       rect:
         serializedVersion: 2
         x: 1704
@@ -207,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_9
+    - name: Nov7_ShipOnly_SpriteSheet_9
       rect:
         serializedVersion: 2
         x: 2272
@@ -217,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_10
+    - name: Nov7_ShipOnly_SpriteSheet_10
       rect:
         serializedVersion: 2
         x: 2840
@@ -227,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_11
+    - name: Nov7_ShipOnly_SpriteSheet_11
       rect:
         serializedVersion: 2
         x: 3408
@@ -237,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_12
+    - name: Nov7_ShipOnly_SpriteSheet_12
       rect:
         serializedVersion: 2
         x: 3976
@@ -247,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_13
+    - name: Nov7_ShipOnly_SpriteSheet_13
       rect:
         serializedVersion: 2
         x: 0
@@ -257,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_14
+    - name: Nov7_ShipOnly_SpriteSheet_14
       rect:
         serializedVersion: 2
         x: 568
@@ -267,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_15
+    - name: Nov7_ShipOnly_SpriteSheet_15
       rect:
         serializedVersion: 2
         x: 1136
@@ -277,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_16
+    - name: Nov7_ShipOnly_SpriteSheet_16
       rect:
         serializedVersion: 2
         x: 1704
@@ -287,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_17
+    - name: Nov7_ShipOnly_SpriteSheet_17
       rect:
         serializedVersion: 2
         x: 2272
@@ -297,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_18
+    - name: Nov7_ShipOnly_SpriteSheet_18
       rect:
         serializedVersion: 2
         x: 2840
@@ -307,7 +307,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_19
+    - name: Nov7_ShipOnly_SpriteSheet_19
       rect:
         serializedVersion: 2
         x: 3408
@@ -317,7 +317,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_20
+    - name: Nov7_ShipOnly_SpriteSheet_20
       rect:
         serializedVersion: 2
         x: 3976
@@ -327,7 +327,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_21
+    - name: Nov7_ShipOnly_SpriteSheet_21
       rect:
         serializedVersion: 2
         x: 0
@@ -337,7 +337,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_22
+    - name: Nov7_ShipOnly_SpriteSheet_22
       rect:
         serializedVersion: 2
         x: 568
@@ -347,7 +347,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_23
+    - name: Nov7_ShipOnly_SpriteSheet_23
       rect:
         serializedVersion: 2
         x: 1136
@@ -357,7 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_24
+    - name: Nov7_ShipOnly_SpriteSheet_24
       rect:
         serializedVersion: 2
         x: 1704
@@ -367,7 +367,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_25
+    - name: Nov7_ShipOnly_SpriteSheet_25
       rect:
         serializedVersion: 2
         x: 2272
@@ -377,7 +377,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_26
+    - name: Nov7_ShipOnly_SpriteSheet_26
       rect:
         serializedVersion: 2
         x: 2840
@@ -387,7 +387,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_27
+    - name: Nov7_ShipOnly_SpriteSheet_27
       rect:
         serializedVersion: 2
         x: 3408
@@ -397,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_28
+    - name: Nov7_ShipOnly_SpriteSheet_28
       rect:
         serializedVersion: 2
         x: 3976
@@ -407,7 +407,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_29
+    - name: Nov7_ShipOnly_SpriteSheet_29
       rect:
         serializedVersion: 2
         x: 0
@@ -417,7 +417,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_30
+    - name: Nov7_ShipOnly_SpriteSheet_30
       rect:
         serializedVersion: 2
         x: 568
@@ -427,7 +427,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_31
+    - name: Nov7_ShipOnly_SpriteSheet_31
       rect:
         serializedVersion: 2
         x: 1136
@@ -437,7 +437,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_32
+    - name: Nov7_ShipOnly_SpriteSheet_32
       rect:
         serializedVersion: 2
         x: 1704
@@ -447,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_33
+    - name: Nov7_ShipOnly_SpriteSheet_33
       rect:
         serializedVersion: 2
         x: 2272
@@ -457,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_34
+    - name: Nov7_ShipOnly_SpriteSheet_34
       rect:
         serializedVersion: 2
         x: 2840
@@ -467,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_35
+    - name: Nov7_ShipOnly_SpriteSheet_35
       rect:
         serializedVersion: 2
         x: 3408
@@ -477,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_36
+    - name: Nov7_ShipOnly_SpriteSheet_36
       rect:
         serializedVersion: 2
         x: 3976
@@ -487,7 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_37
+    - name: Nov7_ShipOnly_SpriteSheet_37
       rect:
         serializedVersion: 2
         x: 0
@@ -497,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_38
+    - name: Nov7_ShipOnly_SpriteSheet_38
       rect:
         serializedVersion: 2
         x: 568
@@ -507,7 +507,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_39
+    - name: Nov7_ShipOnly_SpriteSheet_39
       rect:
         serializedVersion: 2
         x: 1136
@@ -517,7 +517,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_40
+    - name: Nov7_ShipOnly_SpriteSheet_40
       rect:
         serializedVersion: 2
         x: 1704
@@ -527,7 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_41
+    - name: Nov7_ShipOnly_SpriteSheet_41
       rect:
         serializedVersion: 2
         x: 2272
@@ -537,7 +537,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_42
+    - name: Nov7_ShipOnly_SpriteSheet_42
       rect:
         serializedVersion: 2
         x: 2840
@@ -547,7 +547,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_43
+    - name: Nov7_ShipOnly_SpriteSheet_43
       rect:
         serializedVersion: 2
         x: 3408
@@ -557,7 +557,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_44
+    - name: Nov7_ShipOnly_SpriteSheet_44
       rect:
         serializedVersion: 2
         x: 3976
@@ -567,7 +567,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_45
+    - name: Nov7_ShipOnly_SpriteSheet_45
       rect:
         serializedVersion: 2
         x: 0
@@ -577,7 +577,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_46
+    - name: Nov7_ShipOnly_SpriteSheet_46
       rect:
         serializedVersion: 2
         x: 568
@@ -587,7 +587,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_47
+    - name: Nov7_ShipOnly_SpriteSheet_47
       rect:
         serializedVersion: 2
         x: 1136
@@ -597,7 +597,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_48
+    - name: Nov7_ShipOnly_SpriteSheet_48
       rect:
         serializedVersion: 2
         x: 1704
@@ -607,7 +607,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_49
+    - name: Nov7_ShipOnly_SpriteSheet_49
       rect:
         serializedVersion: 2
         x: 2272
@@ -617,7 +617,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_50
+    - name: Nov7_ShipOnly_SpriteSheet_50
       rect:
         serializedVersion: 2
         x: 2840
@@ -627,7 +627,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_51
+    - name: Nov7_ShipOnly_SpriteSheet_51
       rect:
         serializedVersion: 2
         x: 3408
@@ -637,7 +637,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_52
+    - name: Nov7_ShipOnly_SpriteSheet_52
       rect:
         serializedVersion: 2
         x: 3976
@@ -647,7 +647,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_53
+    - name: Nov7_ShipOnly_SpriteSheet_53
       rect:
         serializedVersion: 2
         x: 0
@@ -657,7 +657,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_54
+    - name: Nov7_ShipOnly_SpriteSheet_54
       rect:
         serializedVersion: 2
         x: 568
@@ -667,7 +667,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_55
+    - name: Nov7_ShipOnly_SpriteSheet_55
       rect:
         serializedVersion: 2
         x: 1136
@@ -677,7 +677,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_56
+    - name: Nov7_ShipOnly_SpriteSheet_56
       rect:
         serializedVersion: 2
         x: 1704
@@ -687,7 +687,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_57
+    - name: Nov7_ShipOnly_SpriteSheet_57
       rect:
         serializedVersion: 2
         x: 2272
@@ -697,7 +697,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_58
+    - name: Nov7_ShipOnly_SpriteSheet_58
       rect:
         serializedVersion: 2
         x: 2840
@@ -707,7 +707,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_59
+    - name: Nov7_ShipOnly_SpriteSheet_59
       rect:
         serializedVersion: 2
         x: 3408
@@ -717,7 +717,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_60
+    - name: Nov7_ShipOnly_SpriteSheet_60
       rect:
         serializedVersion: 2
         x: 3976
@@ -727,7 +727,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_61
+    - name: Nov7_ShipOnly_SpriteSheet_61
       rect:
         serializedVersion: 2
         x: 0
@@ -737,7 +737,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_62
+    - name: Nov7_ShipOnly_SpriteSheet_62
       rect:
         serializedVersion: 2
         x: 568
@@ -747,7 +747,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_63
+    - name: Nov7_ShipOnly_SpriteSheet_63
       rect:
         serializedVersion: 2
         x: 1136
@@ -757,7 +757,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_64
+    - name: Nov7_ShipOnly_SpriteSheet_64
       rect:
         serializedVersion: 2
         x: 1704
@@ -767,7 +767,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_65
+    - name: Nov7_ShipOnly_SpriteSheet_65
       rect:
         serializedVersion: 2
         x: 2272
@@ -777,7 +777,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_66
+    - name: Nov7_ShipOnly_SpriteSheet_66
       rect:
         serializedVersion: 2
         x: 2840
@@ -787,7 +787,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_67
+    - name: Nov7_ShipOnly_SpriteSheet_67
       rect:
         serializedVersion: 2
         x: 3408
@@ -797,7 +797,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_68
+    - name: Nov7_ShipOnly_SpriteSheet_68
       rect:
         serializedVersion: 2
         x: 3976
@@ -807,7 +807,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_69
+    - name: Nov7_ShipOnly_SpriteSheet_69
       rect:
         serializedVersion: 2
         x: 0
@@ -817,7 +817,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_70
+    - name: Nov7_ShipOnly_SpriteSheet_70
       rect:
         serializedVersion: 2
         x: 568
@@ -827,7 +827,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_71
+    - name: Nov7_ShipOnly_SpriteSheet_71
       rect:
         serializedVersion: 2
         x: 1136
@@ -837,7 +837,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_72
+    - name: Nov7_ShipOnly_SpriteSheet_72
       rect:
         serializedVersion: 2
         x: 1704
@@ -847,7 +847,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Nov5_24fps_ShipOnlySpriteSheet_73
+    - name: Nov7_ShipOnly_SpriteSheet_73
       rect:
         serializedVersion: 2
         x: 2272
