@@ -4,6 +4,7 @@ using System.Collections;
 public class resumeButton : MonoBehaviour {
 	pause p;
     public bool clickSound;
+
 	// Use this for initialization
 	void Start () {
 		p = gameObject.transform.parent.GetComponentInParent<pause>();

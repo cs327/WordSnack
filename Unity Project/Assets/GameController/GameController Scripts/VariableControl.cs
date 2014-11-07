@@ -246,7 +246,7 @@ public class VariableControl : MonoBehaviour {
 	void Update () {
 
 		//GET THIS TO WORK then comment out the following line
-		timerStart=true;
+        //timerStart=true;
 //		if(PlayerPrefs.GetInt ("instructions") == 0){
 //			timerStart = false;
 //		}
@@ -323,7 +323,10 @@ public class VariableControl : MonoBehaviour {
 
 	void KeepTime(){
 		if(Application.loadedLevelName == "WordMaking"){
-			globalTimer -= Time.deltaTime;
+            if (timerStart == true)
+            {
+                globalTimer -= Time.deltaTime;
+            }
 		}
 
 	}

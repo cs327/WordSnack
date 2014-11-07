@@ -33,8 +33,12 @@ public class wordBuildingController : MonoBehaviour
 		{
 				if (PlayerPrefs.GetInt ("timed") != 1) {
 						timeRemaining.gameObject.SetActive (false);
-				} else {
-						timeRemaining.gameObject.SetActive (true);
+				} else 
+                {
+                    if (GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart == true)
+                    {
+                        timeRemaining.gameObject.SetActive(true);
+                    }
 				}
 
 				tasteHighlighters [0] = char1Taste1;
@@ -88,7 +92,7 @@ public class wordBuildingController : MonoBehaviour
 						Application.LoadLevel ("ScoreScreen");
 				}
 		//updates time on screen
-		else {
+		        else {
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
 				}
 

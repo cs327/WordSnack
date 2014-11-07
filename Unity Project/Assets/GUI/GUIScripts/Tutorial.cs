@@ -19,6 +19,7 @@ public class Tutorial : MonoBehaviour
     GameObject character1;
     GameObject character2;
     public bool clickSound;
+    public bool timerBegin = false;
     
     // Use this for initialization
     void Start()
@@ -52,7 +53,8 @@ public class Tutorial : MonoBehaviour
             Vector3 offScreenPos = gameObject.transform.position;
             offScreenPos.x = -20f;
             gameObject.transform.position = offScreenPos;
-            gameObject.transform.parent.transform.position = offScreenPos;            
+            gameObject.transform.parent.transform.position = offScreenPos;
+            GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
         }
     }
 
@@ -85,6 +87,7 @@ public class Tutorial : MonoBehaviour
             ScoreManager.NeverShowInstructions = true;
             parentPos.x = -20.0f;
             transform.parent.transform.position = parentPos;
+            GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
         }
     }
 }

@@ -385,29 +385,39 @@ public class PlayMusic : MonoBehaviour {
     //}
     void ClickSound()
     {
-        if (GameObject.Find("instructions").GetComponent<Tutorial>().clickSound == true)
+        if (Application.loadedLevelName == "WordMaking")
         {
-            audioManager.Play(1);
-            GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
-        }
-        if (GameObject.Find("pauseButton").GetComponent<pause>().clickSound == true)
-        {
-            audioManager.Play(1);
-            GameObject.Find("pauseButton").GetComponent<pause>().clickSound = false;
-        }
+            if (GameObject.Find("instructions").GetComponent<Tutorial>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
+            }
+            if (GameObject.Find("pauseButton").GetComponent<pause>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("pauseButton").GetComponent<pause>().clickSound = false;
+            }
 
-        if (GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound == true)
-        {
-            audioManager.Play(1);
-            GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound = false;
-        }
+            if (GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound = false;
+            }
 
-        if (GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound == true)
-        {
-            audioManager.Play(1);
-            GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound = false;
+            if (GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("exitButton").GetComponent<exitGameplayButton>().clickSound = false;
+            }
         }
-
+        if (Application.loadedLevelName == "SplashScreen")
+        {
+            if (GameObject.Find("TimedMode").GetComponent<TimedButtonHandler>().clickSound == true)
+            {
+                audioManager.Play(1);
+                GameObject.Find("TimedMode").GetComponent<TimedButtonHandler>().clickSound = false;
+            }
+        }
     }
 
 }
