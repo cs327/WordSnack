@@ -20,7 +20,7 @@ public class Tutorial : MonoBehaviour
     GameObject character1;
     GameObject character2;
     public bool clickSound;
-
+    
     // Use this for initialization
     void Start()
     {
