@@ -9,6 +9,7 @@ using System.Linq;
 public static class ScoreManager 
 {
     private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
+    public static bool NeverShowInstructions = false;
     
     // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
@@ -37,6 +38,16 @@ public static class ScoreManager
             return scoreList[GetCharacterHash(char1, char2)];
         else
             return new List<int>();
+    }
+
+    // Saves the current value of "Never show instructions?" in the file UserSettings.gd
+    private static void SaveNeverShowSetting(bool setting)
+    {
+        Debug.Log("Saving 'never show? = " + setting + "'");
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/UserSettings.gd");
+        bf.Serialize(file, setting);
+        file.Close();
     }
 
     // Given two character names returns a unique value representing their set

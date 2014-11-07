@@ -15,7 +15,6 @@ public class Tutorial : MonoBehaviour
     Vector3 parentPos;
     Transform trash;
     //Rect checkBox;
-    public bool neverShowInstructions = false;
     wordBuildingController w;
     GameObject character1;
     GameObject character2;
@@ -23,23 +22,7 @@ public class Tutorial : MonoBehaviour
     
     // Use this for initialization
     void Start()
-    {
-        // Use this to check local files to see if instructions are visible
-        if (File.Exists(Application.persistentDataPath + "/UserSettings.gd"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            Debug.Log(Application.persistentDataPath);
-            FileStream file = File.Open(Application.persistentDataPath + "/UserSettings.gd", FileMode.Open);
-            // bf stores the value of checkMark.Enabled, i.e if true then never show the instructions again
-            neverShowInstructions = (bool)bf.Deserialize(file);
-            Debug.Log("Never Show setting is available and equals " + (neverShowInstructions).ToString());
-            
-            file.Close();
-        }
-        else
-        {
-            Debug.Log("No user Setting file");
-        }
+    {        
         m = gameObject.GetComponent<MeshRenderer>();
         m.renderer.material.mainTexture = instructions[0];
         pos = transform.localPosition;
@@ -63,7 +46,7 @@ public class Tutorial : MonoBehaviour
             pos.z += Time.deltaTime * 8.0f;
             transform.localPosition = pos;
         }
-        if (neverShowInstructions)
+        if (ScoreManager.NeverShowInstructions)
         {
             //Debug.Log("never show?  = " + neverShowInstructions);
             Vector3 offScreenPos = gameObject.transform.position;
@@ -73,15 +56,6 @@ public class Tutorial : MonoBehaviour
         }
     }
 
-    // Saves the current value of "Never show instructions?" in the file UserSettings.gd
-    private static void SaveNeverShowSetting(bool setting)
-    {
-        Debug.Log("Saving 'never show? = " + setting + "'");
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/UserSettings.gd");
-        bf.Serialize(file, setting);
-        file.Close();
-    }
 
     // Update is called once per frame
     void OnMouseDown()
@@ -92,7 +66,7 @@ public class Tutorial : MonoBehaviour
         // 2 = tap to feed customers message
         // 3 = highlight tastes
         // 4 = how to end game + checked "don't show up again" box
-        if (neverShowInstructions)
+        if (ScoreManager.NeverShowInstructions)
         {
             Debug.Log("Return from update");
             return;
@@ -108,7 +82,7 @@ public class Tutorial : MonoBehaviour
         }      
         else if (m.renderer.material.mainTexture == instructions[1])
         {
-            SaveNeverShowSetting(true);
+            ScoreManager.NeverShowInstructions = true;
             parentPos.x = -20.0f;
             transform.parent.transform.position = parentPos;
         }
