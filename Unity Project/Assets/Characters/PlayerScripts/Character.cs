@@ -118,6 +118,8 @@ public class Character : MonoBehaviour
 		}
 		//If we get here, either we're the trash character, or it was a proper word
 		//Debug.Log("About to score the word");
+		Debug.Log("Trash Can");
+		GetComponent<Animator>().SetTrigger("eat");
 		float tempScore = scoreWord(word);
 		return (int)tempScore;
 	}

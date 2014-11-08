@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 971012799a7524042990dcb0111dcd3c
+guid: 7d26a92b7c574440d8920476226233c8
 TextureImporter:
   fileIDToRecycleName:
     21300000: SpikeSpriteSheet_0
@@ -175,7 +175,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: SpikeSpriteSheet_7
       rect:
