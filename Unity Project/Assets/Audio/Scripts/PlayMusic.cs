@@ -52,24 +52,24 @@ public class PlayMusic : MonoBehaviour {
 
 		if (Application.loadedLevelName == "SplashScreen")
 		{
-
+            audioManager.Play(26);
 		}
 
-		if (Application.loadedLevelName == "StartScreenTest")
-		{
-			playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
-			aboutButtonHandler = GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>();
+        //if (Application.loadedLevelName == "StartScreenTest")
+        //{
+        //    playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
+        //    aboutButtonHandler = GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>();
 
-		}
+        //}
 
 
-		if (Application.loadedLevelName == "WordMaking")
-		{
-			variables = GetComponent<VariableControl>();
-			letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
-			words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
+        //if (Application.loadedLevelName == "WordMaking")
+        //{
+        //    variables = GetComponent<VariableControl>();
+        //    letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
+        //    words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
 
-		}
+        //}
 	
 	}
 	
@@ -98,6 +98,7 @@ public class PlayMusic : MonoBehaviour {
 				audioManager.Stop(16);
 				audioManager.Stop(14);
 				audioManager.PlayLoop(4);
+
 		}
 		if (Application.loadedLevelName == "StartScreenTest")
 		{
