@@ -31,14 +31,15 @@ public class wordBuildingController : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+				variables = variableController.GetComponent<VariableControl> ();
 				if (PlayerPrefs.GetInt ("timed") != 1) {
 						timeRemaining.gameObject.SetActive (false);
 				} else 
-                {
-                    if (GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart == true)
                     {
-                        timeRemaining.gameObject.SetActive(true);
-                    }
+                              if (variables.timerStart == true)
+                              {
+                                        timeRemaining.gameObject.SetActive(true);
+                              }
 				}
 
 				tasteHighlighters [0] = char1Taste1;
@@ -49,7 +50,6 @@ public class wordBuildingController : MonoBehaviour
 				tasteHighLightPos [2] = new Vector3 (7.6f, 4.6f, -0.5f);
 				tasteHighlighters [3] = char2Taste2;
 				tasteHighLightPos [3] = new Vector3 (7.6f, 3.9f, -0.5f);
-				variables = variableController.GetComponent<VariableControl> ();
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
 				character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
