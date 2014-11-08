@@ -326,11 +326,11 @@ public class PlayMusic : MonoBehaviour {
 					 || GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
 					 && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
 
-				        {
-					        audioManager.Play(23);
-					        Debug.Log("double taste");
-				           // words.bothTastes = false;
-				        }
+						{
+							audioManager.Play(23);
+							Debug.Log("double taste");
+						   // words.bothTastes = false;
+						}
 
 				//If only one taste is met, play "Taste matched sound.
 				else if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0]
@@ -338,12 +338,12 @@ public class PlayMusic : MonoBehaviour {
 						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2]
 						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
 
-				        {
-					        audioManager.Play(21);
-					        Debug.Log("Taste");
+						{
+							audioManager.Play(21);
+							Debug.Log("Taste");
 
-				        }
-                //If no tastes are met, play neutral sound.
+						}
+				//If no tastes are met, play neutral sound.
 				else 
 				{
 					audioManager.Play(22);
