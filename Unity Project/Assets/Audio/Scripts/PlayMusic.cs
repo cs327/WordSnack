@@ -52,7 +52,7 @@ public class PlayMusic : MonoBehaviour {
 
 		if (Application.loadedLevelName == "SplashScreen")
 		{
-            audioManager.Play(26);
+            Invoke("SpaceShipSound", 0);
 		}
 
         //if (Application.loadedLevelName == "StartScreenTest")
@@ -416,5 +416,9 @@ public class PlayMusic : MonoBehaviour {
 		}
 
 	}
+    void SpaceShipSound()
+    {
+        audioManager.Play(26);
+    }
 
 }
