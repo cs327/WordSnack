@@ -361,7 +361,8 @@ public class Character : MonoBehaviour
 					//FRED EATING ANIMATION GOES HERE 
 					//return 23;
 					//Animation.CrossFade("KelvinEatingAnim");
-					Debug.Log("Fred does not like this");
+					GetComponent<Animator>().SetTrigger("eat");
+					Debug.Log("Fred eating animation");
 					break;
 				case 2:
 					Debug.Log("Kelvin eating animation");
@@ -378,12 +379,12 @@ public class Character : MonoBehaviour
 				case 4:
 					//STELLA EATING ANIMATION GOES HERE
 					//return 35;
-					Debug.Log("Stella does not like this");
+					Debug.Log("Stella Eating Animation");
 					break;
 				case 5:
 					//MEGAN EATING ANIMATION GOES HERE
 					//return 29;
-					Debug.Log("Megan does not like this");
+					Debug.Log("Megan Eating Animation");
 					break;
 				default:
 					//return 0;
