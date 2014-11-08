@@ -94,8 +94,6 @@ public class Character : MonoBehaviour
 				tasteText.fontSize = 60;
 			}
 
-
-
 		}
 
 	}
