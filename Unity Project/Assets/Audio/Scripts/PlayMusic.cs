@@ -5,40 +5,43 @@ public class PlayMusic : MonoBehaviour {
 	public GameObject audio;
 	AudioManager audioManager;
 	
-	PlayButtonHandler playButtonHandler;
-	AboutButtonHandler aboutButtonHandler;
+	//PlayButtonHandler playButtonHandler;
+	//AboutButtonHandler aboutButtonHandler;
 
-	public GameObject selecter;
-	CharacterSelectUI charSel;
+	//public GameObject selecter;
+	//CharacterSelectUI charSel;
 
-	public GameObject VariableControl;
-	VariableControl variables;
+	//public GameObject VariableControl;
+	//VariableControl variables;
 
-	public GameObject wordControl;
-	wordBuildingController words;
+	//public GameObject wordControl;
+	//wordBuildingController words;
 
    // public GameObject character;
 	//Character charac;
 
 	int numSelected = 0;
 
-	ReceiptMove receipt;
-	public GameObject receiptScript;
+	//ReceiptMove receipt;
+	//public GameObject receiptScript;
 
-	GoBackToMenu toMenu;
-	public GameObject toMenuScript;
+	//GoBackToMenu toMenu;
+	//public GameObject toMenuScript;
 
-	bool playedVictory = false;
+	//bool playedVictory = false;
 
 	int i = 0;
 
-	LetterController letterController;
-
+	//LetterController letterController;
+	
+	//Booleans for Stove Sound Looping.
 	bool sizzleStart = false;
 	bool sizzleEnd = false;
 	bool playedSteamEnd = false;
 	bool sizzled = false;
-	bool letterGen;
+
+	//Boolean 
+	//bool letterGen;
 
 
 	//public GameObject audioManager;
@@ -52,37 +55,109 @@ public class PlayMusic : MonoBehaviour {
 
 		if (Application.loadedLevelName == "SplashScreen")
 		{
-            Invoke("SpaceShipSound", 0);
+			//Plays the Space Ship Sound with a possible delay.
+			Invoke("SpaceShipSound", 0);
 		}
 
-        //if (Application.loadedLevelName == "StartScreenTest")
-        //{
-        //    playButtonHandler = GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>();
-        //    aboutButtonHandler = GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>();
-
-        //}
-
-
-        //if (Application.loadedLevelName == "WordMaking")
-        //{
-        //    variables = GetComponent<VariableControl>();
-        //    letterGen = GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound;
-        //    words= GameObject.Find("GameController").GetComponent<wordBuildingController>();
-
-        //}
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Splash Screen Sounds
+		if (Application.loadedLevelName == "SplashScreen")
+		{
+			//Stops any other music or sound tracks that may still be playing.
+			audioManager.Stop(5);
+			audioManager.Stop(20);
+			audioManager.Stop(16);
+			audioManager.Stop(14);
+			//Plays the Menu Music
+			audioManager.PlayLoop(4);
+		}
 
+		if (Application.loadedLevelName == "StartScreenTest")
+		{
+			//Stops any music that should not be playing
+			audioManager.Stop(5);
+			audioManager.Stop(20);
+			audioManager.Stop(16);
+			audioManager.Stop(14);
+
+			//Plays the menu music only if it is not already playing.
+			if (audioManager.audioSourceArray[4].isPlaying == false)
+			{
+				audioManager.PlayLoop(4);
+			}
+			//Click sound for Play button and About Button.
+			if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
+			{
+				audioManager.Play(1);
+			}
+		}
+
+		//Sounds for Character Select Screen
+		if (Application.loadedLevelName == "CharacterSelectTest")
+		{
+			//Stops any sounds that should not be playing.
+			audioManager.Stop(5);
+			audioManager.Stop(20);
+			audioManager.Stop(16);
+			audioManager.Stop(14);
+
+			//Plays menu music if it is not already playing.
+			if (audioManager.audioSourceArray[4].isPlaying == false)
+			{
+				audioManager.PlayLoop(4);
+			}
+			//////////////////////////////////
+			//Character Select Sound effects//
+			//////////////////////////////////
+
+			//Plays Click sound when first character is selected. Plays second character selected sound when second character is selected.
+			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
+			{
+				if (numSelected == 0)
+				{
+					audioManager.Play(1);
+				}
+				else
+				{
+					audioManager.Play(3);
+				}
+				Debug.Log("ding");
+				numSelected++;
+				if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
+				{
+					numSelected = 0;
+				}
+			}
+
+			//Plays click sound when characters are unselected.
+			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
+			{
+				audioManager.Play(1);
+				numSelected--;
+				Debug.Log(numSelected.ToString());
+			}
+
+			//Plays "FeedMe" sound when feed them button is pressed.
+			if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
+			{
+				audioManager.Play(2);
+				GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
+			}
+		}
+		////////////////////////////
+		//Word Making Phase Sounds//
+		////////////////////////////
 		if (Application.loadedLevelName == "WordMaking")
 		{
+			//Stops the Menu Music.
 			audioManager.Stop(4);
+			//Loops the GamePlay Music.
 			audioManager.PlayLoop(5);
 			NewOnStove();
 			Sizzle();
-			//HappySound();
 			RejectedSound();
 			Chewing();
 			Shuffle();
@@ -90,37 +165,12 @@ public class PlayMusic : MonoBehaviour {
 			ClickSound();
 
 		}
-
-		if (Application.loadedLevelName == "SplashScreen")
-		{
-				audioManager.Stop(5);
-				audioManager.Stop(20);
-				audioManager.Stop(16);
-				audioManager.Stop(14);
-				audioManager.PlayLoop(4);
-
-		}
-		if (Application.loadedLevelName == "StartScreenTest")
-		{
-			audioManager.Stop(5);
-			audioManager.Stop(20);
-			audioManager.Stop(16);
-			audioManager.Stop(14);
-
-			if (audioManager.audioSourceArray[4].isPlaying == false)
-			{
-				audioManager.PlayLoop(4);
-			}
-
-			if (GameObject.Find("PlayButton").GetComponent<PlayButtonHandler>().buttonPressed == true || GameObject.Find("AboutButton").GetComponent<AboutButtonHandler>().buttonPressed == true)
-			{
-				audioManager.Play(1);
-
-			}
-		}
-
+		///////////////////////
+		//Score Screen Sounds//
+		///////////////////////
 		if (Application.loadedLevelName == "ScoreScreen")
 		{
+			//Stops the GamePlay Music
 			audioManager.Stop(5);
 		   
 		// if (gameObject.GetComponent<ReceiptMove>().winSound == true)
@@ -144,22 +194,24 @@ public class PlayMusic : MonoBehaviour {
 			//    Debug.Log("helllyeah");
 			//}
 
+			//Loops the Receipt printing sounds while the receipt is both on screen and moving.
 			if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
 			{
 				audioManager.PlayLoop(20);
 			}
-
+			//Loops the Victory Music until receipt stops moving.
 			if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
 			{
 				audioManager.PlayLoop(16);
 			}
-
+			//Click Sound for Menu Button
 			if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound == true)
 			{
 				Debug.Log("it has played");
 				audioManager.Play(1);
 				GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound = false;
 			}
+			//Click Sound for Play Again Button.
 			if (GameObject.Find("PlayAgain").GetComponent<PlayAgain>().clickSound == true)
 			{
 				audioManager.Play(1);
@@ -169,58 +221,13 @@ public class PlayMusic : MonoBehaviour {
 		}
 
 
-		if (Application.loadedLevelName == "CharacterSelectTest")
-		{
-			audioManager.Stop(5);
-			audioManager.Stop(20);
-			audioManager.Stop(16);
-			audioManager.Stop(14);
-
-			if (audioManager.audioSourceArray[4].isPlaying == false)
-			{
-				audioManager.PlayLoop(4);
-			}
-
-		   
-
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
-			{
-				if (numSelected == 0)
-				{
-					audioManager.Play(1);
-				}
-				else
-				{
-					audioManager.Play(3);
-				}
-					Debug.Log("ding");
-					numSelected++;
-				if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
-				{
-					numSelected = 0;
-				}
-			}
-
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
-			{
-				audioManager.Play(1);
-				numSelected--;
-				Debug.Log(numSelected.ToString());
-			}
-
-
-			if (GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed == true)
-			{
-				audioManager.Play(2);
-				GameObject.Find("feedMe").GetComponent<CharacterSelectUI>().FeedPressed = false;
-			}
-		}
 	}
 
 
 
 	// Update is called once per frame
 
+	//NewOnStove plays letter select sound when letters move to the stove, letter deselect sound when moving letters off the stove.
 	void NewOnStove()
 	{
 	   // if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
@@ -248,6 +255,8 @@ public class PlayMusic : MonoBehaviour {
 	//        GameObject.Find("VariableController").GetComponent<VariableControl>().happySound = 0;
 	//    }
 	//}
+	
+	//RejectedSound plays the rejected sound when a character is fed something that is not a word.
 	void RejectedSound()
 	{
 		if (GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound != 0)
@@ -256,9 +265,11 @@ public class PlayMusic : MonoBehaviour {
 			GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound = 0;
 		}
 	}
+
+	//Sizzle plays the sizzle sound when letters are on the stove.
 	void Sizzle()
 	{
-	   
+		//Stops any sizzling if there are no letters on the stove.
 		if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
 		{
 			sizzleStart = false;
@@ -266,15 +277,14 @@ public class PlayMusic : MonoBehaviour {
 		   
 			audioManager.Stop(10);
 		}
-
-
+		//Plays the beginning of the sizzle sound when a letter is added to the stove.
 		if (sizzleStart == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0 )
 		{
 			audioManager.Play(10); // start sound goes 
 			sizzleStart = true;
 		   
 		}
-
+		//Loops the middle of the sizzle sound while the letter is on the stove.
 		if (sizzleStart == true && audioManager.audioSourceArray [10].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
 		{
 //           audioManager.SetVolume(11, 0.2f); //play sizzle loop
@@ -286,9 +296,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 			audioManager.Stop(11);
 		}
-
-
-
+		//Plays the end of the sizzle sound when the letter is removed from the stove.
 		if(playedSteamEnd == false && audioManager.audioSourceArray[10].isPlaying == false && sizzled == true && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
 		{
 			audioManager.Play(37);
@@ -300,38 +308,42 @@ public class PlayMusic : MonoBehaviour {
 
 
 		
-}
+	}
+	//Plays the sounds related to feeding a character an actual word.
 	void Chewing()
 	{
+		//First plays Chewing sound if the character is not the trash character, otherwise plays the trash sound.
 		if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewing == true)
 		{
 			audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
 			GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
+			//Next, checks for tastes if the character is not the trash character.
 			if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
 			{
-
-			   
+				//If two tastes were satisfied, play the "double taste match" sound.
 				if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
 					 && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
-				   
-					|| GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
-					&&   GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
+					 || GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
+					 && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
 
-				{
-					audioManager.Play(23);
-					Debug.Log("double taste");
-				   // words.bothTastes = false;
-				}
+				        {
+					        audioManager.Play(23);
+					        Debug.Log("double taste");
+				           // words.bothTastes = false;
+				        }
 
-				//DelayedSuccessSound();
-			   else if (GameObject.Find("VariableController").GetComponent<VariableControl>().bonus == true)
-				{
-					audioManager.Play(21);
-					Debug.Log("Taste");
+				//If only one taste is met, play "Taste matched sound.
+				else if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0]
+						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
+						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2]
+						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
 
-				}
+				        {
+					        audioManager.Play(21);
+					        Debug.Log("Taste");
 
-
+				        }
+                //If no tastes are met, play neutral sound.
 				else 
 				{
 					audioManager.Play(22);
@@ -416,9 +428,9 @@ public class PlayMusic : MonoBehaviour {
 		}
 
 	}
-    void SpaceShipSound()
-    {
-        audioManager.Play(26);
-    }
+	void SpaceShipSound()
+	{
+		audioManager.Play(26);
+	}
 
 }
