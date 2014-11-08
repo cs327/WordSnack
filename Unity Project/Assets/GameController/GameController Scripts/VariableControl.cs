@@ -152,6 +152,8 @@ public class VariableControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
+		CheckIphoneType();
+		
 		phase2CharacterPositions = new Vector3[characterSelectNum];
 		phase1SelectedCharPositions = new Vector3[characterSelectNum];
 		characterTasteSpots = new Vector3[characterSelectNum];
@@ -240,7 +242,7 @@ public class VariableControl : MonoBehaviour {
 		allCharTastes[1] = TastesForFred;
 		allCharTastes[5] = TastesForMeghan;
 
-		CheckIphoneType();
+		
 	}
 	
 	// Update is called once per frame
