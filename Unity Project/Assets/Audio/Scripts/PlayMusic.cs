@@ -400,11 +400,6 @@ public class PlayMusic : MonoBehaviour {
 	{
 		if (Application.loadedLevelName == "WordMaking")
 		{
-			if (GameObject.Find("instructions").GetComponent<Tutorial>().clickSound == true)
-			{
-				audioManager.Play(1);
-				GameObject.Find("instructions").GetComponent<Tutorial>().clickSound = false;
-			}
 			if (GameObject.Find("pauseButton").GetComponent<pause>().clickSound == true)
 			{
 				audioManager.Play(1);

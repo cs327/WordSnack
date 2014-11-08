@@ -55,6 +55,7 @@ public class Tutorial : MonoBehaviour
             gameObject.transform.position = offScreenPos;
             gameObject.transform.parent.transform.position = offScreenPos;
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+            Destroy(gameObject);
         }
     }
 
@@ -62,7 +63,7 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-        clickSound = true;
+        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(1);
         // 0 = how to make a work instruction
         // 1 = trashcan function
         // 2 = tap to feed customers message
@@ -88,6 +89,7 @@ public class Tutorial : MonoBehaviour
             parentPos.x = -20.0f;
             transform.parent.transform.position = parentPos;
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+            Destroy(gameObject);
         }
     }
 }
