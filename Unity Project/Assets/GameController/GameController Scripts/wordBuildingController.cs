@@ -25,7 +25,7 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject char1Taste2;
 		public GameObject char2Taste1;
 		public GameObject char2Taste2;
-		public Vector3[] tasteHightLightPos = new Vector3[4];
+		public Vector3[] tasteHighLightPos = new Vector3[4];
 		public GameObject[] tasteHighlighters = new GameObject[4];
  
 		// Use this for initialization
@@ -42,9 +42,13 @@ public class wordBuildingController : MonoBehaviour
 				}
 
 				tasteHighlighters [0] = char1Taste1;
+				tasteHighLightPos [0] = new Vector3 (-7.6f, 4.6f, -0.5f);
 				tasteHighlighters [1] = char1Taste2;
+				tasteHighLightPos [1] = new Vector3 (-7.6f, 3.9f, -0.5f);
 				tasteHighlighters [2] = char2Taste1;
+				tasteHighLightPos [2] = new Vector3 (7.6f, 4.6f, -0.5f);
 				tasteHighlighters [3] = char2Taste2;
+				tasteHighLightPos [3] = new Vector3 (7.6f, 3.9f, -0.5f);
 				variables = variableController.GetComponent<VariableControl> ();
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
@@ -69,7 +73,7 @@ public class wordBuildingController : MonoBehaviour
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes
 				for (int i = 0; i < tasteHighlighters.Length; i++) {
-						tasteHighlighters [i].transform.position = tasteHightLightPos [i];
+						tasteHighlighters [i].transform.position = tasteHighLightPos [i];
 				}
 				//moves the highlighters over, if it's an iPhone 5
 				if (variables.iPhoneType == 2) {
