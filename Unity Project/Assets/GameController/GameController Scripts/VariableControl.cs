@@ -290,7 +290,7 @@ public class VariableControl : MonoBehaviour {
 //            iPhoneType = 2;
 //        }
 		if(Application.platform == RuntimePlatform.IPhonePlayer){
-			switch(iPhoneSettings.generation){
+			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
 				break;
