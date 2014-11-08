@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 	public List<TasteCollection.Taste> myTastes;
 	//public CharacterTimers Timer;
 	public int characterNum;
-    //public int highLightNum;
+	//public int highLightNum;
    
 	public static Dictionary<int, string> CharacterNameLookup = 
 		new Dictionary<int,string>()
@@ -125,56 +125,56 @@ public class Character : MonoBehaviour
 	// Sums the score of the letters, then multiplies it by all the taste modifiers, then does bigmealbonus
 	float scoreWord(string word)
 	{
-        float wordScore = 0;
-        if (word != null)
-        {	 
-            foreach (char letter in word)
-            {
-                wordScore += LetterController.letterScores [letter];
-                //calculate the raw score of the letters fed - without the bonus
-                rawScoreFedToMe += (int)LetterController.letterScores [letter];
-                //increase the number of letters fed to the character
-                numLettersFedToMe++;
-                variables.lettersRemaining--;
-            }
-            variables.mostRecentLetterScore = (int)wordScore;
-            Debug.Log("Score for the letters in " + word + " is " + wordScore);
-            foreach (TasteCollection.Taste t in myTastes)
-            {
-                wordScore *= t(word);
-            }
-            variables.mostRecentWordScore = (int)wordScore;
-            variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
-            //calculate the raw bonus score 
-            rawBonusScoreFedToMe = variables.mostRecentBonus;
-            if (rawBonusScoreFedToMe > 0)
-            {
-                variables.bonus = true;
-            } else if (rawBonusScoreFedToMe == 0)
-            {
-                variables.bonus = false;
-            }
-            Debug.Log("Score after tastes for " + word + " is " + wordScore);
-            if (word.Length == 8)
-            {
-                wordScore *= variables.bigMealBonus + 1;
-            } else if (word.Length == 7)
-            {
-                wordScore *= variables.bigMealBonus;
-            }
-            Debug.Log("Score after bigmealbonus is " + wordScore);
+		float wordScore = 0;
+		if (word != null)
+		{	 
+			foreach (char letter in word)
+			{
+				wordScore += LetterController.letterScores [letter];
+				//calculate the raw score of the letters fed - without the bonus
+				rawScoreFedToMe += (int)LetterController.letterScores [letter];
+				//increase the number of letters fed to the character
+				numLettersFedToMe++;
+				variables.lettersRemaining--;
+			}
+			variables.mostRecentLetterScore = (int)wordScore;
+			Debug.Log("Score for the letters in " + word + " is " + wordScore);
+			foreach (TasteCollection.Taste t in myTastes)
+			{
+				wordScore *= t(word);
+			}
+			variables.mostRecentWordScore = (int)wordScore;
+			variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
+			//calculate the raw bonus score 
+			rawBonusScoreFedToMe = variables.mostRecentBonus;
+			if (rawBonusScoreFedToMe > 0)
+			{
+				variables.bonus = true;
+			} else if (rawBonusScoreFedToMe == 0)
+			{
+				variables.bonus = false;
+			}
+			Debug.Log("Score after tastes for " + word + " is " + wordScore);
+			if (word.Length == 8)
+			{
+				wordScore *= variables.bigMealBonus + 1;
+			} else if (word.Length == 7)
+			{
+				wordScore *= variables.bigMealBonus;
+			}
+			Debug.Log("Score after bigmealbonus is " + wordScore);
 
-            if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [0] 
-                && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [1]) 
-                || (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [2] 
-                && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [3]))
-            {
-                wordScore *= variables.doubleTasteMatchBonus;
-            }
-        }
-            return wordScore;
-        
-    }
+			if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [0] 
+				&& GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [1]) 
+				|| (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [2] 
+				&& GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [3]))
+			{
+				wordScore *= variables.doubleTasteMatchBonus;
+			}
+		}
+			return wordScore;
+		
+	}
 
 	// Add a single taste to the collection
 	public void AddTaste(TasteCollection.Taste taste)
@@ -315,7 +315,7 @@ public class Character : MonoBehaviour
 		if(Application.loadedLevelName == "WordMaking") {
 			if(characterNum != 0 && variables.timeToCheckForTastes) {
 				 int toHightlight = TasteGlow(characterNum);
-               // highLightNum = TasteGlow(characterNum);
+			   // highLightNum = TasteGlow(characterNum);
 				if (toHightlight > -1) {
 					if (toHightlight < 4) {
 						variables.timeToHighlightTaste[toHightlight] = true;

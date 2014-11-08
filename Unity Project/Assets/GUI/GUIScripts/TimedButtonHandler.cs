@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TimedButtonHandler : MonoBehaviour {
 	public bool buttonPressed = false;
-    public bool clickSound;
 
 
 	// Use this for initialization
@@ -25,9 +24,10 @@ public class TimedButtonHandler : MonoBehaviour {
 	}
 	
 	void OnMouseUpAsButton(){
-		
+
+        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(1);
 		buttonPressed = true;
-        clickSound = true;
+		gameObject.renderer.material.color = Color.white;
 		PlayerPrefs.SetInt("timed",1);
 		Application.LoadLevel("CharacterSelectTest");
 	}

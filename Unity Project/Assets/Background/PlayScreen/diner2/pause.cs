@@ -11,7 +11,7 @@ public class pause : MonoBehaviour {
 	public GameObject exitButtonObj;
 	public GameObject greyBg;
 	public bool unpause = false;
-    public bool clickSound;
+	public bool clickSound;
 
 //notes on this script:
 //the pause function is called by clicking on the button,
@@ -43,14 +43,14 @@ public class pause : MonoBehaviour {
 
 		}
 
-    void OnMouseUpAsButton()
-    {
-        clickSound = true;
-       	gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
-        if (!variables.paused)
-        {
-            pauseGame();
-        }
+	void OnMouseUpAsButton()
+	{
+		clickSound = true;
+		gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
+		if (!variables.paused)
+		{
+			pauseGame();
+		}
 	}
 
 	void pauseGame(){

@@ -59,8 +59,8 @@ public class VariableControl : MonoBehaviour {
 	public float fourLettersMult;
 	public float equalVowelsAndConsonantsMult;
 	public float trashCollectionMult;
-    public float bigMealBonus;
-    public float doubleTasteMatchBonus;
+	public float bigMealBonus;
+	public float doubleTasteMatchBonus;
 
 	//tweakable character tastes
 	public int[] TastesForTrash;
@@ -83,6 +83,7 @@ public class VariableControl : MonoBehaviour {
 	public int chewingSound;
 	public bool shuffleSound;
 	public bool letterGenerationSound = false;
+	public bool clickSound;
 	
 	//tweakable variables: 
 	public int minWordLength;
@@ -246,7 +247,7 @@ public class VariableControl : MonoBehaviour {
 	void Update () {
 
 		//GET THIS TO WORK then comment out the following line
-        //timerStart=true;
+		//timerStart=true;
 //		if(PlayerPrefs.GetInt ("instructions") == 0){
 //			timerStart = false;
 //		}
@@ -323,10 +324,10 @@ public class VariableControl : MonoBehaviour {
 
 	void KeepTime(){
 		if(Application.loadedLevelName == "WordMaking"){
-            if (timerStart == true)
-            {
-                globalTimer -= Time.deltaTime;
-            }
+			if (timerStart == true)
+			{
+				globalTimer -= Time.deltaTime;
+			}
 		}
 
 	}
