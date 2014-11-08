@@ -65,7 +65,6 @@ public class Character : MonoBehaviour
 	// If it's a trash character it will always accept
 
 
-
 	public void CreateVisibleTastes(){
 		if(characterNum != 0){
 			tasteObj = Instantiate (visTastePrefab, new Vector3 (0,0,0), new Quaternion (0,0,0,0)) as GameObject;
@@ -117,7 +116,7 @@ public class Character : MonoBehaviour
 		//If we get here, either we're the trash character, or it was a proper word
 		//Debug.Log("About to score the word");
 		Debug.Log("Trash Can");
-		GetComponent<Animator>().SetTrigger("eat");
+		//GetComponent<Animator>().SetTrigger("eat");
 		float tempScore = scoreWord(word);
 		return (int)tempScore;
 	}
@@ -164,16 +163,16 @@ public class Character : MonoBehaviour
 			}
 			Debug.Log("Score after bigmealbonus is " + wordScore);
 
-			if ((GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [0] 
-				&& GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [1]) 
-				|| (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [2] 
+			
+			if (((gameObject.transform.position.y < 0) && (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [0] )
+				&& (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [1]))
+				|| ((gameObject.transform.position.y > 0) && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [2] 
 				&& GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [3]))
 			{
 				wordScore *= variables.doubleTasteMatchBonus;
 			}
 		}
-			return wordScore;
-		
+			return wordScore;	
 	}
 
 	// Add a single taste to the collection
@@ -351,6 +350,9 @@ public class Character : MonoBehaviour
 
 						variables.timeToHighlightTaste[0] = true;
 						variables.timeToHighlightTaste[1] = true;
+
+
+
 					} else if (toHightlight == 5) {
 
 						variables.timeToHighlightTaste[2] = true;
