@@ -320,20 +320,8 @@ public class PlayMusic : MonoBehaviour {
 			//Next, checks for tastes if the character is not the trash character.
 			if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
 			{
-				//If two tastes were satisfied, play the "double taste match" sound.
-				if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0] 
-					 && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
-					 || GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2] 
-					 && GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
-
-						{
-							audioManager.Play(23);
-							Debug.Log("double taste");
-						   // words.bothTastes = false;
-						}
-
 				//If only one taste is met, play "Taste matched sound.
-				else if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0]
+				if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0]
 						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
 						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2]
 						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])

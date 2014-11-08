@@ -170,6 +170,7 @@ public class Character : MonoBehaviour
 				&& GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste [3]))
 			{
 				wordScore *= variables.doubleTasteMatchBonus;
+				GameObject.Find("AudioManager_PrefabClone").GetComponent<AudioManager>().Play(23);
 			}
 		}
 			return wordScore;	
