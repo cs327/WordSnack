@@ -280,6 +280,34 @@ public class Character : MonoBehaviour
 			if (Application.loadedLevelName == "WordMaking"){
 				letterGenerator = GameObject.FindGameObjectWithTag("letterController");
 				letterControl = letterGenerator.GetComponent<LetterController>();
+
+				if (this.characterNum != 0) {
+					// scale the character to the appropriate size according to art's specifications
+					// they each need a different size and placement...
+					/*
+						{ 1, "Fred"},
+						{ 2, "Kelvin"},
+						{ 3, "Spike"},
+						{ 4, "Stella"},
+						{ 5, "Meghan"}
+					*/
+					if (this.characterNum == 1) {
+						this.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+						this.transform.Translate(new Vector3(0.0f, 0.3f, 0.0f));
+					} else if (this.characterNum == 2) {
+						this.transform.localScale = new Vector3(2.5f, 2.5f, 1.0f);
+						this.transform.Translate(new Vector3(0.0f, 0.6f, 0.0f));
+					} else if (this.characterNum == 3) {
+						this.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+						this.transform.Translate(new Vector3(0.0f, -1.0f, 0.0f));
+					} else if (this.characterNum == 4) {
+						this.transform.localScale = new Vector3(2.0f, 2.0f, 1.0f);
+						this.transform.Translate(new Vector3(0.0f, 0.4f, 0.0f));
+					} else if (this.characterNum == 5) {
+						this.transform.localScale = new Vector3(3.0f, 3.0f, 1.0f);
+						this.transform.Translate(new Vector3(0.0f, 1.0f, 0.0f));
+					}
+				}
 			}
 			//make the Tastes Visible on screen if it is the character selectionphase
 			CreateVisibleTastes();
