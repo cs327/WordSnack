@@ -7,7 +7,6 @@ using System.IO;
 
 public class ReceiptGUI : MonoBehaviour
 {
-	public TextMesh test;
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
@@ -81,7 +80,6 @@ public class ReceiptGUI : MonoBehaviour
 		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
 //		rowCount = 10;
 //		gameObject.transform.FindChild("BottomPrefab").transform.position += Vector3.forward * rowOffset * rowCount;
-		test.GetComponent<TextMesh>().text = "Words: " + rowCount;
         Vector3 pos;
         for(int i = 0; i < rowCount; i++)
         {
