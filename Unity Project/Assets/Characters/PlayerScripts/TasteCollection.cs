@@ -7,134 +7,155 @@ using System.Linq;
 //are tweakable in the inspector by the Game Designers.
 public static class TasteCollection
 {
-	// This is a delegate. It shows what the taste methods below should look like
-	// They all take a string and return a float representing the taste modifier for that word. 
-	public delegate float Taste(string word);
+		// This is a delegate. It shows what the taste methods below should look like
+		// They all take a string and return a float representing the taste modifier for that word. 
+		public delegate float Taste (string word);
 
-	//makes sure we're using the same copy as everybody else
-	private static VariableControl variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
+		//makes sure we're using the same copy as everybody else
+		private static VariableControl variables = GameObject.Find ("VariableController").GetComponent<VariableControl> ();
 
-	// These three arrays below are used to see if words contain consonants/vowels/uncommon letters
-	private static char[] consonants =
+		// These three arrays below are used to see if words contain consonants/vowels/uncommon letters
+		private static char[] consonants =
 	{
 		'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
 		't', 'v', 'w', 'x', 'y', 'z',
 	};
-	private static char[] vowels =
+		private static char[] vowels =
 	{
 		'a','e','i','o','u',
 	};
-	private static char[] uncommonLetterList =
+		private static char[] uncommonLetterList =
 	{
 		'f', 'h', 'v', 'w', 'y', 'k', 'j', 'x', 'q', 'z',
 	};
-
-	public static float unCommonLetters(string word)
-	{
-		foreach (char letter in word)
+		//Checks if we have any uncommon letters in the word. If we do, return the unCommonLettersMult
+		//plus an additional bonus +1 multiplier for each uncommon letter beyond the first
+		public static float unCommonLetters (string word)
 		{
-			if (uncommonLetterList.Contains(letter))
-				return variables.uncommonLettersMult;
+				int unCommonLetterCount = 0;
+				foreach (char letter in word) {
+						if (uncommonLetterList.Contains (letter))
+								unCommonLetterCount++;
+				}
+				if (unCommonLetterCount > 0)
+						return variables.uncommonLettersMult + (unCommonLetterCount - 1);
+				else
+						return 1;
 		}
-		return 1;
-	}
 
-
-	public static float twoOrMoreSame(string word)
-	{
-		var distinct = word.Distinct();
-		if (distinct.Count() == word.Length)
-			return 1;
-		else
-			return variables.twoOrMoreSameMult;
-	}
-	public static float startsAndEndsWithSame(string word)
-	{
-		if (word[0] == word[word.Length - 1])
-			return variables.startsAndEndsWithSameMult;
-		else
-			return 1;
-	}
-
-	public static float fourLetters(string word)
-	{
-		if (word.Length == 4)
-			return variables.fourLettersMult;
-		else
-			return 1;
-	}
-
-	public static float threeLetters(string word)
-	{
-		if (word.Length == 3)
-			return variables.threeLettersMult;
-		else
-			return 1;
-	}
-
-	public static float fiveOrLonger(string word)
-	{
-		return (word.Length >= 5) ?
-			variables.fiveOrLongerMult :
-			1;
-	}
-
-	public static float endsWithVowel(string word)
-	{
-		if (vowels.Contains(word[word.Length - 1]))
-			return variables.endsWithVowelMult;
-		return 1;
-	}
-
-	public static float startsWithVowel(string word)
-	{
-		if (vowels.Contains(word[0]))
-			return variables.startsWithVowelMult;
-		return 1;
-	}
-	// Returns 1 if the word has at least 2 vowels
-	// Otherwise returns 0
-	public static float twoOrMoreVowels(string word)
-	{
-		int vowelCount = 0;
-		foreach (char letter in word)
+		//Checks if we have two or more of the same letter. If we do, return twoOrMoreSameMult
+		//plus an additional bonus +1 multiplier for each additional time any letter repeats itself
+		//So, for instance, effeet would get a +2, while effort would get a +0 but would match, and 
+		//melee would get a +1
+		public static float twoOrMoreSame (string word)
 		{
-			if (vowels.Contains(letter))
-				vowelCount++;
-			if (vowelCount == 2)
-			{
-				return variables.twoOrMoreVowelsMult+(vowelCount-2);
-			}
+				int multipleCount = 0;
+				foreach (char letter in word.Distinct()) {//We want to count the number of each distinct letter in word
+						//If we didn't do Distinct, we'd find each multiple twice, which makes life difficult
+						int count = word.Count (f => f == letter); //Count how many of this letter there is in the word
+						if (count > 1) { //If there were more than one, then
+								//increment multiplecount by one less than how many of that letter there were in the word
+								//because if there were two of 'em, then that's one multiple.
+								//If there were three, then that's two multiples, etc.
+								multipleCount += (count - 1); 
+						}
+				}
+				if (multipleCount > 0)
+						return variables.twoOrMoreSameMult + (multipleCount - 1);
+				else
+						return 1;
 		}
-		return 1;
-	}
-	//removed from GDD and commented out here
+
+		public static float startsAndEndsWithSame (string word)
+		{
+				if (word [0] == word [word.Length - 1])
+						return variables.startsAndEndsWithSameMult;
+				else
+						return 1;
+		}
+
+		public static float fourLetters (string word)
+		{
+				if (word.Length == 4)
+						return variables.fourLettersMult;
+				else
+						return 1;
+		}
+
+		public static float threeLetters (string word)
+		{
+				if (word.Length == 3)
+						return variables.threeLettersMult;
+				else
+						return 1;
+		}
+
+		public static float fiveOrLonger (string word)
+		{
+				//If the word is longer than 5 letters, give an extra +1 for each letter beyond the fifth
+				int wordLength = word.Count ();
+				if (wordLength >= 5)
+						return variables.fiveOrLongerMult + (wordLength - 5);
+				else
+						return 1;
+		}
+
+		public static float endsWithVowel (string word)
+		{
+				if (vowels.Contains (word [word.Length - 1]))
+						return variables.endsWithVowelMult;
+				return 1;
+		}
+
+		public static float startsWithVowel (string word)
+		{
+				if (vowels.Contains (word [0]))
+						return variables.startsWithVowelMult;
+				return 1;
+		}
+
+		//Returns 1 if it doesn't have two more vowels,
+		//returns twoOrMoreVowelsMult + vowelCount - 2 if it does
+		public static float twoOrMoreVowels (string word)
+		{
+				int vowelCount = 0;
+				foreach (char letter in word) {
+						if (vowels.Contains (letter))
+								vowelCount++;
+				}
+				//if we had two or more vowels, we've matched this taste. Give an extra +1 for each beyond the 2nd, if applicable
+				if (vowelCount >= 2) {
+						return variables.twoOrMoreVowelsMult + (vowelCount - 2);
+				} else
+						return 1;
+		}
+		//removed from GDD and commented out here
 //    public static float noPreference(string word)
 //    {
 //        return variables.noPreferenceMult;
 //    }
 
-	public static float equalVowelsAndConsonants (string word)
-	{
-		int vowelCount = 0;
-		int consonantCount = 0;
-		foreach (char letter in word) {
-			if (vowels.Contains (letter))
-				vowelCount++;
-			if (consonants.Contains (letter))
-				consonantCount++;
+		public static float equalVowelsAndConsonants (string word)
+		{
+				int vowelCount = 0;
+				int consonantCount = 0;
+				foreach (char letter in word) {
+						if (vowels.Contains (letter))
+								vowelCount++;
+						if (consonants.Contains (letter))
+								consonantCount++;
+				}
+				if (vowelCount == consonantCount)
+						return variables.equalVowelsAndConsonantsMult;
+				else
+						return 1;
 		}
-		if (vowelCount == consonantCount)
-			return variables.equalVowelsAndConsonantsMult;
-		else
-			return 1;
-	}
 
-	public static float trashCollection(string word)
-	{
-		//Debug.Log ("Collecting trash!");
-		return variables.trashCollectionMult;
-	}
+		public static float trashCollection (string word)
+		{
+				//Debug.Log ("Collecting trash!");
+				return variables.trashCollectionMult;
+		}
 
 
 }
