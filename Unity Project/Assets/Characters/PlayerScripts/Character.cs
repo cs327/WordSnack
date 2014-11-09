@@ -455,7 +455,7 @@ public class Character : MonoBehaviour
 								}
 				
 								// output the multiplier
-								if (characterNum != 0 && multiplier != 0) {
+								if (characterNum != 0 && multiplier > 1) {
 										variables.multiplierText.text = "x" + multiplier.ToString ();
 										Vector3 characterPosition = this.gameObject.transform.position;
 										characterPosition.y += 2.5f;
