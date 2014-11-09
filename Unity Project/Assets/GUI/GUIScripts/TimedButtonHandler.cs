@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class TimedButtonHandler : MonoBehaviour {
+	public Texture timeModeUnselected;
+	public Texture timeModeSelected;
 	public bool buttonPressed = false;
 
 
@@ -16,11 +18,13 @@ public class TimedButtonHandler : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		gameObject.renderer.material.color = Color.red;
+		//gameObject.renderer.material.color = Color.red;
+		gameObject.renderer.material.mainTexture = timeModeSelected;
 	}
 	void OnMouseUp()
 	{
-		gameObject.renderer.material.color = Color.white;
+		//gameObject.renderer.material.color = Color.white;
+		gameObject.renderer.material.mainTexture = timeModeUnselected;
 	}
 	
 	void OnMouseUpAsButton(){
