@@ -139,10 +139,10 @@ public class wordBuildingController : MonoBehaviour
 		public void sendVariablestoScoreScreen ()
 		{
 				//updates score related variables 
-				variables.totalLetterScore = character1.GetComponent<Character> ().rawScoreFedToMe + character2.GetComponent<Character> ().rawScoreFedToMe + trashCharacter.GetComponent<Character> ().rawScoreFedToMe;
-				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe + trashCharacter.GetComponent<Character> ().rawBonusScoreFedToMe;
-				variables.trashedLetters = trashCharacter.GetComponent<Character> ().numLettersFedToMe;
-				variables.trashedLetterScore = trashCharacter.GetComponent<Character> ().rawScoreFedToMe;
+				variables.totalLetterScore = character1.GetComponent<Character> ().rawScoreFedToMe + character2.GetComponent<Character> ().rawScoreFedToMe;
+				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
+				variables.trashedLetters = trashCharacter.GetComponent<Character> ().trashedLetters;
+				variables.trashedLetterScore = trashCharacter.GetComponent<Character> ().trashedLetterScore;
 
 				//saves those variables in Player Prefs
 				PlayerPrefs.SetFloat ("Score", variables.score);
@@ -150,7 +150,12 @@ public class wordBuildingController : MonoBehaviour
 				PlayerPrefs.SetInt ("Total Multiplier Score", variables.totalMultiplierScore); 
 				PlayerPrefs.SetInt ("Trashed Letters", variables.trashedLetters); 
 				PlayerPrefs.SetInt ("Trashed Letter Score", variables.trashedLetterScore); 
-		}
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score = variables.score;
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().rawScore = variables.totalLetterScore;
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().multiScore = variables.totalMultiplierScore;
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum = variables.trashedLetters;
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore = variables.trashedLetterScore;
+	}
 
 		public void unhightlightAllTastes ()
 		{

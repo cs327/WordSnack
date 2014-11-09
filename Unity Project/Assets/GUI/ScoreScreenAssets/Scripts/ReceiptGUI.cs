@@ -13,12 +13,15 @@ public class ReceiptGUI : MonoBehaviour
     public float rowOffset;
     public GameObject lightRowPrefab;
     public GameObject darkRowPrefab;
-    public GameObject bottomPrefab;
+    public GameObject bottomInstance;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
 
     int selectedCharacter1;
     int selectedCharacter2;
+	public List <string> char1WordsFed;
+	public List <string> char2WordsFed;
+	public Component[] meshes;
     float score;
 
     //Ints that later get set from the values retrieved from Player Prefs
@@ -48,30 +51,35 @@ public class ReceiptGUI : MonoBehaviour
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;
-        
-        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
-        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
-        List<string> char1WordsFed = new List<string>();
-        List<string> char2WordsFed = new List<string>();
+		if (GameObject.Find("WordsFed") != null) {
+			char1WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words;
+			char2WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words;
+		}
 
-        // I deserialize the player pref data into a list of strings representing the
-        // words eaten and the scores associated. 
-        if (!string.IsNullOrEmpty(char1Data))
-        {
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
-            var memStream = new MemoryStream(Convert.FromBase64String(char1Data));
-            char1WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
-        }
-        
-        if (!string.IsNullOrEmpty(char2Data))
-        {
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
-            var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
-            char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
-        }
+//        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
+//        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
+//        List<string> char1WordsFed = new List<string>();
+//        List<string> char2WordsFed = new List<string>();
+//
+//        // I deserialize the player pref data into a list of strings representing the
+//        // words eaten and the scores associated. 
+//        if (!string.IsNullOrEmpty(char1Data))
+//        {
+//            BinaryFormatter binaryFormatter = new BinaryFormatter();
+//            var memStream = new MemoryStream(Convert.FromBase64String(char1Data));
+//            char1WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
+//        }
+//        
+//        if (!string.IsNullOrEmpty(char2Data))
+//        {
+//            BinaryFormatter binaryFormatter = new BinaryFormatter();
+//            var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
+//            char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
+//        }
 
         // Add code to create rows/fill them
-        int rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
+		int rowCount = 0;
+		Math.Max(char1WordsFed.Count, char2WordsFed.Count);
         Vector3 pos;
         
         for(int i = 0; i < rowCount; i++)
@@ -121,21 +129,22 @@ public class ReceiptGUI : MonoBehaviour
             }
         }
 
+
         if(ScoreManager.AddHighScore(char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
         {
             GameObject rowInstance;
-            if (rowCount % 2 == 0)
+            if (rowCount % 2 == 0) {
                 rowInstance = (GameObject)Instantiate(darkRowPrefab);
-            else
+			} else {
                 rowInstance = (GameObject)Instantiate(lightRowPrefab);
-
+			}
             rowInstance.transform.parent = gameObject.transform;
             pos = rowInstance.transform.position;
             pos.y += rowOffset * rowCount;
             rowInstance.transform.position = pos;
             rowCount++;
 
-            Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
+            Component[]rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
 
             string[] wordInfo;
             foreach (TextMesh mesh in rowMeshes)
@@ -153,39 +162,66 @@ public class ReceiptGUI : MonoBehaviour
         }
 
         // Add code for bottom of receipt
-        
-        GameObject bottomInstance = (GameObject)Instantiate(bottomPrefab);
         bottomInstance.transform.parent = gameObject.transform;
         pos = bottomInstance.transform.position;
         
         pos.y += rowOffset * rowCount;
         
         bottomInstance.transform.position = pos;
-        
-
-        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-
-        foreach(TextMesh mesh in meshes)
-        {
-            switch(mesh.name)
-            {
-                case "Discarded Letters Mesh":
-                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
-                    break;
-                case "Discarded Points Mesh":
-                    mesh.text = PlayerPrefs.GetInt("Trashed Letter Score").ToString();
-                    break;
-                case "Word Score Mesh":
-                    mesh.text = PlayerPrefs.GetInt("Total Letter Score").ToString();
-                    break;
-                case "Multiplier Bonus Mesh":
-                    mesh.text = PlayerPrefs.GetInt("Total Multiplier Score").ToString();
-                    break;
-                case "Total Mesh":
-                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
-                    break;
-            }
-        }
+//		Component[] meshes;
+//		for (int i = 0; i < gameObject.transform.childCount; i++) {
+//			if (gameObject.transform.GetChild(i).GetComponent<TextMesh>() != null) {
+//				meshes
+//			}
+//		}
+//        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+//		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+//        foreach(TextMesh mesh in meshes)
+//        {
+//            switch(mesh.name)
+//            {
+//                case "Discarded Letters Mesh":
+//					if (GameObject.Find("WordsFed") != null) {
+//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
+//					} else {
+//						mesh.text = "0";
+//					}
+////                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+//                    break;
+//                case "Discarded Points Mesh":
+//					if (GameObject.Find("WordsFed") != null) {
+//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore.ToString ();
+//					} else {
+//						mesh.text = "0";
+//					}
+////                    mesh.text = PlayerPrefs.GetInt("Trashed Letter Score").ToString();
+//                    break;
+//                case "Word Score Mesh":
+//					if (GameObject.Find("WordsFed") != null) {
+//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().rawScore.ToString();
+//					} else {
+//						mesh.text = "0";
+//					}
+////                    mesh.text = PlayerPrefs.GetInt("Total Letter Score").ToString();
+//                    break;
+//                case "Multiplier Bonus Mesh":
+//					if (GameObject.Find("WordsFed") != null) {
+//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().multiScore.ToString();
+//					} else {
+//						mesh.text = "0";
+//					}
+////                    mesh.text = PlayerPrefs.GetInt("Total Multiplier Score").ToString();
+//                    break;
+//                case "Total Mesh":
+//					if (GameObject.Find("WordsFed") != null) {
+//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+//					} else {
+//						mesh.text = "0";
+//					}
+////                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+//                    break;
+//            }
+//        }
 
     }
 

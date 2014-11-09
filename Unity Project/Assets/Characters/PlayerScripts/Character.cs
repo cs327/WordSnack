@@ -27,7 +27,8 @@ public class Character : MonoBehaviour
 			{ 5, "Meghan"}
 
 		};
-
+		public int trashedLetters;
+		public int trashedLetterScore;
 		//number of letters fed to the character
 		public int numLettersFedToMe;
 		//raw score from the letters fed to the character
@@ -168,6 +169,15 @@ public class Character : MonoBehaviour
 								Debug.Log ("Score after double taste-match bonus is " + wordScore);
 								//GameObject.Find ("AudioManager_PrefabClone").GetComponent<AudioManager> ().Play (23);
 						}
+				} else if (characterNum == 0){ //if we are the trash character, still count the letters and their scores 
+//					trashedLetters
+					foreach (char letter in word) {
+					//calculate the raw score of the letters fed - without the bonus
+					trashedLetterScore += (int)LetterController.letterScores [letter];
+					//increase the number of letters fed to the character
+					trashedLetters++;
+					variables.lettersRemaining--;
+			}
 				}
 				return wordScore;	
 		}
@@ -514,14 +524,21 @@ public class Character : MonoBehaviour
 		void OnDestroy ()
 		{
 				// I serialize the WordsFed list so I can retrieve it in the summary screen
-				var binaryFormatter = new BinaryFormatter ();
-				var memStream = new MemoryStream ();
-				binaryFormatter.Serialize (memStream, wordsFedToMe);
+//				var binaryFormatter = new BinaryFormatter ();
+//				var memStream = new MemoryStream ();
+//				binaryFormatter.Serialize (memStream, wordsFedToMe);
+				if (Application.loadedLevelName == "WordMaking") {
+					if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words = wordsFedToMe;
+					} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
+						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words = wordsFedToMe;
+					}
+				}
 
 				// Retrieve the list with the string "WordsFedToCharacter " + characterNum
-	
-				PlayerPrefs.SetString ("WordsFedToCharacter " + characterNum,
-			Convert.ToBase64String (memStream.GetBuffer ()));
+//	
+//				PlayerPrefs.SetString ("WordsFedToCharacter " + characterNum,
+//			Convert.ToBase64String (memStream.GetBuffer ()));
 
 		}
 
