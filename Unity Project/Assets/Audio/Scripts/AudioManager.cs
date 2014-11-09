@@ -4,115 +4,124 @@ using System.Collections;
 
 
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 	
 	
-	public AudioClip[] audioClipArray;
-	public AudioSource [] audioSourceArray; //new
+		public AudioClip[] audioClipArray;
+		public AudioSource[] audioSourceArray; //new
 	
-	int i;
+		int i;
 	
-	private int y;
-	private float timerCountDown = .5f;
+		private int y;
+		private float timerCountDown = .5f;
 
-    private PlayMusic soundScript;
+		private PlayMusic soundScript;
 
-    public float[] volumeArray = new float[60];
+		public float[] volumeArray = new float[60];
   
 	
-	// Use this for initialization
+		// Use this for initialization
 
-	void Start () {
+		void Start ()
+		{
 
 
 
-        DontDestroyOnLoad(transform.gameObject);
+				DontDestroyOnLoad (transform.gameObject);
 
-		audioSourceArray = new AudioSource [audioClipArray.Length];
+				audioSourceArray = new AudioSource [audioClipArray.Length];
 		
-		for (i=0; i < audioSourceArray.Length; i++) {
-			AudioSource newSource = gameObject.AddComponent<AudioSource> (); //add component to obj
-			newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
-			audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
-            soundScript = GetComponent<PlayMusic>();
+				for (i=0; i < audioSourceArray.Length; i++) {
+						AudioSource newSource = gameObject.AddComponent<AudioSource> (); //add component to obj
+						newSource.clip = audioClipArray [i]; // adds clip to temporary audiosource
+						audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
+						soundScript = GetComponent<PlayMusic> ();
+				}
 		}
-	}
 	
-	void Update () {
+		void Update ()
+		{
 
 
-	}
-	
-	public void Play(int i){
-		Debug.Log ("play");
-		audioSourceArray[i].Play ();
-		
-	}
-	
-	public void PlayLoop(int i){  // call this in update!
-		
-		if (audioSourceArray [i].isPlaying == false) {
-			audioSourceArray [i].Play ();
 		}
-		//audio.Play;
-	}
 	
-	public void Pause(int i){
-        audioSourceArray[i].Pause ();
-	}
+		public void Play (int i)
+		{
+				//Debug.Log ("play");
+				audioSourceArray [i].Play ();
+		
+		}
 	
-	public void Stop(int i){
-        audioSourceArray[i].Stop ();
-	}
+		public void PlayLoop (int i)
+		{  // call this in update!
+		
+				if (audioSourceArray [i].isPlaying == false) {
+						audioSourceArray [i].Play ();
+				}
+				//audio.Play;
+		}
 	
-	public void KillAll(){
-		for (y=0; y<audioSourceArray.Length; y++) {
+		public void Pause (int i)
+		{
+				audioSourceArray [i].Pause ();
+		}
+	
+		public void Stop (int i)
+		{
+				audioSourceArray [i].Stop ();
+		}
+	
+		public void KillAll ()
+		{
+				for (y=0; y<audioSourceArray.Length; y++) {
 			
-            if (audioSourceArray[y].isPlaying) {
-                audioSourceArray[y].Stop ();
-			}
+						if (audioSourceArray [y].isPlaying) {
+								audioSourceArray [y].Stop ();
+						}
+				}
+		
 		}
-		
-	}
 
-    public void SetVolume(int i, float y){
+		public void SetVolume (int i, float y)
+		{
 
 
-        if (i < audioSourceArray.Length)
-        {
-            audioSourceArray[i].volume = y;
-        }
+				if (i < audioSourceArray.Length) {
+						audioSourceArray [i].volume = y;
+				}
         
         
 
-    }
+		}
 	
-	public void FadeOut(int i){      // bug:cant use this function in update... so where can we use it?
-        while(audioSourceArray[i].volume >=0)
-        {
-            while(timerCountDown>0){
-                timerCountDown -= Time.deltaTime;
+		public void FadeOut (int i)
+		{      // bug:cant use this function in update... so where can we use it?
+				while (audioSourceArray[i].volume >=0) {
+						while (timerCountDown>0) {
+								timerCountDown -= Time.deltaTime;
 
-            }
-            audioSourceArray[i].volume-=.2f;
-            timerCountDown=.5f;
-        }
-	}
+						}
+						audioSourceArray [i].volume -= .2f;
+						timerCountDown = .5f;
+				}
+		}
 	
-	public void FadeIn(int i){
+		public void FadeIn (int i)
+		{
 		
-	}
+		}
 	
-	public void CrossFade(int i, int y){
+		public void CrossFade (int i, int y)
+		{
 		
-	}
+		}
 
-    public void SetAllVolume()
-    {
-        for (int j = 0; j < volumeArray.Length; j++)
-        {
-            SetVolume(j, volumeArray[j]);
-        }
-    }
+		public void SetAllVolume ()
+		{
+				for (int j = 0; j < volumeArray.Length; j++) {
+						SetVolume (j, volumeArray [j]);
+				}
+		}
 	
 }

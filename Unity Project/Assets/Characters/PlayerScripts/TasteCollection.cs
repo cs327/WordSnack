@@ -40,7 +40,7 @@ public static class TasteCollection
 				if (unCommonLetterCount > 0)
 						return variables.uncommonLettersMult + (unCommonLetterCount - 1);
 				else
-						return 1;
+						return 0;
 		}
 
 		//Checks if we have two or more of the same letter. If we do, return twoOrMoreSameMult
@@ -63,7 +63,7 @@ public static class TasteCollection
 				if (multipleCount > 0)
 						return variables.twoOrMoreSameMult + (multipleCount - 1);
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float startsAndEndsWithSame (string word)
@@ -71,7 +71,7 @@ public static class TasteCollection
 				if (word [0] == word [word.Length - 1])
 						return variables.startsAndEndsWithSameMult;
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float fourLetters (string word)
@@ -79,7 +79,7 @@ public static class TasteCollection
 				if (word.Length == 4)
 						return variables.fourLettersMult;
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float threeLetters (string word)
@@ -87,7 +87,7 @@ public static class TasteCollection
 				if (word.Length == 3)
 						return variables.threeLettersMult;
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float fiveOrLonger (string word)
@@ -97,21 +97,21 @@ public static class TasteCollection
 				if (wordLength >= 5)
 						return variables.fiveOrLongerMult + (wordLength - 5);
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float endsWithVowel (string word)
 		{
 				if (vowels.Contains (word [word.Length - 1]))
 						return variables.endsWithVowelMult;
-				return 1;
+				return 0;
 		}
 
 		public static float startsWithVowel (string word)
 		{
 				if (vowels.Contains (word [0]))
 						return variables.startsWithVowelMult;
-				return 1;
+				return 0;
 		}
 
 		//Returns 1 if it doesn't have two more vowels,
@@ -127,7 +127,7 @@ public static class TasteCollection
 				if (vowelCount >= 2) {
 						return variables.twoOrMoreVowelsMult + (vowelCount - 2);
 				} else
-						return 1;
+						return 0;
 		}
 		//removed from GDD and commented out here
 //    public static float noPreference(string word)
@@ -148,7 +148,7 @@ public static class TasteCollection
 				if (vowelCount == consonantCount)
 						return variables.equalVowelsAndConsonantsMult;
 				else
-						return 1;
+						return 0;
 		}
 
 		public static float trashCollection (string word)
