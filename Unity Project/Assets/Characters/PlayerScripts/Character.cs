@@ -114,7 +114,8 @@ public class Character : MonoBehaviour
 				}
 				//If we get here, either we're the trash character, or it was a proper word
 				//Debug.Log("About to score the word");
-				//GetComponent<Animator>().SetTrigger("eat");
+				//trash animation
+				GetComponent<Animator> ().SetTrigger ("eat");
 				float tempScore = scoreWord (word);
 				return (int)tempScore;
 		}
@@ -502,6 +503,9 @@ public class Character : MonoBehaviour
 								}
 								if (characterNum == 0) {
 										variables.sadSound = 18;
+										//trash animation
+										Debug.Log("Trashing Animation");
+										//GetComponent<Animator> ().SetTrigger ("eat");
 										letterControl.ResetStove ();
 								}
 						}
