@@ -7,7 +7,6 @@ using System.IO;
 
 public class ReceiptGUI : MonoBehaviour
 {
-
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
@@ -23,6 +22,7 @@ public class ReceiptGUI : MonoBehaviour
 	public List <string> char2WordsFed;
 	public Component[] meshes;
     float score;
+	int rowCount;
 
     //Ints that later get set from the values retrieved from Player Prefs
     int rawScore;
@@ -55,7 +55,6 @@ public class ReceiptGUI : MonoBehaviour
 			char1WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words;
 			char2WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words;
 		}
-
 //        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
 //        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
 //        List<string> char1WordsFed = new List<string>();
@@ -78,10 +77,10 @@ public class ReceiptGUI : MonoBehaviour
 //        }
 
         // Add code to create rows/fill them
-		int rowCount = 0;
-		Math.Max(char1WordsFed.Count, char2WordsFed.Count);
+		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
+//		rowCount = 10;
+//		gameObject.transform.FindChild("BottomPrefab").transform.position += Vector3.forward * rowOffset * rowCount;
         Vector3 pos;
-        
         for(int i = 0; i < rowCount; i++)
         {
             GameObject rowInstance;
@@ -163,11 +162,10 @@ public class ReceiptGUI : MonoBehaviour
 
         // Add code for bottom of receipt
         bottomInstance.transform.parent = gameObject.transform;
-        pos = bottomInstance.transform.position;
-        
-        pos.y += rowOffset * rowCount;
-        
-        bottomInstance.transform.position = pos;
+        pos = bottomInstance.transform.position; 
+//        pos.y += rowOffset * rowCount;
+//		pos.y += rowOffset * rowCount;
+
 //		Component[] meshes;
 //		for (int i = 0; i < gameObject.transform.childCount; i++) {
 //			if (gameObject.transform.GetChild(i).GetComponent<TextMesh>() != null) {
@@ -227,8 +225,8 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-        
-
+		bottomInstance.transform.position = gameObject.transform.position;
+		bottomInstance.transform.position += (rowOffset * (rowCount + 8.5F) * Vector3.up);
     }
 
     //Method to display words fed
