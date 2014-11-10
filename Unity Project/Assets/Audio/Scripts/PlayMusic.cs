@@ -331,6 +331,10 @@ public class PlayMusic : MonoBehaviour {
 							Debug.Log("Taste");
 
 						}
+				if (GameObject.Find("VariableController").GetComponent<VariableControl>().doubleTasteMatchBonus > 0)
+				{
+					audioManager.Play(23);
+				}
 				//If no tastes are met, play neutral sound.
 				else 
 				{
