@@ -24,7 +24,7 @@ public class PlayButtonHandler : MonoBehaviour {
     void OnMouseUp()
     {
 		//gameObject.renderer.material.color = Color.white;
-		//gameObject.renderer.material.mainTexture = playUnselected;
+        gameObject.renderer.material.mainTexture = playUnselected;
     }
     void OnMouseUpAsButton(){
        
