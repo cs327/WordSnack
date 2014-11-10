@@ -292,7 +292,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-		if(Application.platform == RuntimePlatform.IPhonePlayer){
+#if UNITY_IPHONE
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
@@ -322,7 +322,7 @@ public class VariableControl : MonoBehaviour {
 	//			iPhoneType = 2; 
 	//			break;
 			}
-		}
+#endif
 	}
 
 	void KeepTime(){
