@@ -11,8 +11,8 @@ public class PlayMusic : MonoBehaviour {
 	//public GameObject selecter;
 	//CharacterSelectUI charSel;
 
-	//public GameObject VariableControl;
-	//VariableControl variables;
+	public GameObject VariableControl;
+	VariableControl variables;
 
 	//public GameObject wordControl;
 	//wordBuildingController words;
@@ -64,6 +64,12 @@ public class PlayMusic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Splash Screen Sounds
+
+		if (GameObject.Find("VariableController") && (variables != GameObject.Find("VariableController").GetComponent<VariableControl>()))
+		{
+			variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
+		}
+
 		if (Application.loadedLevelName == "SplashScreen")
 		{
 			//Stops any other music or sound tracks that may still be playing.
@@ -98,6 +104,7 @@ public class PlayMusic : MonoBehaviour {
 		//Sounds for Character Select Screen
 		if (Application.loadedLevelName == "CharacterSelectTest")
 		{
+
 			//Stops any sounds that should not be playing.
 			audioManager.Stop(5);
 			audioManager.Stop(20);
@@ -114,7 +121,7 @@ public class PlayMusic : MonoBehaviour {
 			//////////////////////////////////
 
 			//Plays Click sound when first character is selected. Plays second character selected sound when second character is selected.
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum > numSelected)
+			if (variables.currentCharacterSelectNum > numSelected)
 			{
 				if (numSelected == 0)
 				{
@@ -126,14 +133,14 @@ public class PlayMusic : MonoBehaviour {
 				}
 				Debug.Log("ding");
 				numSelected++;
-				if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum == 0)
+				if (variables.currentCharacterSelectNum == 0)
 				{
 					numSelected = 0;
 				}
 			}
 
 			//Plays click sound when characters are unselected.
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().currentCharacterSelectNum < numSelected)
+			if (variables.currentCharacterSelectNum < numSelected)
 			{
 				audioManager.Play(1);
 				numSelected--;
@@ -248,21 +255,21 @@ public class PlayMusic : MonoBehaviour {
 	//Method to play Happy sounds when a character likes a word.
 	//void HappySound()
 	//{
-	//    if (GameObject.Find("VariableController").GetComponent<VariableControl>().happySound > 0)
+	//    if (variables.happySound > 0)
 	//    {
-	//        audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().happySound);
-	//        GameObject.Find("VariableController").GetComponent<VariableControl>().bonus = false;
-	//        GameObject.Find("VariableController").GetComponent<VariableControl>().happySound = 0;
+	//        audioManager.Play(variables.happySound);
+	//        variables.bonus = false;
+	//        variables.happySound = 0;
 	//    }
 	//}
 	
 	//RejectedSound plays the rejected sound when a character is fed something that is not a word.
 	void RejectedSound()
 	{
-		if (GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound != 0)
+		if (variables.sadSound != 0)
 		{
-			audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound);
-			GameObject.Find("VariableController").GetComponent<VariableControl>().sadSound = 0;
+			audioManager.Play(variables.sadSound);
+			variables.sadSound = 0;
 		}
 	}
 
@@ -313,25 +320,21 @@ public class PlayMusic : MonoBehaviour {
 	void Chewing()
 	{
 		//First plays Chewing sound if the character is not the trash character, otherwise plays the trash sound.
-		if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewing == true)
+		if (variables.chewing == true)
 		{
-			audioManager.Play(GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound);
-			GameObject.Find("VariableController").GetComponent<VariableControl>().chewing = false;
+			audioManager.Play(variables.chewingSound);
+			variables.chewing = false;
 			//Next, checks for tastes if the character is not the trash character.
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().chewingSound == 13)
+			if (variables.chewingSound == 13)
 			{
 				//If only one taste is met, play "Taste matched sound.
-				if (GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[0]
-						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[1]
-						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[2]
-						^ GameObject.Find("VariableController").GetComponent<VariableControl>().timeToHighlightTaste[3])
-
+				if (variables.timeToHighlightTaste[0] ^ variables.timeToHighlightTaste[1] ^ variables.timeToHighlightTaste[2] ^ variables.timeToHighlightTaste[3])
 						{
 							audioManager.Play(21);
 							Debug.Log("Taste");
 
 						}
-				if (GameObject.Find("VariableController").GetComponent<VariableControl>().doubleTasteMatchBonus > 0)
+                if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
 				{
 					audioManager.Play(23);
 				}
@@ -350,15 +353,15 @@ public class PlayMusic : MonoBehaviour {
 	}
 	void Shuffle()
 	{
-		if (GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound == true)
+		if (variables.shuffleSound == true)
 			audioManager.Play(19);
-		GameObject.Find("VariableController").GetComponent<VariableControl>().shuffleSound = false;
+		variables.shuffleSound = false;
 
 	}
 	void LetterGenerationSound()
 	{
 		audioManager.Play(7);
-  //      GameObject.Find("VariableController").GetComponent<VariableControl>().letterGenerationSound = false;
+  //      variables.letterGenerationSound = false;
 		Debug.Log("generation");
 	}
 	void DelayedLetterGeneration()
@@ -371,7 +374,7 @@ public class PlayMusic : MonoBehaviour {
 	}
 	void Pause()
 	{
-		if (GameObject.Find("VariableController").GetComponent<VariableControl>().paused == true)
+		if (variables.paused == true)
 		{
 			audioManager.Pause(5);
 		}
@@ -398,7 +401,7 @@ public class PlayMusic : MonoBehaviour {
 				GameObject.Find("pauseButton").GetComponent<pause>().clickSound = false;
 			}
 
-			if (GameObject.Find("VariableController").GetComponent<VariableControl>().paused == true)
+			if (variables.paused == true)
 			{
 				if (GameObject.Find("resumeButton").GetComponent<resumeButton>().clickSound == true)
 				{
