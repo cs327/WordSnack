@@ -177,8 +177,13 @@ public class Character : MonoBehaviour
 					//increase the number of letters fed to the character
 					trashedLetters++;
 					variables.lettersRemaining--;
+					
+					//Trash Animation
+					Debug.Log("Trashing Animation");
+					GetComponent<Animator> ().SetTrigger ("eat");
+				
 			}
-				}
+		}
 				return wordScore;	
 		}
 
@@ -512,9 +517,6 @@ public class Character : MonoBehaviour
 								}
 								if (characterNum == 0) {
 										variables.sadSound = 18;
-										//trash animation
-										Debug.Log("Trashing Animation");
-										//GetComponent<Animator> ().SetTrigger ("eat");
 										letterControl.ResetStove ();
 								}
 						}
