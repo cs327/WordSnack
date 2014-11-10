@@ -84,6 +84,7 @@ public class VariableControl : MonoBehaviour {
 	public bool shuffleSound;
 	public bool letterGenerationSound = false;
 	public bool clickSound;
+    public bool doubleTasteSound;
 	
 	//tweakable variables: 
 	public int minWordLength;

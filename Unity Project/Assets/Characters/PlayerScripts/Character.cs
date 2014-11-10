@@ -166,6 +166,7 @@ public class Character : MonoBehaviour
 			
 						if (tastesMatched > 1) {
 								wordScore *= variables.doubleTasteMatchBonus;
+                                variables.doubleTasteSound = true;
 								Debug.Log ("Score after double taste-match bonus is " + wordScore);
 								
 						}

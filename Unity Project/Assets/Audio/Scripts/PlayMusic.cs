@@ -328,16 +328,19 @@ public class PlayMusic : MonoBehaviour {
 			if (variables.chewingSound == 13)
 			{
 				//If only one taste is met, play "Taste matched sound.
-				if (variables.timeToHighlightTaste[0] ^ variables.timeToHighlightTaste[1] ^ variables.timeToHighlightTaste[2] ^ variables.timeToHighlightTaste[3])
+				//if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
+                if (variables.doubleTasteSound)
+				{
+					audioManager.Play(23);
+                    variables.doubleTasteSound = false;
+				}
+                
+                else if (variables.bonus)
 						{
 							audioManager.Play(21);
 							Debug.Log("Taste");
 
 						}
-                if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
-				{
-					audioManager.Play(23);
-				}
 				//If no tastes are met, play neutral sound.
 				else 
 				{
