@@ -7,6 +7,7 @@ using System.IO;
 
 public class ReceiptGUI : MonoBehaviour
 {
+    #region Variables
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
@@ -18,8 +19,8 @@ public class ReceiptGUI : MonoBehaviour
 
     int selectedCharacter1;
     int selectedCharacter2;
-	public List <string> char1WordsFed;
-	public List <string> char2WordsFed;
+	public List <string> char1WordsFed = new List<string>();
+	public List <string> char2WordsFed =  new List<string>();
 	public Component[] meshes;
     float score;
 	int rowCount;
@@ -30,9 +31,12 @@ public class ReceiptGUI : MonoBehaviour
     int trashLetterNum;
     int trashedLetterScore;
 
+    #endregion
+
     // Use this for initialization
     void Start()
-    {        
+    {
+        //#region Get Receipt Info
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
 
@@ -57,24 +61,13 @@ public class ReceiptGUI : MonoBehaviour
 		}
 //        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
 //        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
-//        List<string> char1WordsFed = new List<string>();
-//        List<string> char2WordsFed = new List<string>();
-//
-//        // I deserialize the player pref data into a list of strings representing the
-//        // words eaten and the scores associated. 
-//        if (!string.IsNullOrEmpty(char1Data))
-//        {
-//            BinaryFormatter binaryFormatter = new BinaryFormatter();
-//            var memStream = new MemoryStream(Convert.FromBase64String(char1Data));
-//            char1WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);
-//        }
-//        
-//        if (!string.IsNullOrEmpty(char2Data))
-//        {
-//            BinaryFormatter binaryFormatter = new BinaryFormatter();
-//            var memStream = new MemoryStream(Convert.FromBase64String(char2Data));
-//            char2WordsFed = (List<String>)binaryFormatter.Deserialize(memStream);            
-//        }
+        char1WordsFed = new List<string>();
+        char2WordsFed = new List<string>();
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char2WordsFed.Add("toast 30 13");
+        char2WordsFed.Add("hello 19 20");
+
 
         // Add code to create rows/fill them
 		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
@@ -162,8 +155,10 @@ public class ReceiptGUI : MonoBehaviour
 
         // Add code for bottom of receipt
         bottomInstance.transform.parent = gameObject.transform;
-        pos = bottomInstance.transform.position; 
-//        pos.y += rowOffset * rowCount;
+        pos = bottomInstance.transform.position;
+
+        #region
+        //        pos.y += rowOffset * rowCount;
 //		pos.y += rowOffset * rowCount;
 
 //		Component[] meshes;
@@ -220,7 +215,13 @@ public class ReceiptGUI : MonoBehaviour
 //                    break;
 //            }
 //        }
+#endregion
 
+    }
+
+    public void AddRow(string char1Word, string char1Score, string char2Word, string char2Score)
+    {
+        
     }
 
     void Update()

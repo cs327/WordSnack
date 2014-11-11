@@ -1,14 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class ReceiptMover : MonoBehaviour
 {
     Camera c;
     public bool winSound; //for PlayMusic script
+    public float startPos = -20f;
+    public static float endPos = 3.0f;
+    public bool Touched = false;
+    public Vector3 lastClickPos;
 
     // Use this for initialization
     void Start()
     {
+        // This can be programmatically changed
+        startPos = -7.470931f;
+        endPos = 3.0f;
         c = GameObject.Find("Main Camera").GetComponent<Camera>();
         winSound = true;
 
@@ -16,80 +24,62 @@ public class ReceiptMover : MonoBehaviour
         {
             Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
         }
+        Debug.Log("Start position " + gameObject.transform.position.ToString());
+        Debug.Log("endpos at start " + endPos);
+    }
+
+    public Vector3 GetNewPosition(Vector3 deltaPos)
+    {
+        Vector3 pos = gameObject.transform.position;
+        pos.y = Mathf.Clamp((pos.y + deltaPos.y), startPos, endPos);
+        return pos;
+    }
+
+    public Vector3 GetNewPosition(float deltaY)
+    {
+        Vector3 pos = new Vector3(0, deltaY, 0);
+        return GetNewPosition(pos);
+    }
+
+    void OnMouseDown()
+    {
+        if (Input.mousePresent)
+        {
+            lastClickPos = gameObject.transform.position;
+        }
+        Debug.Log("Touched");
+        Touched = true;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
         Vector3 pos = gameObject.transform.position;
 
-        if (UniversalInput.press && UniversalInput.inRect(gameObject.collider.bounds, c))
+        if (Touched)
         {
-            pos.y = 1.2f;
-            gameObject.transform.position = pos;
-
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                gameObject.transform.position = GetNewPosition(Input.GetTouch(0).deltaPosition);
+            }
+            if (Input.mousePresent && Input.GetMouseButtonDown(0))
+            {
+                gameObject.transform.position = GetNewPosition(Input.mousePosition - lastClickPos);
+            }
         }
         else
         {
-
-
-            if (pos.y <= 2.72)
+            if (pos.y <= endPos - .01)
             {
-                if (Time.time < 0.2)
-                {
-                    pos.y += Time.deltaTime * 2.0f;
-                }
-
-                if (Time.time >= 0.2 && Time.time < 0.6)
-                {
-                    pos.y += Time.deltaTime * 3.0f;
-                }
-
-                if (Time.time >= 0.6 && Time.time < 1.3)
-                {
-                    pos.y += Time.deltaTime * 5.0f;
-                }
-
-                if (Time.time >= 1.3 && Time.time < 1.8)
-                {
-                    pos.y += Time.deltaTime * 1.0f;
-                }
-
-                if (Time.time >= 1.8 && Time.time < 2.3)
-                {
-                    pos.y += Time.deltaTime * 2.0f;
-                }
-                if (Time.time >= 2.8 && Time.time < 3)
-                {
-                    pos.y += Time.deltaTime * 1.0f;
-                }
-
-                if (Time.time >= 3.3 && Time.time < 3.8)
-                {
-                    pos.y += Time.deltaTime * 2.0f;
-                }
-
-                if (Time.time >= 4 && Time.time < 4.3)
-                {
-                    pos.y += Time.deltaTime * 1.0f;
-                }
-
-                if (Time.time >= 4.5 && Time.time < 5)
-                {
-                    pos.y += Time.deltaTime * 2.0f;
-                }
-
-                if (Time.time >= 5.3 && Time.time < 5.5)
-                {
-                    pos.y += Time.deltaTime * 1.0f;
-                }
-
-                if (Time.time >= 6)
-                {
-                    pos.y += Time.deltaTime * 2.0f;
-                }
-                gameObject.transform.position = pos;
+                Debug.Log(" pos.y " + pos.y + " endpos " + endPos);
+                Debug.Log("oldpos " + pos.y + " newPos " + (pos.y + Time.deltaTime*2.0f).ToString());
+                pos.y = Mathf.Clamp(pos.y + Time.deltaTime * 2.0f, pos.y + Time.deltaTime * 2.0f, endPos);
+                gameObject.transform.position = GetNewPosition(Time.deltaTime * 2.0f);
+            }
+            else
+            {
+                //Debug.Log("Arrived at " + gameObject.transform.position);
             }
         }
     }
