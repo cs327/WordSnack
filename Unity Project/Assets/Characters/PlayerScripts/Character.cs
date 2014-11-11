@@ -302,7 +302,7 @@ public class Character : MonoBehaviour
 						{ 5, "Meghan"}
 					*/
 										if (this.characterNum == 1) {
-												this.transform.localScale = new Vector3 (3.0f, 3.0f, 1.0f);
+												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.3f, 0.0f));
 										} else if (this.characterNum == 2) {
 												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
@@ -314,7 +314,7 @@ public class Character : MonoBehaviour
 												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
 										} else if (this.characterNum == 5) {
-												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
 										}
 								}
