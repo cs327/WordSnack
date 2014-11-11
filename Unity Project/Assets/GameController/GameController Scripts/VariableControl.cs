@@ -151,6 +151,12 @@ public class VariableControl : MonoBehaviour {
 	public Color mediumColor;
 	public Color largeColor;
 
+	// score text timing variables
+	public float BaseScoreDisplayTime;
+	public float TasteMatchDisplayTime;
+	public float BigMealDisplayTime;
+	public float ScoreFadeTime;
+
 	// Use this for initialization
 	void Awake() {
 		CheckIphoneType();

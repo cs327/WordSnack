@@ -5,7 +5,6 @@ using System.Linq;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
- 
 
 public class Character : MonoBehaviour
 {
@@ -46,7 +45,7 @@ public class Character : MonoBehaviour
 		// Keeps track of fed words to calculate combo's 
 		public List<string> wordsFedToMe;
 		//What should be displayed as the creatures tastes when you click it
-		public string thingsILike; 
+		public string thingsILike;
 		public List<int> tasteIDs;
 		private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
 
@@ -60,7 +59,7 @@ public class Character : MonoBehaviour
 		public Animator anim; 
 		//so we can know if the character is selected
 		public SelectScript selectScript;
-
+	
 		// Give it a word - if the character can eat the word this returns the word score
 		// If it's a trash character it will always accept
 
@@ -166,25 +165,25 @@ public class Character : MonoBehaviour
 			
 						if (tastesMatched > 1) {
 								wordScore *= variables.doubleTasteMatchBonus;
-                                variables.doubleTasteSound = true;
+								variables.doubleTasteSound = true;
 								Debug.Log ("Score after double taste-match bonus is " + wordScore);
 								
 						}
-				} else if (characterNum == 0){ //if we are the trash character, still count the letters and their scores 
+				} else if (characterNum == 0) { //if we are the trash character, still count the letters and their scores 
 //					trashedLetters
-					foreach (char letter in word) {
-					//calculate the raw score of the letters fed - without the bonus
-					trashedLetterScore += (int)LetterController.letterScores [letter];
-					//increase the number of letters fed to the character
-					trashedLetters++;
-					variables.lettersRemaining--;
+						foreach (char letter in word) {
+								//calculate the raw score of the letters fed - without the bonus
+								trashedLetterScore += (int)LetterController.letterScores [letter];
+								//increase the number of letters fed to the character
+								trashedLetters++;
+								variables.lettersRemaining--;
 					
-					//Trash Animation
-					Debug.Log("Trashing Animation");
-					GetComponent<Animator> ().SetTrigger ("eat");
+								//Trash Animation
+								Debug.Log ("Trashing Animation");
+								GetComponent<Animator> ().SetTrigger ("eat");
 				
-			}
-		}
+						}
+				}
 				return wordScore;	
 		}
 
@@ -324,6 +323,7 @@ public class Character : MonoBehaviour
 			
 				}
 		}
+
 		void WordSound ()
 		{
 				if (characterNum == 0) {
@@ -443,7 +443,18 @@ public class Character : MonoBehaviour
 								
 								//Output the score text
 								if (characterNum != 0) {
-										variables.scoreText.text = wordScore.ToString ();
+										variables.scoreText.color = Color.white;
+										variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
+
+										Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
+										variables.scoreText.GetComponent<ScoreTextScript>().baseScore = letterScore;
+										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
+										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = 0;
+
+										Instantiate (variables.scoreText, scorePos, Quaternion.identity);
+										
+
+										/* the old stuff
 										Vector3 characterPosition = this.gameObject.transform.position;
 										if (characterPosition.x > 0.0) {
 												characterPosition.x -= 1.0f;
@@ -467,13 +478,31 @@ public class Character : MonoBehaviour
 												variables.scoreText.color = Color.white;
 												variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
 										}
-					
+
 										Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+										*/
 								}
 				
 								// output the multiplier
 								if (characterNum != 0 && multiplier > 1) {
-										variables.multiplierText.text = "x" + multiplier.ToString ();
+										variables.multiplierText.color = Color.white;
+										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);										
+
+										Vector3 multPos = new Vector3 (0.0f, 1.0f, 0.0f);
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = multiplier;
+
+										if (variables.doubleTasteSound == true) {
+											// both tastes were matched
+											variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = true;
+										} else {
+											variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = false;
+										}
+
+										Instantiate (variables.multiplierText, multPos, Quaternion.identity);
+										
+										/* the old stuff
 										Vector3 characterPosition = this.gameObject.transform.position;
 										characterPosition.y += 2.5f;
 										characterPosition.z = -3.2f;
@@ -494,6 +523,7 @@ public class Character : MonoBehaviour
 										}
 					
 										Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
+										*/
 								}
 
 								// output the crumbs
@@ -532,11 +562,11 @@ public class Character : MonoBehaviour
 //				var memStream = new MemoryStream ();
 //				binaryFormatter.Serialize (memStream, wordsFedToMe);
 				if (Application.loadedLevelName == "WordMaking") {
-					if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words = wordsFedToMe;
-					} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
-						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words = wordsFedToMe;
-					}
+						if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+								GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().character1Words = wordsFedToMe;
+						} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
+								GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().character2Words = wordsFedToMe;
+						}
 				}
 
 				// Retrieve the list with the string "WordsFedToCharacter " + characterNum
