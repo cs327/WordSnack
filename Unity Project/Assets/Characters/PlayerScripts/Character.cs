@@ -236,7 +236,7 @@ public class Character : MonoBehaviour
 								tasteDictionary.Add (4, TasteCollection.twoOrMoreVowels);
 								tasteDictionary.Add (5, TasteCollection.twoOrMoreSame);
 								tasteDictionary.Add (6, TasteCollection.startsWithVowel);
-								tasteDictionary.Add (7, TasteCollection.startsAndEndsWithSame);
+								tasteDictionary.Add (7, TasteCollection.lotsOfConsonants);
 								tasteDictionary.Add (8, TasteCollection.fourLetters);
 								tasteDictionary.Add (9, TasteCollection.equalVowelsAndConsonants);
 								tasteDictionary.Add (10, TasteCollection.trashCollection);
@@ -251,7 +251,7 @@ public class Character : MonoBehaviour
 								humanReadableTasteDictionary.Add (4, "2+ vowels");
 								humanReadableTasteDictionary.Add (5, "2+ same letter");
 								humanReadableTasteDictionary.Add (6, "Starts with vowel");
-								humanReadableTasteDictionary.Add (7, "Starts/ends with\n same letter");
+								humanReadableTasteDictionary.Add (7, "Lots of consonants");
 								humanReadableTasteDictionary.Add (8, "4 letters");
 								humanReadableTasteDictionary.Add (9, "Equal vowels \n and consonants");
 								humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
