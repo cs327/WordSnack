@@ -61,12 +61,12 @@ public class ReceiptGUI : MonoBehaviour
 		}
 //        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
 //        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
-        //char1WordsFed = new List<string>();
-        //char2WordsFed = new List<string>();
-        //char1WordsFed.Add("cat 30 5");
-        //char1WordsFed.Add("Nope 20 9");
-        //char2WordsFed.Add("toast 30 13");
-        //char2WordsFed.Add("hello 19 20");
+        char1WordsFed = new List<string>();
+        char2WordsFed = new List<string>();
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char2WordsFed.Add("toast 30 13");
+        char2WordsFed.Add("hello 19 20");
 
 
         // Add code to create rows/fill them
