@@ -1,24 +1,25 @@
 fileFormatVersion: 2
-guid: c5f79073d222f4f858a635e791c497d7
+guid: c56668c0acae64e09886e0f2ac9d539e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TrashSpriteSheet_0
-    21300002: TrashSpriteSheet_1
-    21300004: TrashSpriteSheet_2
-    21300006: TrashSpriteSheet_3
-    21300008: TrashSpriteSheet_4
-    21300010: TrashSpriteSheet_5
-    21300012: TrashSpriteSheet_6
-    21300014: TrashSpriteSheet_7
-    21300016: TrashSpriteSheet_8
-    21300018: TrashSpriteSheet_9
-    21300020: TrashSpriteSheet_10
-    21300022: TrashSpriteSheet_11
-    21300024: TrashSpriteSheet_12
-    21300026: TrashSpriteSheet_13
-    21300028: TrashSpriteSheet_14
-    21300030: TrashSpriteSheet_15
-    21300032: TrashSpriteSheet_16
+    21300000: TrashSpriteSheet 1
+    21300002: TrashSpriteSheet 1_0
+    21300004: TrashSpriteSheet 1_1
+    21300006: TrashSpriteSheet 1_2
+    21300008: TrashSpriteSheet 1_3
+    21300010: TrashSpriteSheet 1_4
+    21300012: TrashSpriteSheet 1_5
+    21300014: TrashSpriteSheet 1_6
+    21300016: TrashSpriteSheet 1_7
+    21300018: TrashSpriteSheet 1_8
+    21300020: TrashSpriteSheet 1_9
+    21300022: TrashSpriteSheet 1_10
+    21300024: TrashSpriteSheet 1_11
+    21300026: TrashSpriteSheet 1_12
+    21300028: TrashSpriteSheet 1_13
+    21300030: TrashSpriteSheet 1_14
+    21300032: TrashSpriteSheet 1_15
+    21300034: TrashSpriteSheet 1_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,171 +61,171 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: TrashSpriteSheet_0
+    - name: TrashSpriteSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_1
+    - name: TrashSpriteSheet 1_1
       rect:
         serializedVersion: 2
         x: 256
-        y: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_2
+    - name: TrashSpriteSheet 1_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_3
+    - name: TrashSpriteSheet 1_3
       rect:
         serializedVersion: 2
         x: 768
-        y: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_4
+    - name: TrashSpriteSheet 1_4
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1024
+        y: 1792
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_5
+    - name: TrashSpriteSheet 1_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1792
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_6
+    - name: TrashSpriteSheet 1_9
       rect:
         serializedVersion: 2
         x: 256
-        y: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_7
+    - name: TrashSpriteSheet 1_10
       rect:
         serializedVersion: 2
         x: 512
-        y: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_8
+    - name: TrashSpriteSheet 1_11
       rect:
         serializedVersion: 2
         x: 768
-        y: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_9
+    - name: TrashSpriteSheet 1_12
       rect:
         serializedVersion: 2
         x: 1024
-        y: 768
+        y: 1536
         width: 256
         height: 256
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_10
+    - name: TrashSpriteSheet 1_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_14
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_15
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1536
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: TrashSpriteSheet 1_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
+        y: 1280
         width: 256
         height: 256
       alignment: 0
