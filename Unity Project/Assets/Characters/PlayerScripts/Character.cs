@@ -421,6 +421,7 @@ public class Character : MonoBehaviour
 					//MEGAN EATING ANIMATION GOES HERE
 					//return 29;
 										Debug.Log ("Megan Eating Animation");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										break;
 								default:
 					//return 0;
