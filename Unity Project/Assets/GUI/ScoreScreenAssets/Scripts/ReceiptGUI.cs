@@ -107,7 +107,7 @@ public class ReceiptGUI : MonoBehaviour
                             mesh.text = wordInfo[0];
                             break;
                         case "char1Score":
-                            mesh.text = wordInfo[1] + " x " + wordInfo[2];
+                            mesh.text = wordInfo[1] + "x" + wordInfo[2];
                             break;
                     }
                 }
@@ -120,7 +120,7 @@ public class ReceiptGUI : MonoBehaviour
                             mesh.text = wordInfo[0];
                             break;
                         case "char2Score":
-                            mesh.text = wordInfo[1] + " x " + wordInfo[2];
+                            mesh.text = wordInfo[1] + "x" + wordInfo[2];
                             break;
                     }
 
