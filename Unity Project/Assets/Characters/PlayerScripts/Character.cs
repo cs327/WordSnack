@@ -166,8 +166,9 @@ public class Character : MonoBehaviour
 			
 						if (tastesMatched > 1) {
 								wordScore *= variables.doubleTasteMatchBonus;
+                                variables.doubleTasteSound = true;
 								Debug.Log ("Score after double taste-match bonus is " + wordScore);
-								//GameObject.Find ("AudioManager_PrefabClone").GetComponent<AudioManager> ().Play (23);
+								
 						}
 				} else if (characterNum == 0){ //if we are the trash character, still count the letters and their scores 
 //					trashedLetters

@@ -84,6 +84,7 @@ public class VariableControl : MonoBehaviour {
 	public bool shuffleSound;
 	public bool letterGenerationSound = false;
 	public bool clickSound;
+	public bool doubleTasteSound;
 	
 	//tweakable variables: 
 	public int minWordLength;
@@ -291,7 +292,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-		if(Application.platform == RuntimePlatform.IPhonePlayer){
+#if UNITY_IPHONE
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
@@ -321,7 +322,7 @@ public class VariableControl : MonoBehaviour {
 	//			iPhoneType = 2; 
 	//			break;
 			}
-		}
+#endif
 	}
 
 	void KeepTime(){
