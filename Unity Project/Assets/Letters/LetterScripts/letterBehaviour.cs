@@ -17,6 +17,8 @@ public class letterBehaviour : MonoBehaviour
 		public bool isMoving = false;
 		void Start ()
 		{
+			//set this gameobject to have the correct components according to its character given during instantiation
+			//fromt the letterController
 				thisSprite = gameObject.GetComponent<SpriteRenderer> ();
 				SetLetter ();
 				l = GameObject.Find ("letterGeneration").GetComponent<LetterController> ();
@@ -70,11 +72,17 @@ public class letterBehaviour : MonoBehaviour
 		void SetLetter ()
 		{
 
-				char [] thisChar = letter.ToCharArray ();
+			char [] thisChar = letter.ToCharArray ();
 
-				letterAlphabetOrder = thisChar [0].GetHashCode () - 97;
+			letterAlphabetOrder = thisChar [0].GetHashCode () - 97;
 
-				if (letterAlphabetOrder >= 0)
-						thisSprite.sprite = sprites [letterAlphabetOrder];
+			if (letterAlphabetOrder >= 0){
+					thisSprite.sprite = sprites [letterAlphabetOrder];
+			}
+		//The below line checks if the assigned character is a period, the placeholder.
+		//if it is it destroys the collider so it cannot be clicked.
+			if(letterAlphabetOrder == -51){
+				gameObject.collider.enabled = false;
+			}
 		}
 }
