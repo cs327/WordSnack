@@ -44,7 +44,7 @@ public class CharacterSelectUI : MonoBehaviour {
 			}
 			else{
 				//whoElse.transform.position = new Vector3(2.01f,-.786f,0);
-				whoElse.transform.position = new Vector3(3f,-4.0f,0);
+				whoElse.transform.position = new Vector3(2.5f, -2.0f, 0);
 			}
 		}
 
@@ -63,13 +63,13 @@ public class CharacterSelectUI : MonoBehaviour {
 	void OnMouseDown(){
 		gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeClicked;
 	}
-	void OnMouseUp()
-	{
-		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
-	}
+//	void OnMouseUp()
+//	{
+//		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
+//	}
 	void OnMouseUpAsButton()
 	{
-		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
+//		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
 		FeedPressed = true;
 		characters.SetActive(false);
 		GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();

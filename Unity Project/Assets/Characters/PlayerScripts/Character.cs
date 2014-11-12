@@ -5,7 +5,6 @@ using System.Linq;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
- 
 
 public class Character : MonoBehaviour
 {
@@ -46,7 +45,7 @@ public class Character : MonoBehaviour
 		// Keeps track of fed words to calculate combo's 
 		public List<string> wordsFedToMe;
 		//What should be displayed as the creatures tastes when you click it
-		public string thingsILike; 
+		public string thingsILike;
 		public List<int> tasteIDs;
 		private static Dictionary<int, string> humanReadableTasteDictionary; //for looking up the human-readable version of my tastes
 
@@ -60,7 +59,7 @@ public class Character : MonoBehaviour
 		public Animator anim; 
 		//so we can know if the character is selected
 		public SelectScript selectScript;
-
+	
 		// Give it a word - if the character can eat the word this returns the word score
 		// If it's a trash character it will always accept
 
@@ -166,24 +165,25 @@ public class Character : MonoBehaviour
 			
 						if (tastesMatched > 1) {
 								wordScore *= variables.doubleTasteMatchBonus;
+								variables.doubleTasteSound = true;
 								Debug.Log ("Score after double taste-match bonus is " + wordScore);
-								//GameObject.Find ("AudioManager_PrefabClone").GetComponent<AudioManager> ().Play (23);
+								
 						}
-				} else if (characterNum == 0){ //if we are the trash character, still count the letters and their scores 
+				} else if (characterNum == 0) { //if we are the trash character, still count the letters and their scores 
 //					trashedLetters
-					foreach (char letter in word) {
-					//calculate the raw score of the letters fed - without the bonus
-					trashedLetterScore += (int)LetterController.letterScores [letter];
-					//increase the number of letters fed to the character
-					trashedLetters++;
-					variables.lettersRemaining--;
+						foreach (char letter in word) {
+								//calculate the raw score of the letters fed - without the bonus
+								trashedLetterScore += (int)LetterController.letterScores [letter];
+								//increase the number of letters fed to the character
+								trashedLetters++;
+								variables.lettersRemaining--;
 					
-					//Trash Animation
-					Debug.Log("Trashing Animation");
-					GetComponent<Animator> ().SetTrigger ("eat");
+								//Trash Animation
+								Debug.Log ("Trashing Animation");
+								GetComponent<Animator> ().SetTrigger ("eat");
 				
-			}
-		}
+						}
+				}
 				return wordScore;	
 		}
 
@@ -236,7 +236,7 @@ public class Character : MonoBehaviour
 								tasteDictionary.Add (4, TasteCollection.twoOrMoreVowels);
 								tasteDictionary.Add (5, TasteCollection.twoOrMoreSame);
 								tasteDictionary.Add (6, TasteCollection.startsWithVowel);
-								tasteDictionary.Add (7, TasteCollection.startsAndEndsWithSame);
+								tasteDictionary.Add (7, TasteCollection.lotsOfConsonants);
 								tasteDictionary.Add (8, TasteCollection.fourLetters);
 								tasteDictionary.Add (9, TasteCollection.equalVowelsAndConsonants);
 								tasteDictionary.Add (10, TasteCollection.trashCollection);
@@ -251,7 +251,7 @@ public class Character : MonoBehaviour
 								humanReadableTasteDictionary.Add (4, "2+ vowels");
 								humanReadableTasteDictionary.Add (5, "2+ same letter");
 								humanReadableTasteDictionary.Add (6, "Starts with vowel");
-								humanReadableTasteDictionary.Add (7, "Starts/ends with\n same letter");
+								humanReadableTasteDictionary.Add (7, "Lots of consonants");
 								humanReadableTasteDictionary.Add (8, "4 letters");
 								humanReadableTasteDictionary.Add (9, "Equal vowels \n and consonants");
 								humanReadableTasteDictionary.Add (10, "trash - things that aren't words");
@@ -301,7 +301,7 @@ public class Character : MonoBehaviour
 						{ 5, "Meghan"}
 					*/
 										if (this.characterNum == 1) {
-												this.transform.localScale = new Vector3 (3.0f, 3.0f, 1.0f);
+												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.3f, 0.0f));
 										} else if (this.characterNum == 2) {
 												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
@@ -313,7 +313,7 @@ public class Character : MonoBehaviour
 												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
 										} else if (this.characterNum == 5) {
-												this.transform.localScale = new Vector3 (3.0f, 3.0f, 1.0f);
+												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
 										}
 								}
@@ -323,6 +323,7 @@ public class Character : MonoBehaviour
 			
 				}
 		}
+
 		void WordSound ()
 		{
 				if (characterNum == 0) {
@@ -420,6 +421,7 @@ public class Character : MonoBehaviour
 					//MEGAN EATING ANIMATION GOES HERE
 					//return 29;
 										Debug.Log ("Megan Eating Animation");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										break;
 								default:
 					//return 0;
@@ -441,63 +443,54 @@ public class Character : MonoBehaviour
 								
 								//Output the score text
 								if (characterNum != 0) {
-										variables.scoreText.text = wordScore.ToString ();
-										Vector3 characterPosition = this.gameObject.transform.position;
-										if (characterPosition.x > 0.0) {
-												characterPosition.x -= 1.0f;
+										variables.scoreText.color = Color.white;
+										variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
+
+										Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
+										variables.scoreText.GetComponent<ScoreTextScript>().baseScore = letterScore;
+										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
+										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = 0;
+
+										if (word.Length > 6) {
+											variables.scoreText.GetComponent<ScoreTextScript>().longWord = true;
 										} else {
-												characterPosition.x += 1.0f;
+											variables.scoreText.GetComponent<ScoreTextScript>().longWord = false;
 										}
-										characterPosition.y += 1.5f;
-										characterPosition.z = -3.2f;
-					
-										// check the thresholds and change color and size accordingly
-										if (wordScore >= variables.smallScoreThreshold && wordScore < variables.mediumScoreThreshold) {
-												variables.scoreText.color = variables.smallColor;
-												variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										} else if (wordScore >= variables.mediumScoreThreshold && wordScore < variables.largeScoreThreshold) {
-												variables.scoreText.color = variables.mediumColor;
-												variables.scoreText.transform.localScale = new Vector3 (1.5f, 1.5f);
-										} else if (wordScore >= variables.largeScoreThreshold) {
-												variables.scoreText.color = variables.largeColor;
-												variables.scoreText.transform.localScale = new Vector3 (2.5f, 2.5f);
-										} else {
-												variables.scoreText.color = Color.white;
-												variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										}
-					
-										Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
+
+										Instantiate (variables.scoreText, scorePos, Quaternion.identity);
 								}
 				
 								// output the multiplier
 								if (characterNum != 0 && multiplier > 1) {
-										variables.multiplierText.text = "x" + multiplier.ToString ();
-										Vector3 characterPosition = this.gameObject.transform.position;
-										characterPosition.y += 2.5f;
-										characterPosition.z = -3.2f;
-					
-										// check the thresholds and change color and size accordingly
-										if (multiplier >= variables.smallMultiplierThreshold && multiplier < variables.mediumMultiplierThreshold) {
-												variables.multiplierText.color = variables.smallColor;
-												variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										} else if (multiplier >= variables.mediumMultiplierThreshold && multiplier < variables.largeMultiplierThreshold) {
-												variables.multiplierText.color = variables.mediumColor;
-												variables.multiplierText.transform.localScale = new Vector3 (1.5f, 1.5f);
-										} else if (multiplier >= variables.largeMultiplierThreshold) {
-												variables.multiplierText.color = variables.largeColor;
-												variables.multiplierText.transform.localScale = new Vector3 (2.5f, 2.5f);
+										variables.multiplierText.color = Color.white;
+										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);										
+
+										Vector3 multPos = new Vector3 (0.0f, 1.0f, 0.0f);
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
+										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = multiplier;
+
+										if (variables.doubleTasteSound == true) {
+											// both tastes were matched
+											variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = true;
 										} else {
-												variables.multiplierText.color = Color.white;
-												variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);
+											variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = false;
 										}
-					
-										Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
+
+										if (word.Length > 6) {
+											variables.multiplierText.GetComponent<ScoreTextScript>().longWord = true;
+										} else {
+											variables.multiplierText.GetComponent<ScoreTextScript>().longWord = false;
+										}
+
+										Instantiate (variables.multiplierText, multPos, Quaternion.identity);
 								}
 
 								// output the crumbs
 								if (characterNum != 0) {
 										ParticleHelper.Instance.outputCrumbs (gameObject.transform.position + new Vector3 (0, 1, -3));
 								}
+
 								//update the score!
 								variables.score += wordScore;
 								//Debug.Log("The total score is" + variables.score);
@@ -530,11 +523,11 @@ public class Character : MonoBehaviour
 //				var memStream = new MemoryStream ();
 //				binaryFormatter.Serialize (memStream, wordsFedToMe);
 				if (Application.loadedLevelName == "WordMaking") {
-					if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words = wordsFedToMe;
-					} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
-						GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words = wordsFedToMe;
-					}
+						if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+								GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().character1Words = wordsFedToMe;
+						} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
+								GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().character2Words = wordsFedToMe;
+						}
 				}
 
 				// Retrieve the list with the string "WordsFedToCharacter " + characterNum

@@ -6,6 +6,7 @@ using System.Linq;
 public class LetterController : MonoBehaviour
 {
 		VariableControl variables = new VariableControl ();
+		public bool lastHand = false;
 		public letterBehaviour letterObj;
 		public letterBehaviour[] lettersOnBoard;
 		public letterBehaviour[] lettersOnStove;
@@ -78,6 +79,7 @@ public class LetterController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
+				
 				string word = sendWord ();
 				//check if there even is a word!
 				if (word == null || word.Length < variables.minWordLength || !checkForWord (word)) {
@@ -114,9 +116,28 @@ public class LetterController : MonoBehaviour
 				}
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
+				//updatePlaceholders();
 		  
 		}
 
+	//KEEP THIS FUNCTION - it is in progress!!
+//		void updatePlaceholders(){
+//			if(!lastHand && emptyLetterCount > 0){
+//				for(int i = 0; i<boardSize; i++){
+//				//-51 is the value that letterAlphabet order will have if it is a placeholder
+//					if(lettersOnBoard[i].letterAlphabetOrder == -51){
+//						lettersOnBoard[i].used = true;
+//						Destroy (lettersOnBoard[i].gameObject);
+//						lettersOnBoard[i] = null;
+//					}
+//				}
+//				emptyLetterCount = 0;
+//				myLetters = lettersInHand ();
+//				//replaceBankLetters();
+//				lastHand = true;
+//			}
+//
+//		}
 
 		IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere)
 		{
@@ -136,8 +157,9 @@ public class LetterController : MonoBehaviour
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
 				//for( float i = 0f; i < 1; i += .15f){
-				if (letterToMove == null)
+				if (letterToMove == null){
 						Debug.Log ("LetterToMove is null and shouldn't be!! Error!");
+				}
 				while (dontCrash < 100 && letterToMove.transform.position != moveToHere) {
 						dontCrash++;
 						letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
@@ -193,8 +215,9 @@ public class LetterController : MonoBehaviour
 						//correctly assess if we need more vowels or not (or specifically need consonants!)
 						myLetters += randLetterChar;
 						letters += randLetterChar;
-						if (randLetterChar == '.')
+						if (randLetterChar == '.'){
 								emptyLetterCount++;
+						}
 				}
 				return letters;
 		}

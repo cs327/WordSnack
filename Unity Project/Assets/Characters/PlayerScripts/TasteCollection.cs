@@ -74,6 +74,23 @@ public static class TasteCollection
 						return 0;
 		}
 
+		public static float lotsOfConsonants (string word) {
+			int numVowels = 0;
+			int numConsonants = 0; 
+			foreach (char letter in word) {
+				if (vowels.Contains(letter)) {
+					numVowels++;
+				} else if (consonants.Contains(letter)) {
+					numConsonants++;
+				}
+			}
+			if (numConsonants > numVowels) {
+				return 1 + numConsonants - numVowels;
+			} else {
+				return 0;
+			}
+		}
+
 		public static float fourLetters (string word)
 		{
 				if (word.Length == 4)

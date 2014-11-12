@@ -36,11 +36,13 @@ public class wordBuildingController : MonoBehaviour
 						timeRemaining.gameObject.SetActive (false);
 				} else 
                     {
+                        lettersRemaining.gameObject.SetActive(false);
                               if (variables.timerStart == true)
                               {
                                         timeRemaining.gameObject.SetActive(true);
                               }
 				}
+            
 
 				tasteHighlighters [0] = char1Taste1;
 				tasteHighLightPos [0] = new Vector3 (-7.6f, 4.6f, -0.5f);

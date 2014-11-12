@@ -84,6 +84,7 @@ public class VariableControl : MonoBehaviour {
 	public bool shuffleSound;
 	public bool letterGenerationSound = false;
 	public bool clickSound;
+	public bool doubleTasteSound;
 	
 	//tweakable variables: 
 	public int minWordLength;
@@ -150,6 +151,12 @@ public class VariableControl : MonoBehaviour {
 	public Color mediumColor;
 	public Color largeColor;
 
+	// score text timing variables
+	public float BaseScoreDisplayTime;
+	public float TasteMatchDisplayTime;
+	public float BigMealDisplayTime;
+	public float ScoreFadeTime;
+
 	// Use this for initialization
 	void Awake() {
 		CheckIphoneType();
@@ -180,13 +187,15 @@ public class VariableControl : MonoBehaviour {
 		if(PlayerPrefs.GetInt("timed") == 0){
 			timedMode = false;
 		} 
-		else{
+		else if (PlayerPrefs.GetInt("timed") == 1){
 			timedMode = true;
 		}
 
 		//sets totals for tuning variables of letters
-		if (Application.loadedLevelName == "WordMaking") { 
-			letterBag = new Dictionary<char, int> () {
+		if (Application.loadedLevelName == "WordMaking"){
+            if (!timedMode)
+            {
+                letterBag = new Dictionary<char, int>() {
 				{ 'a', numA},
 				{ 'b', numB},
 				{ 'c', numC},
@@ -213,7 +222,39 @@ public class VariableControl : MonoBehaviour {
 				{ 'x', numX},
 				{ 'y', numY},
 				{ 'z', numZ},
-			};
+			    };
+            }
+            else
+            {
+                letterBag = new Dictionary<char, int>() {
+				{ 'a', (numA *= 100)},
+				{ 'b', (numB *= 100)},
+				{ 'c', (numC *= 100)},
+				{ 'd', (numD *= 100)},
+				{ 'e', (numE *= 100)},
+				{ 'f', (numF *= 100)},
+				{ 'g', (numG *= 100)},
+				{ 'h', (numH *= 100)},
+				{ 'i', (numI *= 100)},
+				{ 'j', (numJ *= 100)},
+				{ 'k', (numK *= 100)},
+				{ 'l', (numL *= 100)},
+				{ 'm', (numM *= 100)},
+				{ 'n', (numN *= 100)},
+				{ 'o', (numO *= 100)},
+				{ 'p', (numP *= 100)},
+				{ 'q', (numQ *= 100)},
+				{ 'r', (numR *= 100)},
+				{ 's', (numS *= 100)},
+				{ 't', (numT *= 100)},
+				{ 'u', (numU *= 100)},
+				{ 'v', (numV *= 100)},
+				{ 'w', (numW *= 100)},
+				{ 'x', (numX *= 100)},
+				{ 'y', (numY *= 100)},
+				{ 'z', (numZ *= 100)},
+			    };
+            }
 			
 			totalLetters = 0;
 			
@@ -291,7 +332,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-		if(Application.platform == RuntimePlatform.IPhonePlayer){
+//#if UNITY_IPHONE
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
@@ -321,7 +362,7 @@ public class VariableControl : MonoBehaviour {
 	//			iPhoneType = 2; 
 	//			break;
 			}
-		}
+//#endif
 	}
 
 	void KeepTime(){

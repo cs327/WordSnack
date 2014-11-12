@@ -10,7 +10,7 @@ public class ChangeScene : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		PlayerPrefs.DeleteAll ();
+//		PlayerPrefs.DeleteAll ();
 
         if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
         {
