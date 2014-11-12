@@ -74,6 +74,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 			//Stops any other music or sound tracks that may still be playing.
 			audioManager.Stop(5);
+            audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
 			audioManager.Stop(14);
@@ -85,6 +86,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 			//Stops any music that should not be playing
 			audioManager.Stop(5);
+            audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
 			audioManager.Stop(14);
@@ -107,6 +109,7 @@ public class PlayMusic : MonoBehaviour {
 
 			//Stops any sounds that should not be playing.
 			audioManager.Stop(5);
+            audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
 			audioManager.Stop(14);
