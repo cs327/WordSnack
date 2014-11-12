@@ -162,7 +162,14 @@ public class PlayMusic : MonoBehaviour {
 			//Stops the Menu Music.
 			audioManager.Stop(4);
 			//Loops the GamePlay Music.
-			audioManager.PlayLoop(5);
+            if (!variables.timedMode)
+            {
+                audioManager.PlayLoop(5);
+            }
+            else if (variables.timedMode)
+            {
+                audioManager.PlayLoop(35);
+            }
 			NewOnStove();
 			Sizzle();
 			RejectedSound();
@@ -170,6 +177,7 @@ public class PlayMusic : MonoBehaviour {
 			Shuffle();
 			Pause();
 			ClickSound();
+            TimedWarning();
 
 		}
 		///////////////////////
@@ -179,6 +187,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 			//Stops the GamePlay Music
 			audioManager.Stop(5);
+            audioManager.Stop(35);
 		   
 		// if (gameObject.GetComponent<ReceiptMove>().winSound == true)
 
@@ -322,7 +331,9 @@ public class PlayMusic : MonoBehaviour {
 		//First plays Chewing sound if the character is not the trash character, otherwise plays the trash sound.
 		if (variables.chewing == true)
 		{
+            audioManager.Play(variables.eatingSound);
 			audioManager.Play(variables.chewingSound);
+            audioManager.Play(variables.eatingSound);
 			variables.chewing = false;
 			//Next, checks for tastes if the character is not the trash character.
 			if (variables.chewingSound == 13)
@@ -425,5 +436,17 @@ public class PlayMusic : MonoBehaviour {
 	{
 		audioManager.Play(26);
 	}
+
+    void TimedWarning()
+    {
+        if (Mathf.RoundToInt(variables.globalTimer) == 31)
+        {
+            audioManager.Play(28);
+        }
+        if (Mathf.RoundToInt(variables.globalTimer) == 16)
+        {
+            audioManager.Play(27);
+        }
+    }
 
 }
