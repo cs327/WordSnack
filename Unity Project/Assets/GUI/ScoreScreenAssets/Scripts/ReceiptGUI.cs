@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Configuration;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -11,6 +12,10 @@ public class ReceiptGUI : MonoBehaviour
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
+    // A constant used to adjust how far down the receipt should scroll
+    public float highestOffset;
+    // A constant used to adjust how far up the receipt should scroll
+    public float lowestOffset;
     public GameObject lightRowPrefab;
     public GameObject darkRowPrefab;
     public GameObject bottomInstance;
@@ -63,14 +68,12 @@ public class ReceiptGUI : MonoBehaviour
 
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
+
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
-        //char2WordsFed.Add("toast 30 13");
-        //char2WordsFed.Add("hello 19 20");
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
-        //char2WordsFed.Add("toast 30 13");
-        //char2WordsFed.Add("hello 19 20");
+
         #endregion
 
         // Add code to create rows/fill them
@@ -114,7 +117,22 @@ public class ReceiptGUI : MonoBehaviour
         bottomInstance.transform.parent = gameObject.transform;
         pos = bottomInstance.transform.position;
 
+        ReceiptMover.lowestPos = lowestOffset;
+        ReceiptMover.highestPos = lowestOffset - rowCount*rowOffset + highestOffset;
+
+        if (rowCount <= 4)
+        {
+            ReceiptMover.lowestPos = lowestOffset;
+            ReceiptMover.highestPos = lowestOffset;
+        }
+        
+        //Debug.Log("ALERT");
+        //Debug.Log("Setting endpos - " + ReceiptMover.endPos);
+        //Debug.Log("Setting startpos - " + ReceiptMover.lowestPos);
+        Debug.Log("ROWCOUNT: " + rowCount);
+
         #region Scrapcode
+
         //        pos.y += rowOffset * rowCount;
 //		pos.y += rowOffset * rowCount;
 
@@ -172,7 +190,9 @@ public class ReceiptGUI : MonoBehaviour
 //                    break;
 //            }
 //        }
-#endregion
+
+        #endregion
+
 
     }
 

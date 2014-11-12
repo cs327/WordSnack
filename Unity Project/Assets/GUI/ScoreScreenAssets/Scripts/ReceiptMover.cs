@@ -6,8 +6,8 @@ public class ReceiptMover : MonoBehaviour
 {
     Camera c;
     public bool winSound; //for PlayMusic script
-    public float startPos;
-    public static float endPos;
+    public static float lowestPos;
+    public static float highestPos;
     public bool Touched = false;
     public Vector3 lastClickPos;
     private Vector3 gameObjectPosAtLastClick;
@@ -17,8 +17,8 @@ public class ReceiptMover : MonoBehaviour
     void Start()
     {
         // This can be programmatically changed
-        //startPos = -7.470931f;
-        endPos = 3.0f;
+        //lowestPos = -7.470931f;
+        
         c = GameObject.Find("Main Camera").GetComponent<Camera>();
         winSound = true;
 
@@ -27,17 +27,15 @@ public class ReceiptMover : MonoBehaviour
             Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
         }
 
-        Vector3 pos = gameObject.transform.position;
-        pos.y = startPos;
-        gameObject.transform.position = pos;
-        Debug.Log("Start position " + gameObject.transform.position.ToString());
-        Debug.Log("endpos at start " + endPos);
+        //Vector3 pos = gameObject.transform.position;
+        //pos.y = lowestPos;
+        //gameObject.transform.position = pos;
     }
 
     public Vector3 GetNewPosition(Vector3 deltaPos)
     {
         Vector3 pos = gameObject.transform.position;
-        pos.y = Mathf.Clamp((pos.y + deltaPos.y), startPos, endPos);
+        pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos, highestPos);
         return pos;
     }
 
@@ -58,6 +56,8 @@ public class ReceiptMover : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if ((int) lowestPos == -7)
+            Debug.Log("Didn't set startpos correctly");
 
         Vector3 pos = gameObject.transform.position;
 
@@ -79,15 +79,17 @@ public class ReceiptMover : MonoBehaviour
         }
         else
         {
-            if (pos.y <= endPos - .01)
+            if (pos.y <= highestPos - .01)
             {
                 //Debug.Log(" pos.y " + pos.y + " endpos " + endPos);
                 //Debug.Log("oldpos " + pos.y + " newPos " + (pos.y + Time.deltaTime*2.0f).ToString());
-                pos.y = Mathf.Clamp(pos.y + Time.deltaTime * 2.0f, pos.y + Time.deltaTime * 2.0f, endPos);
+                pos.y = Mathf.Clamp(pos.y + Time.deltaTime * 2.0f, pos.y + Time.deltaTime * 2.0f, highestPos);
                 gameObject.transform.position = GetNewPosition(Time.deltaTime * 2.0f);
             }
             else
             {
+                Debug.Log("Resting place: " + transform.position.y);
+                Touched = true;
                 //Debug.Log("Arrived at " + gameObject.transform.position);
             }
         }
