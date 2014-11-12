@@ -130,7 +130,7 @@ public class PlayMusic : MonoBehaviour {
 				else
 				{
                     audioManager.Play(1);
-                    Invoke("CharacterSelectTwo", 1.0f);
+                    Invoke("CharacterSelectTwo", .3f);
 				}
 				Debug.Log("ding");
 				numSelected++;
