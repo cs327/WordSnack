@@ -120,7 +120,7 @@ public class ReceiptGUI : MonoBehaviour
         ReceiptMover.lowestPos = lowestOffset;
         ReceiptMover.highestPos = lowestOffset - rowCount*rowOffset + highestOffset;
 
-        if (rowCount <= 4)
+        if (ReceiptMover.highestPos <= ReceiptMover.lowestPos)
         {
             ReceiptMover.lowestPos = lowestOffset;
             ReceiptMover.highestPos = lowestOffset;
