@@ -70,9 +70,9 @@ public class ReceiptMover : MonoBehaviour
             }
             if (Input.mousePresent && Input.GetMouseButton(0))
             {
-                Debug.Log(Input.mousePosition.y);
-                Debug.Log(lastClickPos.y);
-                Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
+                //Debug.Log(Input.mousePosition.y);
+                //Debug.Log(lastClickPos.y);
+                //Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
                 gameObject.transform.position = gameObjectPosAtLastClick;
                 gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * scrollScale);
             }
