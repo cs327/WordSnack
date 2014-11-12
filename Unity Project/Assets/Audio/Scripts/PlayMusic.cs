@@ -395,6 +395,7 @@ public class PlayMusic : MonoBehaviour {
 		if (variables.paused == true)
 		{
 			audioManager.Pause(5);
+            audioManager.Pause(35);
 		}
 		//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
 		//{

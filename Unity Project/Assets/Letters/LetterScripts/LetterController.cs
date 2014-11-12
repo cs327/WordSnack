@@ -7,6 +7,7 @@ public class LetterController : MonoBehaviour
 {
 		VariableControl variables = new VariableControl ();
 		public bool lastHand = false;
+		public bool noWordsLeft = false;
 		public letterBehaviour letterObj;
 		public letterBehaviour[] lettersOnBoard;
 		public letterBehaviour[] lettersOnStove;
@@ -29,6 +30,8 @@ public class LetterController : MonoBehaviour
 		public int emptyLetterCount = 0;
 		public TextAsset sowpods;
 		private List<string> wordList = new List<string> ();
+		private List<string> combinationList = new List<string> ();
+		private List<string> permutationList = new List<string> ();
 		public static Dictionary<char, int> letterScores;
 		public Texture2D shuffleButton;
 		public bool gamePaused;
@@ -44,6 +47,7 @@ public class LetterController : MonoBehaviour
 		't', 'v', 'w', 'x', 'y', 'z',
 	};
 		public int numVowels;
+	public bool stopSearch = false;
 
 
 		// Use this for initialization
@@ -74,12 +78,18 @@ public class LetterController : MonoBehaviour
 				}
 				variables.letterGenerationSound = true;
 				CreateSteam ();
+				//CheckPermutations("mnmnbv");
 		}
 
 		// Update is called once per frame
 		void Update ()
 		{
-				
+				if(variables.lettersRemaining < boardSize && !stopSearch && !noWordsLeft){
+					CheckPermutations(myLetters);
+				}
+				if(noWordsLeft){
+					variables.endGame = true;
+				}
 				string word = sendWord ();
 				//check if there even is a word!
 				if (word == null || word.Length < variables.minWordLength || !checkForWord (word)) {
@@ -143,24 +153,14 @@ public class LetterController : MonoBehaviour
 		{
 
 				letterToMove.isMoving = true;
-//		int numSteps = 10;
-//		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
-//		for (int i = 0; i< numSteps; i++){
-//			letterToMove.transform.position += stepIncrement;
-//			yield return null;
-//		}
 
-//		for( float i = 0f; i < 1; i += .15f){
-//			letterToMove.transform.position = Vector3.Slerp(currentSpot, moveToHere, i);
-//			yield return null;
-//		}
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
 				//for( float i = 0f; i < 1; i += .15f){
 				if (letterToMove == null){
 						Debug.Log ("LetterToMove is null and shouldn't be!! Error!");
 				}
-				while (dontCrash < 100 && letterToMove.transform.position != moveToHere) {
+				while (dontCrash < 100 && letterToMove.transform.position != moveToHere && letterToMove != null) {
 						dontCrash++;
 						letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
 						yield return null;	
@@ -430,6 +430,7 @@ public class LetterController : MonoBehaviour
 				//Debug.Log ("myLetters is now " + myLetters);
 				numLettersOnStove = 0;
 				variables.letterGenerationSound = true;
+				stopSearch = false;
 
 		}
 
@@ -617,5 +618,68 @@ public class LetterController : MonoBehaviour
 				}
 				return count;
 		}
-}
+	void CheckPermutations(string input){
+		CreateCombinations("" , input);
+		for(int i = 2; i < input.Length+1; i++){
+			foreach(string check in combinationList){
+				if(check.Length == i && !stopSearch){
+					bool[] usedChar = new bool[i];
+					char[] chars = new char[i];
+					chars = check.ToCharArray();
+					//print (check);
+					CreateAndSubmitPermutations(chars, i,0,usedChar, "");
+				}
+			}
+		}
+		if(!stopSearch){
+			noWordsLeft = true;
+		}
+	}
 
+	void CreateAndSubmitPermutations(char[] check, int length, int level, bool[] usedChar,string output){
+		if(stopSearch){
+			return;
+		}
+		if(level == length){
+			//print (output);
+			if(checkForWord(output)){
+				stopSearch = true;
+				print ("WORD FOUND: " + output); 
+			}
+			return;
+		}
+		for(int i = 0; i<length; i++){
+			if(!usedChar[i]){
+				output += check[i].ToString();
+				usedChar[i] = true;
+				CreateAndSubmitPermutations(check, length, level+1,usedChar,output);
+				usedChar[i] = false;
+				output = "";
+			}
+		}
+		//print (output);
+		
+	}
+
+	void CreateCombinations(string active , string rest){
+		//print (rest[0]);
+		if(active == null && rest == null){
+			return;
+		}
+		if(rest == ""){
+			if(active.Length > 1){
+				combinationList.Add(active);
+				//print (active);
+			}
+			return;
+		}
+		else{
+			//print(rest);
+			CreateCombinations(active + rest[0],rest.Substring(1));
+			CreateCombinations(active,rest.Substring(1));
+		}
+
+	}
+
+
+}
