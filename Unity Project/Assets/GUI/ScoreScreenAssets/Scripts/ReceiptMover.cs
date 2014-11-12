@@ -11,6 +11,7 @@ public class ReceiptMover : MonoBehaviour
     public bool Touched = false;
     public Vector3 lastClickPos;
     private Vector3 gameObjectPosAtLastClick;
+    public float scrollScale;
 
     // Use this for initialization
     void Start()
@@ -73,7 +74,7 @@ public class ReceiptMover : MonoBehaviour
                 Debug.Log(lastClickPos.y);
                 Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
                 gameObject.transform.position = gameObjectPosAtLastClick;
-                gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * 0.1f);
+                gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * scrollScale);
             }
         }
         else

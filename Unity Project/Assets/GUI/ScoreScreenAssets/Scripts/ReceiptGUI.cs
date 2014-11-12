@@ -16,6 +16,7 @@ public class ReceiptGUI : MonoBehaviour
     public GameObject bottomInstance;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
+    public Texture2D HighScoreReceiptTexture;
 
     int selectedCharacter1;
     int selectedCharacter2;
@@ -36,7 +37,7 @@ public class ReceiptGUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //#region Get Receipt Info
+        #region Get Receipt Info
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
 
@@ -59,105 +60,61 @@ public class ReceiptGUI : MonoBehaviour
 			char1WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character1Words;
 			char2WordsFed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().character2Words;
 		}
-//        var char1Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter1);
-//        var char2Data = PlayerPrefs.GetString("WordsFedToCharacter " + selectedCharacter2);
-        char1WordsFed = new List<string>();
-        char2WordsFed = new List<string>();
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char2WordsFed.Add("toast 30 13");
-        char2WordsFed.Add("hello 19 20");
 
+        //char1WordsFed = new List<string>();
+        //char2WordsFed = new List<string>();
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char2WordsFed.Add("toast 30 13");
+        //char2WordsFed.Add("hello 19 20");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char2WordsFed.Add("toast 30 13");
+        //char2WordsFed.Add("hello 19 20");
+        #endregion
 
         // Add code to create rows/fill them
 		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
-//		rowCount = 10;
-//		gameObject.transform.FindChild("BottomPrefab").transform.position += Vector3.forward * rowOffset * rowCount;
+
+        #region Create wordsFed Rows
         Vector3 pos;
         for(int i = 0; i < rowCount; i++)
         {
-            GameObject rowInstance;
-            if (i % 2 == 0)
-                rowInstance = (GameObject)Instantiate(darkRowPrefab);
-            else
-                rowInstance = (GameObject)Instantiate(lightRowPrefab);
-            rowInstance.transform.parent = gameObject.transform;
-            pos = rowInstance.transform.position;
-            pos.y += rowOffset * i;
-            rowInstance.transform.position = pos;            
-            
-            Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
-
+            string char1Word = "";
+            string char1Score = "";
+            string char2Word = "";
+            string char2Score = "";
             string[] wordInfo;
-            foreach(TextMesh mesh in rowMeshes)
+            if (i < char1WordsFed.Count)
             {
-                if(i < char1WordsFed.Count)
-                {
-                    wordInfo = char1WordsFed[i].Split(' ');
-                    switch(mesh.name)
-                    {
-                        case "char1Word":
-                            mesh.text = wordInfo[0];
-                            break;
-                        case "char1Score":
-                            mesh.text = wordInfo[1] + "x" + wordInfo[2];
-                            break;
-                    }
-                }
-                if(i < char2WordsFed.Count)
-                {
-                    wordInfo = char2WordsFed[i].Split(' ');
-                    switch(mesh.name)
-                    {
-                        case "char2Word":
-                            mesh.text = wordInfo[0];
-                            break;
-                        case "char2Score":
-                            mesh.text = wordInfo[1] + "x" + wordInfo[2];
-                            break;
-                    }
-
-                }
+                wordInfo = char1WordsFed[i].Split(' ');
+                char1Word = wordInfo[0];
+                char1Score = wordInfo[1] + "x" + wordInfo[2];
             }
+            if (i < char2WordsFed.Count)
+            {
+                wordInfo = char2WordsFed[i].Split(' ');
+                char2Word = wordInfo[0];
+                char2Score = wordInfo[1] + "x" + wordInfo[2];
+            }
+            AddRow(char1Word, char1Score, char2Word, char2Score, i);
         }
+        #endregion
 
-
-        if(ScoreManager.AddHighScore(char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
+        #region High Score setup
+        string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
+        Debug.Log("Current gamemode is " + gameMode);
+        if (ScoreManager.AddHighScore(gameMode, char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
         {
-            GameObject rowInstance;
-            if (rowCount % 2 == 0) {
-                rowInstance = (GameObject)Instantiate(darkRowPrefab);
-			} else {
-                rowInstance = (GameObject)Instantiate(lightRowPrefab);
-			}
-            rowInstance.transform.parent = gameObject.transform;
-            pos = rowInstance.transform.position;
-            pos.y += rowOffset * rowCount;
-            rowInstance.transform.position = pos;
-            rowCount++;
-
-            Component[]rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
-
-            string[] wordInfo;
-            foreach (TextMesh mesh in rowMeshes)
-            {
-                switch (mesh.name)
-                {
-                    case "char1Word":
-                        mesh.text = "High";
-                        break;
-                    case "char2Word":
-                        mesh.text = "Score";
-                        break;                    
-                }               
-            }
+            renderer.material.mainTexture = HighScoreReceiptTexture;
         }
+        #endregion
 
         // Add code for bottom of receipt
         bottomInstance.transform.parent = gameObject.transform;
         pos = bottomInstance.transform.position;
 
-        #region
+        #region Scrapcode
         //        pos.y += rowOffset * rowCount;
 //		pos.y += rowOffset * rowCount;
 
@@ -219,9 +176,41 @@ public class ReceiptGUI : MonoBehaviour
 
     }
 
-    public void AddRow(string char1Word, string char1Score, string char2Word, string char2Score)
+    // Given the strings to be displayed on a row, as well as the row number (starting at zero)
+    // this method creates a row with that text placed accordingly to the row number
+    public void AddRow(string char1Word, string char1Score, string char2Word, string char2Score, int rowIndex)
     {
+        Vector3 pos;
+        GameObject rowInstance;
+        if (rowIndex % 2 == 0)
+            rowInstance = (GameObject)Instantiate(darkRowPrefab);
+        else
+            rowInstance = (GameObject)Instantiate(lightRowPrefab);
+        rowInstance.transform.parent = gameObject.transform;
+        pos = rowInstance.transform.position;
+        pos.y += rowOffset * rowIndex;
+        rowInstance.transform.position = pos;
+
+        Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
         
+        foreach (TextMesh mesh in rowMeshes)
+        {
+            switch (mesh.name)
+            {
+                case "char1Word":
+                    mesh.text = char1Word;
+                    break;
+                case "char1Score":
+                    mesh.text = char1Score;
+                    break;
+                case "char2Word":
+                    mesh.text = char2Word;
+                    break;
+                case "char2Score":
+                    mesh.text = char2Score;
+                    break;
+            }
+        }
     }
 
     void Update()

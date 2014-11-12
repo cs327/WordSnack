@@ -8,14 +8,15 @@ using System.Linq;
 
 public static class ScoreManager 
 {
+    // Stores a description of a high score and a list of scores that fit the description. 
+    // i.e "Timed Meghan Stella" might return [323, 200, 100], those being the top three scores by
+    // Meghan and Stella on timed mode
     private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
     public static bool NeverShowInstructions = false;
     
     // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
     {
-       
-
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/HighScoreSaves.gd");
         bf.Serialize(file, scoreList);
@@ -32,9 +33,9 @@ public static class ScoreManager
     }
 
     // Given two characters, returns the sorted score list or null if they don't exist
-    public static List<int> GetCharacterScore(string char1, string char2)
+    public static List<int> GetCharacterScore(string gameMode, string char1, string char2)
     {
-        if (scoreList.ContainsKey(GetCharacterHash(char1, char2)))
+        if (scoreList.ContainsKey(gameMode + " " + GetCharacterHash(char1, char2)))
             return scoreList[GetCharacterHash(char1, char2)];
         else
             return new List<int>();
@@ -66,26 +67,26 @@ public static class ScoreManager
 
     // Given a score and the players used to get the score this method
     // adds it to a lookup table and returns true if it's a high score for those characters
-    public static bool AddHighScore(string char1, string char2, int score)
+    public static bool AddHighScore(string gameMode, string char1, string char2, int score)
     {
+        
         //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
         int scoreListSizeLimit = 10;
 
         LoadScores();
    
         // Used to lookup scores given a key (in this case made of the character names in sorted order)
-        string charKey = GetCharacterHash(char1, char2);
+        string charKey = gameMode + " " + GetCharacterHash(char1, char2);
 
         if (!scoreList.ContainsKey(charKey))
             scoreList.Add(charKey, new List<int>());
         if (!scoreList[charKey].Contains(score))
             scoreList[charKey].Add(score);
-        
-        
-        if (scoreList[charKey].Count > scoreListSizeLimit)
-        {                       
-            scoreList[charKey].RemoveRange(scoreListSizeLimit, scoreList[charKey].Count - scoreListSizeLimit);
-        }
+        Debug.Log("Saved to file: " + charKey + score);
+        //if (scoreList[charKey].Count > scoreListSizeLimit)
+        //{                       
+        //    scoreList[charKey].RemoveRange(scoreListSizeLimit, scoreList[charKey].Count - scoreListSizeLimit);
+        //}
 
         List<int> temp = scoreList[charKey];
         scoreList[charKey] = temp.OrderByDescending(x => x).ToList();

@@ -9,6 +9,7 @@ public class ScoreTextScript : MonoBehaviour {
 	public int totalScore;
 	public float multiplier;
 	public bool bothTastes;
+	public bool longWord;
 
 	// need to access some variables
 	private VariableControl variables;
@@ -27,7 +28,7 @@ public class ScoreTextScript : MonoBehaviour {
 		float timeAmount = Time.deltaTime;
 		float timePassed = Time.time - startTime;
 
-		float scorePosX = 0.0f;
+		//float scorePosX = 0.0f;
 		float scorePosY = 0.0f;
 
 		float sizes = 1.0f;
@@ -40,7 +41,13 @@ public class ScoreTextScript : MonoBehaviour {
 				sizes += 0.7f;
 				this.transform.localScale = new Vector3(sizes, sizes, 1.0f);
 			}
-			
+			if (longWord) {
+				// we've gotta increase the score even more
+				totalScore *= (int)variables.bigMealBonus;
+				// and don't increase forever, thank you very much
+				longWord = false;
+			}
+
 			GetComponent<TextMesh>().text = baseScore.ToString();
 		} else {
 			// it's a multiplier
@@ -51,19 +58,6 @@ public class ScoreTextScript : MonoBehaviour {
 				GetComponent<TextMesh>().text += " Tasty";
 			}
 		}
-
-		/* old stuff:
-		if (GetComponent<TextMesh> ().text.IndexOf ("x") != -1) {
-			// multiplier
-			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.2f * alpha;
-		} else {
-			// word score
-			scorePosX = (GetComponent<TextMesh> ().transform.position.x + 0.1f) * timeAmount * -0.6f * alpha;
-			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.6f * alpha;
-		}
-		
-		GetComponent<TextMesh> ().transform.Translate (new Vector3 (scorePosX, scorePosY, 0.0f));
-		*/
 
 		// for scores: reduce alpha and move upwards towards total score, but only if the score matches the total score the person received
 		// AND make sure the appropriate time has passed
@@ -76,7 +70,7 @@ public class ScoreTextScript : MonoBehaviour {
 			} else if (baseScore >= variables.largeScoreThreshold) {
 				GetComponent<TextMesh>().color = variables.largeColor;
 			}
-			
+
 			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.6f * alpha;
 			GetComponent<TextMesh> ().transform.Translate (new Vector3 (0.0f, scorePosY, 0.0f));
 
@@ -86,8 +80,19 @@ public class ScoreTextScript : MonoBehaviour {
 
 		// for multipliers: reduce alpha after taste match display time
 		if (multiplier != 0 && timePassed > variables.TasteMatchDisplayTime) {
-			alpha -= timeAmount * 0.5f;
-			GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
+			if (longWord) {
+				// big meal, so change the multiplier text and hold it there longer
+				GetComponent<TextMesh> ().text = "x" + variables.bigMealBonus + " Big Meal";
+				
+				if (timePassed > (variables.TasteMatchDisplayTime + variables.BigMealDisplayTime)) {
+					alpha -= timeAmount * 0.8f;
+					GetComponent<TextMesh> ().color = new Color (1.0f, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
+				}
+			} else {
+				// not a long word, so start fading earlier
+				alpha -= timeAmount * 0.5f;
+				GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
+			}
 		}
 
 		if (alpha <= 0.0f) {

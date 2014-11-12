@@ -451,36 +451,13 @@ public class Character : MonoBehaviour
 										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
 										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = 0;
 
+										if (word.Length > 6) {
+											variables.scoreText.GetComponent<ScoreTextScript>().longWord = true;
+										} else {
+											variables.scoreText.GetComponent<ScoreTextScript>().longWord = false;
+										}
+
 										Instantiate (variables.scoreText, scorePos, Quaternion.identity);
-										
-
-										/* the old stuff
-										Vector3 characterPosition = this.gameObject.transform.position;
-										if (characterPosition.x > 0.0) {
-												characterPosition.x -= 1.0f;
-										} else {
-												characterPosition.x += 1.0f;
-										}
-										characterPosition.y += 1.5f;
-										characterPosition.z = -3.2f;
-					
-										// check the thresholds and change color and size accordingly
-										if (wordScore >= variables.smallScoreThreshold && wordScore < variables.mediumScoreThreshold) {
-												variables.scoreText.color = variables.smallColor;
-												variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										} else if (wordScore >= variables.mediumScoreThreshold && wordScore < variables.largeScoreThreshold) {
-												variables.scoreText.color = variables.mediumColor;
-												variables.scoreText.transform.localScale = new Vector3 (1.5f, 1.5f);
-										} else if (wordScore >= variables.largeScoreThreshold) {
-												variables.scoreText.color = variables.largeColor;
-												variables.scoreText.transform.localScale = new Vector3 (2.5f, 2.5f);
-										} else {
-												variables.scoreText.color = Color.white;
-												variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										}
-
-										Instantiate (variables.scoreText, characterPosition, Quaternion.identity);
-										*/
 								}
 				
 								// output the multiplier
@@ -500,36 +477,20 @@ public class Character : MonoBehaviour
 											variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = false;
 										}
 
-										Instantiate (variables.multiplierText, multPos, Quaternion.identity);
-										
-										/* the old stuff
-										Vector3 characterPosition = this.gameObject.transform.position;
-										characterPosition.y += 2.5f;
-										characterPosition.z = -3.2f;
-					
-										// check the thresholds and change color and size accordingly
-										if (multiplier >= variables.smallMultiplierThreshold && multiplier < variables.mediumMultiplierThreshold) {
-												variables.multiplierText.color = variables.smallColor;
-												variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);
-										} else if (multiplier >= variables.mediumMultiplierThreshold && multiplier < variables.largeMultiplierThreshold) {
-												variables.multiplierText.color = variables.mediumColor;
-												variables.multiplierText.transform.localScale = new Vector3 (1.5f, 1.5f);
-										} else if (multiplier >= variables.largeMultiplierThreshold) {
-												variables.multiplierText.color = variables.largeColor;
-												variables.multiplierText.transform.localScale = new Vector3 (2.5f, 2.5f);
+										if (word.Length > 6) {
+											variables.multiplierText.GetComponent<ScoreTextScript>().longWord = true;
 										} else {
-												variables.multiplierText.color = Color.white;
-												variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);
+											variables.multiplierText.GetComponent<ScoreTextScript>().longWord = false;
 										}
-					
-										Instantiate (variables.multiplierText, characterPosition, Quaternion.identity);
-										*/
+
+										Instantiate (variables.multiplierText, multPos, Quaternion.identity);
 								}
 
 								// output the crumbs
 								if (characterNum != 0) {
 										ParticleHelper.Instance.outputCrumbs (gameObject.transform.position + new Vector3 (0, 1, -3));
 								}
+
 								//update the score!
 								variables.score += wordScore;
 								//Debug.Log("The total score is" + variables.score);
