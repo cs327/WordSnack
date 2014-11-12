@@ -36,6 +36,11 @@ public class ChangeScene : MonoBehaviour
             }
         }
 
+		if (Application.loadedLevelName == "About") {
+			transform.GetComponent<SpriteRenderer>().enabled = false;
+		}else{
+			transform.GetComponent<SpriteRenderer>().enabled = true;
+		}
     }
 
 

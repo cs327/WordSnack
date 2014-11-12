@@ -399,10 +399,12 @@ public class Character : MonoBehaviour
 					//Animation.CrossFade("KelvinEatingAnim");
 										GetComponent<Animator> ().SetTrigger ("eat");
 										Debug.Log ("Fred eating animation");
+                                        variables.eatingSound = 29;
 										break;
 								case 2:
 										Debug.Log ("Kelvin eating animation");
 										GetComponent<Animator> ().SetTrigger ("eat");
+                                        variables.eatingSound = 30;
 //					animation.Play("KelvinEatingAnim");
 					//return 32;
 										break;
@@ -411,17 +413,20 @@ public class Character : MonoBehaviour
 					//return 26;
 										Debug.Log ("Spike eating animation");
 										GetComponent<Animator> ().SetTrigger ("eat");
+                                        variables.eatingSound = 31;
 										break;
 								case 4:
 					//STELLA EATING ANIMATION GOES HERE
 					//return 35;
 										Debug.Log ("Stella Eating Animation");
+                                        variables.eatingSound = 32;
 										break;
 								case 5:
 					//MEGAN EATING ANIMATION GOES HERE
 					//return 29;
 										Debug.Log ("Megan Eating Animation");
 										GetComponent<Animator> ().SetTrigger ("eat");
+                                        variables.eatingSound = 33;
 										break;
 								default:
 					//return 0;
