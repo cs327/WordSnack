@@ -11,6 +11,7 @@ public class VariableControl : MonoBehaviour {
 	public int gameLength = 180;
 	public bool timerStart = false;
 	public bool paused = false;
+	public bool endGame = false;
 
 	//what iphone model it is running on.
 	//0 = unidentified, 1 = 4S or older (below), 2 = 5 or newer (higher)

@@ -97,7 +97,12 @@ public class wordBuildingController : MonoBehaviour
 						sendVariablestoScoreScreen ();
 						Application.LoadLevel ("ScoreScreen");
 				}
-		//updates time on screen
+				//ends game if no words left and tilebag is low
+				if(variables.endGame){
+					sendVariablestoScoreScreen ();
+					Application.LoadLevel ("ScoreScreen");
+				}
+				//updates time on screen
 		        else {
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
 				}
