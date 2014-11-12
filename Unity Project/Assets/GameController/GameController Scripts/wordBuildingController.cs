@@ -8,6 +8,11 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] tastePanels = new GameObject [2];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
+		public bool fadingOut = false;
+	public bool fadeOut = false;
+	public GameObject greyOut;
+	public GameObject closingTimeText;
+
 
 		public VariableControl variables;
 		public GameObject variableController;
@@ -94,13 +99,15 @@ public class wordBuildingController : MonoBehaviour
 		{
 				//Ends the game if time runs out:
 				if (variables.timedMode && variables.globalTimer < 0) {
-						sendVariablestoScoreScreen ();
-						Application.LoadLevel ("ScoreScreen");
+					fadeOut = true;
 				}
 				//ends game if no words left and tilebag is low
 				if(variables.endGame){
-					sendVariablestoScoreScreen ();
-					Application.LoadLevel ("ScoreScreen");
+					fadeOut = true;
+					variables.endGame = false;
+				}
+				if(!fadingOut && fadeOut){
+					StartCoroutine(ClosingTime());
 				}
 				//updates time on screen
 		        else {
@@ -132,6 +139,26 @@ public class wordBuildingController : MonoBehaviour
 				}
 		}
 
+	IEnumerator ClosingTime(){
+		print ("END THE GAME FADE IT OUT");
+		fadingOut = true;
+		float t = variables.gameOverFadeInTimer;
+		greyOut.SetActive(true);
+		Color fadeFrom = greyOut.renderer.material.color;
+		Color fadeTo = greyOut.renderer.material.color;
+		fadeTo.a = 1.0f;
+
+		for(float i = 0; i<t; i+= Time.deltaTime){
+			greyOut.renderer.material.color = Color.Lerp(fadeFrom,fadeTo,i*(1/t));
+
+			yield return null;
+		}
+		closingTimeText.SetActive (true);
+		yield return new WaitForSeconds(variables.gameOverOnScreenTimer);
+		sendVariablestoScoreScreen ();
+		Application.LoadLevel ("ScoreScreen");
+
+	}
 		void OnGUI ()
 		{
 				if (!variables.paused) {
