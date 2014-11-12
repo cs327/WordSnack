@@ -101,6 +101,8 @@ public class VariableControl : MonoBehaviour {
 	public int maxEatingTime = 12;
 	public int maxMultiplier = 5;
 	public int minLettersToTrash = 1;
+	public float gameOverFadeInTimer = .2f;
+	public float gameOverOnScreenTimer = 2f;
 
 	//character variables 
 	public Vector3 [] phase2CharacterPositions;

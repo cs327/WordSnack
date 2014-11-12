@@ -153,17 +153,7 @@ public class LetterController : MonoBehaviour
 		{
 
 				letterToMove.isMoving = true;
-//		int numSteps = 10;
-//		Vector3 stepIncrement = (moveToHere-currentSpot)/numSteps;
-//		for (int i = 0; i< numSteps; i++){
-//			letterToMove.transform.position += stepIncrement;
-//			yield return null;
-//		}
 
-//		for( float i = 0f; i < 1; i += .15f){
-//			letterToMove.transform.position = Vector3.Slerp(currentSpot, moveToHere, i);
-//			yield return null;
-//		}
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
 				//for( float i = 0f; i < 1; i += .15f){
