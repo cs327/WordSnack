@@ -99,8 +99,7 @@ public class wordBuildingController : MonoBehaviour
 		{
 				//Ends the game if time runs out:
 				if (variables.timedMode && variables.globalTimer < 0) {
-						sendVariablestoScoreScreen ();
-						Application.LoadLevel ("ScoreScreen");
+					fadeOut = true;
 				}
 				//ends game if no words left and tilebag is low
 				if(variables.endGame){
