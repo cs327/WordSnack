@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Threading;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -69,6 +70,10 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
 
+        char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
         //char1WordsFed.Add("cat 30 5");
@@ -125,6 +130,9 @@ public class ReceiptGUI : MonoBehaviour
             ReceiptMover.lowestPos = lowestOffset;
             ReceiptMover.highestPos = lowestOffset;
         }
+
+        Debug.Log("The receipt's highest point: " + ReceiptMover.highestPos);
+        Debug.Log("The receipt's lowest point: " + ReceiptMover.lowestPos);
         
         //Debug.Log("ALERT");
         //Debug.Log("Setting endpos - " + ReceiptMover.endPos);

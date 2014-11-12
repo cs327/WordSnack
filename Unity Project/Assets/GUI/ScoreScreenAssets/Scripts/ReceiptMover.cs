@@ -66,7 +66,7 @@ public class ReceiptMover : MonoBehaviour
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Debug.Log("Moved receipt by " + Input.GetTouch(0).deltaPosition.y);
-                gameObject.transform.position = GetNewPosition(Input.GetTouch(0).deltaPosition);
+                gameObject.transform.position = GetNewPosition(Input.GetTouch(0).deltaPosition * scrollScale);
             }
             if (Input.mousePresent && Input.GetMouseButton(0))
             {
