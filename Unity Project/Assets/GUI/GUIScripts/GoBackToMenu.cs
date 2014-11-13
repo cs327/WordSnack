@@ -17,7 +17,7 @@ public class GoBackToMenu : MonoBehaviour {
 	// Update is called once per frame
 	void OnMouseDown () {
 		s.sprite = menuClicked;
-		transform.localPosition = new Vector3 (-2.50f, 1, -1.43f);
+		transform.localPosition = new Vector3 (-2.50f, 1, 2.87297f);
 		transform.localScale = new Vector3 (0.25f, 0.49f, 0.49f);
 
 	}

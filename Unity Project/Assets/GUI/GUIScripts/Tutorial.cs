@@ -36,14 +36,15 @@ public class Tutorial : MonoBehaviour
         m.renderer.material.mainTexture = instructions[0];
         transform.localPosition = new Vector3(0.06f, 0.429f, -0.86f);
         transform.localScale = new Vector3(0.73f, 1.21f, 0.82f);
+
+        character1 = w.character1;
+        character2 = w.character2;
         character1.transform.localPosition = new Vector3(character1.transform.localPosition.x, character1.transform.localPosition.y, 1);
         character2.transform.localPosition = new Vector3(character2.transform.localPosition.x, character2.transform.localPosition.y, 1); 
     }
 
     void Update()
     {
-        character1 = w.character1;
-        character2 = w.character2;
         // the first instruction box will slide in from the top
         if (pos.z <= -0.41f)
         {
@@ -58,6 +59,7 @@ public class Tutorial : MonoBehaviour
             gameObject.transform.position = offScreenPos;
             gameObject.transform.parent.transform.position = offScreenPos;
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+            GameObject.Find("VariableController").transform.position = parentPos;
             Destroy(gameObject);
         }
     }

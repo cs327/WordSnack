@@ -22,7 +22,6 @@ public class ReceiptGUI : MonoBehaviour
     public GameObject bottomInstance;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
-    public Texture2D HighScoreReceiptTexture;
 
     int selectedCharacter1;
     int selectedCharacter2;
@@ -70,14 +69,14 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
 
-        //char1WordsFed.Add("cat 30 5");
-        //char1WordsFed.Add("Nope 20 9");
-        //char1WordsFed.Add("cat 30 5");
-        //char1WordsFed.Add("Nope 20 9");
-        //char1WordsFed.Add("cat 30 5");
-        //char1WordsFed.Add("Nope 20 9");
-        //char1WordsFed.Add("cat 30 5");
-        //char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
 
         #endregion
 
@@ -112,9 +111,21 @@ public class ReceiptGUI : MonoBehaviour
         #region High Score setup
         string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
         Debug.Log("Current gamemode is " + gameMode);
+
+        // The current score is the best score
         if (ScoreManager.AddHighScore(gameMode, char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
         {
-            renderer.material.mainTexture = HighScoreReceiptTexture;
+            Debug.Log("NEW HIGH SCORE: \n    " +
+                ((int)PlayerPrefs.GetFloat("Score")).ToString());
+            GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = 
+                "NEW HIGH SCORE: \n    " +
+                ((int)PlayerPrefs.GetFloat("Score")).ToString();
+        }
+        else // Find the previous best instead
+        {
+            GameObject.Find("HighScoreText").GetComponent<TextMesh>().text =
+                " HIGH SCORE: \n     " +
+                ScoreManager.GetTopScore(char1String, char2String);
         }
         #endregion
 

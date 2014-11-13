@@ -34,10 +34,13 @@ public static class ScoreManager
     }
 
     // Given two characters, returns the sorted score list or null if they don't exist
-    public static List<int> GetCharacterScore(string gameMode, string char1, string char2)
+    public static List<int> GetAllCharacterScore(string char1, string char2)
     {
-        if (scoreList.ContainsKey(gameMode + " " + GetCharacterHash(char1, char2)))
-            return scoreList[GetCharacterHash(char1, char2)];
+        string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
+        string charKey = gameMode + " " + GetCharacterHash(char1, char2);
+
+        if (scoreList.ContainsKey(charKey))
+            return scoreList[charKey];
         else
             return new List<int>();
     }
@@ -54,24 +57,20 @@ public static class ScoreManager
 
     // Given two characters, this returns their highest score for the
     // game mode currently set
-    public static string GetCharactersScore(string char1, string char2)
+    public static string GetTopScore(string char1, string char2)
     {
         LoadScores();
         string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
         string charKey = gameMode + " " + GetCharacterHash(char1, char2);
-
-
         if (!scoreList.ContainsKey(charKey))
         {
-            Debug.Log("No previous best");
+            Debug.Log("ERROR: No existing score");
             return "";
         }
         else
         {
-            Debug.Log("Previous Best: " + scoreList[charKey][0].ToString());
-            return "Previous Best: " + scoreList[charKey][0].ToString();
+            return GetAllCharacterScore(char1, char2)[0].ToString();
         }
-            
     }
 
     // Given two character names returns a unique value representing their set

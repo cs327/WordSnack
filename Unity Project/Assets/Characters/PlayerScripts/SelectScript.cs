@@ -92,7 +92,9 @@ public class SelectScript : MonoBehaviour {
 					character.charSelectOrder = 1;
 
                     // There are two chars selected now. Set up high score text
-                    HighScore.text = ScoreManager.GetCharactersScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+                    HighScore.text = "Previous Best: "  + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+				    if (HighScore.text == "Previous Best: ")
+				        HighScore.text = "";
                     Debug.Log("high score text = '"  + HighScore.text + "'");
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
@@ -111,7 +113,7 @@ public class SelectScript : MonoBehaviour {
 			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
 				toggleSelect();
             // Characters changed, change High score text
-            HighScore.text = ScoreManager.GetCharactersScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+            HighScore.text = ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
             Debug.Log("high score text = '" + HighScore.text + "'");
 			}
 
