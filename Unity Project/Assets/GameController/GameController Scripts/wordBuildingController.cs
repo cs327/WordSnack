@@ -140,7 +140,8 @@ public class wordBuildingController : MonoBehaviour
 		}
 
 	IEnumerator ClosingTime(){
-		print ("END THE GAME FADE IT OUT");	
+		print ("END THE GAME FADE IT OUT");
+        variables.bellSound = true;
 		fadingOut = true;
 		float t = variables.gameOverFadeInTimer;
 		greyOut.SetActive(true);
