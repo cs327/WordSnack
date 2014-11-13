@@ -6,7 +6,7 @@ public class VariableControl : MonoBehaviour {
 	//main game variables: 
 	public int boardSize = 8;
 	public Vector3 [] characterTasteSpots;
-	public bool timedMode;
+	public bool timedMode = false;
 	public float globalTimer;
 	public int gameLength = 180;
 	public bool timerStart = false;
@@ -244,7 +244,7 @@ public class VariableControl : MonoBehaviour {
 		characterSelected = new bool[characterSelectNum];
 		selectedCharacters = new GameObject[characterSelectNum];
 		selectedCharacterNums = new int[characterSelectNum]; 
-		lettersRemaining = (totalLetters - boardSize);
+		lettersRemaining = totalLetters;
 		//creates an array of character tastes (characterNum does not match order of characters on SelectScreen, this is why the array is out of order) 
 		allCharTastes = new int[totalNumChar + 1][];
 		allCharTastes[0] = TastesForTrash;

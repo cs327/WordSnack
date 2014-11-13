@@ -343,31 +343,13 @@ public class LetterController : MonoBehaviour
 
 			
 				int needsReplacing = 0;
+				for (int i = 0; i < boardSize; i++) {
+						if (lettersOnBoard [i] == null) {
+								needsReplacing++;
+						}
 
-                if (boardSize <= variables.lettersRemaining)
-                {
-                    for (int i = 0; i < boardSize; i++)
-                    {
-                        if (lettersOnBoard[i] == null)
-                        {
-                            needsReplacing++;
-                        }
-
-                        positionOnBoard[i] = -1;
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < variables.lettersRemaining; i++)
-                    {
-                        if (lettersOnBoard[i] == null)
-                        {
-                            needsReplacing++;
-                        }
-
-                        positionOnBoard[i] = -1;
-                    }
-                }
+						positionOnBoard [i] = -1;
+				}
 				if (needsReplacing > 0) {
 						string newLetters = returnLetters (needsReplacing);
 						//Debug.Log ("Got new letters from returnLetters: " + newLetters);
