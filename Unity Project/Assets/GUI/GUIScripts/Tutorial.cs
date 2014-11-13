@@ -88,6 +88,7 @@ public class Tutorial : MonoBehaviour
             ScoreManager.NeverShowInstructions = true;
             parentPos.x = -20.0f;
             transform.parent.transform.position = parentPos;
+            GameObject.Find("closingTimeBG").transform.position = parentPos;
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
             Destroy(gameObject);
         }

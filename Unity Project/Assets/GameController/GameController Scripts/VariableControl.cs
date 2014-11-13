@@ -304,7 +304,7 @@ public class VariableControl : MonoBehaviour {
 //            iPhoneType = 2;
 //        }
 //#if UNITY_IPHONE
-        ///*
+        ///* To comment out this block, simply delete the first two comment lines on this line
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
