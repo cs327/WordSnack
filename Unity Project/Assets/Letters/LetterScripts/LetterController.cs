@@ -84,7 +84,7 @@ public class LetterController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if(variables.lettersRemaining < boardSize && !stopSearch && !noWordsLeft){
+				if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
 					CheckPermutations(myLetters);
 				}
 				if(noWordsLeft){
@@ -120,10 +120,11 @@ public class LetterController : MonoBehaviour
 
 				//ends the game if the player has run out of letters
 				//changed - used to be emptyLetterCount >= 5
-				if ((variables.totalLetters == 0) && (countToEndGame >= 7)) {
-						gameController.GetComponent<wordBuildingController> ().sendVariablestoScoreScreen ();
-						Application.LoadLevel ("ScoreScreen");
-				}
+                if ((variables.totalLetters == 0) && (countToEndGame >= 7))
+                {
+                    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
+                    Application.LoadLevel("ScoreScreen");
+                }
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
