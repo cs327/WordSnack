@@ -140,24 +140,26 @@ public class wordBuildingController : MonoBehaviour
 		}
 
 	IEnumerator ClosingTime(){
-		print ("END THE GAME FADE IT OUT");
+		print ("END THE GAME FADE IT OUT");	
 		fadingOut = true;
 		float t = variables.gameOverFadeInTimer;
 		greyOut.SetActive(true);
 		Color fadeFrom = greyOut.renderer.material.color;
 		Color fadeTo = greyOut.renderer.material.color;
 		fadeTo.a = 1.0f;
-
-		for(float i = 0; i<t; i+= Time.deltaTime){
-			greyOut.renderer.material.color = Color.Lerp(fadeFrom,fadeTo,i*(1/t));
-
+		float i = 0;
+		while(greyOut.renderer.material.color.a < 1){
+			i += Time.deltaTime/t;
+			Color beMe = new Color (1, 1,1,fadeFrom.a + i);
+			greyOut.renderer.material.color = beMe;
+			
 			yield return null;
 		}
 		closingTimeText.SetActive (true);
 		yield return new WaitForSeconds(variables.gameOverOnScreenTimer);
 		sendVariablestoScoreScreen ();
 		Application.LoadLevel ("ScoreScreen");
-
+		
 	}
 		void OnGUI ()
 		{
@@ -165,8 +167,7 @@ public class wordBuildingController : MonoBehaviour
 						GUIStyle style = new GUIStyle ();
 						style.normal.background = endGameButton;
 						if (GUI.Button (new Rect (Screen.width * 0.013f, Screen.height * 0.315f, Screen.width * 0.07f, Screen.width * 0.07f), "", style)) {
-								sendVariablestoScoreScreen ();
-								Application.LoadLevel ("ScoreScreen");
+							fadeOut = true;
 						}
 				}
 		}
