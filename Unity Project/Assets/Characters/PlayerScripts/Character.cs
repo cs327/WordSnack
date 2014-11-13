@@ -132,6 +132,10 @@ public class Character : MonoBehaviour
 								//increase the number of letters fed to the character
 								numLettersFedToMe++;
 								variables.lettersRemaining--;
+                            if (variables.timedMode)
+                            {
+                                variables.lettersRemaining++;
+                            }
 						}
 						variables.mostRecentLetterScore = (int)wordScore;
 						Debug.Log ("Score for the letters in " + word + " is " + wordScore);
@@ -177,6 +181,10 @@ public class Character : MonoBehaviour
 								//increase the number of letters fed to the character
 								trashedLetters++;
 								variables.lettersRemaining--;
+                            if (variables.timedMode)
+                                {
+                                    variables.lettersRemaining++;
+                                }
 					
 								//Trash Animation
 								Debug.Log ("Trashing Animation");
