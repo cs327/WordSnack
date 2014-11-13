@@ -116,8 +116,15 @@ public class wordBuildingController : MonoBehaviour
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
 						AlertPlayer();
 				}
-
-				lettersRemaining.text = "Tiles: " + variables.lettersRemaining.ToString ();
+                if (variables.lettersRemaining > variables.boardSize)
+                {
+                    lettersRemaining.text = "Tiles: " + (variables.lettersRemaining - variables.boardSize).ToString();
+                }
+                else
+                {
+                    lettersRemaining.text = "Tiles: " + 0;
+                }
+                
 				//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 				// if the instructions is enabled 
 				if (PlayerPrefs.GetInt ("instructions") == 0) {
