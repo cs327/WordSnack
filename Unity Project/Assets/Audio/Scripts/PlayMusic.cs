@@ -460,9 +460,10 @@ public class PlayMusic : MonoBehaviour {
     }
     void KitchenClosed()
     {
-        
+        if (variables.bellSound && !audioManager.audioSourceArray[36].isPlaying)
         {
-            //audioManager.Play(36);
+            audioManager.Play(36);
+            variables.bellSound = false;
         }
     }
 }
