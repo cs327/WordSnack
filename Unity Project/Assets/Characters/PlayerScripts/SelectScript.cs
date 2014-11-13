@@ -20,6 +20,7 @@ public class SelectScript : MonoBehaviour {
 	public Sprite selectedImage;
 	public Sprite standbyImage;
 	public SpriteRenderer thisSprite;
+    public TextMesh HighScore;
 
 	// variables added for displaying new UI - Ning
 	SpriteRenderer chooseTwoSprite;
@@ -89,6 +90,10 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacters[1] = gameObject;
 					variables.selectedCharacterNums[1] = character.characterNum;
 					character.charSelectOrder = 1;
+
+                    // There are two chars selected now. Set up high score text
+                    HighScore.text = ScoreManager.GetCharactersScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+                    Debug.Log("high score text = '"  + HighScore.text + "'");
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				thisSprite.sprite = selectedImage;
@@ -105,11 +110,15 @@ public class SelectScript : MonoBehaviour {
 			//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
 			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
 				toggleSelect();
+            // Characters changed, change High score text
+            HighScore.text = ScoreManager.GetCharactersScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+            Debug.Log("high score text = '" + HighScore.text + "'");
 			}
 
 			//last check, if a player deselects a character that is already active
 			else {
 				thisSprite.sprite = standbyImage;
+
 				gameObject.transform.position = startingSpot;
 				//gameObject.transform.localScale = new Vector3 (1.5f,1.5f,1);
 				//reverses the effects: moving gameObject back to original parent and removing it from arrays
@@ -121,10 +130,12 @@ public class SelectScript : MonoBehaviour {
 				selectNum = -1;
 				variables.currentCharacterSelectNum--;
 				character.charSelectOrder = -1;
+
+                // There aren't two characters selected, so delete high score text
+			    HighScore.text = "";
 			}
 		}
 	}
-
 
 	void toggleSelect ()
 	{

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using System.Collections;
@@ -49,6 +50,28 @@ public static class ScoreManager
         FileStream file = File.Create(Application.persistentDataPath + "/UserSettings.gd");
         bf.Serialize(file, setting);
         file.Close();
+    }
+
+    // Given two characters, this returns their highest score for the
+    // game mode currently set
+    public static string GetCharactersScore(string char1, string char2)
+    {
+        LoadScores();
+        string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
+        string charKey = gameMode + " " + GetCharacterHash(char1, char2);
+
+
+        if (!scoreList.ContainsKey(charKey))
+        {
+            Debug.Log("No previous best");
+            return "";
+        }
+        else
+        {
+            Debug.Log("Previous Best: " + scoreList[charKey][0].ToString());
+            return "Previous Best: " + scoreList[charKey][0].ToString();
+        }
+            
     }
 
     // Given two character names returns a unique value representing their set

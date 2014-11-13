@@ -337,6 +337,7 @@ public class VariableControl : MonoBehaviour {
 //            iPhoneType = 2;
 //        }
 //#if UNITY_IPHONE
+        ///*
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
 				iPhoneType = 1; 
@@ -365,7 +366,7 @@ public class VariableControl : MonoBehaviour {
 	//		case (iPhoneGeneration.iPhone6Plus):
 	//			iPhoneType = 2; 
 	//			break;
-			}
+			}//*/
 //#endif
 	}
 
