@@ -1,12 +1,12 @@
-Summary Screen Information
--Background is a black screen with 70% opacity that should appear over the playscreen.  
+Summary Screen Information 
 -Menu button appears over background
 -The receipt should scroll over the screen in a jerky way like a receipt being printed.  See reference .gif in folder.  ANIMATED REFERENCE DOES NOT SHOW CORRECT PLACEMENT OF BUTTONS
--Reference.png shows correct placement of buttons and receipt
+-The references show correct placement of buttons and receipt
+-“NEW HIGH SCORE” or “HIGH SCORE” along with the appropriate number is generated procedurally.
 -A mockup of what scoring will look like is included in this file for reference. 
--Each word made is displayed on its own line, under its respective character.  In the small column next to it, the raw number score is displayed, along with a multiplier if it matches the tastes of the creature. If it does not, no multiplier is displayed.
--At the bottom, the number of letters discarded, the points of those letters, the raw word score (just from the points of the letters) and the multiplier bonus (how many points were generated from multipliers) are each displayed in their own row.  
+-At the bottom, the number of letters discarded is displayed on its own row
 -On the very bottom, the Total appears. 
 -The font used for the text (which should also be used for generating scoring) is OCR A Std.
--The font color is #333333.
+-The font color for High Score text is #1c8315
+-The font color for regular scoring information is #333333
 -The menu button looks different in the reference, but it is in the correct location.

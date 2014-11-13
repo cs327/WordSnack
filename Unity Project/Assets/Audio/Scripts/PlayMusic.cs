@@ -182,6 +182,7 @@ public class PlayMusic : MonoBehaviour {
 			Pause();
 			ClickSound();
             TimedWarning();
+            KitchenClosed();
 
 		}
 		///////////////////////
@@ -457,5 +458,12 @@ public class PlayMusic : MonoBehaviour {
     {
         audioManager.Play(3);
     }
-
+    void KitchenClosed()
+    {
+        if (variables.bellSound && !audioManager.audioSourceArray[36].isPlaying)
+        {
+            audioManager.Play(36);
+            variables.bellSound = false;
+        }
+    }
 }
