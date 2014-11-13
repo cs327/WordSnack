@@ -32,9 +32,12 @@ public class Tutorial : MonoBehaviour
         //checkBox = new Rect (Screen.width * 0.32f, Screen.height * 0.54f, Screen.width * 0.04f, Screen.height * 0.055f);
         w = GameObject.Find("GameController").GetComponent<wordBuildingController>();
 
-        trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
+        // This sets up the first instruction screen
+        m.renderer.material.mainTexture = instructions[0];
         transform.localPosition = new Vector3(0.06f, 0.429f, -0.86f);
         transform.localScale = new Vector3(0.73f, 1.21f, 0.82f);
+        character1.transform.localPosition = new Vector3(character1.transform.localPosition.x, character1.transform.localPosition.y, 1);
+        character2.transform.localPosition = new Vector3(character2.transform.localPosition.x, character2.transform.localPosition.y, 1); 
     }
 
     void Update()
@@ -73,16 +76,14 @@ public class Tutorial : MonoBehaviour
         {
             Debug.Log("Return from update");
             return;
-        }
-
+        }// Clicked on first instruction, go to trash instruction
         if (m.renderer.material.mainTexture == instructions[0])
         {
             m.renderer.material.mainTexture = instructions[1];
+            trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
             transform.localPosition = new Vector3(0.06f, 0.429f, -0.86f);
             transform.localScale = new Vector3(0.73f, 1.21f, 0.82f);
-            character1.transform.localPosition = new Vector3(character1.transform.localPosition.x, character1.transform.localPosition.y, 1);
-            character2.transform.localPosition = new Vector3(character2.transform.localPosition.x, character2.transform.localPosition.y, 1);           
-        }      
+        }// Clicked on trash screen, hide instructions  
         else if (m.renderer.material.mainTexture == instructions[1])
         {
             ScoreManager.NeverShowInstructions = true;
