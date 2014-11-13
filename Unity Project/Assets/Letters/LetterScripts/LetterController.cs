@@ -255,35 +255,26 @@ public class LetterController : MonoBehaviour
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
 						//Debug.Log ("Logic says we MUST return a vowel and we've got one to give");
 						char vowelToReturn = vowelsInLetterBag [Random.Range (0, vowelsInLetterBag.Count () - 1)]; //pick a random vowel
-                        if (!variables.timedMode)
-                        {
-                            variables.totalVowels--; //decrement total number of Vowels
-                            variables.totalLetters--; //decrement total number of letters
-                            variables.letterBag[vowelToReturn] = variables.letterBag[vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
-                        }
+						variables.totalVowels--; //decrement total number of Vowels
+						variables.totalLetters--; //decrement total number of letters
+						variables.letterBag [vowelToReturn] = variables.letterBag [vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
 						//Debug.Log ("Returning " + vowelToReturn);
 						return vowelToReturn; //return that vowel!
 				}
 				if (numVowels >= variables.maxNumVowels) { //If we already have enough vowels (or too many, but we screwed up if that happens), return a consonant
 						//Debug.Log ("Logic says we MUST return a consonant");
 						char consonantToReturn = consonantsInLetterBag [Random.Range (0, consonantsInLetterBag.Count () - 1)]; //pick a random consonant
-                        if (!variables.timedMode)
-                        {
-                            variables.letterBag[consonantToReturn] = variables.letterBag[consonantToReturn] - 1; //decrement the number of that letter in the global letterBag
-                            variables.totalLetters--; //decrement total number of letters to display to player
-                        }
+						variables.letterBag [consonantToReturn] = variables.letterBag [consonantToReturn] - 1; //decrement the number of that letter in the global letterBag
+						variables.totalLetters--; //decrement total number of letters to display to player
 						//Debug.Log ("Returning " + consonantToReturn);
 						return consonantToReturn;
 				} else { //Else, we're free to return anything - we don't have the max number of vowels or too few vowels
 						//Debug.Log ("Logic says we can return anything we want.");
 						char letterToReturn = serializedLetterBag [Random.Range (0, serializedLetterBag.Count () - 1)];
+						variables.letterBag [letterToReturn] = variables.letterBag [letterToReturn] - 1; //decrement the number of that letter in the global letterBag
 						if (vowelList.Contains (letterToReturn))
-                            if (!variables.timedMode)
-                            {
-                                variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1; //decrement the number of that letter in the global letterBag
-                                variables.totalVowels--; //if it's a vowel, decrement global vowel number
-                                variables.totalLetters--; //decrement total number of tiles in bag to display to player
-                            }
+								variables.totalVowels--; //if it's a vowel, decrement global vowel number
+						variables.totalLetters--; //decrement total number of tiles in bag to display to player
 						//Debug.Log ("Returning " + letterToReturn);
 						return letterToReturn;
 				}
