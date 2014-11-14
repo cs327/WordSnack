@@ -457,9 +457,6 @@ public class Character : MonoBehaviour
 								
 								//Output the score text
 								if (characterNum != 0) {
-										// destroy any scores that already might be displayed
-										Destroy(variables.scoreText.gameObject);
-
 										variables.scoreText.color = Color.white;
 										variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
 

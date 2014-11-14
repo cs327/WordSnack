@@ -13,7 +13,9 @@ public class ScoreTextScript : MonoBehaviour {
 	public bool score;
 	public bool bothTastes;
 	public bool longWord;
+	public bool longWordPartTwo;
 	bool longWait;
+	bool firstWait;
 
 	// need to access some variables
 	private VariableControl variables;
@@ -30,10 +32,14 @@ public class ScoreTextScript : MonoBehaviour {
 
 		done = false;
 		longWait = false;
+		longWordPartTwo = false;
 
 		GetComponent<TextMesh>().text = baseScore.ToString();
+
+		firstWait = true;
 	}
 	
+
 	// Update is called once per frame
 	// original timings from game design
 	// base display time 0.25
@@ -52,11 +58,9 @@ public class ScoreTextScript : MonoBehaviour {
 			// it's a score prefab
 			// if there was a big meal bonus, we have to disregard it for now since it is displayed separately at the end of the counting
 			if (longWord) {
-				//Debug.Log("longword! base: " + baseScore + " total: " + totalScore + " bonus: " + (int)variables.bigMealBonus);
-
 				totalScore /= (int)variables.bigMealBonus;
-
-				//Debug.Log("after adjustment total: " + totalScore);
+				longWord = false;
+				longWordPartTwo = true;
 			}
 
 			// once the base score display time has passed, check for the multiplier
@@ -68,10 +72,13 @@ public class ScoreTextScript : MonoBehaviour {
 						timePassed = 0.0f;
 						waitTime = variables.BigMealDisplayTime;
 
+						// don't need to do this again!
+						longWait = false;
+
 					} else {
+						// ALL DONE!
 						timePassed = 10.0f;
 
-						// ALL DONE!
 						// check the thresholds and change color accordingly
 						if (baseScore >= variables.smallScoreThreshold && baseScore < variables.mediumScoreThreshold) {
 							GetComponent<TextMesh>().color = variables.smallColor;
@@ -81,20 +88,29 @@ public class ScoreTextScript : MonoBehaviour {
 							GetComponent<TextMesh>().color = variables.largeColor;
 						}
 
-						scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.6f * alpha;
+						scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 2.0f * alpha;
 						GetComponent<TextMesh> ().transform.Translate (new Vector3 (0.0f, scorePosY, 0.0f));
 
-						alpha -= timeAmount * 0.5f;
+						// this 3.0 seems random, but it works best for the timing... :-)
+						alpha -= timeAmount * (3.0f - variables.ScoreFadeTime);
 						GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
 					}
 				}
 
 				if (baseScore < totalScore) {
 					// there had to be a taste multiplier
+					// need to count up faster if there's a larger difference between base score and total score
+					float countUpAmount = (float)totalScore / 5.0f;
+
 					// count up and size up
-					baseScore++;
+					baseScore += (int)countUpAmount;
 					sizes += 0.7f;
 					this.transform.localScale = new Vector3(sizes, sizes, 1.0f);
+
+					// don't want to go too far
+					if (baseScore > totalScore) {
+						baseScore = totalScore;
+					}
 
 					GetComponent<TextMesh>().text = baseScore.ToString();
 
@@ -105,12 +121,12 @@ public class ScoreTextScript : MonoBehaviour {
 					timePassed = 0.0f;
 					waitTime = variables.TasteMatchDisplayTime;
 
-					if (longWord) {
+					if (longWordPartTwo) {
 						// put the big meal bonus back in to the total, so we can count up to it, but after the multiplier wait
 						totalScore *= (int)variables.bigMealBonus;
 
 						// don't do this again or we'll be here forever
-						longWord = false;
+						longWordPartTwo = false;
 						longWait = true;
 					
 					} else {
@@ -122,67 +138,49 @@ public class ScoreTextScript : MonoBehaviour {
 		} else {
 			// it's a multiplier prefab
 			if (timePassed > waitTime) {
-				GetComponent<TextMesh>().text = "x" + multiplier.ToString();
-				if (bothTastes) {
-					GetComponent<TextMesh>().text += " Delicious!!";
-				} else {
-					GetComponent<TextMesh>().text += " Tasty!";
-				}
-			
-				// not a long word, so start fading earlier
-				alpha -= timeAmount * 0.5f;
-				GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
+				
+				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
+				if (longWord && !firstWait) {
+					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal Bonus!!";
+					longWord = false;
+					
+					timePassed = 0.0f;
+					waitTime = variables.BigMealDisplayTime;
+				
+				} else if (!longWord && !firstWait) {
+					// we should be DONE
+					timePassed = 10.0f;
 
-			} else {
-				// don't display anything until the wait time has happened
+					// this 3.0 seems random, but it works best for the timing... :-)
+					alpha -= timeAmount * (3.0f - variables.ScoreFadeTime);
+					GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);					
+				
+				} else {
+					GetComponent<TextMesh>().text = "x" + multiplier.ToString();
+					if (bothTastes) {
+						GetComponent<TextMesh>().text += " Delicious!!";
+					} else {
+						GetComponent<TextMesh>().text += " Tasty!";
+					}
+
+					// keep it there for the taste match display time
+					timePassed = 0.0f;
+					waitTime = variables.TasteMatchDisplayTime;
+
+					// don't make it disappear while we're waiting this time
+					firstWait = false;
+				}
+
+			} else if (firstWait) {
+				// don't display anything until the wait time has happened, so it pops up when the numbers start counting up
 				GetComponent<TextMesh>().text = "";
 			}
 		}
 
 
-
-		// for scores: reduce alpha and move upwards towards total score, but only if the score matches the total score the person received
-		// AND make sure the appropriate time has passed
-		/*
-		if (baseScore == totalScore && timePassed > variables.BaseScoreDisplayTime) {
-			// check the thresholds and change color accordingly
-			if (baseScore >= variables.smallScoreThreshold && baseScore < variables.mediumScoreThreshold) {
-				GetComponent<TextMesh>().color = variables.smallColor;
-			} else if (baseScore >= variables.mediumScoreThreshold && baseScore < variables.largeScoreThreshold) {
-				GetComponent<TextMesh>().color = variables.mediumColor;
-			} else if (baseScore >= variables.largeScoreThreshold) {
-				GetComponent<TextMesh>().color = variables.largeColor;
-			}
-
-			scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 0.6f * alpha;
-			GetComponent<TextMesh> ().transform.Translate (new Vector3 (0.0f, scorePosY, 0.0f));
-
-			alpha -= timeAmount * 0.5f;
-			GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
-		}
-		*/
-
-		// for multipliers: reduce alpha after taste match display time
-		/*
-		if (multiplier != 0 && timePassed > variables.TasteMatchDisplayTime) {
-			if (longWord) {
-				// big meal, so change the multiplier text and hold it there longer
-				GetComponent<TextMesh> ().text = "x" + variables.bigMealBonus + " Big Meal";
-				
-				if (timePassed > (variables.TasteMatchDisplayTime + variables.BigMealDisplayTime)) {
-					alpha -= timeAmount * 0.8f;
-					GetComponent<TextMesh> ().color = new Color (1.0f, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
-				}
-			} else {
-				// not a long word, so start fading earlier
-				alpha -= timeAmount * 0.5f;
-				GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
-			}
-		}
-		*/
-
+		// destroy when disappeared
 		if (alpha <= 0.0f) {
-			Destroy (gameObject);
+			Destroy(gameObject);
 		}
 	}
 }
