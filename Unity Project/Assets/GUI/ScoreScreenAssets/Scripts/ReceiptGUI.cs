@@ -14,14 +14,17 @@ public class ReceiptGUI : MonoBehaviour
     public int characterNum;
     public float rowOffset;
     // A constant used to adjust how far down the receipt should scroll
-    public float highestOffset;
+    public float EmptyReceiptLength;
     // A constant used to adjust how far up the receipt should scroll
-    public float lowestOffset;
-    public GameObject lightRowPrefab;
-    public GameObject darkRowPrefab;
+    public Camera camera;
+    public float lowestPoint;
+    public float screenOffset;
+    public GameObject RowPrefab;
     public GameObject bottomInstance;
+    public Vector3 firstRowPos;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
+    
 
     int selectedCharacter1;
     int selectedCharacter2;
@@ -43,6 +46,8 @@ public class ReceiptGUI : MonoBehaviour
     void Start()
     {
         #region Get Receipt Info
+        firstRowPos = bottomInstance.transform.position;
+        Debug.Log("First row pos: " + firstRowPos.ToString());
         selectedCharacter1 = PlayerPrefs.GetInt("Character 1");
         selectedCharacter2 = PlayerPrefs.GetInt("Character 2");
 
@@ -77,6 +82,12 @@ public class ReceiptGUI : MonoBehaviour
         char1WordsFed.Add("Nope 20 9");
         char1WordsFed.Add("cat 30 5");
         char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        char1WordsFed.Add("cat 30 5");
+        char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
 
         #endregion
 
@@ -84,7 +95,6 @@ public class ReceiptGUI : MonoBehaviour
 		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
 
         #region Create wordsFed Rows
-        Vector3 pos;
         for(int i = 0; i < rowCount; i++)
         {
             string char1Word = "";
@@ -96,13 +106,13 @@ public class ReceiptGUI : MonoBehaviour
             {
                 wordInfo = char1WordsFed[i].Split(' ');
                 char1Word = wordInfo[0];
-                char1Score = wordInfo[1] + "x" + wordInfo[2];
+                char1Score = (Convert.ToInt32(wordInfo[1])*Convert.ToInt32(wordInfo[2])).ToString();
             }
             if (i < char2WordsFed.Count)
             {
                 wordInfo = char2WordsFed[i].Split(' ');
                 char2Word = wordInfo[0];
-                char2Score = wordInfo[1] + "x" + wordInfo[2];
+                char2Score = (Convert.ToInt32(wordInfo[1]) * Convert.ToInt32(wordInfo[2])).ToString();
             }
             AddRow(char1Word, char1Score, char2Word, char2Score, i);
         }
@@ -129,86 +139,52 @@ public class ReceiptGUI : MonoBehaviour
         }
         #endregion
 
-        // Add code for bottom of receipt
-        bottomInstance.transform.parent = gameObject.transform;
-        pos = bottomInstance.transform.position;
-
-        ReceiptMover.lowestPos = lowestOffset;
-        ReceiptMover.highestPos = lowestOffset - rowCount*rowOffset + highestOffset;
+        #region Setup Scroll Limits
+        ReceiptMover.lowestPos = lowestPoint;
+        ReceiptMover.highestPos = lowestPoint - screenOffset+ rowCount*rowOffset + EmptyReceiptLength;
 
         if (ReceiptMover.highestPos <= ReceiptMover.lowestPos)
         {
-            ReceiptMover.lowestPos = lowestOffset;
-            ReceiptMover.highestPos = lowestOffset;
+            ReceiptMover.lowestPos = lowestPoint;
+            ReceiptMover.highestPos = lowestPoint;
         }
 
         Debug.Log("The receipt's highest point: " + ReceiptMover.highestPos);
         Debug.Log("The receipt's lowest point: " + ReceiptMover.lowestPos);
-        
-        //Debug.Log("ALERT");
-        //Debug.Log("Setting endpos - " + ReceiptMover.endPos);
-        //Debug.Log("Setting startpos - " + ReceiptMover.lowestPos);
         Debug.Log("ROWCOUNT: " + rowCount);
+        #endregion 
 
-        #region Scrapcode
-
-        //        pos.y += rowOffset * rowCount;
-//		pos.y += rowOffset * rowCount;
-
-//		Component[] meshes;
-//		for (int i = 0; i < gameObject.transform.childCount; i++) {
-//			if (gameObject.transform.GetChild(i).GetComponent<TextMesh>() != null) {
-//				meshes
-//			}
-//		}
-//        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-//		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-//        foreach(TextMesh mesh in meshes)
-//        {
-//            switch(mesh.name)
-//            {
-//                case "Discarded Letters Mesh":
-//					if (GameObject.Find("WordsFed") != null) {
-//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-//					} else {
-//						mesh.text = "0";
-//					}
-////                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
-//                    break;
-//                case "Discarded Points Mesh":
-//					if (GameObject.Find("WordsFed") != null) {
-//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore.ToString ();
-//					} else {
-//						mesh.text = "0";
-//					}
-////                    mesh.text = PlayerPrefs.GetInt("Trashed Letter Score").ToString();
-//                    break;
-//                case "Word Score Mesh":
-//					if (GameObject.Find("WordsFed") != null) {
-//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().rawScore.ToString();
-//					} else {
-//						mesh.text = "0";
-//					}
-////                    mesh.text = PlayerPrefs.GetInt("Total Letter Score").ToString();
-//                    break;
-//                case "Multiplier Bonus Mesh":
-//					if (GameObject.Find("WordsFed") != null) {
-//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().multiScore.ToString();
-//					} else {
-//						mesh.text = "0";
-//					}
-////                    mesh.text = PlayerPrefs.GetInt("Total Multiplier Score").ToString();
-//                    break;
-//                case "Total Mesh":
-//					if (GameObject.Find("WordsFed") != null) {
-//						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-//					} else {
-//						mesh.text = "0";
-//					}
-////                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
-//                    break;
-//            }
-//        }
+        #region Setup Receipt Bottom
+        bottomInstance.transform.parent = transform;
+        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+        foreach(TextMesh mesh in meshes)
+        {
+            Debug.Log("Mesh is named: " + mesh);
+            switch(mesh.name)
+            {
+                case "Discarded Tiles":
+					if (GameObject.Find("WordsFed") != null) {
+						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
+                        
+					} else {
+						mesh.text = "0";
+					}
+//                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+                    break;
+                case "Total":
+					if (GameObject.Find("WordsFed") != null) {
+						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+					} else {
+						mesh.text = "0";
+					}
+//                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+                    break;
+            }
+        }
+        firstRowPos = bottomInstance.transform.position;
+        firstRowPos.y = firstRowPos.y - rowCount * rowOffset;
+        bottomInstance.transform.position = firstRowPos;
 
         #endregion
 
@@ -220,14 +196,10 @@ public class ReceiptGUI : MonoBehaviour
     public void AddRow(string char1Word, string char1Score, string char2Word, string char2Score, int rowIndex)
     {
         Vector3 pos;
-        GameObject rowInstance;
-        if (rowIndex % 2 == 0)
-            rowInstance = (GameObject)Instantiate(darkRowPrefab);
-        else
-            rowInstance = (GameObject)Instantiate(lightRowPrefab);
+        GameObject rowInstance = (GameObject)Instantiate(RowPrefab);
         rowInstance.transform.parent = gameObject.transform;
         pos = rowInstance.transform.position;
-        pos.y += rowOffset * rowIndex;
+        pos.y -= rowOffset * rowIndex;
         rowInstance.transform.position = pos;
 
         Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
@@ -254,8 +226,7 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-		bottomInstance.transform.position = gameObject.transform.position;
-		bottomInstance.transform.position += (rowOffset * (rowCount + 8.5F) * Vector3.up);
+		
     }
 
     //Method to display words fed
