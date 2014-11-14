@@ -452,9 +452,10 @@ public class Character : MonoBehaviour
 										variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
 
 										Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
+										variables.scoreText.GetComponent<ScoreTextScript>().score = true;
 										variables.scoreText.GetComponent<ScoreTextScript>().baseScore = letterScore;
 										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
-										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = 0;
+										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
 										if (word.Length > 6) {
 											variables.scoreText.GetComponent<ScoreTextScript>().longWord = true;
@@ -471,8 +472,9 @@ public class Character : MonoBehaviour
 										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);										
 
 										Vector3 multPos = new Vector3 (0.0f, 1.0f, 0.0f);
-										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
-										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
+										variables.scoreText.GetComponent<ScoreTextScript>().score = false;
+										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
+										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
 										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
 										if (variables.doubleTasteSound == true) {

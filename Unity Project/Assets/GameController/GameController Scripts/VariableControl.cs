@@ -342,7 +342,7 @@ public class VariableControl : MonoBehaviour {
 
 	void KeepTime(){
 		if(Application.loadedLevelName == "WordMaking"){
-			if (timerStart == true)
+			if (timerStart == true && globalTimer > 0)
 			{
 				globalTimer -= Time.deltaTime;
 			}

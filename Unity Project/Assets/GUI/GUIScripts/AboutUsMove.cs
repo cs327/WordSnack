@@ -12,14 +12,14 @@ public class AboutUsMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(pos.z > -10.43f ){
+		if(pos.z > -8.9f ){
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}
 	}
 
 	void OnMouseDown(){
-		if (pos.z > -10.43f) {
+		if (pos.z > -8.9f) {
 		}else{
 			Application.LoadLevel ("StartScreenTest");
 		}
