@@ -164,21 +164,10 @@ public class ReceiptGUI : MonoBehaviour
             switch(mesh.name)
             {
                 case "Discarded Tiles":
-					if (GameObject.Find("WordsFed") != null) {
-						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-                        
-					} else {
-						mesh.text = "0";
-					}
-//                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+					mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
                     break;
                 case "Total":
-					if (GameObject.Find("WordsFed") != null) {
-						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-					} else {
-						mesh.text = "0";
-					}
-//                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
                     break;
             }
         }

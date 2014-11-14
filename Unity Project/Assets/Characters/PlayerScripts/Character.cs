@@ -452,7 +452,8 @@ public class Character : MonoBehaviour
 								
 								Debug.Log (word + " " + letterScore.ToString () + " " + multiplier.ToString ());
 
-								wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
+								
+                                wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 								
 								//Output the score text
 								if (characterNum != 0) {
