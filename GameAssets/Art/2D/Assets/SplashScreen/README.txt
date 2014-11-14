@@ -1,9 +1,7 @@
 Splash Screen Information
--framerate: 24fps
--resolution: half (568x320)
--dimensions: 4544x3820
--frame layout: 8 across by 12 down
--size on disc: 425kb (diner anim)
--size on disc: 364kb (ship only
+-48 frames, at half resolution each (568x320)
+-the frames are laid out 6 across by 8 down
+-image size is 3408x2560 total
+-image size on disc is 5.1 megabytes total
 
 The spaceship doesn't enter visibility until frame 23, and leaves visibility on frame 94.
