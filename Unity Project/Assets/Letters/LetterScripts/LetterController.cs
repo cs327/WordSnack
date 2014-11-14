@@ -47,7 +47,7 @@ public class LetterController : MonoBehaviour
 		't', 'v', 'w', 'x', 'y', 'z',
 	};
 		public int numVowels;
-	public bool stopSearch = false;
+	    public bool stopSearch = false;
 
 
 		// Use this for initialization
@@ -252,6 +252,31 @@ public class LetterController : MonoBehaviour
 						return '.';
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
+                {
+                    //Removes a consonant from the bag.
+                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
+                    variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
+
+                    //Creates an additional "A" or "E" if there are no vowels left
+                    float aOrE = Random.Range(0.0f, 1.0f);
+
+                    if (aOrE < 0.5f)
+                    {
+                        variables.numA++;
+                        variables.totalVowels++;
+                        vowelsInLetterBag.Add('a');
+
+
+                    }
+                    if (aOrE >= 0.5f)
+                    {
+                        variables.numE++;
+                        variables.totalVowels++;
+                        vowelsInLetterBag.Add('e');
+                    }
+
+
+                }
 						Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
 						//Debug.Log ("Logic says we MUST return a vowel and we've got one to give");

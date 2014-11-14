@@ -12,7 +12,9 @@ public class wordBuildingController : MonoBehaviour
 	public bool fadeOut = false;
 	public GameObject greyOut;
 	public GameObject closingTimeText;
-
+	public GameObject alertFlash;
+	public bool alertStarted = false;
+	public bool secondAlert = false;
 
 		public VariableControl variables;
 		public GameObject variableController;
@@ -112,9 +114,17 @@ public class wordBuildingController : MonoBehaviour
 				//updates time on screen
 		        else {
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
+						AlertPlayer();
 				}
-
-				lettersRemaining.text = "Tiles: " + variables.lettersRemaining.ToString ();
+                if (variables.lettersRemaining > variables.boardSize)
+                {
+                    lettersRemaining.text = "Tiles: " + (variables.lettersRemaining - variables.boardSize).ToString();
+                }
+                else
+                {
+                    lettersRemaining.text = "Tiles: " + 0;
+                }
+                
 				//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 				// if the instructions is enabled 
 				if (PlayerPrefs.GetInt ("instructions") == 0) {
@@ -192,6 +202,47 @@ public class wordBuildingController : MonoBehaviour
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum = variables.trashedLetters;
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore = variables.trashedLetterScore;
 	}
+
+	public void AlertPlayer(){
+		if(variables.globalTimer < variables.secondAlert && !secondAlert){
+			secondAlert = true;
+			timeRemaining.color = Color.magenta;
+			StartCoroutine(FlashColor(alertFlash));
+		}
+		if(variables.globalTimer < variables.firstAlert && !alertStarted){
+			StartCoroutine(FlashColor(alertFlash));
+		}
+	}
+
+	IEnumerator FlashColor(GameObject flash){
+		flash.SetActive(true);
+		alertStarted = true;
+		Color fadeFrom = flash.renderer.material.color;
+		float maxA = .3f;
+		float minA = .05f;
+		float t = 2f;
+		float i = 0;
+		while(flash.renderer.material.color.a < maxA){
+			i += Time.deltaTime/t;
+			Color beMe = new Color (1, 0,0,minA + i);
+			flash.renderer.material.color = beMe;
+			
+			yield return null;
+		}
+		float j = 0;
+		while(flash.renderer.material.color.a > minA){
+			j += Time.deltaTime/t;
+			Color beMe = new Color (1, 0,0,maxA - j);
+			flash.renderer.material.color = beMe;
+			yield return null;
+		}
+		if(secondAlert){
+			StartCoroutine(FlashColor(flash));
+		}
+
+	}
+
+
 
 		public void unhightlightAllTastes ()
 		{

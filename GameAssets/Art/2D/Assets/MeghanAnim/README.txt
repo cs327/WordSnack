@@ -1,4 +1,5 @@
 Meghan Animation Info:
-1-24: Idle
-25-45: Reject
+Idle: 1-23
+Eat: 24-45
+Reject: 46-64
 Plays at 24 fps
