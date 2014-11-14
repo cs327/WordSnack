@@ -4,8 +4,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
 
 public class ReceiptGUI : MonoBehaviour
 {
@@ -163,7 +161,10 @@ public class ReceiptGUI : MonoBehaviour
             switch(mesh.name)
             {
                 case "Discarded Tiles":
-					mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+                    string trashed = PlayerPrefs.GetInt("Trashed Letters").ToString();
+                    for (int i = 4 - trashed.Length; i > 0; i--)
+                        trashed = " " + trashed;
+                    mesh.text = trashed;
                     break;
                 case "Total":
                     mesh.text = PlayerPrefs.GetFloat("Score").ToString();
