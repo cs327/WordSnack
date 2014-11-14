@@ -74,27 +74,26 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
 
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
 
         #endregion
 
-        // Add code to create rows/fill them
-		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
-
         #region Create wordsFed Rows
+        // Add code to create rows/fill them
+        rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
         for(int i = 0; i < rowCount; i++)
         {
             string char1Word = "";
@@ -176,8 +175,6 @@ public class ReceiptGUI : MonoBehaviour
         bottomInstance.transform.position = firstRowPos;
 
         #endregion
-
-
     }
 
     // Given the strings to be displayed on a row, as well as the row number (starting at zero)
