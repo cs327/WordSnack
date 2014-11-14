@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Unity Project/Assets/Characters/SpriteSheets/FredSpriteSheet 1.png.meta
 guid: 191a539d3bc1b46a89d6760c1754424c
+=======
+guid: 2d1609a56c88340339f38f491ff1307d
+>>>>>>> cfdd76411deb14946130d7e9b11b06d62d99f934:Unity Project/Assets/Characters/SpriteSheets/FredSpriteSheet.png.meta
 TextureImporter:
   serializedVersion: 2
   mipmaps:
