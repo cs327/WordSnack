@@ -99,6 +99,9 @@ public class wordBuildingController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
+				if(variables.timedMode){
+					AlertPlayer();
+				}
 				//Ends the game if time runs out:
 				if (variables.timedMode && variables.globalTimer < 0) {
 					fadeOut = true;
@@ -114,7 +117,6 @@ public class wordBuildingController : MonoBehaviour
 				//updates time on screen
 		        else {
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
-						AlertPlayer();
 				}
                 if (variables.lettersRemaining > variables.boardSize)
                 {
