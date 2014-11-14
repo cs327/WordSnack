@@ -1,25 +1,24 @@
 fileFormatVersion: 2
-guid: c56668c0acae64e09886e0f2ac9d539e
+guid: f10f800c2e7da478990c6201e56ec1a0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TrashSpriteSheet 1
-    21300002: TrashSpriteSheet 1_0
-    21300004: TrashSpriteSheet 1_1
-    21300006: TrashSpriteSheet 1_2
-    21300008: TrashSpriteSheet 1_3
-    21300010: TrashSpriteSheet 1_4
-    21300012: TrashSpriteSheet 1_5
-    21300014: TrashSpriteSheet 1_6
-    21300016: TrashSpriteSheet 1_7
-    21300018: TrashSpriteSheet 1_8
-    21300020: TrashSpriteSheet 1_9
-    21300022: TrashSpriteSheet 1_10
-    21300024: TrashSpriteSheet 1_11
-    21300026: TrashSpriteSheet 1_12
-    21300028: TrashSpriteSheet 1_13
-    21300030: TrashSpriteSheet 1_14
-    21300032: TrashSpriteSheet 1_15
-    21300034: TrashSpriteSheet 1_16
+    21300000: TrashcanSpriteSheet_0
+    21300002: TrashcanSpriteSheet_1
+    21300004: TrashcanSpriteSheet_2
+    21300006: TrashcanSpriteSheet_3
+    21300008: TrashcanSpriteSheet_4
+    21300010: TrashcanSpriteSheet_5
+    21300012: TrashcanSpriteSheet_6
+    21300014: TrashcanSpriteSheet_7
+    21300016: TrashcanSpriteSheet_8
+    21300018: TrashcanSpriteSheet_9
+    21300020: TrashcanSpriteSheet_10
+    21300022: TrashcanSpriteSheet_11
+    21300024: TrashcanSpriteSheet_12
+    21300026: TrashcanSpriteSheet_13
+    21300028: TrashcanSpriteSheet_14
+    21300030: TrashcanSpriteSheet_15
+    21300032: TrashcanSpriteSheet_16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -42,7 +41,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 4096
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -61,7 +60,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: TrashSpriteSheet 1_0
+    - name: TrashcanSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -71,7 +70,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_1
+    - name: TrashcanSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -81,7 +80,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_2
+    - name: TrashcanSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -91,7 +90,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_3
+    - name: TrashcanSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -101,7 +100,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_4
+    - name: TrashcanSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -111,7 +110,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_5
+    - name: TrashcanSpriteSheet_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -121,7 +120,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_6
+    - name: TrashcanSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -131,7 +130,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_7
+    - name: TrashcanSpriteSheet_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -141,7 +140,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_8
+    - name: TrashcanSpriteSheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -151,7 +150,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_9
+    - name: TrashcanSpriteSheet_9
       rect:
         serializedVersion: 2
         x: 256
@@ -161,7 +160,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_10
+    - name: TrashcanSpriteSheet_10
       rect:
         serializedVersion: 2
         x: 512
@@ -171,7 +170,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_11
+    - name: TrashcanSpriteSheet_11
       rect:
         serializedVersion: 2
         x: 768
@@ -181,7 +180,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_12
+    - name: TrashcanSpriteSheet_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -191,7 +190,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_13
+    - name: TrashcanSpriteSheet_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -201,7 +200,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_14
+    - name: TrashcanSpriteSheet_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -211,7 +210,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_15
+    - name: TrashcanSpriteSheet_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -221,7 +220,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: TrashSpriteSheet 1_16
+    - name: TrashcanSpriteSheet_16
       rect:
         serializedVersion: 2
         x: 0
