@@ -223,24 +223,29 @@ public class wordBuildingController : MonoBehaviour
 		alertStarted = true;
 		Color fadeFrom = flash.renderer.material.color;
 		float maxA = .3f;
-		float minA = .05f;
+		float minA = .001f;
 		float t = 2f;
 		float i = 0;
-		timeRemaining.transform.localScale = biggerSize;
+		//timeRemaining.transform.localScale = biggerSize;
 		while(flash.renderer.material.color.a < maxA){
 			i += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,minA + i);
 			flash.renderer.material.color = beMe;
+
+			timeRemaining.transform.localScale = Vector3.Lerp(normalSize,biggerSize,i/maxA);
 			yield return null;
 		}
 		float j = 0;
-		timeRemaining.transform.localScale = normalSize;
+		//timeRemaining.transform.localScale = normalSize;
 		while(flash.renderer.material.color.a > minA){
 			j += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,maxA - j);
 			flash.renderer.material.color = beMe;
+
+			timeRemaining.transform.localScale = Vector3.Lerp(biggerSize,normalSize,j/maxA);
 			yield return null;
 		}
+		timeRemaining.transform.localScale = normalSize;
 		if(secondAlert){
 			StartCoroutine(FlashColor(flash));
 		}
