@@ -217,6 +217,8 @@ public class wordBuildingController : MonoBehaviour
 	}
 
 	IEnumerator FlashColor(GameObject flash){
+		Vector3 normalSize = timeRemaining.transform.localScale;
+		Vector3 biggerSize = timeRemaining.transform.localScale*1.3f;
 		flash.SetActive(true);
 		alertStarted = true;
 		Color fadeFrom = flash.renderer.material.color;
@@ -224,14 +226,15 @@ public class wordBuildingController : MonoBehaviour
 		float minA = .05f;
 		float t = 2f;
 		float i = 0;
+		timeRemaining.transform.localScale = biggerSize;
 		while(flash.renderer.material.color.a < maxA){
 			i += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,minA + i);
 			flash.renderer.material.color = beMe;
-			
 			yield return null;
 		}
 		float j = 0;
+		timeRemaining.transform.localScale = normalSize;
 		while(flash.renderer.material.color.a > minA){
 			j += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,maxA - j);
