@@ -312,10 +312,10 @@ public class Character : MonoBehaviour
 												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.3f, 0.0f));
 										} else if (this.characterNum == 2) {
-												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
+												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.6f, 0.0f));
 										} else if (this.characterNum == 3) {
-												this.transform.localScale = new Vector3 (3.0f, 3.0f, 1.0f);
+												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, -1.0f, 0.0f));
 										} else if (this.characterNum == 4) {
 												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
@@ -452,7 +452,8 @@ public class Character : MonoBehaviour
 								
 								Debug.Log (word + " " + letterScore.ToString () + " " + multiplier.ToString ());
 
-								wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
+								
+                                wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 								
 								//Output the score text
 								if (characterNum != 0) {

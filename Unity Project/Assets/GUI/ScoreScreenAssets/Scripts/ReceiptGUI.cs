@@ -74,27 +74,26 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
 
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
 
         #endregion
 
-        // Add code to create rows/fill them
-		rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
-
         #region Create wordsFed Rows
+        // Add code to create rows/fill them
+        rowCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
         for(int i = 0; i < rowCount; i++)
         {
             string char1Word = "";
@@ -164,21 +163,10 @@ public class ReceiptGUI : MonoBehaviour
             switch(mesh.name)
             {
                 case "Discarded Tiles":
-					if (GameObject.Find("WordsFed") != null) {
-						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-                        
-					} else {
-						mesh.text = "0";
-					}
-//                    mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+					mesh.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
                     break;
                 case "Total":
-					if (GameObject.Find("WordsFed") != null) {
-						mesh.text = GameObject.Find ("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-					} else {
-						mesh.text = "0";
-					}
-//                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
                     break;
             }
         }
@@ -187,8 +175,6 @@ public class ReceiptGUI : MonoBehaviour
         bottomInstance.transform.position = firstRowPos;
 
         #endregion
-
-
     }
 
     // Given the strings to be displayed on a row, as well as the row number (starting at zero)
