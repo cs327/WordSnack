@@ -1,6 +1,71 @@
 fileFormatVersion: 2
 guid: ff319b97b075b408aa914103692392bf
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: FredSpriteSheet_0
+    21300002: FredSpriteSheet_1
+    21300004: FredSpriteSheet_2
+    21300006: FredSpriteSheet_3
+    21300008: FredSpriteSheet_4
+    21300010: FredSpriteSheet_5
+    21300012: FredSpriteSheet_6
+    21300014: FredSpriteSheet_7
+    21300016: FredSpriteSheet_8
+    21300018: FredSpriteSheet_9
+    21300020: FredSpriteSheet_10
+    21300022: FredSpriteSheet_11
+    21300024: FredSpriteSheet_12
+    21300026: FredSpriteSheet_13
+    21300028: FredSpriteSheet_14
+    21300030: FredSpriteSheet_15
+    21300032: FredSpriteSheet_16
+    21300034: FredSpriteSheet_17
+    21300036: FredSpriteSheet_18
+    21300038: FredSpriteSheet_19
+    21300040: FredSpriteSheet_20
+    21300042: FredSpriteSheet_21
+    21300044: FredSpriteSheet_22
+    21300046: FredSpriteSheet_23
+    21300048: FredSpriteSheet_24
+    21300050: FredSpriteSheet_25
+    21300052: FredSpriteSheet_26
+    21300054: FredSpriteSheet_27
+    21300056: FredSpriteSheet_28
+    21300058: FredSpriteSheet_29
+    21300060: FredSpriteSheet_30
+    21300062: FredSpriteSheet_31
+    21300064: FredSpriteSheet_32
+    21300066: FredSpriteSheet_33
+    21300068: FredSpriteSheet_34
+    21300070: FredSpriteSheet_35
+    21300072: FredSpriteSheet_36
+    21300074: FredSpriteSheet_37
+    21300076: FredSpriteSheet_38
+    21300078: FredSpriteSheet_39
+    21300080: FredSpriteSheet_40
+    21300082: FredSpriteSheet_41
+    21300084: FredSpriteSheet_42
+    21300086: FredSpriteSheet_43
+    21300088: FredSpriteSheet_44
+    21300090: FredSpriteSheet_45
+    21300092: FredSpriteSheet_46
+    21300094: FredSpriteSheet_47
+    21300096: FredSpriteSheet_48
+    21300098: FredSpriteSheet_49
+    21300100: FredSpriteSheet_50
+    21300102: FredSpriteSheet_51
+    21300104: FredSpriteSheet_52
+    21300106: FredSpriteSheet_53
+    21300108: FredSpriteSheet_54
+    21300110: FredSpriteSheet_55
+    21300112: FredSpriteSheet_56
+    21300114: FredSpriteSheet_57
+    21300116: FredSpriteSheet_58
+    21300118: FredSpriteSheet_59
+    21300120: FredSpriteSheet_60
+    21300122: FredSpriteSheet_61
+    21300124: FredSpriteSheet_62
+    21300126: FredSpriteSheet_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
