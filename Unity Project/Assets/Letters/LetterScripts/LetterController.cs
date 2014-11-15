@@ -84,14 +84,7 @@ public class LetterController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-			if(!variables.timedMode){
-				if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-					CheckPermutations(myLetters);
-				}
-				if(noWordsLeft){
-					variables.endGame = true;
-				}
-			}
+			
 				string word = sendWord ();
 				//check if there even is a word!
 				if (word == null || word.Length < variables.minWordLength || !checkForWord (word)) {
@@ -130,6 +123,14 @@ public class LetterController : MonoBehaviour
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
+		 	if(!variables.timedMode){
+				if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
+					CheckPermutations(myLetters);
+				}
+				if(noWordsLeft){
+					variables.endGame = true;
+				}
+			}
 		  
 		}
 
