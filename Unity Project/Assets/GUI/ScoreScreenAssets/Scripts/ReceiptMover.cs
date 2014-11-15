@@ -8,7 +8,7 @@ public class ReceiptMover : MonoBehaviour
     public bool winSound; //for PlayMusic script
     public static float lowestPos;
     public static float highestPos;
-    public bool Touched = false;
+    public bool Touched;
     public Vector3 lastClickPos;
     private Vector3 gameObjectPosAtLastClick;
     public float scrollScale;
@@ -18,7 +18,7 @@ public class ReceiptMover : MonoBehaviour
     {
         // This can be programmatically changed
         //lowestPos = -7.470931f;
-        
+        Touched = false;
         c = GameObject.Find("Main Camera").GetComponent<Camera>();
         winSound = true;
 
