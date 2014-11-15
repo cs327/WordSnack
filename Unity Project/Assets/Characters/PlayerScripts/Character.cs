@@ -132,10 +132,6 @@ public class Character : MonoBehaviour
 								//increase the number of letters fed to the character
 								numLettersFedToMe++;
 								variables.lettersRemaining--;
-                            if (variables.timedMode)
-                            {
-                                variables.lettersRemaining++;
-                            }
 						}
 						variables.mostRecentLetterScore = (int)wordScore;
 						Debug.Log ("Score for the letters in " + word + " is " + wordScore);
@@ -181,10 +177,6 @@ public class Character : MonoBehaviour
 								//increase the number of letters fed to the character
 								trashedLetters++;
 								variables.lettersRemaining--;
-                            if (variables.timedMode)
-                                {
-                                    variables.lettersRemaining++;
-                                }
 					
 								//Trash Animation
 								Debug.Log ("Trashing Animation");
@@ -309,19 +301,19 @@ public class Character : MonoBehaviour
 						{ 5, "Meghan"}
 					*/
 										if (this.characterNum == 1) {
-												this.transform.localScale = new Vector3 (2.5f, 2.5f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, 0.3f, 0.0f));
+												this.transform.localScale = new Vector3 (2.05f, 2.05f, 1.05f);
+												this.transform.Translate (new Vector3 (0.0f, 0.53f, 0.0f));
 										} else if (this.characterNum == 2) {
-												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, 0.6f, 0.0f));
+												this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+												this.transform.Translate (new Vector3 (0.0f, -0.6f, 0.0f));
 										} else if (this.characterNum == 3) {
-												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, -1.0f, 0.0f));
+												this.transform.localScale = new Vector3 (1.2f, 1.2f, 1.2f);
+												this.transform.Translate (new Vector3 (0.0f, 0.038f, 0.0f));
 										} else if (this.characterNum == 4) {
 												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
 												this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
 										} else if (this.characterNum == 5) {
-												this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.0f);
+												this.transform.localScale = new Vector3 (1.59f, 1.59f, 1.59f);
 												this.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
 										}
 								}
@@ -452,8 +444,7 @@ public class Character : MonoBehaviour
 								
 								Debug.Log (word + " " + letterScore.ToString () + " " + multiplier.ToString ());
 
-								
-                                wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
+								wordsFedToMe.Add (word + " " + letterScore + " " + multiplier);
 								
 								//Output the score text
 								if (characterNum != 0) {
@@ -461,9 +452,10 @@ public class Character : MonoBehaviour
 										variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
 
 										Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
+										variables.scoreText.GetComponent<ScoreTextScript>().score = true;
 										variables.scoreText.GetComponent<ScoreTextScript>().baseScore = letterScore;
 										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
-										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = 0;
+										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
 										if (word.Length > 6) {
 											variables.scoreText.GetComponent<ScoreTextScript>().longWord = true;
@@ -480,8 +472,9 @@ public class Character : MonoBehaviour
 										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);										
 
 										Vector3 multPos = new Vector3 (0.0f, 1.0f, 0.0f);
-										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
-										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
+										variables.scoreText.GetComponent<ScoreTextScript>().score = false;
+										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
+										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
 										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
 										if (variables.doubleTasteSound == true) {

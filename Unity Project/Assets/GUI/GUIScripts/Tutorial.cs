@@ -20,6 +20,8 @@ public class Tutorial : MonoBehaviour
     GameObject character2;
     public bool clickSound;
     public bool timerBegin = false;
+	GameObject leftTaste;
+	GameObject rightTaste;
     
     // Use this for initialization
     void Start()
@@ -41,16 +43,14 @@ public class Tutorial : MonoBehaviour
         character2 = w.character2;
         character1.transform.localPosition = new Vector3(character1.transform.localPosition.x, character1.transform.localPosition.y, 1);
         character2.transform.localPosition = new Vector3(character2.transform.localPosition.x, character2.transform.localPosition.y, 1); 
-    }
+   
+		leftTaste = GameObject.Find ("leftPanel");
+		rightTaste = GameObject.Find ("rightPanel");
+	}
 
     void Update()
     {
-        // the first instruction box will slide in from the top
-        if (pos.z <= -0.41f)
-        {
-            pos.z += Time.deltaTime * 8.0f;
-            transform.localPosition = pos;
-        }
+
         if (ScoreManager.NeverShowInstructions)
         {
             //Debug.Log("never show?  = " + neverShowInstructions);
@@ -82,18 +82,30 @@ public class Tutorial : MonoBehaviour
         if (m.renderer.material.mainTexture == instructions[0])
         {
             m.renderer.material.mainTexture = instructions[1];
-            trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
-            transform.localPosition = new Vector3(0.06f, 0.429f, -0.86f);
-            transform.localScale = new Vector3(0.73f, 1.21f, 0.82f);
+			trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
+			transform.localPosition = new Vector3(-1.32f, 0.429f, -0.41f);
+			transform.localScale = new Vector3(0.67f, 1.21f, 0.64f);
         }// Clicked on trash screen, hide instructions  
         else if (m.renderer.material.mainTexture == instructions[1])
         {
-            ScoreManager.NeverShowInstructions = true;
-            parentPos.x = -20.0f;
-            transform.parent.transform.position = parentPos;
-            GameObject.Find("closingTimeBG").GetComponent<BoxCollider>().enabled = false;
-            GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
-            Destroy(gameObject);
+			m.renderer.material.mainTexture = instructions[2];
+			trash.position = new Vector3(trash.position.x, trash.position.y, 0.73f);
+			transform.localPosition = new Vector3(0.062f, 0.429f, -0.82f);
+			transform.localScale = new Vector3(0.76f, 1.21f, 0.89f);
+
+			leftTaste.transform.localPosition = new Vector3(-0.06f, 6.65f, -0.02f);
+			rightTaste.transform.localPosition = new Vector3(0.03f, 6.9f, -0.01f);
+
         }
+		else if (m.renderer.material.mainTexture == instructions[2])
+		{
+
+			ScoreManager.NeverShowInstructions = true;
+			parentPos.x = -20.0f;
+			transform.parent.transform.position = parentPos;
+			GameObject.Find("closingTimeBG").GetComponent<BoxCollider>().enabled = false;
+			GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+			Destroy(gameObject);
+		}
     }
 }
