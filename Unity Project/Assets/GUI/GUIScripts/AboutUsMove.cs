@@ -4,6 +4,7 @@ using System.Collections;
 public class AboutUsMove : MonoBehaviour {
 	Vector3 pos;
 	public float speed;
+    public bool clickSound;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class AboutUsMove : MonoBehaviour {
 		if (pos.z > -8.9f) {
 		}else{
 			Application.LoadLevel ("StartScreenTest");
+            clickSound = true;
 		}
 	}
 }
