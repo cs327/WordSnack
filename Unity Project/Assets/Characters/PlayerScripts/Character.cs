@@ -300,26 +300,27 @@ public class Character : MonoBehaviour
 						{ 4, "Stella"},
 						{ 5, "Meghan"}
 					*/
-										if (this.characterNum == 1) {
-												this.transform.localScale = new Vector3 (2.05f, 2.05f, 1.05f);
-												this.transform.Translate (new Vector3 (0.0f, 0.53f, 0.0f));
-										} else if (this.characterNum == 2) {
-												this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, -0.6f, 0.0f));
-										} else if (this.characterNum == 3) {
-												this.transform.localScale = new Vector3 (1.2f, 1.2f, 1.2f);
-												this.transform.Translate (new Vector3 (0.0f, 0.038f, 0.0f));
-										} else if (this.characterNum == 4) {
-												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
-										} else if (this.characterNum == 5) {
-												this.transform.localScale = new Vector3 (1.59f, 1.59f, 1.59f);
-												this.transform.Translate (new Vector3 (0.0f, 1.0f, 0.0f));
-										}
-								}
-						}
-						//make the Tastes Visible on screen if it is the character selectionphase
-						CreateVisibleTastes ();
+					
+					if (this.characterNum == 1) {
+						this.transform.localScale = new Vector3 (1.7f, 1.7f, 1.05f);
+						this.transform.Translate (new Vector3 (0.0f, -0.05f, 0.0f));
+					} else if (this.characterNum == 2) {
+						this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+						this.transform.Translate (new Vector3 (0.0f, 0.0f, 0.0f));
+					} else if (this.characterNum == 3) {
+						this.transform.localScale = new Vector3 (1.2f, 1.2f, 1.2f);
+						this.transform.Translate (new Vector3 (0.0f, -1.25f, 0.0f));
+					} else if (this.characterNum == 4) {
+						this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+						this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
+					} else if (this.characterNum == 5) {
+						this.transform.localScale = new Vector3 (1.59f, 1.59f, 1.59f);
+						this.transform.Translate (new Vector3 (0.0f, .55f, 0.0f));
+					}
+				}
+			}
+			//make the Tastes Visible on screen if it is the character selectionphase
+			CreateVisibleTastes ();
 			
 				}
 		}
