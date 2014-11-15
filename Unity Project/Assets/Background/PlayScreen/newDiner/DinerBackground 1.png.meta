@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: be6e0bc5b3edf42628e76db20994e320
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: DinerBackground 1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
