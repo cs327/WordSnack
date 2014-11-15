@@ -34,7 +34,7 @@ public class ReceiptMover : MonoBehaviour
 
     public Vector3 GetNewPosition(Vector3 deltaPos)
     {
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = gameObject.transform.localPosition;
         pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos, highestPos);
         return pos;
     }
@@ -59,21 +59,21 @@ public class ReceiptMover : MonoBehaviour
         if ((int) lowestPos == -7)
             Debug.Log("Didn't set startpos correctly");
 
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = gameObject.transform.localPosition;
 
         if (Touched)
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Debug.Log("Moved receipt by " + Input.GetTouch(0).deltaPosition.y);
-                gameObject.transform.position = GetNewPosition(Input.GetTouch(0).deltaPosition * scrollScale);
+                gameObject.transform.localPosition = GetNewPosition(Input.GetTouch(0).deltaPosition * scrollScale);
             }
             if (Input.mousePresent && Input.GetMouseButton(0))
             {
                 //Debug.Log(Input.mousePosition.y);
                 //Debug.Log(lastClickPos.y);
                 //Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
-                gameObject.transform.position = gameObjectPosAtLastClick;
+                gameObject.transform.localPosition = gameObjectPosAtLastClick;
                 gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * scrollScale);
             }
         }
@@ -84,11 +84,11 @@ public class ReceiptMover : MonoBehaviour
                 float change = Time.deltaTime;
                 Debug.Log("started at : " + pos.y + " moved to " + pos.y + change);
                 pos.y = Mathf.Clamp(pos.y + change * 1.0f, pos.y, highestPos);
-                gameObject.transform.position = GetNewPosition(Time.deltaTime * 2.0f);
+                gameObject.transform.localPosition = GetNewPosition(Time.deltaTime * 2.0f);
             }
             else
             {
-                Debug.Log("Resting place: " + transform.position.y);
+                Debug.Log("Resting place: " + transform.localPosition.y);
                 Touched = true;
                 //Debug.Log("Arrived at " + gameObject.transform.position);
             }
