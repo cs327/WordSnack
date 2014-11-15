@@ -253,8 +253,15 @@ public class LetterController : MonoBehaviour
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
                 {
-                    //Removes a consonant from the bag.
-                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
+                    
+					//Removes a consonant from the bag.
+					char letterToReturn = serializedLetterBag[0];
+					for (int i = 1; i < serializedLetterBag.Count; i++) {
+						if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
+							letterToReturn = serializedLetterBag[i];
+						}
+					}
+//                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
                     variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
 
                     //Creates an additional "A" or "E" if there are no vowels left
@@ -409,12 +416,32 @@ public class LetterController : MonoBehaviour
 
 						//checks if any letters on the board should be moved to the stove and adds them to the stove array if so
 						if (lettersOnBoard [i] != null) {
+								// all letters on the board should be white always
+								lettersOnBoard[i].gameObject.renderer.material.color = Color.white;
+
 								if (!lettersOnBoard [i].onStove && lettersOnBoard [i].selected) {
 										lettersOnStove [numLettersOnStove] = lettersOnBoard [i];
 										positionOnBoard [numLettersOnStove] = i;
 										lettersOnBoard [i].onStove = true;
 										lettersOnBoard [i].orderOnStove = numLettersOnStove;
 										numLettersOnStove++;
+								}
+
+								// check for a valid word, and if there is one, color the letters gold-like
+								if (variables.isWord) {
+									if (variables.isWord) {
+										for (int x = 0; x < lettersOnStove.Length; x++) {
+											if (lettersOnStove[x] != null) {
+												lettersOnStove[x].gameObject.renderer.material.color = new Color(0.8f, 0.8f, 0.2f);
+											}
+										}
+									} else {
+										for (int x = 0; x < lettersOnStove.Length; x++) {
+											if (lettersOnStove[x] != null) {
+												lettersOnStove[x].gameObject.renderer.material.color = new Color(1.0f, 1.0f, 1.0f);
+											}
+										}
+									}									
 								}
 
 								//checks if any of the letters on the board should be removed from the stove, and if so removes them from the stove array
@@ -424,7 +451,6 @@ public class LetterController : MonoBehaviour
 										numLettersOnStove = lettersOnBoard [i].orderOnStove;
 										for (int x = lettersOnBoard[i].orderOnStove; x < boardSize; x++) {
 												if (lettersOnStove [x] != null) {
-
 														lettersOnStove [x].orderOnStove = -1;
 														lettersOnStove [x].selected = false;
 														lettersOnStove [x].onStove = false;
@@ -437,7 +463,7 @@ public class LetterController : MonoBehaviour
 								if (lettersOnStove [i] != null && lettersOnStove [i].transform.position != stoveSpots [i]) {
 										//lettersOnStove[i].transform.position = stoveSpots[i];
 										if (!lettersOnStove [i].isMoving) {
-												StartCoroutine (animateLetters (lettersOnStove [i], lettersOnStove [i].transform.position, stoveSpots [i]));
+												StartCoroutine (animateLetters (lettersOnStove [i], lettersOnStove [i].transform.position, stoveSpots [i]));												
 										}
 								}
 								//checks all letters that are on the board but not the stove, and puts them in the correct position

@@ -9,10 +9,10 @@ public class pause : MonoBehaviour {
 	public Texture2D [] pauseButtons;
 	public GameObject resumeButtonObj;
 	public GameObject exitButtonObj;
-	public GameObject greyBg;
+	//public GameObject greyBg;
 	public bool unpause = false;
 	public bool clickSound;
-
+    public GameObject blackout;
 //notes on this script:
 //the pause function is called by clicking on the button,
 //however the unpause function is called in a tiny script on the resume button,
@@ -57,9 +57,10 @@ public class pause : MonoBehaviour {
 		//set the global paused variable to true and activate the objects that 
 		//constitute the pause menu
 		variables.paused = true;
-		greyBg.SetActive(true);
+		//greyBg.SetActive(true);
 		resumeButtonObj.SetActive(true);
 		exitButtonObj.SetActive(true);
+        blackout.transform.position = new Vector3(0.07f,0.0f, -1.79f);
 	}
 
 	void unpauseGame(){
@@ -67,8 +68,9 @@ public class pause : MonoBehaviour {
 		//longer need it), set the global pause to off, and deactivate all objects associated with pause menu
 		unpause = false;
 		variables.paused = false;
-		greyBg.SetActive(false);
+		//greyBg.SetActive(false);
 		resumeButtonObj.SetActive(false);
 		exitButtonObj.SetActive(false);
+        blackout.transform.position = new Vector3(10f,10.0f, -1.79f);
 	}
 }

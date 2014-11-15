@@ -70,6 +70,15 @@ public class PlayMusic : MonoBehaviour {
 			variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
 		}
 
+        if (Application.loadedLevelName == "About")
+        {
+            if (GameObject.Find("Text").GetComponent<AboutUsMove>().clickSound)
+            {
+                audioManager.Play(1);
+                GameObject.Find("Text").GetComponent<AboutUsMove>().clickSound = false;
+            }
+        }
+
 		if (Application.loadedLevelName == "SplashScreen")
 		{
 			//Stops any other music or sound tracks that may still be playing.

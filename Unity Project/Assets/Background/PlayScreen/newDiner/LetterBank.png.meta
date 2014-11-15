@@ -2,8 +2,7 @@ fileFormatVersion: 2
 guid: 6f04a25c172b541eab6358640eed4e14
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LetterBank 1
-    21300002: LetterBank
+    21300000: LetterBank
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
