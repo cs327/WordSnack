@@ -81,9 +81,9 @@ public class ReceiptMover : MonoBehaviour
         {
             if (pos.y <= highestPos - .01)
             {
-                //Debug.Log(" pos.y " + pos.y + " endpos " + endPos);
-                //Debug.Log("oldpos " + pos.y + " newPos " + (pos.y + Time.deltaTime*2.0f).ToString());
-                pos.y = Mathf.Clamp(pos.y + Time.deltaTime * 2.0f, pos.y + Time.deltaTime * 2.0f, highestPos);
+                float change = Time.deltaTime;
+                Debug.Log("started at : " + pos.y + " moved to " + pos.y + change);
+                pos.y = Mathf.Clamp(pos.y + change * 1.0f, pos.y, highestPos);
                 gameObject.transform.position = GetNewPosition(Time.deltaTime * 2.0f);
             }
             else
