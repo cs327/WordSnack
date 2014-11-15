@@ -1,0 +1,12 @@
+Summary Screen Information 
+-Menu button appears over background
+-The receipt should scroll over the screen in a jerky way like a receipt being printed.  See reference .gif in folder.  ANIMATED REFERENCE DOES NOT SHOW CORRECT PLACEMENT OF BUTTONS
+-The references show correct placement of buttons and receipt
+-“NEW HIGH SCORE” or “HIGH SCORE” along with the appropriate number is generated procedurally.
+-A mockup of what scoring will look like is included in this file for reference. 
+-At the bottom, the number of letters discarded is displayed on its own row
+-On the very bottom, the Total appears. 
+-The font used for the text (which should also be used for generating scoring) is OCR A Std.
+-The font color for High Score text is #1c8315
+-The font color for regular scoring information is #333333
+-The menu button looks different in the reference, but it is in the correct location.

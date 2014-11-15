@@ -3,7 +3,9 @@ guid: 71b44eaa1e7e043838d3caad4d694e5a
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - gameController: {fileID: 100000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
+  - variableController: {fileID: 100000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+  - characterParent: {instanceID: 0}
+  - chooseTwoMessage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
