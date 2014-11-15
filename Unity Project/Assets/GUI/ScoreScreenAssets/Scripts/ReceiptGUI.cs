@@ -73,15 +73,15 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed = new List<string>();
         //char2WordsFed = new List<string>();
 
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
-        char1WordsFed.Add("Nope 20 9");
-        char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
+        //char1WordsFed.Add("Nope 20 9");
+        //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
