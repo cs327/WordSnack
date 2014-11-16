@@ -78,7 +78,7 @@ public class LetterController : MonoBehaviour
 				}
 				variables.letterGenerationSound = true;
 				CreateSteam ();
-				//CheckPermutations("mlxae");
+				//CheckPermutations("xxx");
 		}
 
 		// Update is called once per frame
@@ -400,8 +400,9 @@ public class LetterController : MonoBehaviour
 						CreateLetters (newLetters);
 			 
 				}
-				stopSearch = false;
+				
 				if(!variables.timedMode){
+				stopSearch = false;
 					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
 						CheckPermutations(myLetters);
 					}
