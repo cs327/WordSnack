@@ -8,6 +8,7 @@ using System;
 public class ReceiptGUI : MonoBehaviour
 {
     #region Variables
+	public TextMesh test;
     public GUIStyle big;
     public int characterNum;
     public float rowOffset;
@@ -141,6 +142,17 @@ public class ReceiptGUI : MonoBehaviour
             AddRow("", "", "", "");
             AddRow("", "", "", "");
             AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
         }
 
         #endregion
@@ -161,16 +173,22 @@ public class ReceiptGUI : MonoBehaviour
         #endregion 
 
         #region Setup Receipt Bottom
-        bottomInstance.transform.parent = transform;
+//        bottomInstance.transform.parent = transform;
         Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
 		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
         foreach(TextMesh mesh in meshes)
         {
             Debug.Log("Mesh is named: " + mesh);
+			string trashed = "";
             switch(mesh.name)
             {
+
                 case "Discarded Tiles":
-                    string trashed = PlayerPrefs.GetInt("Trashed Letters").ToString();
+					if (GameObject.Find("WordsFed") != null) {
+                    	trashed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
+					} else {
+						trashed = "0";
+					}
                     for (int i = 4 - trashed.Length; i > 0; i--)
                         trashed = " " + trashed;
                     mesh.text = trashed;
@@ -224,7 +242,9 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-		
+		test.text = "Rows: " + rowCount;
+		Vector3 currentPos = bottomInstance.transform.position;
+		bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
     }
 
     //Method to display words fed
