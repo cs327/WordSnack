@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 02d26e74f13684fad93d0f6f3fdb7fd3
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: MeghanTasteRight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
