@@ -123,14 +123,6 @@ public class LetterController : MonoBehaviour
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
-		 	if(!variables.timedMode){
-				if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-					CheckPermutations(myLetters);
-				}
-				if(noWordsLeft){
-					variables.endGame = true;
-				}
-			}
 		  
 		}
 
@@ -510,6 +502,15 @@ public class LetterController : MonoBehaviour
 				numLettersOnStove = 0;
 				variables.letterGenerationSound = true;
 				stopSearch = false;
+				if(!variables.timedMode){
+					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
+						CheckPermutations(myLetters);
+					}
+				if(noWordsLeft){
+					variables.endGame = true;
+				}
+			}
+				
 
 		}
 
@@ -698,6 +699,7 @@ public class LetterController : MonoBehaviour
 				return count;
 		}
 	void CheckPermutations(string input){
+		combinationList.Clear();
 		CreateCombinations("" , input);
 		for(int i = 2; i < input.Length+1; i++){
 			foreach(string check in combinationList){
