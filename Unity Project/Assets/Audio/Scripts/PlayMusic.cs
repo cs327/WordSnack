@@ -462,6 +462,9 @@ public class PlayMusic : MonoBehaviour {
         if (Mathf.RoundToInt(variables.globalTimer) == 16)
         {
             audioManager.Play(27);
+        }
+		if (Mathf.RoundToInt(variables.globalTimer) == 15)
+        {
 			audioManager.Play(36);
         }
     }
