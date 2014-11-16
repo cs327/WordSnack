@@ -8,7 +8,7 @@ public class ReceiptMover : MonoBehaviour
     public bool winSound; //for PlayMusic script
     public static float lowestPos;
     public static float highestPos;
-    public bool Touched = false;
+    public bool Touched;
     public Vector3 lastClickPos;
     private Vector3 gameObjectPosAtLastClick;
     public float scrollScale;
@@ -18,7 +18,7 @@ public class ReceiptMover : MonoBehaviour
     {
         // This can be programmatically changed
         //lowestPos = -7.470931f;
-        
+        Touched = false;
         c = GameObject.Find("Main Camera").GetComponent<Camera>();
         winSound = true;
 
@@ -34,7 +34,7 @@ public class ReceiptMover : MonoBehaviour
 
     public Vector3 GetNewPosition(Vector3 deltaPos)
     {
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = gameObject.transform.localPosition;
         pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos, highestPos);
         return pos;
     }
@@ -59,21 +59,21 @@ public class ReceiptMover : MonoBehaviour
         if ((int) lowestPos == -7)
             Debug.Log("Didn't set startpos correctly");
 
-        Vector3 pos = gameObject.transform.position;
+        Vector3 pos = gameObject.transform.localPosition;
 
         if (Touched)
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
             {
                 Debug.Log("Moved receipt by " + Input.GetTouch(0).deltaPosition.y);
-                gameObject.transform.position = GetNewPosition(Input.GetTouch(0).deltaPosition * scrollScale);
+                gameObject.transform.localPosition = GetNewPosition(Input.GetTouch(0).deltaPosition * scrollScale);
             }
             if (Input.mousePresent && Input.GetMouseButton(0))
             {
                 //Debug.Log(Input.mousePosition.y);
                 //Debug.Log(lastClickPos.y);
                 //Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
-                gameObject.transform.position = gameObjectPosAtLastClick;
+                gameObject.transform.localPosition = gameObjectPosAtLastClick;
                 gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * scrollScale);
             }
         }
@@ -81,14 +81,14 @@ public class ReceiptMover : MonoBehaviour
         {
             if (pos.y <= highestPos - .01)
             {
-                //Debug.Log(" pos.y " + pos.y + " endpos " + endPos);
-                //Debug.Log("oldpos " + pos.y + " newPos " + (pos.y + Time.deltaTime*2.0f).ToString());
-                pos.y = Mathf.Clamp(pos.y + Time.deltaTime * 2.0f, pos.y + Time.deltaTime * 2.0f, highestPos);
-                gameObject.transform.position = GetNewPosition(Time.deltaTime * 2.0f);
+                float change = Time.deltaTime;
+                Debug.Log("started at : " + pos.y + " moved to " + pos.y + change);
+                pos.y = Mathf.Clamp(pos.y + change * 1.0f, pos.y, highestPos);
+                gameObject.transform.localPosition = GetNewPosition(Time.deltaTime * 2.0f);
             }
             else
             {
-                Debug.Log("Resting place: " + transform.position.y);
+                Debug.Log("Resting place: " + transform.localPosition.y);
                 Touched = true;
                 //Debug.Log("Arrived at " + gameObject.transform.position);
             }

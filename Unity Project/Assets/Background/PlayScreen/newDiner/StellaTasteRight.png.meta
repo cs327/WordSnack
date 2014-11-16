@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: c9ae9cd644ece4ee9b42d8c37ac9fcd9
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: StellaTasteRight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -310,26 +310,26 @@ public class PlayMusic : MonoBehaviour {
 		//Plays the beginning of the sizzle sound when a letter is added to the stove.
 		if (sizzleStart == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0 )
 		{
-			audioManager.Play(10); // start sound goes 
+			audioManager.Play(9); // start sound goes 
 			sizzleStart = true;
 		   
 		}
 		//Loops the middle of the sizzle sound while the letter is on the stove.
-		if (sizzleStart == true && audioManager.audioSourceArray [10].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
+		if (sizzleStart == true && audioManager.audioSourceArray [9].isPlaying == false && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > 0)
 		{
 //           audioManager.SetVolume(11, 0.2f); //play sizzle loop
-			audioManager.PlayLoop(11);
+			audioManager.PlayLoop(10);
 			sizzled = true;
 			playedSteamEnd = false;
 
 		} else
 		{
-			audioManager.Stop(11);
+			audioManager.Stop(10);
 		}
 		//Plays the end of the sizzle sound when the letter is removed from the stove.
-		if(playedSteamEnd == false && audioManager.audioSourceArray[10].isPlaying == false && sizzled == true && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
+		if(playedSteamEnd == false && audioManager.audioSourceArray[9].isPlaying == false && sizzled == true && GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
 		{
-			audioManager.Play(37);
+			audioManager.Play(11);
 			Debug.Log("steamend");
 			playedSteamEnd = true;
 
@@ -385,6 +385,7 @@ public class PlayMusic : MonoBehaviour {
 			audioManager.Play(19);
 		variables.shuffleSound = false;
 
+		; 
 	}
 	void LetterGenerationSound()
 	{
