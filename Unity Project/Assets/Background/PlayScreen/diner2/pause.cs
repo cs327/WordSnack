@@ -60,7 +60,8 @@ public class pause : MonoBehaviour {
 		//greyBg.SetActive(true);
 		resumeButtonObj.SetActive(true);
 		exitButtonObj.SetActive(true);
-        blackout.transform.position = new Vector3(0.07f,0.0f, -1.79f);
+		blackout.SetActive(true);
+       // blackout.transform.position = new Vector3(0.07f,0.0f, -1.79f);
 	}
 
 	void unpauseGame(){
@@ -71,6 +72,7 @@ public class pause : MonoBehaviour {
 		//greyBg.SetActive(false);
 		resumeButtonObj.SetActive(false);
 		exitButtonObj.SetActive(false);
-        blackout.transform.position = new Vector3(10f,10.0f, -1.79f);
+		blackout.SetActive(false);
+        //blackout.transform.position = new Vector3(10f,10.0f, -1.79f);
 	}
 }
