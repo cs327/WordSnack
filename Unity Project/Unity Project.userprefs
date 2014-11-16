@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../Downloads/WordSnack-master/Unity Project/Assets/Prefabs/AudioManager_Word.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/VariableControl.cs">
     <Files>
-      <File FileName="../../../Downloads/WordSnack-master/Unity Project/Assets/letterGenScript/LetterController.cs" Line="1" Column="1" />
-      <File FileName="../../../Downloads/WordSnack-master/Unity Project/Assets/Prefabs/AudioManager_Word.cs" Line="51" Column="1" />
+      <File FileName="Assets/Letters/LetterScripts/LetterController.cs" Line="703" Column="27" />
+      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="156" Column="63" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="15" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
