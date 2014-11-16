@@ -12,7 +12,7 @@ public class VariableControl : MonoBehaviour {
 	public bool timerStart = false;
 	public bool paused = false;
 	public bool endGame = false;
-
+	public float closingTimeDelay = .5f;
 	public int firstAlert = 30;
 	public int secondAlert = 15;
 

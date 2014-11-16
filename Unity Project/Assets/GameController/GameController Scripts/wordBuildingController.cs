@@ -155,6 +155,7 @@ public class wordBuildingController : MonoBehaviour
 		print ("END THE GAME FADE IT OUT");
         variables.bellSound = true;
 		fadingOut = true;
+		yield return new WaitForSeconds(variables.closingTimeDelay);
 		float t = variables.gameOverFadeInTimer;
 		greyOut.SetActive(true);
 		Color fadeFrom = greyOut.renderer.material.color;
