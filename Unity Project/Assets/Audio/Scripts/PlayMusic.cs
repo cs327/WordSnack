@@ -82,7 +82,7 @@ public class PlayMusic : MonoBehaviour {
 		if (Application.loadedLevelName == "SplashScreen")
 		{
 			//Stops any other music or sound tracks that may still be playing.
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
@@ -94,7 +94,7 @@ public class PlayMusic : MonoBehaviour {
 		if (Application.loadedLevelName == "StartScreenTest")
 		{
 			//Stops any music that should not be playing
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
@@ -117,7 +117,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 
 			//Stops any sounds that should not be playing.
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
@@ -177,7 +177,7 @@ public class PlayMusic : MonoBehaviour {
 			//Loops the GamePlay Music.
             if (!variables.timedMode)
             {
-                audioManager.PlayLoop(5);
+                audioManager.PlayLoop(34);
             }
             else if (variables.timedMode)
             {
@@ -200,7 +200,7 @@ public class PlayMusic : MonoBehaviour {
 		if (Application.loadedLevelName == "ScoreScreen")
 		{
 			//Stops the GamePlay Music
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
 		   
 		// if (gameObject.GetComponent<ReceiptMove>().winSound == true)
@@ -405,7 +405,7 @@ public class PlayMusic : MonoBehaviour {
 	{
 		if (variables.paused == true)
 		{
-			audioManager.Pause(5);
+			audioManager.Pause(34);
             audioManager.Pause(35);
 		}
 		//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
@@ -462,6 +462,7 @@ public class PlayMusic : MonoBehaviour {
         if (Mathf.RoundToInt(variables.globalTimer) == 16)
         {
             audioManager.Play(27);
+			audioManager.Play(36);
         }
     }
     void CharacterSelectTwo()
@@ -470,9 +471,9 @@ public class PlayMusic : MonoBehaviour {
     }
     void KitchenClosed()
     {
-        if (variables.bellSound && !audioManager.audioSourceArray[36].isPlaying)
+        if (variables.bellSound && !audioManager.audioSourceArray[37].isPlaying)
         {
-            audioManager.Play(36);
+            audioManager.Play(37);
             variables.bellSound = false;
         }
     }
