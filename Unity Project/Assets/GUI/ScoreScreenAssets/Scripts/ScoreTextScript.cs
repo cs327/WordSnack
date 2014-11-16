@@ -100,7 +100,10 @@ public class ScoreTextScript : MonoBehaviour {
 				if (baseScore < totalScore) {
 					// there had to be a taste multiplier
 					// need to count up faster if there's a larger difference between base score and total score
-					float countUpAmount = (float)totalScore / 5.0f;
+					float countUpAmount = 1;
+					if (totalScore > 10) {
+						countUpAmount = (float)totalScore / 5.0f;
+					}
 
 					// count up and size up
 					baseScore += (int)countUpAmount;
@@ -141,7 +144,7 @@ public class ScoreTextScript : MonoBehaviour {
 				
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
 				if (longWord && !firstWait) {
-					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal Bonus!!";
+					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal!";
 					longWord = false;
 					
 					timePassed = 0.0f;
