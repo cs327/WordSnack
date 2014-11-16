@@ -155,6 +155,7 @@ public class wordBuildingController : MonoBehaviour
 		print ("END THE GAME FADE IT OUT");
         variables.bellSound = true;
 		fadingOut = true;
+		yield return new WaitForSeconds(variables.closingTimeDelay);
 		float t = variables.gameOverFadeInTimer;
 		greyOut.SetActive(true);
 		Color fadeFrom = greyOut.renderer.material.color;
@@ -208,10 +209,11 @@ public class wordBuildingController : MonoBehaviour
 	public void AlertPlayer(){
 		if(variables.globalTimer < variables.secondAlert && !secondAlert){
 			secondAlert = true;
-			timeRemaining.color = Color.magenta;
+			timeRemaining.color = Color.red;
 			StartCoroutine(FlashColor(alertFlash));
 		}
 		if(variables.globalTimer < variables.firstAlert && !alertStarted){
+			timeRemaining.color = Color.yellow;
 			StartCoroutine(FlashColor(alertFlash));
 		}
 	}
@@ -227,20 +229,22 @@ public class wordBuildingController : MonoBehaviour
 		float t = 2f;
 		float i = 0;
 		//timeRemaining.transform.localScale = biggerSize;
-		while(flash.renderer.material.color.a < maxA){
+		//while(flash.renderer.material.color.a < maxA){
+		while(i < maxA){
 			i += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,minA + i);
-			flash.renderer.material.color = beMe;
+			//flash.renderer.material.color = beMe;
 
 			timeRemaining.transform.localScale = Vector3.Lerp(normalSize,biggerSize,i/maxA);
 			yield return null;
 		}
 		float j = 0;
 		//timeRemaining.transform.localScale = normalSize;
-		while(flash.renderer.material.color.a > minA){
+		//while(flash.renderer.material.color.a > minA){
+		while(i-j > minA){
 			j += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,maxA - j);
-			flash.renderer.material.color = beMe;
+			//flash.renderer.material.color = beMe;
 
 			timeRemaining.transform.localScale = Vector3.Lerp(biggerSize,normalSize,j/maxA);
 			yield return null;

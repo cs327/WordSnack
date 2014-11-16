@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameController/GameController Scripts/VariableControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Letters/LetterScripts/LetterController.cs">
     <Files>
-      <File FileName="Assets/Letters/LetterScripts/LetterController.cs" Line="703" Column="27" />
-      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="156" Column="63" />
+      <File FileName="Assets/Letters/LetterScripts/LetterController.cs" Line="403" Column="5" />
+      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="158" Column="63" />
       <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="15" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>

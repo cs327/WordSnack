@@ -78,7 +78,7 @@ public class LetterController : MonoBehaviour
 				}
 				variables.letterGenerationSound = true;
 				CreateSteam ();
-				//CheckPermutations("mnmnbv");
+				//CheckPermutations("xxx");
 		}
 
 		// Update is called once per frame
@@ -400,7 +400,17 @@ public class LetterController : MonoBehaviour
 						CreateLetters (newLetters);
 			 
 				}
-		}
+				
+				if(!variables.timedMode){
+				stopSearch = false;
+					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
+						CheckPermutations(myLetters);
+					}
+					if(noWordsLeft){
+						variables.endGame = true;
+					}
+				}
+				}
 
 	
 		void moveToAndFromStove ()
@@ -501,17 +511,7 @@ public class LetterController : MonoBehaviour
 				//Debug.Log ("myLetters is now " + myLetters);
 				numLettersOnStove = 0;
 				variables.letterGenerationSound = true;
-				stopSearch = false;
-				if(!variables.timedMode){
-					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-						CheckPermutations(myLetters);
-					}
-				if(noWordsLeft){
-					variables.endGame = true;
-				}
-			}
-				
-
+				//stopSearch = false;
 		}
 
 		//can be called to return whatever is on the stove as a string
