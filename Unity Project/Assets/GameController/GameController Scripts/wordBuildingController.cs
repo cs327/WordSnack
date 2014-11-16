@@ -52,13 +52,13 @@ public class wordBuildingController : MonoBehaviour
             
 
 				tasteHighlighters [0] = char1Taste1;
-				tasteHighLightPos [0] = new Vector3 (-7.6f, 4.6f, -0.5f);
+                tasteHighLightPos [0] = new Vector3(0.0f, 4.82f, 0.08f);         // (-7.6f, 4.6f, -0.5f);
 				tasteHighlighters [1] = char1Taste2;
-				tasteHighLightPos [1] = new Vector3 (-7.6f, 3.9f, -0.5f);
+        tasteHighLightPos [1] = new Vector3 (0.0f, 4.82f, 0.08f);          //(-7.6f, 3.9f, -0.5f);
 				tasteHighlighters [2] = char2Taste1;
-				tasteHighLightPos [2] = new Vector3 (7.6f, 4.6f, -0.5f);
+        tasteHighLightPos [2] = new Vector3 (0.0f, 4.82f, 0.08f); //(7.6f, 4.6f, -0.5f);
 				tasteHighlighters [3] = char2Taste2;
-				tasteHighLightPos [3] = new Vector3 (7.6f, 3.9f, -0.5f);
+        tasteHighLightPos [3] = new Vector3 (0.0f, 4.82f, 0.08f); //(7.6f, 3.9f, -0.5f);
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
 				character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
@@ -269,12 +269,12 @@ public class wordBuildingController : MonoBehaviour
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
 				if (variables.iPhoneType == 1) {
-            tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.17f, 0));
-            tastePanels [1].transform.localPosition = (new Vector3 (.7f, -0.17f, 0));
+            tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.01f, 0));
+            tastePanels [1].transform.localPosition = (new Vector3 (.7f, -0.01f, 0));
 				}
 				if (variables.iPhoneType == 2) {
-            tastePanels [0].transform.position = (new Vector3 (0, -0.17f, 0));
-            tastePanels [1].transform.position = (new Vector3 (0, -0.17f, 0));
+            tastePanels [0].transform.position = (new Vector3 (0, -0.01f, 0));
+            tastePanels [1].transform.position = (new Vector3 (0, -0.01f, 0));
 				}
 		}
 }
