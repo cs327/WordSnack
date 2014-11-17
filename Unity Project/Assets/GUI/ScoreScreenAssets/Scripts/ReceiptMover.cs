@@ -68,7 +68,7 @@ public class ReceiptMover : MonoBehaviour
 		Vector3 pos = gameObject.transform.localPosition;
 		Vector3 currentPos = transform.position;
 		float scrollPos = (Input.mousePosition.y)/40 - scaleForPhone;
-		print (Input.mousePosition.y);
+		//print (Input.mousePosition.y);
 		if (pos.y <= highestPos + 5 || scrollPos > 0){ 
 			gameObject.transform.position = new Vector3(currentPos.x, scrollPos, currentPos.z);
 		}	
@@ -77,7 +77,7 @@ public class ReceiptMover : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-		print (Input.mousePosition.y);
+		//faprint (Input.mousePosition.y);
         if ((int) lowestPos == -7)
             Debug.Log("Didn't set startpos correctly");
 
@@ -92,10 +92,7 @@ public class ReceiptMover : MonoBehaviour
 //				scrollPos = transform.position.y;
 //				scrollPos += Input.GetTouch(0).deltaPosition.y;
 //                Debug.Log("Moved receipt by " + Input.GetTouch(0).deltaPosition.y);
-//				gameObject.transform.position = new Vector3(currentPos.x, scrollPos, currentPos.z);
-//
-//
-//               
+//				gameObject.transform.position = new Vector3(currentPos.x, scrollPos, currentPos.z);            
 //            }
 //			if (inBounds && Input.mousePresent && Input.GetMouseButton(0))
 //            {
