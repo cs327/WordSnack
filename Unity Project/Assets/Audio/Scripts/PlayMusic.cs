@@ -72,10 +72,10 @@ public class PlayMusic : MonoBehaviour {
 
         if (Application.loadedLevelName == "About")
         {
-            if (GameObject.Find("Text").GetComponent<AboutButtonHandler>().clickSound)
+            if (GameObject.Find("Text").GetComponent<AboutUsMove>().clickSound)
             {
                 audioManager.Play(1);
-                GameObject.Find("Text").GetComponent<AboutButtonHandler>().clickSound = false;
+                GameObject.Find("Text").GetComponent<AboutUsMove>().clickSound = false;
             }
         }
 
