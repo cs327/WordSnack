@@ -75,18 +75,18 @@ public class Character : MonoBehaviour
 								tasteObj.transform.localPosition = new Vector3 (-.4f, -.3f, -1);	 
 								//tasteObj.transform.localPosition = new Vector3 (-1.0f,-.3f,-1);
 						}
-						if (Application.loadedLevelName == "WordMaking") {
-								if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-										tasteObj.transform.parent = GameObject.FindGameObjectWithTag ("leftPanel").transform;
-										tasteObj.transform.localPosition = variables.characterTasteSpots [0];
-								} else {
-										tasteObj.transform.parent = GameObject.FindGameObjectWithTag ("rightPanel").transform;
-										tasteObj.transform.localPosition = variables.characterTasteSpots [1];
-										tasteText.alignment = TextAlignment.Right;
-
-								}
-						}
-						//tasteText = tasteObj.GetComponent<TextMesh>();
+//						if (Application.loadedLevelName == "WordMaking") {
+//								if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+//										tasteObj.transform.parent = GameObject.FindGameObjectWithTag ("leftPanel").transform;
+//										tasteObj.transform.localPosition = variables.characterTasteSpots [0];
+//								} else {
+//										tasteObj.transform.parent = GameObject.FindGameObjectWithTag ("rightPanel").transform;
+//										tasteObj.transform.localPosition = variables.characterTasteSpots [1];
+//										tasteText.alignment = TextAlignment.Right;
+//
+//								}
+//						}
+						tasteText = tasteObj.GetComponent<TextMesh>();
 						tasteText.text = thingsILike;
 						if (Application.loadedLevelName == "WordMaking") {
 								tasteText.fontSize = 60;
@@ -320,7 +320,7 @@ public class Character : MonoBehaviour
 				}
 			}
 			//make the Tastes Visible on screen if it is the character selectionphase
-			//CreateVisibleTastes ();
+			CreateVisibleTastes ();
 			
 				}
 		}
