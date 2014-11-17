@@ -71,6 +71,11 @@ public class AudioManager : MonoBehaviour
 		{
 				audioSourceArray [i].Stop ();
 		}
+
+        public void PlayOnce(int i)
+        {
+            audio.PlayOneShot(audioClipArray[i], 1.0f);
+        }
 	
 		public void KillAll ()
 		{
@@ -82,6 +87,20 @@ public class AudioManager : MonoBehaviour
 				}
 		
 		}
+
+        public void PauseAll()
+        {
+            for (y = 0; y < audioSourceArray.Length; y++)
+            {
+
+                if (audioSourceArray[y].isPlaying)
+                {
+                    audioSourceArray[y].Pause();
+                }
+            }
+
+        }
+
 
 		public void SetVolume (int i, float y)
 		{
