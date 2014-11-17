@@ -83,18 +83,18 @@ public class Tutorial : MonoBehaviour
         {
             m.renderer.material.mainTexture = instructions[1];
 			trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
-			transform.localPosition = new Vector3(-1.32f, 0.429f, -0.41f);
-			transform.localScale = new Vector3(0.67f, 1.21f, 0.64f);
+            //transform.localPosition = new Vector3(-1.32f, 0.429f, -0.41f);
+            //transform.localScale = new Vector3(0.67f, 1.21f, 0.64f);
         }// Clicked on trash screen, hide instructions  
         else if (m.renderer.material.mainTexture == instructions[1])
         {
 			m.renderer.material.mainTexture = instructions[2];
 			trash.position = new Vector3(trash.position.x, trash.position.y, 0.73f);
-			transform.localPosition = new Vector3(0.062f, 0.429f, -0.82f);
-			transform.localScale = new Vector3(0.76f, 1.21f, 0.89f);
+            //transform.localPosition = new Vector3(0.062f, 0.429f, -0.82f);
+            //transform.localScale = new Vector3(0.76f, 1.21f, 0.89f);
 
-			leftTaste.transform.localPosition = new Vector3(-0.06f, 6.65f, -0.02f);
-			rightTaste.transform.localPosition = new Vector3(0.03f, 6.9f, -0.01f);
+            //leftTaste.transform.localPosition = new Vector3(-0.06f, 6.65f, -0.02f);
+            //rightTaste.transform.localPosition = new Vector3(0.03f, 6.9f, -0.01f);
 
         }
 		else if (m.renderer.material.mainTexture == instructions[2])
