@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 54a43f80f086d438cb1d666b01f1feea
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: KelvinTasteLeft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

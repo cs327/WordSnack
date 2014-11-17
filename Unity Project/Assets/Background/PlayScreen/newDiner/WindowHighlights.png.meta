@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 253070f801d48487d9fad8e0eb9336aa
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: WindowHighlights
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

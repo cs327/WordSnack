@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 3b3a294a30f3d4dc78fe047fc51d3b19
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: ScoreScreen
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

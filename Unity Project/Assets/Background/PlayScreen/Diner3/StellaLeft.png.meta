@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 8acbb27aa16aa4055b89898c8b59c163
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: StellaLeft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -405,7 +405,7 @@ public class LetterController : MonoBehaviour
 				if(!variables.timedMode){
 				stopSearch = false;
 					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-						CheckPermutations(myLetters);
+						//CheckPermutations(myLetters);
 					}
 					if(noWordsLeft){
 						variables.endGame = true;

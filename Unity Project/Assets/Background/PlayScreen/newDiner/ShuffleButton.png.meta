@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 7de82d86d5509410bb428bdc149019e8
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: ShuffleButton
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

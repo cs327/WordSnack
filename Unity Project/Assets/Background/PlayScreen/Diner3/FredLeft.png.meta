@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 1445ec2f3c2a643ffb28a910d542445c
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: FredLeft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
