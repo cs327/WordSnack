@@ -736,7 +736,7 @@ public class LetterController : MonoBehaviour
 				usedChar[i] = true;
 				CreateAndSubmitPermutations(check, length, level+1,usedChar,output);
 				usedChar[i] = false;
-				output = "";
+				output = output.Remove(output.Length - 1);
 			}
 		}
 		//print (output);
