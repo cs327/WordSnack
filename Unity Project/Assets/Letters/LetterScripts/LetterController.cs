@@ -248,36 +248,36 @@ public class LetterController : MonoBehaviour
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
                 {
-                    
-					//Removes a consonant from the bag.
-					char letterToReturn = serializedLetterBag[0];
-					for (int i = 1; i < serializedLetterBag.Count; i++) {
-						if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
-							letterToReturn = serializedLetterBag[i];
-						}
-					}
-//                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
-                    variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
+                    if (!variables.timedMode) { 
+					    //Removes a consonant from the bag.
+					    char letterToReturn = serializedLetterBag[0];
+					    for (int i = 1; i < serializedLetterBag.Count; i++) {
+						    if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
+							    letterToReturn = serializedLetterBag[i];
+						    }
+					    }
+    //                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
+                        variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
 
-                    //Creates an additional "A" or "E" if there are no vowels left
-                    float aOrE = Random.Range(0.0f, 1.0f);
+                        //Creates an additional "A" or "E" if there are no vowels left
+                        float aOrE = Random.Range(0.0f, 1.0f);
 
-                    if (aOrE < 0.5f)
-                    {
-                        variables.numA++;
-                        variables.totalVowels++;
-                        vowelsInLetterBag.Add('a');
+                        if (aOrE < 0.5f)
+                        {
+                            variables.numA++;
+                            variables.totalVowels++;
+                            vowelsInLetterBag.Add('a');
 
+
+                        }
+                        if (aOrE >= 0.5f)
+                        {
+                            variables.numE++;
+                            variables.totalVowels++;
+                            vowelsInLetterBag.Add('e');
+                        }
 
                     }
-                    if (aOrE >= 0.5f)
-                    {
-                        variables.numE++;
-                        variables.totalVowels++;
-                        vowelsInLetterBag.Add('e');
-                    }
-
-
                 }
 						Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
@@ -319,6 +319,7 @@ public class LetterController : MonoBehaviour
                             if (variables.timedMode)
                             {
                                 variables.totalVowels++;
+                                variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] + 1;
                             }
                         }
 						variables.totalLetters--; //decrement total number of tiles in bag to display to player
