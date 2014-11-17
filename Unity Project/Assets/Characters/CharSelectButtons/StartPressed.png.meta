@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: efe2ceca58c224a89b68089b6e243f60
+guid: a69c4d97295b34fe7b62e3e6fd2fafec
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StartPressed
+    21300000: StartPressed 1
+    21300002: StartPressed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
