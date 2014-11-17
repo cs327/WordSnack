@@ -33,7 +33,7 @@ public class LetterController : MonoBehaviour
 		private List<string> combinationList = new List<string> ();
 		private List<string> permutationList = new List<string> ();
 		public static Dictionary<char, int> letterScores;
-		public Texture2D shuffleButton;
+		//public Texture2D shuffleButton;
 		public bool gamePaused;
 		public GameObject gameController;
 		public bool needsReordering = true;
@@ -72,7 +72,7 @@ public class LetterController : MonoBehaviour
 				stoveSpots = new Vector3[boardSize];
 				bankSpots = new Vector3[boardSize];
 				for (int i = 0; i < boardSize; i++) {
-						stoveSpots [i] = new Vector3 (i * 1.4f - 5.7f, -1.26f, 0);
+						stoveSpots [i] = new Vector3 (i * 1.4f - 4.95f, -1.26f, 0);
 						bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 						positionOnBoard [i] = -1;
 				}
@@ -536,7 +536,7 @@ public class LetterController : MonoBehaviour
 		}
 
 		//shuffles the letters currently in your hand
-		void shuffleLetters ()
+		public void shuffleLetters ()
 		{
 				variables.shuffleSound = true;
 				int nextSpotNum = -1;
@@ -602,20 +602,20 @@ public class LetterController : MonoBehaviour
 				return onBoard;
 		}
 		//current test for sending words from stove
-		void OnGUI ()
-		{
-				//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
-				//	sendWord();
-				//} else 
-				if (!gamePaused) {
-						GUIStyle style = new GUIStyle ();
-						style.normal.background = shuffleButton;
-
-						if (GUI.Button (new Rect (Screen.width * 0.075f, Screen.height * 0.625f, Screen.width * 0.1f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
-								shuffleLetters ();
-						}
-				}
-		}
+//		void OnGUI ()
+//		{
+//				//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+//				//	sendWord();
+//				//} else 
+//				if (!gamePaused) {
+//						GUIStyle style = new GUIStyle ();
+//						style.normal.background = shuffleButton;
+//
+//						if (GUI.Button (new Rect (Screen.width * 0.075f, Screen.height * 0.625f, Screen.width * 0.1f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
+//								shuffleLetters ();
+//						}
+//				}
+//		}
 
 		void makeWordListAndScoreDict ()
 		{
