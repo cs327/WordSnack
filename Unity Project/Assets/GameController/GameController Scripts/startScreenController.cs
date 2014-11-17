@@ -20,7 +20,7 @@ public class startScreenController : MonoBehaviour {
 		// if we get here and there's no background, create it and the diner
 		if (GameObject.Find ("Starfield Background") == null) {
 			Instantiate (backgroundStars, new Vector3(0, 0, 30), Quaternion.identity);
-			Instantiate (diner, new Vector3(1, 0, 5), Quaternion.identity);
+			Instantiate (diner, new Vector3(1.9f, 0.35f, 1.2f), Quaternion.identity);
 		}
 	}
 	
