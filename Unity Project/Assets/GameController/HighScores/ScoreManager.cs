@@ -130,6 +130,7 @@ public static class ScoreManager
         }
         else
         {
+            Debug.Log("HighScoresSaves not found");
             scoreList = new Dictionary<string, List<int>>();
         }
     }
