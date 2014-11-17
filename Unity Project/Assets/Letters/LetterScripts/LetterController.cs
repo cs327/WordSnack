@@ -78,7 +78,7 @@ public class LetterController : MonoBehaviour
 				}
 				variables.letterGenerationSound = true;
 				CreateSteam ();
-				//CheckPermutations("xxx");
+				//CheckPermutations("xyzwvtxx");
 		}
 
 		// Update is called once per frame
@@ -404,8 +404,8 @@ public class LetterController : MonoBehaviour
 				
 				if(!variables.timedMode){
 				stopSearch = false;
-					if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-						//CheckPermutations(myLetters);
+					if(variables.lettersRemaining <= boardSize-2 && !stopSearch && !noWordsLeft){
+						CheckPermutations(myLetters);
 					}
 					if(noWordsLeft){
 						variables.endGame = true;
@@ -700,6 +700,12 @@ public class LetterController : MonoBehaviour
 				return count;
 		}
 	void CheckPermutations(string input){
+		input = input.Replace(",","");
+		input = input.Replace(".","");
+		if(input.Length > 6){
+			stopSearch = true;
+			return;
+		}
 		combinationList.Clear();
 		CreateCombinations("" , input);
 		for(int i = 2; i < input.Length+1; i++){
@@ -749,7 +755,7 @@ public class LetterController : MonoBehaviour
 			return;
 		}
 		if(rest == ""){
-			if(active.Length > 1){
+			if(active.Length > 1 && active.Length < 5){
 				combinationList.Add(active);
 				//print (active);
 			}
