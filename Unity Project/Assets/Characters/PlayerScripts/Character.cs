@@ -549,21 +549,21 @@ public class Character : MonoBehaviour
 		//to check tastes for the characters when a word is on the stove
 		int TasteGlow (int charNum)
 		{
-				int[] charTastes = variables.allCharTastes [charNum];
+				int[] charTastes = variables.allCharTastes [charNum]; //this character's tastes
 				string currentWord;
-				currentWord = letterControl.sendWord ();
-				int currentTaste = -1;
-				int bothTastes = -1;
-				if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-						currentTaste = 0;
-						bothTastes = 4;
-						variables.char1TasteChecked = true;
-				} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) {
-						currentTaste = 2;
-						bothTastes = 5;
-						variables.char2TasteChecked = true;
+				currentWord = letterControl.sendWord (); //current word on stove
+				int currentTaste = -1; //the taste that is satisfied
+				int bothTastes = -1; //the number to return if both tastes are satisfied
+				if (PlayerPrefs.GetInt ("Character 1") == characterNum) { //if the current character is the first character
+						currentTaste = 0; //first taste for this character
+						bothTastes = 4; //what to return if both tastes are satisfied
+						variables.char1TasteChecked = true; //the tastes have been checked for char1
+				} else if (PlayerPrefs.GetInt ("Character 2") == characterNum) { //if the current character is the second character
+						currentTaste = 2; //first taste for this character
+						bothTastes = 5; //what to return if both tastes are satisfied
+						variables.char2TasteChecked = true; //the tastes have been checked for char2
 				}
-				if (characterNum != 0) {
+				if (characterNum != 0) { //if this character is not the trash character
 						if (tasteDictionary [charTastes [0]] (currentWord) != 0 && tasteDictionary [charTastes [1]] (currentWord) != 0) {
 								return bothTastes;
 						} else if (tasteDictionary [charTastes [0]] (currentWord) != 0) {
