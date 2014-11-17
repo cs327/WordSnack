@@ -610,7 +610,7 @@ public class LetterController : MonoBehaviour
 						GUIStyle style = new GUIStyle ();
 						style.normal.background = shuffleButton;
 
-						if (GUI.Button (new Rect (Screen.width * 0.013f, Screen.height * 0.43f, Screen.width * 0.07f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
+						if (GUI.Button (new Rect (Screen.width * 0.075f, Screen.height * 0.625f, Screen.width * 0.1f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
 								shuffleLetters ();
 						}
 				}
