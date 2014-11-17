@@ -320,7 +320,7 @@ public class Character : MonoBehaviour
 				}
 			}
 			//make the Tastes Visible on screen if it is the character selectionphase
-			CreateVisibleTastes ();
+			//CreateVisibleTastes ();
 			
 				}
 		}
