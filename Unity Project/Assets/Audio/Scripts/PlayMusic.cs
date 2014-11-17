@@ -17,7 +17,7 @@ public class PlayMusic : MonoBehaviour {
 	//public GameObject wordControl;
 	//wordBuildingController words;
 
-   // public GameObject character;
+    // public GameObject character;
 	//Character charac;
 
 	int numSelected = 0;
@@ -183,7 +183,7 @@ public class PlayMusic : MonoBehaviour {
             {
                 audioManager.PlayLoop(35);
             }
-			NewOnStove();
+	//		NewOnStove();
 			Sizzle();
 			RejectedSound();
 			Chewing();
@@ -258,23 +258,23 @@ public class PlayMusic : MonoBehaviour {
 	// Update is called once per frame
 
 	//NewOnStove plays letter select sound when letters move to the stove, letter deselect sound when moving letters off the stove.
-	void NewOnStove()
-	{
-	   // if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
-		//{
-		  //  i = 0;
-	   // }
-		if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
-		{
-			audioManager.Play(6);
-			i++;
-		}
-		if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
-		{
-			audioManager.Play(8);
-			i--;
-		}
-	}
+    //void NewOnStove()
+    //{
+    //    // if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove == 0)
+    //    //{
+    //        //  i = 0;
+    //    // }
+    //    //if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove > i)
+    //    //{
+    //    //    audioManager.Play(6);
+    //    //    i++;
+    //    //}
+    //    //if (GameObject.Find("letterGeneration").GetComponent<LetterController>().numLettersOnStove < i)
+    //    //{
+    //    //    audioManager.Play(8);
+    //    //    i--;
+    //    //}
+    //}
 	//Method to play Happy sounds when a character likes a word.
 	//void HappySound()
 	//{
@@ -377,7 +377,7 @@ public class PlayMusic : MonoBehaviour {
 			Debug.Log("Letter Generation");
 
 		}
-	   // words.bothTastes = false;
+	    // words.bothTastes = false;
 	}
 	void Shuffle()
 	{
@@ -390,7 +390,7 @@ public class PlayMusic : MonoBehaviour {
 	void LetterGenerationSound()
 	{
 		audioManager.Play(7);
-  //      variables.letterGenerationSound = false;
+    //      variables.letterGenerationSound = false;
 		Debug.Log("generation");
 	}
 	void DelayedLetterGeneration()

@@ -52,11 +52,13 @@ public class letterBehaviour : MonoBehaviour
 				if (!selected) {
 						selected = true;
 						//put it on the stove and change the color
-						thisSprite.sprite = spriteStove [letterAlphabetOrder]; 
+						thisSprite.sprite = spriteStove [letterAlphabetOrder];
+                        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(6);
 				} else {
 						selected = false;
 						//change the color back to green when it's no longer on the stove
 						thisSprite.sprite = sprites [letterAlphabetOrder];
+                        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(8);
 				}
 		}
 
