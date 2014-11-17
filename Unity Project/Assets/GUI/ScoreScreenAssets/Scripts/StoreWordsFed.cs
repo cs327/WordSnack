@@ -14,9 +14,10 @@ public class StoreWordsFed : MonoBehaviour {
 	public int trashedLetterScore;
 	// Use this for initialization
 	void Start () {
-		if (Application.loadedLevelName == "WordMaking"){
+		if (Application.loadedLevelName == "WordMaking" || Application.loadedLevelName == "ScoreScreen"){
 			DontDestroyOnLoad(gameObject);
 		}
+		Debug.Log("WordsFed is Here");
 	}
 	
 	// Update is called once per frame

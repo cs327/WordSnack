@@ -6,6 +6,7 @@ public class MainGUI : MonoBehaviour {
 	public GameObject gameController; 
 	VariableControl variables;
 	GameStateController gameState;
+	wordBuildingController playController;
 
 	// Use this for initialization
 	void Awake () {
@@ -16,6 +17,9 @@ public class MainGUI : MonoBehaviour {
 		//script reference
 		variables = gameController.GetComponent<VariableControl>();
 		gameState = gameController.GetComponent<GameStateController>();
+		if (Application.loadedLevelName == "WordMaking") {
+			playController = GameObject.Find("GameController").GetComponent<wordBuildingController>();
+		}
 	}
 	
 	// Update is called once per frame
@@ -27,6 +31,7 @@ public class MainGUI : MonoBehaviour {
 		//during the main gameplay phase, displays a timer to indicate how long the game has been going on for
 		if (Application.loadedLevelName == "WordMaking") {
 			if (GUI.Button (new Rect (100, 100, 100, 30), "End Game")) {
+				playController.sendVariablestoScoreScreen();
 				Application.LoadLevel("ScoreScreen");
 			}
 			//GUI.Box (new Rect (400, 50, 200, 30), "Word Making Phase");

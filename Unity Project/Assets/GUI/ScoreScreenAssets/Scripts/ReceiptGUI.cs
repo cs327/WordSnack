@@ -7,7 +7,7 @@ using System;
 
 public class ReceiptGUI : MonoBehaviour
 {
-    #region Variables
+    //#region Variables
 	public TextMesh test;
     public GUIStyle big;
     public int characterNum;
@@ -23,6 +23,8 @@ public class ReceiptGUI : MonoBehaviour
     public Vector3 firstRowPos;
     public TextMesh Character1Name;
     public TextMesh Character2Name;
+	public TextMesh scoreText; 
+	public TextMesh tilesDiscardedText;
     
 
     int selectedCharacter1;
@@ -38,13 +40,15 @@ public class ReceiptGUI : MonoBehaviour
     int multiScore;
     int trashLetterNum;
     int trashedLetterScore;
-
-    #endregion
+    //#endregion
 
     // Use this for initialization
     void Start()
     {
-        #region Get Receipt Info
+
+		tilesDiscardedText.text = PlayerPrefs.GetFloat("Score").ToString();
+		scoreText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+        //#region Get Receipt Info
         rowCount = 0;
         firstRowPos = bottomInstance.transform.position;
         Debug.Log("First row pos: " + firstRowPos.ToString());
@@ -89,9 +93,9 @@ public class ReceiptGUI : MonoBehaviour
         //char1WordsFed.Add("cat 30 5");
         //char1WordsFed.Add("Nope 20 9");
 
-        #endregion
+        //#endregion
 
-        #region Create wordsFed Rows
+        //#region Create wordsFed Rows
         // Add code to create rows/fill them
         int maxCount = Math.Max(char1WordsFed.Count, char2WordsFed.Count);
         for(int i = 0; i < maxCount; i++)
@@ -115,9 +119,9 @@ public class ReceiptGUI : MonoBehaviour
             }
             AddRow(char1Word, char1Score, char2Word, char2Score);
         }
-        #endregion
+        //#endregion
 
-        #region High Score setup
+        //#region High Score setup
         string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
         Debug.Log("Current gamemode is " + gameMode);
 
@@ -155,9 +159,9 @@ public class ReceiptGUI : MonoBehaviour
 			AddRow("", "", "", "");
         }
 
-        #endregion
+        //#endregion
 
-        #region Setup Scroll Limits
+        //#region Setup Scroll Limits
         ReceiptMover.lowestPos = lowestPoint;
         ReceiptMover.highestPos = lowestPoint - screenOffset+ rowCount*rowOffset + EmptyReceiptLength;
 
@@ -170,39 +174,54 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("The receipt's highest point: " + ReceiptMover.highestPos);
         Debug.Log("The receipt's lowest point: " + ReceiptMover.lowestPos);
         Debug.Log("ROWCOUNT: " + rowCount);
-        #endregion 
+        //#endregion 
 
-        #region Setup Receipt Bottom
+        //#region Setup Receipt Bottom
 //        bottomInstance.transform.parent = transform;
-        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-        foreach(TextMesh mesh in meshes)
-        {
-            Debug.Log("Mesh is named: " + mesh);
-			string trashed = "";
-            switch(mesh.name)
-            {
+//        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+//		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
+		tilesDiscardedText.text = "0";
+//		if (GameObject.Find("WordsFed") != null) {
+//			tilesDiscardedText.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
+//			scoreText.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+//		} else {
+//			tilesDiscardedText.text = "0";
+//			scoreText.text = "0";
+//
+//		}
 
-                case "Discarded Tiles":
-					if (GameObject.Find("WordsFed") != null) {
-                    	trashed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-					} else {
-						trashed = "0";
-					}
-                    for (int i = 4 - trashed.Length; i > 0; i--)
-                        trashed = " " + trashed;
-                    mesh.text = trashed;
-                    break;
-                case "Total":
-                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
-                    break;
-            }
-        }
-        firstRowPos = bottomInstance.transform.position;
+//		scoreText.text = PlayerPrefs.GetFloat("Score").ToString();
+//        foreach(TextMesh mesh in meshes)
+//        {
+//            Debug.Log("Mesh is named: " + mesh);
+//			string trashed = "";
+//            switch(mesh.name)
+//            {
+//
+//                case "Discarded Tiles":
+//					if (GameObject.Find("WordsFed") != null) {
+//                    	trashed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
+//					} else {
+//						trashed = "0";
+//					}
+//                    for (int i = 4 - trashed.Length; i > 0; i--)
+//                        trashed = " " + trashed;
+//                    mesh.text = trashed;
+//                    break;
+//                case "Total":
+//                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
+//                    break;
+//            }
+//        }
+//        firstRowPos = bottomInstance.transform.position;
         firstRowPos.y = firstRowPos.y - rowCount * rowOffset;
         bottomInstance.transform.position = firstRowPos;
 
-        #endregion
+        //#endregion
+		if (GameObject.Find("WordsFed") != null) {
+			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+		}
+//		test.text = ScoreManager.ToString();
     }
 
     // Given the strings to be displayed on a row, as well as the row number (starting at zero)
@@ -242,7 +261,7 @@ public class ReceiptGUI : MonoBehaviour
 
     void Update()
     {
-		test.text = "Rows: " + rowCount;
+//		test.text = "Rows: " + rowCount;
 		Vector3 currentPos = bottomInstance.transform.position;
 		bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
     }

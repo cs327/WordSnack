@@ -112,6 +112,7 @@ public class wordBuildingController : MonoBehaviour
 					variables.endGame = false;
 				}
 				if(!fadingOut && fadeOut){
+					sendVariablestoScoreScreen ();
 					StartCoroutine(ClosingTime());
 				}
 				//updates time on screen
@@ -171,7 +172,6 @@ public class wordBuildingController : MonoBehaviour
 		}
 		closingTimeText.SetActive (true);
 		yield return new WaitForSeconds(variables.gameOverOnScreenTimer);
-		sendVariablestoScoreScreen ();
 		Application.LoadLevel ("ScoreScreen");
 		
 	}
