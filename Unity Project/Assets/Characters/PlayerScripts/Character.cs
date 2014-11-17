@@ -563,7 +563,7 @@ public class Character : MonoBehaviour
 						bothTastes = 5; //what to return if both tastes are satisfied
 						variables.char2TasteChecked = true; //the tastes have been checked for char2
 				}
-				if (characterNum != 0) { //if this character is not the trash character
+				if (characterNum != 0) { //if this character is not the trash character check which taste combination is matched
 						if (tasteDictionary [charTastes [0]] (currentWord) != 0 && tasteDictionary [charTastes [1]] (currentWord) != 0) {
 								return bothTastes;
 						} else if (tasteDictionary [charTastes [0]] (currentWord) != 0) {
