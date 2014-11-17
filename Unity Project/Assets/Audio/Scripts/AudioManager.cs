@@ -83,6 +83,19 @@ public class AudioManager : MonoBehaviour
 		
 		}
 
+        public void PauseAll()
+        {
+            for (y = 0; y < audioSourceArray.Length; y++)
+            {
+
+                if (audioSourceArray[y].isPlaying)
+                {
+                    audioSourceArray[y].Pause();
+                }
+            }
+
+        }
+
 		public void SetVolume (int i, float y)
 		{
 
