@@ -46,8 +46,8 @@ public class ReceiptGUI : MonoBehaviour
     void Start()
     {
 
-		tilesDiscardedText.text = PlayerPrefs.GetFloat("Score").ToString();
-		scoreText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+		tilesDiscardedText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+		scoreText.text = PlayerPrefs.GetFloat("Score").ToString();
         //#region Get Receipt Info
         rowCount = 0;
         firstRowPos = bottomInstance.transform.position;
