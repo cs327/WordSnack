@@ -1,10 +1,33 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Letters/LetterScripts/LetterController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GUI/ScoreScreenAssets/Scripts/ReceiptGUI.cs">
     <Files>
-      <File FileName="Assets/Letters/LetterScripts/LetterController.cs" Line="403" Column="5" />
-      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="158" Column="63" />
-      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="15" Column="38" />
+      <File FileName="Assets/GameController/GameController Scripts/wordBuildingController.cs" Line="83" Column="69" />
+      <File FileName="Assets/GUI/ScoreScreenAssets/Scripts/ReceiptGUI.cs" Line="57" Column="40" />
+      <File FileName="Assets/GUI/GUIScripts/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/PauseMenuButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Letters/EffectPrefabs/ParticleHelper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Letters/LetterScripts/LetterController.cs" Line="764" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/HideInstructions.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/CloseInstructions.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/PlayButtonHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/Tutorial.cs" Line="96" Column="58" />
+      <File FileName="Assets/Characters/PlayerScripts/SelectScript.cs" Line="166" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/ReceiptMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/startScreenController.cs" Line="10" Column="2" />
+      <File FileName="Assets/GameController/GameController Scripts/VariableControl.cs" Line="354" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/GoBackToMenu.cs" Line="37" Column="1" />
+      <File FileName="Assets/GUI/ScoreScreenAssets/Scripts/PlayAgain.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/AboutUsMove.cs" Line="30" Column="1" />
+      <File FileName="Assets/Audio/Scripts/PlayMusic.cs" Line="478" Column="2" />
+      <File FileName="Assets/GUI/GUIScripts/AboutButtonHandler.cs" Line="4" Column="1" />
+      <File FileName="Assets/GUI/ScoreScreenAssets/Scripts/ReceiptMover.cs" Line="98" Column="1" />
+      <File FileName="Assets/Audio/Scripts/AudioManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/TimedButtonHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/GUI/GUIScripts/LoadStart.cs" Line="1" Column="1" />
+      <File FileName="Assets/GameController/GameController Scripts/ChangeScene.cs" Line="42" Column="60" />
+      <File FileName="Assets/GameController/GameController Scripts/characterSelectController.cs" Line="9" Column="2" />
+      <File FileName="Assets/Background/PlayScreen/diner2/resumeButton.cs" Line="19" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
