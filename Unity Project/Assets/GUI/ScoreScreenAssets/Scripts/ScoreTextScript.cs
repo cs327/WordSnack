@@ -152,6 +152,9 @@ public class ScoreTextScript : MonoBehaviour {
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
 				if (longWord && !firstWait) {
 					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal!";
+					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+					GetComponent<TextMesh>().color = new Color(1.0f, 0.2f, 0.2f);
+
 					longWord = false;
 					
 					timePassed = 0.0f;

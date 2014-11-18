@@ -215,6 +215,7 @@ public class LetterController : MonoBehaviour
 								emptyLetterCount++;
 						}
 				}
+				letters = "tnahpele";
 				return letters;
 		}
 	
