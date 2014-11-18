@@ -22,6 +22,7 @@ public static class ScoreManager
         FileStream file = File.Create(Application.persistentDataPath + "/HighScoreSaves.gd");
         bf.Serialize(file, scoreList);
         file.Close();
+        Debug.Log("Saving highscores");
     }
 
     public static void ClearHighScores()
