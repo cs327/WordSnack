@@ -116,7 +116,7 @@ public class SelectScript : MonoBehaviour {
 			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
 				toggleSelect();
             // Characters changed, change High score text
-            HighScore.text = ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
+            HighScore.text = "Previous Best: " + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
             Debug.Log("high score text = '" + HighScore.text + "'");
 			}
 
