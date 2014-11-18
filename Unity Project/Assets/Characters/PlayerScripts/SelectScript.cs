@@ -17,7 +17,8 @@ public class SelectScript : MonoBehaviour {
 	public Vector3 startingSpot;
 
 	//Character Card images
-	public Sprite selectedImage;
+	public Sprite selectedImageRight;
+	public Sprite selectedImageLeft;
 	public Sprite standbyImage;
 	public SpriteRenderer thisSprite;
     public TextMesh HighScore;
@@ -82,6 +83,7 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacters[0] = gameObject;
 					variables.selectedCharacterNums[0] = character.characterNum;
 					character.charSelectOrder = 0;
+					thisSprite.sprite = selectedImageLeft;
 				}
 				//if its not the first spot, it puts the character in the second spot
 				else{
@@ -90,6 +92,7 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacters[1] = gameObject;
 					variables.selectedCharacterNums[1] = character.characterNum;
 					character.charSelectOrder = 1;
+					thisSprite.sprite = selectedImageRight;
 
                     // There are two chars selected now. Set up high score text
                     HighScore.text = "Previous Best: "  + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
@@ -98,7 +101,7 @@ public class SelectScript : MonoBehaviour {
                     Debug.Log("high score text = '"  + HighScore.text + "'");
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
-				thisSprite.sprite = selectedImage;
+
 				gameObject.transform.position = variables.phase1SelectedCharPositions[selectNum];
 				//gameObject.transform.localScale = new Vector3 (1.37f,1.37f,1);
 
