@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: b60ac2de2942d42edaea6cfae37a6afd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Nov17_SplashScreenSpriteSheet_0
+    21300002: Nov17_SplashScreenSpriteSheet_1
+    21300004: Nov17_SplashScreenSpriteSheet_2
+    21300006: Nov17_SplashScreenSpriteSheet_3
+    21300008: Nov17_SplashScreenSpriteSheet_4
+    21300010: Nov17_SplashScreenSpriteSheet_5
+    21300012: Nov17_SplashScreenSpriteSheet_6
+    21300014: Nov17_SplashScreenSpriteSheet_7
+    21300016: Nov17_SplashScreenSpriteSheet_8
+    21300018: Nov17_SplashScreenSpriteSheet_9
+    21300020: Nov17_SplashScreenSpriteSheet_10
+    21300022: Nov17_SplashScreenSpriteSheet_11
+    21300024: Nov17_SplashScreenSpriteSheet_12
+    21300026: Nov17_SplashScreenSpriteSheet_13
+    21300028: Nov17_SplashScreenSpriteSheet_14
+    21300030: Nov17_SplashScreenSpriteSheet_15
+    21300032: Nov17_SplashScreenSpriteSheet_16
+    21300034: Nov17_SplashScreenSpriteSheet_17
+    21300036: Nov17_SplashScreenSpriteSheet_18
+    21300038: Nov17_SplashScreenSpriteSheet_19
+    21300040: Nov17_SplashScreenSpriteSheet_20
+    21300042: Nov17_SplashScreenSpriteSheet_21
+    21300044: Nov17_SplashScreenSpriteSheet_22
+    21300046: Nov17_SplashScreenSpriteSheet_23
+    21300048: Nov17_SplashScreenSpriteSheet_24
+    21300050: Nov17_SplashScreenSpriteSheet_25
+    21300052: Nov17_SplashScreenSpriteSheet_26
+    21300054: Nov17_SplashScreenSpriteSheet_27
+    21300056: Nov17_SplashScreenSpriteSheet_28
+    21300058: Nov17_SplashScreenSpriteSheet_29
+    21300060: Nov17_SplashScreenSpriteSheet_30
+    21300062: Nov17_SplashScreenSpriteSheet_31
+    21300064: Nov17_SplashScreenSpriteSheet_32
+    21300066: Nov17_SplashScreenSpriteSheet_33
+    21300068: Nov17_SplashScreenSpriteSheet_34
+    21300070: Nov17_SplashScreenSpriteSheet_35
+    21300072: Nov17_SplashScreenSpriteSheet_36
+    21300074: Nov17_SplashScreenSpriteSheet_37
+    21300076: Nov17_SplashScreenSpriteSheet_38
+    21300078: Nov17_SplashScreenSpriteSheet_39
+    21300080: Nov17_SplashScreenSpriteSheet_40
+    21300082: Nov17_SplashScreenSpriteSheet_41
+    21300084: Nov17_SplashScreenSpriteSheet_42
+    21300086: Nov17_SplashScreenSpriteSheet_43
+    21300088: Nov17_SplashScreenSpriteSheet_44
+    21300090: Nov17_SplashScreenSpriteSheet_45
+    21300092: Nov17_SplashScreenSpriteSheet_46
+    21300094: Nov17_SplashScreenSpriteSheet_47
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Nov17_SplashScreenSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 2240
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1920
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1600
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 1280
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 960
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 640
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 320
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov17_SplashScreenSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 0
+        width: 568
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
