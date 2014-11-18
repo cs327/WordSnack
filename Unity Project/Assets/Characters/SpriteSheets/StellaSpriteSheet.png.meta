@@ -1,52 +1,71 @@
 fileFormatVersion: 2
-guid: 7cb426ba3d7594c59a858188d1d5b250
+guid: 1d6d4025326e14b8e87bcdf45f3cba06
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StellaSpriteSheet_0
-    21300002: StellaSpriteSheet_1
-    21300004: StellaSpriteSheet_2
-    21300006: StellaSpriteSheet_3
-    21300008: StellaSpriteSheet_4
-    21300010: StellaSpriteSheet_5
-    21300012: StellaSpriteSheet_6
-    21300014: StellaSpriteSheet_7
-    21300016: StellaSpriteSheet_8
-    21300018: StellaSpriteSheet_9
-    21300020: StellaSpriteSheet_10
-    21300022: StellaSpriteSheet_11
-    21300024: StellaSpriteSheet_12
-    21300026: StellaSpriteSheet_13
-    21300028: StellaSpriteSheet_14
-    21300030: StellaSpriteSheet_15
-    21300032: StellaSpriteSheet_16
-    21300034: StellaSpriteSheet_17
-    21300036: StellaSpriteSheet_18
-    21300038: StellaSpriteSheet_19
-    21300040: StellaSpriteSheet_20
-    21300042: StellaSpriteSheet_21
-    21300044: StellaSpriteSheet_22
-    21300046: StellaSpriteSheet_23
-    21300048: StellaSpriteSheet_24
-    21300050: StellaSpriteSheet_25
-    21300052: StellaSpriteSheet_26
-    21300054: StellaSpriteSheet_27
-    21300056: StellaSpriteSheet_28
-    21300058: StellaSpriteSheet_29
-    21300060: StellaSpriteSheet_30
-    21300062: StellaSpriteSheet_31
-    21300064: StellaSpriteSheet_32
-    21300066: StellaSpriteSheet_33
-    21300068: StellaSpriteSheet_34
-    21300070: StellaSpriteSheet_35
-    21300072: StellaSpriteSheet_36
-    21300074: StellaSpriteSheet_37
-    21300076: StellaSpriteSheet_38
-    21300078: StellaSpriteSheet_39
-    21300080: StellaSpriteSheet_40
-    21300082: StellaSpriteSheet_41
-    21300084: StellaSpriteSheet_42
-    21300086: StellaSpriteSheet_43
-    21300088: StellaSpriteSheet_44
+    21300000: StellaSpriteSheet 1_0
+    21300002: StellaSpriteSheet 1_1
+    21300004: StellaSpriteSheet 1_2
+    21300006: StellaSpriteSheet 1_3
+    21300008: StellaSpriteSheet 1_4
+    21300010: StellaSpriteSheet 1_5
+    21300012: StellaSpriteSheet 1_6
+    21300014: StellaSpriteSheet 1_7
+    21300016: StellaSpriteSheet 1_8
+    21300018: StellaSpriteSheet 1_9
+    21300020: StellaSpriteSheet 1_10
+    21300022: StellaSpriteSheet 1_11
+    21300024: StellaSpriteSheet 1_12
+    21300026: StellaSpriteSheet 1_13
+    21300028: StellaSpriteSheet 1_14
+    21300030: StellaSpriteSheet 1_15
+    21300032: StellaSpriteSheet 1_16
+    21300034: StellaSpriteSheet 1_17
+    21300036: StellaSpriteSheet 1_18
+    21300038: StellaSpriteSheet 1_19
+    21300040: StellaSpriteSheet 1_20
+    21300042: StellaSpriteSheet 1_21
+    21300044: StellaSpriteSheet 1_22
+    21300046: StellaSpriteSheet 1_23
+    21300048: StellaSpriteSheet 1_24
+    21300050: StellaSpriteSheet 1_25
+    21300052: StellaSpriteSheet 1_26
+    21300054: StellaSpriteSheet 1_27
+    21300056: StellaSpriteSheet 1_28
+    21300058: StellaSpriteSheet 1_29
+    21300060: StellaSpriteSheet 1_30
+    21300062: StellaSpriteSheet 1_31
+    21300064: StellaSpriteSheet 1_32
+    21300066: StellaSpriteSheet 1_33
+    21300068: StellaSpriteSheet 1_34
+    21300070: StellaSpriteSheet 1_35
+    21300072: StellaSpriteSheet 1_36
+    21300074: StellaSpriteSheet 1_37
+    21300076: StellaSpriteSheet 1_38
+    21300078: StellaSpriteSheet 1_39
+    21300080: StellaSpriteSheet 1_40
+    21300082: StellaSpriteSheet 1_41
+    21300084: StellaSpriteSheet 1_42
+    21300086: StellaSpriteSheet 1_43
+    21300088: StellaSpriteSheet 1_44
+    21300090: StellaSpriteSheet 1_45
+    21300092: StellaSpriteSheet 1_46
+    21300094: StellaSpriteSheet 1_47
+    21300096: StellaSpriteSheet 1_48
+    21300098: StellaSpriteSheet 1_49
+    21300100: StellaSpriteSheet 1_50
+    21300102: StellaSpriteSheet 1_51
+    21300104: StellaSpriteSheet 1_52
+    21300106: StellaSpriteSheet 1_53
+    21300108: StellaSpriteSheet 1_54
+    21300110: StellaSpriteSheet 1_55
+    21300112: StellaSpriteSheet 1_56
+    21300114: StellaSpriteSheet 1_57
+    21300116: StellaSpriteSheet 1_58
+    21300118: StellaSpriteSheet 1_59
+    21300120: StellaSpriteSheet 1_60
+    21300122: StellaSpriteSheet 1_61
+    21300124: StellaSpriteSheet 1_62
+    21300126: StellaSpriteSheet 1_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -69,7 +88,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -88,7 +107,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: StellaSpriteSheet_0
+    - name: StellaSpriteSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -98,7 +117,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_1
+    - name: StellaSpriteSheet 1_1
       rect:
         serializedVersion: 2
         x: 256
@@ -108,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_2
+    - name: StellaSpriteSheet 1_2
       rect:
         serializedVersion: 2
         x: 512
@@ -118,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_3
+    - name: StellaSpriteSheet 1_3
       rect:
         serializedVersion: 2
         x: 768
@@ -128,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_4
+    - name: StellaSpriteSheet 1_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -138,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_5
+    - name: StellaSpriteSheet 1_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -148,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_6
+    - name: StellaSpriteSheet 1_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -158,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_7
+    - name: StellaSpriteSheet 1_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -166,9 +185,9 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_8
+    - name: StellaSpriteSheet 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -178,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_9
+    - name: StellaSpriteSheet 1_9
       rect:
         serializedVersion: 2
         x: 256
@@ -188,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_10
+    - name: StellaSpriteSheet 1_10
       rect:
         serializedVersion: 2
         x: 512
@@ -198,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_11
+    - name: StellaSpriteSheet 1_11
       rect:
         serializedVersion: 2
         x: 768
@@ -208,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_12
+    - name: StellaSpriteSheet 1_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -218,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_13
+    - name: StellaSpriteSheet 1_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -228,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_14
+    - name: StellaSpriteSheet 1_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -238,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_15
+    - name: StellaSpriteSheet 1_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -248,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_16
+    - name: StellaSpriteSheet 1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -258,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_17
+    - name: StellaSpriteSheet 1_17
       rect:
         serializedVersion: 2
         x: 256
@@ -268,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_18
+    - name: StellaSpriteSheet 1_18
       rect:
         serializedVersion: 2
         x: 512
@@ -278,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_19
+    - name: StellaSpriteSheet 1_19
       rect:
         serializedVersion: 2
         x: 768
@@ -288,7 +307,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_20
+    - name: StellaSpriteSheet 1_20
       rect:
         serializedVersion: 2
         x: 1024
@@ -298,7 +317,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_21
+    - name: StellaSpriteSheet 1_21
       rect:
         serializedVersion: 2
         x: 1280
@@ -308,7 +327,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_22
+    - name: StellaSpriteSheet 1_22
       rect:
         serializedVersion: 2
         x: 1536
@@ -318,7 +337,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_23
+    - name: StellaSpriteSheet 1_23
       rect:
         serializedVersion: 2
         x: 1792
@@ -328,7 +347,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_24
+    - name: StellaSpriteSheet 1_24
       rect:
         serializedVersion: 2
         x: 0
@@ -338,7 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_25
+    - name: StellaSpriteSheet 1_25
       rect:
         serializedVersion: 2
         x: 256
@@ -348,7 +367,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_26
+    - name: StellaSpriteSheet 1_26
       rect:
         serializedVersion: 2
         x: 512
@@ -358,7 +377,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_27
+    - name: StellaSpriteSheet 1_27
       rect:
         serializedVersion: 2
         x: 768
@@ -368,7 +387,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_28
+    - name: StellaSpriteSheet 1_28
       rect:
         serializedVersion: 2
         x: 1024
@@ -378,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_29
+    - name: StellaSpriteSheet 1_29
       rect:
         serializedVersion: 2
         x: 1280
@@ -388,7 +407,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_30
+    - name: StellaSpriteSheet 1_30
       rect:
         serializedVersion: 2
         x: 1536
@@ -398,7 +417,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_31
+    - name: StellaSpriteSheet 1_31
       rect:
         serializedVersion: 2
         x: 1792
@@ -408,7 +427,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_32
+    - name: StellaSpriteSheet 1_32
       rect:
         serializedVersion: 2
         x: 0
@@ -418,7 +437,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_33
+    - name: StellaSpriteSheet 1_33
       rect:
         serializedVersion: 2
         x: 256
@@ -428,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_34
+    - name: StellaSpriteSheet 1_34
       rect:
         serializedVersion: 2
         x: 512
@@ -438,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_35
+    - name: StellaSpriteSheet 1_35
       rect:
         serializedVersion: 2
         x: 768
@@ -448,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_36
+    - name: StellaSpriteSheet 1_36
       rect:
         serializedVersion: 2
         x: 1024
@@ -458,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_37
+    - name: StellaSpriteSheet 1_37
       rect:
         serializedVersion: 2
         x: 1280
@@ -468,7 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_38
+    - name: StellaSpriteSheet 1_38
       rect:
         serializedVersion: 2
         x: 1536
@@ -478,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_39
+    - name: StellaSpriteSheet 1_39
       rect:
         serializedVersion: 2
         x: 1792
@@ -488,7 +507,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_40
+    - name: StellaSpriteSheet 1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -498,7 +517,37 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_41
+    - name: StellaSpriteSheet 1_41
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_42
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_43
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_44
       rect:
         serializedVersion: 2
         x: 1024
@@ -508,7 +557,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_42
+    - name: StellaSpriteSheet 1_45
       rect:
         serializedVersion: 2
         x: 1280
@@ -518,7 +567,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_43
+    - name: StellaSpriteSheet 1_46
       rect:
         serializedVersion: 2
         x: 1536
@@ -528,11 +577,171 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet_44
+    - name: StellaSpriteSheet 1_47
       rect:
         serializedVersion: 2
         x: 1792
         y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_49
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_50
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_51
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_52
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_53
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_54
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_55
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_57
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_58
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_59
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_60
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_61
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_62
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StellaSpriteSheet 1_63
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
         width: 256
         height: 256
       alignment: 0
