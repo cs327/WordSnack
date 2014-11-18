@@ -215,8 +215,6 @@ public class LetterController : MonoBehaviour
 								emptyLetterCount++;
 						}
 				}
-				// damon for testing
-				letters = "elephant";
 				return letters;
 		}
 	
