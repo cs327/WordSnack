@@ -229,10 +229,12 @@ public class Character : MonoBehaviour
 						if (tasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 								tasteDictionary = new Dictionary<int, TasteCollection.Taste> ();
 								//Create the dictionary of taste ID's to functions
-								tasteDictionary.Add (0, TasteCollection.threeLetters);
+							//  tasteDictionary.Add (0, TasteCollection.threeLetters);
+                                tasteDictionary.Add (0, TasteCollection.endsWithVowel);
 								tasteDictionary.Add (1, TasteCollection.fiveOrLonger);
 								tasteDictionary.Add (2, TasteCollection.unCommonLetters);
-								tasteDictionary.Add (3, TasteCollection.endsWithVowel);
+							//	tasteDictionary.Add (3, TasteCollection.endsWithVowel);
+                                tasteDictionary.Add (3, TasteCollection.threeLetters);
 								tasteDictionary.Add (4, TasteCollection.twoOrMoreVowels);
 								tasteDictionary.Add (5, TasteCollection.twoOrMoreSame);
 								tasteDictionary.Add (6, TasteCollection.startsWithVowel);
@@ -244,10 +246,12 @@ public class Character : MonoBehaviour
 						if (humanReadableTasteDictionary == null) { //We only need (or can have, since it's static) one copy of this game-wide, so if it's been done already, don't do it again
 								humanReadableTasteDictionary = new Dictionary<int, string> ();
 								//Create the dictionary of taste ID's to Human-readable text
-								humanReadableTasteDictionary.Add (0, "3 letters");
+					//			humanReadableTasteDictionary.Add (0, "3 letters");
+                 //				humanReadableTasteDictionary.Add (3, "Ends in vowel");   
+                                humanReadableTasteDictionary.Add(0, "Ends in vowel");
 								humanReadableTasteDictionary.Add (1, "5+ letters");
 								humanReadableTasteDictionary.Add (2, "Letters worth 4+");
-								humanReadableTasteDictionary.Add (3, "Ends in vowel");
+                                humanReadableTasteDictionary.Add (3, "3 letters");
 								humanReadableTasteDictionary.Add (4, "2+ vowels");
 								humanReadableTasteDictionary.Add (5, "2+ same letter");
 								humanReadableTasteDictionary.Add (6, "Starts with vowel");
