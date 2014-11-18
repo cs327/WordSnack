@@ -59,6 +59,7 @@ public class Tutorial : MonoBehaviour
             gameObject.transform.position = offScreenPos;
             gameObject.transform.parent.transform.position = offScreenPos;
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+			GameObject.Find("VariableController").GetComponent<VariableControl>().instructionsDone = true;
             GameObject.Find("VariableController").transform.position = parentPos;
             Destroy(gameObject);
         }
@@ -105,6 +106,7 @@ public class Tutorial : MonoBehaviour
 			transform.parent.transform.position = parentPos;
 			GameObject.Find("closingTimeBG").GetComponent<BoxCollider>().enabled = false;
 			GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
+			GameObject.Find("VariableController").GetComponent<VariableControl>().instructionsDone = true;
 			Destroy(gameObject);
 		}
     }
