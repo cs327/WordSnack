@@ -67,11 +67,9 @@ public class ReceiptMover : MonoBehaviour
 		}
 		Vector3 pos = gameObject.transform.localPosition;
 		Vector3 currentPos = transform.position;
-		float scrollPos = (Input.mousePosition.y)/40 - scaleForPhone;
+	    float scrollDelta = (Input.mousePosition.y - lastClickPos.y)*scrollScale;
 		//print (Input.mousePosition.y);
-		if (pos.y <= highestPos + 5 || scrollPos > 0){ 
-			gameObject.transform.position = new Vector3(currentPos.x, scrollPos, currentPos.z);
-		}	
+	    gameObject.transform.localPosition = GetNewPosition(scrollDelta);
 	}
 
     // Update is called once per frame
@@ -82,8 +80,7 @@ public class ReceiptMover : MonoBehaviour
             Debug.Log("Didn't set startpos correctly");
 
         Vector3 pos = gameObject.transform.localPosition;
-		Vector3 currentPos = transform.position;
-		float scrollPos = 0;
+        
 //        if (Touched)
 //        {
 //            if (inBounds && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
@@ -106,9 +103,13 @@ public class ReceiptMover : MonoBehaviour
 //				tester.transform.renderer.material.color = Color.white;
 //			}
 //        }
-		if ((!Touched || currentPos.y < - 5) && pos.y <= highestPos - .01) 
+		if (!Touched && pos.y <= lowestPos)
 		{
-			transform.position += Vector3.up *Time.deltaTime * 2;
+            Debug.Log("Before: " + pos.y);
+		    gameObject.transform.localPosition = GetNewPosition(Time.deltaTime*0.02f);
+		    if (gameObject.transform.localPosition.y >= lowestPos)
+		        Touched = true;
+		    Debug.Log("After: " + gameObject.transform.localPosition.y);
 //            if (pos.y <= highestPos - .01)
 //            {
 //                float change = Time.deltaTime;
@@ -123,7 +124,7 @@ public class ReceiptMover : MonoBehaviour
 //                //Debug.Log("Arrived at " + gameObject.transform.position);
 //            }
 
-       }
+		}
 	}
 
 }
