@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 5ed8882ea3e27c24c902605fbcd76334
+guid: 465fb0c0ed5f4497e96c977ffaf1ac5b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ReceiptHeader
+    21300000: ReceiptHeader 1
+    21300002: ReceiptHeader
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
