@@ -186,14 +186,17 @@ public class PlayMusic : MonoBehaviour {
 			//Stops the Menu Music.
 			audioManager.Stop(4);
 			//Loops the GamePlay Music.
-            if (!variables.timedMode)
-            {
-                audioManager.PlayLoop(34);
-            }
-            else if (variables.timedMode)
-            {
-                audioManager.PlayLoop(35);
-            }
+			if (variables.instructionsDone)
+			{
+	            if (!variables.timedMode)
+	            {
+	                audioManager.PlayLoop(34);
+	            }
+	            else if (variables.timedMode)
+	            {
+	                audioManager.PlayLoop(35);
+	            }
+			}
 			NewOnStove();
 			Sizzle();
 			RejectedSound();
