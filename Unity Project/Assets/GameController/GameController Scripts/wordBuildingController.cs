@@ -23,6 +23,7 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject alertFlash;
 		public bool alertStarted = false;
 		public bool secondAlert = false;
+		public bool flashOnce = true;
 
 		public VariableControl variables;
 		public GameObject variableController;
@@ -313,8 +314,9 @@ public class wordBuildingController : MonoBehaviour
 				while (i < maxA) {
 						i += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, minA + i);
-						//flash.renderer.material.color = beMe;
-
+						if(secondAlert && flashOnce){
+							flash.renderer.material.color = beMe;
+						}
 						timeRemaining.transform.localScale = Vector3.Lerp (normalSize, biggerSize, i / maxA);
 						yield return null;
 				}
@@ -324,13 +326,15 @@ public class wordBuildingController : MonoBehaviour
 				while (i-j > minA) {
 						j += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, maxA - j);
-						//flash.renderer.material.color = beMe;
-
+						if(secondAlert && flashOnce){
+							flash.renderer.material.color = beMe;
+						}
 						timeRemaining.transform.localScale = Vector3.Lerp (biggerSize, normalSize, j / maxA);
 						yield return null;
 				}
 				timeRemaining.transform.localScale = normalSize;
 				if (secondAlert) {
+					flashOnce = false;
 						StartCoroutine (FlashColor (flash));
 				}
 
