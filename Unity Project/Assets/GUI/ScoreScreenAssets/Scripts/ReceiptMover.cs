@@ -6,19 +6,23 @@ public class ReceiptMover : MonoBehaviour
 {
 	Camera c;
 	public bool winSound; //for PlayMusic script
+    // This stores the lowest position the receipt should snap to when it's touched.
+    // The top edge of the receipt should be just below the top of the screen at this position
 	public static float lowestPos;
+    // This stores the highest position the receipt should go, i.e the position the receipt autoscrolls to
+    // The bottom edge should be just above the bottom of the screen at this position
 	public static float highestPos;
+    // Returns true if the receipt was touched, which stops autoscrolling from happening. 
 	public bool Touched;
-	public bool inBounds;
 	public Vector3 lastClickPos;
 	private Vector3 gameObjectPosAtLastClick;
 	public float scrollScale;
 	public TextMesh tester;
-	ReceiptGUI receipt;
+	//ReceiptGUI receipt;
 	// Use this for initialization
 	void Start()
 	{
-		receipt = gameObject.GetComponent<ReceiptGUI>();
+		//receipt = gameObject.GetComponent<ReceiptGUI>();
 		// This can be programmatically changed
 		//lowestPos = -7.470931f;
 		Touched = false;
@@ -61,12 +65,7 @@ public class ReceiptMover : MonoBehaviour
 		lastClickPos = Input.mousePosition;
 		gameObjectPosAtLastClick = gameObject.transform.localPosition;
 		Debug.Log("Touched");
-		Touched = true;
-		inBounds = true; 
-	}
-	
-	void OnMouseUp() {
-		inBounds = false;
+	    Touched = highestPos == lowestPos ? false : true;
 	}
 	
 	void OnMouseDrag () {
@@ -74,11 +73,9 @@ public class ReceiptMover : MonoBehaviour
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.IPhonePlayer) {
 			scaleForPhone = 2;
 		}
-		Vector3 pos = gameObject.transform.localPosition;
-		Vector3 currentPos = transform.position;
+	    if (lowestPos == highestPos)
+	        return;
 		float scrollDelta = (Input.mousePosition.y - lastClickPos.y)*scrollScale;
-		
-		//float scrollDelta = (Input.mousePosition.y - lastClickPos.y)*-10;
 		
 		//print (Input.mousePosition.y);
 		gameObject.transform.position = GetClampedPosition(scrollDelta);
