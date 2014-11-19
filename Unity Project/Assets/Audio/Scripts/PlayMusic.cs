@@ -185,6 +185,7 @@ public class PlayMusic : MonoBehaviour
 						ClickSound ();
 						TimedWarning ();
 						KitchenClosed ();
+                        Mute();
 
 				}
 				///////////////////////
@@ -477,4 +478,12 @@ public class PlayMusic : MonoBehaviour
 						variables.bellSound = false;
 				}
 		}
+
+        void Mute()
+        {
+            if (variables.mute)
+            {
+                audioManager.MuteAll();
+            }
+        }
 }
