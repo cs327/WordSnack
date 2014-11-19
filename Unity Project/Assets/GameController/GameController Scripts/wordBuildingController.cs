@@ -224,14 +224,14 @@ public class wordBuildingController : MonoBehaviour
 		flash.SetActive(true);
 		alertStarted = true;
 		Color fadeFrom = flash.renderer.material.color;
-		float maxA = .3f;
+		float maxA = .6f;
 		float minA = .001f;
 		float t = 2f;
 		float i = 0;
 		//timeRemaining.transform.localScale = biggerSize;
 		//while(flash.renderer.material.color.a < maxA){
 		while(i < maxA){
-			i += Time.deltaTime/t;
+			i += Time.deltaTime*t;
 			Color beMe = new Color (1, 0,0,minA + i);
 			//flash.renderer.material.color = beMe;
 
@@ -242,7 +242,7 @@ public class wordBuildingController : MonoBehaviour
 		//timeRemaining.transform.localScale = normalSize;
 		//while(flash.renderer.material.color.a > minA){
 		while(i-j > minA){
-			j += Time.deltaTime/t;
+			j += Time.deltaTime*t;
 			Color beMe = new Color (1, 0,0,maxA - j);
 			//flash.renderer.material.color = beMe;
 
