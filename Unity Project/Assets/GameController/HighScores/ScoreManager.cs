@@ -7,12 +7,20 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Linq;
 
-public static class ScoreManager 
+public class ScoreManager 
 {
+	private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
+
+//		var myObject = new MyClass();
+//		Prefs.Save<MyClass>("my object", myObject);
+//		var anotherObject = Prefs.Load<MyClass>("my object")
+			
+//			but instead saving and loading this member variable: 
+				
     // Stores a description of a high score and a list of scores that fit the description. 
     // i.e "Timed Meghan Stella" might return [323, 200, 100], those being the top three scores by
     // Meghan and Stella on timed mode
-    private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
+//    private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
     public static bool NeverShowInstructions = false;
     
     // Opens the save file, saves the current scoreList, then closes

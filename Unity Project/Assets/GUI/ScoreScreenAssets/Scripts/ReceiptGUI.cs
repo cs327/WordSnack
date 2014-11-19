@@ -32,8 +32,8 @@ public class ReceiptGUI : MonoBehaviour
 	public List <string> char1WordsFed = new List<string>();
 	public List <string> char2WordsFed =  new List<string>();
 	public Component[] meshes;
-    float score;
-	int rowCount;
+    public float score;
+	public int rowCount;
 
     //Ints that later get set from the values retrieved from Player Prefs
     int rawScore;
@@ -46,8 +46,8 @@ public class ReceiptGUI : MonoBehaviour
     void Start()
     {
         #region Receipt Setup
-        tilesDiscardedText.text = PlayerPrefs.GetFloat("Score").ToString();
-		scoreText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+        scoreText.text = PlayerPrefs.GetFloat("Score").ToString();
+		tilesDiscardedText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
 
         //#region Get Receipt Info
         rowCount = 0;
@@ -147,6 +147,35 @@ public class ReceiptGUI : MonoBehaviour
             AddRow("", "", "", "");
             AddRow("", "", "", "");
             AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");            
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
         }
 
         #endregion
