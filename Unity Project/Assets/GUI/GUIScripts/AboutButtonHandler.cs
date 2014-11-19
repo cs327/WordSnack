@@ -6,6 +6,7 @@ public class AboutButtonHandler : MonoBehaviour {
 	public Texture aboutSelected;
 	MeshRenderer mAbout;
 	public bool buttonPressed = false;
+    public bool clickSound;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,7 @@ public class AboutButtonHandler : MonoBehaviour {
              mAbout.renderer.material.mainTexture = aboutUnselected;
          }
          buttonPressed = true;
+         clickSound = true;
          Application.LoadLevel("About");
      }
 	

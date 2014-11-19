@@ -21,6 +21,7 @@ public class PlayMusic : MonoBehaviour {
 	//Character charac;
 
 	int numSelected = 0;
+    bool victory = false;
 
 	//ReceiptMove receipt;
 	//public GameObject receiptScript;
@@ -59,6 +60,11 @@ public class PlayMusic : MonoBehaviour {
 			Invoke("SpaceShipSound", 0);
 		}
 
+        if (Application.loadedLevelName == "ScoreScreen")
+        {
+
+        }
+
 	}
 	
 	// Update is called once per frame
@@ -79,14 +85,19 @@ public class PlayMusic : MonoBehaviour {
             }
         }
 
+        if (Application.loadedLevelName != "ScoreScreen")
+        {
+            victory = false;
+        }
+
 		if (Application.loadedLevelName == "SplashScreen")
 		{
 			//Stops any other music or sound tracks that may still be playing.
-			audioManager.Stop(5);
+            audioManager.Stop(34);
             audioManager.Stop(35);
-			audioManager.Stop(20);
-			audioManager.Stop(16);
-			audioManager.Stop(14);
+            audioManager.Stop(20);
+            audioManager.Stop(16);
+            audioManager.Stop(14);
 			//Plays the Menu Music
 			audioManager.PlayLoop(4);
 		}
@@ -94,11 +105,11 @@ public class PlayMusic : MonoBehaviour {
 		if (Application.loadedLevelName == "StartScreenTest")
 		{
 			//Stops any music that should not be playing
-			audioManager.Stop(5);
+            audioManager.Stop(34);
             audioManager.Stop(35);
-			audioManager.Stop(20);
-			audioManager.Stop(16);
-			audioManager.Stop(14);
+            audioManager.Stop(20);
+            audioManager.Stop(16);
+            audioManager.Stop(14);
 
 			//Plays the menu music only if it is not already playing.
 			if (audioManager.audioSourceArray[4].isPlaying == false)
@@ -117,7 +128,7 @@ public class PlayMusic : MonoBehaviour {
 		{
 
 			//Stops any sounds that should not be playing.
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
 			audioManager.Stop(20);
 			audioManager.Stop(16);
@@ -175,14 +186,17 @@ public class PlayMusic : MonoBehaviour {
 			//Stops the Menu Music.
 			audioManager.Stop(4);
 			//Loops the GamePlay Music.
-            if (!variables.timedMode)
-            {
-                audioManager.PlayLoop(5);
-            }
-            else if (variables.timedMode)
-            {
-                audioManager.PlayLoop(35);
-            }
+			if (variables.instructionsDone)
+			{
+	            if (!variables.timedMode)
+	            {
+	                audioManager.PlayLoop(34);
+	            }
+	            else if (variables.timedMode)
+	            {
+	                audioManager.PlayLoop(35);
+	            }
+			}
 			NewOnStove();
 			Sizzle();
 			RejectedSound();
@@ -200,9 +214,8 @@ public class PlayMusic : MonoBehaviour {
 		if (Application.loadedLevelName == "ScoreScreen")
 		{
 			//Stops the GamePlay Music
-			audioManager.Stop(5);
+			audioManager.Stop(34);
             audioManager.Stop(35);
-		   
 		// if (gameObject.GetComponent<ReceiptMove>().winSound == true)
 
 			//////////////////
@@ -224,16 +237,38 @@ public class PlayMusic : MonoBehaviour {
 			//    Debug.Log("helllyeah");
 			//}
 
+            //Loops the Victory Music until receipt stops moving.
+            //if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
+            //{
+
+
+            //}
+
 			//Loops the Receipt printing sounds while the receipt is both on screen and moving.
-			if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
-			{
-				audioManager.PlayLoop(20);
-			}
-			//Loops the Victory Music until receipt stops moving.
-			if (GameObject.Find("ReceiptPrefab").transform.position.y < 1.20)
-			{
-				audioManager.PlayLoop(16);
-			}
+            if (!victory)
+            {
+                if (!audioManager.audioSourceArray[16].isPlaying)
+                {
+                    audioManager.Play(16);
+                }
+                victory = true;
+            }
+
+            for (int x = 1; x == 1; x++)
+            {
+				if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
+                {
+					if (GameObject.Find("ReceiptPrefab").GetComponent<ReceiptMover>().Touched == false)
+					    {
+                    		audioManager.PlayLoop(20);
+						}
+					else
+					{
+						audioManager.Stop (20);
+					}
+                }
+            }
+        
 			//Click Sound for Menu Button
 			if (GameObject.Find("Menu").GetComponent<GoBackToMenu>().clickSound == true)
 			{
@@ -405,8 +440,7 @@ public class PlayMusic : MonoBehaviour {
 	{
 		if (variables.paused == true)
 		{
-			audioManager.Pause(5);
-            audioManager.Pause(35);
+            audioManager.PauseAll();
 		}
 		//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
 		//{
@@ -455,13 +489,37 @@ public class PlayMusic : MonoBehaviour {
 
     void TimedWarning()
     {
-        if (Mathf.RoundToInt(variables.globalTimer) == 31)
+        //30 second bell
+        if (Mathf.RoundToInt(variables.globalTimer) == 30)
         {
-            audioManager.Play(28);
+            if (!audioManager.audioSourceArray[28].isPlaying)
+            {
+                //for (int x = 1; x == 1; x++)
+                //{
+                    audioManager.Play(28);
+                //}
+            }
         }
-        if (Mathf.RoundToInt(variables.globalTimer) == 16)
+        //15 Second Bell
+        if (Mathf.RoundToInt(variables.globalTimer) == 15)
         {
-            audioManager.Play(27);
+            if (!audioManager.audioSourceArray[27].isPlaying){
+                //for (int x = 1; x == 1; x++)
+                //{
+                    audioManager.Play(27);
+                //}
+            }
+        }
+        //Ticking
+		if (Mathf.RoundToInt(variables.globalTimer) == 14)
+        {
+            if (!audioManager.audioSourceArray[36].isPlaying){
+                //for (int x = 1; x == 1; x++)
+                //{
+                     audioManager.Play(36);
+                //}
+            }
+
         }
     }
     void CharacterSelectTwo()
@@ -470,9 +528,9 @@ public class PlayMusic : MonoBehaviour {
     }
     void KitchenClosed()
     {
-        if (variables.bellSound && !audioManager.audioSourceArray[36].isPlaying)
+        if (variables.bellSound && !audioManager.audioSourceArray[37].isPlaying)
         {
-            audioManager.Play(36);
+            audioManager.Play(37);
             variables.bellSound = false;
         }
     }

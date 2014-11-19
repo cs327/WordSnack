@@ -52,13 +52,13 @@ public class wordBuildingController : MonoBehaviour
             
 
 				tasteHighlighters [0] = char1Taste1;
-                tasteHighLightPos [0] = new Vector3(0.0f, 4.82f, 0.08f);         // (-7.6f, 4.6f, -0.5f);
+                tasteHighLightPos [0] = new Vector3(1.0f, 0.0f, -1f);         // (-7.6f, 4.6f, -0.5f);
 				tasteHighlighters [1] = char1Taste2;
-        tasteHighLightPos [1] = new Vector3 (0.0f, 4.82f, 0.08f);          //(-7.6f, 3.9f, -0.5f);
+        tasteHighLightPos [1] = new Vector3 (1.0f, 0.0f, -1f);          //(-7.6f, 3.9f, -0.5f);
 				tasteHighlighters [2] = char2Taste1;
-        tasteHighLightPos [2] = new Vector3 (0.0f, 4.82f, 0.08f); //(7.6f, 4.6f, -0.5f);
+        tasteHighLightPos [2] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 4.6f, -0.5f);
 				tasteHighlighters [3] = char2Taste2;
-        tasteHighLightPos [3] = new Vector3 (0.0f, 4.82f, 0.08f); //(7.6f, 3.9f, -0.5f);
+        tasteHighLightPos [3] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 3.9f, -0.5f);
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
 				character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
@@ -112,6 +112,7 @@ public class wordBuildingController : MonoBehaviour
 					variables.endGame = false;
 				}
 				if(!fadingOut && fadeOut){
+					sendVariablestoScoreScreen ();
 					StartCoroutine(ClosingTime());
 				}
 				//updates time on screen
@@ -155,6 +156,7 @@ public class wordBuildingController : MonoBehaviour
 		print ("END THE GAME FADE IT OUT");
         variables.bellSound = true;
 		fadingOut = true;
+		yield return new WaitForSeconds(variables.closingTimeDelay);
 		float t = variables.gameOverFadeInTimer;
 		greyOut.SetActive(true);
 		Color fadeFrom = greyOut.renderer.material.color;
@@ -170,7 +172,6 @@ public class wordBuildingController : MonoBehaviour
 		}
 		closingTimeText.SetActive (true);
 		yield return new WaitForSeconds(variables.gameOverOnScreenTimer);
-		sendVariablestoScoreScreen ();
 		Application.LoadLevel ("ScoreScreen");
 		
 	}
@@ -208,10 +209,11 @@ public class wordBuildingController : MonoBehaviour
 	public void AlertPlayer(){
 		if(variables.globalTimer < variables.secondAlert && !secondAlert){
 			secondAlert = true;
-			timeRemaining.color = Color.magenta;
+			timeRemaining.color = Color.red;
 			StartCoroutine(FlashColor(alertFlash));
 		}
 		if(variables.globalTimer < variables.firstAlert && !alertStarted){
+			timeRemaining.color = Color.yellow;
 			StartCoroutine(FlashColor(alertFlash));
 		}
 	}
@@ -227,20 +229,22 @@ public class wordBuildingController : MonoBehaviour
 		float t = 2f;
 		float i = 0;
 		//timeRemaining.transform.localScale = biggerSize;
-		while(flash.renderer.material.color.a < maxA){
+		//while(flash.renderer.material.color.a < maxA){
+		while(i < maxA){
 			i += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,minA + i);
-			flash.renderer.material.color = beMe;
+			//flash.renderer.material.color = beMe;
 
 			timeRemaining.transform.localScale = Vector3.Lerp(normalSize,biggerSize,i/maxA);
 			yield return null;
 		}
 		float j = 0;
 		//timeRemaining.transform.localScale = normalSize;
-		while(flash.renderer.material.color.a > minA){
+		//while(flash.renderer.material.color.a > minA){
+		while(i-j > minA){
 			j += Time.deltaTime/t;
 			Color beMe = new Color (1, 0,0,maxA - j);
-			flash.renderer.material.color = beMe;
+			//flash.renderer.material.color = beMe;
 
 			timeRemaining.transform.localScale = Vector3.Lerp(biggerSize,normalSize,j/maxA);
 			yield return null;

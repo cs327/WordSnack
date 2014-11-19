@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 31746d40d9bd14ef5934ce3fd4bfa238
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: ClosingTimeText
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

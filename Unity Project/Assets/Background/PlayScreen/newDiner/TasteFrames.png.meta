@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: b272fb4bf09b24b349552f710d184812
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: TasteFrames
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

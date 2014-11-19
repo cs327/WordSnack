@@ -33,7 +33,7 @@ public class LetterController : MonoBehaviour
 		private List<string> combinationList = new List<string> ();
 		private List<string> permutationList = new List<string> ();
 		public static Dictionary<char, int> letterScores;
-		public Texture2D shuffleButton;
+		//public Texture2D shuffleButton;
 		public bool gamePaused;
 		public GameObject gameController;
 		public bool needsReordering = true;
@@ -72,13 +72,13 @@ public class LetterController : MonoBehaviour
 				stoveSpots = new Vector3[boardSize];
 				bankSpots = new Vector3[boardSize];
 				for (int i = 0; i < boardSize; i++) {
-						stoveSpots [i] = new Vector3 (i * 1.4f - 5.7f, -1.26f, 0);
+						stoveSpots [i] = new Vector3 (i * 1.4f - 4.95f, -1.26f, 0);
 						bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 						positionOnBoard [i] = -1;
 				}
 				variables.letterGenerationSound = true;
 				CreateSteam ();
-				//CheckPermutations("mnmnbv");
+				//CheckPermutations("xyzwvtxx");
 		}
 
 		// Update is called once per frame
@@ -115,22 +115,14 @@ public class LetterController : MonoBehaviour
 
 				//ends the game if the player has run out of letters
 				//changed - used to be emptyLetterCount >= 5
-                if ((variables.totalLetters == 0) && (countToEndGame >= 7))
-                {
-                    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
-                    Application.LoadLevel("ScoreScreen");
-                }
+                //if ((variables.totalLetters == 0) && (countToEndGame >= 7))
+                //{
+                //    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
+                //    Application.LoadLevel("ScoreScreen");
+                //}
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
-		 	if(!variables.timedMode){
-				if(variables.lettersRemaining <= boardSize && !stopSearch && !noWordsLeft){
-					CheckPermutations(myLetters);
-				}
-				if(noWordsLeft){
-					variables.endGame = true;
-				}
-			}
 		  
 		}
 
@@ -256,36 +248,36 @@ public class LetterController : MonoBehaviour
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
                 {
-                    
-					//Removes a consonant from the bag.
-					char letterToReturn = serializedLetterBag[0];
-					for (int i = 1; i < serializedLetterBag.Count; i++) {
-						if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
-							letterToReturn = serializedLetterBag[i];
-						}
-					}
-//                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
-                    variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
+                    if (!variables.timedMode) { 
+					    //Removes a consonant from the bag.
+					    char letterToReturn = serializedLetterBag[0];
+					    for (int i = 1; i < serializedLetterBag.Count; i++) {
+						    if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
+							    letterToReturn = serializedLetterBag[i];
+						    }
+					    }
+    //                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
+                        variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
 
-                    //Creates an additional "A" or "E" if there are no vowels left
-                    float aOrE = Random.Range(0.0f, 1.0f);
+                        //Creates an additional "A" or "E" if there are no vowels left
+                        float aOrE = Random.Range(0.0f, 1.0f);
 
-                    if (aOrE < 0.5f)
-                    {
-                        variables.numA++;
-                        variables.totalVowels++;
-                        vowelsInLetterBag.Add('a');
+                        if (aOrE < 0.5f)
+                        {
+                            variables.numA++;
+                            variables.totalVowels++;
+                            vowelsInLetterBag.Add('a');
 
+
+                        }
+                        if (aOrE >= 0.5f)
+                        {
+                            variables.numE++;
+                            variables.totalVowels++;
+                            vowelsInLetterBag.Add('e');
+                        }
 
                     }
-                    if (aOrE >= 0.5f)
-                    {
-                        variables.numE++;
-                        variables.totalVowels++;
-                        vowelsInLetterBag.Add('e');
-                    }
-
-
                 }
 						Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
@@ -327,6 +319,7 @@ public class LetterController : MonoBehaviour
                             if (variables.timedMode)
                             {
                                 variables.totalVowels++;
+                                variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] + 1;
                             }
                         }
 						variables.totalLetters--; //decrement total number of tiles in bag to display to player
@@ -408,7 +401,17 @@ public class LetterController : MonoBehaviour
 						CreateLetters (newLetters);
 			 
 				}
-		}
+				
+				if(!variables.timedMode){
+				stopSearch = false;
+					if(variables.lettersRemaining <= boardSize-2 && !stopSearch && !noWordsLeft){
+						CheckPermutations(myLetters);
+					}
+					if(noWordsLeft){
+						variables.endGame = true;
+					}
+				}
+				}
 
 	
 		void moveToAndFromStove ()
@@ -509,8 +512,7 @@ public class LetterController : MonoBehaviour
 				//Debug.Log ("myLetters is now " + myLetters);
 				numLettersOnStove = 0;
 				variables.letterGenerationSound = true;
-				stopSearch = false;
-
+				//stopSearch = false;
 		}
 
 		//can be called to return whatever is on the stove as a string
@@ -534,7 +536,7 @@ public class LetterController : MonoBehaviour
 		}
 
 		//shuffles the letters currently in your hand
-		void shuffleLetters ()
+		public void shuffleLetters ()
 		{
 				variables.shuffleSound = true;
 				int nextSpotNum = -1;
@@ -600,20 +602,20 @@ public class LetterController : MonoBehaviour
 				return onBoard;
 		}
 		//current test for sending words from stove
-		void OnGUI ()
-		{
-				//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
-				//	sendWord();
-				//} else 
-				if (!gamePaused) {
-						GUIStyle style = new GUIStyle ();
-						style.normal.background = shuffleButton;
-
-						if (GUI.Button (new Rect (Screen.width * 0.013f, Screen.height * 0.43f, Screen.width * 0.07f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
-								shuffleLetters ();
-						}
-				}
-		}
+//		void OnGUI ()
+//		{
+//				//if (GUI.Button(new Rect(430, 370, 100, 30), "Send Word")){
+//				//	sendWord();
+//				//} else 
+//				if (!gamePaused) {
+//						GUIStyle style = new GUIStyle ();
+//						style.normal.background = shuffleButton;
+//
+//						if (GUI.Button (new Rect (Screen.width * 0.075f, Screen.height * 0.625f, Screen.width * 0.1f, Screen.width * 0.07f), "", style)) { //shuffles the letters in your hand
+//								shuffleLetters ();
+//						}
+//				}
+//		}
 
 		void makeWordListAndScoreDict ()
 		{
@@ -698,6 +700,13 @@ public class LetterController : MonoBehaviour
 				return count;
 		}
 	void CheckPermutations(string input){
+		input = input.Replace(",","");
+		input = input.Replace(".","");
+		if(input.Length > 6){
+			stopSearch = true;
+			return;
+		}
+		combinationList.Clear();
 		CreateCombinations("" , input);
 		for(int i = 2; i < input.Length+1; i++){
 			foreach(string check in combinationList){
@@ -733,7 +742,7 @@ public class LetterController : MonoBehaviour
 				usedChar[i] = true;
 				CreateAndSubmitPermutations(check, length, level+1,usedChar,output);
 				usedChar[i] = false;
-				output = "";
+				output = output.Remove(output.Length - 1);
 			}
 		}
 		//print (output);
@@ -746,7 +755,7 @@ public class LetterController : MonoBehaviour
 			return;
 		}
 		if(rest == ""){
-			if(active.Length > 1){
+			if(active.Length > 1 && active.Length < 5){
 				combinationList.Add(active);
 				//print (active);
 			}

@@ -12,7 +12,7 @@ public class VariableControl : MonoBehaviour {
 	public bool timerStart = false;
 	public bool paused = false;
 	public bool endGame = false;
-
+	public float closingTimeDelay = .5f;
 	public int firstAlert = 30;
 	public int secondAlert = 15;
 
@@ -91,6 +91,7 @@ public class VariableControl : MonoBehaviour {
 	public bool doubleTasteSound;
     public int eatingSound = 0;
     public bool bellSound;
+	public bool instructionsDone = false;
 	
 	//tweakable variables: 
 	public int minWordLength;
@@ -306,7 +307,7 @@ public class VariableControl : MonoBehaviour {
 //        {
 //            iPhoneType = 2;
 //        }
-//#if UNITY_IPHONE
+#if UNITY_IPHONE
         ///* To comment out this block, simply delete the first two comment lines on this line
 			switch(iPhone.generation){
 			case (iPhoneGeneration.iPhone):
@@ -337,7 +338,7 @@ public class VariableControl : MonoBehaviour {
 	//			iPhoneType = 2; 
 	//			break;
 			}//*/
-//#endif
+#endif
 	}
 
 	void KeepTime(){

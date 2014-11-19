@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 263256dbc983241e0acbd25d4198d55b
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: PauseButton
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

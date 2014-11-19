@@ -4,7 +4,7 @@ using System.Collections;
 public class GameStateController : MonoBehaviour {
 	//reference to the main controller script 
 	VariableControl variables;
-
+	wordBuildingController playController;
 	//state control variables 
 	bool stopTiming = false;
 
@@ -15,7 +15,9 @@ public class GameStateController : MonoBehaviour {
 	void Start () {
 		//establishes script reference
 		variables = gameObject.GetComponent<VariableControl>();
-
+		if (Application.loadedLevelName == "WordMaking") {
+			playController = GameObject.Find("GameController").GetComponent<wordBuildingController>();
+		}
 		//automatically sets the iPhone rotation 
 		Screen.autorotateToLandscapeLeft = true;
 		Screen.orientation = ScreenOrientation.AutoRotation;
@@ -45,6 +47,7 @@ public class GameStateController : MonoBehaviour {
 
 		//ends the game
 		if (variables.timeToEndGame) {
+			playController.sendVariablestoScoreScreen();
 			Application.LoadLevel("ScoreScreen");
 			variables.timeToEndGame = false;
 			//destroys the onscreen characters
