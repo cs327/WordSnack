@@ -147,35 +147,35 @@ public class ReceiptGUI : MonoBehaviour
             AddRow("", "", "", "");
             AddRow("", "", "", "");
             AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");            
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");            
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
+            //AddRow("", "", "", "");
         }
 
         #endregion
@@ -195,44 +195,9 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("ROWCOUNT: " + rowCount);
         #endregion 
 
-        //#region Setup Receipt Bottom
-//        bottomInstance.transform.parent = transform;
-//        Component[] meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-//		meshes = bottomInstance.GetComponentsInChildren<TextMesh>();
-		tilesDiscardedText.text = "0";
-//		if (GameObject.Find("WordsFed") != null) {
-//			tilesDiscardedText.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-//			scoreText.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-//		} else {
-//			tilesDiscardedText.text = "0";
-//			scoreText.text = "0";
-//
-//		}
 
-//		scoreText.text = PlayerPrefs.GetFloat("Score").ToString();
-//        foreach(TextMesh mesh in meshes)
-//        {
-//            Debug.Log("Mesh is named: " + mesh);
-//			string trashed = "";
-//            switch(mesh.name)
-//            {
-//
-//                case "Discarded Tiles":
-//					if (GameObject.Find("WordsFed") != null) {
-//                    	trashed = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum.ToString();
-//					} else {
-//						trashed = "0";
-//					}
-//                    for (int i = 4 - trashed.Length; i > 0; i--)
-//                        trashed = " " + trashed;
-//                    mesh.text = trashed;
-//                    break;
-//                case "Total":
-//                    mesh.text = PlayerPrefs.GetFloat("Score").ToString();
-//                    break;
-//            }
-//        }
-//        firstRowPos = bottomInstance.transform.position;
+		tilesDiscardedText.text = "0";
+
         firstRowPos.y = firstRowPos.y - rowCount * rowOffset;
         bottomInstance.transform.position = firstRowPos;
 

@@ -13,7 +13,8 @@ public class ScoreManager
 		void Awake ()
 		{
 				// Forces a different code path in the BinaryFormatter that doesn't rely on run-time code generation (which would break on iOS).
-				Environment.SetEnvironmentVariable ("MONO_REFLECTION_SERIALIZER", "yes");
+				//Environment.SetEnvironmentVariable ("MONO_REFLECTION_SERIALIZER", "yes");
+		    //Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
 		}
 		// Stores a description of a high score and a list of scores that fit the description. 
 		// i.e "Timed Meghan Stella" might return [323, 200, 100], those being the top three scores by

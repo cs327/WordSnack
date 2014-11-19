@@ -35,34 +35,25 @@ public class ReceiptMover : MonoBehaviour
 		//gameObject.transform.position = pos;
 	}
 	
-	public Vector3 GetNewPosition(Vector3 deltaPos)
+	public Vector3 GetClampedPosition(Vector3 deltaPos)
 	{
 		float scaleForPhone = 0;
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.IPhonePlayer) {
 			scaleForPhone = 2;
 		}
-		Vector3 pos = gameObject.transform.localPosition;
-		//		(gameObject.transform.position.y > -4 && pos.y > deltaPos.y + pos.y))
-		if (receipt.bottomInstance.transform.position.y < -4 || deltaPos.y < 0 ) {
-			pos.y += deltaPos.y * Time.deltaTime * 50;
-		}
-		//		pos.y += deltaPos.y;
-		//		if (!Touched) {
-		//pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos - scaleForPhone , highestPos + scaleForPhone);	
-		
-		//pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos + scaleForPhone , highestPos - scaleForPhone);	
-		
-		//		pos.y = Mathf.Clamp((pos.y + deltaPos.y), lowestPos , highestPos);
-		//		} else {
-		//			pos.y += deltaPos.y;
-		//		}
-		return pos;
+	    Vector3 pos = gameObject.transform.position;
+	    if (deltaPos.y > 0 && deltaPos.y + pos.y < lowestPos)
+	        pos.y = pos.y + deltaPos.y;
+        else
+	        pos.y = Mathf.Clamp(deltaPos.y + pos.y, lowestPos, highestPos);
+        
+	    return pos;
 	}
 	
-	public Vector3 GetNewPosition(float deltaY)
+	public Vector3 GetClampedPosition(float deltaY)
 	{
 		Vector3 pos = new Vector3(0, deltaY, 0);
-		return GetNewPosition(pos);
+		return GetClampedPosition(pos);
 	}
 	
 	void OnMouseDown()
@@ -90,7 +81,7 @@ public class ReceiptMover : MonoBehaviour
 		//float scrollDelta = (Input.mousePosition.y - lastClickPos.y)*-10;
 		
 		//print (Input.mousePosition.y);
-		gameObject.transform.localPosition = GetNewPosition(scrollDelta);
+		gameObject.transform.position = GetClampedPosition(scrollDelta);
 	}
 	
 	// Update is called once per frame
@@ -122,7 +113,7 @@ public class ReceiptMover : MonoBehaviour
 		//                //Debug.Log(lastClickPos.y);
 		//                //Debug.Log("moved receipt by " + (Input.mousePosition - lastClickPos).y.ToString());
 		//                gameObject.transform.localPosition = gameObjectPosAtLastClick;
-		//                gameObjectPosAtLastClick = GetNewPosition((Input.mousePosition - lastClickPos) * scrollScale);
+		//                gameObjectPosAtLastClick = GetClampedPosition((Input.mousePosition - lastClickPos) * scrollScale);
 		//				tester.transform.renderer.material.color = Color.blue;
 		//            } else {
 		//				tester.transform.renderer.material.color = Color.white;
@@ -132,17 +123,17 @@ public class ReceiptMover : MonoBehaviour
 		if (!Touched && pos.y <= highestPos + scaleForPhone)
 			//	&& pos.y <= lowestPos
 		{
-			Debug.Log("Before: " + pos.y);
-			gameObject.transform.localPosition = GetNewPosition(Time.deltaTime*2.0f);
+			//Debug.Log("Before: " + pos.y);
+			gameObject.transform.position = GetClampedPosition(Time.deltaTime*2.0f);
 			//		    if (gameObject.transform.localPosition.y >= lowestPos)
 			//		        Touched = true;
-			Debug.Log("After: " + gameObject.transform.localPosition.y);
+			//Debug.Log("After: " + gameObject.transform.);
 			//            if (pos.y <= highestPos - .01)
 			//            {
 			//                float change = Time.deltaTime;
 			//                Debug.Log("started at : " + pos.y + " moved to " + pos.y + change);
 			//                pos.y = Mathf.Clamp(pos.y + change * 1.0f, pos.y, highestPos);
-			//                gameObject.transform.localPosition = GetNewPosition(Time.deltaTime * 2.0f);
+			//                gameObject.transform.localPosition = GetClampedPosition(Time.deltaTime * 2.0f);
 			//            }
 			//            else
 			//            {
