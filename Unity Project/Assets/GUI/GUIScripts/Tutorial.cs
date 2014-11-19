@@ -22,8 +22,8 @@ public class Tutorial : MonoBehaviour
     public bool timerBegin = false;
 	GameObject leftTaste;
 	GameObject rightTaste;
-//	GameObject //topDarkOut;
-//	GameObject //bottomDarkOut;
+	GameObject topDarkOut;
+	GameObject bottomDarkOut;
     
     // Use this for initialization
     void Start()
@@ -49,8 +49,8 @@ public class Tutorial : MonoBehaviour
 		leftTaste = GameObject.Find ("leftPanel");
 		rightTaste = GameObject.Find ("rightPanel");
 
-		//topDarkOut = GameObject.Find ("TopDarkOut");
-		////bottomDarkOut = GameObject.Find ("BottomDarkOut");
+		topDarkOut = GameObject.Find ("TopDarkOut");
+		bottomDarkOut = GameObject.Find ("BottomDarkOut");
 	}
 
     void Update()
@@ -89,14 +89,15 @@ public class Tutorial : MonoBehaviour
         {
             m.renderer.material.mainTexture = instructions[1];
 			transform.localPosition = new Vector3(-1.81f, 4.77f,-0.1f);
-			transform.localScale = new Vector3(0.52f, 1.21f, 0.51f);
+			transform.localScale = new Vector3(0.7f, 1.21f, 0.69f);
 			trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
             //transform.localPosition = new Vector3(-1.32f, 0.429f, -0.41f);
             //transform.localScale = new Vector3(0.67f, 1.21f, 0.64f);
 
-			//bottomDarkOut.transform.localPosition = new Vector3(//bottomDarkOut.transform.localPosition.x, //bottomDarkOut.transform.localPosition.y, 12.1f);
-			//topDarkOut.transform.localPosition = new Vector3(//topDarkOut.transform.localPosition.x, //topDarkOut.transform.localPosition.y, 0.06f);
-        }// Clicked on trash screen, hide instructions  
+			bottomDarkOut.transform.localPosition = new Vector3(bottomDarkOut.transform.localPosition.x, bottomDarkOut.transform.localPosition.y, 12.1f);
+			topDarkOut.transform.localPosition = new Vector3(topDarkOut.transform.localPosition.x, topDarkOut.transform.localPosition.y, 0);
+			transform.parent.GetComponent<MeshRenderer>().renderer.enabled = false;
+		}// Clicked on trash screen, hide instructions  
         else if (m.renderer.material.mainTexture == instructions[1])
         {
 			m.renderer.material.mainTexture = instructions[2];
@@ -109,7 +110,7 @@ public class Tutorial : MonoBehaviour
 
 			transform.localPosition = new Vector3(0.08f, 4.77f,-0.92f);
 			transform.localScale = new Vector3(0.7f, 1.21f, 0.71f);
-			//topDarkOut.transform.localPosition = new Vector3(//topDarkOut.transform.localPosition.x, //topDarkOut.transform.localPosition.y, 2.06f);
+			topDarkOut.transform.localPosition = new Vector3(topDarkOut.transform.localPosition.x, topDarkOut.transform.localPosition.y, 1.84f);
 
         }
 		else if (m.renderer.material.mainTexture == instructions[2])
