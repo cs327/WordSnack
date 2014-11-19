@@ -186,14 +186,17 @@ public class PlayMusic : MonoBehaviour {
 			//Stops the Menu Music.
 			audioManager.Stop(4);
 			//Loops the GamePlay Music.
-            if (!variables.timedMode)
-            {
-                audioManager.PlayLoop(34);
-            }
-            else if (variables.timedMode)
-            {
-                audioManager.PlayLoop(35);
-            }
+			if (variables.instructionsDone)
+			{
+	            if (!variables.timedMode)
+	            {
+	                audioManager.PlayLoop(34);
+	            }
+	            else if (variables.timedMode)
+	            {
+	                audioManager.PlayLoop(35);
+	            }
+			}
 			NewOnStove();
 			Sizzle();
 			RejectedSound();
@@ -253,9 +256,16 @@ public class PlayMusic : MonoBehaviour {
 
             for (int x = 1; x == 1; x++)
             {
-                if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
+				if ((1.20 > GameObject.Find("ReceiptPrefab").transform.position.y) && (GameObject.Find("ReceiptPrefab").transform.position.y > -6.5))
                 {
-                    audioManager.PlayLoop(20);
+					if (GameObject.Find("ReceiptPrefab").GetComponent<ReceiptMover>().Touched == false)
+					    {
+                    		audioManager.PlayLoop(20);
+						}
+					else
+					{
+						audioManager.Stop (20);
+					}
                 }
             }
         

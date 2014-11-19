@@ -19,16 +19,18 @@ public static class ScoreManager
     private static void SaveScores()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/HighScoreSaves.gd");
+        FileStream file = File.Create(Application.persistentDataPath + @"/HighScoreSaves.gd");
         bf.Serialize(file, scoreList);
         file.Close();
+        
+        Debug.Log("Saving highscores");
     }
 
     public static void ClearHighScores()
     {
-        if (File.Exists(Application.persistentDataPath + "/HighScoreSaves.gd"))
+        if (File.Exists(Application.persistentDataPath + @"/HighScoreSaves.gd"))
         {
-            File.Delete(Application.persistentDataPath + "/HighScoreSaves.gd");
+            File.Delete(Application.persistentDataPath + @"/HighScoreSaves.gd");
         }
         scoreList = new Dictionary<string, List<int>>();
     }
@@ -121,15 +123,16 @@ public static class ScoreManager
     // Reads the save file if it exists, loads the scores into scoreList
     private static void LoadScores()
     {
-        if (File.Exists(Application.persistentDataPath + "/HighScoreSaves.gd"))
+        if (File.Exists(Application.persistentDataPath + @"/HighScoreSaves.gd"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/HighScoreSaves.gd", FileMode.Open);
+            FileStream file = File.Open(Application.persistentDataPath + @"/HighScoreSaves.gd", FileMode.Open);
             scoreList = (Dictionary<string, List<int>>) bf.Deserialize(file);            
             file.Close();
         }
         else
         {
+            Debug.Log("HighScoresSaves not found");
             scoreList = new Dictionary<string, List<int>>();
         }
     }

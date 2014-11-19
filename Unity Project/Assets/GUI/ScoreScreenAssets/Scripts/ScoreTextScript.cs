@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ScoreTextScript : MonoBehaviour {
@@ -20,6 +20,11 @@ public class ScoreTextScript : MonoBehaviour {
 	// need to access some variables
 	private VariableControl variables;
 
+	// supernova fun for big meals
+	public ParticleSystem supernova;
+	private bool exploded;
+	private ParticleSystem super1;
+	private ParticleSystem super2;
 	
 	// Use this for initialization
 	void Start () {
@@ -37,6 +42,8 @@ public class ScoreTextScript : MonoBehaviour {
 		GetComponent<TextMesh>().text = baseScore.ToString();
 
 		firstWait = true;
+
+		exploded = false;
 	}
 	
 
@@ -145,11 +152,19 @@ public class ScoreTextScript : MonoBehaviour {
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
 				if (longWord && !firstWait) {
 					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal!";
+					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+					GetComponent<TextMesh>().color = new Color(1.0f, 0.2f, 0.2f);
+
 					longWord = false;
 					
 					timePassed = 0.0f;
 					waitTime = variables.BigMealDisplayTime;
-				
+
+					// supernova!
+					super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
+					super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
+					exploded = true;
+
 				} else if (!longWord && !firstWait) {
 					// we should be DONE
 					timePassed = 10.0f;
@@ -184,6 +199,11 @@ public class ScoreTextScript : MonoBehaviour {
 		// destroy when disappeared
 		if (alpha <= 0.0f) {
 			Destroy(gameObject);
+
+			if (exploded) {
+				//Destroy(super1);
+				//Destroy(super2);
+			}
 		}
 	}
 }

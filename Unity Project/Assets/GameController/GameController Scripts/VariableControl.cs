@@ -91,6 +91,7 @@ public class VariableControl : MonoBehaviour {
 	public bool doubleTasteSound;
     public int eatingSound = 0;
     public bool bellSound;
+	public bool instructionsDone = false;
 	
 	//tweakable variables: 
 	public int minWordLength;
