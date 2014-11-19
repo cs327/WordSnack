@@ -302,8 +302,8 @@ public class Character : MonoBehaviour
 					*/
 					
 					if (this.characterNum == 1) {
-						this.transform.localScale = new Vector3 (1.7f, 1.7f, 1.05f);
-						this.transform.Translate (new Vector3 (0.0f, -0.05f, 0.0f));
+						this.transform.localScale = new Vector3 (1.5f, 1.5f, 1.5f);
+						this.transform.Translate (new Vector3 (0.0f, -.3f, 0.0f));
 					} else if (this.characterNum == 2) {
 						this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
 						this.transform.Translate (new Vector3 (0.0f, 0.0f, 0.0f));

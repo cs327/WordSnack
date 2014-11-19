@@ -1,71 +1,71 @@
 fileFormatVersion: 2
-guid: ff319b97b075b408aa914103692392bf
+guid: 2a2dce93b60154be0817e0f2eecc8719
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FredSpriteSheet_0
-    21300002: FredSpriteSheet_1
-    21300004: FredSpriteSheet_2
-    21300006: FredSpriteSheet_3
-    21300008: FredSpriteSheet_4
-    21300010: FredSpriteSheet_5
-    21300012: FredSpriteSheet_6
-    21300014: FredSpriteSheet_7
-    21300016: FredSpriteSheet_8
-    21300018: FredSpriteSheet_9
-    21300020: FredSpriteSheet_10
-    21300022: FredSpriteSheet_11
-    21300024: FredSpriteSheet_12
-    21300026: FredSpriteSheet_13
-    21300028: FredSpriteSheet_14
-    21300030: FredSpriteSheet_15
-    21300032: FredSpriteSheet_16
-    21300034: FredSpriteSheet_17
-    21300036: FredSpriteSheet_18
-    21300038: FredSpriteSheet_19
-    21300040: FredSpriteSheet_20
-    21300042: FredSpriteSheet_21
-    21300044: FredSpriteSheet_22
-    21300046: FredSpriteSheet_23
-    21300048: FredSpriteSheet_24
-    21300050: FredSpriteSheet_25
-    21300052: FredSpriteSheet_26
-    21300054: FredSpriteSheet_27
-    21300056: FredSpriteSheet_28
-    21300058: FredSpriteSheet_29
-    21300060: FredSpriteSheet_30
-    21300062: FredSpriteSheet_31
-    21300064: FredSpriteSheet_32
-    21300066: FredSpriteSheet_33
-    21300068: FredSpriteSheet_34
-    21300070: FredSpriteSheet_35
-    21300072: FredSpriteSheet_36
-    21300074: FredSpriteSheet_37
-    21300076: FredSpriteSheet_38
-    21300078: FredSpriteSheet_39
-    21300080: FredSpriteSheet_40
-    21300082: FredSpriteSheet_41
-    21300084: FredSpriteSheet_42
-    21300086: FredSpriteSheet_43
-    21300088: FredSpriteSheet_44
-    21300090: FredSpriteSheet_45
-    21300092: FredSpriteSheet_46
-    21300094: FredSpriteSheet_47
-    21300096: FredSpriteSheet_48
-    21300098: FredSpriteSheet_49
-    21300100: FredSpriteSheet_50
-    21300102: FredSpriteSheet_51
-    21300104: FredSpriteSheet_52
-    21300106: FredSpriteSheet_53
-    21300108: FredSpriteSheet_54
-    21300110: FredSpriteSheet_55
-    21300112: FredSpriteSheet_56
-    21300114: FredSpriteSheet_57
-    21300116: FredSpriteSheet_58
-    21300118: FredSpriteSheet_59
-    21300120: FredSpriteSheet_60
-    21300122: FredSpriteSheet_61
-    21300124: FredSpriteSheet_62
-    21300126: FredSpriteSheet_63
+    21300000: FredSpriteSheet 1_0
+    21300002: FredSpriteSheet 1_1
+    21300004: FredSpriteSheet 1_2
+    21300006: FredSpriteSheet 1_3
+    21300008: FredSpriteSheet 1_4
+    21300010: FredSpriteSheet 1_5
+    21300012: FredSpriteSheet 1_6
+    21300014: FredSpriteSheet 1_7
+    21300016: FredSpriteSheet 1_8
+    21300018: FredSpriteSheet 1_9
+    21300020: FredSpriteSheet 1_10
+    21300022: FredSpriteSheet 1_11
+    21300024: FredSpriteSheet 1_12
+    21300026: FredSpriteSheet 1_13
+    21300028: FredSpriteSheet 1_14
+    21300030: FredSpriteSheet 1_15
+    21300032: FredSpriteSheet 1_16
+    21300034: FredSpriteSheet 1_17
+    21300036: FredSpriteSheet 1_18
+    21300038: FredSpriteSheet 1_19
+    21300040: FredSpriteSheet 1_20
+    21300042: FredSpriteSheet 1_21
+    21300044: FredSpriteSheet 1_22
+    21300046: FredSpriteSheet 1_23
+    21300048: FredSpriteSheet 1_24
+    21300050: FredSpriteSheet 1_25
+    21300052: FredSpriteSheet 1_26
+    21300054: FredSpriteSheet 1_27
+    21300056: FredSpriteSheet 1_28
+    21300058: FredSpriteSheet 1_29
+    21300060: FredSpriteSheet 1_30
+    21300062: FredSpriteSheet 1_31
+    21300064: FredSpriteSheet 1_32
+    21300066: FredSpriteSheet 1_33
+    21300068: FredSpriteSheet 1_34
+    21300070: FredSpriteSheet 1_35
+    21300072: FredSpriteSheet 1_36
+    21300074: FredSpriteSheet 1_37
+    21300076: FredSpriteSheet 1_38
+    21300078: FredSpriteSheet 1_39
+    21300080: FredSpriteSheet 1_40
+    21300082: FredSpriteSheet 1_41
+    21300084: FredSpriteSheet 1_42
+    21300086: FredSpriteSheet 1_43
+    21300088: FredSpriteSheet 1_44
+    21300090: FredSpriteSheet 1_45
+    21300092: FredSpriteSheet 1_46
+    21300094: FredSpriteSheet 1_47
+    21300096: FredSpriteSheet 1_48
+    21300098: FredSpriteSheet 1_49
+    21300100: FredSpriteSheet 1_50
+    21300102: FredSpriteSheet 1_51
+    21300104: FredSpriteSheet 1_52
+    21300106: FredSpriteSheet 1_53
+    21300108: FredSpriteSheet 1_54
+    21300110: FredSpriteSheet 1_55
+    21300112: FredSpriteSheet 1_56
+    21300114: FredSpriteSheet 1_57
+    21300116: FredSpriteSheet 1_58
+    21300118: FredSpriteSheet 1_59
+    21300120: FredSpriteSheet 1_60
+    21300122: FredSpriteSheet 1_61
+    21300124: FredSpriteSheet 1_62
+    21300126: FredSpriteSheet 1_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -86,9 +86,9 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 4096
+  maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -104,14 +104,10 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    textureFormat: -3
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: FredSpriteSheet_0
+    - name: FredSpriteSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,7 +117,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_1
+    - name: FredSpriteSheet 1_1
       rect:
         serializedVersion: 2
         x: 512
@@ -131,7 +127,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_2
+    - name: FredSpriteSheet 1_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -141,7 +137,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_3
+    - name: FredSpriteSheet 1_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -151,7 +147,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_4
+    - name: FredSpriteSheet 1_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -161,7 +157,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_5
+    - name: FredSpriteSheet 1_5
       rect:
         serializedVersion: 2
         x: 2560
@@ -171,7 +167,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_6
+    - name: FredSpriteSheet 1_6
       rect:
         serializedVersion: 2
         x: 3072
@@ -181,7 +177,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_7
+    - name: FredSpriteSheet 1_7
       rect:
         serializedVersion: 2
         x: 3584
@@ -191,7 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_8
+    - name: FredSpriteSheet 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -201,7 +197,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_9
+    - name: FredSpriteSheet 1_9
       rect:
         serializedVersion: 2
         x: 512
@@ -211,7 +207,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_10
+    - name: FredSpriteSheet 1_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -221,7 +217,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_11
+    - name: FredSpriteSheet 1_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -231,7 +227,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_12
+    - name: FredSpriteSheet 1_12
       rect:
         serializedVersion: 2
         x: 2048
@@ -241,7 +237,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_13
+    - name: FredSpriteSheet 1_13
       rect:
         serializedVersion: 2
         x: 2560
@@ -251,7 +247,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_14
+    - name: FredSpriteSheet 1_14
       rect:
         serializedVersion: 2
         x: 3072
@@ -261,7 +257,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_15
+    - name: FredSpriteSheet 1_15
       rect:
         serializedVersion: 2
         x: 3584
@@ -271,7 +267,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_16
+    - name: FredSpriteSheet 1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -281,7 +277,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_17
+    - name: FredSpriteSheet 1_17
       rect:
         serializedVersion: 2
         x: 512
@@ -291,7 +287,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_18
+    - name: FredSpriteSheet 1_18
       rect:
         serializedVersion: 2
         x: 1024
@@ -301,7 +297,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_19
+    - name: FredSpriteSheet 1_19
       rect:
         serializedVersion: 2
         x: 1536
@@ -311,7 +307,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_20
+    - name: FredSpriteSheet 1_20
       rect:
         serializedVersion: 2
         x: 2048
@@ -321,7 +317,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_21
+    - name: FredSpriteSheet 1_21
       rect:
         serializedVersion: 2
         x: 2560
@@ -331,7 +327,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_22
+    - name: FredSpriteSheet 1_22
       rect:
         serializedVersion: 2
         x: 3072
@@ -341,7 +337,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_23
+    - name: FredSpriteSheet 1_23
       rect:
         serializedVersion: 2
         x: 3584
@@ -351,7 +347,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_24
+    - name: FredSpriteSheet 1_24
       rect:
         serializedVersion: 2
         x: 0
@@ -361,7 +357,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_25
+    - name: FredSpriteSheet 1_25
       rect:
         serializedVersion: 2
         x: 512
@@ -371,7 +367,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_26
+    - name: FredSpriteSheet 1_26
       rect:
         serializedVersion: 2
         x: 1024
@@ -381,7 +377,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_27
+    - name: FredSpriteSheet 1_27
       rect:
         serializedVersion: 2
         x: 1536
@@ -391,7 +387,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_28
+    - name: FredSpriteSheet 1_28
       rect:
         serializedVersion: 2
         x: 2048
@@ -401,7 +397,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_29
+    - name: FredSpriteSheet 1_29
       rect:
         serializedVersion: 2
         x: 2560
@@ -411,7 +407,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_30
+    - name: FredSpriteSheet 1_30
       rect:
         serializedVersion: 2
         x: 3072
@@ -421,7 +417,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_31
+    - name: FredSpriteSheet 1_31
       rect:
         serializedVersion: 2
         x: 3584
@@ -431,7 +427,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_32
+    - name: FredSpriteSheet 1_32
       rect:
         serializedVersion: 2
         x: 0
@@ -441,7 +437,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_33
+    - name: FredSpriteSheet 1_33
       rect:
         serializedVersion: 2
         x: 512
@@ -451,7 +447,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_34
+    - name: FredSpriteSheet 1_34
       rect:
         serializedVersion: 2
         x: 1024
@@ -461,7 +457,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_35
+    - name: FredSpriteSheet 1_35
       rect:
         serializedVersion: 2
         x: 1536
@@ -471,7 +467,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_36
+    - name: FredSpriteSheet 1_36
       rect:
         serializedVersion: 2
         x: 2048
@@ -481,7 +477,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_37
+    - name: FredSpriteSheet 1_37
       rect:
         serializedVersion: 2
         x: 2560
@@ -491,7 +487,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_38
+    - name: FredSpriteSheet 1_38
       rect:
         serializedVersion: 2
         x: 3072
@@ -501,7 +497,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_39
+    - name: FredSpriteSheet 1_39
       rect:
         serializedVersion: 2
         x: 3584
@@ -511,7 +507,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_40
+    - name: FredSpriteSheet 1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -521,7 +517,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_41
+    - name: FredSpriteSheet 1_41
       rect:
         serializedVersion: 2
         x: 512
@@ -531,7 +527,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_42
+    - name: FredSpriteSheet 1_42
       rect:
         serializedVersion: 2
         x: 1024
@@ -541,7 +537,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_43
+    - name: FredSpriteSheet 1_43
       rect:
         serializedVersion: 2
         x: 1536
@@ -551,7 +547,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_44
+    - name: FredSpriteSheet 1_44
       rect:
         serializedVersion: 2
         x: 2048
@@ -561,7 +557,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_45
+    - name: FredSpriteSheet 1_45
       rect:
         serializedVersion: 2
         x: 2560
@@ -571,7 +567,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_46
+    - name: FredSpriteSheet 1_46
       rect:
         serializedVersion: 2
         x: 3072
@@ -581,7 +577,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_47
+    - name: FredSpriteSheet 1_47
       rect:
         serializedVersion: 2
         x: 3584
@@ -591,7 +587,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_48
+    - name: FredSpriteSheet 1_48
       rect:
         serializedVersion: 2
         x: 0
@@ -601,7 +597,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_49
+    - name: FredSpriteSheet 1_49
       rect:
         serializedVersion: 2
         x: 512
@@ -611,7 +607,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_50
+    - name: FredSpriteSheet 1_50
       rect:
         serializedVersion: 2
         x: 1024
@@ -621,7 +617,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_51
+    - name: FredSpriteSheet 1_51
       rect:
         serializedVersion: 2
         x: 1536
@@ -631,7 +627,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_52
+    - name: FredSpriteSheet 1_52
       rect:
         serializedVersion: 2
         x: 2048
@@ -641,7 +637,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_53
+    - name: FredSpriteSheet 1_53
       rect:
         serializedVersion: 2
         x: 2560
@@ -651,7 +647,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_54
+    - name: FredSpriteSheet 1_54
       rect:
         serializedVersion: 2
         x: 3072
@@ -661,7 +657,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_55
+    - name: FredSpriteSheet 1_55
       rect:
         serializedVersion: 2
         x: 3584
@@ -671,7 +667,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_56
+    - name: FredSpriteSheet 1_56
       rect:
         serializedVersion: 2
         x: 0
@@ -681,7 +677,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_57
+    - name: FredSpriteSheet 1_57
       rect:
         serializedVersion: 2
         x: 512
@@ -691,7 +687,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_58
+    - name: FredSpriteSheet 1_58
       rect:
         serializedVersion: 2
         x: 1024
@@ -701,7 +697,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_59
+    - name: FredSpriteSheet 1_59
       rect:
         serializedVersion: 2
         x: 1536
@@ -711,7 +707,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_60
+    - name: FredSpriteSheet 1_60
       rect:
         serializedVersion: 2
         x: 2048
@@ -721,7 +717,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_61
+    - name: FredSpriteSheet 1_61
       rect:
         serializedVersion: 2
         x: 2560
@@ -731,7 +727,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_62
+    - name: FredSpriteSheet 1_62
       rect:
         serializedVersion: 2
         x: 3072
@@ -741,7 +737,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: FredSpriteSheet_63
+    - name: FredSpriteSheet 1_63
       rect:
         serializedVersion: 2
         x: 3584
