@@ -6,8 +6,11 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
+    public GameObject[] highlightPanels = new GameObject [2];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
+    public Texture2D[] leftHighLights = new Texture2D [6];
+    public Texture2D[] rightHighLights = new Texture2D [6];
 		public bool fadingOut = false;
 	public bool fadeOut = false;
 	public GameObject greyOut;
@@ -272,6 +275,9 @@ public class wordBuildingController : MonoBehaviour
 		
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
+        highlightPanels [0].renderer.material.SetTexture("MainTex",leftHighLights [character1Num]);
+        highlightPanels [1].renderer.material.SetTexture("MainTex",leftHighLights [character2Num]);
+
 				if (variables.iPhoneType == 1) {
             tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.01f, 0));
             tastePanels [1].transform.localPosition = (new Vector3 (.7f, -0.01f, 0));
@@ -281,4 +287,6 @@ public class wordBuildingController : MonoBehaviour
             tastePanels [1].transform.position = (new Vector3 (0, -0.01f, 0));
 				}
 		}
+
+
 }
