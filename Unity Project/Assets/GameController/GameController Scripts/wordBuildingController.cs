@@ -14,11 +14,18 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
-    public GameObject[] highlightPanels = new GameObject [2];
+    public GameObject[] highlightPanels = new GameObject [4];
+    public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
-    public Texture2D[] leftHighLights = new Texture2D [6];
-    public Texture2D[] rightHighLights = new Texture2D [6];
+    public Texture2D[] leftBottomHighLights = new Texture2D [6];
+    public Texture2D[] rightBottomHighLights = new Texture2D [6];
+    public Texture2D[] leftTopHighLights = new Texture2D [6];
+    public Texture2D[] rightTopHighLights = new Texture2D [6];
+    public Texture2D[] leftTopTaste = new Texture2D [6];
+    public Texture2D[] rightTopTaste = new Texture2D [6];
+    public Texture2D[] leftBottomTaste = new Texture2D [6];
+    public Texture2D[] rightBottomTaste = new Texture2D [6];
 		public bool fadingOut = false;
 		public bool fadeOut = false;
 		public GameObject greyOut;
@@ -61,13 +68,13 @@ public class wordBuildingController : MonoBehaviour
 				}
 
 				tasteHighlighters [0] = char1Taste1;
-				tasteHighLightPos [0] = new Vector3 (1.0f, 0.0f, -1f);         // (-7.6f, 4.6f, -0.5f);
+				//tasteHighLightPos [0] = new Vector3 (1.0f, 0.0f, -1f);         // (-7.6f, 4.6f, -0.5f);
 				tasteHighlighters [1] = char1Taste2;
-				tasteHighLightPos [1] = new Vector3 (1.0f, 0.0f, -1f);          //(-7.6f, 3.9f, -0.5f);
+				//tasteHighLightPos [1] = new Vector3 (1.0f, 0.0f, -1f);          //(-7.6f, 3.9f, -0.5f);
 				tasteHighlighters [2] = char2Taste1;
-				tasteHighLightPos [2] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 4.6f, -0.5f);
+				//tasteHighLightPos [2] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 4.6f, -0.5f);
 				tasteHighlighters [3] = char2Taste2;
-				tasteHighLightPos [3] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 3.9f, -0.5f);
+				//tasteHighLightPos [3] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 3.9f, -0.5f);
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
 				character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
@@ -90,9 +97,9 @@ public class wordBuildingController : MonoBehaviour
 
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes
-				for (int i = 0; i < tasteHighlighters.Length; i++) {
-						tasteHighlighters [i].transform.position = tasteHighLightPos [i];
-				}
+				//for (int i = 0; i < tasteHighlighters.Length; i++) {
+				//		tasteHighlighters [i].transform.position = tasteHighLightPos [i];
+				//}
 				//moves the highlighters over, if it's an iPhone 5
 				if (variables.iPhoneType == 2) {
 						for (int i = 0; i < tasteHighlighters.Length -2; i++) {
@@ -359,8 +366,14 @@ public class wordBuildingController : MonoBehaviour
 		
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
-        highlightPanels [0].renderer.material.SetTexture("MainTex",leftHighLights [character1Num]);
-        highlightPanels [1].renderer.material.SetTexture("MainTex",leftHighLights [character2Num]);
+        highlightPanels [0].renderer.material.SetTexture("_MainTex",leftTopHighLights [character1Num]);
+        highlightPanels [1].renderer.material.SetTexture("_MainTex",leftBottomHighLights [character1Num]);
+        highlightPanels [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
+        highlightPanels [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
+        tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
+        tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
+        tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
+        tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
 
 				if (variables.iPhoneType == 1) {
 						tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.01f, 0));
