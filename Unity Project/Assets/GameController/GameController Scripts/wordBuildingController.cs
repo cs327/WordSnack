@@ -375,7 +375,7 @@ public class wordBuildingController : MonoBehaviour
         tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
         tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
 
-				if (variables.iPhoneType == 1) {
+			/*	if (variables.iPhoneType == 1) {
 						tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.01f, 0));
 						tastePanels [1].transform.localPosition = (new Vector3 (.7f, -0.01f, 0));
 				}
@@ -383,6 +383,7 @@ public class wordBuildingController : MonoBehaviour
 						tastePanels [0].transform.position = (new Vector3 (0, -0.01f, 0));
 						tastePanels [1].transform.position = (new Vector3 (0, -0.01f, 0));
 				}
+    */            
 		}
 
 
