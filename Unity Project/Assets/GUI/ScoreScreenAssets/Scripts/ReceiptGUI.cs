@@ -122,7 +122,7 @@ public class ReceiptGUI : MonoBehaviour
         }
         #endregion
 
-        #region High Score setup
+        #region High Score Sup
         string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
         Debug.Log("Current gamemode is " + gameMode);
 

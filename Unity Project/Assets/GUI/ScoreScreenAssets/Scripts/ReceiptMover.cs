@@ -14,8 +14,12 @@ public class ReceiptMover : MonoBehaviour
 	public static float highestPos;
     // Returns true if the receipt was touched, which stops autoscrolling from happening. 
 	public bool Touched;
+    // Saves the screen position when the mouse/touch was pressed down.
+    // Used to find move the receipt appropriately when scrolling.
 	public Vector3 lastClickPos;
+    // Saves the position of the receipt when touched, used to scroll
 	private Vector3 gameObjectPosAtLastClick;
+    // Number used to scale down how far the receipt scrolls when touched
 	public float scrollScale;
 	public TextMesh tester;
 	//ReceiptGUI receipt;
