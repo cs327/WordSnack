@@ -195,13 +195,17 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("ROWCOUNT: " + rowCount);
         #endregion 
 
-
-		tilesDiscardedText.text = "0";
+        #region Setup bottom
+        tilesDiscardedText.text = "0";
 
         firstRowPos.y = firstRowPos.y - rowCount * rowOffset;
-        bottomInstance.transform.position = firstRowPos;
+        Vector3 pos = bottomInstance.transform.position;
+        pos.y -= rowCount*rowOffset;
+        bottomInstance.transform.position = pos;
+        bottomInstance.transform.parent = gameObject.transform;
+        
 
-        //#endregion
+        #endregion
 		if (GameObject.Find("WordsFed") != null) {
 			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
 		}
@@ -247,7 +251,7 @@ public class ReceiptGUI : MonoBehaviour
     {
 //		test.text = "Rows: " + rowCount;
 		Vector3 currentPos = bottomInstance.transform.position;
-		bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
+		//bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
     }
 
     //Method to display words fed
