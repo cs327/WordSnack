@@ -352,7 +352,6 @@ public class PlayMusic : MonoBehaviour
                                 if (variables.bigMealBonus > 0)
                                 {
                                     audioManager.Play(38);
-                                    variables.chewed = false;
                                 }
                                 
 								//If only one taste is met, play "Taste matched sound.
