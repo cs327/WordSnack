@@ -1,4 +1,4 @@
 Trash Sprite Sheet Information
--Idle:1
--Eat: 2-17
--Plays at 24 fps
+-Eat: 1-16
+-Idle: 17-40
+-Res: 2048 x 1280.
