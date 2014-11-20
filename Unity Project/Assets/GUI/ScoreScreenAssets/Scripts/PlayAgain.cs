@@ -27,7 +27,7 @@ public class PlayAgain : MonoBehaviour {
     void OnMouseUpAsButton()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainUnpressed;
-        Application.LoadLevel("CharacterSelectTest");
         clickSound = true;
+        Application.LoadLevel("WordMaking");
     }
 }
