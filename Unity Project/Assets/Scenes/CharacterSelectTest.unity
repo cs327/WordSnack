@@ -1580,6 +1580,7 @@ MonoBehaviour:
   eatingSound: 0
   bellSound: 0
   instructionsDone: 0
+  mute: 0
   minWordLength: 2
   maxWordLength: 8
   minNumVowels: 2
@@ -1978,7 +1979,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1787804013
 Transform:
   m_ObjectHideFlags: 0
@@ -2126,7 +2126,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1861232045
 MonoBehaviour:
   m_ObjectHideFlags: 0

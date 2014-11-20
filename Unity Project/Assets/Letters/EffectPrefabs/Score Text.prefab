@@ -82,10 +82,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcf6bc23eb0b4e82b9dba3e43dadf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseScore: 13
-  totalScore: 13
-  multiplier: 1
-  score: 1
+  baseScore: 3
+  totalScore: 9
+  multiplier: 3
+  score: 0
   bothTastes: 0
   longWord: 0
   longWordPartTwo: 0

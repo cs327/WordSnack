@@ -151,18 +151,52 @@ public class wordBuildingController : MonoBehaviour
 						//instructionsClose.SetActive(false);
 				}
 //		highlights and character tastes that are currently pleased
-				for (int i = 0; i < tasteHighlighters.Length; i++) {
-						if (variables.timeToHighlightTaste [i]) {
-								tasteHighlighters [i].transform.renderer.enabled = true;
-						} else {
-								tasteHighlighters [i].transform.renderer.enabled = false;
-						}
-				}
+				//for (int i = 0; i < tasteHighlighters.Length; i++) {
+				//		if (variables.timeToHighlightTaste [i]) {
+								//tasteHighlighters [i].transform.renderer.enabled = true;
+                if (variables.timeToHighlightTaste [0])
+        {
+            tasteTexts [0].renderer.material.SetTexture("_MainTex", leftTopHighLights [character1Num]);
+        } else
+        {
+            tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
+        }
 
-//		//unhilights all tastes if the letters on the stove do not form a word
+        if (variables.timeToHighlightTaste [1])
+        {
+            tasteTexts [1].renderer.material.SetTexture("_MainTex", leftBottomHighLights [character1Num]);
+        } else
+        {
+            tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
+        }
+        if(variables.timeToHighlightTaste[2]){
+                tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
+                }else{
+                tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
+                                                                                    }
+        if(variables.timeToHighlightTaste[3]){
+                tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
+
+                
+						}else{
+                tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
+                                                                                    }
+                                                                                    /*else {
+							//	tasteHighlighters [i].transform.renderer.enabled = false;
+                tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
+                tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
+                tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
+                tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
+						}
+      */                  
+				//}
+
+	/*unhilights all tastes if the letters on the stove do not form a word
 				if (!variables.isWord) {
 						unhightlightAllTastes ();
 				}
+
+                */
 		}
 
 		IEnumerator ClosingTime ()
@@ -366,10 +400,11 @@ public class wordBuildingController : MonoBehaviour
 		
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
-        highlightPanels [0].renderer.material.SetTexture("_MainTex",leftTopHighLights [character1Num]);
-        highlightPanels [1].renderer.material.SetTexture("_MainTex",leftBottomHighLights [character1Num]);
-        highlightPanels [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
-        highlightPanels [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
+       // highlightPanels [0].renderer.material.SetTexture("_MainTex",leftTopHighLights [character1Num]);
+        //highlightPanels [1].renderer.material.SetTexture("_MainTex",leftBottomHighLights [character1Num]);
+        //highlightPanels [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
+        //highlightPanels [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
+
         tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
         tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
         tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
