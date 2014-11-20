@@ -186,6 +186,7 @@ public class PlayMusic : MonoBehaviour
 						TimedWarning ();
 						KitchenClosed ();
                         Mute();
+                        BigMeal();
 
 				}
 				///////////////////////
@@ -486,6 +487,14 @@ public class PlayMusic : MonoBehaviour
             if (variables.mute)
             {
                 audioManager.MuteAll();
+            }
+        }
+
+        void BigMeal()
+        {
+            if (variables.bigMealBonus > 0)
+            {
+                audioManager.Play(38);
             }
         }
 }
