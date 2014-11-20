@@ -142,5 +142,13 @@ public class AudioManager : MonoBehaviour
 						SetVolume (j, volumeArray [j]);
 				}
 		}
+
+        public void MuteAll()
+        {
+            for (int j = 0; j < volumeArray.Length; j++)
+            {
+                SetVolume(j, 0);
+            }
+        }
 	
 }
