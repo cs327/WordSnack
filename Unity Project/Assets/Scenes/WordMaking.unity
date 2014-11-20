@@ -4009,6 +4009,7 @@ MonoBehaviour:
   eatingSound: 0
   bellSound: 0
   instructionsDone: 0
+  mute: 0
   minWordLength: 2
   maxWordLength: 8
   minNumVowels: 2
