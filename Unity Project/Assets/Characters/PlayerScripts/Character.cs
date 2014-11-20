@@ -157,9 +157,15 @@ public class Character : MonoBehaviour
 						Debug.Log ("Score after tastes for " + word + " is " + wordScore);
 						if (word.Length == 8) {
 								wordScore *= variables.bigMealBonus + 1;
+                                variables.bigMealSound = true;
 						} else if (word.Length == 7) {
 								wordScore *= variables.bigMealBonus;
+                                variables.bigMealSound = true;
 						}
+                        else
+                        {
+                            variables.bigMealSound = false;
+                        }
 						Debug.Log ("Score after bigmealbonus is " + wordScore);
 
 			

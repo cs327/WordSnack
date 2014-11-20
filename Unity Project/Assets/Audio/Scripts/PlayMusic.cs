@@ -349,26 +349,29 @@ public class PlayMusic : MonoBehaviour
 						//Next, checks for tastes if the character is not the trash character.
 						if (variables.chewingSound == 13) {
 
-                                if (variables.bigMealBonus > 0)
-                                {
+                            if (variables.bigMealSound)
+                            {
                                     audioManager.Play(38);
-                                }
-                                
-								//If only one taste is met, play "Taste matched sound.
-								//if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
-								else if (variables.doubleTasteSound) {
-										audioManager.Play (23);
-										variables.doubleTasteSound = false;
-								} else if (variables.bonus) {
-										audioManager.Play (21);
-										Debug.Log ("Taste");
+                            }
+                            //If only one taste is met, play "Taste matched sound.
+                            //if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
+                            else if (variables.doubleTasteSound)
+                            {
+                                audioManager.Play(23);
+                                variables.doubleTasteSound = false;
+                            }
+                            else if (variables.bonus)
+                            {
+                                audioManager.Play(21);
+                                Debug.Log("Taste");
 
-								}
-				//If no tastes are met, play neutral sound.
-				else {
-										audioManager.Play (22);
-										Debug.Log ("Neutral");
-								}
+                            }
+                            //If no tastes are met, play neutral sound.
+                            else
+                            {
+                                audioManager.Play(22);
+                                Debug.Log("Neutral");
+                            }
 						}
 						MoreDelayedLetterGeneration ();
 						Debug.Log ("Letter Generation");
