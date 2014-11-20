@@ -461,7 +461,7 @@ public class PlayMusic : MonoBehaviour
 				}
 				//Ticking
 				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused) {
-						if (!audioManager.audioSourceArray [36].isPlaying) {
+						if (!audioManager.audioSourceArray [36].isPlaying && variables.timedMode) {
 								//for (int x = 1; x == 1; x++)
 								//{
 								audioManager.Play (36);
