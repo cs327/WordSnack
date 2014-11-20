@@ -297,7 +297,7 @@ public class PlayMusic : MonoBehaviour
 		//RejectedSound plays the rejected sound when a character is fed something that is not a word.
 		void RejectedSound ()
 		{
-				if (variables.sadSound != 0) {
+				if (variables.sadSound != 0 && !audioManager.audioSourceArray[12].isPlaying) {
 						audioManager.Play (variables.sadSound);
 						variables.sadSound = 0;
 				}
