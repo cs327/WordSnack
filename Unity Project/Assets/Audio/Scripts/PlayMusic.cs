@@ -91,6 +91,7 @@ public class PlayMusic : MonoBehaviour
 						//Stops any other music or sound tracks that may still be playing.
 						audioManager.Stop (34);
 						audioManager.Stop (35);
+                        audioManager.Stop(5);
 						audioManager.Stop (20);
 						audioManager.Stop (16);
 						audioManager.Stop (14);
@@ -102,6 +103,7 @@ public class PlayMusic : MonoBehaviour
 						//Stops any music that should not be playing
 						audioManager.Stop (34);
 						audioManager.Stop (35);
+                        audioManager.Stop(5);
 						audioManager.Stop (20);
 						audioManager.Stop (16);
 						audioManager.Stop (14);
@@ -122,6 +124,7 @@ public class PlayMusic : MonoBehaviour
 						//Stops any sounds that should not be playing.
 						audioManager.Stop (34);
 						audioManager.Stop (35);
+                        audioManager.Stop(5);
 						audioManager.Stop (20);
 						audioManager.Stop (16);
 						audioManager.Stop (14);
@@ -186,6 +189,7 @@ public class PlayMusic : MonoBehaviour
 						TimedWarning ();
 						KitchenClosed ();
                         Mute();
+                        WhatTheFunk();
 
 				}
 				///////////////////////
@@ -195,6 +199,7 @@ public class PlayMusic : MonoBehaviour
 						//Stops the GamePlay Music
 						audioManager.Stop (34);
 						audioManager.Stop (35);
+                        audioManager.Stop(5);
 						// if (gameObject.GetComponent<ReceiptMove>().winSound == true)
 
 						//////////////////
@@ -407,6 +412,7 @@ public class PlayMusic : MonoBehaviour
                     audioManager.Pause(34);
                     audioManager.Pause(35);
                     audioManager.Pause(36);
+                    audioManager.Pause(5);
 				}
 				//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
 				//{
@@ -496,6 +502,28 @@ public class PlayMusic : MonoBehaviour
             if (variables.mute)
             {
                 audioManager.MuteAll();
+            }
+            else
+            {
+                audioManager.SetAllVolume();
+            }
+        }
+
+        void WhatTheFunk()
+        {
+            if (variables.funky == true)
+            {
+                audioManager.Stop(34);
+                audioManager.Stop(35);
+                audioManager.PlayLoop(5);
+                if (variables.paused)
+                {
+                    audioManager.Pause(5);
+                }
+            }
+            else
+            {
+                audioManager.Stop(5);
             }
         }
 }
