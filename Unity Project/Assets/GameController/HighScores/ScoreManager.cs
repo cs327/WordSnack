@@ -1,12 +1,7 @@
 ﻿using System.Collections.Generic;
-//using System.Collections.Specialized;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
-using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.Linq;
-using System;
 
 public class ScoreManager
 {
