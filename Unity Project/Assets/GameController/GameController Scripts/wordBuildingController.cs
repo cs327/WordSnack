@@ -28,6 +28,7 @@ public class wordBuildingController : MonoBehaviour
 		public bool alertStarted = false;
 		public bool secondAlert = false;
 		public bool flashOnce = true;
+		public bool flashRedAgain = false;
 
 		public VariableControl variables;
 		public GameObject variableController;
@@ -249,6 +250,10 @@ public class wordBuildingController : MonoBehaviour
 				float minA = .001f;
 				float t = 2f;
 				float i = 0;
+				if(variables.globalTimer < 6 && !flashRedAgain){
+					flashOnce = true;
+					flashRedAgain = true;
+				}
 				//timeRemaining.transform.localScale = biggerSize;
 				//while(flash.renderer.material.color.a < maxA){
 				while (i < maxA) {
@@ -273,6 +278,7 @@ public class wordBuildingController : MonoBehaviour
 						yield return null;
 				}
 				timeRemaining.transform.localScale = normalSize;
+				
 				if (secondAlert) {
 						flashOnce = false;
 						StartCoroutine (FlashColor (flash));

@@ -257,6 +257,7 @@ MonoBehaviour:
   alertStarted: 0
   secondAlert: 0
   flashOnce: 1
+  flashRedAgain: 0
   variables: {fileID: 0}
   variableController: {fileID: 1148986584}
   endGameButton: {fileID: 2800000, guid: 8b2a0dfa47b9e42ca907f61f61345ada, type: 3}
