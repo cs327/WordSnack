@@ -398,7 +398,10 @@ public class Character : MonoBehaviour
 						//Debug.Log(word);
 						//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 						if (wordScore > 0) {
-
+                                if (word.StartsWith("funk"))
+                                {
+                                    variables.funky = true;
+                                }
 								switch (characterNum) {
 								case 1:
 					//FRED EATING ANIMATION GOES HERE 
