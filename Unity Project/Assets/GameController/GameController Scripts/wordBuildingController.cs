@@ -14,18 +14,18 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
-    public GameObject[] highlightPanels = new GameObject [4];
-    public GameObject[] tasteTexts = new GameObject[4];
+		public GameObject[] highlightPanels = new GameObject [4];
+		public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
-    public Texture2D[] leftBottomHighLights = new Texture2D [6];
-    public Texture2D[] rightBottomHighLights = new Texture2D [6];
-    public Texture2D[] leftTopHighLights = new Texture2D [6];
-    public Texture2D[] rightTopHighLights = new Texture2D [6];
-    public Texture2D[] leftTopTaste = new Texture2D [6];
-    public Texture2D[] rightTopTaste = new Texture2D [6];
-    public Texture2D[] leftBottomTaste = new Texture2D [6];
-    public Texture2D[] rightBottomTaste = new Texture2D [6];
+		public Texture2D[] leftBottomHighLights = new Texture2D [6];
+		public Texture2D[] rightBottomHighLights = new Texture2D [6];
+		public Texture2D[] leftTopHighLights = new Texture2D [6];
+		public Texture2D[] rightTopHighLights = new Texture2D [6];
+		public Texture2D[] leftTopTaste = new Texture2D [6];
+		public Texture2D[] rightTopTaste = new Texture2D [6];
+		public Texture2D[] leftBottomTaste = new Texture2D [6];
+		public Texture2D[] rightBottomTaste = new Texture2D [6];
 		public bool fadingOut = false;
 		public bool fadeOut = false;
 		public GameObject greyOut;
@@ -217,82 +217,18 @@ public class wordBuildingController : MonoBehaviour
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().rawScore = variables.totalLetterScore;
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().multiScore = variables.totalMultiplierScore;
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().trashLetterNum = variables.trashedLetters;
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().trashedLetterScore = variables.trashedLetterScore;
-
-
-				//For Game Analytics - Josiah
-				string game_key = "edad1246d65557dc8732119343a2ae6f";
-				string secret_key = "7671077d3c085e7abcd0b50bf8965fd88279cec4";
-				string endpoint_url = "http://api.gameanalytics.com/1";
-				NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces ();
-				string user_id = "";
-				//Generate universally unique user ID's for Game Analytics
-				foreach (NetworkInterface adapter in nics) {
-						PhysicalAddress address = adapter.GetPhysicalAddress ();
-						if (address.ToString () != "" && user_id == "") {
-								byte[] bytes = Encoding.UTF8.GetBytes (address.ToString ());
-								SHA1CryptoServiceProvider SHA = new SHA1CryptoServiceProvider ();
-								user_id = BitConverter.ToString (SHA.ComputeHash (bytes)).Replace ("-", "");
-						}
-				}
-				string category = "user"; //These analytics are in the design category for the dashboard on the server
-				Dictionary<string,string> message = new Dictionary<string,string> (); //variable to hold our stuff we're gonna send back for analysis
-				//Now add some stuff we wanna send back
-				//Was it a timed-mode game?
-				string mode = "Error"; //So we'll know something went wrong
+				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().trashedLetterScore = variables.trashedLetterScore;	
+				//For Game Analytics
+				int mode = 2; //So we'll know something went wrong
 				if (variables.timedMode == true) {
-						mode = "Dinner Rush";
+						mode = 1;
 				} else {
-						mode = "Casual Lunch";
+						mode = 0;
 				}
-				//Required fields
-				message.Add ("event_id", "Analytics test");
-				message.Add ("user_id", user_id);
-				message.Add ("session_id", "session_1");
-				//Stuff we actually want
-				message.Add ("mode", mode);
-				message.Add ("score", variables.score.ToString ());
-				message.Add ("character1", character1Num.ToString ());
-				message.Add ("character2", character2Num.ToString ());
-				message.Add ("build", "0.1.6-testingAnalytics");
-				/*
-		 * Prepare the HTTP request by:
-
-    	converting the C# dictionary to JSON
-    	computing the MD5 hash using the event and secret key
-		*/
-				string json_message = JsonMapper.ToJson (message);
-				MD5 md5 = new MD5CryptoServiceProvider ();
-				byte[] authData = Encoding.Default.GetBytes (json_message + secret_key);
-				byte[] authHash = md5.ComputeHash (authData);
-				// Transforms as hexa
-				string hexaHash = "";
-				foreach (byte b in authHash) {
-						hexaHash += String.Format ("{0:x2}", b);
-				}
-				byte[] jsonData = Encoding.ASCII.GetBytes (json_message); 
-				//Create the URL:
-				string url = endpoint_url + "/" + game_key + "/" + category;
-				Debug.Log ("Sending " + json_message + " to " + url);
-				WebRequest request = WebRequest.Create (url);
-				//Submit the request and print the server response:
-				request.Headers.Add ("Authorization", hexaHash);
-				request.Method = "POST";
-				request.ContentLength = jsonData.Length;
-				request.ContentType = "application/x-www-form-urlencoded";
-				// Send the json data
-				Stream dataStream = request.GetRequestStream ();
-				dataStream.Write (jsonData, 0, jsonData.Length);
-				dataStream.Close ();
-				// Get the response
-				WebResponse response = request.GetResponse ();
-				Stream responseData = response.GetResponseStream ();
-				byte[] buffer = new byte[4096];
-				responseData.Read (buffer, 0, 4096);
-				responseData.Close ();
-		
-				Console.WriteLine (Encoding.UTF8.GetString (buffer));
-				response.Close ();
+				GA.API.Design.NewEvent ("mode", mode);
+				GA.API.Design.NewEvent ("score", variables.score);
+				GA.API.Design.NewEvent ("character1", character1Num);
+				GA.API.Design.NewEvent ("character2", character2Num);
 		}
 
 		public void AlertPlayer ()
@@ -324,8 +260,8 @@ public class wordBuildingController : MonoBehaviour
 				while (i < maxA) {
 						i += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, minA + i);
-						if(secondAlert && flashOnce){
-							flash.renderer.material.color = beMe;
+						if (secondAlert && flashOnce) {
+								flash.renderer.material.color = beMe;
 						}
 						timeRemaining.transform.localScale = Vector3.Lerp (normalSize, biggerSize, i / maxA);
 						yield return null;
@@ -336,15 +272,15 @@ public class wordBuildingController : MonoBehaviour
 				while (i-j > minA) {
 						j += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, maxA - j);
-						if(secondAlert && flashOnce){
-							flash.renderer.material.color = beMe;
+						if (secondAlert && flashOnce) {
+								flash.renderer.material.color = beMe;
 						}
 						timeRemaining.transform.localScale = Vector3.Lerp (biggerSize, normalSize, j / maxA);
 						yield return null;
 				}
 				timeRemaining.transform.localScale = normalSize;
 				if (secondAlert) {
-					flashOnce = false;
+						flashOnce = false;
 						StartCoroutine (FlashColor (flash));
 				}
 
@@ -366,16 +302,16 @@ public class wordBuildingController : MonoBehaviour
 		
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
-        highlightPanels [0].renderer.material.SetTexture("_MainTex",leftTopHighLights [character1Num]);
-        highlightPanels [1].renderer.material.SetTexture("_MainTex",leftBottomHighLights [character1Num]);
-        highlightPanels [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
-        highlightPanels [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
-        tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
-        tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
-        tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
-        tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
+				highlightPanels [0].renderer.material.SetTexture ("_MainTex", leftTopHighLights [character1Num]);
+				highlightPanels [1].renderer.material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
+				highlightPanels [2].renderer.material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
+				highlightPanels [3].renderer.material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
+				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
+				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
+				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
+				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 
-			/*	if (variables.iPhoneType == 1) {
+				/*	if (variables.iPhoneType == 1) {
 						tastePanels [0].transform.localPosition = (new Vector3 (-.7f, -0.01f, 0));
 						tastePanels [1].transform.localPosition = (new Vector3 (.7f, -0.01f, 0));
 				}
