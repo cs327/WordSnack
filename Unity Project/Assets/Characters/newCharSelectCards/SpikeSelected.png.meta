@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: d88b0d49737eb463096c244fef122bb5
+guid: e9dedb7cdcea04a43904b1241759326d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StellaSelectedRight
+    21300000: SpikeSelected
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

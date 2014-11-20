@@ -17,8 +17,7 @@ public class SelectScript : MonoBehaviour {
 	public Vector3 startingSpot;
 
 	//Character Card images
-	public Sprite selectedImageRight;
-	public Sprite selectedImageLeft;
+	public Sprite selectedImage;
 	public Sprite standbyImage;
 	public SpriteRenderer thisSprite;
     public TextMesh HighScore;
@@ -83,7 +82,7 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacters[0] = gameObject;
 					variables.selectedCharacterNums[0] = character.characterNum;
 					character.charSelectOrder = 0;
-					thisSprite.sprite = selectedImageLeft;
+					thisSprite.sprite = selectedImage;
 				}
 				//if its not the first spot, it puts the character in the second spot
 				else{
@@ -92,7 +91,7 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacters[1] = gameObject;
 					variables.selectedCharacterNums[1] = character.characterNum;
 					character.charSelectOrder = 1;
-					thisSprite.sprite = selectedImageRight;
+					thisSprite.sprite = selectedImage;
 
                     // There are two chars selected now. Set up high score text
                     HighScore.text = "Previous Best: "  + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);

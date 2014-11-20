@@ -59,9 +59,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImageRight: {fileID: 21300000, guid: 299e1e1d7f30c4acfa02738bf1c07bf5, type: 3}
-  selectedImageLeft: {fileID: 21300000, guid: e2aafca7606ce423685ccbf40ebc520e, type: 3}
-  standbyImage: {fileID: 21300000, guid: 483c8824f67654732b4f36f5663e2e48, type: 3}
+  selectedImage: {fileID: 21300000, guid: 624f703860fa94d759794d1b3deeefd2, type: 3}
+  standbyImage: {fileID: 21300002, guid: 0145c6ae69cab4f0098d1a7114a9ce00, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 0}
   newSelect: 1

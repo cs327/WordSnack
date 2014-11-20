@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 948072a81b5f34bff8fa3a2ed9c4e3a1
+guid: 624f703860fa94d759794d1b3deeefd2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SpikeSelectedLeft
+    21300000: FredSelected
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -3
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
