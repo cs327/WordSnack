@@ -2,12 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using System.Text;
-using System.Net.NetworkInformation;
-using LitJson;
-using System.IO;
-using System;
-using System.Net;
 
 public class wordBuildingController : MonoBehaviour
 {
