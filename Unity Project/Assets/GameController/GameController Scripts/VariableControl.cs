@@ -93,6 +93,7 @@ public class VariableControl : MonoBehaviour {
     public bool bellSound;
 	public bool instructionsDone = false;
     public bool mute = false;
+    public bool chewed = false;
 	
 	//tweakable variables: 
 	public int minWordLength;

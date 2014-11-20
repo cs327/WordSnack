@@ -186,7 +186,6 @@ public class PlayMusic : MonoBehaviour
 						TimedWarning ();
 						KitchenClosed ();
                         Mute();
-                        BigMeal();
 
 				}
 				///////////////////////
@@ -342,15 +341,23 @@ public class PlayMusic : MonoBehaviour
 		{
 				//First plays Chewing sound if the character is not the trash character, otherwise plays the trash sound.
 				if (variables.chewing == true) {
+                        variables.chewed = true;
 						audioManager.Play (variables.eatingSound);
 						audioManager.Play (variables.chewingSound);
 						audioManager.Play (variables.eatingSound);
 						variables.chewing = false;
 						//Next, checks for tastes if the character is not the trash character.
 						if (variables.chewingSound == 13) {
+
+                                if (variables.bigMealBonus > 0)
+                                {
+                                    audioManager.Play(38);
+                                    variables.chewed = false;
+                                }
+                                
 								//If only one taste is met, play "Taste matched sound.
 								//if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
-								if (variables.doubleTasteSound) {
+								else if (variables.doubleTasteSound) {
 										audioManager.Play (23);
 										variables.doubleTasteSound = false;
 								} else if (variables.bonus) {
@@ -487,14 +494,6 @@ public class PlayMusic : MonoBehaviour
             if (variables.mute)
             {
                 audioManager.MuteAll();
-            }
-        }
-
-        void BigMeal()
-        {
-            if (variables.bigMealBonus > 0)
-            {
-                audioManager.Play(38);
             }
         }
 }
