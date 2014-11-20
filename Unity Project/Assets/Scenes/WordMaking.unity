@@ -225,9 +225,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 2800000, guid: 5179cd495461b4ddb892b0016797d829, type: 3}
   - {fileID: 2800000, guid: d8f13c96d747a40c09e8a6b9fe63dba4, type: 3}
-  - {fileID: 2800000, guid: 8d4939b16857d476292aae29439a22b9, type: 3}
-  - {fileID: 2800000, guid: 5668a94e3c9f24d5ea18d43cca8aaa7e, type: 3}
-  - {fileID: 2800000, guid: 094511e4eb6f4450c9de1ce88e92569c, type: 3}
+  - {fileID: 2800000, guid: a5af7500bcfd64a8cb114f2f78599f31, type: 3}
+  - {fileID: 2800000, guid: 4eff64dfe9ba947c3920b76f2f7a9400, type: 3}
+  - {fileID: 2800000, guid: e4629ae6bdd2748a68b540d8fa4af1ce, type: 3}
   rightTopTaste:
   - {fileID: 0}
   - {fileID: 2800000, guid: 7a84d14edbe0849449db9f3c31d48de0, type: 3}
@@ -239,8 +239,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 2800000, guid: 914038b066bfa4c519dc03b23e7c572d, type: 3}
   - {fileID: 2800000, guid: 7e90adc33556b43bd93a4eb1e8c81a09, type: 3}
-  - {fileID: 2800000, guid: 406369b836ab0494f81d23e604a40baf, type: 3}
-  - {fileID: 2800000, guid: 6ed70b1acdf004666a1a09c85db41a7e, type: 3}
+  - {fileID: 2800000, guid: eb5f90621ed134120b50828d698083ac, type: 3}
+  - {fileID: 2800000, guid: 31661e35f54e04887aff3f5f3668dbec, type: 3}
   - {fileID: 2800000, guid: 210993866a7ab48fa8e0483f1ac621d2, type: 3}
   rightBottomTaste:
   - {fileID: 0}
@@ -1592,15 +1592,15 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftTopTaste.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 8d4939b16857d476292aae29439a22b9, type: 3}
+      objectReference: {fileID: 2800000, guid: a5af7500bcfd64a8cb114f2f78599f31, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftTopTaste.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 5668a94e3c9f24d5ea18d43cca8aaa7e, type: 3}
+      objectReference: {fileID: 2800000, guid: 4eff64dfe9ba947c3920b76f2f7a9400, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftTopTaste.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 094511e4eb6f4450c9de1ce88e92569c, type: 3}
+      objectReference: {fileID: 2800000, guid: e4629ae6bdd2748a68b540d8fa4af1ce, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: rightTopTaste.Array.data[1]
       value: 
@@ -1632,11 +1632,11 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomTaste.Array.data[3]
       value: 
-      objectReference: {fileID: 2800000, guid: 406369b836ab0494f81d23e604a40baf, type: 3}
+      objectReference: {fileID: 2800000, guid: eb5f90621ed134120b50828d698083ac, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomTaste.Array.data[4]
       value: 
-      objectReference: {fileID: 2800000, guid: 6ed70b1acdf004666a1a09c85db41a7e, type: 3}
+      objectReference: {fileID: 2800000, guid: 31661e35f54e04887aff3f5f3668dbec, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomTaste.Array.data[5]
       value: 
@@ -3494,7 +3494,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1056343876
 Transform:
   m_ObjectHideFlags: 0
@@ -4009,6 +4008,7 @@ MonoBehaviour:
   eatingSound: 0
   bellSound: 0
   instructionsDone: 0
+  mute: 0
   minWordLength: 2
   maxWordLength: 8
   minNumVowels: 2
