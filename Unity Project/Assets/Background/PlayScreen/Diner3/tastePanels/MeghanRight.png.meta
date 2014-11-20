@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: f7feef50f96584b4aa954e8f7e6feea5
+guid: 28ffba9011bf44b17aaee03e477a6ec1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StellaLeft
+    21300000: MeghanRight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,8 +22,8 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 4096
+  textureFormat: -2
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 1

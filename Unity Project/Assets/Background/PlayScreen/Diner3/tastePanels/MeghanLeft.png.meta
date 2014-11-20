@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: dd6e692a4367441c782f29ee249da3b6
+guid: 4e242cb39331f4a97a44c1a152e3ec17
 TextureImporter:
   fileIDToRecycleName:
-    21300000: FredLeft
+    21300000: MeghanLeft
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,8 +22,8 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 4096
+  textureFormat: -2
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 1

@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 75eb6183ed74c415d8fd114d21ef03b5
+guid: c63bb79bdf97149b2a885928efa4a6e0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Layer_01Reference
+    21300000: KelvinRight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
