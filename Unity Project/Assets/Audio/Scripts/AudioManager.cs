@@ -125,16 +125,6 @@ public class AudioManager : MonoBehaviour
 						timerCountDown = .5f;
 				}
 		}
-	
-		public void FadeIn (int i)
-		{
-		
-		}
-	
-		public void CrossFade (int i, int y)
-		{
-		
-		}
 
 		public void SetAllVolume ()
 		{

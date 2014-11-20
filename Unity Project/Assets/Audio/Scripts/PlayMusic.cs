@@ -186,6 +186,7 @@ public class PlayMusic : MonoBehaviour
 						TimedWarning ();
 						KitchenClosed ();
                         Mute();
+                        BigMeal();
 
 				}
 				///////////////////////
@@ -460,7 +461,7 @@ public class PlayMusic : MonoBehaviour
 				}
 				//Ticking
 				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused) {
-						if (!audioManager.audioSourceArray [36].isPlaying) {
+						if (!audioManager.audioSourceArray [36].isPlaying && variables.timedMode) {
 								//for (int x = 1; x == 1; x++)
 								//{
 								audioManager.Play (36);
@@ -486,6 +487,14 @@ public class PlayMusic : MonoBehaviour
             if (variables.mute)
             {
                 audioManager.MuteAll();
+            }
+        }
+
+        void BigMeal()
+        {
+            if (variables.bigMealBonus > 0)
+            {
+                audioManager.Play(38);
             }
         }
 }
