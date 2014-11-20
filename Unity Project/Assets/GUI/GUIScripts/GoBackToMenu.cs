@@ -25,6 +25,7 @@ public class GoBackToMenu : MonoBehaviour {
 	void OnMouseUp()
 	{
 		s.sprite = menuUnclicked;
+		transform.localScale = new Vector3 (.15f, .3f, .49f);
 	}
 	void OnMouseUpAsButton()
 	{
