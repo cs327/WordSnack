@@ -47,7 +47,7 @@ public class LetterController : MonoBehaviour
 		't', 'v', 'w', 'x', 'y', 'z',
 	};
 		public int numVowels;
-	    public bool stopSearch = false;
+		public bool stopSearch = false;
 
 
 		// Use this for initialization
@@ -115,18 +115,18 @@ public class LetterController : MonoBehaviour
 
 				//ends the game if the player has run out of letters
 				//changed - used to be emptyLetterCount >= 5
-                //if ((variables.totalLetters == 0) && (countToEndGame >= 7))
-                //{
-                //    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
-                //    Application.LoadLevel("ScoreScreen");
-                //}
+				//if ((variables.totalLetters == 0) && (countToEndGame >= 7))
+				//{
+				//    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
+				//    Application.LoadLevel("ScoreScreen");
+				//}
 				TurnOnOffSteam ();
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
 		  
 		}
 
-	//KEEP THIS FUNCTION - it is in progress!!
+		//KEEP THIS FUNCTION - it is in progress!!
 //		void updatePlaceholders(){
 //			if(!lastHand && emptyLetterCount > 0){
 //				for(int i = 0; i<boardSize; i++){
@@ -153,7 +153,7 @@ public class LetterController : MonoBehaviour
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
 				//for( float i = 0f; i < 1; i += .15f){
-				if (letterToMove == null){
+				if (letterToMove == null) {
 						Debug.Log ("LetterToMove is null and shouldn't be!! Error!");
 				}
 				while (dontCrash < 100 && letterToMove.transform.position != moveToHere && letterToMove != null) {
@@ -211,7 +211,7 @@ public class LetterController : MonoBehaviour
 						//correctly assess if we need more vowels or not (or specifically need consonants!)
 						myLetters += randLetterChar;
 						letters += randLetterChar;
-						if (randLetterChar == '.'){
+						if (randLetterChar == '.') {
 								emptyLetterCount++;
 						}
 				}
@@ -246,88 +246,82 @@ public class LetterController : MonoBehaviour
 				if (serializedLetterBag.Count () == 0)
 						return '.';
 				//If we don't have enough vowels on the board, return a vowel, as long as we've got one
-				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0)
-                {
-                    if (!variables.timedMode) { 
-					    //Removes a consonant from the bag.
-					    char letterToReturn = serializedLetterBag[0];
-					    for (int i = 1; i < serializedLetterBag.Count; i++) {
-						    if (letterScores[serializedLetterBag[i]] > letterScores[letterToReturn]) {
-							    letterToReturn = serializedLetterBag[i];
-						    }
-					    }
-    //                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
-                        variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] - 1;
+				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0) {
+						if (!variables.timedMode) { 
+								//Removes a consonant from the bag.
+								char letterToReturn = serializedLetterBag [0];
+								for (int i = 1; i < serializedLetterBag.Count; i++) {
+										if (letterScores [serializedLetterBag [i]] > letterScores [letterToReturn]) {
+												letterToReturn = serializedLetterBag [i];
+										}
+								}
+								//                    char letterToReturn = serializedLetterBag[Random.Range(0, serializedLetterBag.Count() - 1)];
+								variables.letterBag [letterToReturn] = variables.letterBag [letterToReturn] - 1;
 
-                        //Creates an additional "A" or "E" if there are no vowels left
-                        float aOrE = Random.Range(0.0f, 1.0f);
+								//Creates an additional "A" or "E" if there are no vowels left
+								float aOrE = Random.Range (0.0f, 1.0f);
 
-                        if (aOrE < 0.5f)
-                        {
-                            variables.numA++;
-                            variables.totalVowels++;
-                            vowelsInLetterBag.Add('a');
+								if (aOrE < 0.5f) {
+										variables.numA++;
+										variables.totalVowels++;
+										vowelsInLetterBag.Add ('a');
 
 
-                        }
-                        if (aOrE >= 0.5f)
-                        {
-                            variables.numE++;
-                            variables.totalVowels++;
-                            vowelsInLetterBag.Add('e');
-                        }
+								}
+								if (aOrE >= 0.5f) {
+										variables.numE++;
+										variables.totalVowels++;
+										vowelsInLetterBag.Add ('e');
+								}
+								//Say there aren't any vowels left - so we're giving a consonant
+								Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
+						}
 
-                    }
-                }
-						Debug.Log ("There aren't enough vowels on the board, but we don't have any left!");
+				}
+						
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
 						//Debug.Log ("Logic says we MUST return a vowel and we've got one to give");
-						char vowelToReturn = vowelsInLetterBag [Random.Range (0, vowelsInLetterBag.Count () - 1)]; //pick a random vowel
+						char vowelToReturn = vowelsInLetterBag [Random.Range (0, vowelsInLetterBag.Count ())]; //pick a random vowel
 						variables.totalVowels--; //decrement total number of Vowels
 						variables.totalLetters--; //decrement total number of letters
 						variables.letterBag [vowelToReturn] = variables.letterBag [vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
-                    //Restores letters if playing timed mode.
-                    if (variables.timedMode)
-                    {
-                        variables.totalVowels++;
-                        variables.totalLetters++;
-                        variables.letterBag[vowelToReturn] = variables.letterBag[vowelToReturn] + 1;
+						//Restores letters if playing timed mode.
+						if (variables.timedMode) {
+								variables.totalVowels++;
+								variables.totalLetters++;
+								variables.letterBag [vowelToReturn] = variables.letterBag [vowelToReturn] + 1;
 
-                    }
+						}
 						//Debug.Log ("Returning " + vowelToReturn);
 						return vowelToReturn; //return that vowel!
 				}
-				if (numVowels >= variables.maxNumVowels) { //If we already have enough vowels (or too many, but we screwed up if that happens), return a consonant
+				if (numVowels >= variables.maxNumVowels && consonantsInLetterBag.Count () > 0) { //If we already have enough vowels (or too many, but we screwed up if that happens), return a consonant
 						//Debug.Log ("Logic says we MUST return a consonant");
-						char consonantToReturn = consonantsInLetterBag [Random.Range (0, consonantsInLetterBag.Count () - 1)]; //pick a random consonant
+						char consonantToReturn = consonantsInLetterBag [Random.Range (0, consonantsInLetterBag.Count ())]; //pick a random consonant
 						variables.letterBag [consonantToReturn] = variables.letterBag [consonantToReturn] - 1; //decrement the number of that letter in the global letterBag
 						variables.totalLetters--; //decrement total number of letters to display to player
-                    if (variables.timedMode)
-                    {
-                        variables.letterBag[consonantToReturn] = variables.letterBag[consonantToReturn] + 1;
-                        variables.totalLetters++;
-                    }
+						if (variables.timedMode) {
+								variables.letterBag [consonantToReturn] = variables.letterBag [consonantToReturn] + 1;
+								variables.totalLetters++;
+						}
 						//Debug.Log ("Returning " + consonantToReturn);
 						return consonantToReturn;
 				} else { //Else, we're free to return anything - we don't have the max number of vowels or too few vowels
 						//Debug.Log ("Logic says we can return anything we want.");
-						char letterToReturn = serializedLetterBag [Random.Range (0, serializedLetterBag.Count () - 1)];
+						char letterToReturn = serializedLetterBag [Random.Range (0, serializedLetterBag.Count ())];
 						variables.letterBag [letterToReturn] = variables.letterBag [letterToReturn] - 1; //decrement the number of that letter in the global letterBag
-                        if (vowelList.Contains(letterToReturn))
-                        {
-                            variables.totalVowels--; //if it's a vowel, decrement global vowel number
-                            if (variables.timedMode)
-                            {
-                                variables.totalVowels++;
-                                variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] + 1;
-                            }
-                        }
+						if (vowelList.Contains (letterToReturn)) {
+								variables.totalVowels--; //if it's a vowel, decrement global vowel number
+								if (variables.timedMode) {
+										variables.totalVowels++;
+								}
+						}
 						variables.totalLetters--; //decrement total number of tiles in bag to display to player
 
-                    if (variables.timedMode)
-                    {
-                        variables.totalLetters++;
-                    }
+						if (variables.timedMode) {
+								variables.totalLetters++;
+                                variables.letterBag[letterToReturn] = variables.letterBag[letterToReturn] + 1;
+						}
 						//Debug.Log ("Returning " + letterToReturn);
 						return letterToReturn;
 				}
@@ -402,16 +396,16 @@ public class LetterController : MonoBehaviour
 			 
 				}
 				
-				if(!variables.timedMode){
-				stopSearch = false;
-					if(variables.lettersRemaining <= boardSize-2 && !stopSearch && !noWordsLeft){
-						CheckPermutations(myLetters);
-					}
-					if(noWordsLeft){
-						variables.endGame = true;
-					}
+				if (!variables.timedMode) {
+						stopSearch = false;
+						if (variables.lettersRemaining <= boardSize - 2 && !stopSearch && !noWordsLeft) {
+								CheckPermutations (myLetters);
+						}
+						if (noWordsLeft) {
+								variables.endGame = true;
+						}
 				}
-				}
+		}
 
 	
 		void moveToAndFromStove ()
@@ -423,7 +417,7 @@ public class LetterController : MonoBehaviour
 						//checks if any letters on the board should be moved to the stove and adds them to the stove array if so
 						if (lettersOnBoard [i] != null) {
 								// all letters on the board should be white always
-								lettersOnBoard[i].gameObject.renderer.material.color = Color.white;
+								lettersOnBoard [i].gameObject.renderer.material.color = Color.white;
 
 								if (!lettersOnBoard [i].onStove && lettersOnBoard [i].selected) {
 										lettersOnStove [numLettersOnStove] = lettersOnBoard [i];
@@ -435,19 +429,19 @@ public class LetterController : MonoBehaviour
 
 								// check for a valid word, and if there is one, color the letters gold-like
 								if (variables.isWord) {
-									if (variables.isWord) {
-										for (int x = 0; x < lettersOnStove.Length; x++) {
-											if (lettersOnStove[x] != null) {
-												lettersOnStove[x].gameObject.renderer.material.color = new Color(0.8f, 0.8f, 0.2f);
-											}
-										}
-									} else {
-										for (int x = 0; x < lettersOnStove.Length; x++) {
-											if (lettersOnStove[x] != null) {
-												lettersOnStove[x].gameObject.renderer.material.color = new Color(1.0f, 1.0f, 1.0f);
-											}
-										}
-									}									
+										if (variables.isWord) {
+												for (int x = 0; x < lettersOnStove.Length; x++) {
+														if (lettersOnStove [x] != null) {
+																lettersOnStove [x].gameObject.renderer.material.color = new Color (0.8f, 0.8f, 0.2f);
+														}
+												}
+										} else {
+												for (int x = 0; x < lettersOnStove.Length; x++) {
+														if (lettersOnStove [x] != null) {
+																lettersOnStove [x].gameObject.renderer.material.color = new Color (1.0f, 1.0f, 1.0f);
+														}
+												}
+										}									
 								}
 
 								//checks if any of the letters on the board should be removed from the stove, and if so removes them from the stove array
@@ -678,7 +672,7 @@ public class LetterController : MonoBehaviour
 				}
 				return vowelCount;
 		}
-//	Returns a string of the current letters on the board
+		//	Returns a string of the current letters on the board
 		public string lettersInHand ()
 		{
 				string letters = "";
@@ -699,75 +693,77 @@ public class LetterController : MonoBehaviour
 				}
 				return count;
 		}
-	void CheckPermutations(string input){
-		input = input.Replace(",","");
-		input = input.Replace(".","");
-		if(input.Length > 6){
-			stopSearch = true;
-			return;
-		}
-		combinationList.Clear();
-		CreateCombinations("" , input);
-		for(int i = 2; i < input.Length+1; i++){
-			foreach(string check in combinationList){
-				if(check.Length == i && !stopSearch){
-					bool[] usedChar = new bool[i];
-					char[] chars = new char[i];
-					chars = check.ToCharArray();
-					//print (check);
-					CreateAndSubmitPermutations(chars, i,0,usedChar, "");
+		void CheckPermutations (string input)
+		{
+				input = input.Replace (",", "");
+				input = input.Replace (".", "");
+				if (input.Length > 6) {
+						stopSearch = true;
+						return;
 				}
-			}
+				combinationList.Clear ();
+				CreateCombinations ("", input);
+				for (int i = 2; i < input.Length+1; i++) {
+						foreach (string check in combinationList) {
+								if (check.Length == i && !stopSearch) {
+										bool[] usedChar = new bool[i];
+										char[] chars = new char[i];
+										chars = check.ToCharArray ();
+										//print (check);
+										CreateAndSubmitPermutations (chars, i, 0, usedChar, "");
+								}
+						}
+				}
+				if (!stopSearch) {
+						noWordsLeft = true;
+				}
 		}
-		if(!stopSearch){
-			noWordsLeft = true;
-		}
-	}
 
-	void CreateAndSubmitPermutations(char[] check, int length, int level, bool[] usedChar,string output){
-		if(stopSearch){
-			return;
-		}
-		if(level == length){
-			//print (output);
-			if(checkForWord(output)){
-				stopSearch = true;
-				print ("WORD FOUND: " + output); 
-			}
-			return;
-		}
-		for(int i = 0; i<length; i++){
-			if(!usedChar[i]){
-				output += check[i].ToString();
-				usedChar[i] = true;
-				CreateAndSubmitPermutations(check, length, level+1,usedChar,output);
-				usedChar[i] = false;
-				output = output.Remove(output.Length - 1);
-			}
-		}
-		//print (output);
+		void CreateAndSubmitPermutations (char[] check, int length, int level, bool[] usedChar, string output)
+		{
+				if (stopSearch) {
+						return;
+				}
+				if (level == length) {
+						//print (output);
+						if (checkForWord (output)) {
+								stopSearch = true;
+								print ("WORD FOUND: " + output); 
+						}
+						return;
+				}
+				for (int i = 0; i<length; i++) {
+						if (!usedChar [i]) {
+								output += check [i].ToString ();
+								usedChar [i] = true;
+								CreateAndSubmitPermutations (check, length, level + 1, usedChar, output);
+								usedChar [i] = false;
+								output = output.Remove (output.Length - 1);
+						}
+				}
+				//print (output);
 		
-	}
-
-	void CreateCombinations(string active , string rest){
-		//print (rest[0]);
-		if(active == null && rest == null){
-			return;
-		}
-		if(rest == ""){
-			if(active.Length > 1 && active.Length < 5){
-				combinationList.Add(active);
-				//print (active);
-			}
-			return;
-		}
-		else{
-			//print(rest);
-			CreateCombinations(active + rest[0],rest.Substring(1));
-			CreateCombinations(active,rest.Substring(1));
 		}
 
-	}
+		void CreateCombinations (string active, string rest)
+		{
+				//print (rest[0]);
+				if (active == null && rest == null) {
+						return;
+				}
+				if (rest == "") {
+						if (active.Length > 1 && active.Length < 5) {
+								combinationList.Add (active);
+								//print (active);
+						}
+						return;
+				} else {
+						//print(rest);
+						CreateCombinations (active + rest [0], rest.Substring (1));
+						CreateCombinations (active, rest.Substring (1));
+				}
+
+		}
 
 
 }

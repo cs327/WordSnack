@@ -1,20 +1,22 @@
 ﻿using System.Collections.Generic;
-//using System.Collections.Specialized;
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
-using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using System.Linq;
 
-public static class ScoreManager 
+public class ScoreManager
 {
+    void Awake()
+    {
+        // Forces a different code path in the BinaryFormatter that doesn't rely on run-time code generation (which would break on iOS).
+        //Environment.SetEnvironmentVariable ("MONO_REFLECTION_SERIALIZER", "yes");
+        //Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
+    }
     // Stores a description of a high score and a list of scores that fit the description. 
     // i.e "Timed Meghan Stella" might return [323, 200, 100], those being the top three scores by
     // Meghan and Stella on timed mode
     private static Dictionary<string, List<int>> scoreList = new Dictionary<string, List<int>>();
     public static bool NeverShowInstructions = false;
-    
+
     // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
     {
@@ -22,8 +24,8 @@ public static class ScoreManager
         FileStream file = File.Create(Application.persistentDataPath + @"/HighScoreSaves.gd");
         bf.Serialize(file, scoreList);
         file.Close();
-        
-        Debug.Log("Saving highscores");
+
+        Debug.Log("Saving highscores to " + Application.persistentDataPath);
     }
 
     public static void ClearHighScores()
@@ -93,12 +95,12 @@ public static class ScoreManager
     // adds it to a lookup table and returns true if it's a high score for those characters
     public static bool AddHighScore(string gameMode, string char1, string char2, int score)
     {
-        
+
         //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
         int scoreListSizeLimit = 10;
 
         LoadScores();
-   
+
         // Used to lookup scores given a key (in this case made of the character names in sorted order)
         string charKey = gameMode + " " + GetCharacterHash(char1, char2);
 
@@ -113,11 +115,15 @@ public static class ScoreManager
         //}
 
         List<int> temp = scoreList[charKey];
-        scoreList[charKey] = temp.OrderByDescending(x => x).ToList();
+        temp.Sort(delegate(int s1, int s2)
+        {
+            return s2.CompareTo(s1);
+        });
+        scoreList[charKey] = temp;
         SaveScores();
 
         // If the current score is the highest score, return true
-        return scoreList[charKey][0] == score? true: false;
+        return scoreList[charKey][0] == score ? true : false;
     }
 
     // Reads the save file if it exists, loads the scores into scoreList
@@ -127,7 +133,7 @@ public static class ScoreManager
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + @"/HighScoreSaves.gd", FileMode.Open);
-            scoreList = (Dictionary<string, List<int>>) bf.Deserialize(file);            
+            scoreList = (Dictionary<string, List<int>>)bf.Deserialize(file);
             file.Close();
         }
         else
@@ -141,10 +147,10 @@ public static class ScoreManager
     {
         LoadScores();
         string str = "";
-        foreach(var key in scoreList.Keys)
+        foreach (var key in scoreList.Keys)
         {
             str += key + "have scores of ";
-            foreach(int i in scoreList[key])
+            foreach (int i in scoreList[key])
             {
                 str += i + ", ";
             }
@@ -154,5 +160,5 @@ public static class ScoreManager
     }
 
 
-        
+
 }

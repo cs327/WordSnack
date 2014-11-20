@@ -125,16 +125,6 @@ public class AudioManager : MonoBehaviour
 						timerCountDown = .5f;
 				}
 		}
-	
-		public void FadeIn (int i)
-		{
-		
-		}
-	
-		public void CrossFade (int i, int y)
-		{
-		
-		}
 
 		public void SetAllVolume ()
 		{
@@ -142,5 +132,13 @@ public class AudioManager : MonoBehaviour
 						SetVolume (j, volumeArray [j]);
 				}
 		}
+
+        public void MuteAll()
+        {
+            for (int j = 0; j < volumeArray.Length; j++)
+            {
+                SetVolume(j, 0);
+            }
+        }
 	
 }
