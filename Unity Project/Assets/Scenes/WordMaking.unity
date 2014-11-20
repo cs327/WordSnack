@@ -2313,7 +2313,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 9bc1abb2dcc5749f08a74bd83953aa89, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.65999985
+      value: -6.48000002
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9bc1abb2dcc5749f08a74bd83953aa89, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3937,6 +3937,9 @@ MonoBehaviour:
   bellSound: 0
   instructionsDone: 0
   mute: 0
+  chewed: 0
+  bigMealSound: 0
+  funky: 0
   minWordLength: 2
   maxWordLength: 8
   minNumVowels: 2
@@ -4415,7 +4418,7 @@ Transform:
   m_PrefabInternal: {fileID: 811239099}
   m_GameObject: {fileID: 1355528218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.65999985, y: -1.72000003, z: 0}
+  m_LocalPosition: {x: -6.48000002, y: -1.72000003, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5000006, z: 1.5000006}
   m_Children: []
   m_Father: {fileID: 0}
