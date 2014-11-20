@@ -394,7 +394,9 @@ public class PlayMusic : MonoBehaviour
 		void Pause ()
 		{
 				if (variables.paused == true) {
-						audioManager.PauseAll ();
+                    audioManager.Pause(34);
+                    audioManager.Pause(35);
+                    audioManager.Pause(36);
 				}
 				//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
 				//{
@@ -457,7 +459,7 @@ public class PlayMusic : MonoBehaviour
 						}
 				}
 				//Ticking
-				if (Mathf.RoundToInt (variables.globalTimer) == 14) {
+				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused) {
 						if (!audioManager.audioSourceArray [36].isPlaying) {
 								//for (int x = 1; x == 1; x++)
 								//{
