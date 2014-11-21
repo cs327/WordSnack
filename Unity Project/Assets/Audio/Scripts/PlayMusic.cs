@@ -485,7 +485,7 @@ public class PlayMusic : MonoBehaviour
                     audioManager.SetVolume(36, audioManager.volumeArray[36]);
                 }
                 
-				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused) {
+				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused && Application.loadedLevelName == "WordMaking") {
 						if (!audioManager.audioSourceArray [36].isPlaying && variables.timedMode) {
 								//for (int x = 1; x == 1; x++)
 								//{

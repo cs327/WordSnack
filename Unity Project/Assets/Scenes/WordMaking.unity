@@ -179,14 +179,14 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7e90adc33556b43bd93a4eb1e8c81a09, type: 3}
   - {fileID: 2800000, guid: eb5f90621ed134120b50828d698083ac, type: 3}
   - {fileID: 2800000, guid: 31661e35f54e04887aff3f5f3668dbec, type: 3}
-  - {fileID: 2800000, guid: 210993866a7ab48fa8e0483f1ac621d2, type: 3}
+  - {fileID: 2800000, guid: 568ffe46b55f54d849877e60801eecf7, type: 3}
   rightBottomTaste:
   - {fileID: 0}
   - {fileID: 2800000, guid: 5d0ed08fd90654ce1900a101f930d8be, type: 3}
   - {fileID: 2800000, guid: 252bdc99a79d94c689f44f96ab417a7e, type: 3}
   - {fileID: 2800000, guid: 406369b836ab0494f81d23e604a40baf, type: 3}
   - {fileID: 2800000, guid: 6ed70b1acdf004666a1a09c85db41a7e, type: 3}
-  - {fileID: 2800000, guid: 41aa2149536eb4d66bb350deebdc3e40, type: 3}
+  - {fileID: 2800000, guid: 2547abbf4d44941688746111463f4dee, type: 3}
   fadingOut: 0
   fadeOut: 0
   greyOut: {fileID: 1197683174}
@@ -1470,7 +1470,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomTaste.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 210993866a7ab48fa8e0483f1ac621d2, type: 3}
+      objectReference: {fileID: 2800000, guid: 568ffe46b55f54d849877e60801eecf7, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: rightBottomTaste.Array.data[1]
       value: 
@@ -1490,7 +1490,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: rightBottomTaste.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 41aa2149536eb4d66bb350deebdc3e40, type: 3}
+      objectReference: {fileID: 2800000, guid: 2547abbf4d44941688746111463f4dee, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomHighLights.Array.data[1]
       value: 
@@ -3217,7 +3217,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1056343876
 Transform:
   m_ObjectHideFlags: 0
