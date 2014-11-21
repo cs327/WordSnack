@@ -112,11 +112,6 @@ MonoBehaviour:
   tastePanels:
   - {fileID: 1684953694}
   - {fileID: 1882954685}
-  highlightPanels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   tasteTexts:
   - {fileID: 971552200}
   - {fileID: 370837981}
@@ -224,6 +219,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  letterCon: {fileID: 301166125}
 --- !u!4 &72737057
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,6 +1469,10 @@ Prefab:
       propertyPath: rightBottomHighLights.Array.data[5]
       value: 
       objectReference: {fileID: 2800000, guid: 931d1ae99bd44454aad676229018c7e6, type: 3}
+    - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
+      propertyPath: letterCon
+      value: 
+      objectReference: {fileID: 301166125}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
   m_RootGameObject: {fileID: 72737055}

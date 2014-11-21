@@ -8,7 +8,7 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
-		public GameObject[] highlightPanels = new GameObject [4];
+		//public GameObject[] highlightPanels = new GameObject [4];
 		public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
@@ -48,10 +48,15 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject char2Taste2;
 		public Vector3[] tasteHighLightPos = new Vector3[4];
 		public GameObject[] tasteHighlighters = new GameObject[4];
+
+    public GameObject letterCon;
+    LetterController letterController;
+
  
 		// Use this for initialization
 		void Start ()
 		{
+        letterController = letterCon.GetComponent<LetterController>();
 				variables = variableController.GetComponent<VariableControl> ();
 				if (PlayerPrefs.GetInt ("timed") != 1) {
 						timeRemaining.gameObject.SetActive (false);
@@ -149,7 +154,7 @@ public class wordBuildingController : MonoBehaviour
 				//for (int i = 0; i < tasteHighlighters.Length; i++) {
 				//		if (variables.timeToHighlightTaste [i]) {
 								//tasteHighlighters [i].transform.renderer.enabled = true;
-                if (variables.timeToHighlightTaste [0])
+                if (variables.timeToHighlightTaste [0]&& letterController.numLettersOnStove >1)
         {
             tasteTexts [0].renderer.material.SetTexture("_MainTex", leftTopHighLights [character1Num]);
         } else
@@ -157,41 +162,33 @@ public class wordBuildingController : MonoBehaviour
             tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
         }
 
-        if (variables.timeToHighlightTaste [1])
+        if (variables.timeToHighlightTaste [1]&& letterController.numLettersOnStove >1)
         {
             tasteTexts [1].renderer.material.SetTexture("_MainTex", leftBottomHighLights [character1Num]);
         } else
         {
             tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
         }
-        if(variables.timeToHighlightTaste[2]){
+        if(variables.timeToHighlightTaste[2]&& letterController.numLettersOnStove >1){
                 tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
                 }else{
                 tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
                                                                                     }
-        if(variables.timeToHighlightTaste[3]){
+        if(variables.timeToHighlightTaste[3]&& letterController.numLettersOnStove >1){
                 tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
 
                 
 						}else{
                 tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
                                                                                     }
-                                                                                    /*else {
-							//	tasteHighlighters [i].transform.renderer.enabled = false;
-                tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
-                tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
-                tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
-                tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
-						}
-      */                  
-				//}
+                                                                                   
 
-	/*unhilights all tastes if the letters on the stove do not form a word
+	//unhilights all tastes if the letters on the stove do not form a word
 				if (!variables.isWord) {
 						unhightlightAllTastes ();
 				}
 
-                */
+               
 		}
 
 		IEnumerator ClosingTime ()
@@ -315,10 +312,15 @@ public class wordBuildingController : MonoBehaviour
 
 		public void unhightlightAllTastes ()
 		{
-				for (int i = 0; i < tasteHighlighters.Length; i++) {
+				/*for (int i = 0; i < tasteHighlighters.Length; i++) {
 						tasteHighlighters [i].transform.renderer.enabled = false;
 						variables.timeToHighlightTaste [i] = false;
 				}
+    */
+        tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
+        tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
+        tasteTexts [2].renderer.material.SetTexture("_MainTex",rightTopTaste [character2Num]);
+        tasteTexts [3].renderer.material.SetTexture("_MainTex",rightBottomTaste [character2Num]);
 		}
 
 		public void SetDisplayColors ()
@@ -328,19 +330,10 @@ public class wordBuildingController : MonoBehaviour
 				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
 				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
 
-				highlightPanels [0].renderer.material.SetTexture ("_MainTex", leftTopHighLights [character1Num]);
-				highlightPanels [1].renderer.material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
-				highlightPanels [2].renderer.material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
-				highlightPanels [3].renderer.material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
 				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
 				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
 				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
 				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
-
-       // highlightPanels [0].renderer.material.SetTexture("_MainTex",leftTopHighLights [character1Num]);
-        //highlightPanels [1].renderer.material.SetTexture("_MainTex",leftBottomHighLights [character1Num]);
-        //highlightPanels [2].renderer.material.SetTexture("_MainTex",rightTopHighLights [character2Num]);
-        //highlightPanels [3].renderer.material.SetTexture("_MainTex",rightBottomHighLights [character2Num]);
 
         tasteTexts [0].renderer.material.SetTexture("_MainTex",leftTopTaste [character1Num]);
         tasteTexts [1].renderer.material.SetTexture("_MainTex",leftBottomTaste [character1Num]);
