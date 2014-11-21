@@ -155,11 +155,12 @@ public class Character : MonoBehaviour
 								variables.bonus = false;
 						}
 						Debug.Log ("Score after tastes for " + word + " is " + wordScore);
-						
+						//if your word length is high enough to add a big meal bonus, do it and play the sound
 						if(variables.bigMealAdditives[word.Length-2] != 0){
 							wordScore += variables.bigMealAdditives[word.Length];
 							variables.bigMealSound = true;
 						}	
+						//if your word length is not high enough, do not do anything for big meal bonus
 						else{
 							variables.bigMealSound =false;
 						}
