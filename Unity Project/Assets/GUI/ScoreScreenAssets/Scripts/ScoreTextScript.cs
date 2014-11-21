@@ -14,6 +14,7 @@ public class ScoreTextScript : MonoBehaviour {
 	public bool bothTastes;
 	public bool longWord;
 	public bool longWordPartTwo;
+	public int bigMealBonusVal;
 	bool longWait;
 	bool firstWait;
 
@@ -151,7 +152,7 @@ public class ScoreTextScript : MonoBehaviour {
 				
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
 				if (longWord && !firstWait) {
-					GetComponent<TextMesh>().text = "x" + variables.bigMealBonus + " Big Meal!";
+					GetComponent<TextMesh>().text = "+" + bigMealBonusVal + " Big Meal!";
 					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
 					GetComponent<TextMesh>().color = new Color(1.0f, 0.2f, 0.2f);
 
@@ -161,9 +162,11 @@ public class ScoreTextScript : MonoBehaviour {
 					waitTime = variables.BigMealDisplayTime;
 
 					// supernova!
-					super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
-					super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
-					exploded = true;
+					if(totalScore > 100){
+						super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
+						super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
+						exploded = true;
+						}
 
 				} else if (!longWord && !firstWait) {
 					// we should be DONE
