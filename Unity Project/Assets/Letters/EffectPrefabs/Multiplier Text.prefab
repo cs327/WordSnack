@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScore: 0
   totalScore: 0
-  multiplier: 3
+  multiplier: 2
   score: 0
   bothTastes: 0
   longWord: 0

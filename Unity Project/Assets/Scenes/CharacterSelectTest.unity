@@ -306,7 +306,12 @@ Prefab:
     - target: {fileID: 11400000, guid: d4ef734ac226c4a8e9c697c825e6c238, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: d1e8eb7bc70a044059435e5ab836e2e3,
+      objectReference: {fileID: 21300000, guid: c4bcd63fed15940ffb16d1a4d37de549,
+        type: 3}
+    - target: {fileID: 11400000, guid: d4ef734ac226c4a8e9c697c825e6c238, type: 2}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: ed2bef263dbbd48a7ab3bbed32804acb,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d4ef734ac226c4a8e9c697c825e6c238, type: 2}
@@ -397,8 +402,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: e9dedb7cdcea04a43904b1241759326d, type: 3}
-  standbyImage: {fileID: 21300000, guid: 61939ee6a1cf948b98f2614c9e4ec0aa, type: 3}
+  selectedImage: {fileID: 21300000, guid: b7a0621dcc38a4ec993bf5bc4aac0f37, type: 3}
+  standbyImage: {fileID: 21300000, guid: 857033e9398854207a5964545dd3a19a, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -619,7 +624,12 @@ Prefab:
     - target: {fileID: 11400000, guid: bd2d6e7ac126041a0a9decf8df7a4415, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 61939ee6a1cf948b98f2614c9e4ec0aa,
+      objectReference: {fileID: 21300000, guid: 857033e9398854207a5964545dd3a19a,
+        type: 3}
+    - target: {fileID: 11400000, guid: bd2d6e7ac126041a0a9decf8df7a4415, type: 2}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b7a0621dcc38a4ec993bf5bc4aac0f37,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd2d6e7ac126041a0a9decf8df7a4415, type: 2}
@@ -680,7 +690,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 0161faaa941b64a1f8a04472391ec34c, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 58152d56c2c0a4977b3d27cb1a22f46b,
+      objectReference: {fileID: 21300000, guid: 00f56d250f6b44160b41393685f1186f,
+        type: 3}
+    - target: {fileID: 11400000, guid: 0161faaa941b64a1f8a04472391ec34c, type: 2}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 1dfdfd39789da4b5598ecfa1c553ed9e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0161faaa941b64a1f8a04472391ec34c, type: 2}
@@ -1085,8 +1100,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: 624f703860fa94d759794d1b3deeefd2, type: 3}
-  standbyImage: {fileID: 21300000, guid: 483c8824f67654732b4f36f5663e2e48, type: 3}
+  selectedImage: {fileID: 21300000, guid: 7532e31324c7f49d7bd07a482b80e2e8, type: 3}
+  standbyImage: {fileID: 21300000, guid: 774d1b5578d4f44d3983a5e7ca7ce43b, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -1336,8 +1351,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: ee68b90e734fe4f95ba0282d8cc6ea93, type: 3}
-  standbyImage: {fileID: 21300000, guid: d1e8eb7bc70a044059435e5ab836e2e3, type: 3}
+  selectedImage: {fileID: 21300000, guid: ed2bef263dbbd48a7ab3bbed32804acb, type: 3}
+  standbyImage: {fileID: 21300000, guid: c4bcd63fed15940ffb16d1a4d37de549, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 0
@@ -1794,7 +1809,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 4bf507566397d47fa8ae6ca39275734b, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 432116a15f15b4936b92b3650492440a,
+      objectReference: {fileID: 21300000, guid: 0a22138a3e3d14359a9b35ddf880dd97,
+        type: 3}
+    - target: {fileID: 11400000, guid: 4bf507566397d47fa8ae6ca39275734b, type: 2}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 5914351dc89da4665a3124219d8efa5e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bf507566397d47fa8ae6ca39275734b, type: 2}
@@ -1902,8 +1922,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: f30eb50e1c567496e90d6ae02a1d9b89, type: 3}
-  standbyImage: {fileID: 21300000, guid: 58152d56c2c0a4977b3d27cb1a22f46b, type: 3}
+  selectedImage: {fileID: 21300000, guid: 1dfdfd39789da4b5598ecfa1c553ed9e, type: 3}
+  standbyImage: {fileID: 21300000, guid: 00f56d250f6b44160b41393685f1186f, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -2037,8 +2057,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: 9092bfb79747840a1a48debb22cb2d67, type: 3}
-  standbyImage: {fileID: 21300000, guid: 432116a15f15b4936b92b3650492440a, type: 3}
+  selectedImage: {fileID: 21300000, guid: 5914351dc89da4665a3124219d8efa5e, type: 3}
+  standbyImage: {fileID: 21300000, guid: 0a22138a3e3d14359a9b35ddf880dd97, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -2345,7 +2365,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 483c8824f67654732b4f36f5663e2e48,
+      objectReference: {fileID: 21300000, guid: 774d1b5578d4f44d3983a5e7ca7ce43b,
+        type: 3}
+    - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 7532e31324c7f49d7bd07a482b80e2e8,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
