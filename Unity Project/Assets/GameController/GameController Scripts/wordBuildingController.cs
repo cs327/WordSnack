@@ -218,16 +218,7 @@ public class wordBuildingController : MonoBehaviour
 				Application.LoadLevel ("ScoreScreen");
 		
 		}
-		void OnGUI ()
-		{
-				if (!variables.paused) {
-						GUIStyle style = new GUIStyle ();
-						style.normal.background = endGameButton;
-						if (GUI.Button (new Rect (Screen.width * 0.013f, Screen.height * 0.315f, Screen.width * 0.07f, Screen.width * 0.07f), "", style)) {
-								fadeOut = true;
-						}
-				}
-		}
+	
 		public void sendVariablestoScoreScreen ()
 		{
 				//updates score related variables 
