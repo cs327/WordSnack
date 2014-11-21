@@ -29,6 +29,7 @@ public class ScoreManager
         //Debug.Log("Saving highscores to " + Application.persistentDataPath);
 
         PlayerPrefs.SetString("HighScores", ObjectToStr<Dictionary<string, List<int>>>(scoreList));
+        PlayerPrefs.Save();
     }
 
     public static void ClearHighScores()
@@ -205,7 +206,5 @@ public class ScoreManager
             _mem.GetBuffer()
         );
     }
-
-
 
 }

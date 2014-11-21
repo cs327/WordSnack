@@ -475,6 +475,16 @@ public class PlayMusic : MonoBehaviour
 						}
 				}
 				//Ticking
+
+                if (!variables.timedMode)
+                {
+                    audioManager.SetVolume(36, 0.0f);
+                }
+                else
+                {
+                    audioManager.SetVolume(36, audioManager.volumeArray[36]);
+                }
+                
 				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused) {
 						if (!audioManager.audioSourceArray [36].isPlaying && variables.timedMode) {
 								//for (int x = 1; x == 1; x++)
