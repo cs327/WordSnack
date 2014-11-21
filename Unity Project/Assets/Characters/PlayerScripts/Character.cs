@@ -155,17 +155,25 @@ public class Character : MonoBehaviour
 								variables.bonus = false;
 						}
 						Debug.Log ("Score after tastes for " + word + " is " + wordScore);
-						if (word.Length == 8) {
-								wordScore *= variables.bigMealBonus + 1;
-                                variables.bigMealSound = true;
-						} else if (word.Length == 7) {
-								wordScore *= variables.bigMealBonus;
-                                variables.bigMealSound = true;
+						
+						if(variables.bigMealAdditives[word.Length-2] != 0){
+							wordScore += variables.bigMealAdditives[word.Length];
+							variables.bigMealSound = true;
+						}	
+						else{
+							variables.bigMealSound =false;
 						}
-                        else
-                        {
-                            variables.bigMealSound = false;
-                        }
+//						if (word.Length == 8) {
+//								wordScore *= variables.bigMealBonus + 1;
+//                                variables.bigMealSound = true;
+//						} else if (word.Length == 7) {
+//								wordScore *= variables.bigMealBonus;
+//                                variables.bigMealSound = true;
+//						}
+//                        else
+//                        {
+//                            variables.bigMealSound = false;
+//                        }
 						Debug.Log ("Score after bigmealbonus is " + wordScore);
 
 			

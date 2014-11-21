@@ -3578,6 +3578,7 @@ MonoBehaviour:
   trashCollectionMult: 0
   bigMealBonus: 2
   doubleTasteMatchBonus: 2
+  bigMealAdditives: 00000000000000000000000019000000320000004b00000064000000
   TastesForTrash: 0a000000
   TastesForMeghan: 0100000002000000
   TastesForStella: 0400000009000000
@@ -5361,6 +5362,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.80180883
@@ -5435,6 +5440,26 @@ Prefab:
       value: 
       objectReference: {fileID: 10200000, guid: f5affdbe9093b44f7879588429de2b31,
         type: 2}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.data[7]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.data[6]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.data[5]
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.data[4]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: bigMealAdditives.Array.data[3]
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
   m_RootGameObject: {fileID: 1148986584}

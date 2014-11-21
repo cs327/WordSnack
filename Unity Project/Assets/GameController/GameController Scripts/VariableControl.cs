@@ -65,6 +65,8 @@ public class VariableControl : MonoBehaviour {
 	public float trashCollectionMult;
 	public float bigMealBonus;
 	public float doubleTasteMatchBonus;
+	public int [] bigMealAdditives;
+
 
 	//tweakable character tastes
 	public int[] TastesForTrash;
@@ -173,7 +175,7 @@ public class VariableControl : MonoBehaviour {
 	// Use this for initialization
 	void Awake() {
 		CheckIphoneType();
-		
+
 		phase2CharacterPositions = new Vector3[characterSelectNum];
 		phase1SelectedCharPositions = new Vector3[characterSelectNum];
 		characterTasteSpots = new Vector3[characterSelectNum];
