@@ -72,7 +72,7 @@ public class LetterController : MonoBehaviour
 				stoveSpots = new Vector3[boardSize];
 				bankSpots = new Vector3[boardSize];
 				for (int i = 0; i < boardSize; i++) {
-						stoveSpots [i] = new Vector3 (i * 1.4f - 4.95f, -1.26f, 0);
+						stoveSpots [i] = new Vector3 (i * 1.4f - 4.6f, -1.26f, 0);
 						bankSpots [i] = new Vector3 (i * 1.8f - 6.3f, -3.6f, 0);
 						positionOnBoard [i] = -1;
 				}
