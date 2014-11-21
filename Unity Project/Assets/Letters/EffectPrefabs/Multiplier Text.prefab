@@ -89,6 +89,7 @@ MonoBehaviour:
   bothTastes: 0
   longWord: 0
   longWordPartTwo: 0
+  bigMealBonusVal: 0
   supernova: {fileID: 19800000, guid: 115b20ab8674e482d9705056f29a97ac, type: 2}
 --- !u!1001 &100100000
 Prefab:
