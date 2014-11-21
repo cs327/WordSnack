@@ -37,6 +37,7 @@ public class ScoreManager
 
         PlayerPrefs.SetString("HighScores", highScoreString);
         Debug.Log("Saving pref set to: " + highScoreString);
+        PlayerPrefs.Save();
     }
 
     // Reads the save file if it exists, loads the scores into scoreList
@@ -114,9 +115,6 @@ public class ScoreManager
     // adds it to a lookup table and returns true if it's a high score for those characters
     public static bool AddHighScore(string gameMode, string char1, string char2, int score)
     {
-        //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
-        int scoreListSizeLimit = 10;
-
         LoadScores();
 
         // Used to lookup scores given a key (in this case made of the character names in sorted order)
@@ -127,11 +125,7 @@ public class ScoreManager
         if (!scoreList[charKey].Contains(score))
             scoreList[charKey].Add(score);
         Debug.Log("Saved to file: " + charKey + score);
-        //if (scoreList[charKey].Count > scoreListSizeLimit)
-        //{                       
-        //    scoreList[charKey].RemoveRange(scoreListSizeLimit, scoreList[charKey].Count - scoreListSizeLimit);
-        //}
-
+        
         List<int> temp = scoreList[charKey];
         temp.Sort(delegate(int s1, int s2)
         {
@@ -143,18 +137,6 @@ public class ScoreManager
         // If the current score is the highest score, return true
         return scoreList[charKey][0] == score ? true : false;
     }
-
-    // Saves the current value of "Never show instructions?" in the file UserSettings.gd
-    private static void SaveNeverShowSetting(bool setting)
-    {
-        //Debug.Log("Saving 'never show? = " + setting + "'");
-        //BinaryFormatter bf = new BinaryFormatter();
-        //FileStream file = File.Create(Application.persistentDataPath + "/UserSettings.gd");
-        //bf.Serialize(file, setting);
-        //file.Close();
-    }
-
-
 
     public static string ToString()
     {
@@ -171,43 +153,4 @@ public class ScoreManager
         }
         return str;
     }
-
-
-    public static T StrToObject<T>(string _data) where T : class
-    {
-        if (!String.IsNullOrEmpty(_data))
-        {
-            BinaryFormatter _bin = new BinaryFormatter();
-            try
-            {
-                MemoryStream _mem = new MemoryStream(Convert.FromBase64String(_data));
-
-                T _obj = _bin.Deserialize(_mem) as T;
-
-                return _obj;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-        }
-        else
-        {
-            throw new Exception("_data is null or empty");
-        }
-    }
-    public static string ObjectToStr<T>(T _saveMe)
-    {
-        BinaryFormatter _bin = new BinaryFormatter();
-        MemoryStream _mem = new MemoryStream();
-        _bin.Serialize(_mem, _saveMe);
-
-        return Convert.ToBase64String(
-            _mem.GetBuffer()
-        );
-    }
-
-
-
 }
