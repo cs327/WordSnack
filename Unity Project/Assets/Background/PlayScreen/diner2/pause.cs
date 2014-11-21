@@ -13,6 +13,7 @@ public class pause : MonoBehaviour {
 	public bool unpause = false;
 	public bool clickSound;
     public GameObject blackout;
+	public GameObject blackout2;
 //notes on this script:
 //the pause function is called by clicking on the button,
 //however the unpause function is called in a tiny script on the resume button,
@@ -61,6 +62,10 @@ public class pause : MonoBehaviour {
 		resumeButtonObj.SetActive(true);
 		exitButtonObj.SetActive(true);
 		blackout.SetActive(true);
+
+		if (variables.timedMode) {
+			blackout2.SetActive(true);
+				}
        // blackout.transform.position = new Vector3(0.07f,0.0f, -1.79f);
 	}
 
@@ -73,6 +78,10 @@ public class pause : MonoBehaviour {
 		resumeButtonObj.SetActive(false);
 		exitButtonObj.SetActive(false);
 		blackout.SetActive(false);
+
+		if (variables.timedMode) {
+			blackout2.SetActive(false);
+				}
         //blackout.transform.position = new Vector3(10f,10.0f, -1.79f);
 	}
 }
