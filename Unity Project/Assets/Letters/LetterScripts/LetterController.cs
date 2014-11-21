@@ -264,7 +264,7 @@ public class LetterController : MonoBehaviour
 				numVowels = countVowels (); //count the number of vowels that are on the board so that we know what to do later in this function
 
 				if (numVowels < variables.minNumVowels && variables.totalVowels <= 0) { // There aren't enough vowels, but we're out!
-						if (!variables.timedMode) { //If we're not in timed mode, we replace the highest-scoring consonant with an a or an e
+						//replace the highest-scoring consonant with an a or an e
 								char letterToReplace = serializedLetterBag [0];
 								for (int i = 1; i < serializedLetterBag.Count; i++) {
 										if (letterScores [serializedLetterBag [i]] > letterScores [letterToReplace]) {
@@ -291,8 +291,6 @@ public class LetterController : MonoBehaviour
 								}
 								//Say there aren't any vowels left - so we're giving a consonant
 								Debug.Log ("Replacing the highest scoring consonant with a vowel");
-						}
-
 				}
 						
 				if (numVowels < variables.minNumVowels && variables.totalVowels > 0) {
