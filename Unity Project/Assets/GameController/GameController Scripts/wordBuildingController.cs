@@ -136,7 +136,7 @@ public class wordBuildingController : MonoBehaviour
 						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
 				}
 				if (variables.lettersRemaining > variables.boardSize) {
-						lettersRemaining.text = "Tiles: " + (variables.lettersRemaining - variables.boardSize).ToString ();
+						lettersRemaining.text = "TILES: " + (variables.lettersRemaining - variables.boardSize).ToString ();
 				} else {
 						lettersRemaining.text = "Tiles: " + 0;
 				}
