@@ -74,7 +74,10 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(1);
+        if (GameObject.Find("AudioManager_Game(Clone)"))
+        {
+            GameObject.Find("AudioManager_Game(Clone)").GetComponent<AudioManager>().Play(1);
+        }
         // 0 = how to make a work instruction
         // 1 = trashcan function
         // 2 = tap to feed customers message

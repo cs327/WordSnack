@@ -12,10 +12,15 @@ public class ChangeScene : MonoBehaviour
     {
 //		PlayerPrefs.DeleteAll ();
 
-        if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
+        DestroyObject(GameObject.Find("AudioManager_Game(Clone)"));
+        DestroyObject(GameObject.Find("AudioManager_Summary(Clone)"));
+
+        if (GameObject.Find("AudioManager_Menu(Clone)") == null)
         {
-            Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(Resources.Load("AudioManager_Menu"), new Vector3(0, 0, 0), Quaternion.identity);
         }
+
+        Resources.UnloadUnusedAssets();
 
 		timeGoneBy = 0.0f;
 

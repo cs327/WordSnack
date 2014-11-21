@@ -13,7 +13,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 95: {fileID: 9500000}
   m_Layer: 0
-  m_Name: Kelvin
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d215d4944d6e14509a0a43e745821f92, type: 2}
+  m_Controller: {fileID: 9100000, guid: d27d3c24e10e34e48a4682ac4aeb054d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ae2092501d1048dc9eee5955de11810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterNum: 2
+  characterNum: 3
   trashedLetters: 0
   trashedLetterScore: 0
   numLettersFedToMe: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 9500000}
+  anim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a3f85ae6f60da4d3fb0a819f42e5ccd3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b895851c666f4194be877f1a7ce7041, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

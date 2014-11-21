@@ -56,6 +56,10 @@ public class wordBuildingController : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
+            DestroyObject(GameObject.Find("AudioManager_Menu(Clone)"));
+            DestroyObject(GameObject.Find("AudioManager_Summary(Clone)"));
+            Resources.UnloadUnusedAssets();
+
         letterController = letterCon.GetComponent<LetterController>();
 				variables = variableController.GetComponent<VariableControl> ();
 				if (PlayerPrefs.GetInt ("timed") != 1) {
@@ -77,8 +81,8 @@ public class wordBuildingController : MonoBehaviour
 				//tasteHighLightPos [3] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 3.9f, -0.5f);
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
-				character1 = (GameObject)Instantiate (characters [character1Num], variables.phase2CharacterPositions [0], Quaternion.identity);
-				character2 = (GameObject)Instantiate (characters [character2Num], variables.phase2CharacterPositions [1], Quaternion.identity);
+				character1 = (GameObject)Instantiate (Resources.Load (characters [character1Num].name), variables.phase2CharacterPositions [0], Quaternion.identity);
+				character2 = (GameObject)Instantiate (Resources.Load (characters [character2Num].name), variables.phase2CharacterPositions [1], Quaternion.identity);
 				character1.transform.localScale = new Vector3 (2, 2, 2);
 				character2.transform.localScale = new Vector3 (2, 2, 2);
 				character1.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
@@ -91,9 +95,11 @@ public class wordBuildingController : MonoBehaviour
 				tutorial = GameObject.Find ("Tutorial");
 				//instructionsClose = GameObject.Find ("close");
 
-				if (GameObject.Find ("AudioManager_Prefab(Clone)") == null) {
-						Instantiate (Resources.Load ("AudioManager_Prefab"), new Vector3 (0, 0, 0), Quaternion.identity);
+				if (GameObject.Find ("AudioManager_Game(Clone)") == null) {
+						Instantiate (Resources.Load ("AudioManager_Game"), new Vector3 (0, 0, 0), Quaternion.identity);
 				}
+
+
 
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes

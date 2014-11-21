@@ -12,9 +12,14 @@ public class characterSelectController : MonoBehaviour {
 	void Start () {
 		variables = variableController.GetComponent<VariableControl>();
 
-		if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
+        DestroyObject(GameObject.Find("AudioManager_Game(Clone)"));
+        DestroyObject(GameObject.Find("AudioManager_Summary(Clone)"));
+
+        Resources.UnloadUnusedAssets();
+
+		if (GameObject.Find("AudioManager_Menu(Clone)") == null)
 		{
-			Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
+			Instantiate(Resources.Load("AudioManager_Menu"), new Vector3(0, 0, 0), Quaternion.identity);
 		}
 
 		// if we get here and there's no background, create it and the diner

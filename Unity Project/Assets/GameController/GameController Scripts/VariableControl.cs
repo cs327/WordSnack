@@ -199,6 +199,10 @@ public class VariableControl : MonoBehaviour {
 	}
 
 	void Start () {
+
+        Resources.UnloadUnusedAssets();
+        Debug.Log(Application.loadedLevelName);
+
 		if(PlayerPrefs.GetInt("timed") == 0){
 			timedMode = false;
 		} 

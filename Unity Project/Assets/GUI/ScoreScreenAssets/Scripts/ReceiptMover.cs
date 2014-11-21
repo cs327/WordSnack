@@ -26,6 +26,9 @@ public class ReceiptMover : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+        DestroyObject(GameObject.Find("AudioManager_Menu(Clone)"));
+        DestroyObject(GameObject.Find("AudioManager_Game(Clone)"));
+        Resources.UnloadUnusedAssets();
 		//receipt = gameObject.GetComponent<ReceiptGUI>();
 		// This can be programmatically changed
 		//lowestPos = -7.470931f;
@@ -33,9 +36,9 @@ public class ReceiptMover : MonoBehaviour
 		c = GameObject.Find("Main Camera").GetComponent<Camera>();
 		winSound = true;
 		
-		if (GameObject.Find("AudioManager_Prefab(Clone)") == null)
+		if (GameObject.Find("AudioManager_Summary(Clone)") == null)
 		{
-			Instantiate(Resources.Load("AudioManager_Prefab"), new Vector3(0, 0, 0), Quaternion.identity);
+			Instantiate(Resources.Load("AudioManager_Summary"), new Vector3(0, 0, 0), Quaternion.identity);
 		}
 		
 		//Vector3 pos = gameObject.transform.position;

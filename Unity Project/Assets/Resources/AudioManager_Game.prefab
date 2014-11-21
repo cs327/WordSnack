@@ -12,7 +12,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: AudioManager_Prefab
+  m_Name: AudioManager_Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,9 +102,9 @@ MonoBehaviour:
   audioClipArray:
   - {fileID: 0}
   - {fileID: 8300000, guid: 218359e0a68a21c4595d1ac328606907, type: 3}
-  - {fileID: 8300000, guid: 3a3aed6c10f7d594cba68944eace2f4d, type: 3}
-  - {fileID: 8300000, guid: 6f42e2ff8e7e49b42b29869f8fbe0a70, type: 3}
-  - {fileID: 8300000, guid: e7f854aee7fcda74b88a42a0a939fa9c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 8300000, guid: e69d57e8197bc684390f501bcd56527e, type: 3}
   - {fileID: 8300000, guid: 705c55962eef2fe4cb69733bf45413f3, type: 3}
   - {fileID: 8300000, guid: 16f4b7521be62b34a929f693628ead2f, type: 3}
@@ -116,17 +116,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 8300000, guid: 9af97e75c0f70994791c54ff8e23c7c9, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 8300000, guid: 93fb7969b6012224c8c774f057c3cab2, type: 3}
   - {fileID: 8300000, guid: 9c7199fde3b77474ba97b07773493f07, type: 3}
-  - {fileID: 8300000, guid: f56287e0af1d6064f8554b7d72f28906, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: 476cdac5ebba40b4b8ac43ca1bed02ba, type: 3}
   - {fileID: 8300000, guid: b01f1425a82dd2a4f805550821358fe1, type: 3}
   - {fileID: 8300000, guid: 46c2daac01226bb44b726a3935fc1d6d, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 8300000, guid: 2b49a3b696ad5d642b9ab7bd66997d14, type: 3}
+  - {fileID: 0}
   - {fileID: 8300000, guid: ca373ffb2d2ed61489c1fbffd481ebd2, type: 3}
   - {fileID: 8300000, guid: 361676e6f9bd1ad428c34496a75a5b03, type: 3}
   - {fileID: 8300000, guid: 72f9f01f5ca19374bbcadd994ead85a4, type: 3}

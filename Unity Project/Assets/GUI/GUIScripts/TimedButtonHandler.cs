@@ -29,7 +29,7 @@ public class TimedButtonHandler : MonoBehaviour {
 	
 	void OnMouseUpAsButton(){
 
-        GameObject.Find("AudioManager_Prefab(Clone)").GetComponent<AudioManager>().Play(1);
+        GameObject.Find("AudioManager_Menu(Clone)").GetComponent<AudioManager>().Play(1);
 		buttonPressed = true;
 		gameObject.renderer.material.color = Color.white;
 		PlayerPrefs.SetInt("timed",1);

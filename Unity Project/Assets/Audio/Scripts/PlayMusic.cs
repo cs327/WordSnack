@@ -22,7 +22,6 @@ public class PlayMusic : MonoBehaviour
 		//Character charac;
 
 		int numSelected = 0;
-		bool victory = false;
 
 		//ReceiptMove receipt;
 		//public GameObject receiptScript;
@@ -63,6 +62,7 @@ public class PlayMusic : MonoBehaviour
 
 				if (Application.loadedLevelName == "ScoreScreen") {
 
+                        audioManager.Play(16);
 				}
 
 		}
@@ -83,9 +83,6 @@ public class PlayMusic : MonoBehaviour
 						}
 				}
 
-				if (Application.loadedLevelName != "ScoreScreen") {
-						victory = false;
-				}
 
 				if (Application.loadedLevelName == "SplashScreen") {
 						//Stops any other music or sound tracks that may still be playing.
@@ -229,13 +226,6 @@ public class PlayMusic : MonoBehaviour
 						//}
 
 						//Loops the Receipt printing sounds while the receipt is both on screen and moving.
-						if (!victory) {
-								if (!audioManager.audioSourceArray [16].isPlaying) {
-										audioManager.Play (16);
-								}
-								victory = true;
-						}
-
 						for (int x = 1; x == 1; x++) {
 								if ((1.20 > GameObject.Find ("ReceiptPrefab").transform.position.y) && (GameObject.Find ("ReceiptPrefab").transform.position.y > -6.5)) {
 										if (GameObject.Find ("ReceiptPrefab").GetComponent<ReceiptMover> ().Touched == false) {
