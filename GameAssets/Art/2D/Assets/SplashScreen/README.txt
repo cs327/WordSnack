@@ -1,7 +1,10 @@
 Splash Screen Information
--48 frames, at half resolution each (568x320)
--the frames are laid out 6 across by 8 down
--image size is 3408x2560 total
--image size on disc is 5.1 megabytes total
+Smaller:
+512x256. It doesn't have stacked frames--the first 7 are empty, and the last 6 are empty. 
+-resolution: 2560x2560, 5 across by 10 down.
+-249 kilobytes on disc
 
-The spaceship doesn't enter visibility until frame 23, and leaves visibility on frame 94.
+Larger:
+1024x512. It does have stacked frames--so the first frame of the sprite sheet should begin 8 frames into the menu screen. It's also double the resolution. Because of frame stacking, the resolution is wonky.
+-5120x3584
+-664 kilobytes on disc
