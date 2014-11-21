@@ -137,14 +137,14 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 97ab6d669d5e74c729882b4dc9435868, type: 3}
   - {fileID: 2800000, guid: 1b3f31ef15ad6443086e0cf2d88e0814, type: 3}
   - {fileID: 2800000, guid: b2784b369f49e40a79f3ac934f639be0, type: 3}
-  - {fileID: 2800000, guid: 8c4c42bdabf9242f5bdf609b89f8d0d0, type: 3}
+  - {fileID: 2800000, guid: 3dba67cd8d86e4cf7a569f58385c92db, type: 3}
   rightBottomHighLights:
   - {fileID: 0}
   - {fileID: 2800000, guid: 0fee10a092d6b488a9b73f787e6c580d, type: 3}
   - {fileID: 2800000, guid: 749c07d24bdfc490d8e2f83e5eb27841, type: 3}
   - {fileID: 2800000, guid: ed3b7410ba4104fcfbfc1af0ae35ef67, type: 3}
   - {fileID: 2800000, guid: 9ce95d02815bd4c8da749ba9f7fd5f15, type: 3}
-  - {fileID: 2800000, guid: 931d1ae99bd44454aad676229018c7e6, type: 3}
+  - {fileID: 2800000, guid: dc3febe95e99e41159a544d8b9d24b3c, type: 3}
   leftTopHighLights:
   - {fileID: 0}
   - {fileID: 2800000, guid: e1baabd8a4bd34c509ab1c39d5dc3f9f, type: 3}
@@ -1510,7 +1510,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: leftBottomHighLights.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 8c4c42bdabf9242f5bdf609b89f8d0d0, type: 3}
+      objectReference: {fileID: 2800000, guid: 3dba67cd8d86e4cf7a569f58385c92db, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: rightBottomHighLights.Array.data[1]
       value: 
@@ -1530,7 +1530,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: rightBottomHighLights.Array.data[5]
       value: 
-      objectReference: {fileID: 2800000, guid: 931d1ae99bd44454aad676229018c7e6, type: 3}
+      objectReference: {fileID: 2800000, guid: dc3febe95e99e41159a544d8b9d24b3c, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: letterCon
       value: 
