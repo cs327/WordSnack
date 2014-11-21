@@ -274,7 +274,10 @@ public class PlayMusic : MonoBehaviour
 						i++;
 				}
 				if (GameObject.Find ("letterGeneration").GetComponent<LetterController> ().numLettersOnStove < i) {
-						audioManager.Play (8);
+                    if (!audioManager.audioSourceArray[8].isPlaying && !audioManager.audioSourceArray[18].isPlaying)
+                    {
+                        audioManager.Play(8);
+                    }
 						i--;
 				}
 		}
