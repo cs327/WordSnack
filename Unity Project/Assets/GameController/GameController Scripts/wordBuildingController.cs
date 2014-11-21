@@ -101,14 +101,14 @@ public class wordBuildingController : MonoBehaviour
 				//		tasteHighlighters [i].transform.position = tasteHighLightPos [i];
 				//}
 				//moves the highlighters over, if it's an iPhone 5
-				if (variables.iPhoneType == 2) {
-						for (int i = 0; i < tasteHighlighters.Length -2; i++) {
-								tasteHighlighters [i].transform.position += Vector3.left;
-						}
-						for (int i = 2; i < tasteHighlighters.Length; i++) {
-								tasteHighlighters [i].transform.position += Vector3.right;
-						}
-				}
+		//		if (variables.iPhoneType == 2) {
+		//				for (int i = 0; i < tasteHighlighters.Length -2; i++) {
+		//						tasteHighlighters [i].transform.position += Vector3.left;
+		//				}
+		//				for (int i = 2; i < tasteHighlighters.Length; i++) {
+		//						tasteHighlighters [i].transform.position += Vector3.right;
+		//				}
+		//		}
 
 
 		}
