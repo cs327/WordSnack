@@ -246,7 +246,6 @@ public class LetterController : MonoBehaviour
 				
 				//First check if there are any letters in the bag. 
 				//If we don't have any, then check if we're in timed mode.
-				//If so, refill the letter bag.
 				//If not, return a ".", which says to returnLetters that we're empty - 
 				//we've got none letters. Too bad.
 				
@@ -258,8 +257,8 @@ public class LetterController : MonoBehaviour
 						}
 				}
 				if (serializedLetterBag.Count () == 1 && variables.timedMode) {		//We'll run out next time - let's fill it up so it doesn't happen!
-						Debug.Log ("Refilling letter bag!");
-						refillLetterBag ();
+						Debug.Log ("Refilling letter bag!"); //Note that this doesn't do anything to the serialized letter bag we're working with and doesn't need to
+						refillLetterBag (); //This is solving the problem we will have NEXT time through, not now.
 				}
 				//update the number of vowels in hand
 				numVowels = countVowels (); //count the number of vowels that are on the board so that we know what to do later in this function
