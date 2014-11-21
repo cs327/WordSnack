@@ -254,21 +254,12 @@ public class LetterController : MonoBehaviour
 						if (!variables.timedMode) {
 								return '.';
 						} else {
-								Debug.Log ("Refilling letter bag!");
-								refillLetterBag ();
-								//Now we have to remake the serialized letter bag - it will be wrong at this point.
-								foreach (KeyValuePair<char, int> entry in variables.letterBag) { //loop through our letterBag Dictionary
-										for (int i = 1; i <= entry.Value; i++) { //Add that many letters to our serialized version (it could well be 0 - that's fine)
-												serializedLetterBag.Add (entry.Key);
-												if (vowelList.Contains (entry.Key)) { //If it's a vowel, add it to the vowel bag
-														vowelsInLetterBag.Add (entry.Key);
-												}
-												if (consonantList.Contains (entry.Key)) { //If it's a consonant, add it to the consonant bag
-														consonantsInLetterBag.Add (entry.Key);
-												}
-										}
-								}
+								Debug.Log ("We've got 0 letters and we're in timed mode. This should NEVER happen. BUG.");
 						}
+				}
+				if (serializedLetterBag.Count () == 1 && variables.timedMode) {		//We'll run out next time - let's fill it up so it doesn't happen!
+						Debug.Log ("Refilling letter bag!");
+						refillLetterBag ();
 				}
 				//update the number of vowels in hand
 				numVowels = countVowels (); //count the number of vowels that are on the board so that we know what to do later in this function
@@ -282,7 +273,7 @@ public class LetterController : MonoBehaviour
 										}
 								}
 								
-								variables.letterBag [letterToReplace] = variables.letterBag [letterToReplace] - 1;
+								variables.letterBag [letterToReplace] = variables.letterBag [letterToReplace] - 1; //Remove the replaced letter from the bag
 
 								//Creates an additional "A" or "E" if there are no vowels left
 								//We don't do this in timed mode - your bag will get refilled
@@ -291,21 +282,16 @@ public class LetterController : MonoBehaviour
 								if (aOrE < 0.5f) {
 										variables.numA++;
 										variables.totalVowels++;
-										vowelsInLetterBag.Add ('a');
-										serializedLetterBag.Add ('a');
-										variables.letterBag ['a'] = variables.letterBag ['a'] + 1;
-
+										vowelsInLetterBag.Add ('a'); //We only need to add it to the local serialized letter bag, not the global one
 
 								}
 								if (aOrE >= 0.5f) {
 										variables.numE++;
 										variables.totalVowels++;
-										vowelsInLetterBag.Add ('e');
-										serializedLetterBag.Add ('e');
-										variables.letterBag ['e'] = variables.letterBag ['e'] + 1;
+										vowelsInLetterBag.Add ('e'); //because we've already removed the one we replaced from the global one
 								}
 								//Say there aren't any vowels left - so we're giving a consonant
-								Debug.Log ("Replacing a vowel with the highest scoring consonant");
+								Debug.Log ("Replacing the highest scoring consonant with a vowel");
 						}
 
 				}
