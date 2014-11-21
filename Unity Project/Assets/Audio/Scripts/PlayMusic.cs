@@ -259,6 +259,11 @@ public class PlayMusic : MonoBehaviour
 						}
 			
 				}
+                else
+                {
+                    audioManager.Stop(20);
+                    audioManager.Stop(16);
+                }
 
 
 		}
@@ -456,25 +461,31 @@ public class PlayMusic : MonoBehaviour
 
 		void TimedWarning ()
 		{
-				//30 second bell
-				if (Mathf.RoundToInt (variables.globalTimer) == 30) {
-						if (!audioManager.audioSourceArray [28].isPlaying) {
-								//for (int x = 1; x == 1; x++)
-								//{
-								audioManager.Play (28);
-								//}
-						}
-				}
-				//15 Second Bell
-				if (Mathf.RoundToInt (variables.globalTimer) == 15) {
-						if (!audioManager.audioSourceArray [27].isPlaying) {
-								//for (int x = 1; x == 1; x++)
-								//{
-								audioManager.Play (27);
-								//}
-						}
-				}
-				//Ticking
+            if (Application.loadedLevelName == "WordMaking")
+            {
+                //30 second bell
+                if (Mathf.RoundToInt(variables.globalTimer) == 30)
+                {
+                    if (!audioManager.audioSourceArray[28].isPlaying)
+                    {
+                        //for (int x = 1; x == 1; x++)
+                        //{
+                        audioManager.Play(28);
+                        //}
+                    }
+                }
+                //15 Second Bell
+                if (Mathf.RoundToInt(variables.globalTimer) == 15)
+                {
+                    if (!audioManager.audioSourceArray[27].isPlaying)
+                    {
+                        //for (int x = 1; x == 1; x++)
+                        //{
+                        audioManager.Play(27);
+                        //}
+                    }
+                }
+                //Ticking
 
                 if (!variables.timedMode)
                 {
@@ -484,16 +495,26 @@ public class PlayMusic : MonoBehaviour
                 {
                     audioManager.SetVolume(36, audioManager.volumeArray[36]);
                 }
-                
-				if (Mathf.RoundToInt (variables.globalTimer) <= 14 && !variables.paused && Application.loadedLevelName == "WordMaking") {
-						if (!audioManager.audioSourceArray [36].isPlaying && variables.timedMode) {
-								//for (int x = 1; x == 1; x++)
-								//{
-								audioManager.Play (36);
-								//}
-						}
 
-				}
+                if (Mathf.RoundToInt(variables.globalTimer) == 14)
+                {
+                    if (!audioManager.audioSourceArray[36].isPlaying && variables.timedMode)
+                    {
+                        //for (int x = 1; x == 1; x++)
+                        //{
+                        audioManager.Play(36);
+                        //}
+                    }
+
+
+                }
+            }
+            else
+            {
+                audioManager.Stop(27);
+                audioManager.Stop(28);
+                audioManager.Stop(36);
+            }
 		}
 		void CharacterSelectTwo ()
 		{
