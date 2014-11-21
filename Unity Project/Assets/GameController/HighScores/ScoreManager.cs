@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -21,24 +22,48 @@ public class ScoreManager
     // Opens the save file, saves the current scoreList, then closes
     private static void SaveScores()
     {
-        //BinaryFormatter bf = new BinaryFormatter();
-        //FileStream file = File.Create(Application.persistentDataPath + @"/HighScoreSaves.gd");
-        //bf.Serialize(file, scoreList);
-        //file.Close();
+        string highScoreString = "";
+        Debug.Log("ScoreList count: " + scoreList.Count);
+        foreach (var key in scoreList)
+        {
+            highScoreString += key.Key.ToString() + "\n";
+            string vals = "";
+            foreach (int val in key.Value)
+                vals += val + " ";
+            highScoreString += vals + "\n";
+            Debug.Log(key.Key + " is the key");
+            Debug.Log(vals + " are the values");
+        }
 
-        //Debug.Log("Saving highscores to " + Application.persistentDataPath);
-
-        PlayerPrefs.SetString("HighScores", ObjectToStr<Dictionary<string, List<int>>>(scoreList));
-        PlayerPrefs.Save();
+        PlayerPrefs.SetString("HighScores", highScoreString);
+        Debug.Log("Saving pref set to: " + highScoreString);
     }
 
-    public static void ClearHighScores()
+    // Reads the save file if it exists, loads the scores into scoreList
+    private static void LoadScores()
     {
-        //if (File.Exists(Application.persistentDataPath + @"/HighScoreSaves.gd"))
-        //{
-        //    File.Delete(Application.persistentDataPath + @"/HighScoreSaves.gd");
-        //}
-        //scoreList = new Dictionary<string, List<int>>();
+        
+        string dataString = PlayerPrefs.GetString("HighScores");
+        if (dataString == "")
+            Debug.Log("No saved scores");
+
+        //Debug.Log("Loading highscore string is : " + dataString);
+        string[] scoreString = dataString.Split('\n');
+        if (scoreString.Length%2 == 0)
+        {
+            for (int i = 0; i < scoreString.Length - 1; i += 2)
+            {
+                string key = scoreString[i];
+                string[] scoreValues = scoreString[i + 1].Split(' ');
+                List<int> scores = new List<int>();
+                foreach (string s in scoreValues)
+                    scores.Add(Convert.ToInt32(s));
+                scoreList.Add(key, scores);
+                Debug.Log("Loading key = " + key);
+                Debug.Log("Loading vals = " + scoreValues.ToString());
+            }
+        }
+        
     }
 
     // Given two characters, returns the sorted score list or null if they don't exist
@@ -89,7 +114,6 @@ public class ScoreManager
     // adds it to a lookup table and returns true if it's a high score for those characters
     public static bool AddHighScore(string gameMode, string char1, string char2, int score)
     {
-
         //int scoreListSizeLimit = GameObject.Find("GameController").GetComponent<VariableControl>().scoreListSize;
         int scoreListSizeLimit = 10;
 
@@ -130,30 +154,7 @@ public class ScoreManager
         //file.Close();
     }
 
-    // Reads the save file if it exists, loads the scores into scoreList
-    private static void LoadScores()
-    {
-        //if (File.Exists(Application.persistentDataPath + @"/HighScoreSaves.gd"))
-        //{
-        //    BinaryFormatter bf = new BinaryFormatter();
-        //    FileStream file = File.Open(Application.persistentDataPath + @"/HighScoreSaves.gd", FileMode.Open);
-        //    scoreList = (Dictionary<string, List<int>>)bf.Deserialize(file);
-        //    file.Close();
-        //}
-        //else
-        //{
-        //    Debug.Log("HighScoresSaves not found");
-        //    scoreList = new Dictionary<string, List<int>>();
-        //}
 
-        string scoreString = PlayerPrefs.GetString("HighScores");
-        if (scoreString == "")
-            scoreList = new Dictionary<string, List<int>>();
-        else
-            scoreList = StrToObject<Dictionary<string, List<int>>>(scoreString);
-
-        Debug.Log("ScoreList is " + scoreList.Count + " long");
-    }
 
     public static string ToString()
     {
@@ -206,5 +207,7 @@ public class ScoreManager
             _mem.GetBuffer()
         );
     }
+
+
 
 }
