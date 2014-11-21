@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d6d4025326e14b8e87bcdf45f3cba06
+guid: e75a0f9fbff994cfbbf3942173fc548d
 TextureImporter:
   fileIDToRecycleName:
     21300000: StellaSpriteSheet 1_0
@@ -65,7 +65,6 @@ TextureImporter:
     21300120: StellaSpriteSheet 1_60
     21300122: StellaSpriteSheet 1_61
     21300124: StellaSpriteSheet 1_62
-    21300126: StellaSpriteSheet 1_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -88,7 +87,7 @@ TextureImporter:
   textureFormat: -2
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 1
+    filterMode: -1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -185,7 +184,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: StellaSpriteSheet 1_8
       rect:
@@ -731,16 +730,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1536
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: StellaSpriteSheet 1_63
-      rect:
-        serializedVersion: 2
-        x: 1792
         y: 0
         width: 256
         height: 256
