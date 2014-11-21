@@ -77,7 +77,9 @@ public class LetterController : MonoBehaviour
 						positionOnBoard [i] = -1;
 				}
 				variables.letterGenerationSound = true;
-				CreateSteam ();
+				if(variables.iPhoneType != 1){
+					CreateSteam ();
+				}
 				//CheckPermutations("xyzwvtxx");
 		}
 
@@ -120,7 +122,9 @@ public class LetterController : MonoBehaviour
 				//    gameController.GetComponent<wordBuildingController>().sendVariablestoScoreScreen();
 				//    Application.LoadLevel("ScoreScreen");
 				//}
-				TurnOnOffSteam ();
+				if(variables.iPhoneType != 1){			
+					TurnOnOffSteam ();
+				}
 				countToEndGame = CountEmptyLetters (myLetters);
 				//updatePlaceholders();
 		  
