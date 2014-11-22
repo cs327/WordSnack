@@ -157,7 +157,7 @@ public class LetterController : MonoBehaviour
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
 				
-		while (dontCrash < 100 && letterToMove.transform.position != moveToHere && !(setUsed == "stove" && lettersOnStove[index] == null)) {
+		while (dontCrash < 100 && letterToMove.transform.position != moveToHere && !(setUsed == "stove" && lettersOnStove[index] == null)) {	
 						dontCrash++;
 						letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
 						yield return null;	

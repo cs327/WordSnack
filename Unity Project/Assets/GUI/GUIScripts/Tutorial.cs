@@ -59,7 +59,7 @@ public class Tutorial : MonoBehaviour
 
         if (ScoreManager.NeverShowInstructions)
         {
-            //Debug.Log("never show?  = " + neverShowInstructions);
+
             Vector3 offScreenPos = gameObject.transform.position;
             offScreenPos.x = -20f;
             gameObject.transform.position = offScreenPos;
@@ -67,6 +67,7 @@ public class Tutorial : MonoBehaviour
             GameObject.Find("VariableController").GetComponent<VariableControl>().timerStart = true;
 			GameObject.Find("VariableController").GetComponent<VariableControl>().instructionsDone = true;
             GameObject.Find("VariableController").transform.position = parentPos;
+			trash.position = new Vector3(trash.position.x, trash.position.y, 0.23f);
             Destroy(gameObject);
         }
     }
