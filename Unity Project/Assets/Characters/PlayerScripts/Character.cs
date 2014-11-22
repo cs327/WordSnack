@@ -316,19 +316,23 @@ public class Character : MonoBehaviour
                 */
 										if (this.characterNum == 1) {
 												this.transform.localScale = new Vector3 (3.2f, 3.2f, 3.2f);
-												this.transform.position = new Vector3 (-2.7f, .64f, 4.17f);
+												if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+														this.transform.position = new Vector3 (-2.7f, .64f, 2.0f);
+												} else if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
+														this.transform.position = new Vector3 (0.0f, .64f, 2.0f);
+												}
 										} else if (this.characterNum == 2) {
 												this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, 0.0f, 0.0f));
+												this.transform.Translate (new Vector3 (0.0f, 0.55f, 0.0f));
 										} else if (this.characterNum == 3) {
 												this.transform.localScale = new Vector3 (1.2f, 1.2f, 1.2f);
 												this.transform.Translate (new Vector3 (0.0f, -1.25f, 0.0f));
 										} else if (this.characterNum == 4) {
 												this.transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
-												this.transform.Translate (new Vector3 (0.0f, 0.5f, 0.0f));
+												this.transform.Translate (new Vector3 (0.0f, 0.4f, 0.0f));
 										} else if (this.characterNum == 5) {
 												this.transform.localScale = new Vector3 (1.4f, 1.4f, 1.4f);
-												this.transform.Translate (new Vector3 (0.0f, .35f, 0.0f));
+												this.transform.Translate (new Vector3 (0.0f, .8f, 0.0f));
 										}
 								}
 						}
@@ -545,7 +549,11 @@ public class Character : MonoBehaviour
 										if (variables.score < loseAmount) {
 												loseAmount = variables.score;
 										}
-										variables.score -= loseAmount;
+										if (loseAmount > 0) { //No point in subtracting unless there's something to subtract!
+												variables.score -= loseAmount;
+										} else {
+												Debug.Log ("Score is already 0 - not subtracting anything");
+										}
 
 										// show that they've lost that many points, but only if they are actually losing points
 										if (loseAmount > 0) {

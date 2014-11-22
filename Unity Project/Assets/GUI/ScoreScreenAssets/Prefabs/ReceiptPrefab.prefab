@@ -224,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cf4b7469ae9da4e8df57570ff02043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 0}
   big:
     m_Name: 
     m_Normal:
@@ -284,12 +283,12 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  characterNum: 0
-  rowOffset: 0
+  characterNum: 2
+  rowOffset: .699999988
   EmptyReceiptLength: 3.1104331
   camera: {fileID: 0}
-  lowestPoint: 0
-  screenOffset: 0
+  lowestPoint: 3.04999995
+  screenOffset: 8.30000019
   RowPrefab: {fileID: 0}
   bottomInstance: {fileID: 0}
   firstRowPos: {x: 0, y: 0, z: 0}

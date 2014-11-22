@@ -85,8 +85,12 @@ public class wordBuildingController : MonoBehaviour
 				character2 = (GameObject)Instantiate (Resources.Load (characters [character2Num].name), variables.phase2CharacterPositions [1], Quaternion.identity);
 				character1.transform.localScale = new Vector3 (2, 2, 2);
 				character2.transform.localScale = new Vector3 (2, 2, 2);
-				character1.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
-				character2.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
+				if (character1Num != 1) {
+					character1.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
+				}
+				if (character2Num != 1) {
+					character2.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
+				}
 				//Set the characterNums correctly
 				character1.GetComponent<Character> ().characterNum = character1Num;
 				character2.GetComponent<Character> ().characterNum = character2Num;
@@ -225,13 +229,14 @@ public class wordBuildingController : MonoBehaviour
 				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
 				variables.trashedLetters = trashCharacter.GetComponent<Character> ().trashedLetters;
 				variables.trashedLetterScore = trashCharacter.GetComponent<Character> ().trashedLetterScore;
-
+				Debug.Log ("sent variables to receipt screen");
 				//saves those variables in Player Prefs
 				PlayerPrefs.SetFloat ("Score", variables.score);
 				PlayerPrefs.SetInt ("Total Letter Score", variables.totalLetterScore); 
 				PlayerPrefs.SetInt ("Total Multiplier Score", variables.totalMultiplierScore); 
 				PlayerPrefs.SetInt ("Trashed Letters", variables.trashedLetters); 
 				PlayerPrefs.SetInt ("Trashed Letter Score", variables.trashedLetterScore); 
+				PlayerPrefs.Save ();
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().score = variables.score;
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().rawScore = variables.totalLetterScore;
 				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().multiScore = variables.totalMultiplierScore;

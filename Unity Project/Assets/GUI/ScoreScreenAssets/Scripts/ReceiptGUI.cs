@@ -8,7 +8,6 @@ using System;
 public class ReceiptGUI : MonoBehaviour
 {
 	#region Variables
-	public TextMesh test;
 	public GUIStyle big;
 	public int characterNum;
 	public float rowOffset;
@@ -47,7 +46,10 @@ public class ReceiptGUI : MonoBehaviour
 	{
 		#region Receipt Setup
 		scoreText.text = ((int)PlayerPrefs.GetFloat("Score")).ToString();
+		print (PlayerPrefs.GetFloat("Score"));
 		tilesDiscardedText.text = PlayerPrefs.GetInt("Trashed Letters").ToString();
+//		tilesDiscardedText.text = PlayerPrefs.GetFloat("Score");
+
 		
 		//#region Get Receipt Info
 		rowCount = 0;
@@ -148,35 +150,38 @@ public class ReceiptGUI : MonoBehaviour
 			AddRow("", "", "", "");
 			AddRow("", "", "", "");
 			AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");            
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
-			//AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");            
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
 		}
 		
 		#endregion
@@ -197,7 +202,7 @@ public class ReceiptGUI : MonoBehaviour
 		#endregion 
 		
 		#region Setup bottom
-		tilesDiscardedText.text = "0";
+//		tilesDiscardedText.text = "0";
 		
 		firstRowPos.y = firstRowPos.y - rowCount * rowOffset;
 		Vector3 pos = bottomInstance.transform.position;
@@ -207,10 +212,10 @@ public class ReceiptGUI : MonoBehaviour
 		
 		
 		#endregion
-		if (GameObject.Find("WordsFed") != null) {
-			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-		}
-		//test.text = ScoreManager.ToString();
+//		if (GameObject.Find("WordsFed") != null) {
+//			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+//		}
+//		//test.text = ScoreManager.ToString();
 	}
 	
 	// Given the strings to be displayed on a row, as well as the row number (starting at zero)
@@ -223,7 +228,9 @@ public class ReceiptGUI : MonoBehaviour
 		GameObject rowInstance = (GameObject)Instantiate(RowPrefab);
 		rowInstance.transform.parent = gameObject.transform;
 		pos = rowInstance.transform.position;
-		pos.y -= rowOffset * rowIndex;
+		pos.y -= rowOffset * (float) rowIndex;
+		Debug.Log (pos.y);
+		Debug.Log (rowIndex);
 		rowInstance.transform.position = pos;
 		
 		Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();
