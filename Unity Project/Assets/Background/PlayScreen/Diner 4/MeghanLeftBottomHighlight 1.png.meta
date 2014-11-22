@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 3dba67cd8d86e4cf7a569f58385c92db
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: MeghanLeftBottomHighlight 1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
