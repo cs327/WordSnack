@@ -122,6 +122,7 @@ public class ReceiptGUI : MonoBehaviour
         {
             Debug.Log("NEW HIGH SCORE: \n    " +
                 ((int)PlayerPrefs.GetFloat("Score")).ToString());
+			GameObject.Find("HighScoreText").GetComponent<TextMesh>().color = new Vector4(0.6F, 0, 0, 1);
             GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = 
                 "NEW HIGH SCORE: \n    " +
 				(int)PlayerPrefs.GetFloat("Score");
