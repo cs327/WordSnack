@@ -51,6 +51,7 @@ public class Tutorial : MonoBehaviour
 
 		topDarkOut = GameObject.Find ("TopDarkOut");
 		bottomDarkOut = GameObject.Find ("BottomDarkOut");
+		trash.position = new Vector3(trash.position.x, trash.position.y, 3.47f);
 	}
 
     void Update()
