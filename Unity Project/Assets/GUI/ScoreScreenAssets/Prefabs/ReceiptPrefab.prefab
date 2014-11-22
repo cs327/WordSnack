@@ -284,12 +284,12 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  characterNum: 2
-  rowOffset: .699999988
+  characterNum: 0
+  rowOffset: 0
   EmptyReceiptLength: 3.1104331
   camera: {fileID: 0}
-  lowestPoint: 3.04999995
-  screenOffset: 8.30000019
+  lowestPoint: 0
+  screenOffset: 0
   RowPrefab: {fileID: 0}
   bottomInstance: {fileID: 0}
   firstRowPos: {x: 0, y: 0, z: 0}
