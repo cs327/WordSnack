@@ -148,6 +148,9 @@ public class ReceiptGUI : MonoBehaviour
 			AddRow("", "", "", "");
 			AddRow("", "", "", "");
 			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
+			AddRow("", "", "", "");
 			//AddRow("", "", "", "");
 			//AddRow("", "", "", "");
 			//AddRow("", "", "", "");
@@ -207,10 +210,10 @@ public class ReceiptGUI : MonoBehaviour
 		
 		
 		#endregion
-		if (GameObject.Find("WordsFed") != null) {
-			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-		}
-		//test.text = ScoreManager.ToString();
+//		if (GameObject.Find("WordsFed") != null) {
+//			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
+//		}
+//		//test.text = ScoreManager.ToString();
 	}
 	
 	// Given the strings to be displayed on a row, as well as the row number (starting at zero)

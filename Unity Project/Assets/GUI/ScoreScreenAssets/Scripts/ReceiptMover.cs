@@ -6,29 +6,29 @@ public class ReceiptMover : MonoBehaviour
 {
 	Camera c;
 	public bool winSound; //for PlayMusic script
-    // This stores the lowest position the receipt should snap to when it's touched.
-    // The top edge of the receipt should be just below the top of the screen at this position
+	// This stores the lowest position the receipt should snap to when it's touched.
+	// The top edge of the receipt should be just below the top of the screen at this position
 	public static float lowestPos;
-    // This stores the highest position the receipt should go, i.e the position the receipt autoscrolls to
-    // The bottom edge should be just above the bottom of the screen at this position
+	// This stores the highest position the receipt should go, i.e the position the receipt autoscrolls to
+	// The bottom edge should be just above the bottom of the screen at this position
 	public static float highestPos;
-    // Returns true if the receipt was touched, which stops autoscrolling from happening. 
+	// Returns true if the receipt was touched, which stops autoscrolling from happening. 
 	public bool Touched;
-    // Saves the screen position when the mouse/touch was pressed down.
-    // Used to find move the receipt appropriately when scrolling.
+	// Saves the screen position when the mouse/touch was pressed down.
+	// Used to find move the receipt appropriately when scrolling.
 	public Vector3 lastClickPos;
-    // Saves the position of the receipt when touched, used to scroll
+	// Saves the position of the receipt when touched, used to scroll
 	private Vector3 gameObjectPosAtLastClick;
-    // Number used to scale down how far the receipt scrolls when touched
+	// Number used to scale down how far the receipt scrolls when touched
 	public float scrollScale;
 	public TextMesh tester;
 	//ReceiptGUI receipt;
 	// Use this for initialization
 	void Start()
 	{
-        DestroyObject(GameObject.Find("AudioManager_Menu(Clone)"));
-        DestroyObject(GameObject.Find("AudioManager_Game(Clone)"));
-        Resources.UnloadUnusedAssets();
+		DestroyObject(GameObject.Find("AudioManager_Menu(Clone)"));
+		DestroyObject(GameObject.Find("AudioManager_Game(Clone)"));
+		Resources.UnloadUnusedAssets();
 		//receipt = gameObject.GetComponent<ReceiptGUI>();
 		// This can be programmatically changed
 		//lowestPos = -7.470931f;
@@ -52,13 +52,13 @@ public class ReceiptMover : MonoBehaviour
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.IPhonePlayer) {
 			scaleForPhone = 2;
 		}
-	    Vector3 pos = gameObject.transform.position;
-	    if (deltaPos.y > 0 && deltaPos.y + pos.y < lowestPos)
-	        pos.y = pos.y + deltaPos.y;
-        else
-	        pos.y = Mathf.Clamp(deltaPos.y + pos.y, lowestPos, highestPos);
-        
-	    return pos;
+		Vector3 pos = gameObject.transform.position;
+		if (deltaPos.y > 0 && deltaPos.y + pos.y < lowestPos)
+			pos.y = pos.y + deltaPos.y;
+		else
+			pos.y = Mathf.Clamp(deltaPos.y + pos.y, lowestPos, highestPos);
+		
+		return pos;
 	}
 	
 	public Vector3 GetClampedPosition(float deltaY)
@@ -72,7 +72,7 @@ public class ReceiptMover : MonoBehaviour
 		lastClickPos = Input.mousePosition;
 		gameObjectPosAtLastClick = gameObject.transform.localPosition;
 		Debug.Log("Touched");
-	    Touched = highestPos == lowestPos ? false : true;
+		Touched = highestPos == lowestPos ? false : true;
 	}
 	
 	void OnMouseDrag () {
@@ -80,8 +80,8 @@ public class ReceiptMover : MonoBehaviour
 		if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.IPhonePlayer) {
 			scaleForPhone = 2;
 		}
-	    if (lowestPos == highestPos)
-	        return;
+		if (lowestPos == highestPos)
+			return;
 		float scrollDelta = (Input.mousePosition.y - lastClickPos.y)*scrollScale;
 		
 		//print (Input.mousePosition.y);

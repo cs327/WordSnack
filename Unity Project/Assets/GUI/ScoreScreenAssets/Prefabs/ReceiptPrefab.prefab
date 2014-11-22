@@ -285,7 +285,7 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   characterNum: 0
-  rowOffset: 0
+  rowOffset: .469999999
   EmptyReceiptLength: 3.1104331
   camera: {fileID: 0}
   lowestPoint: 0
