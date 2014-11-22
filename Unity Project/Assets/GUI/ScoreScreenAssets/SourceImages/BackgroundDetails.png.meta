@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: b9ca79c9145e3974cb7cad6c08138bee
+guid: 7307d3dc7d1c54c81bd9afd5f8f91cdb
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Background
+    21300000: BackgroundDetails
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
