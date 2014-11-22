@@ -70,11 +70,13 @@ public class PlayMusic : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				//Splash Screen Sounds
 
-				if (GameObject.Find ("VariableController") && (variables != GameObject.Find ("VariableController").GetComponent<VariableControl> ())) {
-						variables = GameObject.Find ("VariableController").GetComponent<VariableControl> ();
-				}
+                //Splash Screen Sounds
+
+                if (GameObject.Find("VariableController") && (variables != GameObject.Find("VariableController").GetComponent<VariableControl>()))
+                {
+                    variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
+                }
 
 				if (Application.loadedLevelName == "About") {
 						if (GameObject.Find ("Text").GetComponent<AboutUsMove> ().clickSound) {
@@ -169,7 +171,7 @@ public class PlayMusic : MonoBehaviour
 						//Stops the Menu Music.
 						audioManager.Stop (4);
 						//Loops the GamePlay Music.
-						if (variables.instructionsDone) {
+						if (variables.instructionsDone && !variables.paused) {
 								if (!variables.timedMode) {
 										audioManager.PlayLoop (34);
 								} else if (variables.timedMode) {
@@ -406,12 +408,28 @@ public class PlayMusic : MonoBehaviour
 		}
 		void Pause ()
 		{
-				if (variables.paused == true) {
+            if (GameObject.Find("resumeButton"))
+            {
+                if (GameObject.Find("resumeButton").activeSelf)
+                {
+                    for (int j = 2; j < audioManager.volumeArray.Length; j++)
+                    {
+                        audioManager.SetVolume(j, 0);
+                    }
                     audioManager.Pause(34);
                     audioManager.Pause(35);
                     audioManager.Pause(36);
                     audioManager.Pause(5);
-				}
+                }
+                else
+                    for (int i = 1; i < audioManager.audioSourceArray.Length; i++)
+                    {
+                        if (audioManager.audioSourceArray[i].volume != audioManager.volumeArray[i])
+                        {
+                            audioManager.SetVolume(i, audioManager.volumeArray[i]);
+                        }
+                    }
+            }
 				//else if (GameObject.Find("VariableController").GetComponent<LetterController>().gamePaused == true)
 				//{
 
