@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 371de2ed9030e49138e7a524da89a312
+guid: 5d47a246e954c460f8b58622c2e77c12
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CasualLunchPressed
+    21300000: CasualLunchPrressed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

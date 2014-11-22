@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5131fb8a40f42445ebe1efc6b297f0a7
+guid: efb69a4ebc4ff4abfb6249ce5c1c8c34
 TextureImporter:
   fileIDToRecycleName:
     21300000: DinnerRushPressed
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

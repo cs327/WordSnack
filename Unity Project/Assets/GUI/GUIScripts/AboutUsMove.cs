@@ -20,10 +20,9 @@ public class AboutUsMove : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		if (pos.z > -8.9f) {
-		}else{
-			Application.LoadLevel ("StartScreenTest");
-            clickSound = true;
-		}
+
+		Application.LoadLevel ("StartScreenTest");
+    	clickSound = true;
+
 	}
 }
