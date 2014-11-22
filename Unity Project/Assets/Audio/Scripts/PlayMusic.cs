@@ -557,7 +557,10 @@ public class PlayMusic : MonoBehaviour
             {
                 audioManager.Stop(34);
                 audioManager.Stop(35);
-                audioManager.PlayLoop(5);
+                if (!variables.paused)
+                {
+                    audioManager.PlayLoop(5);
+                }
                 if (variables.paused)
                 {
                     audioManager.Pause(5);
