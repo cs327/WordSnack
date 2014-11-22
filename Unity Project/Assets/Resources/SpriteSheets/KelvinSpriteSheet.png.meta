@@ -1,71 +1,63 @@
 fileFormatVersion: 2
-guid: 4726d2c25db4641b6b5907f55ded02a0
+guid: 44d998a49dc9a410e8f808943f48246c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KelvinSpriteSheet_0
-    21300002: KelvinSpriteSheet_1
-    21300004: KelvinSpriteSheet_2
-    21300006: KelvinSpriteSheet_3
-    21300008: KelvinSpriteSheet_4
-    21300010: KelvinSpriteSheet_5
-    21300012: KelvinSpriteSheet_6
-    21300014: KelvinSpriteSheet_7
-    21300016: KelvinSpriteSheet_8
-    21300018: KelvinSpriteSheet_9
-    21300020: KelvinSpriteSheet_10
-    21300022: KelvinSpriteSheet_11
-    21300024: KelvinSpriteSheet_12
-    21300026: KelvinSpriteSheet_13
-    21300028: KelvinSpriteSheet_14
-    21300030: KelvinSpriteSheet_15
-    21300032: KelvinSpriteSheet_16
-    21300034: KelvinSpriteSheet_17
-    21300036: KelvinSpriteSheet_18
-    21300038: KelvinSpriteSheet_19
-    21300040: KelvinSpriteSheet_20
-    21300042: KelvinSpriteSheet_21
-    21300044: KelvinSpriteSheet_22
-    21300046: KelvinSpriteSheet_23
-    21300048: KelvinSpriteSheet_24
-    21300050: KelvinSpriteSheet_25
-    21300052: KelvinSpriteSheet_26
-    21300054: KelvinSpriteSheet_27
-    21300056: KelvinSpriteSheet_28
-    21300058: KelvinSpriteSheet_29
-    21300060: KelvinSpriteSheet_30
-    21300062: KelvinSpriteSheet_31
-    21300064: KelvinSpriteSheet_32
-    21300066: KelvinSpriteSheet_33
-    21300068: KelvinSpriteSheet_34
-    21300070: KelvinSpriteSheet_35
-    21300072: KelvinSpriteSheet_36
-    21300074: KelvinSpriteSheet_37
-    21300076: KelvinSpriteSheet_38
-    21300078: KelvinSpriteSheet_39
-    21300080: KelvinSpriteSheet_40
-    21300082: KelvinSpriteSheet_41
-    21300084: KelvinSpriteSheet_42
-    21300086: KelvinSpriteSheet_43
-    21300088: KelvinSpriteSheet_44
-    21300090: KelvinSpriteSheet_45
-    21300092: KelvinSpriteSheet_46
-    21300094: KelvinSpriteSheet_47
-    21300096: KelvinSpriteSheet_48
-    21300098: KelvinSpriteSheet_49
-    21300100: KelvinSpriteSheet_50
-    21300102: KelvinSpriteSheet_51
-    21300104: KelvinSpriteSheet_52
-    21300106: KelvinSpriteSheet_53
-    21300108: KelvinSpriteSheet_54
-    21300110: KelvinSpriteSheet_55
-    21300112: KelvinSpriteSheet_56
-    21300114: KelvinSpriteSheet_57
-    21300116: KelvinSpriteSheet_58
-    21300118: KelvinSpriteSheet_59
-    21300120: KelvinSpriteSheet_60
-    21300122: KelvinSpriteSheet_61
-    21300124: KelvinSpriteSheet_62
-    21300126: KelvinSpriteSheet_63
+    21300000: KelvinSpriteSheet 1_0
+    21300002: KelvinSpriteSheet 1_1
+    21300004: KelvinSpriteSheet 1_2
+    21300006: KelvinSpriteSheet 1_3
+    21300008: KelvinSpriteSheet 1_4
+    21300010: KelvinSpriteSheet 1_5
+    21300012: KelvinSpriteSheet 1_6
+    21300014: KelvinSpriteSheet 1_7
+    21300016: KelvinSpriteSheet 1_8
+    21300018: KelvinSpriteSheet 1_9
+    21300020: KelvinSpriteSheet 1_10
+    21300022: KelvinSpriteSheet 1_11
+    21300024: KelvinSpriteSheet 1_12
+    21300026: KelvinSpriteSheet 1_13
+    21300028: KelvinSpriteSheet 1_14
+    21300030: KelvinSpriteSheet 1_15
+    21300032: KelvinSpriteSheet 1_16
+    21300034: KelvinSpriteSheet 1_17
+    21300036: KelvinSpriteSheet 1_18
+    21300038: KelvinSpriteSheet 1_19
+    21300040: KelvinSpriteSheet 1_20
+    21300042: KelvinSpriteSheet 1_21
+    21300044: KelvinSpriteSheet 1_22
+    21300046: KelvinSpriteSheet 1_23
+    21300048: KelvinSpriteSheet 1_24
+    21300050: KelvinSpriteSheet 1_25
+    21300052: KelvinSpriteSheet 1_26
+    21300054: KelvinSpriteSheet 1_27
+    21300056: KelvinSpriteSheet 1_28
+    21300058: KelvinSpriteSheet 1_29
+    21300060: KelvinSpriteSheet 1_30
+    21300062: KelvinSpriteSheet 1_31
+    21300064: KelvinSpriteSheet 1_32
+    21300066: KelvinSpriteSheet 1_33
+    21300068: KelvinSpriteSheet 1_34
+    21300070: KelvinSpriteSheet 1_35
+    21300072: KelvinSpriteSheet 1_36
+    21300074: KelvinSpriteSheet 1_37
+    21300076: KelvinSpriteSheet 1_38
+    21300078: KelvinSpriteSheet 1_39
+    21300080: KelvinSpriteSheet 1_40
+    21300082: KelvinSpriteSheet 1_41
+    21300084: KelvinSpriteSheet 1_42
+    21300086: KelvinSpriteSheet 1_43
+    21300088: KelvinSpriteSheet 1_44
+    21300090: KelvinSpriteSheet 1_45
+    21300092: KelvinSpriteSheet 1_46
+    21300094: KelvinSpriteSheet 1_47
+    21300096: KelvinSpriteSheet 1_48
+    21300098: KelvinSpriteSheet 1_49
+    21300100: KelvinSpriteSheet 1_50
+    21300102: KelvinSpriteSheet 1_51
+    21300104: KelvinSpriteSheet 1_52
+    21300106: KelvinSpriteSheet 1_53
+    21300108: KelvinSpriteSheet 1_54
+    21300110: KelvinSpriteSheet 1_55
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -88,7 +80,7 @@ TextureImporter:
   textureFormat: -2
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
+    filterMode: 1
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -107,87 +99,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: KelvinSpriteSheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 2560
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 3072
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 3584
-        y: 3584
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_8
+    - name: KelvinSpriteSheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -197,7 +109,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_9
+    - name: KelvinSpriteSheet 1_1
       rect:
         serializedVersion: 2
         x: 512
@@ -207,7 +119,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_10
+    - name: KelvinSpriteSheet 1_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -217,7 +129,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_11
+    - name: KelvinSpriteSheet 1_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -227,7 +139,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_12
+    - name: KelvinSpriteSheet 1_4
       rect:
         serializedVersion: 2
         x: 2048
@@ -237,7 +149,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_13
+    - name: KelvinSpriteSheet 1_5
       rect:
         serializedVersion: 2
         x: 2560
@@ -247,7 +159,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_14
+    - name: KelvinSpriteSheet 1_6
       rect:
         serializedVersion: 2
         x: 3072
@@ -257,7 +169,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_15
+    - name: KelvinSpriteSheet 1_7
       rect:
         serializedVersion: 2
         x: 3584
@@ -267,7 +179,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_16
+    - name: KelvinSpriteSheet 1_8
       rect:
         serializedVersion: 2
         x: 0
@@ -277,7 +189,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_17
+    - name: KelvinSpriteSheet 1_9
       rect:
         serializedVersion: 2
         x: 512
@@ -287,7 +199,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_18
+    - name: KelvinSpriteSheet 1_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -297,7 +209,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_19
+    - name: KelvinSpriteSheet 1_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -307,7 +219,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_20
+    - name: KelvinSpriteSheet 1_12
       rect:
         serializedVersion: 2
         x: 2048
@@ -317,7 +229,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_21
+    - name: KelvinSpriteSheet 1_13
       rect:
         serializedVersion: 2
         x: 2560
@@ -327,7 +239,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_22
+    - name: KelvinSpriteSheet 1_14
       rect:
         serializedVersion: 2
         x: 3072
@@ -337,7 +249,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_23
+    - name: KelvinSpriteSheet 1_15
       rect:
         serializedVersion: 2
         x: 3584
@@ -347,7 +259,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_24
+    - name: KelvinSpriteSheet 1_16
       rect:
         serializedVersion: 2
         x: 0
@@ -357,7 +269,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_25
+    - name: KelvinSpriteSheet 1_17
       rect:
         serializedVersion: 2
         x: 512
@@ -367,7 +279,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_26
+    - name: KelvinSpriteSheet 1_18
       rect:
         serializedVersion: 2
         x: 1024
@@ -377,7 +289,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_27
+    - name: KelvinSpriteSheet 1_19
       rect:
         serializedVersion: 2
         x: 1536
@@ -387,7 +299,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_28
+    - name: KelvinSpriteSheet 1_20
       rect:
         serializedVersion: 2
         x: 2048
@@ -397,7 +309,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_29
+    - name: KelvinSpriteSheet 1_21
       rect:
         serializedVersion: 2
         x: 2560
@@ -407,7 +319,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_30
+    - name: KelvinSpriteSheet 1_22
       rect:
         serializedVersion: 2
         x: 3072
@@ -417,7 +329,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_31
+    - name: KelvinSpriteSheet 1_23
       rect:
         serializedVersion: 2
         x: 3584
@@ -427,7 +339,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_32
+    - name: KelvinSpriteSheet 1_24
       rect:
         serializedVersion: 2
         x: 0
@@ -437,7 +349,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_33
+    - name: KelvinSpriteSheet 1_25
       rect:
         serializedVersion: 2
         x: 512
@@ -447,7 +359,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_34
+    - name: KelvinSpriteSheet 1_26
       rect:
         serializedVersion: 2
         x: 1024
@@ -457,7 +369,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_35
+    - name: KelvinSpriteSheet 1_27
       rect:
         serializedVersion: 2
         x: 1536
@@ -467,7 +379,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_36
+    - name: KelvinSpriteSheet 1_28
       rect:
         serializedVersion: 2
         x: 2048
@@ -477,7 +389,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_37
+    - name: KelvinSpriteSheet 1_29
       rect:
         serializedVersion: 2
         x: 2560
@@ -487,7 +399,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_38
+    - name: KelvinSpriteSheet 1_30
       rect:
         serializedVersion: 2
         x: 3072
@@ -497,7 +409,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_39
+    - name: KelvinSpriteSheet 1_31
       rect:
         serializedVersion: 2
         x: 3584
@@ -507,7 +419,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_40
+    - name: KelvinSpriteSheet 1_32
       rect:
         serializedVersion: 2
         x: 0
@@ -517,7 +429,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_41
+    - name: KelvinSpriteSheet 1_33
       rect:
         serializedVersion: 2
         x: 512
@@ -527,7 +439,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_42
+    - name: KelvinSpriteSheet 1_34
       rect:
         serializedVersion: 2
         x: 1024
@@ -537,7 +449,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_43
+    - name: KelvinSpriteSheet 1_35
       rect:
         serializedVersion: 2
         x: 1536
@@ -547,7 +459,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_44
+    - name: KelvinSpriteSheet 1_36
       rect:
         serializedVersion: 2
         x: 2048
@@ -557,7 +469,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_45
+    - name: KelvinSpriteSheet 1_37
       rect:
         serializedVersion: 2
         x: 2560
@@ -567,7 +479,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_46
+    - name: KelvinSpriteSheet 1_38
       rect:
         serializedVersion: 2
         x: 3072
@@ -577,7 +489,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_47
+    - name: KelvinSpriteSheet 1_39
       rect:
         serializedVersion: 2
         x: 3584
@@ -587,7 +499,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_48
+    - name: KelvinSpriteSheet 1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -597,7 +509,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_49
+    - name: KelvinSpriteSheet 1_41
       rect:
         serializedVersion: 2
         x: 512
@@ -607,7 +519,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_50
+    - name: KelvinSpriteSheet 1_42
       rect:
         serializedVersion: 2
         x: 1024
@@ -617,7 +529,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_51
+    - name: KelvinSpriteSheet 1_43
       rect:
         serializedVersion: 2
         x: 1536
@@ -627,7 +539,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_52
+    - name: KelvinSpriteSheet 1_44
       rect:
         serializedVersion: 2
         x: 2048
@@ -637,7 +549,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_53
+    - name: KelvinSpriteSheet 1_45
       rect:
         serializedVersion: 2
         x: 2560
@@ -647,7 +559,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_54
+    - name: KelvinSpriteSheet 1_46
       rect:
         serializedVersion: 2
         x: 3072
@@ -657,7 +569,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_55
+    - name: KelvinSpriteSheet 1_47
       rect:
         serializedVersion: 2
         x: 3584
@@ -667,7 +579,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_56
+    - name: KelvinSpriteSheet 1_48
       rect:
         serializedVersion: 2
         x: 0
@@ -677,7 +589,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_57
+    - name: KelvinSpriteSheet 1_49
       rect:
         serializedVersion: 2
         x: 512
@@ -687,7 +599,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_58
+    - name: KelvinSpriteSheet 1_50
       rect:
         serializedVersion: 2
         x: 1024
@@ -697,7 +609,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_59
+    - name: KelvinSpriteSheet 1_51
       rect:
         serializedVersion: 2
         x: 1536
@@ -707,7 +619,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_60
+    - name: KelvinSpriteSheet 1_52
       rect:
         serializedVersion: 2
         x: 2048
@@ -717,7 +629,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_61
+    - name: KelvinSpriteSheet 1_53
       rect:
         serializedVersion: 2
         x: 2560
@@ -727,7 +639,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_62
+    - name: KelvinSpriteSheet 1_54
       rect:
         serializedVersion: 2
         x: 3072
@@ -737,7 +649,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: KelvinSpriteSheet_63
+    - name: KelvinSpriteSheet 1_55
       rect:
         serializedVersion: 2
         x: 3584

@@ -103,21 +103,17 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110200000}
-  m_States:
-  - {fileID: 110200000}
-  - {fileID: 110234512}
+  m_DefaultState: {fileID: 0}
+  m_States: []
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110100000}
+      first: {fileID: 0}
+      second: []
     data:
-      first: {fileID: 110234512}
-      second:
-      - {fileID: 110164743}
+      first: {fileID: 0}
+      second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
