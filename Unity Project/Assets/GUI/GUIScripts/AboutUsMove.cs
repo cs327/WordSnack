@@ -5,6 +5,8 @@ public class AboutUsMove : MonoBehaviour {
 	Vector3 pos;
 	public float speed;
     public bool clickSound;
+	public BoxCollider boxCollider1;
+	public BoxCollider boxCollider2;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,10 @@ public class AboutUsMove : MonoBehaviour {
 
 	void OnMouseDown(){
 
+		//Application.OpenURL("http://wordsnack.net/");
 		Application.LoadLevel ("StartScreenTest");
+			
+
     	clickSound = true;
 
 	}
