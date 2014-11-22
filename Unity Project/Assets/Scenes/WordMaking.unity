@@ -3173,6 +3173,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1056343876
 Transform:
   m_ObjectHideFlags: 0
@@ -3180,7 +3181,7 @@ Transform:
   m_PrefabInternal: {fileID: 2040593299}
   m_GameObject: {fileID: 1056343872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.67999983, y: 0, z: -1.1639837}
+  m_LocalPosition: {x: 6.67999983, y: 0, z: -1.5078851}
   m_LocalScale: {x: 1.29999995, y: 1.29999995, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3522,15 +3523,15 @@ MonoBehaviour:
   totalLetters: 98
   totalVowels: 42
   threeLettersMult: 3
-  fiveOrLongerMult: 4
+  fiveOrLongerMult: 3
   uncommonLettersMult: 3
   endsWithVowelMult: 2
   twoOrMoreVowelsMult: 2
   twoOrMoreSameMult: 5
   startsWithVowelMult: 3
   startsAndEndsWithSameMult: 7
-  fourLettersMult: 3
-  equalVowelsAndConsonantsMult: 2
+  fourLettersMult: 4
+  equalVowelsAndConsonantsMult: 3
   trashCollectionMult: 0
   bigMealBonus: 2
   doubleTasteMatchBonus: 2
@@ -5173,7 +5174,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c498591e8ed14c3386e092d1b2828a6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.1639837
+      value: -1.5078851
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c498591e8ed14c3386e092d1b2828a6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5478,6 +5479,18 @@ Prefab:
     - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
       propertyPath: trashScore
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: fiveOrLongerMult
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: equalVowelsAndConsonantsMult
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: fourLettersMult
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
