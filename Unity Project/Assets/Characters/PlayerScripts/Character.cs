@@ -317,9 +317,9 @@ public class Character : MonoBehaviour
 										if (this.characterNum == 1) {
 												this.transform.localScale = new Vector3 (3.2f, 3.2f, 3.2f);
 												if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-														this.transform.position = new Vector3 (-2.7f, .64f, 4.17f);
+														this.transform.position = new Vector3 (-2.7f, .64f, 0.0f);
 												} else if (PlayerPrefs.GetInt ("Character 1") == characterNum) {
-														this.transform.position = new Vector3 (0.0f, .64f, 4.17f);
+														this.transform.position = new Vector3 (0.0f, .64f, 0.0f);
 												}
 										} else if (this.characterNum == 2) {
 												this.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
