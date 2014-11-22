@@ -131,7 +131,7 @@ public class ScoreTextScript : MonoBehaviour {
 
 					GetComponent<TextMesh>().text = baseScore.ToString();
 
-					if (baseScore > 100 && exploded == false) {
+					if (baseScore >= 100 && exploded == false) {
 						// supernova!
 						super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
 						super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
