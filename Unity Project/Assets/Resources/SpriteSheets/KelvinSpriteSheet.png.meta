@@ -1,6 +1,63 @@
 fileFormatVersion: 2
 guid: 44d998a49dc9a410e8f808943f48246c
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: KelvinSpriteSheet 1_0
+    21300002: KelvinSpriteSheet 1_1
+    21300004: KelvinSpriteSheet 1_2
+    21300006: KelvinSpriteSheet 1_3
+    21300008: KelvinSpriteSheet 1_4
+    21300010: KelvinSpriteSheet 1_5
+    21300012: KelvinSpriteSheet 1_6
+    21300014: KelvinSpriteSheet 1_7
+    21300016: KelvinSpriteSheet 1_8
+    21300018: KelvinSpriteSheet 1_9
+    21300020: KelvinSpriteSheet 1_10
+    21300022: KelvinSpriteSheet 1_11
+    21300024: KelvinSpriteSheet 1_12
+    21300026: KelvinSpriteSheet 1_13
+    21300028: KelvinSpriteSheet 1_14
+    21300030: KelvinSpriteSheet 1_15
+    21300032: KelvinSpriteSheet 1_16
+    21300034: KelvinSpriteSheet 1_17
+    21300036: KelvinSpriteSheet 1_18
+    21300038: KelvinSpriteSheet 1_19
+    21300040: KelvinSpriteSheet 1_20
+    21300042: KelvinSpriteSheet 1_21
+    21300044: KelvinSpriteSheet 1_22
+    21300046: KelvinSpriteSheet 1_23
+    21300048: KelvinSpriteSheet 1_24
+    21300050: KelvinSpriteSheet 1_25
+    21300052: KelvinSpriteSheet 1_26
+    21300054: KelvinSpriteSheet 1_27
+    21300056: KelvinSpriteSheet 1_28
+    21300058: KelvinSpriteSheet 1_29
+    21300060: KelvinSpriteSheet 1_30
+    21300062: KelvinSpriteSheet 1_31
+    21300064: KelvinSpriteSheet 1_32
+    21300066: KelvinSpriteSheet 1_33
+    21300068: KelvinSpriteSheet 1_34
+    21300070: KelvinSpriteSheet 1_35
+    21300072: KelvinSpriteSheet 1_36
+    21300074: KelvinSpriteSheet 1_37
+    21300076: KelvinSpriteSheet 1_38
+    21300078: KelvinSpriteSheet 1_39
+    21300080: KelvinSpriteSheet 1_40
+    21300082: KelvinSpriteSheet 1_41
+    21300084: KelvinSpriteSheet 1_42
+    21300086: KelvinSpriteSheet 1_43
+    21300088: KelvinSpriteSheet 1_44
+    21300090: KelvinSpriteSheet 1_45
+    21300092: KelvinSpriteSheet 1_46
+    21300094: KelvinSpriteSheet 1_47
+    21300096: KelvinSpriteSheet 1_48
+    21300098: KelvinSpriteSheet 1_49
+    21300100: KelvinSpriteSheet 1_50
+    21300102: KelvinSpriteSheet 1_51
+    21300104: KelvinSpriteSheet 1_52
+    21300106: KelvinSpriteSheet 1_53
+    21300108: KelvinSpriteSheet 1_54
+    21300110: KelvinSpriteSheet 1_55
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

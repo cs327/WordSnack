@@ -1,6 +1,70 @@
 fileFormatVersion: 2
 guid: e75a0f9fbff994cfbbf3942173fc548d
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: StellaSpriteSheet 1_0
+    21300002: StellaSpriteSheet 1_1
+    21300004: StellaSpriteSheet 1_2
+    21300006: StellaSpriteSheet 1_3
+    21300008: StellaSpriteSheet 1_4
+    21300010: StellaSpriteSheet 1_5
+    21300012: StellaSpriteSheet 1_6
+    21300014: StellaSpriteSheet 1_7
+    21300016: StellaSpriteSheet 1_8
+    21300018: StellaSpriteSheet 1_9
+    21300020: StellaSpriteSheet 1_10
+    21300022: StellaSpriteSheet 1_11
+    21300024: StellaSpriteSheet 1_12
+    21300026: StellaSpriteSheet 1_13
+    21300028: StellaSpriteSheet 1_14
+    21300030: StellaSpriteSheet 1_15
+    21300032: StellaSpriteSheet 1_16
+    21300034: StellaSpriteSheet 1_17
+    21300036: StellaSpriteSheet 1_18
+    21300038: StellaSpriteSheet 1_19
+    21300040: StellaSpriteSheet 1_20
+    21300042: StellaSpriteSheet 1_21
+    21300044: StellaSpriteSheet 1_22
+    21300046: StellaSpriteSheet 1_23
+    21300048: StellaSpriteSheet 1_24
+    21300050: StellaSpriteSheet 1_25
+    21300052: StellaSpriteSheet 1_26
+    21300054: StellaSpriteSheet 1_27
+    21300056: StellaSpriteSheet 1_28
+    21300058: StellaSpriteSheet 1_29
+    21300060: StellaSpriteSheet 1_30
+    21300062: StellaSpriteSheet 1_31
+    21300064: StellaSpriteSheet 1_32
+    21300066: StellaSpriteSheet 1_33
+    21300068: StellaSpriteSheet 1_34
+    21300070: StellaSpriteSheet 1_35
+    21300072: StellaSpriteSheet 1_36
+    21300074: StellaSpriteSheet 1_37
+    21300076: StellaSpriteSheet 1_38
+    21300078: StellaSpriteSheet 1_39
+    21300080: StellaSpriteSheet 1_40
+    21300082: StellaSpriteSheet 1_41
+    21300084: StellaSpriteSheet 1_42
+    21300086: StellaSpriteSheet 1_43
+    21300088: StellaSpriteSheet 1_44
+    21300090: StellaSpriteSheet 1_45
+    21300092: StellaSpriteSheet 1_46
+    21300094: StellaSpriteSheet 1_47
+    21300096: StellaSpriteSheet 1_48
+    21300098: StellaSpriteSheet 1_49
+    21300100: StellaSpriteSheet 1_50
+    21300102: StellaSpriteSheet 1_51
+    21300104: StellaSpriteSheet 1_52
+    21300106: StellaSpriteSheet 1_53
+    21300108: StellaSpriteSheet 1_54
+    21300110: StellaSpriteSheet 1_55
+    21300112: StellaSpriteSheet 1_56
+    21300114: StellaSpriteSheet 1_57
+    21300116: StellaSpriteSheet 1_58
+    21300118: StellaSpriteSheet 1_59
+    21300120: StellaSpriteSheet 1_60
+    21300122: StellaSpriteSheet 1_61
+    21300124: StellaSpriteSheet 1_62
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

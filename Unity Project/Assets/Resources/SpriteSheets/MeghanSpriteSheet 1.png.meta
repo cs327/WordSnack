@@ -1,6 +1,71 @@
 fileFormatVersion: 2
 guid: 9ab63e28f0ed74f589b25c85b2956f2e
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: MeghanSpriteSheet 1_0
+    21300002: MeghanSpriteSheet 1_1
+    21300004: MeghanSpriteSheet 1_2
+    21300006: MeghanSpriteSheet 1_3
+    21300008: MeghanSpriteSheet 1_4
+    21300010: MeghanSpriteSheet 1_5
+    21300012: MeghanSpriteSheet 1_6
+    21300014: MeghanSpriteSheet 1_7
+    21300016: MeghanSpriteSheet 1_8
+    21300018: MeghanSpriteSheet 1_9
+    21300020: MeghanSpriteSheet 1_10
+    21300022: MeghanSpriteSheet 1_11
+    21300024: MeghanSpriteSheet 1_12
+    21300026: MeghanSpriteSheet 1_13
+    21300028: MeghanSpriteSheet 1_14
+    21300030: MeghanSpriteSheet 1_15
+    21300032: MeghanSpriteSheet 1_16
+    21300034: MeghanSpriteSheet 1_17
+    21300036: MeghanSpriteSheet 1_18
+    21300038: MeghanSpriteSheet 1_19
+    21300040: MeghanSpriteSheet 1_20
+    21300042: MeghanSpriteSheet 1_21
+    21300044: MeghanSpriteSheet 1_22
+    21300046: MeghanSpriteSheet 1_23
+    21300048: MeghanSpriteSheet 1_24
+    21300050: MeghanSpriteSheet 1_25
+    21300052: MeghanSpriteSheet 1_26
+    21300054: MeghanSpriteSheet 1_27
+    21300056: MeghanSpriteSheet 1_28
+    21300058: MeghanSpriteSheet 1_29
+    21300060: MeghanSpriteSheet 1_30
+    21300062: MeghanSpriteSheet 1_31
+    21300064: MeghanSpriteSheet 1_32
+    21300066: MeghanSpriteSheet 1_33
+    21300068: MeghanSpriteSheet 1_34
+    21300070: MeghanSpriteSheet 1_35
+    21300072: MeghanSpriteSheet 1_36
+    21300074: MeghanSpriteSheet 1_37
+    21300076: MeghanSpriteSheet 1_38
+    21300078: MeghanSpriteSheet 1_39
+    21300080: MeghanSpriteSheet 1_40
+    21300082: MeghanSpriteSheet 1_41
+    21300084: MeghanSpriteSheet 1_42
+    21300086: MeghanSpriteSheet 1_43
+    21300088: MeghanSpriteSheet 1_44
+    21300090: MeghanSpriteSheet 1_45
+    21300092: MeghanSpriteSheet 1_46
+    21300094: MeghanSpriteSheet 1_47
+    21300096: MeghanSpriteSheet 1_48
+    21300098: MeghanSpriteSheet 1_49
+    21300100: MeghanSpriteSheet 1_50
+    21300102: MeghanSpriteSheet 1_51
+    21300104: MeghanSpriteSheet 1_52
+    21300106: MeghanSpriteSheet 1_53
+    21300108: MeghanSpriteSheet 1_54
+    21300110: MeghanSpriteSheet 1_55
+    21300112: MeghanSpriteSheet 1_56
+    21300114: MeghanSpriteSheet 1_57
+    21300116: MeghanSpriteSheet 1_58
+    21300118: MeghanSpriteSheet 1_59
+    21300120: MeghanSpriteSheet 1_60
+    21300122: MeghanSpriteSheet 1_61
+    21300124: MeghanSpriteSheet 1_62
+    21300126: MeghanSpriteSheet 1_63
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

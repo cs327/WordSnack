@@ -1,6 +1,47 @@
 fileFormatVersion: 2
 guid: 4c005d630c7f440cda279bd722691ba2
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Trashcan_0
+    21300002: Trashcan_1
+    21300004: Trashcan_2
+    21300006: Trashcan_3
+    21300008: Trashcan_4
+    21300010: Trashcan_5
+    21300012: Trashcan_6
+    21300014: Trashcan_7
+    21300016: Trashcan_8
+    21300018: Trashcan_9
+    21300020: Trashcan_10
+    21300022: Trashcan_11
+    21300024: Trashcan_12
+    21300026: Trashcan_13
+    21300028: Trashcan_14
+    21300030: Trashcan_15
+    21300032: Trashcan_16
+    21300034: Trashcan_17
+    21300036: Trashcan_18
+    21300038: Trashcan_19
+    21300040: Trashcan_20
+    21300042: Trashcan_21
+    21300044: Trashcan_22
+    21300046: Trashcan_23
+    21300048: Trashcan_24
+    21300050: Trashcan_25
+    21300052: Trashcan_26
+    21300054: Trashcan_27
+    21300056: Trashcan_28
+    21300058: Trashcan_29
+    21300060: Trashcan_30
+    21300062: Trashcan_31
+    21300064: Trashcan_32
+    21300066: Trashcan_33
+    21300068: Trashcan_34
+    21300070: Trashcan_35
+    21300072: Trashcan_36
+    21300074: Trashcan_37
+    21300076: Trashcan_38
+    21300078: Trashcan_39
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
