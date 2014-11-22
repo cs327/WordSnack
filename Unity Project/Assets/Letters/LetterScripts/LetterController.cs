@@ -149,24 +149,24 @@ public class LetterController : MonoBehaviour
 //
 //		}
 
-		IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere)
+		IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere, int index, string setUsed)
 		{
 
 				letterToMove.isMoving = true;
 
 				Vector3 velocity = new Vector3 (0, 0, 0);
 				int dontCrash = 0;
-				//for( float i = 0f; i < 1; i += .15f){
-				if (letterToMove == null) {
-						Debug.Log ("LetterToMove is null and shouldn't be!! Error!");
-				}
-				while (dontCrash < 100 && letterToMove.transform.position != moveToHere && letterToMove != null) {
+				
+		while (dontCrash < 100 && letterToMove.transform.position != moveToHere && !(setUsed == "stove" && lettersOnStove[index] == null)) {
 						dontCrash++;
 						letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
 						yield return null;	
 				}
 				//}
 				letterToMove.isMoving = false;
+		if(setUsed == "stove" && lettersOnStove[index] == null){
+			print ("woulda been an error without this same check in the while statement");
+		}
 
 		}
 
@@ -456,14 +456,14 @@ public class LetterController : MonoBehaviour
 								if (lettersOnStove [i] != null && lettersOnStove [i].transform.position != stoveSpots [i]) {
 										//lettersOnStove[i].transform.position = stoveSpots[i];
 										if (!lettersOnStove [i].isMoving) {
-												StartCoroutine (animateLetters (lettersOnStove [i], lettersOnStove [i].transform.position, stoveSpots [i]));												
+												StartCoroutine (animateLetters (lettersOnStove [i], lettersOnStove [i].transform.position, stoveSpots [i], i, "stove"));												
 										}
 								}
 								//checks all letters that are on the board but not the stove, and puts them in the correct position
 								if (!lettersOnBoard [i].onStove && lettersOnBoard [i].transform.position != bankSpots [i]) {
 										//lettersOnBoard[i].transform.position = bankSpots[i];
 										if (!lettersOnBoard [i].isMoving) {
-												StartCoroutine (animateLetters (lettersOnBoard [i], lettersOnBoard [i].transform.position, bankSpots [i]));
+												StartCoroutine (animateLetters (lettersOnBoard [i], lettersOnBoard [i].transform.position, bankSpots [i], i, "board"));
 										}
 								}
 						}
