@@ -545,7 +545,11 @@ public class Character : MonoBehaviour
 										if (variables.score < loseAmount) {
 												loseAmount = variables.score;
 										}
-										variables.score -= loseAmount;
+										if (loseAmount > 0) { //No point in subtracting unless there's something to subtract!
+												variables.score -= loseAmount;
+										} else {
+												Debug.Log ("Score is already 0 - not subtracting anything");
+										}
 
 										// show that they've lost that many points, but only if they are actually losing points
 										if (loseAmount > 0) {
