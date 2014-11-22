@@ -3662,6 +3662,7 @@ MonoBehaviour:
   TasteMatchDisplayTime: .400000006
   BigMealDisplayTime: 1.5
   ScoreFadeTime: .200000003
+  trashScore: 10
 --- !u!4 &1148986586
 Transform:
   m_ObjectHideFlags: 0
@@ -5459,6 +5460,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
       propertyPath: bigMealAdditives.Array.data[3]
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}
+      propertyPath: trashScore
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bd02819d79e54556943eae9b975782f, type: 2}

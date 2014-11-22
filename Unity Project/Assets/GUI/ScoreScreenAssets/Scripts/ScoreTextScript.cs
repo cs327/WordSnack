@@ -11,6 +11,8 @@ public class ScoreTextScript : MonoBehaviour {
 	public int totalScore;
 	public float multiplier;
 	public bool score;
+	public bool mult;
+	public bool trash;
 	public bool bothTastes;
 	public bool longWord;
 	public bool longWordPartTwo;
@@ -40,7 +42,11 @@ public class ScoreTextScript : MonoBehaviour {
 		longWait = false;
 		longWordPartTwo = false;
 
-		GetComponent<TextMesh>().text = baseScore.ToString();
+		if (trash) {
+			GetComponent<TextMesh>().text = "-" + baseScore.ToString();			
+		} else if (!mult) {
+			GetComponent<TextMesh>().text = baseScore.ToString();
+		}
 
 		firstWait = true;
 
@@ -66,7 +72,7 @@ public class ScoreTextScript : MonoBehaviour {
 			// it's a score prefab
 			// if there was a big meal bonus, we have to disregard it for now since it is displayed separately at the end of the counting
 			if (longWord) {
-				totalScore /= (int)variables.bigMealBonus;
+				totalScore -= bigMealBonusVal;
 				longWord = false;
 				longWordPartTwo = true;
 			}
@@ -125,6 +131,14 @@ public class ScoreTextScript : MonoBehaviour {
 
 					GetComponent<TextMesh>().text = baseScore.ToString();
 
+					if (baseScore > 100 && exploded == false) {
+						// supernova!
+						super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
+						super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
+						// only do this once per word
+						exploded = true;
+					}
+
 				} else if (baseScore == totalScore && !done) {
 					// if there's a long word and a multiplier, we have to wait, then count up again
 					// this will allow the multiplied value to stay for the taste wait time
@@ -134,7 +148,7 @@ public class ScoreTextScript : MonoBehaviour {
 
 					if (longWordPartTwo) {
 						// put the big meal bonus back in to the total, so we can count up to it, but after the multiplier wait
-						totalScore *= (int)variables.bigMealBonus;
+						totalScore += bigMealBonusVal;
 
 						// don't do this again or we'll be here forever
 						longWordPartTwo = false;
@@ -144,9 +158,9 @@ public class ScoreTextScript : MonoBehaviour {
 						done = true;
 					}
 				}
-			}		
+			}	
 
-		} else {
+		} else if (mult) {
 			// it's a multiplier prefab
 			if (timePassed > waitTime) {
 				
@@ -161,13 +175,6 @@ public class ScoreTextScript : MonoBehaviour {
 					timePassed = 0.0f;
 					waitTime = variables.BigMealDisplayTime;
 
-					// supernova!
-					if(totalScore > 100){
-						super1 = Instantiate(supernova, new Vector3(2.0f, 1.5f, 10.0f), Quaternion.identity) as ParticleSystem;
-						super2 = Instantiate(supernova, new Vector3(-2.0f, 0.0f, 10.0f), Quaternion.identity) as ParticleSystem;
-						exploded = true;
-						}
-
 				} else if (!longWord && !firstWait) {
 					// we should be DONE
 					timePassed = 10.0f;
@@ -179,9 +186,9 @@ public class ScoreTextScript : MonoBehaviour {
 				} else {
 					GetComponent<TextMesh>().text = "x" + multiplier.ToString();
 					if (bothTastes) {
-						GetComponent<TextMesh>().text += " Delicious!!";
+						GetComponent<TextMesh>().text += " Delicious";
 					} else {
-						GetComponent<TextMesh>().text += " Tasty!";
+						GetComponent<TextMesh>().text += " Tasty";
 					}
 
 					// keep it there for the taste match display time
@@ -195,6 +202,19 @@ public class ScoreTextScript : MonoBehaviour {
 			} else if (firstWait) {
 				// don't display anything until the wait time has happened, so it pops up when the numbers start counting up
 				GetComponent<TextMesh>().text = "";
+			}
+
+		} else if (trash) {
+			// it's a trash score, so they just lost points!
+			// just going to wait for the default base score wait time
+			if (timePassed > waitTime) {
+				// going to move it down instead of up
+				scorePosY = (GetComponent<TextMesh> ().transform.position.y + 0.1f) * timeAmount * 2.0f * alpha;
+				GetComponent<TextMesh> ().transform.Translate (new Vector3 (0.0f, -scorePosY, 0.0f));
+
+				// this 3.0 seems random, but it works best for the timing... :-)
+				alpha -= timeAmount * (3.0f - variables.ScoreFadeTime);
+				GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);
 			}
 		}
 

@@ -473,12 +473,15 @@ public class Character : MonoBehaviour
 
 										Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
 										variables.scoreText.GetComponent<ScoreTextScript>().score = true;
+										variables.scoreText.GetComponent<ScoreTextScript>().mult = false;
+										variables.scoreText.GetComponent<ScoreTextScript>().trash = false;
 										variables.scoreText.GetComponent<ScoreTextScript>().baseScore = letterScore;
 										variables.scoreText.GetComponent<ScoreTextScript>().totalScore = wordScore;
 										variables.scoreText.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
-										if (word.Length > 6) {
+										if (variables.bigMealAdditives[word.Length-2] != 0) {
 											variables.scoreText.GetComponent<ScoreTextScript>().longWord = true;
+											variables.scoreText.GetComponent<ScoreTextScript>().bigMealBonusVal = variables.bigMealAdditives[word.Length-2];
 										} else {
 											variables.scoreText.GetComponent<ScoreTextScript>().longWord = false;
 										}
@@ -492,9 +495,9 @@ public class Character : MonoBehaviour
 										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);										
 
 										Vector3 multPos = new Vector3 (0.0f, 1.0f, 0.0f);
-										variables.scoreText.GetComponent<ScoreTextScript>().score = false;
-										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().baseScore = 0;
-										//variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().totalScore = 0;
+										variables.multiplierText.GetComponent<ScoreTextScript>().score = false;
+										variables.multiplierText.GetComponent<ScoreTextScript>().mult = true;
+										variables.multiplierText.GetComponent<ScoreTextScript>().trash = false;
 										variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = multiplier;
 
 										if (variables.doubleTasteSound == true) {
@@ -520,7 +523,8 @@ public class Character : MonoBehaviour
 								}
 
 								//update the score!
-								variables.score += wordScore;
+								variables.score += wordScore;									
+
 								//Debug.Log("The total score is" + variables.score);
 								letterControl.ResetStove ();
 			 
@@ -531,14 +535,37 @@ public class Character : MonoBehaviour
 								WordSound ();
 								variables.chewing = true;
 						}
+						
 						if (wordScore == 0) {
 								if (characterNum != 0) {
 										Debug.Log ("True");
 										variables.sadSound = 12;
 								}
+								
 								if (characterNum == 0) {
 										variables.sadSound = 18;
 										letterControl.ResetStove ();
+
+										// subtract the appropriate amount from the player's score
+										int loseAmount = variables.trashScore * word.Length;
+										if (variables.score < loseAmount) {
+											loseAmount = variables.score;
+										}
+										variables.score -= loseAmount;
+
+										// show that they've lost that many points, but only if they are actually losing points
+										if (loseAmount > 0) {
+											variables.scoreText.color = Color.white;
+											variables.scoreText.transform.localScale = new Vector3 (1.0f, 1.0f);
+
+											Vector3 scorePos = new Vector3 (0.0f, 2.0f, 0.0f);
+											variables.scoreText.GetComponent<ScoreTextScript>().score = false;
+											variables.scoreText.GetComponent<ScoreTextScript>().mult = false;
+											variables.scoreText.GetComponent<ScoreTextScript>().trash = true;
+											variables.scoreText.GetComponent<ScoreTextScript>().baseScore = loseAmount;
+
+											Instantiate (variables.scoreText, scorePos, Quaternion.identity);
+										}
 								}
 						}
 				}

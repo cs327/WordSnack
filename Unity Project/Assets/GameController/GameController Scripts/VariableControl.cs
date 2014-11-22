@@ -172,6 +172,9 @@ public class VariableControl : MonoBehaviour {
 	public float BigMealDisplayTime;
 	public float ScoreFadeTime;
 
+	// score amount to lose when trashing letters
+	public int trashScore;
+
 	// Use this for initialization
 	void Awake() {
 		CheckIphoneType();
