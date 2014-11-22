@@ -93,11 +93,10 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacterNums[1] = character.characterNum;
 					character.charSelectOrder = 1;
 					thisSprite.sprite = selectedImage;
-                    // There are two chars selected now. Set up high score text
-                    HighScore.text = "Previous Best: "  + ScoreManager.GetPlayerPrefsScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name, gameMode);
-					if (HighScore.text == "Previous Best: " || HighScore.text == "Previous Best: 0")
-						HighScore.text = "";
-                    Debug.Log("high score text = '"  + HighScore.text + "'");
+
+					//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
+
+
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 
@@ -110,6 +109,13 @@ public class SelectScript : MonoBehaviour {
 				center.x = 0;
 				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
+				if (variables.currentCharacterSelectNum == 2) {
+					// There are two chars selected now. Set up high score text
+					HighScore.text = "Previous Best: "  + ScoreManager.GetPlayerPrefsScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name, gameMode);
+					if (HighScore.text == "Previous Best: " || HighScore.text == "Previous Best: 0")
+						HighScore.text = "";
+					Debug.Log("high score text = '"  + HighScore.text + "'");
+				}
 			} 
 			//last check, if a player deselects a character that is already active
 			else {
@@ -131,6 +137,7 @@ public class SelectScript : MonoBehaviour {
 			    HighScore.text = "";
 			}
 		}
+
 	}
 
 	void toggleSelect ()
