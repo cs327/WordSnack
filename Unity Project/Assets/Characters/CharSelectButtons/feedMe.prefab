@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: -0, y: .707106829, z: -.707106829, w: -0}
-  m_LocalPosition: {x: -.0808790028, y: 1.36744785, z: -2.76401901}
+  m_LocalPosition: {x: -.129790097, y: 1.36744785, z: -2.76401901}
   m_LocalScale: {x: .899999976, y: .699999988, z: .600000024}
   m_Children:
   - {fileID: 400000}
@@ -174,6 +174,7 @@ MonoBehaviour:
   transparentColor: {r: 0, g: 0, b: 0, a: 0}
   feedMeClicked: {fileID: 2800000, guid: a69c4d97295b34fe7b62e3e6fd2fafec, type: 3}
   feedMeUnClicked: {fileID: 2800000, guid: 39998085102eb4abdad00f248a97c605, type: 3}
+  loadingGUI: {fileID: 2800000, guid: f929edbb2a9754d19b1fde5396ba0c41, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

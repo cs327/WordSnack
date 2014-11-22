@@ -13,6 +13,7 @@ public class CharacterSelectUI : MonoBehaviour {
 	public Color transparentColor;
 	public Texture feedMeClicked;
 	public Texture feedMeUnClicked;
+	public Texture loadingGUI;
 	//public GameObject feedMePressed;
 
 	// Use this for initialization
@@ -99,7 +100,16 @@ public class CharacterSelectUI : MonoBehaviour {
 	//		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
 			FeedPressed = true;
 			characters.SetActive(false);
+			gameObject.GetComponent<MeshRenderer> ().transform.localScale = new Vector3(0.75f, 0.1f, 0.25f);
+			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = loadingGUI;
+			gameObject.GetComponentInChildren<TextMesh>().transform.position += Vector3.down * 3;
 			GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
+		}
+	}
+
+	void OnMouseUp(){
+		if (buttonActive && !FeedPressed) {
+			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeUnClicked;
 		}
 	}
 
