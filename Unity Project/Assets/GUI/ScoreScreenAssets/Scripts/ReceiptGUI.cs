@@ -67,7 +67,7 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Char 2 " + char2String);
         Debug.Log(Application.persistentDataPath + " is the save file location");        
         
-        Debug.Log(ScoreManager.ToString());        
+//        Debug.Log(ScoreManager.ToString());        
 
         Character1Name.text = char1String;
         Character2Name.text = char2String;
@@ -127,19 +127,19 @@ public class ReceiptGUI : MonoBehaviour
         Debug.Log("Current gamemode is " + gameMode);
 
         // If the current score is the best score
-        if (ScoreManager.AddHighScore(gameMode, char1String, char2String, (int)PlayerPrefs.GetFloat("Score")))
+		if (ScoreManager.CheckNewHighScore(char1String, char2String, gameMode, PlayerPrefs.GetFloat("Score")))
         {
             Debug.Log("NEW HIGH SCORE: \n    " +
                 ((int)PlayerPrefs.GetFloat("Score")).ToString());
             GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = 
                 "NEW HIGH SCORE: \n    " +
-                ((int)PlayerPrefs.GetFloat("Score")).ToString();
+				ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
         }
         else // Find the previous best instead
         {
             GameObject.Find("HighScoreText").GetComponent<TextMesh>().text =
                 " HIGH SCORE: \n     " +
-                ScoreManager.GetTopScore(char1String, char2String);
+				ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
         }
 
         if (rowCount == 0)

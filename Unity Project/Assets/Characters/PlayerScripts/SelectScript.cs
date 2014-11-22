@@ -73,6 +73,7 @@ public class SelectScript : MonoBehaviour {
 
 		//only run the following during the selection phase
 		if (Application.loadedLevelName == "CharacterSelectTest"){
+			string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
 			//if clicking the character selected it and there are still open spaces for selection
 			if (selected && variables.currentCharacterSelectNum < variables.characterSelectNum) {
 				//checks if its the first spot that is open, and places the character there
@@ -92,11 +93,10 @@ public class SelectScript : MonoBehaviour {
 					variables.selectedCharacterNums[1] = character.characterNum;
 					character.charSelectOrder = 1;
 					thisSprite.sprite = selectedImage;
-
                     // There are two chars selected now. Set up high score text
-                    HighScore.text = "Previous Best: "  + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
-				    if (HighScore.text == "Previous Best: ")
-				        HighScore.text = "";
+                    HighScore.text = "Previous Best: "  + ScoreManager.GetPlayerPrefsScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name, gameMode);
+					if (HighScore.text == "Previous Best: " || HighScore.text == "Previous Best: 0")
+						HighScore.text = "";
                     Debug.Log("high score text = '"  + HighScore.text + "'");
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
@@ -111,14 +111,6 @@ public class SelectScript : MonoBehaviour {
 				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
 			} 
-			//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
-			else if (selected && variables.currentCharacterSelectNum == variables.characterSelectNum) {
-				toggleSelect();
-            // Characters changed, change High score text
-            HighScore.text = "Previous Best: " + ScoreManager.GetTopScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name);
-            Debug.Log("high score text = '" + HighScore.text + "'");
-			}
-
 			//last check, if a player deselects a character that is already active
 			else {
 				thisSprite.sprite = standbyImage;
