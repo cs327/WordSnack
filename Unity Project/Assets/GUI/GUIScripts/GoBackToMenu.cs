@@ -18,14 +18,14 @@ public class GoBackToMenu : MonoBehaviour {
 	void OnMouseDown () {
 		s.sprite = menuClicked;
 		transform.localPosition = new Vector3 (-2.50f, 1, 2.87297f);
-		transform.localScale = new Vector3 (0.25f, 0.49f, 0.49f);
+//		transform.localScale = new Vector3 (0.25f, 0.49f, 0.49f);
 
 	}
 
 	void OnMouseUp()
 	{
 		s.sprite = menuUnclicked;
-		transform.localScale = new Vector3 (.15f, .3f, .49f);
+//		transform.localScale = new Vector3 (.15f, .3f, .49f);
 	}
 	void OnMouseUpAsButton()
 	{

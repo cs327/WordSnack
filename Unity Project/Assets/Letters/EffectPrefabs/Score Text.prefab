@@ -82,9 +82,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebcf6bc23eb0b4e82b9dba3e43dadf06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   baseScore: 4
   totalScore: 4
   multiplier: 1
+=======
+  baseScore: 10
+  totalScore: 30
+  multiplier: 3
+>>>>>>> Stashed changes
   score: 1
   mult: 0
   trash: 0

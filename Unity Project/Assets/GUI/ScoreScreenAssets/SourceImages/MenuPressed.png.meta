@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: e28b785a3ce1b47618d360ce15896497
+guid: 18898e10e6fa5417e968fc474b390635
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MenuUnselected
+    21300000: MenuPressed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
