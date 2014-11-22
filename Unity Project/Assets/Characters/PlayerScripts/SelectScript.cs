@@ -110,8 +110,10 @@ public class SelectScript : MonoBehaviour {
 				gameObject.GetComponent<BoxCollider>().center = center;
 				variables.currentCharacterSelectNum++;
 				if (variables.currentCharacterSelectNum == 2) {
-					// There are two chars selected now. Set up high score text
-					HighScore.text = "Previous Best: "  + ScoreManager.GetPlayerPrefsScore(variables.selectedCharacters[0].name, variables.selectedCharacters[1].name, gameMode);
+                    // There are two chars selected now. Set up high score text variables.selectedCharacters[0].name, variables.selectedCharacters[1].name, gameMode
+				    HighScore.text = "Previous Best: " +
+				                     ScoreManager.GetTopScore(variables.selectedCharacters[0].name,
+				                         variables.selectedCharacters[1].name);
 					if (HighScore.text == "Previous Best: " || HighScore.text == "Previous Best: 0")
 						HighScore.text = "";
 					Debug.Log("high score text = '"  + HighScore.text + "'");
