@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 87258348c3611421dadfbbac0d5dc75a
+guid: e720818db2c6a418bafc4cc9be18d547
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MeghanCharacterCard 1
-    21300002: MeghanCharacterCard
+    21300000: MeghanCharacterCard
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

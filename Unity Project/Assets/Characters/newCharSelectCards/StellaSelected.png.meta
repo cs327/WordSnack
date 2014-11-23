@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f30eb50e1c567496e90d6ae02a1d9b89
+guid: 0f3d1621b6cb0479b80b478a9dc74cbd
 TextureImporter:
   fileIDToRecycleName:
     21300000: StellaSelected
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

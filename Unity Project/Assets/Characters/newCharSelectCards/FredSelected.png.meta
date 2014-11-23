@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 624f703860fa94d759794d1b3deeefd2
+guid: f99f664e4d2d94dc2a2e3516ad150ae3
 TextureImporter:
   fileIDToRecycleName:
     21300000: FredSelected
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

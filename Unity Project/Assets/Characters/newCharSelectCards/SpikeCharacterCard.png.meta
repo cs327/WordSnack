@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 916631930466547649c1872320179897
+guid: 19799d424ddc94b7a91d7eb577da1aba
 TextureImporter:
   fileIDToRecycleName:
-    21300000: SpikeCharacterCard 1
-    21300002: SpikeCharacterCard
+    21300000: SpikeCharacterCard
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

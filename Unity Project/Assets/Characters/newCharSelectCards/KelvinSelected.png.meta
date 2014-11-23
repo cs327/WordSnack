@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee68b90e734fe4f95ba0282d8cc6ea93
+guid: 8962e51fdae1c4fc0a92dd193e545999
 TextureImporter:
   fileIDToRecycleName:
     21300000: KelvinSelected
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 349fa5f9c9e5b4ca8828bf23d3f87cd5
+guid: 5ed1dbe21b43f429aa76e17e56a2e643
 TextureImporter:
   fileIDToRecycleName:
-    21300000: StellaCharacterCard 1
-    21300002: StellaCharacterCard
+    21300000: StellaCharacterCard
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9092bfb79747840a1a48debb22cb2d67
+guid: ba8182cc9e1bc4dcda9c64001eace4ec
 TextureImporter:
   fileIDToRecycleName:
     21300000: MeghanSelected
@@ -22,7 +22,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
+  textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1

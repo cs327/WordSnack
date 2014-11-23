@@ -200,12 +200,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 0a22138a3e3d14359a9b35ddf880dd97,
+      objectReference: {fileID: 21300000, guid: e720818db2c6a418bafc4cc9be18d547,
         type: 3}
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: selectedImage
       value: 
-      objectReference: {fileID: 21300000, guid: 5914351dc89da4665a3124219d8efa5e,
+      objectReference: {fileID: 21300000, guid: ba8182cc9e1bc4dcda9c64001eace4ec,
         type: 3}
     - target: {fileID: 100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: m_Name
@@ -398,8 +398,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: 5914351dc89da4665a3124219d8efa5e, type: 3}
-  standbyImage: {fileID: 21300000, guid: 0a22138a3e3d14359a9b35ddf880dd97, type: 3}
+  selectedImage: {fileID: 21300000, guid: ba8182cc9e1bc4dcda9c64001eace4ec, type: 3}
+  standbyImage: {fileID: 21300000, guid: e720818db2c6a418bafc4cc9be18d547, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -640,8 +640,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: ed2bef263dbbd48a7ab3bbed32804acb, type: 3}
-  standbyImage: {fileID: 21300000, guid: c4bcd63fed15940ffb16d1a4d37de549, type: 3}
+  selectedImage: {fileID: 21300000, guid: 8962e51fdae1c4fc0a92dd193e545999, type: 3}
+  standbyImage: {fileID: 21300000, guid: 9d2223362402c44ada5c415c5eea8914, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -927,12 +927,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 00f56d250f6b44160b41393685f1186f,
+      objectReference: {fileID: 21300000, guid: 5ed1dbe21b43f429aa76e17e56a2e643,
         type: 3}
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: selectedImage
       value: 
-      objectReference: {fileID: 21300000, guid: 1dfdfd39789da4b5598ecfa1c553ed9e,
+      objectReference: {fileID: 21300000, guid: 0f3d1621b6cb0479b80b478a9dc74cbd,
         type: 3}
     - target: {fileID: 100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: m_Name
@@ -1164,8 +1164,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: 1dfdfd39789da4b5598ecfa1c553ed9e, type: 3}
-  standbyImage: {fileID: 21300000, guid: 00f56d250f6b44160b41393685f1186f, type: 3}
+  selectedImage: {fileID: 21300000, guid: 0f3d1621b6cb0479b80b478a9dc74cbd, type: 3}
+  standbyImage: {fileID: 21300000, guid: 5ed1dbe21b43f429aa76e17e56a2e643, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -1296,8 +1296,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: 7532e31324c7f49d7bd07a482b80e2e8, type: 3}
-  standbyImage: {fileID: 21300000, guid: 774d1b5578d4f44d3983a5e7ca7ce43b, type: 3}
+  selectedImage: {fileID: 21300000, guid: f99f664e4d2d94dc2a2e3516ad150ae3, type: 3}
+  standbyImage: {fileID: 21300000, guid: 75cad3b418a4e401aaf323a68fd6b83a, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -1465,8 +1465,8 @@ MonoBehaviour:
   selected: 0
   selectNum: -1
   startingSpot: {x: 0, y: 0, z: 0}
-  selectedImage: {fileID: 21300000, guid: b7a0621dcc38a4ec993bf5bc4aac0f37, type: 3}
-  standbyImage: {fileID: 21300000, guid: 857033e9398854207a5964545dd3a19a, type: 3}
+  selectedImage: {fileID: 21300000, guid: fc401c39eb3c14c5f86d8382ad3540c2, type: 3}
+  standbyImage: {fileID: 21300000, guid: 19799d424ddc94b7a91d7eb577da1aba, type: 3}
   thisSprite: {fileID: 0}
   HighScore: {fileID: 865782325}
   newSelect: 1
@@ -1637,12 +1637,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 857033e9398854207a5964545dd3a19a,
+      objectReference: {fileID: 21300000, guid: 19799d424ddc94b7a91d7eb577da1aba,
         type: 3}
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: selectedImage
       value: 
-      objectReference: {fileID: 21300000, guid: b7a0621dcc38a4ec993bf5bc4aac0f37,
+      objectReference: {fileID: 21300000, guid: fc401c39eb3c14c5f86d8382ad3540c2,
         type: 3}
     - target: {fileID: 100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: m_Name
@@ -2309,12 +2309,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: 774d1b5578d4f44d3983a5e7ca7ce43b,
+      objectReference: {fileID: 21300000, guid: 75cad3b418a4e401aaf323a68fd6b83a,
         type: 3}
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: selectedImage
       value: 
-      objectReference: {fileID: 21300000, guid: 7532e31324c7f49d7bd07a482b80e2e8,
+      objectReference: {fileID: 21300000, guid: f99f664e4d2d94dc2a2e3516ad150ae3,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
@@ -2431,12 +2431,12 @@ Prefab:
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: standbyImage
       value: 
-      objectReference: {fileID: 21300000, guid: c4bcd63fed15940ffb16d1a4d37de549,
+      objectReference: {fileID: 21300000, guid: 9d2223362402c44ada5c415c5eea8914,
         type: 3}
     - target: {fileID: 11400000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: selectedImage
       value: 
-      objectReference: {fileID: 21300000, guid: ed2bef263dbbd48a7ab3bbed32804acb,
+      objectReference: {fileID: 21300000, guid: 8962e51fdae1c4fc0a92dd193e545999,
         type: 3}
     - target: {fileID: 100000, guid: 12dadc939892b4e829fb7bdd7ead44ca, type: 2}
       propertyPath: m_Name
