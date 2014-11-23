@@ -15,7 +15,7 @@ public class AboutUsMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(pos.z > -8.9f ){
+		if(pos.z > -8.86f ){
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}
@@ -24,9 +24,16 @@ public class AboutUsMove : MonoBehaviour {
 	void OnMouseDown(){
 
 		//Application.OpenURL("http://wordsnack.net/");
-		Application.LoadLevel ("StartScreenTest");
+		//Application.LoadLevel ("StartScreenTest");
 			
-
+		speed = 18;
+		if(pos.z > -8.86f ){
+			pos.z -= Time.deltaTime*speed;
+			transform.localPosition = pos;
+		}else{
+			//Application.OpenURL("http://wordsnack.net/");
+			Application.LoadLevel ("StartScreenTest");
+		}
     	clickSound = true;
 
 	}
