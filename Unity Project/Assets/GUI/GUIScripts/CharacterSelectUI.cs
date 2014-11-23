@@ -100,9 +100,10 @@ public class CharacterSelectUI : MonoBehaviour {
 	//		gameObject.GetComponent<MeshRenderer>().renderer.material.mainTexture = feedMeUnClicked;
 			FeedPressed = true;
 			characters.SetActive(false);
-			gameObject.GetComponent<MeshRenderer> ().transform.localScale = new Vector3(0.75f, 0.1f, 0.25f);
+			gameObject.GetComponent<MeshRenderer> ().transform.localScale = new Vector3(0.875f, 0.075f, 0.25f);
 			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = loadingGUI;
 			gameObject.GetComponentInChildren<TextMesh>().transform.position += Vector3.down * 3;
+			gameObject.GetComponentInChildren<TextMesh>().transform.localScale = new Vector3 (0.15f, 0.5f, 1);
 			GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
 		}
 	}
