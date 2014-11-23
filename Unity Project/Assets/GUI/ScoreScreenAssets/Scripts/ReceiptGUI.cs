@@ -44,6 +44,7 @@ public class ReceiptGUI : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		GameObject.Find("Loading").transform.renderer.enabled = false;
 		#region Receipt Setup
 		scoreText.text = ((int)PlayerPrefs.GetFloat("Score")).ToString();
 		print (PlayerPrefs.GetFloat("Score"));
@@ -229,8 +230,6 @@ public class ReceiptGUI : MonoBehaviour
 		rowInstance.transform.parent = gameObject.transform;
 		pos = rowInstance.transform.position;
 		pos.y -= rowOffset * (float) rowIndex;
-		Debug.Log (pos.y);
-		Debug.Log (rowIndex);
 		rowInstance.transform.position = pos;
 		
 		Component[] rowMeshes = rowInstance.GetComponentsInChildren<TextMesh>();

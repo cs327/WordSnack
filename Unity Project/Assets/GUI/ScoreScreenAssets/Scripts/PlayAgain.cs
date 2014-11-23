@@ -28,6 +28,7 @@ public class PlayAgain : MonoBehaviour {
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = PlayAgainUnpressed;
         clickSound = true;
+		ScoreLoadingScript.SetLoadingScreen();
         Application.LoadLevel("WordMaking");
     }
 }
