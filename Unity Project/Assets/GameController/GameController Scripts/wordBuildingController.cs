@@ -52,6 +52,10 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject letterCon;
 		LetterController letterController;
 
+		// for diner reflections
+		public GameObject rightCharacterReflection;
+		public GameObject leftCharacterReflection;
+		public Texture2D[] reflectionTextures = new Texture2D[12];
  
 		// Use this for initialization
 		void Start ()
@@ -103,7 +107,15 @@ public class wordBuildingController : MonoBehaviour
 						Instantiate (Resources.Load ("AudioManager_Game"), new Vector3 (0, 0, 0), Quaternion.identity);
 				}
 
-
+				// set the diner table reflections
+				// character: left, right array positions
+				// fred: 2, 3
+				// kelvin: 4, 5
+				// spike: 6, 7
+				// stella: 8, 9
+				// meghan: 10, 11
+				leftCharacterReflection.renderer.material.SetTexture("_MainTex", reflectionTextures[character1Num * 2]);
+				rightCharacterReflection.renderer.material.SetTexture("_MainTex", reflectionTextures[character2Num * 2 + 1]);
 
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes
