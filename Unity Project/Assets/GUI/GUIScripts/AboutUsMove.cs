@@ -7,10 +7,12 @@ public class AboutUsMove : MonoBehaviour {
     public bool clickSound;
 	public BoxCollider boxCollider1;
 	public BoxCollider boxCollider2;
+	//Camera camera;
 
 	// Use this for initialization
 	void Start () {
 		pos = transform.localPosition;
+		//camera = GameObject.Find ("Main Camera").camera;
 	}
 	
 	// Update is called once per frame
@@ -18,6 +20,8 @@ public class AboutUsMove : MonoBehaviour {
 		if(pos.z > -8.86f ){
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
+		}else{
+			//boxCollider1.GetComponent<BoxCollider>().enabled = false;
 		}
 	}
 
@@ -31,10 +35,9 @@ public class AboutUsMove : MonoBehaviour {
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}else{
-
 			Application.LoadLevel ("StartScreenTest");
 		}
-    	clickSound = true;
-
+		clickSound = true;
+		
 	}
 }
