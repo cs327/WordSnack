@@ -133,15 +133,15 @@ public class ReceiptGUI : MonoBehaviour
 		{
 			Debug.Log("NEW HIGH SCORE: \n    " +
 			          ((int)PlayerPrefs.GetFloat("Score")).ToString());
-			GameObject.Find("HighScoreText").GetComponent<TextMesh>().color = new Vector4(0.6F, 0, 0, 1);
+			GameObject.Find("HighScoreText").GetComponent<TextMesh>().color = new Vector4(0.62F, 0.08F, 0, 1);
 			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = 
-				"NEW HIGH SCORE: \n    " +
+				"NEW HIGH SCORE: \n" +
 					ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
 		}
 		else // Find the previous best instead
 		{
 			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text =
-				" HIGH SCORE: \n     " +
+				"HIGH SCORE: \n" +
 					ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
 		}
 		
