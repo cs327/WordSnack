@@ -31,7 +31,7 @@ public class AboutUsMove : MonoBehaviour {
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}else{
-			//Application.OpenURL("http://wordsnack.net/");
+
 			Application.LoadLevel ("StartScreenTest");
 		}
     	clickSound = true;
