@@ -411,8 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .400000006
   clickSound: 0
-  boxCollider1: {fileID: 1734022373}
-  boxCollider2: {fileID: 0}
+  backgroundStars: {fileID: 100000, guid: dee485e1d44d3495d9c9ae2aa1de7577, type: 2}
 --- !u!65 &1734022373
 BoxCollider:
   m_ObjectHideFlags: 0
