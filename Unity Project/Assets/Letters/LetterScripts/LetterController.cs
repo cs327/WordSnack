@@ -269,7 +269,7 @@ public class LetterController : MonoBehaviour
                 if (numVowels < variables.minNumVowels)
                 { 
                     //replace the highest-scoring consonant with an a or an e
-                    if (variables.totalVowels <= 0)
+                    if (vowelsInLetterBag.Count <= 0)
                     {
                         char letterToReplace = serializedLetterBag[0];
                         for (int i = 1; i < serializedLetterBag.Count; i++)
@@ -288,28 +288,29 @@ public class LetterController : MonoBehaviour
 
                         if (aOrE < 0.5f)
                         {
-                            variables.numA++;
-                            variables.totalVowels++;
-                            vowelsInLetterBag.Add('a'); //We only need to add it to the local serialized letter bag, not the global one
+                            variables.totalLetters--;
+                            return 'a';
 
                         }
                         if (aOrE >= 0.5f)
                         {
-                            variables.numE++;
-                            variables.totalVowels++;
-                            vowelsInLetterBag.Add('e'); //because we've already removed the one we replaced from the global one
+                            variables.totalLetters--;
+                            return 'e';
                         }
                         //Say there aren't any vowels left - so we're giving a consonant
                         Debug.Log("Replacing the highest scoring consonant with a vowel");
                     }
-                    //We now have a vowel and can return it.
-                    Debug.Log ("Logic says we MUST return a vowel and we've got one to give");
-					char vowelToReturn = vowelsInLetterBag [Random.Range (0, vowelsInLetterBag.Count ())]; //pick a random vowel
-					variables.totalVowels--; //decrement total number of Vowels
-					variables.totalLetters--; //decrement total number of letters
-					variables.letterBag [vowelToReturn] = variables.letterBag [vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
-					//Debug.Log ("Returning " + vowelToReturn);
-					return vowelToReturn; //return that vowel
+                    else
+                    {
+                        //We now have a vowel and can return it.
+                        Debug.Log("Logic says we MUST return a vowel and we've got one to give");
+                        char vowelToReturn = vowelsInLetterBag[Random.Range(0, vowelsInLetterBag.Count())]; //pick a random vowel
+                        variables.totalVowels--; //decrement total number of Vowels
+                        variables.totalLetters--; //decrement total number of letters
+                        variables.letterBag[vowelToReturn] = variables.letterBag[vowelToReturn] - 1; //decrement the number of that letter in the global letterBag
+                        //Debug.Log ("Returning " + vowelToReturn);
+                        return vowelToReturn; //return that vowel
+                    }
                 }						
 				if (numVowels >= variables.maxNumVowels && consonantsInLetterBag.Count () > 0) { //If we already have enough vowels (or too many, but we screwed up if that happens), return a consonant
 						//Debug.Log ("Logic says we MUST return a consonant");
@@ -771,32 +772,39 @@ public class LetterController : MonoBehaviour
 		void refillLetterBag ()
 		{
 				//this is for timed mode - it should be called when we are about to run out of letters
-				variables.letterBag ['a'] += variables.numA;
-				variables.letterBag ['b'] += variables.numB;
-				variables.letterBag ['c'] += variables.numC;
-				variables.letterBag ['d'] += variables.numD;
-				variables.letterBag ['e'] += variables.numE;
-				variables.letterBag ['f'] += variables.numF;
-				variables.letterBag ['g'] += variables.numG;
-				variables.letterBag ['h'] += variables.numH;
-				variables.letterBag ['i'] += variables.numI;
-				variables.letterBag ['j'] += variables.numJ;
-				variables.letterBag ['k'] += variables.numK;
-				variables.letterBag ['l'] += variables.numL;
-				variables.letterBag ['m'] += variables.numM;
-				variables.letterBag ['n'] += variables.numN;
-				variables.letterBag ['o'] += variables.numO;
-				variables.letterBag ['p'] += variables.numP;
-				variables.letterBag ['q'] += variables.numQ;
-				variables.letterBag ['r'] += variables.numR;
-				variables.letterBag ['s'] += variables.numS;
-				variables.letterBag ['t'] += variables.numT;
-				variables.letterBag ['u'] += variables.numU;
-				variables.letterBag ['v'] += variables.numV;
-				variables.letterBag ['w'] += variables.numW;
-				variables.letterBag ['x'] += variables.numX;
-				variables.letterBag ['y'] += variables.numY;
-				variables.letterBag ['z'] += variables.numZ;
+				variables.letterBag ['a'] = variables.numA;
+				variables.letterBag ['b'] = variables.numB;
+				variables.letterBag ['c'] = variables.numC;
+				variables.letterBag ['d'] = variables.numD;
+				variables.letterBag ['e'] = variables.numE;
+				variables.letterBag ['f'] = variables.numF;
+				variables.letterBag ['g'] = variables.numG;
+				variables.letterBag ['h'] = variables.numH;
+				variables.letterBag ['i'] = variables.numI;
+				variables.letterBag ['j'] = variables.numJ;
+				variables.letterBag ['k'] = variables.numK;
+				variables.letterBag ['l'] = variables.numL;
+				variables.letterBag ['m'] = variables.numM;
+				variables.letterBag ['n'] = variables.numN;
+				variables.letterBag ['o'] = variables.numO;
+				variables.letterBag ['p'] = variables.numP;
+				variables.letterBag ['q'] = variables.numQ;
+				variables.letterBag ['r'] = variables.numR;
+				variables.letterBag ['s'] = variables.numS;
+				variables.letterBag ['t'] = variables.numT;
+				variables.letterBag ['u'] = variables.numU;
+				variables.letterBag ['v'] = variables.numV;
+				variables.letterBag ['w'] = variables.numW;
+				variables.letterBag ['x'] = variables.numX;
+				variables.letterBag ['y'] = variables.numY;
+				variables.letterBag ['z'] = variables.numZ;
+
+                foreach (KeyValuePair<char, int> entry in variables.letterBag)
+                {
+                    //Debug.Log ("Adding " + entry.Value + " " + entry.Key + "'s to letterBag");
+                    variables.totalLetters += entry.Value;
+                }
+                variables.totalVowels = variables.numA + variables.numE + variables.numI + variables.numO + variables.numU;
 		}
 
 
