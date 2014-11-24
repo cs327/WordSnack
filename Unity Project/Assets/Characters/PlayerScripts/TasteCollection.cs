@@ -96,7 +96,7 @@ public static class TasteCollection
         int consonantCount = 0;
         for (int i = 0; i < word.Length; i++)
         {
-            if (consonants.Contains(word[i]))
+            if (vowels.Contains(word[i]) || (i == 0 && word[i] == 'y'))
                 consonantCount++;
         }
         return consonantCount;
@@ -170,7 +170,8 @@ public static class TasteCollection
     {
         int vowelCount = GetVowelCount(word);
         int consonantCount = GetConsonantCount(word);
-     
+        Debug.Log(vowelCount + " :vowels + consonants: " + consonantCount)
+        ;
         if (vowelCount == consonantCount)
             return variables.equalVowelsAndConsonantsMult;
         else
