@@ -233,7 +233,7 @@ public class wordBuildingController : MonoBehaviour
 		{
 				//updates score related variables 
 				variables.totalLetterScore = character1.GetComponent<Character> ().rawScoreFedToMe + character2.GetComponent<Character> ().rawScoreFedToMe;
-				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
+//				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
 				variables.trashedLetters = trashCharacter.GetComponent<Character> ().trashedLetters;
 				variables.trashedLetterScore = trashCharacter.GetComponent<Character> ().trashedLetterScore;
 				Debug.Log ("sent variables to receipt screen");
