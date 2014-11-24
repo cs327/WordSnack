@@ -146,44 +146,44 @@ public class ReceiptGUI : MonoBehaviour
 					ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
 		}
 		
-		if (rowCount == 0)
-		{
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");            
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-			AddRow("", "", "", "");
-		}
+//		if (rowCount == 0)
+//		{
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");            
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//			AddRow("", "", "", "");
+//		}
 		
 		#endregion
 		
