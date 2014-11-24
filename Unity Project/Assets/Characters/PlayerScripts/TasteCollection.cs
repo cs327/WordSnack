@@ -79,6 +79,7 @@ public static class TasteCollection
             return 0;
     }
 
+    // Returns the vowel total. Y is a vowel if it doesn't begin the word
     private static int GetVowelCount(string word)
     {
         int vowelCount = 0;
@@ -141,7 +142,7 @@ public static class TasteCollection
 
     public static float endsWithVowel(string word)
     {
-        if (vowels.Contains(word[word.Length - 1]))
+        if (vowels.Contains(word[word.Length - 1]) || word[word.Length - 1 ] == 'y')
             return variables.endsWithVowelMult;
         return 0;
     }
