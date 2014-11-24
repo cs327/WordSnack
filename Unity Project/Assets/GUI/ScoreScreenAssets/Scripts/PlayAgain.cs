@@ -9,7 +9,9 @@ public class PlayAgain : MonoBehaviour
 		// Use this for initialization
 		void Start ()
 		{
-	
+				//When this gets instantiated, submit our Analytics Queue. This should make this happen once per Score Screen load.
+				GA_Queue.ForceSubmit ();
+				Debug.Log ("Forcing GA Submission.");
 		}
 	
 		// Update is called once per frame
