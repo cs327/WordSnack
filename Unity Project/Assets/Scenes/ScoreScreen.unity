@@ -1968,15 +1968,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6843408d815954fbe96fefa8cca63818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseForSubsequentLevels: 1
+  UseForSubsequentLevels: 0
   IncludeSystemSpecs: 1
-  IncludeSceneChange: 1
+  IncludeSceneChange: 0
   SubmitErrors: 1
   MaxErrorCount: 10
   SubmitErrorStackTrace: 1
   SubmitErrorSystemInfo: 1
   SubmitFpsAverage: 1
-  SubmitFpsCritical: 1
+  SubmitFpsCritical: 0
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
   GuiEnabled: 0
