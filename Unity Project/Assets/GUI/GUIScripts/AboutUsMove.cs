@@ -19,7 +19,7 @@ public class AboutUsMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(pos.z > -8.86f ){
+		if(pos.z > -7.96f ){
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}
@@ -27,7 +27,7 @@ public class AboutUsMove : MonoBehaviour {
 
 	void OnMouseDown(){	
 		speed = 18;
-		if(pos.z > -8.86f ){
+		if(pos.z > -7.96f ){
 			pos.z -= Time.deltaTime*speed;
 			transform.localPosition = pos;
 		}else{
