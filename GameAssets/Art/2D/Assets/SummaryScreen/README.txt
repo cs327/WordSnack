@@ -7,6 +7,7 @@ Summary Screen Information
 -At the bottom, the number of letters discarded is displayed on its own row
 -On the very bottom, the Total appears. 
 -The font used for the text (which should also be used for generating scoring) is OCR A Std.
--The font color for High Score text is #1c8315
--The font color for regular scoring information is #333333
+-The font color for “High Score” green text is #d7fadb
+-The font color for the High Score number (white) is #f3fef4
+-The font color for receipt text is #333333
 -The menu button looks different in the reference, but it is in the correct location.
