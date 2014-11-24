@@ -89,12 +89,7 @@ public class wordBuildingController : MonoBehaviour
 				character2 = (GameObject)Instantiate (Resources.Load (characters [character2Num].name), variables.phase2CharacterPositions [1], Quaternion.identity);
 				character1.transform.localScale = new Vector3 (2, 2, 2);
 				character2.transform.localScale = new Vector3 (2, 2, 2);
-				if (character1Num != 1) {
-					character1.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
-				}
-				if (character2Num != 1) {
-					character2.GetComponent<BoxCollider> ().size = new Vector3 (2, 3, 0);
-				}
+				
 				//Set the characterNums correctly
 				character1.GetComponent<Character> ().characterNum = character1Num;
 				character2.GetComponent<Character> ().characterNum = character2Num;
