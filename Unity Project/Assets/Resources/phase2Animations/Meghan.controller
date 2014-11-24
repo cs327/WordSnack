@@ -237,6 +237,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110224027
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MeghanIdle(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 7f70f51ccb2cf45a8abfc04bbe41fdf0, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 395, y: 65, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110228552
 State:
   m_ObjectHideFlags: 3
@@ -249,6 +264,36 @@ State:
   - {fileID: 7400000, guid: ce5b36f5f5ace413eab2fb495fd9e386, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 300, y: 0, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110271267
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MeghanReject(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 8e1cbdef0cf044cdeb17c66a2fe2fb94, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 465, y: 195, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110281130
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MeghanEat(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: dcabe9ea08c9b44d99f6bdf1d4059eb9, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 430, y: 130, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -294,6 +339,9 @@ StateMachine:
   - {fileID: 110201747}
   - {fileID: 110284895}
   - {fileID: 110286836}
+  - {fileID: 110224027}
+  - {fileID: 110281130}
+  - {fileID: 110271267}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:

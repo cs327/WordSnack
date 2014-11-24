@@ -52,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dae74e0c47ea342c59a0a8b444cbc94f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -85,7 +85,8 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 9100000, guid: 2686ea1c533e1478bac4bc577679269e, type: 2}
+  uncompressedAnim: {fileID: 9100000, guid: dae74e0c47ea342c59a0a8b444cbc94f, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:

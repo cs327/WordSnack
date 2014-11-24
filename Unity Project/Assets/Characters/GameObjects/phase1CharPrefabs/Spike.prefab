@@ -81,6 +81,7 @@ MonoBehaviour:
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
   rawBonusScoreFedToMe: 0
+  scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
   wordsFedToMe: []
@@ -90,7 +91,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 9100000, guid: 74ba0ca335ad94de094840f9838d12df, type: 2}
+  uncompressedAnim: {fileID: 9100000, guid: d27d3c24e10e34e48a4682ac4aeb054d, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:

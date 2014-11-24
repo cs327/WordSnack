@@ -51,7 +51,8 @@ public class Character : MonoBehaviour
 		public GameObject tasteObj;
 		public TextMesh tasteText;
 		public int charSelectOrder;
-		public Animator anim;
+		public RuntimeAnimatorController compressedAnim;
+		public RuntimeAnimatorController uncompressedAnim;
 		//so we can know if the character is selected
 		public SelectScript selectScript;
 		private int mostRecentMultiplier = 0;
@@ -290,6 +291,12 @@ public class Character : MonoBehaviour
 						//Let's see if all that text-making worked or not
 						//Debug.Log("My character number is " + characterNum + " and I like " + thingsILike);
 						if (Application.loadedLevelName == "WordMaking") {
+								//uses lower res sprites if the phone is a 4s or older
+								if (CheckIPhoneType.OldPhone()) {
+									GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
+								} else {
+									GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
+								}
 								letterGenerator = GameObject.FindGameObjectWithTag ("letterController");
 								letterControl = letterGenerator.GetComponent<LetterController> ();
 

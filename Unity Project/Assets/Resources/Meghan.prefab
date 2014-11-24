@@ -52,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 852addcb5280840ddaee2a2b19edf2d8, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -75,6 +75,7 @@ MonoBehaviour:
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
   rawBonusScoreFedToMe: 0
+  scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
   wordsFedToMe: []
@@ -84,7 +85,8 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 9100000, guid: ccac66c6e1ef54d53b3f06579de90a8e, type: 2}
+  uncompressedAnim: {fileID: 9100000, guid: 852addcb5280840ddaee2a2b19edf2d8, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:

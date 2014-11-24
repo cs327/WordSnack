@@ -52,7 +52,7 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d215d4944d6e14509a0a43e745821f92, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -85,7 +85,8 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 9500000}
+  compressedAnim: {fileID: 9100000, guid: 3c5fadc8deeb745bb8a20073ab360d8b, type: 2}
+  uncompressedAnim: {fileID: 9100000, guid: d215d4944d6e14509a0a43e745821f92, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4726d2c25db4641b6b5907f55ded02a0, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 44d998a49dc9a410e8f808943f48246c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

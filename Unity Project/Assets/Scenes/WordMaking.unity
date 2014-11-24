@@ -3278,7 +3278,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -3289,7 +3288,8 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!1 &1063576651
 GameObject:

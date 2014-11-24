@@ -182,6 +182,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110220815
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: StellaReject(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: c697dc703e8a24372bfa7714505682a0, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 405, y: 207, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110222547
 State:
   m_ObjectHideFlags: 3
@@ -212,6 +227,36 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110237529
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: StellaEat(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: e51275968ae3c4063b93ccfdf1ac5b25, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 370, y: 142, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110247543
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: StellaIdle(compressed)
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 9fb4f82b8db03460b85425c6cadaad97, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 335, y: 77, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110294913
 State:
   m_ObjectHideFlags: 3
@@ -239,34 +284,28 @@ StateMachine:
   - {fileID: 110200000}
   - {fileID: 110225183}
   - {fileID: 110222547}
+  - {fileID: 110247543}
+  - {fileID: 110237529}
+  - {fileID: 110220815}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110222547}
-      second:
-      - {fileID: 110188988}
-    data:
-      first: {fileID: 110225183}
-      second:
-      - {fileID: 110106202}
+      first: {fileID: 0}
+      second: []
     data:
       first: {fileID: 110200000}
       second:
       - {fileID: 110145666}
       - {fileID: 110163602}
     data:
-      first: {fileID: 0}
-      second: []
+      first: {fileID: 110225183}
+      second:
+      - {fileID: 110106202}
     data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
+      first: {fileID: 110222547}
+      second:
+      - {fileID: 110188988}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
