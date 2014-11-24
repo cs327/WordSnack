@@ -109,8 +109,8 @@ public class wordBuildingController : MonoBehaviour
 				// spike: 6, 7
 				// stella: 8, 9
 				// meghan: 10, 11
-				leftCharacterReflection.renderer.material.SetTexture("_MainTex", reflectionTextures[character1Num * 2]);
-				rightCharacterReflection.renderer.material.SetTexture("_MainTex", reflectionTextures[character2Num * 2 + 1]);
+				leftCharacterReflection.renderer.material.SetTexture ("_MainTex", reflectionTextures [character1Num * 2]);
+				rightCharacterReflection.renderer.material.SetTexture ("_MainTex", reflectionTextures [character2Num * 2 + 1]);
 
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes
@@ -256,10 +256,6 @@ public class wordBuildingController : MonoBehaviour
 				} else {
 						mode = 0;
 				}
-				GA.API.Design.NewEvent ("mode", mode);
-				GA.API.Design.NewEvent ("score", variables.score);
-				GA.API.Design.NewEvent ("character1", character1Num);
-				GA.API.Design.NewEvent ("character2", character2Num);
 				GA.API.Design.NewEvent ("mode", mode);
 				GA.API.Design.NewEvent ("score", variables.score);
 				GA.API.Design.NewEvent ("character1", character1Num);
