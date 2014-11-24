@@ -31,7 +31,7 @@ public class GoBackToMenu : MonoBehaviour {
 	{
 		s.sprite = menuUnclicked;
 		backToStart = true;
-		ScoreLoadingScript.SetLoadingScreen();
+//		ScoreLoadingScript.SetLoadingScreen();
 		Application.LoadLevel("StartScreenTest");
 		clickSound = true;
 	}
