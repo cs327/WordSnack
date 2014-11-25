@@ -5,7 +5,8 @@ using System.Security.Cryptography;
 
 public class wordBuildingController : MonoBehaviour
 {
-		//for taste panels, index 0 is left and index 1 is right side
+        #region Variables
+        //for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
 		//public GameObject[] highlightPanels = new GameObject [4];
 		public GameObject[] tasteTexts = new GameObject[4];
@@ -63,8 +64,9 @@ public class wordBuildingController : MonoBehaviour
         public bool secondAlert = false;
         public bool flashOnce = true;
         public bool flashRedAgain = false;
- 
-		// Use this for initialization
+    #endregion
+
+        // Use this for initialization
 		void Start ()
 		{
 				DestroyObject (GameObject.Find ("AudioManager_Menu(Clone)"));
@@ -139,68 +141,64 @@ public class wordBuildingController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-				if (variables.timedMode) {
+				if (variables.timedMode) 
 						AlertPlayer ();
-				}
+				
 				//Ends the game if time runs out:
-				if (variables.timedMode && variables.globalTimer < 0) {
+				if (variables.timedMode && variables.globalTimer < 0)
 						fadeOut = true;
-				}
+				
 				//ends game if no words left and tilebag is low
 				if (variables.endGame) {
 						fadeOut = true;
 						variables.endGame = false;
 				}
+
+                // If the game is fading, save the scores and start Closing Time
 				if (!fadingOut && fadeOut) {
 						sendVariablestoScoreScreen ();
 						StartCoroutine (ClosingTime ());
 				}
-				//updates time on screen
-		        else {
-						timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
-				}
-				if (variables.lettersRemaining > variables.boardSize) {
+                else //updates time on screen
+                    timeRemaining.text = "Time: " + Mathf.RoundToInt (variables.globalTimer).ToString ();
+				
+                // Update the Tiles remaining text
+				if (variables.lettersRemaining > variables.boardSize)
 						lettersRemaining.text = "TILES: " + (variables.lettersRemaining - variables.boardSize).ToString ();
-				} else {
+				else 
 						lettersRemaining.text = "Tiles: " + 0;
-				}
                 
 				//Debug.Log ("playerprefs instructions: " + PlayerPrefs.GetInt("instructions"));
 				// if the instructions is enabled 
-				if (PlayerPrefs.GetInt ("instructions") == 0) {
+				if (PlayerPrefs.GetInt ("instructions") == 0)
 						tutorial.SetActive (true);
-						//instructionsClose.SetActive(true);
-				} else {
-						tutorial.SetActive (false);
-						//instructionsClose.SetActive(false);
-				}
-//		highlights and character tastes that are currently pleased
+                else 
+                        tutorial.SetActive (false);
+				
+                // highlights and character tastes that are currently pleased
 				//for (int i = 0; i < tasteHighlighters.Length; i++) {
 				//		if (variables.timeToHighlightTaste [i]) {
 				//tasteHighlighters [i].transform.renderer.enabled = true;
-				if (variables.timeToHighlightTaste [0] && letterController.numLettersOnStove > 1) {
+				if (variables.timeToHighlightTaste [0] && letterController.numLettersOnStove > 1)
 						tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopHighLights [character1Num]);
-				} else {
+				else
 						tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
-				}
-
-				if (variables.timeToHighlightTaste [1] && letterController.numLettersOnStove > 1) {
-						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
-				} else {
-						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
-				}
-				if (variables.timeToHighlightTaste [2] && letterController.numLettersOnStove > 1) {
-						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
-				} else {
-						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
-				}
-				if (variables.timeToHighlightTaste [3] && letterController.numLettersOnStove > 1) {
-						tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
-
                 
-				} else {
+				if (variables.timeToHighlightTaste [1] && letterController.numLettersOnStove > 1)
+						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
+				else
+						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
+
+				if (variables.timeToHighlightTaste [2] && letterController.numLettersOnStove > 1)
+						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
+				else
+						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
+				
+				if (variables.timeToHighlightTaste [3] && letterController.numLettersOnStove > 1) 
+						tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
+                else
 						tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
-				}
+				
                                                                                    
 
 				//unhilights all tastes if the letters on the stove do not form a word
@@ -211,6 +209,7 @@ public class wordBuildingController : MonoBehaviour
                
 		}
 
+        // A coroutine that slowly fades the screen, plays sounds and loads the next level
 		IEnumerator ClosingTime ()
 		{
 				print ("END THE GAME FADE IT OUT");
@@ -235,7 +234,8 @@ public class wordBuildingController : MonoBehaviour
 				Application.LoadLevel ("ScoreScreen");
 		
 		}
-	
+	    
+        // This saves the current scores and stats to PlayerPrefs so the receipt can access them
 		public void sendVariablestoScoreScreen ()
 		{
 				//updates score related variables 
@@ -263,6 +263,7 @@ public class wordBuildingController : MonoBehaviour
 				} else {
 						mode = 0;
 				}
+                // This saves the game info to analytics
 				GA.API.Design.NewEvent ("mode", mode);
 				GA.API.Design.NewEvent ("score", variables.score);
 				GA.API.Design.NewEvent ("character1", character1Num);
@@ -273,7 +274,8 @@ public class wordBuildingController : MonoBehaviour
 				GA.API.Design.NewEvent ("character1Score", character1.GetComponent<Character> ().scoreFedToMe);
 				GA.API.Design.NewEvent ("character2Score", character2.GetComponent<Character> ().scoreFedToMe);
 		}
-
+        
+        // Flash the screen if time is running out
 		public void AlertPlayer ()
 		{
 				if (variables.globalTimer < variables.secondAlert && !secondAlert) {
@@ -286,7 +288,8 @@ public class wordBuildingController : MonoBehaviour
 						StartCoroutine (FlashColor (alertFlash));
 				}
 		}
-
+        
+        // A coroutine for flashing the screen
 		IEnumerator FlashColor (GameObject flash)
 		{
 				Vector3 normalSize = timeRemaining.transform.localScale;
@@ -331,24 +334,18 @@ public class wordBuildingController : MonoBehaviour
 						flashOnce = false;
 						StartCoroutine (FlashColor (flash));
 				}
-
 		}
 
-
-
+        // Sets all taste texts to their unhighlighted counterparts
 		public void unhightlightAllTastes ()
 		{
-				/*for (int i = 0; i < tasteHighlighters.Length; i++) {
-						tasteHighlighters [i].transform.renderer.enabled = false;
-						variables.timeToHighlightTaste [i] = false;
-				}
-    */
 				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
 				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
 				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
 				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 		}
 
+        // Sets the correct textures for the taste elements
 		public void SetDisplayColors ()
 		{
 				//for taste panels, index 0 is left and index 1 is right side
@@ -377,6 +374,4 @@ public class wordBuildingController : MonoBehaviour
 				}
     */            
 		}
-
-
 }
