@@ -3,6 +3,20 @@ using System.Collections.Generic;
 
 public class Character : MonoBehaviour
 {
+
+		public class scoredWord
+		{
+				public string word = "";
+				public int baseScore = 0;
+				public int multiplier = 1;
+				public int bigMealBonus = 0;
+				public int totalScore = 0;
+
+				public void Dump ()
+				{
+						Debug.Log (this.word + " " + this.baseScore + " " + this.multiplier + " " + this.bigMealBonus + " " + this.totalScore);
+				}
+		}
     #region Variables
 		// This is a list of delegates (i.e functions) 
 		// Each is given a word and returns the taste multiplier for that word. 
@@ -60,33 +74,37 @@ public class Character : MonoBehaviour
 
     #region Score Related Methods
 		// Given a word this handles all taste handling and updates the scene accordingly
-		public int Likes (string word)
+		public scoredWord Likes (string word)
 		{
+				scoredWord wordToReturn = new scoredWord ();
 				if (characterNum != 0) { //If we're not the trash character... 
 						if (word != null && letterControl.checkForWord (word) == false) {
 								Debug.Log ("Not a word and this isn't the trash character");
 								variables.sadSound = 12;
-								GetComponent<Animator>().SetTrigger ("sad");
-								return 0;
+								GetComponent<Animator> ().SetTrigger ("sad");
+								return wordToReturn;
 						}
 				} else {
 						//If we ARE the trash character, don't let people throw away single letters
 						if (word.Length < variables.minLettersToTrash) {
 								Debug.Log (string.Format ("You can't throw away fewer than {0} letter. The GDD says so.", variables.minLettersToTrash - 1));
-								return 0;
+								return wordToReturn;
 						}
 				}
 				//If we get here, either we're the trash character, or it was a proper word
 				//Debug.Log("About to score the word");
-
-				float tempScore = ScoreWord (word);
-				return (int)tempScore;
+				wordToReturn = ScoreWord (word);
+				//wordToReturn.Dump ();
+				return wordToReturn;
 		}
 
 		// Sums the score of the letters, then multiplies it by all the taste modifiers, 
 		// then does bigmealbonus and doubleTasteMatchBonus
-		float ScoreWord (string word)
+		scoredWord ScoreWord (string word)
 		{
+				scoredWord wordToReturn = new scoredWord ();
+				//stash our word
+				wordToReturn.word = word;
 				mostRecentMultiplier = 0;
 				float wordScore = 0;
 				if (word != null && characterNum != 0) { //If we have a word and we're not the trash character
@@ -99,46 +117,46 @@ public class Character : MonoBehaviour
 								numLettersFedToMe++;
 								variables.lettersRemaining--;
 						}
+						//stash the base score
+						wordToReturn.baseScore = (int)wordScore;
 						variables.mostRecentLetterScore = (int)wordScore;
-						Debug.Log ("Score for the letters in " + word + " is " + wordScore);
+						//Debug.Log ("Score for the letters in " + word + " is " + wordScore);
 						int tastesMatched = 0; //Reset the number of tastes matched
-						float beforeScore; //for comparing before and after taste-matching scores so we can count number of tastes matched
-						float tasteMultiplier = 0; //for storing the tasteMultiplier. We start with 1 for no tastes matched, as per the GDD.
+						float tasteMultiplier = 0; //for storing the tasteMultiplier.
 						foreach (TasteCollection.Taste t in myTastes) { //Go through each taste this character's got and add up the total multiplier
 								tasteMultiplier += t (word);
 								if (t (word) > 0)  //If this taste matched
-										tastesMatched++;
+										tastesMatched++; //increase the tastes matched counter
 						}
-						if (tasteMultiplier != 0) //If we have a tasteMultiplier at all... (if we matched any tastes)
-								wordScore *= tasteMultiplier; //multiply our wordScore by it
-						variables.mostRecentWordScore = (int)wordScore;
-						mostRecentMultiplier = (int)tasteMultiplier;
-						//variables.mostRecentBonus = (int)wordScore - variables.mostRecentLetterScore;
+						//So now we know how many tastes were matched, and the multiplier for those matches
+						//Now check and see if we get the double taste match bonus and apply it if so.
+						if (tastesMatched > 1) {
+								tasteMultiplier *= variables.doubleTasteMatchBonus;
+								variables.doubleTasteSound = true; //Make sure we play that sound
+						}
+						//Stash the taste multiplier if we have one, now that we're done computing it.
+						if (tasteMultiplier > 0)
+							wordToReturn.multiplier = (int)tasteMultiplier;
+						//Now check to see if we get a Big Meal Bonus
+						if (variables.bigMealAdditives [word.Length - 2] != 0) {
+								//stash it if we get it!
+								wordToReturn.bigMealBonus = variables.bigMealAdditives [word.Length - 2];
+								variables.bigMealSound = true; //make sure we play THAT sound
+						}
+			//if your word length is not high enough, do not do anything for big meal bonus
+			else {
+								variables.bigMealSound = false;
+						}
+						//Now we're done and can compute and set everything else
+						wordToReturn.totalScore = wordToReturn.baseScore * wordToReturn.multiplier + wordToReturn.bigMealBonus;
+						variables.mostRecentWordScore = wordToReturn.totalScore;
+						mostRecentMultiplier = wordToReturn.multiplier;
 						//calculate the raw bonus score 
 						if (mostRecentMultiplier > 0) {
 								variables.bonus = true;
 						} else if (mostRecentMultiplier == 0) {
 								variables.bonus = false;
 						}
-						Debug.Log ("Score after tastes for " + word + " is " + wordScore);
-						if (tastesMatched > 1) {
-							wordScore *= variables.doubleTasteMatchBonus;
-							variables.doubleTasteSound = true;
-							Debug.Log ("Score after double taste-match bonus is " + wordScore);
-
-						}
-						
-						//if your word length is high enough to add a big meal bonus, do it and play the sound
-						if (variables.bigMealAdditives [word.Length - 2] != 0) {
-								wordScore += variables.bigMealAdditives [word.Length - 2];
-								variables.bigMealSound = true;
-						}
-            //if your word length is not high enough, do not do anything for big meal bonus
-            else {
-								variables.bigMealSound = false;
-						}
-						Debug.Log ("Score after bigmealbonus is " + wordScore);
-
 				} else if (characterNum == 0) { //if we are the trash character, still count the letters and their scores 
 						//					trashedLetters
 						foreach (char letter in word) {
@@ -150,11 +168,11 @@ public class Character : MonoBehaviour
 
 								//Trash Animation
 								Debug.Log ("Trashing Animation");
-								GetComponent<Animator>().SetTrigger ("eat");
+								GetComponent<Animator> ().SetTrigger ("eat");
 
 						}
 				}
-				return wordScore;
+				return wordToReturn;
 		}
 
 		//to check tastes for the characters when a word is on the stove
@@ -291,11 +309,11 @@ public class Character : MonoBehaviour
 						if (Application.loadedLevelName == "WordMaking") {
 								//uses lower res sprites if the phone is a 4s or older
 								if (characterNum != 0) {//ensures that the trash character does not have a programatically scaled spritesheet
-									if (CheckIPhoneType.OldPhone()) {
-										GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
-									} else {
-										GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
-									}
+										if (CheckIPhoneType.OldPhone ()) {
+												GetComponent<Animator> ().runtimeAnimatorController = compressedAnim;
+										} else {
+												GetComponent<Animator> ().runtimeAnimatorController = uncompressedAnim;
+										}
 								}
 								letterGenerator = GameObject.FindGameObjectWithTag ("letterController");
 								letterControl = letterGenerator.GetComponent<LetterController> ();
@@ -396,10 +414,18 @@ public class Character : MonoBehaviour
 								return;
 						}
 						//score the word - do we have a score?
-						int wordScore = Likes (word);
+						scoredWord thisWord = Likes (word);
+						Debug.Log ("In OnMouseUpAsButton: ");
+						thisWord.Dump ();
+						int wordScore = thisWord.totalScore; //the total score for the word that we were just fed
 						if (letterControl.checkForWord (word) == false)
 								variables.notWord = true;
 						//Debug.Log(word);
+						//Keep track of words fed to me!
+						int letterScore = 0;
+						foreach (char letter in word) {
+								letterScore += LetterController.letterScores [letter];
+						}
 						//If it was valid, we'll get a score above 0, so update our score and get that word out of here!
 						if (wordScore > 0) {
 								if (word.StartsWith ("funk")) {
@@ -410,7 +436,7 @@ public class Character : MonoBehaviour
                         //FRED EATING ANIMATION GOES HERE 
                         //return 23;
                         //Animation.CrossFade("KelvinEatingAnim");
-										GetComponent<Animator>().SetTrigger ("eat");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										Debug.Log ("Fred eating animation");
 										variables.eatingSound = 29;
 										break;
@@ -425,21 +451,21 @@ public class Character : MonoBehaviour
                         //SPIKE EATING ANIMATION GOES HERE
                         //return 26;
 										Debug.Log ("Spike eating animation");
-								GetComponent<Animator>().SetTrigger ("eat");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										variables.eatingSound = 31;
 										break;
 								case 4:
                         //STELLA EATING ANIMATION GOES HERE
                         //return 35;
 										Debug.Log ("Stella Eating Animation");
-										GetComponent<Animator>().SetTrigger ("eat");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										variables.eatingSound = 32;
 										break;
 								case 5:
                         //MEGAN EATING ANIMATION GOES HERE
                         //return 29;
 										Debug.Log ("Megan Eating Animation");
-										GetComponent<Animator>().SetTrigger ("eat");
+										GetComponent<Animator> ().SetTrigger ("eat");
 										variables.eatingSound = 33;
 										break;
 								default:
@@ -447,18 +473,6 @@ public class Character : MonoBehaviour
 										Debug.Log ("Default");
 										break;
 								}
-
-								//Keep track of words fed to me!
-								int letterScore = 0;
-								foreach (char letter in word) {
-										letterScore += LetterController.letterScores [letter];
-								}
-								//We've already got the total score, so we can figure the multiplier from the letterscore and the total score
-								//float multiplier = mostRecentMultiplier;
-
-								Debug.Log (word + " " + letterScore.ToString () + " " + mostRecentMultiplier.ToString ());
-
-								wordsFedToMe.Add (word + " " + letterScore + " " + mostRecentMultiplier);
 
 								//Output the score text
 								if (characterNum != 0) {
@@ -484,6 +498,7 @@ public class Character : MonoBehaviour
 								}
 
 								// output the multiplier
+								int bigMealBonus = 0;
 								if (characterNum != 0 && mostRecentMultiplier > 1) {
 										variables.multiplierText.color = Color.white;
 										variables.multiplierText.transform.localScale = new Vector3 (1.0f, 1.0f);
@@ -520,8 +535,12 @@ public class Character : MonoBehaviour
 								variables.score += wordScore;
 								//Keep track of this character's score.
 								scoreFedToMe += wordScore;
+								
+								//Make a string full of info about this word, for analytics and ScoreScreen purposes
+								string wordFed = thisWord.word + " " + thisWord.baseScore + " " + thisWord.multiplier + " " + thisWord.bigMealBonus + " " + thisWord.totalScore;
+								Debug.Log ("wordFed = " + wordFed);
+								wordsFedToMe.Add (wordFed);
 
-								//Debug.Log("The total score is" + variables.score);
 								letterControl.ResetStove ();
 
 								//Checks for bonus and sets value of happy sound for Audio Manager
