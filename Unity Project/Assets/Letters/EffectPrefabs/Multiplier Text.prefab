@@ -84,11 +84,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScore: 0
   totalScore: 0
-  multiplier: 5
+  multiplier: 3
   score: 0
   mult: 1
   trash: 0
-  bothTastes: 1
+  bothTastes: 0
   longWord: 0
   longWordPartTwo: 0
   bigMealBonusVal: 25
