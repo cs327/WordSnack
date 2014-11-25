@@ -111,13 +111,13 @@ public class ReceiptGUI : MonoBehaviour
 			{
 				wordInfo = char1WordsFed[i].Split(' ');
 				char1Word = wordInfo[0];
-				char1Score = (Convert.ToInt32(wordInfo[1])*Convert.ToInt32(wordInfo[2])).ToString();
+				char1Score = wordInfo[4].ToString();
 			}
 			if (i < char2WordsFed.Count)
 			{
 				wordInfo = char2WordsFed[i].Split(' ');
 				char2Word = wordInfo[0];
-				char2Score = (Convert.ToInt32(wordInfo[1]) * Convert.ToInt32(wordInfo[2])).ToString();
+				char2Score = wordInfo[4].ToString();
 			}
 			AddRow(char1Word, char1Score, char2Word, char2Score);
 		}
