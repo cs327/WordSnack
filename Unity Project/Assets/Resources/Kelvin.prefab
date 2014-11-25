@@ -74,7 +74,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -85,7 +84,7 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  compressedAnim: {fileID: 9100000, guid: 3c5fadc8deeb745bb8a20073ab360d8b, type: 2}
+  compressedAnim: {fileID: 9100000, guid: c3b7bf9bc739d488cad698e936e53673, type: 2}
   uncompressedAnim: {fileID: 9100000, guid: d215d4944d6e14509a0a43e745821f92, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000

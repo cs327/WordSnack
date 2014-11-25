@@ -83,8 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseScore: 6
-  totalScore: 18
-  multiplier: 3
+  totalScore: 6
+  multiplier: 0
   score: 1
   mult: 0
   trash: 0
