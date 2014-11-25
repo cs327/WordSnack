@@ -66,6 +66,26 @@ Transition:
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
+--- !u!1101 &110161623
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110227147}
+  m_DstState: {fileID: 110289930}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110162164
 Transition:
   serializedVersion: 2
@@ -95,6 +115,26 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110298448}
   m_DstState: {fileID: 110201621}
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: eat
+    m_EventTreshold: 0
+    m_ExitTime: 1
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110168140
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110289930}
+  m_DstState: {fileID: 110227147}
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_Conditions:
@@ -231,6 +271,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110227147
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TrashCan_Eating
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 34c622b5d5ce54d7f93248b99074e02b, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 83, y: 125, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110251498
 State:
   m_ObjectHideFlags: 3
@@ -276,6 +331,21 @@ State:
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
+--- !u!1102 &110289930
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TrashCan_Idle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: c80bdf389a0dc475e80295434f22e584, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 48, y: 60, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
 --- !u!1102 &110297698
 State:
   m_ObjectHideFlags: 3
@@ -313,21 +383,21 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110298448}
+  m_DefaultState: {fileID: 110289930}
   m_States:
-  - {fileID: 110298448}
-  - {fileID: 110201621}
+  - {fileID: 110289930}
+  - {fileID: 110227147}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110201621}
+      first: {fileID: 110227147}
       second:
-      - {fileID: 110130776}
+      - {fileID: 110161623}
     data:
-      first: {fileID: 110298448}
+      first: {fileID: 110289930}
       second:
-      - {fileID: 110162192}
+      - {fileID: 110168140}
     data:
       first: {fileID: 0}
       second: []
