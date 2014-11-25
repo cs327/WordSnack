@@ -41,8 +41,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.51000023, y: 3.78999996, z: 0}
+  m_Center: {x: -.330000013, y: 1.10000002, z: 0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -74,7 +74,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
