@@ -130,7 +130,7 @@ TextMesh:
   m_GameObject: {fileID: 100000}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: .800000012
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   transparentColor: {r: 0, g: 0, b: 0, a: 0}
   feedMeClicked: {fileID: 2800000, guid: a69c4d97295b34fe7b62e3e6fd2fafec, type: 3}
   feedMeUnClicked: {fileID: 2800000, guid: 39998085102eb4abdad00f248a97c605, type: 3}
-  loadingGUI: {fileID: 2800000, guid: f929edbb2a9754d19b1fde5396ba0c41, type: 3}
+  loadingGUI: {fileID: 2800000, guid: 6b40e4c1d3bef4918a0e5983cd67ddad, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
