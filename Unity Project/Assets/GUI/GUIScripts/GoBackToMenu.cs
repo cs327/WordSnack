@@ -34,10 +34,6 @@ public class GoBackToMenu : MonoBehaviour
 		{
 				s.sprite = menuUnclicked;
 				backToStart = true;			
-				//Get rid of the GameAnalytics objects so they don't submit things 7000 times
-				DestroyObject (GameObject.Find ("GA_SystemTracker"));
-				DestroyObject (GameObject.Find ("GA_AdSupport"));
-				DestroyObject (GameObject.Find ("GA_Controller"));
 //		ScoreLoadingScript.SetLoadingScreen();
 				Application.LoadLevel ("StartScreenTest");
 				clickSound = true;

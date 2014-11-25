@@ -154,8 +154,6 @@ public class Character : MonoBehaviour
 
 						}
 				}
-				//Keep track of this character's score.
-				scoreFedToMe += (int)wordScore;
 				return wordScore;
 		}
 
@@ -520,6 +518,8 @@ public class Character : MonoBehaviour
 
 								//update the score!
 								variables.score += wordScore;
+								//Keep track of this character's score.
+								scoreFedToMe += wordScore;
 
 								//Debug.Log("The total score is" + variables.score);
 								letterControl.ResetStove ();

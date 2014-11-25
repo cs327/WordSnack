@@ -269,10 +269,26 @@ public class wordBuildingController : MonoBehaviour
 				GA.API.Design.NewEvent ("character1", character1Num);
 				GA.API.Design.NewEvent ("character2", character2Num);
 				GA.API.Design.NewEvent ("trashed_letters", variables.trashedLetters);
-				GA.API.Design.NewEvent ("wordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
-				GA.API.Design.NewEvent ("wordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
+				GA.API.Design.NewEvent ("numwordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
+				GA.API.Design.NewEvent ("numwordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
 				GA.API.Design.NewEvent ("character1Score", character1.GetComponent<Character> ().scoreFedToMe);
 				GA.API.Design.NewEvent ("character2Score", character2.GetComponent<Character> ().scoreFedToMe);
+				//For Analytics. Why, oh why, would we do this this way, you say? Because, I say,
+				//I picked the wrong analytics service and they don't support sending arrays at all,
+				//and the only way they support sending strings is as an error message. -Josiah
+				string wordsFedToCharacter1 = "1,";
+				string wordsFedToCharacter2 = "2,";
+				foreach (string word in character1.GetComponent<Character> ().wordsFedToMe) {
+						wordsFedToCharacter1 += word + ",";
+				}
+				foreach (string word in character2.GetComponent<Character> ().wordsFedToMe) {
+						wordsFedToCharacter2 += word + ",";
+				}
+				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter1);
+				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter2);
+				//Submit our Analytics Queue. This should make this happen once per Score Screen load.
+				GA_Queue.ForceSubmit ();
+				//Debug.Log ("Forcing GA Submission.");
 		}
         
         // Flash the screen if time is running out
