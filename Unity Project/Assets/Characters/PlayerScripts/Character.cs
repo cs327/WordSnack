@@ -293,7 +293,7 @@ public class Character : MonoBehaviour
 						if (Application.loadedLevelName == "WordMaking") {
 								//uses lower res sprites if the phone is a 4s or older
 								if (characterNum != 0) {//ensures that the trash character does not have a programatically scaled spritesheet
-									if (true || CheckIPhoneType.OldPhone()) {
+									if (CheckIPhoneType.OldPhone()) {
 										GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
 									} else {
 										GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
