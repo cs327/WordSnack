@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScore: 0
   totalScore: 0
-  multiplier: 3
+  multiplier: 4
   score: 0
   mult: 1
   trash: 0

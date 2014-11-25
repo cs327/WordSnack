@@ -233,8 +233,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 330567f64d94b468c9736d830d260af1, type: 3}
   - {fileID: 2800000, guid: d86a34fad0955423a8102705d412e263, type: 3}
   - {fileID: 2800000, guid: 4f1e818b818c2443f834304e0b0f00ae, type: 3}
-  - {fileID: 2800000, guid: 74eabc04384434932bce3efffb566201, type: 3}
-  - {fileID: 2800000, guid: 161f37030851849f2aad4c89589fee8f, type: 3}
+  - {fileID: 2800000, guid: 2e462bd6b4e344a7b8856b9f6e812166, type: 3}
+  - {fileID: 2800000, guid: 3a8d2878a49fd4ab7b5cec22183c573f, type: 3}
 --- !u!4 &72737057
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,11 +1609,11 @@ Prefab:
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: reflectionTextures.Array.data[10]
       value: 
-      objectReference: {fileID: 2800000, guid: 74eabc04384434932bce3efffb566201, type: 3}
+      objectReference: {fileID: 2800000, guid: 2e462bd6b4e344a7b8856b9f6e812166, type: 3}
     - target: {fileID: 11400000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
       propertyPath: reflectionTextures.Array.data[11]
       value: 
-      objectReference: {fileID: 2800000, guid: 161f37030851849f2aad4c89589fee8f, type: 3}
+      objectReference: {fileID: 2800000, guid: 3a8d2878a49fd4ab7b5cec22183c573f, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 421344511e8974370ad7baf861cfc698, type: 2}
   m_RootGameObject: {fileID: 72737055}
