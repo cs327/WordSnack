@@ -1,7 +1,5 @@
 ﻿using System.Configuration;
-using System.Threading;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -213,10 +211,6 @@ public class ReceiptGUI : MonoBehaviour
 		
 		
 		#endregion
-//		if (GameObject.Find("WordsFed") != null) {
-//			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-//		}
-//		//test.text = ScoreManager.ToString();
 	}
 	
 	// Given the strings to be displayed on a row, as well as the row number (starting at zero)
@@ -259,12 +253,5 @@ public class ReceiptGUI : MonoBehaviour
 		//		test.text = "Rows: " + rowCount;
 		Vector3 currentPos = bottomInstance.transform.position;
 		//bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
-	}
-	
-	//Method to display words fed
-	void DisplayWordsFed()
-	{
-		
-		
 	}
 }

@@ -12,6 +12,7 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
+        // The highlighted versions of a character's taste
 		public Texture2D[] leftBottomHighLights = new Texture2D [6];
 		public Texture2D[] rightBottomHighLights = new Texture2D [6];
 		public Texture2D[] leftTopHighLights = new Texture2D [6];
