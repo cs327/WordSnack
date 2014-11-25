@@ -5,56 +5,64 @@ using System.Security.Cryptography;
 
 public class wordBuildingController : MonoBehaviour
 {
-		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
 		//public GameObject[] highlightPanels = new GameObject [4];
 		public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
-		// The highlighted versions of a character's taste
-		public Texture2D[] leftBottomHighLights = new Texture2D [6];
-		public Texture2D[] rightBottomHighLights = new Texture2D [6];
-		public Texture2D[] leftTopHighLights = new Texture2D [6];
-		public Texture2D[] rightTopHighLights = new Texture2D [6];
+        // The taste information
 		public Texture2D[] leftTopTaste = new Texture2D [6];
 		public Texture2D[] rightTopTaste = new Texture2D [6];
 		public Texture2D[] leftBottomTaste = new Texture2D [6];
 		public Texture2D[] rightBottomTaste = new Texture2D [6];
-		public bool fadingOut = false;
-		public bool fadeOut = false;
-		public GameObject greyOut;
-		public GameObject closingTimeText;
-		public GameObject alertFlash;
-		public bool alertStarted = false;
-		public bool secondAlert = false;
-		public bool flashOnce = true;
-		public bool flashRedAgain = false;
+        // The highlighted versions of the characters' tastes
+        public Texture2D[] leftBottomHighLights = new Texture2D[6];
+        public Texture2D[] rightBottomHighLights = new Texture2D[6];
+        public Texture2D[] leftTopHighLights = new Texture2D[6];
+        public Texture2D[] rightTopHighLights = new Texture2D[6];
+        // Where to position the highlighted versions of the tastes
+        public Vector3[] tasteHighLightPos = new Vector3[4];
+        public GameObject[] tasteHighlighters = new GameObject[4];
+
+        // The characters on screen
+        public GameObject[] characters = new GameObject[6];
+        public GameObject character1;
+        public GameObject character2;
+        public GameObject trashCharacter;
+        int character1Num = 1;
+        int character2Num = 2;
+        // The sprites for character tastes
+        public GameObject char1Taste1;
+        public GameObject char1Taste2;
+        public GameObject char2Taste1;
+        public GameObject char2Taste2;
+        // for diner reflections
+        public GameObject rightCharacterReflection;
+        public GameObject leftCharacterReflection;
+        public Texture2D[] reflectionTextures = new Texture2D[12];
+
+        // Interface controllers and text meshes
 		public VariableControl variables;
 		public GameObject variableController;
 		public Texture2D endGameButton;
-		int character1Num = 1;
-		int character2Num = 2;
-		public GameObject character1;
-		public GameObject character2;
-		public GameObject trashCharacter;
-		public GameObject tutorial;
-		//public GameObject instructionsClose;
-		public TextMesh lettersRemaining;
-		public TextMesh timeRemaining;
-		public GameObject char1Taste1;
-		public GameObject char1Taste2;
-		public GameObject char2Taste1;
-		public GameObject char2Taste2;
-		public Vector3[] tasteHighLightPos = new Vector3[4];
-		public GameObject[] tasteHighlighters = new GameObject[4];
-		public GameObject letterCon;
-		LetterController letterController;
+        public GameObject tutorial;
+        public TextMesh lettersRemaining;
+        public TextMesh timeRemaining;
+        // Manages the letter counts and stove details
+        public GameObject letterCon;
+        LetterController letterController;
 
-		// for diner reflections
-		public GameObject rightCharacterReflection;
-		public GameObject leftCharacterReflection;
-		public Texture2D[] reflectionTextures = new Texture2D[12];
+        // For whether the game should transition to summary screen
+        public bool fadingOut = false;
+        public bool fadeOut = false;
+        public GameObject greyOut;
+        public GameObject closingTimeText;
+        public GameObject alertFlash;
+        public bool alertStarted = false;
+        public bool secondAlert = false;
+        public bool flashOnce = true;
+        public bool flashRedAgain = false;
  
 		// Use this for initialization
 		void Start ()
@@ -341,6 +349,8 @@ public class wordBuildingController : MonoBehaviour
 				}
 
 		}
+
+
 
 		public void unhightlightAllTastes ()
 		{
