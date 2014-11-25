@@ -4159,8 +4159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54e0d6f3e581c4cf2bedb2436b629cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shufflePressed: {fileID: 21300000, guid: c855335b5d0c44177b778a5df053a1c9, type: 3}
-  shuffleUnPressed: {fileID: 21300000, guid: 0b5759045620d4cc39da7be04e13cc9a, type: 3}
+  shufflePressed: {fileID: 21300000, guid: 1ff311d555f5148e283a224d4bd33fbd, type: 3}
+  shuffleUnPressed: {fileID: 21300000, guid: 09bab7106855442bdbbf59240e4d9460, type: 3}
 --- !u!212 &1355528221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5591,6 +5591,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.6050005
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9bc1abb2dcc5749f08a74bd83953aa89, type: 2}
+      propertyPath: shufflePressed
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ff311d555f5148e283a224d4bd33fbd,
+        type: 3}
+    - target: {fileID: 11400000, guid: 9bc1abb2dcc5749f08a74bd83953aa89, type: 2}
+      propertyPath: shuffleUnPressed
+      value: 
+      objectReference: {fileID: 21300000, guid: 09bab7106855442bdbbf59240e4d9460,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bc1abb2dcc5749f08a74bd83953aa89, type: 2}
   m_RootGameObject: {fileID: 1355528218}
