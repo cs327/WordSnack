@@ -5,57 +5,64 @@ using System.Security.Cryptography;
 
 public class wordBuildingController : MonoBehaviour
 {
-		public GameObject[] characters = new GameObject[6];
 		//for taste panels, index 0 is left and index 1 is right side
 		public GameObject[] tastePanels = new GameObject [2];
 		//public GameObject[] highlightPanels = new GameObject [4];
 		public GameObject[] tasteTexts = new GameObject[4];
 		public Texture2D[] leftPanels = new Texture2D [6];
 		public Texture2D[] rightPanels = new Texture2D [6];
-		public Texture2D[] leftBottomHighLights = new Texture2D [6];
-		public Texture2D[] rightBottomHighLights = new Texture2D [6];
-		public Texture2D[] leftTopHighLights = new Texture2D [6];
-		public Texture2D[] rightTopHighLights = new Texture2D [6];
+        // The taste information
 		public Texture2D[] leftTopTaste = new Texture2D [6];
 		public Texture2D[] rightTopTaste = new Texture2D [6];
 		public Texture2D[] leftBottomTaste = new Texture2D [6];
 		public Texture2D[] rightBottomTaste = new Texture2D [6];
-		public bool fadingOut = false;
-		public bool fadeOut = false;
-		public GameObject greyOut;
-		public GameObject closingTimeText;
-		public GameObject alertFlash;
-		public bool alertStarted = false;
-		public bool secondAlert = false;
-		public bool flashOnce = true;
-		public bool flashRedAgain = false;
+        // The highlighted versions of the characters' tastes
+        public Texture2D[] leftBottomHighLights = new Texture2D[6];
+        public Texture2D[] rightBottomHighLights = new Texture2D[6];
+        public Texture2D[] leftTopHighLights = new Texture2D[6];
+        public Texture2D[] rightTopHighLights = new Texture2D[6];
+        // Where to position the highlighted versions of the tastes
+        public Vector3[] tasteHighLightPos = new Vector3[4];
+        public GameObject[] tasteHighlighters = new GameObject[4];
 
+        // The characters on screen
+        public GameObject[] characters = new GameObject[6];
+        public GameObject character1;
+        public GameObject character2;
+        public GameObject trashCharacter;
+        int character1Num = 1;
+        int character2Num = 2;
+        // The sprites for character tastes
+        public GameObject char1Taste1;
+        public GameObject char1Taste2;
+        public GameObject char2Taste1;
+        public GameObject char2Taste2;
+        // for diner reflections
+        public GameObject rightCharacterReflection;
+        public GameObject leftCharacterReflection;
+        public Texture2D[] reflectionTextures = new Texture2D[12];
+
+        // Interface controllers and text meshes
 		public VariableControl variables;
 		public GameObject variableController;
 		public Texture2D endGameButton;
-		int character1Num = 1;
-		int character2Num = 2;
-		public GameObject character1;
-		public GameObject character2;
-		public GameObject trashCharacter;
-		public GameObject tutorial;
-		//public GameObject instructionsClose;
-		public TextMesh lettersRemaining;
-		public TextMesh timeRemaining;
-		public GameObject char1Taste1;
-		public GameObject char1Taste2;
-		public GameObject char2Taste1;
-		public GameObject char2Taste2;
-		public Vector3[] tasteHighLightPos = new Vector3[4];
-		public GameObject[] tasteHighlighters = new GameObject[4];
+        public GameObject tutorial;
+        public TextMesh lettersRemaining;
+        public TextMesh timeRemaining;
+        // Manages the letter counts and stove details
+        public GameObject letterCon;
+        LetterController letterController;
 
-		public GameObject letterCon;
-		LetterController letterController;
-
-		// for diner reflections
-		public GameObject rightCharacterReflection;
-		public GameObject leftCharacterReflection;
-		public Texture2D[] reflectionTextures = new Texture2D[12];
+        // For whether the game should transition to summary screen
+        public bool fadingOut = false;
+        public bool fadeOut = false;
+        public GameObject greyOut;
+        public GameObject closingTimeText;
+        public GameObject alertFlash;
+        public bool alertStarted = false;
+        public bool secondAlert = false;
+        public bool flashOnce = true;
+        public bool flashRedAgain = false;
  
 		// Use this for initialization
 		void Start ()
@@ -261,10 +268,26 @@ public class wordBuildingController : MonoBehaviour
 				GA.API.Design.NewEvent ("character1", character1Num);
 				GA.API.Design.NewEvent ("character2", character2Num);
 				GA.API.Design.NewEvent ("trashed_letters", variables.trashedLetters);
-				GA.API.Design.NewEvent ("wordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
-				GA.API.Design.NewEvent ("wordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
+				GA.API.Design.NewEvent ("numwordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
+				GA.API.Design.NewEvent ("numwordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
 				GA.API.Design.NewEvent ("character1Score", character1.GetComponent<Character> ().scoreFedToMe);
 				GA.API.Design.NewEvent ("character2Score", character2.GetComponent<Character> ().scoreFedToMe);
+				//For Analytics. Why, oh why, would we do this this way, you say? Because, I say,
+				//I picked the wrong analytics service and they don't support sending arrays at all,
+				//and the only way they support sending strings is as an error message. -Josiah
+				string wordsFedToCharacter1 = "1,";
+				string wordsFedToCharacter2 = "2,";
+				foreach (string word in character1.GetComponent<Character> ().wordsFedToMe) {
+						wordsFedToCharacter1 += word + ",";
+				}
+				foreach (string word in character2.GetComponent<Character> ().wordsFedToMe) {
+						wordsFedToCharacter2 += word + ",";
+				}
+				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter1);
+				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter2);
+				//Submit our Analytics Queue. This should make this happen once per Score Screen load.
+				GA_Queue.ForceSubmit ();
+				//Debug.Log ("Forcing GA Submission.");
 		}
 
 		public void AlertPlayer ()

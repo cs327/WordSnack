@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0c0342116464e26abb476a494c827a, type: 3}
   m_Name: GA_Settings
   m_EditorClassIdentifier: 
-  TotalMessagesSubmitted: 73
+  TotalMessagesSubmitted: 79
   TotalMessagesFailed: 0
   DesignMessagesSubmitted: 32
   DesignMessagesFailed: 0
   QualityMessagesSubmitted: 0
   QualityMessagesFailed: 0
-  ErrorMessagesSubmitted: 41
+  ErrorMessagesSubmitted: 47
   ErrorMessagesFailed: 0
   BusinessMessagesSubmitted: 0
   BusinessMessagesFailed: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
   GameKey: edad1246d65557dc8732119343a2ae6f
   SecretKey: 7671077d3c085e7abcd0b50bf8965fd88279cec4
   ApiKey: 7c4ee83579c1bf7f16a32d1df06dcb48ddb395fd
-  Build: 0.2.1
+  Build: debugging
   SignUpOpen: 0
   FirstName: 
   LastName: 

@@ -1,7 +1,5 @@
 ﻿using System.Configuration;
-using System.Threading;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -128,23 +126,21 @@ public class ReceiptGUI : MonoBehaviour
 		#region High Score Sup
 		string gameMode = PlayerPrefs.GetInt("timed") == 1 ? "timed" : "casual";
 		Debug.Log("Current gamemode is " + gameMode);
-		
+
 		// If the current score is the best score
 		if (ScoreManager.CheckNewHighScore(char1String, char2String, gameMode, PlayerPrefs.GetFloat("Score")))
 		{
 			Debug.Log("NEW HIGH SCORE: \n    " +
 			          ((int)PlayerPrefs.GetFloat("Score")).ToString());
-			GameObject.Find("HighScoreText").GetComponent<TextMesh>().color = new Vector4(0.62F, 0.08F, 0, 1);
-			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = 
-				"NEW HIGH SCORE: \n" +
-					ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
+//			GameObject.Find("HighScoreText").GetComponent<TextMesh>().color = new Vector4(0.62F, 0.08F, 0, 1);
+			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = "NEW HIGH \n SCORE:";
 		}
 		else // Find the previous best instead
 		{
-			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text =
-				"HIGH SCORE: \n" +
-					ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
+			GameObject.Find("HighScoreText").GetComponent<TextMesh>().text = "HIGH SCORE:";
+
 		}
+		GameObject.Find("HighScoreNum").GetComponent<TextMesh>().text = ScoreManager.GetPlayerPrefsScore(char1String, char2String, gameMode).ToString();
 		
 //		if (rowCount == 0)
 //		{
@@ -213,10 +209,6 @@ public class ReceiptGUI : MonoBehaviour
 		
 		
 		#endregion
-//		if (GameObject.Find("WordsFed") != null) {
-//			test.text = GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score.ToString();
-//		}
-//		//test.text = ScoreManager.ToString();
 	}
 	
 	// Given the strings to be displayed on a row, as well as the row number (starting at zero)
@@ -259,12 +251,5 @@ public class ReceiptGUI : MonoBehaviour
 		//		test.text = "Rows: " + rowCount;
 		Vector3 currentPos = bottomInstance.transform.position;
 		//bottomInstance.transform.position = new Vector3(currentPos.x, gameObject.transform.position.y - ((rowCount + 3)* rowOffset), currentPos.z);
-	}
-	
-	//Method to display words fed
-	void DisplayWordsFed()
-	{
-		
-		
 	}
 }
