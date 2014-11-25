@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+// Used for maintaining 
 public class LetterController : MonoBehaviour
 {
-		VariableControl variables = new VariableControl ();
+        #region Variables
+        VariableControl variables = new VariableControl ();
 		public bool lastHand = false;
 		public bool noWordsLeft = false;
 		public letterBehaviour letterObj;
@@ -42,15 +44,16 @@ public class LetterController : MonoBehaviour
 		//letter tuning from Josiah 
 		private char[] vowelList = {'a', 'e', 'i', 'o', 'u'};
 		private char[] consonantList =
-	{
-		'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
-		't', 'v', 'w', 'x', 'y', 'z',
-	};
+	    {
+		    'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
+		    't', 'v', 'w', 'x', 'y', 'z',
+	    };
 		public int numVowels;
 		public bool stopSearch = false;
 
+        #endregion
 
-		// Use this for initialization
+        // Use this for initialization
 		void Start ()
 		{
 				//initialize variablecontrol reference
@@ -86,7 +89,6 @@ public class LetterController : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{
-			
 				string word = sendWord ();
 				//check if there even is a word!
 				if (word == null || word.Length < variables.minWordLength || !checkForWord (word)) {
@@ -149,27 +151,27 @@ public class LetterController : MonoBehaviour
 //
 //		}
 
+        // Coroutine used to lerp letters towards a destination on screen.
 		IEnumerator animateLetters (letterBehaviour letterToMove, Vector3 currentSpot, Vector3 moveToHere, int index, string setUsed)
-		{
+		{   
+            letterToMove.isMoving = true;
 
-				letterToMove.isMoving = true;
-
-				Vector3 velocity = new Vector3 (0, 0, 0);
-				int dontCrash = 0;
+			Vector3 velocity = new Vector3 (0, 0, 0);
+			int dontCrash = 0;
 				
-		while (dontCrash < 100 && letterToMove.transform.position != moveToHere && !(setUsed == "stove" && lettersOnStove[index] == null)) {	
-						dontCrash++;
-						letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
-						yield return null;	
-				}
-				//}
-				letterToMove.isMoving = false;
-		if(setUsed == "stove" && lettersOnStove[index] == null){
-			print ("woulda been an error without this same check in the while statement");
+            // Move it towards 
+		    while (dontCrash < 100 && letterToMove.transform.position != moveToHere && !(setUsed == "stove" && lettersOnStove[index] == null)) {	
+					dontCrash++;
+					letterToMove.transform.position = Vector3.SmoothDamp (letterToMove.transform.position, moveToHere, ref velocity, .05f);
+					yield return null;	
+			}
+			
+			letterToMove.isMoving = false;
+		    if(setUsed == "stove" && lettersOnStove[index] == null)
+			    print ("woulda been an error without this same check in the while statement");
 		}
 
-		}
-
+        // Creates a steam prefabs for every tile on the stove 
 		void CreateSteam ()
 		{
 				stoveSteam = new GameObject[boardSize];
@@ -184,6 +186,7 @@ public class LetterController : MonoBehaviour
 				}
 		}
 
+        // Toggles whether steam particles are created or not.
 		void TurnOnOffSteam ()
 		{
 				for (int x = 0; x < boardSize; x++) {
@@ -194,10 +197,10 @@ public class LetterController : MonoBehaviour
 								stoveSteam [x].particleSystem.emissionRate = 0;
 								stoveHeat [x].particleSystem.emissionRate = 0;
 						}
-
 				}
 		}
-
+        
+        // Returns a random string of letters of length n
 		string returnLetters (int n)
 		{
 				//Random r = new Random();
