@@ -292,10 +292,12 @@ public class Character : MonoBehaviour
 						//Debug.Log("My character number is " + characterNum + " and I like " + thingsILike);
 						if (Application.loadedLevelName == "WordMaking") {
 								//uses lower res sprites if the phone is a 4s or older
-								if (CheckIPhoneType.OldPhone()) {
-									GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
-								} else {
-									GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
+								if (characterNum != 0) {//ensures that the trash character does not have a programatically scaled spritesheet
+									if (CheckIPhoneType.OldPhone()) {
+										GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
+									} else {
+										GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
+									}
 								}
 								letterGenerator = GameObject.FindGameObjectWithTag ("letterController");
 								letterControl = letterGenerator.GetComponent<LetterController> ();

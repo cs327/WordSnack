@@ -10,3 +10,6 @@ This step has 3 looks:
 -At any time, if the user taps a character's selected box, that selected box disappears and the character's card reappears.
 -When the user taps the "Feed Them!" button, they go to the Wordmaking phase.
 -Character selected boxes are not positioned in these files, but they are to scale.
+-“Previous Best:” green color is #d7fadb.
+-The high score white color is #f3fef4.
+-Previous best score should be center justified, and be small enough so that a four-digit score could fit on an iPhone 4 without cutting off. 

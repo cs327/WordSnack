@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: 04c0dfb6fdb624cfcaf89c0ddc12e16d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Nov24_HeroShipSpriteSheet_0
+    21300002: Nov24_HeroShipSpriteSheet_1
+    21300004: Nov24_HeroShipSpriteSheet_2
+    21300006: Nov24_HeroShipSpriteSheet_3
+    21300008: Nov24_HeroShipSpriteSheet_4
+    21300010: Nov24_HeroShipSpriteSheet_5
+    21300012: Nov24_HeroShipSpriteSheet_6
+    21300014: Nov24_HeroShipSpriteSheet_7
+    21300016: Nov24_HeroShipSpriteSheet_8
+    21300018: Nov24_HeroShipSpriteSheet_9
+    21300020: Nov24_HeroShipSpriteSheet_10
+    21300022: Nov24_HeroShipSpriteSheet_11
+    21300024: Nov24_HeroShipSpriteSheet_12
+    21300026: Nov24_HeroShipSpriteSheet_13
+    21300028: Nov24_HeroShipSpriteSheet_14
+    21300030: Nov24_HeroShipSpriteSheet_15
+    21300032: Nov24_HeroShipSpriteSheet_16
+    21300034: Nov24_HeroShipSpriteSheet_17
+    21300036: Nov24_HeroShipSpriteSheet_18
+    21300038: Nov24_HeroShipSpriteSheet_19
+    21300040: Nov24_HeroShipSpriteSheet_20
+    21300042: Nov24_HeroShipSpriteSheet_21
+    21300044: Nov24_HeroShipSpriteSheet_22
+    21300046: Nov24_HeroShipSpriteSheet_23
+    21300048: Nov24_HeroShipSpriteSheet_24
+    21300050: Nov24_HeroShipSpriteSheet_25
+    21300052: Nov24_HeroShipSpriteSheet_26
+    21300054: Nov24_HeroShipSpriteSheet_27
+    21300056: Nov24_HeroShipSpriteSheet_28
+    21300058: Nov24_HeroShipSpriteSheet_29
+    21300060: Nov24_HeroShipSpriteSheet_30
+    21300062: Nov24_HeroShipSpriteSheet_31
+    21300064: Nov24_HeroShipSpriteSheet_32
+    21300066: Nov24_HeroShipSpriteSheet_33
+    21300068: Nov24_HeroShipSpriteSheet_34
+    21300070: Nov24_HeroShipSpriteSheet_35
+    21300072: Nov24_HeroShipSpriteSheet_36
+    21300074: Nov24_HeroShipSpriteSheet_37
+    21300076: Nov24_HeroShipSpriteSheet_38
+    21300078: Nov24_HeroShipSpriteSheet_39
+    21300080: Nov24_HeroShipSpriteSheet_40
+    21300082: Nov24_HeroShipSpriteSheet_41
+    21300084: Nov24_HeroShipSpriteSheet_42
+    21300086: Nov24_HeroShipSpriteSheet_43
+    21300088: Nov24_HeroShipSpriteSheet_44
+    21300090: Nov24_HeroShipSpriteSheet_45
+    21300092: Nov24_HeroShipSpriteSheet_46
+    21300094: Nov24_HeroShipSpriteSheet_47
+    21300096: Nov24_HeroShipSpriteSheet_48
+    21300098: Nov24_HeroShipSpriteSheet_49
+    21300100: Nov24_HeroShipSpriteSheet_50
+    21300102: Nov24_HeroShipSpriteSheet_51
+    21300104: Nov24_HeroShipSpriteSheet_52
+    21300106: Nov24_HeroShipSpriteSheet_53
+    21300108: Nov24_HeroShipSpriteSheet_54
+    21300110: Nov24_HeroShipSpriteSheet_55
+    21300112: Nov24_HeroShipSpriteSheet_56
+    21300114: Nov24_HeroShipSpriteSheet_57
+    21300116: Nov24_HeroShipSpriteSheet_58
+    21300118: Nov24_HeroShipSpriteSheet_59
+    21300120: Nov24_HeroShipSpriteSheet_60
+    21300122: Nov24_HeroShipSpriteSheet_61
+    21300124: Nov24_HeroShipSpriteSheet_62
+    21300126: Nov24_HeroShipSpriteSheet_63
+    21300128: Nov24_HeroShipSpriteSheet_64
+    21300130: Nov24_HeroShipSpriteSheet_65
+    21300132: Nov24_HeroShipSpriteSheet_66
+    21300134: Nov24_HeroShipSpriteSheet_67
+    21300136: Nov24_HeroShipSpriteSheet_68
+    21300138: Nov24_HeroShipSpriteSheet_69
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Nov24_HeroShipSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 4608
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 4096
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 3584
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 3072
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 2560
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 2048
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 1536
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 1024
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 512
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Nov24_HeroShipSpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 1024
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

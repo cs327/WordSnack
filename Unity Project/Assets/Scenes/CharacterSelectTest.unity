@@ -420,7 +420,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -431,7 +430,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!65 &223167214
 BoxCollider:
@@ -662,7 +662,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -673,7 +672,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!65 &431109551
 BoxCollider:
@@ -977,7 +977,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 865782323}
   m_LocalRotation: {x: -3.09086232e-08, y: -.707106829, z: .707106829, w: -3.09086232e-08}
-  m_LocalPosition: {x: 4.45496464, y: 2.58229215e-06, z: 1.9388057}
+  m_LocalPosition: {x: 0, y: 10, z: 2.75}
   m_LocalScale: {x: .150000006, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 1889189543}
@@ -992,10 +992,10 @@ TextMesh:
   m_GameObject: {fileID: 865782323}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: .800000012
   m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
+  m_Anchor: 4
+  m_Alignment: 1
   m_TabSize: 0
   m_FontSize: 50
   m_FontStyle: 0
@@ -1003,7 +1003,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 875a11d5403dd064097bb40287e6e2ea, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4279877688
+    rgba: 4292606679
 --- !u!23 &865782326
 Renderer:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -1197,7 +1196,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!65 &921253903
 BoxCollider:
@@ -1318,7 +1318,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -1329,7 +1328,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!1 &1086486218
 GameObject:
@@ -1487,7 +1487,6 @@ MonoBehaviour:
   trashedLetterScore: 0
   numLettersFedToMe: 0
   rawScoreFedToMe: 0
-  rawBonusScoreFedToMe: 0
   scoreFedToMe: 0
   letterControl: {fileID: 0}
   letterGenerator: {fileID: 0}
@@ -1498,7 +1497,8 @@ MonoBehaviour:
   tasteObj: {fileID: 100000, guid: a3f633ed8bba240ebb6c788054be705a, type: 2}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  anim: {fileID: 0}
+  compressedAnim: {fileID: 0}
+  uncompressedAnim: {fileID: 0}
   selectScript: {fileID: 0}
 --- !u!65 &1087952191
 BoxCollider:
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   transparentColor: {r: 0, g: 0, b: 0, a: 0}
   feedMeClicked: {fileID: 2800000, guid: a69c4d97295b34fe7b62e3e6fd2fafec, type: 3}
   feedMeUnClicked: {fileID: 2800000, guid: 39998085102eb4abdad00f248a97c605, type: 3}
-  loadingGUI: {fileID: 2800000, guid: f929edbb2a9754d19b1fde5396ba0c41, type: 3}
+  loadingGUI: {fileID: 2800000, guid: 6b40e4c1d3bef4918a0e5983cd67ddad, type: 3}
 --- !u!65 &1889189539
 BoxCollider:
   m_ObjectHideFlags: 0
