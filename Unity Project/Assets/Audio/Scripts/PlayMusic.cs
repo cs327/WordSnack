@@ -354,10 +354,16 @@ public class PlayMusic : MonoBehaviour
 						//Next, checks for tastes if the character is not the trash character.
 						if (variables.chewingSound == 13) {
 
-                            if (variables.bigMealSound)
+                            if (variables.mostRecentWordScore >= 100)
                             {
-                                    audioManager.Play(38);
+                                audioManager.Play(38);
                             }
+
+                            else if (variables.bigMealSound)
+                            {
+                                audioManager.Play(39);
+                            }
+                            
                             //If only one taste is met, play "Taste matched sound.
                             //if ((variables.timeToHighlightTaste[0] && variables.timeToHighlightTaste[1]) || (variables.timeToHighlightTaste[2] && variables.timeToHighlightTaste[3]))
                             else if (variables.doubleTasteSound)
