@@ -523,9 +523,9 @@ public class Character : MonoBehaviour
 								scoreFedToMe += thisWord.totalScore;
 								
 								//Make a string full of info about this word, for analytics and ScoreScreen purposes
-								string wordFed = thisWord.word + " " + thisWord.baseScore + " " + thisWord.multiplier + " " + thisWord.bigMealBonus + " " + thisWord.totalScore;
+								string wordFed = thisWord.Dump (); //This method is written specifically to output the word in the correct format
 								Debug.Log ("wordFed = " + wordFed);
-								wordsFedToMe.Add (wordFed);
+								wordsFedToMe.Add (wordFed); //For analytics and ScoreScreen
 
 								letterControl.ResetStove ();
 
