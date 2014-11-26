@@ -6,9 +6,11 @@ public class ShuffleButtonHandler : MonoBehaviour {
 	LetterController l;
 	public Sprite shufflePressed;
 	public Sprite shuffleUnPressed;
+    
 	// Use this for initialization
 	void Start () {
 		l = GameObject.Find ("letterGeneration").GetComponent<LetterController> ();
+	    gameObject.GetComponent<SpriteRenderer>().sprite = shuffleUnPressed;
 	}
 	
 	// Update is called once per frame
