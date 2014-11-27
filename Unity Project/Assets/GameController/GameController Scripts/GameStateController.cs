@@ -47,14 +47,14 @@ public class GameStateController : MonoBehaviour {
 
 		//ends the game
 		if (variables.timeToEndGame) {
-			playController.sendVariablestoScoreScreen();
-			Application.LoadLevel("ScoreScreen");
 			variables.timeToEndGame = false;
 			//destroys the onscreen characters
 			for (int i = 0; i < variables.selectedCharacters.Length; i++) { 
 				Destroy(variables.selectedCharacters[i]);
 			}
 			stopTiming = true;
+            playController.sendVariablestoScoreScreen();
+            Application.LoadLevel("ScoreScreen");
 		}
 	}
 
