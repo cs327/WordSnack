@@ -563,7 +563,7 @@ public class Character : MonoBehaviour
                 }
 
                 // output the multiplier
-                if (characterNum != 0 && thisWord.multiplier > 1)
+                if (characterNum != 0 && (thisWord.multiplier > 1 || thisWord.bigMealBonus != 0))
                 {
                     variables.multiplierText.color = Color.white;
                     variables.multiplierText.transform.localScale = new Vector3(1.0f, 1.0f);
