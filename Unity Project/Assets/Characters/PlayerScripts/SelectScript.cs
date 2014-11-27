@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-public class SelectScript : MonoBehaviour {
-	//script reference 
+// Class used to manage character selection 
+public class SelectScript : MonoBehaviour
+{
+    #region Variables
+    //script reference 
 	public GameObject variableController;
 	VariableControl variables;
 	Character character;
@@ -30,9 +32,9 @@ public class SelectScript : MonoBehaviour {
 	public bool newSelect;
 	Camera camera;
 	Bounds characterBounds;
-	//-----------------------------------
-	
-	// Use this for initialization
+    #endregion
+
+    // Use this for initialization
 	void Start () {
 		//start the character with the correct sprite image (standby)
 		thisSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -63,13 +65,11 @@ public class SelectScript : MonoBehaviour {
 		}
 	}
 	
-	
-	
-	
+    // If you release the mouse on a character either add them to the selection 
+    // or deselect if they were already selected
 	void OnMouseUpAsButton () {
 		//change it to be selected or deselected based on what it already was
 		toggleSelect(); 
-		
 		
 		//only run the following during the selection phase
 		if (Application.loadedLevelName == "CharacterSelectTest"){
@@ -95,8 +95,7 @@ public class SelectScript : MonoBehaviour {
 					thisSprite.sprite = selectedImage;
 					
 					//if a player tries to select a character but there are already 2 characters selected, it toggles the select again
-					
-					
+
 				}
 				//makes the sprite renderer show the "selected" card and gives it the correct transform
 				
@@ -137,7 +136,6 @@ public class SelectScript : MonoBehaviour {
 				HighScore.text = "";
 			}
 		}
-		
 	}
 	
 	void toggleSelect ()
