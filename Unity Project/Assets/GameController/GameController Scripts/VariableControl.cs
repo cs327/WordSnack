@@ -66,8 +66,9 @@ public class VariableControl : MonoBehaviour
 		public float trashCollectionMult;
 		public float bigMealBonus;
 		public float doubleTasteMatchBonus;
+        // Given wordlength - 1, that index returns the bigMeal bonus for that word
+        // Currently the array contains [0,0,0,25,50,75,100] corresponding to 2 to 8 letter words
 		public int[] bigMealAdditives;
-
 
 		//tweakable character tastes
 		public int[] TastesForTrash;
