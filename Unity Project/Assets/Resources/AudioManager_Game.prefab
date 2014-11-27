@@ -139,7 +139,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4f3d221353a9e37448e1f457673bfe09, type: 3}
   - {fileID: 8300000, guid: a40e5a62d705b8f4db5ceb6d287ca94a, type: 3}
   - {fileID: 8300000, guid: 36a10826da8e39e4bbb64f434b1f7ca0, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: c5c20a3100e18874ba1d8310fc681a40, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -201,7 +201,7 @@ MonoBehaviour:
   - 1
   - .300000012
   - .5
-  - 1
+  - .5
   - 1
   - 1
   - 1
