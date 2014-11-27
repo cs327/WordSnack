@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class ScoreTextScript : MonoBehaviour {
-	
-	float alpha;
+public class ScoreTextScript : MonoBehaviour
+{
+    #region Variables
+    float alpha;
 	float timePassed;
 	float waitTime;
 	bool done;
@@ -11,11 +12,15 @@ public class ScoreTextScript : MonoBehaviour {
 	public int totalScore;
 	public float multiplier;
 	public bool score;
+    // Whether the Score represents a multiplier
 	public bool mult;
+    // Whether the score is for the trash character
 	public bool trash;
+    // Whether both tastes are met 
 	public bool bothTastes;
 	public bool longWord;
 	public bool longWordPartTwo;
+    // The bigmeal bonus, if any
 	public int bigMealBonusVal;
 	bool longWait;
 	bool firstWait;
@@ -28,8 +33,8 @@ public class ScoreTextScript : MonoBehaviour {
 	private bool exploded;
 	private ParticleSystem super1;
 	private ParticleSystem super2;
-	
-	// Use this for initialization
+    #endregion
+    // Use this for initialization
 	void Start () {
 		alpha = 1.0f;
 
@@ -68,9 +73,12 @@ public class ScoreTextScript : MonoBehaviour {
 		float scorePosY = 0.0f;
 		float sizes = 1.0f;
 
-		if (score) {
+		if (score)
+		{
+		    Debug.Log("Is a score prefab");
 			// it's a score prefab
-			// if there was a big meal bonus, we have to disregard it for now since it is displayed separately at the end of the counting
+			// if there was a big meal bonus, we have to disregard it for now since it is 
+            //displayed separately at the end of the counting
 			if (longWord) {
 				totalScore -= bigMealBonusVal;
 				longWord = false;
@@ -159,13 +167,14 @@ public class ScoreTextScript : MonoBehaviour {
 					}
 				}
 			}	
-
 		} else if (mult) {
 			// it's a multiplier prefab
 			if (timePassed > waitTime) {
 				
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
-				if (longWord && !firstWait) {
+				if (longWord && !firstWait)
+				{
+				    Debug.Log("Showing big meal visual");
 					GetComponent<TextMesh>().text = "+" + bigMealBonusVal + " Big Meal!";
 					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
 					GetComponent<TextMesh>().color = new Color(1.0f, 0.2f, 0.2f);
@@ -181,7 +190,10 @@ public class ScoreTextScript : MonoBehaviour {
 
 					// this 3.0 seems random, but it works best for the timing... :-)
 					alpha -= timeAmount * (3.0f - variables.ScoreFadeTime);
-					GetComponent<TextMesh> ().color = new Color (GetComponent<TextMesh> ().color.r, GetComponent<TextMesh> ().color.g, GetComponent<TextMesh> ().color.b, alpha);					
+					GetComponent<TextMesh> ().color = new Color (
+                        GetComponent<TextMesh> ().color.r, 
+                        GetComponent<TextMesh> ().color.g, 
+                        GetComponent<TextMesh> ().color.b, alpha);					
 				
 				} else {
 					GetComponent<TextMesh>().text = "x" + multiplier.ToString();

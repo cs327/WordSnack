@@ -535,7 +535,7 @@ public class Character : MonoBehaviour
                         break;
                 }
 
-                //Output the score text
+                //Output the score text 
                 if (characterNum != 0)
                 {
                     variables.scoreText.color = Color.white;
@@ -574,7 +574,7 @@ public class Character : MonoBehaviour
                     variables.multiplierText.GetComponent<ScoreTextScript>().trash = false;
                     variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().multiplier = thisWord.multiplier;
 
-                    if (variables.doubleTasteSound == true)
+                    if (variables.doubleTasteSound)
                     {
                         // both tastes were matched
                         variables.multiplierText.gameObject.GetComponent<ScoreTextScript>().bothTastes = true;

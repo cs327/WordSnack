@@ -6,18 +6,18 @@ public class WordMakingGUI : MonoBehaviour {
 	//float scale;
 	public GameObject variableController;
 	public VariableControl variableControl;
-	public TextMesh textMesh;
+	public TextMesh scoreTextMesh;
 
 	// Use this for initialization
 	void Start () {
 		//scale = Mathf.Max (Screen.width / 479.0f, Screen.height/ 319.0f);
 		variableControl = variableController.GetComponent<VariableControl> ();
-		textMesh = gameObject.GetComponent<TextMesh> ();
+		scoreTextMesh = gameObject.GetComponent<TextMesh> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		textMesh.text = "SCORE: " + variableControl.score.ToString();
+		scoreTextMesh.text = "SCORE: " + variableControl.score.ToString();
 	}
 
 //	void OnGUI(){
