@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variableController: {fileID: 1148986584}
   variableControl: {fileID: 0}
-  textMesh: {fileID: 0}
+  scoreTextMesh: {fileID: 0}
 --- !u!1 &275466624
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +604,7 @@ Transform:
   m_PrefabInternal: {fileID: 1743825998}
   m_GameObject: {fileID: 370837981}
   m_LocalRotation: {x: 0, y: -3.5527141e-15, z: -1.36013052e-14, w: 1}
-  m_LocalPosition: {x: .178100958, y: 1.50444198, z: 1.14791897e-06}
+  m_LocalPosition: {x: -.0258035082, y: 1.50444484, z: 3.41289615e-06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1684953695}
@@ -2864,7 +2864,7 @@ Transform:
   m_PrefabInternal: {fileID: 763386789}
   m_GameObject: {fileID: 971552200}
   m_LocalRotation: {x: 0, y: -3.5527141e-15, z: -1.36013052e-14, w: 1}
-  m_LocalPosition: {x: .178100958, y: 1.50444198, z: 1.14791897e-06}
+  m_LocalPosition: {x: -.0258035082, y: 1.50444484, z: 3.41289615e-06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1684953695}
