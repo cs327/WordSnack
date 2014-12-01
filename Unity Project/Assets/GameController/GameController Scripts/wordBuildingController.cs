@@ -374,10 +374,7 @@ public class wordBuildingController : MonoBehaviour
 				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
 				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 
-				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
-				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
-				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
-				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
+				
 
 
 				/*	if (variables.iPhoneType == 1) {
