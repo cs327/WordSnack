@@ -10,18 +10,18 @@ public class wordBuildingController : MonoBehaviour
 		public GameObject[] tastePanels = new GameObject [2];
 		//public GameObject[] highlightPanels = new GameObject [4];
 		public GameObject[] tasteTexts = new GameObject[4];
-		public Texture2D[] leftPanels = new Texture2D [6];
-		public Texture2D[] rightPanels = new Texture2D [6];
+		private Texture2D[] leftPanels = new Texture2D [6];
+		private Texture2D[] rightPanels = new Texture2D [6];
         // The taste information
-		public Texture2D[] leftTopTaste = new Texture2D [6];
-		public Texture2D[] rightTopTaste = new Texture2D [6];
-		public Texture2D[] leftBottomTaste = new Texture2D [6];
-		public Texture2D[] rightBottomTaste = new Texture2D [6];
+		private Texture2D[] leftTopTaste = new Texture2D [6];
+		private Texture2D[] rightTopTaste = new Texture2D [6];
+		private Texture2D[] leftBottomTaste = new Texture2D [6];
+		private Texture2D[] rightBottomTaste = new Texture2D [6];
         // The highlighted versions of the characters' tastes
-        public Texture2D[] leftBottomHighLights = new Texture2D[6];
-        public Texture2D[] rightBottomHighLights = new Texture2D[6];
-        public Texture2D[] leftTopHighLights = new Texture2D[6];
-        public Texture2D[] rightTopHighLights = new Texture2D[6];
+		private Texture2D[] leftBottomHighLights = new Texture2D[6];
+		private Texture2D[] rightBottomHighLights = new Texture2D[6];
+		private Texture2D[] leftTopHighLights = new Texture2D[6];
+		private Texture2D[] rightTopHighLights = new Texture2D[6];
         // Where to position the highlighted versions of the tastes
         public Vector3[] tasteHighLightPos = new Vector3[4];
         public GameObject[] tasteHighlighters = new GameObject[4];
@@ -94,14 +94,34 @@ public class wordBuildingController : MonoBehaviour
 				//tasteHighLightPos [3] = new Vector3 (-1.0f, 0.0f, -1f); //(7.6f, 3.9f, -0.5f);
 				character1Num = PlayerPrefs.GetInt ("Character 1");
 				character2Num = PlayerPrefs.GetInt ("Character 2");
-				character1 = (GameObject)Instantiate (Resources.Load (characters [character1Num].name), variables.phase2CharacterPositions [0], Quaternion.identity);
-				character2 = (GameObject)Instantiate (Resources.Load (characters [character2Num].name), variables.phase2CharacterPositions [1], Quaternion.identity);
+
+				// now for better RAM usage...
+				// start on the left character.
+				//
+				string myName = characters [character1Num].name;
+				character1 = (GameObject)Instantiate (Resources.Load ( myName), variables.phase2CharacterPositions [0], Quaternion.identity);
 				character1.transform.localScale = new Vector3 (2, 2, 2);
-				character2.transform.localScale = new Vector3 (2, 2, 2);
-				
-				//Set the characterNums correctly
 				character1.GetComponent<Character> ().characterNum = character1Num;
+
+				leftPanels[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftColor", typeof( Texture2D));
+				leftTopTaste[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftTopText", typeof( Texture2D));
+				leftBottomTaste[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftBottomText", typeof( Texture2D));
+				leftTopHighLights[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftTopHighlight", typeof( Texture2D));
+				leftBottomHighLights[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftBottomHighlight", typeof( Texture2D));
+
+				// now the right character.
+
+				myName = characters[ character2Num].name;
+				character2 = (GameObject)Instantiate (Resources.Load ( myName), variables.phase2CharacterPositions [1], Quaternion.identity);
+				character2.transform.localScale = new Vector3 (2, 2, 2);
 				character2.GetComponent<Character> ().characterNum = character2Num;
+				
+				rightPanels[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightColor", typeof( Texture2D));
+				rightTopTaste[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightTopText", typeof( Texture2D));
+				rightBottomTaste[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightBottomText", typeof( Texture2D));
+				rightTopHighLights[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightTopHighlight", typeof( Texture2D));
+				rightBottomHighLights[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightBottomHighlight", typeof( Texture2D));
+
 
 				PlayerPrefs.SetInt ("Instructions", 0);
 				tutorial = GameObject.Find ("Tutorial");
