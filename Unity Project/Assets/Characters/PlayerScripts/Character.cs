@@ -51,8 +51,8 @@ public class Character : MonoBehaviour
 		public GameObject tasteObj;
 		public TextMesh tasteText;
 		public int charSelectOrder;
-		public RuntimeAnimatorController compressedAnim;
-		public RuntimeAnimatorController uncompressedAnim;
+//		public RuntimeAnimatorController compressedAnim;
+//		public RuntimeAnimatorController uncompressedAnim;
 		//so we can know if the character is selected
 		public SelectScript selectScript;
 		private int mostRecentMultiplier = 0;
@@ -66,7 +66,7 @@ public class Character : MonoBehaviour
 						if (word != null && letterControl.checkForWord (word) == false) {
 								Debug.Log ("Not a word and this isn't the trash character");
 								variables.sadSound = 12;
-								GetComponent<Animator>().SetTrigger ("sad");
+//								GetComponent<Animator>().SetTrigger ("sad");
 								return 0;
 						}
 				} else {
@@ -150,7 +150,7 @@ public class Character : MonoBehaviour
 
 								//Trash Animation
 								Debug.Log ("Trashing Animation");
-								GetComponent<Animator>().SetTrigger ("eat");
+//								GetComponent<Animator>().SetTrigger ("eat");
 
 						}
 				}
@@ -294,9 +294,9 @@ public class Character : MonoBehaviour
 								//uses lower res sprites if the phone is a 4s or older
 								if (characterNum != 0) {//ensures that the trash character does not have a programatically scaled spritesheet
 									if (CheckIPhoneType.OldPhone()) {
-										GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
+//										GetComponent<Animator>().runtimeAnimatorController = compressedAnim;
 									} else {
-										GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
+//										GetComponent<Animator>().runtimeAnimatorController = uncompressedAnim;
 									}
 								}
 								letterGenerator = GameObject.FindGameObjectWithTag ("letterController");
@@ -412,13 +412,13 @@ public class Character : MonoBehaviour
                         //FRED EATING ANIMATION GOES HERE 
                         //return 23;
                         //Animation.CrossFade("KelvinEatingAnim");
-										GetComponent<Animator>().SetTrigger ("eat");
+//										GetComponent<Animator>().SetTrigger ("eat");
 										Debug.Log ("Fred eating animation");
 										variables.eatingSound = 29;
 										break;
 								case 2:
 										Debug.Log ("Kelvin eating animation");
-										GetComponent<Animator> ().SetTrigger ("eat");
+//										GetComponent<Animator> ().SetTrigger ("eat");
 										variables.eatingSound = 30;
                         //					animation.Play("KelvinEatingAnim");
                         //return 32;
@@ -427,21 +427,21 @@ public class Character : MonoBehaviour
                         //SPIKE EATING ANIMATION GOES HERE
                         //return 26;
 										Debug.Log ("Spike eating animation");
-								GetComponent<Animator>().SetTrigger ("eat");
+//								GetComponent<Animator>().SetTrigger ("eat");
 										variables.eatingSound = 31;
 										break;
 								case 4:
                         //STELLA EATING ANIMATION GOES HERE
                         //return 35;
 										Debug.Log ("Stella Eating Animation");
-										GetComponent<Animator>().SetTrigger ("eat");
+//										GetComponent<Animator>().SetTrigger ("eat");
 										variables.eatingSound = 32;
 										break;
 								case 5:
                         //MEGAN EATING ANIMATION GOES HERE
                         //return 29;
 										Debug.Log ("Megan Eating Animation");
-										GetComponent<Animator>().SetTrigger ("eat");
+//										GetComponent<Animator>().SetTrigger ("eat");
 										variables.eatingSound = 33;
 										break;
 								default:

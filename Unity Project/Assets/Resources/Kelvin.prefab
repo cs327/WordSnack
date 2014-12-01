@@ -11,7 +11,6 @@ GameObject:
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
   - 212: {fileID: 21200000}
-  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: Kelvin
   m_TagString: Untagged
@@ -43,21 +42,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.63999987, y: 5.26999998, z: 0}
   m_Center: {x: -.0900000036, y: .540000021, z: 0}
---- !u!95 &9500000
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,8 +68,6 @@ MonoBehaviour:
   tasteObj: {fileID: 0}
   tasteText: {fileID: 0}
   charSelectOrder: 0
-  compressedAnim: {fileID: 9100000, guid: c3b7bf9bc739d488cad698e936e53673, type: 2}
-  uncompressedAnim: {fileID: 9100000, guid: d215d4944d6e14509a0a43e745821f92, type: 2}
   selectScript: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
