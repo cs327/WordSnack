@@ -8,7 +8,7 @@ using System.Linq;
 
 public class Tutorial : MonoBehaviour
 {
-
+    private bool sceneStarted = false;
     public Texture2D[] instructions = new Texture2D[5];
     MeshRenderer m;
     Vector3 pos;
@@ -52,14 +52,14 @@ public class Tutorial : MonoBehaviour
 		topDarkOut = GameObject.Find ("TopDarkOut");
 		bottomDarkOut = GameObject.Find ("BottomDarkOut");
 		trash.position = new Vector3(trash.position.x, trash.position.y, 3.47f);
-	}
+        sceneStarted = true;
+    }
 
     void Update()
     {
 
         if (ScoreManager.NeverShowInstructions)
         {
-
             Vector3 offScreenPos = gameObject.transform.position;
             offScreenPos.x = -20f;
             gameObject.transform.position = offScreenPos;
@@ -76,6 +76,9 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
+        if (!sceneStarted)
+            return;
+
         if (GameObject.Find("AudioManager_Game(Clone)"))
         {
             GameObject.Find("AudioManager_Game(Clone)").GetComponent<AudioManager>().Play(1);
