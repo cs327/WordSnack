@@ -177,7 +177,7 @@ public class ScoreTextScript : MonoBehaviour
 				    Debug.Log("Showing big meal visual");
 					GetComponent<TextMesh>().text = "+" + bigMealBonusVal + " Big Meal!";
 					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
-					GetComponent<TextMesh>().color = new Color(1.0f, 0.2f, 0.2f);
+					GetComponent<TextMesh>().color = new Color(1.0f, 0.6f, 0.6f);
 
 					longWord = false;
 					
