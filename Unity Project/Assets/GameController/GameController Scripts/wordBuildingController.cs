@@ -287,6 +287,7 @@ public class wordBuildingController : MonoBehaviour
 						mode = 0;
 				}
                 // This saves the game info to analytics
+				GA.API.GenericInfo.SetSessionUUID(null); //Set a new Session ID to make sure this game is unique
 				GA.API.Design.NewEvent ("mode", mode);
 				GA.API.Design.NewEvent ("score", variables.score);
 				GA.API.Design.NewEvent ("character1", character1Num);
