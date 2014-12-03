@@ -55,8 +55,10 @@ public class SelectScript : MonoBehaviour
 	{
 		if (variables.timeToChangeGameState && !selected) {
 			gameObject.transform.renderer.enabled = false;
+			gameObject.GetComponent<BoxCollider>().enabled = false;
 		} else {
 			gameObject.transform.renderer.enabled = true;
+			gameObject.GetComponent<BoxCollider>().enabled = true;
 		}
 		//deselects character when "Phase2" is loaded 
 		if (Application.loadedLevelName == "WordMaking" && selected) {
@@ -117,7 +119,7 @@ public class SelectScript : MonoBehaviour
 				}
 			} 
 			//last check, if a player deselects a character that is already active
-			else {
+			else{
 				thisSprite.sprite = standbyImage;
 				
 				gameObject.transform.position = startingSpot;
