@@ -1758,7 +1758,6 @@ MonoBehaviour:
   TastesForFred: 0800000007000000
   TastesForSpike: 0000000003000000
   bonus: 0
-  notWord: 0
   isWord: 0
   hungry: 0
   chewing: 0

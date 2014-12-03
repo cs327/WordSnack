@@ -69,6 +69,9 @@ public class wordBuildingController : MonoBehaviour
         // Use this for initialization
 		void Start ()
 		{
+				if (GameObject.FindWithTag ("Diner") != null) {
+					DestroyObject (GameObject.FindWithTag("Diner"));
+			   	}
 				DestroyObject (GameObject.Find ("AudioManager_Menu(Clone)"));
 				DestroyObject (GameObject.Find ("AudioManager_Summary(Clone)"));
 				Resources.UnloadUnusedAssets ();
