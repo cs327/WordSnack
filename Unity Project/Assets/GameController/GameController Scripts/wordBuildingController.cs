@@ -106,11 +106,11 @@ public class wordBuildingController : MonoBehaviour
 				character1.transform.localScale = new Vector3 (2, 2, 2);
 				character1.GetComponent<Character> ().characterNum = character1Num;
 
-				leftPanels[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftColor", typeof( Texture2D));
-				leftTopTaste[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftTopText", typeof( Texture2D));
-				leftBottomTaste[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftBottomText", typeof( Texture2D));
-				leftTopHighLights[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftTopHighlight", typeof( Texture2D));
-				leftBottomHighLights[ character1Num] = (Texture2D) Resources.Load( "tastes/" + myName + "LeftBottomHighlight", typeof( Texture2D));
+				leftPanels[ character1Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "LeftColor", typeof( Texture2D));
+        leftTopTaste[ character1Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "LeftTopText", typeof( Texture2D));
+        leftBottomTaste[ character1Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "LeftBottomText", typeof( Texture2D));
+        leftTopHighLights[ character1Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "LeftTopHighlight", typeof( Texture2D));
+        leftBottomHighLights[ character1Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "LeftBottomHighlight", typeof( Texture2D));
 
 				// now the right character.
 
@@ -119,11 +119,11 @@ public class wordBuildingController : MonoBehaviour
 				character2.transform.localScale = new Vector3 (2, 2, 2);
 				character2.GetComponent<Character> ().characterNum = character2Num;
 				
-				rightPanels[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightColor", typeof( Texture2D));
-				rightTopTaste[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightTopText", typeof( Texture2D));
-				rightBottomTaste[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightBottomText", typeof( Texture2D));
-				rightTopHighLights[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightTopHighlight", typeof( Texture2D));
-				rightBottomHighLights[ character2Num] = (Texture2D) Resources.Load( "tastes/" + myName + "RightBottomHighlight", typeof( Texture2D));
+        rightPanels[ character2Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "RightColor", typeof( Texture2D));
+        rightTopTaste[ character2Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "RightTopText", typeof( Texture2D));
+        rightBottomTaste[ character2Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "RightBottomText", typeof( Texture2D));
+        rightTopHighLights[ character2Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "RightTopHighlight", typeof( Texture2D));
+        rightBottomHighLights[ character2Num] = (Texture2D) Resources.Load( "trimmedTastes/" + myName + "RightBottomHighlight", typeof( Texture2D));
 
 
 				PlayerPrefs.SetInt ("Instructions", 0);
