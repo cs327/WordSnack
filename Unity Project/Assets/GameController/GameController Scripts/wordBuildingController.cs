@@ -179,7 +179,6 @@ public class wordBuildingController : MonoBehaviour
 
                 // If the game is fading, save the scores and start Closing Time
 				if (!fadingOut && fadeOut) {
-						sendVariablestoScoreScreen ();
 						StartCoroutine (ClosingTime ());
 				}
                 else //updates time on screen
@@ -254,6 +253,7 @@ public class wordBuildingController : MonoBehaviour
 				}
 				closingTimeText.SetActive (true);
 				yield return new WaitForSeconds (variables.gameOverOnScreenTimer);
+                sendVariablestoScoreScreen();
 				Application.LoadLevel ("ScoreScreen");
 		
 		}
@@ -274,11 +274,7 @@ public class wordBuildingController : MonoBehaviour
 				PlayerPrefs.SetInt ("Trashed Letters", variables.trashedLetters); 
 				PlayerPrefs.SetInt ("Trashed Letter Score", variables.trashedLetterScore); 
 				PlayerPrefs.Save ();
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().score = variables.score;
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().rawScore = variables.totalLetterScore;
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().multiScore = variables.totalMultiplierScore;
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().trashLetterNum = variables.trashedLetters;
-				GameObject.Find ("WordsFed").GetComponent<StoreWordsFed> ().trashedLetterScore = variables.trashedLetterScore;	
+				
 				//For Game Analytics
 				int mode = 2; //So we'll know something went wrong
 				if (variables.timedMode == true) {
@@ -308,6 +304,11 @@ public class wordBuildingController : MonoBehaviour
 				foreach (string word in character2.GetComponent<Character> ().wordsFedToMe) {
 						wordsFedToCharacter2 += word + ",";
 				}
+                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score = variables.score;
+                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().rawScore = variables.totalLetterScore;
+                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().multiScore = variables.totalMultiplierScore;
+                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum = variables.trashedLetters;
+                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore = variables.trashedLetterScore;	
 				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter1);
 				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter2);
 				//Submit our Analytics Queue. This should make this happen once per Score Screen load.
