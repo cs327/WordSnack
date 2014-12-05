@@ -588,6 +588,23 @@ public class Character : MonoBehaviour
                     {
                         variables.multiplierText.GetComponent<ScoreTextScript>().longWord = true;
                         variables.multiplierText.GetComponent<ScoreTextScript>().bigMealBonusVal = thisWord.bigMealBonus;
+                        // we need five total, one that is the word and four for the outline                        
+                        multPos.z -= 0.1f;
+                        multPos.x -= 0.05f;
+                        Instantiate(variables.multiplierText, multPos, Quaternion.identity);
+                        variables.multiplierText.GetComponent<ScoreTextScript>().bigMealColor = true;
+                        multPos.x += 0.1f;
+                        Instantiate(variables.multiplierText, multPos, Quaternion.identity);
+                        variables.multiplierText.GetComponent<ScoreTextScript>().bigMealColor = true;
+                        multPos.x -= 0.05f;
+                        multPos.y += 0.05f;
+                        Instantiate(variables.multiplierText, multPos, Quaternion.identity);
+                        variables.multiplierText.GetComponent<ScoreTextScript>().bigMealColor = true;
+                        multPos.y -= 0.1f;
+                        Instantiate(variables.multiplierText, multPos, Quaternion.identity);
+                        variables.multiplierText.GetComponent<ScoreTextScript>().bigMealColor = true;
+                        multPos.y += 0.05f;
+                        multPos.z += 0.1f;
                     }
                     else
                     {
@@ -595,6 +612,7 @@ public class Character : MonoBehaviour
                     }
 
                     Instantiate(variables.multiplierText, multPos, Quaternion.identity);
+                    variables.multiplierText.GetComponent<ScoreTextScript>().bigMealColor = false;
                 }
 
                 // output the crumbs

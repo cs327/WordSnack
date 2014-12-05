@@ -33,7 +33,11 @@ public class ScoreTextScript : MonoBehaviour
 	private bool exploded;
 	private ParticleSystem super1;
 	private ParticleSystem super2;
+
+	// extras for making big meal stand out more
+	public bool bigMealColor;
     #endregion
+
     // Use this for initialization
 	void Start () {
 		alpha = 1.0f;
@@ -174,11 +178,13 @@ public class ScoreTextScript : MonoBehaviour
 				// if there's a long word, and it's not the first wait time, we gotta change the text and wait again
 				if (longWord && !firstWait)
 				{
-				    Debug.Log("Showing big meal visual");
 					GetComponent<TextMesh>().text = "+" + bigMealBonusVal + " Big Meal!";
 					this.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
-					GetComponent<TextMesh>().color = new Color(1.0f, 0.6f, 0.6f);
-
+					if (bigMealColor) {
+						GetComponent<TextMesh>().color = new Color(1.0f, 0.6f, 0.6f);
+					} else {
+						GetComponent<TextMesh>().color = Color.white;
+					}
 					longWord = false;
 					
 					timePassed = 0.0f;
