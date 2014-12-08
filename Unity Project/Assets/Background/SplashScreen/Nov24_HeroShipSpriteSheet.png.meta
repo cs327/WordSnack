@@ -118,30 +118,30 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 4608
-        width: 1024
+        width: 1022
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 1024
         y: 4608
-        width: 1024
+        width: 1022
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 2048
         y: 4608
-        width: 1024
+        width: 1022
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_3
       rect:
@@ -151,7 +151,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_4
       rect:
@@ -161,7 +161,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_5
       rect:
@@ -171,7 +171,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_6
       rect:
@@ -181,7 +181,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_7
       rect:
@@ -191,7 +191,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_8
       rect:
@@ -201,7 +201,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_9
       rect:
@@ -211,7 +211,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_10
       rect:
@@ -221,7 +221,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_11
       rect:
@@ -231,7 +231,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_12
       rect:
@@ -241,7 +241,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_13
       rect:
@@ -251,7 +251,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_14
       rect:
@@ -261,7 +261,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_15
       rect:
@@ -271,7 +271,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_16
       rect:
@@ -281,7 +281,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_17
       rect:
@@ -291,7 +291,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_18
       rect:
@@ -301,7 +301,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_19
       rect:
@@ -311,7 +311,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_20
       rect:
@@ -321,7 +321,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_21
       rect:
@@ -331,7 +331,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_22
       rect:
@@ -341,7 +341,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_23
       rect:
@@ -351,7 +351,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_24
       rect:
@@ -361,7 +361,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_25
       rect:
@@ -371,7 +371,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_26
       rect:
@@ -381,7 +381,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_27
       rect:
@@ -391,7 +391,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_28
       rect:
@@ -401,7 +401,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_29
       rect:
@@ -411,7 +411,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_30
       rect:
@@ -421,7 +421,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_31
       rect:
@@ -431,7 +431,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_32
       rect:
@@ -441,7 +441,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_33
       rect:
@@ -451,7 +451,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_34
       rect:
@@ -461,7 +461,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_35
       rect:
@@ -471,7 +471,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_36
       rect:
@@ -481,7 +481,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_37
       rect:
@@ -491,7 +491,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_38
       rect:
@@ -501,7 +501,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_39
       rect:
@@ -511,7 +511,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_40
       rect:
@@ -521,7 +521,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_41
       rect:
@@ -531,7 +531,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_42
       rect:
@@ -541,7 +541,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_43
       rect:
@@ -551,7 +551,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_44
       rect:
@@ -561,7 +561,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_45
       rect:
@@ -571,7 +571,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_46
       rect:
@@ -581,7 +581,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_47
       rect:
@@ -591,7 +591,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_48
       rect:
@@ -601,7 +601,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_49
       rect:
@@ -611,7 +611,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_50
       rect:
@@ -621,7 +621,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_51
       rect:
@@ -631,7 +631,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_52
       rect:
@@ -641,7 +641,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_53
       rect:
@@ -651,7 +651,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_54
       rect:
@@ -661,7 +661,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_55
       rect:
@@ -671,7 +671,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_56
       rect:
@@ -681,7 +681,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_57
       rect:
@@ -691,7 +691,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_58
       rect:
@@ -701,7 +701,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_59
       rect:
@@ -711,7 +711,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_60
       rect:
@@ -721,7 +721,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_61
       rect:
@@ -731,7 +731,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_62
       rect:
@@ -741,7 +741,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_63
       rect:
@@ -751,7 +751,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_64
       rect:
@@ -761,7 +761,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_65
       rect:
@@ -771,7 +771,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_66
       rect:
@@ -781,7 +781,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_67
       rect:
@@ -791,7 +791,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_68
       rect:
@@ -801,7 +801,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Nov24_HeroShipSpriteSheet_69
       rect:
@@ -811,7 +811,7 @@ TextureImporter:
         width: 1024
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
