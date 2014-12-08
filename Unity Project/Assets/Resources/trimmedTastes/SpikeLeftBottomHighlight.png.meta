@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: dcc063b15c5534d46aeecb79ccd3ba27
-=======
-guid: b50c9f702d6a54ebf9963ecbc1e908c2
->>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -25,22 +21,13 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-<<<<<<< Updated upstream
   textureFormat: -3
   maxTextureSize: 512
-=======
-  textureFormat: -1
-  maxTextureSize: 1024
->>>>>>> Stashed changes
   textureSettings:
     filterMode: -1
     aniso: -1
     mipBias: -1
-<<<<<<< Updated upstream
     wrapMode: 1
-=======
-    wrapMode: -1
->>>>>>> Stashed changes
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
