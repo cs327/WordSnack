@@ -175,7 +175,7 @@ public class PlayMusic : MonoBehaviour
 								if (!variables.timedMode) {
 										audioManager.PlayLoop (34);
 								} else if (variables.timedMode) {
-										audioManager.PlayLoop (35);
+										audioManager.Play (35);
 								}
 						}
 						NewOnStove ();
