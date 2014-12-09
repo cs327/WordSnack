@@ -28,7 +28,7 @@ MonoBehaviour:
   GameKey: edad1246d65557dc8732119343a2ae6f
   SecretKey: 7671077d3c085e7abcd0b50bf8965fd88279cec4
   ApiKey: 7c4ee83579c1bf7f16a32d1df06dcb48ddb395fd
-  Build: debugging
+  Build: 1.0-rc1
   SignUpOpen: 0
   FirstName: 
   LastName: 
