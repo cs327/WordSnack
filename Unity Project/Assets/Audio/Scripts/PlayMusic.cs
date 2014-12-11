@@ -174,7 +174,7 @@ public class PlayMusic : MonoBehaviour
 						if (variables.instructionsDone && !variables.paused) {
 								if (!variables.timedMode) {
 										audioManager.PlayLoop (34);
-								} else if (variables.timedMode) {
+								} else if (variables.timedMode && !audioManager.audioSourceArray[35].isPlaying) {
 										audioManager.Play (35);
 								}
 						}
