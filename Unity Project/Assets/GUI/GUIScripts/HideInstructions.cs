@@ -22,11 +22,11 @@ public class HideInstructions : MonoBehaviour {
 	void OnMouseDown(){
 		Debug.Log ("clicked on the don't show");
 		// disable the instrucitons
-		if(m.renderer.material.mainTexture == checkBox){
-			m.renderer.material.mainTexture = checkMark;
+		if(m.GetComponent<Renderer>().material.mainTexture == checkBox){
+			m.GetComponent<Renderer>().material.mainTexture = checkMark;
 			disableInstructions = true;
 		}else{
-			m.renderer.material.mainTexture = checkBox;
+			m.GetComponent<Renderer>().material.mainTexture = checkBox;
 			disableInstructions = false;
 		}
 	}

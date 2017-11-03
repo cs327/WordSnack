@@ -5,10 +5,10 @@ public static class CheckIPhoneType {
 
 	//determines which iphones the game will use the compressed sprites for
    public static bool OldPhone() {
-		iPhoneGeneration [] oldIphones = new iPhoneGeneration[]{iPhoneGeneration.iPhone, iPhoneGeneration.iPhone3G, iPhoneGeneration.iPhone3GS, 
-			iPhoneGeneration.iPhone4, iPhoneGeneration.iPhone4S, iPhoneGeneration.iPodTouch4Gen, iPhoneGeneration.iPodTouch5Gen};
-		foreach (iPhoneGeneration phone in oldIphones) {
-			if (iPhoneSettings.generation == phone) {
+		UnityEngine.iOS.DeviceGeneration [] oldIphones = new UnityEngine.iOS.DeviceGeneration[]{UnityEngine.iOS.DeviceGeneration.iPhone, UnityEngine.iOS.DeviceGeneration.iPhone3G, UnityEngine.iOS.DeviceGeneration.iPhone3GS, 
+			UnityEngine.iOS.DeviceGeneration.iPhone4, UnityEngine.iOS.DeviceGeneration.iPhone4S, UnityEngine.iOS.DeviceGeneration.iPodTouch4Gen, UnityEngine.iOS.DeviceGeneration.iPodTouch5Gen};
+		foreach (UnityEngine.iOS.DeviceGeneration phone in oldIphones) {
+			if (UnityEngine.iOS.Device.generation == phone) {
 				return true;
 			}
 		}

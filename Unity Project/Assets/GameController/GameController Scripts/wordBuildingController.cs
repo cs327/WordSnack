@@ -141,8 +141,8 @@ public class wordBuildingController : MonoBehaviour
 				// spike: 6, 7
 				// stella: 8, 9
 				// meghan: 10, 11
-				leftCharacterReflection.renderer.material.SetTexture ("_MainTex", reflectionTextures [character1Num * 2]);
-				rightCharacterReflection.renderer.material.SetTexture ("_MainTex", reflectionTextures [character2Num * 2 + 1]);
+				leftCharacterReflection.GetComponent<Renderer>().material.SetTexture ("_MainTex", reflectionTextures [character1Num * 2]);
+				rightCharacterReflection.GetComponent<Renderer>().material.SetTexture ("_MainTex", reflectionTextures [character2Num * 2 + 1]);
 
 				SetDisplayColors ();
 				//sets the taste highlighters to match the position of the tastes
@@ -202,24 +202,24 @@ public class wordBuildingController : MonoBehaviour
 				//		if (variables.timeToHighlightTaste [i]) {
 				//tasteHighlighters [i].transform.renderer.enabled = true;
 				if (variables.timeToHighlightTaste [0] && letterController.numLettersOnStove > 1)
-						tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopHighLights [character1Num]);
+						tasteTexts [0].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftTopHighLights [character1Num]);
 				else
-						tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
+						tasteTexts [0].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
                 
 				if (variables.timeToHighlightTaste [1] && letterController.numLettersOnStove > 1)
-						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
+						tasteTexts [1].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftBottomHighLights [character1Num]);
 				else
-						tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
+						tasteTexts [1].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
 
 				if (variables.timeToHighlightTaste [2] && letterController.numLettersOnStove > 1)
-						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
+						tasteTexts [2].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightTopHighLights [character2Num]);
 				else
-						tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
+						tasteTexts [2].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
 				
 				if (variables.timeToHighlightTaste [3] && letterController.numLettersOnStove > 1) 
-						tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
+						tasteTexts [3].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightBottomHighLights [character2Num]);
                 else
-						tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
+						tasteTexts [3].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 				
                                                                                    
 
@@ -240,14 +240,14 @@ public class wordBuildingController : MonoBehaviour
 				yield return new WaitForSeconds (variables.closingTimeDelay);
 				float t = variables.gameOverFadeInTimer;
 				greyOut.SetActive (true);
-				Color fadeFrom = greyOut.renderer.material.color;
-				Color fadeTo = greyOut.renderer.material.color;
+				Color fadeFrom = greyOut.GetComponent<Renderer>().material.color;
+				Color fadeTo = greyOut.GetComponent<Renderer>().material.color;
 				fadeTo.a = 1.0f;
 				float i = 0;
-				while (greyOut.renderer.material.color.a < 1) {
+				while (greyOut.GetComponent<Renderer>().material.color.a < 1) {
 						i += Time.deltaTime / t;
 						Color beMe = new Color (1, 1, 1, fadeFrom.a + i);
-						greyOut.renderer.material.color = beMe;
+						greyOut.GetComponent<Renderer>().material.color = beMe;
 			
 						yield return null;
 				}
@@ -283,7 +283,7 @@ public class wordBuildingController : MonoBehaviour
 						mode = 0;
 				}
                 // This saves the game info to analytics
-				GA.API.GenericInfo.SetSessionUUID(null); //Set a new Session ID to make sure this game is unique
+/*				GA.API.GenericInfo.SetSessionUUID(null); //Set a new Session ID to make sure this game is unique
 				GA.API.Design.NewEvent ("mode", mode);
 				GA.API.Design.NewEvent ("score", variables.score);
 				GA.API.Design.NewEvent ("character1", character1Num);
@@ -314,6 +314,7 @@ public class wordBuildingController : MonoBehaviour
 				//Submit our Analytics Queue. This should make this happen once per Score Screen load.
 				GA_Queue.ForceSubmit ();
 				//Debug.Log ("Forcing GA Submission.");
+				*/
 		}
         
         // Flash the screen if time is running out
@@ -337,7 +338,7 @@ public class wordBuildingController : MonoBehaviour
 				Vector3 biggerSize = timeRemaining.transform.localScale * 1.3f;
 				flash.SetActive (true);
 				alertStarted = true;
-				Color fadeFrom = flash.renderer.material.color;
+				Color fadeFrom = flash.GetComponent<Renderer>().material.color;
 				float maxA = .3f;
 				float minA = .001f;
 				float t = 2f;
@@ -352,7 +353,7 @@ public class wordBuildingController : MonoBehaviour
 						i += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, minA + i);
 						if (secondAlert && flashOnce) {
-								flash.renderer.material.color = beMe;
+								flash.GetComponent<Renderer>().material.color = beMe;
 						}
 						timeRemaining.transform.localScale = Vector3.Lerp (normalSize, biggerSize, i / maxA);
 						yield return null;
@@ -364,7 +365,7 @@ public class wordBuildingController : MonoBehaviour
 						j += Time.deltaTime / t;
 						Color beMe = new Color (1, 0, 0, maxA - j);
 						if (secondAlert && flashOnce) {
-								flash.renderer.material.color = beMe;
+								flash.GetComponent<Renderer>().material.color = beMe;
 						}
 						timeRemaining.transform.localScale = Vector3.Lerp (biggerSize, normalSize, j / maxA);
 						yield return null;
@@ -380,10 +381,10 @@ public class wordBuildingController : MonoBehaviour
         // Sets all taste texts to their unhighlighted counterparts
 		public void unhightlightAllTastes ()
 		{
-				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
-				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
-				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
-				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
+				tasteTexts [0].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
+				tasteTexts [1].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
+				tasteTexts [2].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
+				tasteTexts [3].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 		}
 
         // Sets the correct textures for the taste elements
@@ -391,13 +392,13 @@ public class wordBuildingController : MonoBehaviour
 		{
 				//for taste panels, index 0 is left and index 1 is right side
 		
-				tastePanels [0].renderer.material.SetTexture ("_MainTex", leftPanels [character1Num]);
-				tastePanels [1].renderer.material.SetTexture ("_MainTex", rightPanels [character2Num]);
+				tastePanels [0].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftPanels [character1Num]);
+				tastePanels [1].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightPanels [character2Num]);
 
-				tasteTexts [0].renderer.material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
-				tasteTexts [1].renderer.material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
-				tasteTexts [2].renderer.material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
-				tasteTexts [3].renderer.material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
+				tasteTexts [0].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftTopTaste [character1Num]);
+				tasteTexts [1].GetComponent<Renderer>().material.SetTexture ("_MainTex", leftBottomTaste [character1Num]);
+				tasteTexts [2].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightTopTaste [character2Num]);
+				tasteTexts [3].GetComponent<Renderer>().material.SetTexture ("_MainTex", rightBottomTaste [character2Num]);
 
 				
 

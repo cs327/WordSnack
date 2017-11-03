@@ -16,17 +16,17 @@ public class resumeButton : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		gameObject.renderer.material.SetTexture("_MainTex",p.resumeButtons[1]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex",p.resumeButtons[1]);
 	}
 
     void OnMouseUp()
     {
-        gameObject.renderer.material.SetTexture("_MainTex", p.resumeButtons[0]);
+        gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", p.resumeButtons[0]);
     }
 
 	void OnMouseUpAsButton(){
         clickSound = true;
-		gameObject.renderer.material.SetTexture("_MainTex",p.resumeButtons[0]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex",p.resumeButtons[0]);
 		p.unpause = true;
 	}
 }

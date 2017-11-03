@@ -17,16 +17,16 @@ public class exitGameplayButton : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		gameObject.renderer.material.SetTexture("_MainTex",p.exitButtons[1]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex",p.exitButtons[1]);
 	}
 	void OnMouseUp(){
-		gameObject.renderer.material.SetTexture("_MainTex",p.exitButtons[0]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex",p.exitButtons[0]);
 	}
 
 	void OnMouseUpAsButton()
 	{
 		clickSound = true;
-		gameObject.renderer.material.SetTexture("_MainTex", p.exitButtons[0]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", p.exitButtons[0]);
 		Application.LoadLevel("StartScreenTest");
 	}
 }

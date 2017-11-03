@@ -42,7 +42,7 @@ public class ReceiptGUI : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		GameObject.Find("Loading").transform.renderer.enabled = false;
+		GameObject.Find("Loading").transform.GetComponent<Renderer>().enabled = false;
 		#region Receipt Setup
 		scoreText.text = ((int)PlayerPrefs.GetFloat("Score")).ToString();
 		print (PlayerPrefs.GetFloat("Score"));

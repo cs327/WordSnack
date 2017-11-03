@@ -29,7 +29,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {        
         m = gameObject.GetComponent<MeshRenderer>();
-        m.renderer.material.mainTexture = instructions[0];
+        m.GetComponent<Renderer>().material.mainTexture = instructions[0];
         pos = transform.localPosition;
         parentPos = transform.parent.transform.position;
         trash = GameObject.Find("TrashCharacter").transform;
@@ -37,7 +37,7 @@ public class Tutorial : MonoBehaviour
         w = GameObject.Find("GameController").GetComponent<wordBuildingController>();
 
         // This sets up the first instruction screen
-        m.renderer.material.mainTexture = instructions[0];
+        m.GetComponent<Renderer>().material.mainTexture = instructions[0];
         //transform.localPosition = new Vector3(0.06f, 0.429f, -0.86f);
         transform.localScale = new Vector3(0.73f, 1.21f, 0.82f);
 
@@ -93,9 +93,9 @@ public class Tutorial : MonoBehaviour
             Debug.Log("Return from update");
             return;
         }// Clicked on first instruction, go to trash instruction
-        if (m.renderer.material.mainTexture == instructions[0])
+        if (m.GetComponent<Renderer>().material.mainTexture == instructions[0])
         {
-            m.renderer.material.mainTexture = instructions[1];
+            m.GetComponent<Renderer>().material.mainTexture = instructions[1];
 			transform.localPosition = new Vector3(-1.81f, 4.77f,-0.1f);
 			transform.localScale = new Vector3(0.7f, 1.21f, 0.69f);
 			trash.position = new Vector3(trash.position.x, trash.position.y, -2.12f);
@@ -104,11 +104,11 @@ public class Tutorial : MonoBehaviour
 
 			bottomDarkOut.transform.localPosition = new Vector3(bottomDarkOut.transform.localPosition.x, bottomDarkOut.transform.localPosition.y, 12.1f);
 			topDarkOut.transform.localPosition = new Vector3(topDarkOut.transform.localPosition.x, topDarkOut.transform.localPosition.y, 0);
-			transform.parent.GetComponent<MeshRenderer>().renderer.enabled = false;
+			transform.parent.GetComponent<MeshRenderer>().GetComponent<Renderer>().enabled = false;
 		}// Clicked on trash screen, hide instructions  
-        else if (m.renderer.material.mainTexture == instructions[1])
+        else if (m.GetComponent<Renderer>().material.mainTexture == instructions[1])
         {
-			m.renderer.material.mainTexture = instructions[2];
+			m.GetComponent<Renderer>().material.mainTexture = instructions[2];
 			trash.position = new Vector3(trash.position.x, trash.position.y, 0.23f);
             //transform.localPosition = new Vector3(0.062f, 0.429f, -0.82f);
             //transform.localScale = new Vector3(0.76f, 1.21f, 0.89f);
@@ -121,7 +121,7 @@ public class Tutorial : MonoBehaviour
 			topDarkOut.transform.localPosition = new Vector3(topDarkOut.transform.localPosition.x, topDarkOut.transform.localPosition.y, 1.84f);
 
         }
-		else if (m.renderer.material.mainTexture == instructions[2])
+		else if (m.GetComponent<Renderer>().material.mainTexture == instructions[2])
 		{
 
 			ScoreManager.NeverShowInstructions = true;

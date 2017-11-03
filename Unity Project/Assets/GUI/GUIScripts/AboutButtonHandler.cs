@@ -16,27 +16,27 @@ public class AboutButtonHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Application.loadedLevelName != "StartScreenTest") {
-			mAbout.renderer.material.mainTexture = aboutUnselected;
+			mAbout.GetComponent<Renderer>().material.mainTexture = aboutUnselected;
 		}
 	}
 	
 	void OnMouseDown(){
-		if(mAbout.renderer.material.mainTexture == aboutUnselected){
-			mAbout.renderer.material.mainTexture = aboutSelected;
+		if(mAbout.GetComponent<Renderer>().material.mainTexture == aboutUnselected){
+			mAbout.GetComponent<Renderer>().material.mainTexture = aboutSelected;
 		}
     }
      void OnMouseUp()
     {
-        if (mAbout.renderer.material.mainTexture == aboutSelected)
+        if (mAbout.GetComponent<Renderer>().material.mainTexture == aboutSelected)
         {
-            mAbout.renderer.material.mainTexture = aboutUnselected;
+            mAbout.GetComponent<Renderer>().material.mainTexture = aboutUnselected;
         }
     }
      void OnMouseUpAsButton()
      {
-         if (mAbout.renderer.material.mainTexture == aboutSelected)
+         if (mAbout.GetComponent<Renderer>().material.mainTexture == aboutSelected)
          {
-             mAbout.renderer.material.mainTexture = aboutUnselected;
+             mAbout.GetComponent<Renderer>().material.mainTexture = aboutUnselected;
          }
          buttonPressed = true;
          clickSound = true;

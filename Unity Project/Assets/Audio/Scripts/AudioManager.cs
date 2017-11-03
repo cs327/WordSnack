@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
 
         public void PlayOnce(int i)
         {
-            audio.PlayOneShot(audioClipArray[i], 1.0f);
+            GetComponent<AudioSource>().PlayOneShot(audioClipArray[i], 1.0f);
         }
 	
 		public void KillAll ()

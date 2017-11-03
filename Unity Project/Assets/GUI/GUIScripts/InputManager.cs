@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour {
 
 		//Find where the mouse position intersects with the y=0 plane and set worldLocation to that
 
-		Ray ray = camera.ScreenPointToRay (new Vector3 (UniversalInput.x, Screen.height - UniversalInput.y, 0));
+		Ray ray = GetComponent<Camera>().ScreenPointToRay (new Vector3 (UniversalInput.x, Screen.height - UniversalInput.y, 0));
 		Plane hPlane = new Plane(Vector3.up, Vector3.zero);
 		// Plane.Raycast stores the distance from ray.origin to the hit point in this variable:
 		float distance = 0; 

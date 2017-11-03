@@ -16,7 +16,7 @@ public class ReceiptMove : MonoBehaviour {
 
 		Vector3 pos = gameObject.transform.position;
 
-		if (UniversalInput.press && UniversalInput.inRect (gameObject.collider.bounds, c)) {
+		if (UniversalInput.press && UniversalInput.inRect (gameObject.GetComponent<Collider>().bounds, c)) {
 			pos.y = 1.2f;
 			gameObject.transform.position = pos;
 		

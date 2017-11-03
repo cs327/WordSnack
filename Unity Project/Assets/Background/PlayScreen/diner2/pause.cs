@@ -35,19 +35,19 @@ public class pause : MonoBehaviour {
 
 	void OnMouseDown(){
 		//when clicked down on, change texture
-		gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[1]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", pauseButtons[1]);
 	}
 	void OnMouseUp(){
 		//when unclicked- change texture back, and if the game is not paused (which
 		//it probably isnt), pause it
-		gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", pauseButtons[0]);
 
 		}
 
 	void OnMouseUpAsButton()
 	{
 		clickSound = true;
-		gameObject.renderer.material.SetTexture("_MainTex", pauseButtons[0]);
+		gameObject.GetComponent<Renderer>().material.SetTexture("_MainTex", pauseButtons[0]);
 		if (!variables.paused)
 		{
 			pauseGame();
