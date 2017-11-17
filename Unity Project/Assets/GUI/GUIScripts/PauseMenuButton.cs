@@ -46,8 +46,8 @@ public class PauseMenuButton : MonoBehaviour {
 		if(UniversalInput.press && UniversalInput.inRect(pauseButtonBounds, camera)){
 			dinerRoom.SetActive(false);
 			pauseMenuBackground.SetActive(true);
-			mPauseButton.renderer.enabled = false;
-			mTrash.renderer.enabled = false;
+			mPauseButton.GetComponent<Renderer>().enabled = false;
+			mTrash.GetComponent<Renderer>().enabled = false;
 			resumeUnclicked.SetActive(true);
 			//l.gamePaused = true;
 			//w.gamePaused = true;
@@ -73,9 +73,9 @@ public class PauseMenuButton : MonoBehaviour {
 			if(UniversalInput.press && UniversalInput.inRect(resumeClickedBounds, camera)){
 				pauseMenuBackground.SetActive(false);
 				dinerRoom.SetActive(true);
-				mPauseButton.renderer.enabled = true;
+				mPauseButton.GetComponent<Renderer>().enabled = true;
 //				StartCoroutine(waitForButtonPress("UnPause"));
-				mTrash.renderer.enabled = true;
+				mTrash.GetComponent<Renderer>().enabled = true;
 				resumeUnclicked.SetActive(false);
 				//l.gamePaused = false;
 				//w.gamePaused = false;
@@ -116,8 +116,8 @@ public class PauseMenuButton : MonoBehaviour {
 		} else {
 			pauseMenuBackground.SetActive(false);
 			dinerRoom.SetActive(true);
-			mPauseButton.renderer.enabled = true;
-			mTrash.renderer.enabled = true;
+			mPauseButton.GetComponent<Renderer>().enabled = true;
+			mTrash.GetComponent<Renderer>().enabled = true;
 			resumeUnclicked.SetActive(false);
 			//l.gamePaused = false;
 			//w.gamePaused = false;

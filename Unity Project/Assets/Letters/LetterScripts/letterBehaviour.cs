@@ -82,7 +82,7 @@ public class letterBehaviour : MonoBehaviour
 		//The below line checks if the assigned character is a period, the placeholder.
 		//if it is it destroys the collider so it cannot be clicked.
 			if(letterAlphabetOrder == -51){
-				gameObject.collider.enabled = false;
+				gameObject.GetComponent<Collider>().enabled = false;
 			}
 		}
 }

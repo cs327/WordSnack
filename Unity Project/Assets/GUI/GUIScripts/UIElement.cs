@@ -35,7 +35,7 @@ public class UIElement : MonoBehaviour {
 			}
 		}
 
-		UICam = GameObject.Find ("UI Camera").camera;
+		UICam = GameObject.Find ("UI Camera").GetComponent<Camera>();
 	}
 
 	void Update(){

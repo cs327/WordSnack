@@ -191,11 +191,11 @@ public class LetterController : MonoBehaviour
 		{
 				for (int x = 0; x < boardSize; x++) {
 						if (x < numLettersOnStove && variables.isWord) {
-								stoveSteam [x].particleSystem.emissionRate = 30;
-								stoveHeat [x].particleSystem.emissionRate = 10;
+								stoveSteam [x].GetComponent<ParticleSystem>().emissionRate = 30;
+								stoveHeat [x].GetComponent<ParticleSystem>().emissionRate = 10;
 						} else {
-								stoveSteam [x].particleSystem.emissionRate = 0;
-								stoveHeat [x].particleSystem.emissionRate = 0;
+								stoveSteam [x].GetComponent<ParticleSystem>().emissionRate = 0;
+								stoveHeat [x].GetComponent<ParticleSystem>().emissionRate = 0;
 						}
 				}
 		}
@@ -423,7 +423,7 @@ public class LetterController : MonoBehaviour
 						//checks if any letters on the board should be moved to the stove and adds them to the stove array if so
 						if (lettersOnBoard [i] != null) {
 								// all letters on the board should be white always
-								lettersOnBoard [i].gameObject.renderer.material.color = Color.white;
+								lettersOnBoard [i].gameObject.GetComponent<Renderer>().material.color = Color.white;
 
 								if (!lettersOnBoard [i].onStove && lettersOnBoard [i].selected) {
 										lettersOnStove [numLettersOnStove] = lettersOnBoard [i];
@@ -438,13 +438,13 @@ public class LetterController : MonoBehaviour
 										if (variables.isWord) {
 												for (int x = 0; x < lettersOnStove.Length; x++) {
 														if (lettersOnStove [x] != null) {
-																lettersOnStove [x].gameObject.renderer.material.color = new Color (0.8f, 0.8f, 0.2f);
+																lettersOnStove [x].gameObject.GetComponent<Renderer>().material.color = new Color (0.8f, 0.8f, 0.2f);
 														}
 												}
 										} else {
 												for (int x = 0; x < lettersOnStove.Length; x++) {
 														if (lettersOnStove [x] != null) {
-																lettersOnStove [x].gameObject.renderer.material.color = new Color (1.0f, 1.0f, 1.0f);
+																lettersOnStove [x].gameObject.GetComponent<Renderer>().material.color = new Color (1.0f, 1.0f, 1.0f);
 														}
 												}
 										}									

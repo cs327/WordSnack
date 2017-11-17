@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour {
 			Destroy(gameObject);		
 		}
 
-		UICam = GameObject.Find ("UI Camera").camera;
+		UICam = GameObject.Find ("UI Camera").GetComponent<Camera>();
 
 		foreach (UIElement elem in startingElements) {
 			AddUIElement(elem);
@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour {
 		newElement.transform.position = worldPoint;
 
 		if(newElement.icon != null){
-			newElement.renderer.material.mainTexture = newElement.icon;
+			newElement.GetComponent<Renderer>().material.mainTexture = newElement.icon;
 		}
 
 		/*

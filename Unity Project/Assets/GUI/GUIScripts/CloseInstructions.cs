@@ -48,11 +48,11 @@ public class CloseInstructions : MonoBehaviour
     {
         //Debug.Log ("clicked on the cross");
 
-        gameObject.renderer.enabled = !gameObject.renderer.enabled;
+        gameObject.GetComponent<Renderer>().enabled = !gameObject.GetComponent<Renderer>().enabled;
         Debug.Log("Checkmark collision");
         instructions.GetComponent<Transform>().position = position;
 
-        SaveNeverShowSetting(gameObject.renderer.enabled);
+        SaveNeverShowSetting(gameObject.GetComponent<Renderer>().enabled);
 
 
         if (character1.transform.localPosition.z == -1.8f)

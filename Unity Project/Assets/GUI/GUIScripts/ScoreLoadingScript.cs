@@ -9,9 +9,9 @@ public static class ScoreLoadingScript {
 		foreach (GameObject g in allObjects) {
 			Debug.Log(g.name);
 			if (ValidDeactivation(g) && g.activeInHierarchy) {
-				g.transform.renderer.enabled = false;
+				g.transform.GetComponent<Renderer>().enabled = false;
 			} else if (g.name == "Loading") { //activates the renderer for the loading GUI element 
-				g.transform.renderer.enabled = true;
+				g.transform.GetComponent<Renderer>().enabled = true;
 			}
 		}
 	}
@@ -20,7 +20,7 @@ public static class ScoreLoadingScript {
 	public static bool ValidDeactivation(GameObject g) {
 		string[] invalidNames = new string[]{"Loading", "Background", "Main Camera", "Directional light"};
 		foreach (string gName in invalidNames) {
-			if (g.name == gName || g.GetComponent<Transform>().renderer == null) {
+			if (g.name == gName || g.GetComponent<Transform>().GetComponent<Renderer>() == null) {
 				return false;
 			}
 		}

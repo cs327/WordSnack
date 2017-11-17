@@ -19,13 +19,13 @@ public class CharacterSelectUI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		variables = GameObject.Find("VariableController").GetComponent<VariableControl>();
-		buttonColor = gameObject.transform.renderer.material.color;
+		buttonColor = gameObject.transform.GetComponent<Renderer>().material.color;
 		feedMeSprite = gameObject.GetComponent<SpriteRenderer> ();
 		//feedMePressed = GameObject.Find ("feedMePressed");
 //		feedMeSprite.enabled = false;
 		whoElse.SetActive(false);
 		chooseTwo.SetActive (false);
-		gameObject.transform.renderer.material.color = new Color(buttonColor.r, buttonColor.g, buttonColor.b, 0);
+		gameObject.transform.GetComponent<Renderer>().material.color = new Color(buttonColor.r, buttonColor.g, buttonColor.b, 0);
 		transparentColor = new Color(buttonColor.r, buttonColor.g, buttonColor.b, 0);
 
 //		//hide the highlited feed them button
@@ -66,13 +66,13 @@ public class CharacterSelectUI : MonoBehaviour {
 //			gameObject.transform.position = new Vector3 (0, 1, -10);
 			chooseTwo.SetActive(false);
 			whoElse.SetActive(false);
-			if (gameObject.transform.renderer.material.color == transparentColor) {
+			if (gameObject.transform.GetComponent<Renderer>().material.color == transparentColor) {
 				StopCoroutine("toggleStart");
 				StartCoroutine(toggleStart(true));
 				buttonActive = true;
 //				StopCoroutine("toggleStart");
 			}
-		} else if (buttonActive && gameObject.transform.renderer.material.color == buttonColor) {
+		} else if (buttonActive && gameObject.transform.GetComponent<Renderer>().material.color == buttonColor) {
 			StopCoroutine("toggleStart");
 			StartCoroutine(toggleStart(false));
 			buttonActive = false;
@@ -87,7 +87,7 @@ public class CharacterSelectUI : MonoBehaviour {
 
 	void OnMouseDown(){
 		if (buttonActive) {
-			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeClicked;
+			gameObject.GetComponent<MeshRenderer> ().GetComponent<Renderer>().material.mainTexture = feedMeClicked;
 		}
 	}
 //	void OnMouseUp()
@@ -101,7 +101,7 @@ public class CharacterSelectUI : MonoBehaviour {
 			FeedPressed = true;
 			characters.SetActive(false);
 //			gameObject.GetComponent<MeshRenderer> ().transform.localScale = new Vector3(0.875f, 0.075f, 0.25f);
-			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = loadingGUI;
+			gameObject.GetComponent<MeshRenderer> ().GetComponent<Renderer>().material.mainTexture = loadingGUI;
 			gameObject.GetComponentInChildren<TextMesh>().transform.position += Vector3.down * 2;
 //			gameObject.GetComponentInChildren<TextMesh>().transform.localScale = new Vector3 (0.15f, 0.5f, 1);
 			GameObject.Find("GameController").GetComponent<characterSelectController>().loadMainGame();
@@ -110,7 +110,7 @@ public class CharacterSelectUI : MonoBehaviour {
 
 	void OnMouseUp(){
 		if (buttonActive && !FeedPressed) {
-			gameObject.GetComponent<MeshRenderer> ().renderer.material.mainTexture = feedMeUnClicked;
+			gameObject.GetComponent<MeshRenderer> ().GetComponent<Renderer>().material.mainTexture = feedMeUnClicked;
 		}
 	}
 
@@ -139,7 +139,7 @@ public class CharacterSelectUI : MonoBehaviour {
 			percentComplete += Time.deltaTime /0.4f;
 			// update the position based on our percentage complete
 			currentColor = Color.Lerp(startColor, endColor, percentComplete);
-			gameObject.transform.renderer.material.color = currentColor;
+			gameObject.transform.GetComponent<Renderer>().material.color = currentColor;
 			// stop processing for now, and continue next frame
 			yield return null;
 		}

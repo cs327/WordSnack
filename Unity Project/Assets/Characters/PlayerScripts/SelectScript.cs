@@ -54,10 +54,10 @@ public class SelectScript : MonoBehaviour
 	void Update ()
 	{
 		if (variables.timeToChangeGameState && !selected) {
-			gameObject.transform.renderer.enabled = false;
+			gameObject.transform.GetComponent<Renderer>().enabled = false;
 			gameObject.GetComponent<BoxCollider>().enabled = false;
 		} else {
-			gameObject.transform.renderer.enabled = true;
+			gameObject.transform.GetComponent<Renderer>().enabled = true;
 			gameObject.GetComponent<BoxCollider>().enabled = true;
 		}
 		//deselects character when "Phase2" is loaded 
