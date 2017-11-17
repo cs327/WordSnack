@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEngine.Analytics;
 
 public class wordBuildingController : MonoBehaviour
 {
@@ -257,65 +258,87 @@ public class wordBuildingController : MonoBehaviour
 				Application.LoadLevel ("ScoreScreen");
 		
 		}
-	    
-        // This saves the current scores and stats to PlayerPrefs so the receipt can access them
-		public void sendVariablestoScoreScreen ()
-		{
-				//updates score related variables 
-				variables.totalLetterScore = character1.GetComponent<Character> ().rawScoreFedToMe + character2.GetComponent<Character> ().rawScoreFedToMe;
-//				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
-				variables.trashedLetters = trashCharacter.GetComponent<Character> ().trashedLetters;
-				variables.trashedLetterScore = trashCharacter.GetComponent<Character> ().trashedLetterScore;
-				Debug.Log ("sent variables to receipt screen");
-				//saves those variables in Player Prefs
-				PlayerPrefs.SetFloat ("Score", variables.score);
-				PlayerPrefs.SetInt ("Total Letter Score", variables.totalLetterScore); 
-				PlayerPrefs.SetInt ("Total Multiplier Score", variables.totalMultiplierScore); 
-				PlayerPrefs.SetInt ("Trashed Letters", variables.trashedLetters); 
-				PlayerPrefs.SetInt ("Trashed Letter Score", variables.trashedLetterScore); 
-				PlayerPrefs.Save ();
-				
-				//For Game Analytics
-				int mode = 2; //So we'll know something went wrong
-				if (variables.timedMode == true) {
-						mode = 1;
-				} else {
-						mode = 0;
-				}
-                // This saves the game info to analytics
-/*				GA.API.GenericInfo.SetSessionUUID(null); //Set a new Session ID to make sure this game is unique
-				GA.API.Design.NewEvent ("mode", mode);
-				GA.API.Design.NewEvent ("score", variables.score);
-				GA.API.Design.NewEvent ("character1", character1Num);
-				GA.API.Design.NewEvent ("character2", character2Num);
-				GA.API.Design.NewEvent ("trashed_letters", variables.trashedLetters);
-				GA.API.Design.NewEvent ("numwordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
-				GA.API.Design.NewEvent ("numwordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
-				GA.API.Design.NewEvent ("character1Score", character1.GetComponent<Character> ().scoreFedToMe);
-				GA.API.Design.NewEvent ("character2Score", character2.GetComponent<Character> ().scoreFedToMe);
-				//For Analytics. Why, oh why, would we do this this way, you say? Because, I say,
-				//I picked the wrong analytics service and they don't support sending arrays at all,
-				//and the only way they support sending strings is as an error message. -Josiah
-				string wordsFedToCharacter1 = "1,";
-				string wordsFedToCharacter2 = "2,";
-				foreach (string word in character1.GetComponent<Character> ().wordsFedToMe) {
-						wordsFedToCharacter1 += word + ",";
-				}
-				foreach (string word in character2.GetComponent<Character> ().wordsFedToMe) {
-						wordsFedToCharacter2 += word + ",";
-				}
-                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score = variables.score;
-                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().rawScore = variables.totalLetterScore;
-                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().multiScore = variables.totalMultiplierScore;
-                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum = variables.trashedLetters;
-                GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore = variables.trashedLetterScore;	
+
+    // This saves the current scores and stats to PlayerPrefs so the receipt can access them
+    public void sendVariablestoScoreScreen()
+    {
+        //updates score related variables 
+        variables.totalLetterScore = character1.GetComponent<Character>().rawScoreFedToMe + character2.GetComponent<Character>().rawScoreFedToMe;
+        //				variables.totalMultiplierScore = character1.GetComponent<Character> ().rawBonusScoreFedToMe + character2.GetComponent<Character> ().rawBonusScoreFedToMe;
+        variables.trashedLetters = trashCharacter.GetComponent<Character>().trashedLetters;
+        variables.trashedLetterScore = trashCharacter.GetComponent<Character>().trashedLetterScore;
+        Debug.Log("sent variables to receipt screen");
+        //saves those variables in Player Prefs
+        PlayerPrefs.SetFloat("Score", variables.score);
+        PlayerPrefs.SetInt("Total Letter Score", variables.totalLetterScore);
+        PlayerPrefs.SetInt("Total Multiplier Score", variables.totalMultiplierScore);
+        PlayerPrefs.SetInt("Trashed Letters", variables.trashedLetters);
+        PlayerPrefs.SetInt("Trashed Letter Score", variables.trashedLetterScore);
+        PlayerPrefs.Save();
+
+        //For Game Analytics
+        int mode = 2; //So we'll know something went wrong
+        if (variables.timedMode == true)
+        {
+            mode = 1;
+        }
+        else
+        {
+            mode = 0;
+        }
+
+        /*				GA.API.GenericInfo.SetSessionUUID(null); //Set a new Session ID to make sure this game is unique
+                        GA.API.Design.NewEvent ("mode", mode);
+                        GA.API.Design.NewEvent ("score", variables.score);
+                        GA.API.Design.NewEvent ("character1", character1Num);
+                        GA.API.Design.NewEvent ("character2", character2Num);
+                        GA.API.Design.NewEvent ("trashed_letters", variables.trashedLetters);
+                        GA.API.Design.NewEvent ("numwordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count);
+                        GA.API.Design.NewEvent ("numwordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count);
+                        GA.API.Design.NewEvent ("character1Score", character1.GetComponent<Character> ().scoreFedToMe);
+                        GA.API.Design.NewEvent ("character2Score", character2.GetComponent<Character> ().scoreFedToMe);
+        */
+        //For Analytics. Why, oh why, would we do this this way, you say? Because, I say,
+        //I picked the wrong analytics service and they don't support sending arrays at all,
+        //and the only way they support sending strings is as an error message. -Josiah
+        string wordsFedToCharacter1 = "1,";
+        string wordsFedToCharacter2 = "2,";
+        foreach (string word in character1.GetComponent<Character>().wordsFedToMe)
+        {
+            wordsFedToCharacter1 += word + ",";
+        }
+        foreach (string word in character2.GetComponent<Character>().wordsFedToMe)
+        {
+            wordsFedToCharacter2 += word + ",";
+        }
+        GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().score = variables.score;
+        GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().rawScore = variables.totalLetterScore;
+        GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().multiScore = variables.totalMultiplierScore;
+        GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashLetterNum = variables.trashedLetters;
+        GameObject.Find("WordsFed").GetComponent<StoreWordsFed>().trashedLetterScore = variables.trashedLetterScore;
+        /*
 				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter1);
 				GA.API.Error.NewEvent (GA_Error.SeverityType.info, wordsFedToCharacter2);
 				//Submit our Analytics Queue. This should make this happen once per Score Screen load.
 				GA_Queue.ForceSubmit ();
 				//Debug.Log ("Forcing GA Submission.");
 				*/
-		}
+        // This saves the game info to Unity analytics
+        UnityEngine.Analytics.Analytics.CustomEvent("gameOver", new Dictionary<string, object>
+        {
+            {"mode", mode},
+            {"score", variables.score},
+            {"character1", character1Num},
+            {"character2", character2Num},
+            {"trashed_letters", variables.trashedLetters},
+            {"numwordsFedtoCharacter1", character1.GetComponent<Character> ().wordsFedToMe.Count},
+            {"numwordsFedtoCharacter2", character2.GetComponent<Character> ().wordsFedToMe.Count},
+            {"character1Score", character1.GetComponent<Character> ().scoreFedToMe},
+            {"character2Score", character2.GetComponent<Character> ().scoreFedToMe},
+            {"wordsFedToCharacter1", wordsFedToCharacter1},
+            {"wordsFedToCharacter2", wordsFedToCharacter2}
+        });
+    }
         
         // Flash the screen if time is running out
 		public void AlertPlayer ()
